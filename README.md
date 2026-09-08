@@ -1,2 +1,2 @@
-# mosar
+# MOSAR
 Projet MOSAR - FNSO
