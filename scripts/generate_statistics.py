@@ -2,7 +2,6 @@ from collections import Counter
 from pathlib import Path
 import csv
 import math
-import textwrap
 
 import matplotlib
 matplotlib.use("Agg")
@@ -37,7 +36,8 @@ TITLES = {
 }
 
 CSV_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 26h20v17H14zM14 32h20M14 38h20M21 26v17M28 26v17"/></svg></span>'''
-IMAGE_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 42l7-8 5 5 5-7 7 10M18 25.5a3 3 0 1 0 0 .1Z"/></svg></span>'''
+JPG_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 42l7-8 5 5 5-7 7 10M18 25.5a3 3 0 1 0 0 .1Z"/></svg></span>'''
+SVG_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M16 39l6-10 6 10M18.5 35h7M31 28h4v12h-4M31 34h3"/></svg></span>'''
 
 
 def percent(value, total):
@@ -91,7 +91,7 @@ def fmt_pct(value, total, lang):
     return f"{value} %" if lang == "fr" else f"{value}%"
 
 
-def svg(counts, total, lang):
+def chart_svg_markup(counts, total, lang, standalone=False):
     cx, cy, r = 205, 215, 155
     current = 0
     label = "Niveau" if lang == "fr" else "Level"
@@ -99,11 +99,11 @@ def svg(counts, total, lang):
     for i, level in enumerate((1, 2, 3, 4)):
         value = counts[level]
         end = current + percent(value, total) * 3.6
-        parts.append(f'<path d="{sector(cx, cy, r, current, end)}" fill="{BLUES[i]}" class="pie-sector"/>')
+        parts.append(f'<path d="{sector(cx, cy, r, current, end)}" fill="{BLUES[i]}" stroke="#ffffff" stroke-width="2.2"/>')
         tx, ty = polar(cx, cy, r * .62, current + (end-current)/2)
         color = "#fff" if level in (1, 2) else "#08264a"
         parts.append(
-            f'<text x="{tx:.1f}" y="{ty-14:.1f}" text-anchor="middle" class="pie-label" fill="{color}">'
+            f'<text x="{tx:.1f}" y="{ty-14:.1f}" text-anchor="middle" fill="{color}" font-family="Arial, sans-serif" font-size="16" font-weight="700">'
             f'<tspan x="{tx:.1f}">{label} {level}</tspan>'
             f'<tspan x="{tx:.1f}" dy="22">({value})</tspan>'
             f'<tspan x="{tx:.1f}" dy="22">{fmt_pct(value,total,lang)}</tspan></text>'
@@ -112,11 +112,23 @@ def svg(counts, total, lang):
 
     combined = counts[1] + counts[2]
     combined_label = "Niveau 1 et 2" if lang == "fr" else "Levels 1 and 2"
+    content = f'''<g>{''.join(parts)}</g>
+<path d="M375,105 C395,105 395,125 395,145 C395,170 410,175 420,175 C410,175 395,180 395,205 C395,225 395,245 375,245" fill="none" stroke="#367fb8" stroke-width="4" stroke-linecap="round"/>
+<g>
+  <rect x="440" y="125" width="155" height="110" rx="10" fill="#f2f7fc" stroke="#dce7f2" stroke-width="1.2"/>
+  <text x="517" y="160" text-anchor="middle" fill="#08264a" font-family="Arial, sans-serif" font-size="16" font-weight="700">{combined_label}</text>
+  <text x="517" y="195" text-anchor="middle" fill="#08264a" font-family="Arial, sans-serif" font-size="27" font-weight="700">({combined})</text>
+  <text x="517" y="224" text-anchor="middle" fill="#08264a" font-family="Arial, sans-serif" font-size="27" font-weight="700">{fmt_pct(combined,total,lang)}</text>
+</g>'''
+    if standalone:
+        return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 430" width="620" height="430" role="img">
+{content}
+</svg>
+'''
     return f'''<div class="chart-shell">
 <svg class="proximity-chart" viewBox="0 0 620 430" role="img" aria-label="{TITLES[lang]}">
-  <g>{''.join(parts)}</g>
-  <path d="M375,105 C395,105 395,125 395,145 C395,170 410,175 420,175 C410,175 395,180 395,205 C395,225 395,245 375,245" class="brace"/>
-  <g><rect x="440" y="125" width="155" height="110" rx="10" class="summary-rect"/><text x="517" y="160" text-anchor="middle" class="summary-title">{combined_label}</text><text x="517" y="195" text-anchor="middle" class="summary-value">({combined})</text><text x="517" y="224" text-anchor="middle" class="summary-value">{fmt_pct(combined,total,lang)}</text></g>
+{content}
 </svg>
 </div>'''
 
@@ -146,7 +158,7 @@ def export_jpeg(counts, total, lang):
     labels = [("Niveau" if lang == "fr" else "Level") + f" {n}" for n in (1, 2, 3, 4)]
     values = [counts[n] for n in (1, 2, 3, 4)]
 
-    fig, ax = plt.subplots(figsize=(11, 5.6), dpi=170)
+    fig, ax = plt.subplots(figsize=(7.2, 4.8), dpi=170)
     fig.patch.set_facecolor("white")
     ax.set_aspect("equal")
 
@@ -160,35 +172,38 @@ def export_jpeg(counts, total, lang):
 
     combined = counts[1] + counts[2]
     combined_label = "Niveau 1 et 2" if lang == "fr" else "Levels 1 and 2"
-    ax.text(1.28, .52, f"{combined_label}\n({combined})\n{fmt_pct(combined,total,lang)}", ha="center", va="center", fontsize=10, fontweight="bold", color="#08264a", bbox={"boxstyle": "round,pad=.45", "facecolor": "#f2f7fc", "edgecolor": "#dce7f2"})
+    ax.text(1.35, .45, f"{combined_label}\n({combined})\n{fmt_pct(combined,total,lang)}", ha="center", va="center", fontsize=10, fontweight="bold", color="#08264a", bbox={"boxstyle": "round,pad=.45", "facecolor": "#f2f7fc", "edgecolor": "#dce7f2"})
 
-    legend_lines = []
-    for n in (1, 2, 3, 4):
-        wrapped = textwrap.fill(DEFINITIONS[lang][n], width=48)
-        legend_lines.append(f"{labels[n-1]} : {wrapped}")
-    ax.text(1.8, .05, "\n\n".join(legend_lines), ha="left", va="center", fontsize=7.3, color="#08264a", linespacing=1.25)
-
-    ax.set_xlim(-1.2, 3.65)
+    ax.set_xlim(-1.2, 2.05)
     ax.set_ylim(-1.18, 1.18)
     ax.axis("off")
-    fig.suptitle(TITLES[lang], x=.06, ha="left", fontsize=13, fontweight="bold", color="#08264a")
-    fig.savefig(path, format="jpg", bbox_inches="tight", facecolor="white")
+    fig.savefig(path, format="jpg", bbox_inches="tight", pad_inches=.08, facecolor="white")
     plt.close(fig)
+    return path
+
+
+def export_svg(counts, total, lang):
+    path = DOWNLOADS / f"proximite-revues.{lang}.svg"
+    path.write_text(chart_svg_markup(counts, total, lang, standalone=True), encoding="utf-8")
     return path
 
 
 def page(counts, total, lang):
     csv_label = "Télécharger les données" if lang == "fr" else "Download data"
     jpg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
+    svg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
+    jpg_title = "Télécharger le graphique au format JPEG" if lang == "fr" else "Download chart as JPEG"
+    svg_title = "Télécharger le graphique au format SVG" if lang == "fr" else "Download chart as SVG"
     return f'''<h1 class="statistics-title">{TITLES[lang]}</h1>
 
 <div class="chart-block">
   <div class="chart-actions">
     <a class="chart-download" href="../downloads/proximite-revues.csv" download>{CSV_ICON}<span>{csv_label}</span></a>
-    <a class="chart-download" href="../downloads/proximite-revues.jpg" download>{IMAGE_ICON}<span>{jpg_label}</span></a>
+    <a class="chart-download" href="../downloads/proximite-revues.jpg" download title="{jpg_title}" aria-label="{jpg_title}">{JPG_ICON}<span>{jpg_label}</span></a>
+    <a class="chart-download" href="../downloads/proximite-revues.svg" download title="{svg_title}" aria-label="{svg_title}">{SVG_ICON}<span>{svg_label}</span></a>
   </div>
   <div class="chart-layout">
-    {svg(counts, total, lang)}
+    {chart_svg_markup(counts, total, lang)}
     {legend(lang)}
   </div>
 </div>
@@ -201,6 +216,7 @@ def main():
     for lang, output in OUTPUTS.items():
         export_csv(counts, total, lang)
         export_jpeg(counts, total, lang)
+        export_svg(counts, total, lang)
         output.write_text(page(counts, total, lang), encoding="utf-8")
     print(
         f"Corpus : {total} | N1={counts[1]} N2={counts[2]} N3={counts[3]} N4={counts[4]} | "
