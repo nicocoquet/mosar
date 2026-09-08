@@ -51,6 +51,9 @@ plugins:
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.snippets:
+      base_path:
+        - .
 
 extra_css:
   - stylesheets/extra.css
