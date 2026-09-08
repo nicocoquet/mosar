@@ -4,8 +4,8 @@ site_url: https://nicocoquet.github.io/mosar/
 
 nav:
   - Home: index.md
-  - Statistics: statistiques.md
   - Partners: partenaires.md
+  - Statistics: statistiques.md
 
 theme:
   name: material
@@ -58,4 +58,4 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
-copyright: "Mosar | Modèle ouvert de soutien et d’accompagnement des revues"
+copyright: "Mosar | FNSO"
