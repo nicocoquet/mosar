@@ -35,6 +35,10 @@ jobs:
       - name: Installer les dépendances
         run: python -m pip install -r requirements.txt
 
+      - name: Vérifier que le XLSX est expurgé
+        if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
+        run: python scripts/sanitize_xlsx.py --check data/Recensement-revues-stat.xlsx
+
       - name: Générer les statistiques depuis le XLSX
         if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
         run: python scripts/generate_statistics.py
