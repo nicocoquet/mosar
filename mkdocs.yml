@@ -1,14 +1,11 @@
-site_name: Projet Mosar | FNSO
+site_name: Projet Mosar
 site_description: Modèle ouvert de soutien et d’accompagnement des revues
 site_url: https://nicocoquet.github.io/mosar/
-
-repo_url: https://github.com/nicocoquet/mosar
-repo_name: nicocoquet/mosar
 
 nav:
   - Home: index.md
   - Statistics: statistiques.md
-  - About: a-propos.md
+  - Partners: partenaires.md
 
 theme:
   name: material
@@ -46,7 +43,7 @@ plugins:
           nav_translations:
             Home: Accueil
             Statistics: Statistiques
-            About: À propos
+            Partners: Partenaires
         - locale: en
           name: English
           build: true
