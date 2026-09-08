@@ -1,5 +1,5 @@
-# mosar
+# Projet Mosar
 
-**Observatoire des revues en sciences humaines et sociales**
+**Modèle ouvert de soutien et d’accompagnement des revues**
 
-Ce site présente progressivement les résultats issus du recensement des revues. Les pages éditoriales sont maintenues manuellement ; les statistiques sont recalculées automatiquement à partir du fichier XLSX de référence.
+Ce site présente progressivement les résultats issus du recensement des revues.
