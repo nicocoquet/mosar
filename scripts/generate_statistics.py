@@ -36,6 +36,9 @@ TITLES = {
     "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes",
 }
 
+CSV_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 26h20v17H14zM14 32h20M14 38h20M21 26v17M28 26v17"/></svg></span>'''
+IMAGE_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 42l7-8 5 5 5-7 7 10M18 25.5a3 3 0 1 0 0 .1Z"/></svg></span>'''
+
 
 def percent(value, total):
     return value * 100 / total if total else 0
@@ -177,14 +180,14 @@ def export_jpeg(counts, total, lang):
 def page(counts, total, lang):
     csv_name = f"proximite-revues.{lang}.csv"
     jpg_name = f"proximite-revues.{lang}.jpg"
-    csv_label = "Télécharger les données (CSV)" if lang == "fr" else "Download data (CSV)"
-    jpg_label = "Télécharger le graphique (JPEG)" if lang == "fr" else "Download chart (JPEG)"
+    csv_label = "Télécharger les données" if lang == "fr" else "Download data"
+    jpg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
     return f'''<h1 class="statistics-title">{TITLES[lang]}</h1>
 
 <div class="chart-block">
   <div class="chart-actions">
-    <a class="chart-download" href="downloads/{csv_name}" download>{csv_label}</a>
-    <a class="chart-download" href="downloads/{jpg_name}" download>{jpg_label}</a>
+    <a class="chart-download" href="downloads/{csv_name}" download>{CSV_ICON}<span>{csv_label}</span></a>
+    <a class="chart-download" href="downloads/{jpg_name}" download>{IMAGE_ICON}<span>{jpg_label}</span></a>
   </div>
   <div class="chart-layout">
     {svg(counts, total, lang)}
