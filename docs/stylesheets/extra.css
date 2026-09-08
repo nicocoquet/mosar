@@ -102,12 +102,15 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 }
 
 .chart-block {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1000px;
   margin: 0 0 1.25rem;
 }
 
 .chart-layout {
+  order: 1;
   display: grid;
   grid-template-columns: minmax(0, 540px) minmax(330px, 425px);
   gap: 1.55rem;
@@ -192,6 +195,7 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 .level-4 { background: var(--mosar-blue-4); }
 
 .chart-actions {
+  order: 2;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
