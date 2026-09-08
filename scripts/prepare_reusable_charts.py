@@ -26,13 +26,36 @@ CHARTS = {
     }
 }
 
-START = '<h2 class="statistics-title">'
-END = '<h2 class="statistics-placeholder-title">'
+START = "## "
+END_MARKERS = ("## Graphique 2", "## Chart 2")
+
+
+def normalize_headings(page_text: str, chart_title: str, lang: str) -> str:
+    page_title = "Statistiques" if lang == "fr" else "Statistics"
+    graph_2 = "Graphique 2" if lang == "fr" else "Chart 2"
+    graph_3 = "Graphique 3" if lang == "fr" else "Chart 3"
+
+    replacements = {
+        f'<h1 class="statistics-page-title">{page_title}</h1>': f'# {page_title} {{.statistics-page-title}}',
+        f'<h2 class="statistics-title">{chart_title}</h2>': f'## {chart_title} {{.statistics-title}}',
+        f'<h2 class="statistics-placeholder-title">{graph_2}</h2>': f'## {graph_2} {{.statistics-placeholder-title}}',
+        f'<h2 class="statistics-placeholder-title">{graph_3}</h2>': f'## {graph_3} {{.statistics-placeholder-title}}',
+    }
+
+    for html_heading, markdown_heading in replacements.items():
+        if html_heading not in page_text:
+            raise SystemExit(f"Titre généré introuvable : {html_heading}")
+        page_text = page_text.replace(html_heading, markdown_heading, 1)
+    return page_text
 
 
 def extract_first_chart(page_text: str) -> tuple[str, str, str]:
-    start = page_text.index(START)
-    end = page_text.index(END, start)
+    start = page_text.index(START, page_text.index("statistics-intro"))
+    end = min(
+        page_text.index(marker, start)
+        for marker in END_MARKERS
+        if marker in page_text[start:]
+    )
     before = page_text[:start].rstrip()
     chart = page_text[start:end].strip()
     after = page_text[end:].lstrip()
@@ -49,6 +72,7 @@ def main():
     for chart_id, chart in CHARTS.items():
         for lang, page_path in chart["pages"].items():
             text = page_path.read_text(encoding="utf-8")
+            text = normalize_headings(text, chart["title"][lang], lang)
             before, fragment, after = extract_first_chart(text)
             chart["fragments"][lang].write_text(fragment + "\n", encoding="utf-8")
             page_path.write_text(
