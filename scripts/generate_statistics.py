@@ -178,16 +178,14 @@ def export_jpeg(counts, total, lang):
 
 
 def page(counts, total, lang):
-    csv_name = f"proximite-revues.{lang}.csv"
-    jpg_name = f"proximite-revues.{lang}.jpg"
     csv_label = "Télécharger les données" if lang == "fr" else "Download data"
     jpg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
     return f'''<h1 class="statistics-title">{TITLES[lang]}</h1>
 
 <div class="chart-block">
   <div class="chart-actions">
-    <a class="chart-download" href="downloads/{csv_name}" download>{CSV_ICON}<span>{csv_label}</span></a>
-    <a class="chart-download" href="downloads/{jpg_name}" download>{IMAGE_ICON}<span>{jpg_label}</span></a>
+    <a class="chart-download" href="../downloads/proximite-revues.csv" download>{CSV_ICON}<span>{csv_label}</span></a>
+    <a class="chart-download" href="../downloads/proximite-revues.jpg" download>{IMAGE_ICON}<span>{jpg_label}</span></a>
   </div>
   <div class="chart-layout">
     {svg(counts, total, lang)}
