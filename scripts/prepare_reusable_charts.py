@@ -26,13 +26,17 @@ CHARTS = {
     }
 }
 
-START = '<h2 class="statistics-title">'
-END = '<h2 class="statistics-placeholder-title">'
+START = "## "
+END_MARKERS = ("## Graphique 2", "## Chart 2")
 
 
 def extract_first_chart(page_text: str) -> tuple[str, str, str]:
-    start = page_text.index(START)
-    end = page_text.index(END, start)
+    start = page_text.index(START, page_text.index("statistics-intro"))
+    end = min(
+        page_text.index(marker, start)
+        for marker in END_MARKERS
+        if marker in page_text[start:]
+    )
     before = page_text[:start].rstrip()
     chart = page_text[start:end].strip()
     after = page_text[end:].lstrip()
