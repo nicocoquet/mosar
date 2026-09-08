@@ -1,0 +1,7 @@
+# Fichiers XLSX sources non expurgés : ne jamais versionner
+source-private/
+private/
+
+# Fichiers temporaires
+~$*.xlsx
+*.tmp
