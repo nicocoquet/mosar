@@ -35,9 +35,24 @@ TITLES = {
     "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes",
 }
 
-CSV_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 26h20v17H14zM14 32h20M14 38h20M21 26v17M28 26v17"/></svg></span>'''
-JPG_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M14 42l7-8 5 5 5-7 7 10M18 25.5a3 3 0 1 0 0 .1Z"/></svg></span>'''
-SVG_ICON = '''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11M16 39l6-10 6 10M18.5 35h7M31 28h4v12h-4M31 34h3"/></svg></span>'''
+INTRO = {
+    "fr": "Cette page réunira progressivement les principaux indicateurs produits à partir du recensement des revues du projet Mosar. Les graphiques permettront d’explorer la composition du corpus, les caractéristiques éditoriales des revues et les formes de soutien ou de rattachement institutionnel. Ce texte est provisoire et sera remplacé par une présentation éditoriale définitive.",
+    "en": "This page will progressively bring together the main indicators produced from the Mosar journal survey. The charts will make it possible to explore the composition of the corpus, the editorial characteristics of the journals, and forms of institutional support or affiliation. This text is provisional and will be replaced by a final editorial introduction.",
+}
+
+PLACEHOLDER = {
+    "fr": "Emplacement provisoire destiné à accueillir un prochain graphique et son commentaire.",
+    "en": "Temporary placeholder for a future chart and its commentary.",
+}
+
+
+def file_icon(label):
+    return f'''<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11"/><text x="24" y="38" text-anchor="middle" fill="currentColor" stroke="none" font-family="Arial, sans-serif" font-size="9" font-weight="700">{label}</text></svg></span>'''
+
+
+CSV_ICON = file_icon("CSV")
+JPG_ICON = file_icon("JPG")
+SVG_ICON = file_icon("SVG")
 
 
 def percent(value, total):
@@ -192,13 +207,24 @@ def page(counts, total, lang):
     csv_label = "Télécharger les données" if lang == "fr" else "Download data"
     jpg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
     svg_label = "Télécharger le graphique" if lang == "fr" else "Download chart"
+    csv_title = "Télécharger les données au format CSV" if lang == "fr" else "Download data as CSV"
     jpg_title = "Télécharger le graphique au format JPEG" if lang == "fr" else "Download chart as JPEG"
     svg_title = "Télécharger le graphique au format SVG" if lang == "fr" else "Download chart as SVG"
-    return f'''<h1 class="statistics-title">{TITLES[lang]}</h1>
+    page_title = "Statistiques" if lang == "fr" else "Statistics"
+    graph_2 = "Graphique 2" if lang == "fr" else "Chart 2"
+    graph_3 = "Graphique 3" if lang == "fr" else "Chart 3"
+
+    return f'''<h1 class="statistics-page-title">{page_title}</h1>
+
+<div class="statistics-intro">
+  <p>{INTRO[lang]}</p>
+</div>
+
+<h2 class="statistics-title">{TITLES[lang]}</h2>
 
 <div class="chart-block">
   <div class="chart-actions">
-    <a class="chart-download" href="../downloads/proximite-revues.csv" download>{CSV_ICON}<span>{csv_label}</span></a>
+    <a class="chart-download" href="../downloads/proximite-revues.csv" download title="{csv_title}" aria-label="{csv_title}">{CSV_ICON}<span>{csv_label}</span></a>
     <a class="chart-download" href="../downloads/proximite-revues.jpg" download title="{jpg_title}" aria-label="{jpg_title}">{JPG_ICON}<span>{jpg_label}</span></a>
     <a class="chart-download" href="../downloads/proximite-revues.svg" download title="{svg_title}" aria-label="{svg_title}">{SVG_ICON}<span>{svg_label}</span></a>
   </div>
@@ -207,6 +233,12 @@ def page(counts, total, lang):
     {legend(lang)}
   </div>
 </div>
+
+<h2 class="statistics-placeholder-title">{graph_2}</h2>
+<p class="statistics-placeholder">{PLACEHOLDER[lang]}</p>
+
+<h2 class="statistics-placeholder-title">{graph_3}</h2>
+<p class="statistics-placeholder">{PLACEHOLDER[lang]}</p>
 '''
 
 
