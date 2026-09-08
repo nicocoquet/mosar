@@ -4,8 +4,17 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 FRAGMENTS = ROOT / "generated" / "charts"
 
+# Registre minimal des graphiques réutilisables.
+# L'identifiant stable sert aux fragments, aux exports et aux futures insertions
+# dans des bilans ou d'autres pages éditoriales.
 CHARTS = {
     "proximite-revues": {
+        "title": {
+            "fr": "Répartition des revues selon le degré de proximité avec les universités Paris Nanterre, Paris 1 et la MSH Mondes",
+            "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes",
+        },
+        "source": "recencement:Niveau rattachement",
+        "type": "pie",
         "pages": {
             "fr": DOCS / "statistiques.md",
             "en": DOCS / "statistiques.en.md",
