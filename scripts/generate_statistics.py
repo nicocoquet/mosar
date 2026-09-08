@@ -1,13 +1,19 @@
 from collections import Counter
 from pathlib import Path
+import csv
 import math
+import textwrap
 
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 XLSX = ROOT / "data" / "Recensement-revues-stat.xlsx"
 SHEET = "recencement"
 OUTPUTS = {"fr": ROOT / "docs/statistiques.md", "en": ROOT / "docs/statistiques.en.md"}
+DOWNLOADS = ROOT / "docs/downloads"
 BLUES = ["#07558c", "#367fb8", "#67a9df", "#a7d5f5"]
 
 DEFINITIONS = {
@@ -33,6 +39,10 @@ TITLES = {
 
 def percent(value, total):
     return value * 100 / total if total else 0
+
+
+def rounded_percent(value, total):
+    return math.floor(percent(value, total) + 0.5)
 
 
 def polar(cx, cy, r, angle):
@@ -73,13 +83,13 @@ def read_counts():
     return {n: counts[n] for n in (1, 2, 3, 4)}, total
 
 
-def fmt_pct(value, lang):
-    text = f"{value:.1f}"
-    return (text.replace(".", ",") + " %") if lang == "fr" else (text + "%")
+def fmt_pct(value, total, lang):
+    value = rounded_percent(value, total)
+    return f"{value} %" if lang == "fr" else f"{value}%"
 
 
 def svg(counts, total, lang):
-    cx, cy, r = 285, 285, 220
+    cx, cy, r = 205, 215, 155
     current = 0
     label = "Niveau" if lang == "fr" else "Level"
     parts = []
@@ -89,33 +99,112 @@ def svg(counts, total, lang):
         parts.append(f'<path d="{sector(cx, cy, r, current, end)}" fill="{BLUES[i]}" class="pie-sector"/>')
         tx, ty = polar(cx, cy, r * .62, current + (end-current)/2)
         color = "#fff" if level in (1, 2) else "#08264a"
-        parts.append(f'<text x="{tx:.1f}" y="{ty-20:.1f}" text-anchor="middle" class="pie-label" fill="{color}"><tspan x="{tx:.1f}">{label} {level}</tspan><tspan x="{tx:.1f}" dy="28">({value})</tspan><tspan x="{tx:.1f}" dy="28">{fmt_pct(percent(value,total),lang)}</tspan></text>')
+        parts.append(
+            f'<text x="{tx:.1f}" y="{ty-14:.1f}" text-anchor="middle" class="pie-label" fill="{color}">'
+            f'<tspan x="{tx:.1f}">{label} {level}</tspan>'
+            f'<tspan x="{tx:.1f}" dy="22">({value})</tspan>'
+            f'<tspan x="{tx:.1f}" dy="22">{fmt_pct(value,total,lang)}</tspan></text>'
+        )
         current = end
+
     combined = counts[1] + counts[2]
     combined_label = "Niveau 1 et 2" if lang == "fr" else "Levels 1 and 2"
-    unit = "revues" if lang == "fr" else "journals"
     return f'''<div class="chart-shell">
-<svg class="proximity-chart" viewBox="0 0 900 590" role="img" aria-label="{combined_label}">
+<svg class="proximity-chart" viewBox="0 0 620 430" role="img" aria-label="{TITLES[lang]}">
   <g>{''.join(parts)}</g>
-  <path d="M520,110 C548,110 548,135 548,160 C548,190 565,195 575,195 C565,195 548,200 548,230 C548,255 548,280 520,280" class="brace"/>
-  <g><rect x="605" y="115" width="250" height="170" rx="12" class="summary-rect"/><text x="730" y="165" text-anchor="middle" class="summary-title">{combined_label}</text><text x="730" y="215" text-anchor="middle" class="summary-value">({combined})</text><text x="730" y="260" text-anchor="middle" class="summary-value">{round(percent(combined,total))} %</text></g>
-  <g><rect x="625" y="335" width="210" height="70" rx="10" class="summary-rect"/><text x="730" y="379" text-anchor="middle" class="total-text">Total : {total} {unit}</text></g>
+  <path d="M375,105 C395,105 395,125 395,145 C395,170 410,175 420,175 C410,175 395,180 395,205 C395,225 395,245 375,245" class="brace"/>
+  <g><rect x="440" y="125" width="155" height="110" rx="10" class="summary-rect"/><text x="517" y="160" text-anchor="middle" class="summary-title">{combined_label}</text><text x="517" y="195" text-anchor="middle" class="summary-value">({combined})</text><text x="517" y="224" text-anchor="middle" class="summary-value">{fmt_pct(combined,total,lang)}</text></g>
 </svg>
 </div>'''
 
 
 def legend(lang):
-    title = "Légende des niveaux de proximité" if lang == "fr" else "Proximity level legend"
     label = "Niveau" if lang == "fr" else "Level"
-    items = "".join(f'<div class="legend-item"><span class="legend-dot level-{n}"></span><p><strong>{label} {n} :</strong> {DEFINITIONS[lang][n]}</p></div>' for n in (1,2,3,4))
-    return f'<section class="level-legend"><h2>{title}</h2>{items}</section>'
+    items = "".join(
+        f'<div class="legend-item"><span class="legend-dot level-{n}"></span><p><strong>{label} {n} :</strong> {DEFINITIONS[lang][n]}</p></div>'
+        for n in (1, 2, 3, 4)
+    )
+    return f'<section class="level-legend">{items}</section>'
+
+
+def export_csv(counts, total, lang):
+    path = DOWNLOADS / f"proximite-revues.{lang}.csv"
+    headers = ["Niveau", "Nombre", "Pourcentage"] if lang == "fr" else ["Level", "Count", "Percentage"]
+    with path.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.writer(f, delimiter=";")
+        writer.writerow(headers)
+        for level in (1, 2, 3, 4):
+            writer.writerow([level, counts[level], rounded_percent(counts[level], total)])
+    return path
+
+
+def export_jpeg(counts, total, lang):
+    path = DOWNLOADS / f"proximite-revues.{lang}.jpg"
+    labels = [("Niveau" if lang == "fr" else "Level") + f" {n}" for n in (1, 2, 3, 4)]
+    values = [counts[n] for n in (1, 2, 3, 4)]
+
+    fig, ax = plt.subplots(figsize=(11, 5.6), dpi=170)
+    fig.patch.set_facecolor("white")
+    ax.set_aspect("equal")
+
+    wedges, _ = ax.pie(values, colors=BLUES, startangle=90, counterclock=False, wedgeprops={"linewidth": 1.2, "edgecolor": "white"})
+    for wedge, level, value in zip(wedges, (1, 2, 3, 4), values):
+        angle = (wedge.theta1 + wedge.theta2) / 2
+        x = .62 * math.cos(math.radians(angle))
+        y = .62 * math.sin(math.radians(angle))
+        color = "white" if level in (1, 2) else "#08264a"
+        ax.text(x, y, f"{labels[level-1]}\n({value})\n{fmt_pct(value,total,lang)}", ha="center", va="center", fontsize=9, fontweight="bold", color=color)
+
+    combined = counts[1] + counts[2]
+    combined_label = "Niveau 1 et 2" if lang == "fr" else "Levels 1 and 2"
+    ax.text(1.28, .52, f"{combined_label}\n({combined})\n{fmt_pct(combined,total,lang)}", ha="center", va="center", fontsize=10, fontweight="bold", color="#08264a", bbox={"boxstyle": "round,pad=.45", "facecolor": "#f2f7fc", "edgecolor": "#dce7f2"})
+
+    legend_lines = []
+    for n in (1, 2, 3, 4):
+        wrapped = textwrap.fill(DEFINITIONS[lang][n], width=48)
+        legend_lines.append(f"{labels[n-1]} : {wrapped}")
+    ax.text(1.8, .05, "\n\n".join(legend_lines), ha="left", va="center", fontsize=7.3, color="#08264a", linespacing=1.25)
+
+    ax.set_xlim(-1.2, 3.65)
+    ax.set_ylim(-1.18, 1.18)
+    ax.axis("off")
+    fig.suptitle(TITLES[lang], x=.06, ha="left", fontsize=13, fontweight="bold", color="#08264a")
+    fig.savefig(path, format="jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+    return path
+
+
+def page(counts, total, lang):
+    csv_name = f"proximite-revues.{lang}.csv"
+    jpg_name = f"proximite-revues.{lang}.jpg"
+    csv_label = "Télécharger les données (CSV)" if lang == "fr" else "Download data (CSV)"
+    jpg_label = "Télécharger le graphique (JPEG)" if lang == "fr" else "Download chart (JPEG)"
+    return f'''<h1 class="statistics-title">{TITLES[lang]}</h1>
+
+<div class="chart-block">
+  <div class="chart-actions">
+    <a class="chart-download" href="downloads/{csv_name}" download>{csv_label}</a>
+    <a class="chart-download" href="downloads/{jpg_name}" download>{jpg_label}</a>
+  </div>
+  <div class="chart-layout">
+    {svg(counts, total, lang)}
+    {legend(lang)}
+  </div>
+</div>
+'''
 
 
 def main():
     counts, total = read_counts()
+    DOWNLOADS.mkdir(parents=True, exist_ok=True)
     for lang, output in OUTPUTS.items():
-        output.write_text(f"# {TITLES[lang]}\n\n{svg(counts,total,lang)}\n\n{legend(lang)}\n", encoding="utf-8")
-    print(f"Corpus : {total} | N1={counts[1]} N2={counts[2]} N3={counts[3]} N4={counts[4]} | N1+N2={counts[1]+counts[2]} ({percent(counts[1]+counts[2], total):.1f} %)")
+        export_csv(counts, total, lang)
+        export_jpeg(counts, total, lang)
+        output.write_text(page(counts, total, lang), encoding="utf-8")
+    print(
+        f"Corpus : {total} | N1={counts[1]} N2={counts[2]} N3={counts[3]} N4={counts[4]} | "
+        f"N1+N2={counts[1]+counts[2]} ({rounded_percent(counts[1]+counts[2], total)} %)"
+    )
 
 
 if __name__ == "__main__":
