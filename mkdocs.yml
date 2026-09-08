@@ -1,0 +1,59 @@
+site_name: mosar
+site_description: Observatoire des revues en sciences humaines et sociales
+site_url: https://nicocoquet.github.io/mosar/
+
+repo_url: https://github.com/nicocoquet/mosar
+repo_name: nicocoquet/mosar
+
+nav:
+  - Home: index.md
+  - Statistics: statistiques.md
+  - About: a-propos.md
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Passer au mode clair
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: fr
+          default: true
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            Statistics: Statistiques
+            About: À propos
+        - locale: en
+          name: English
+          build: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: "mosar"
