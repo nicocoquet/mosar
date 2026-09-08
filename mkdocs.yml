@@ -13,6 +13,7 @@ nav:
 theme:
   name: material
   language: fr
+  favicon: assets/icons/favicon.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
