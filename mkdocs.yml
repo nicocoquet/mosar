@@ -1,5 +1,5 @@
-site_name: mosar
-site_description: Observatoire des revues en sciences humaines et sociales
+site_name: Mosar
+site_description: Modèle ouvert de soutien et d’accompagnement des revues
 site_url: https://nicocoquet.github.io/mosar/
 
 repo_url: https://github.com/nicocoquet/mosar
@@ -13,6 +13,7 @@ nav:
 theme:
   name: material
   language: fr
+  logo: assets/logos/mosar.svg
   favicon: assets/icons/favicon.png
   features:
     - navigation.tabs
@@ -57,4 +58,4 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
-copyright: "mosar"
+copyright: "Mosar"
