@@ -22,12 +22,10 @@
   background-color: var(--mosar-brand);
 }
 
-/* L'arborescence de Mosar est volontairement simple : pas de navigation latérale primaire. */
 .md-sidebar--primary {
   display: none;
 }
 
-/* Sélecteur de langue : même principe que Trinketa, avec le drapeau de la langue active. */
 .md-header__option .md-select > .md-header__button {
   width: 2rem;
   background-position: center;
@@ -92,7 +90,6 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-weight: 800;
 }
 
-/* Statistiques : proportions calées sur la maquette de référence. */
 .statistics-title {
   max-width: 780px;
   margin: 0 0 .75rem !important;
@@ -109,7 +106,6 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   margin: 0 0 1.25rem;
 }
 
-/* Zone éditoriale provisoire en tête de la page Statistiques. */
 .chart-block::before {
   order: 0;
   display: block;
@@ -136,9 +132,7 @@ html[lang^="en"] .chart-block::before {
   align-items: center;
 }
 
-.chart-shell {
-  min-width: 0;
-}
+.chart-shell { min-width: 0; }
 
 .proximity-chart {
   display: block;
@@ -261,7 +255,6 @@ html[lang^="en"] .chart-block::before {
   stroke-linejoin: round;
 }
 
-/* Le format est inscrit directement dans le pictogramme de fichier. */
 .chart-download-icon::after {
   position: absolute;
   left: 50%;
@@ -280,9 +273,7 @@ html[lang^="en"] .chart-block::before {
 .chart-download:nth-child(2) .chart-download-icon::after { content: "JPG"; }
 .chart-download:nth-child(3) .chart-download-icon::after { content: "SVG"; }
 
-.chart-download:hover {
-  border-color: var(--mosar-blue-2);
-}
+.chart-download:hover { border-color: var(--mosar-blue-2); }
 
 @media (max-width: 900px) {
   .chart-layout {
