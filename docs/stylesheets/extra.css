@@ -14,98 +14,183 @@
   --mosar-border: #33495d;
 }
 
+.md-header__title {
+  height: auto;
+  line-height: 1.15;
+}
+
 .md-header__title .md-header__topic:first-child {
   font-weight: 800;
+  padding-top: .18rem;
+}
+
+.md-header__title .md-header__topic:first-child::after {
+  content: "Modèle ouvert de soutien et d’accompagnement des revues";
+  display: block;
+  margin-top: .08rem;
+  font-size: .5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  opacity: .82;
 }
 
 .md-typeset h1 {
   color: var(--mosar-ink);
   font-weight: 800;
-  text-align: center;
-  max-width: 1050px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.statistics-title {
+  max-width: 980px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left;
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+.chart-block {
+  max-width: 980px;
+  margin: 0 auto 1.25rem;
+}
+
+.chart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .4rem;
+  margin: 0 0 .55rem;
+}
+
+.chart-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.8rem;
+  padding: .28rem .55rem;
+  border: 1px solid var(--mosar-border);
+  border-radius: .35rem;
+  background: var(--mosar-panel);
+  color: var(--mosar-ink) !important;
+  font-size: .68rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.chart-download:hover {
+  border-color: var(--mosar-blue-2);
+}
+
+.chart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  gap: 1.1rem;
+  align-items: center;
 }
 
 .chart-shell {
-  max-width: 980px;
-  margin: 0 auto 1rem;
+  min-width: 0;
 }
 
 .proximity-chart {
   width: 100%;
+  max-width: 500px;
   height: auto;
+  display: block;
+  margin: 0 auto;
   overflow: visible;
 }
 
 .pie-sector {
   stroke: var(--md-default-bg-color);
-  stroke-width: 2.5;
+  stroke-width: 2.2;
 }
 
 .pie-label,
 .summary-title,
-.summary-value,
-.total-text {
+.summary-value {
   font-family: var(--md-text-font-family);
   font-weight: 800;
 }
 
-.pie-label { font-size: 21px; }
-.summary-title { font-size: 23px; fill: var(--mosar-ink); }
-.summary-value { font-size: 38px; fill: var(--mosar-ink); }
-.total-text { font-size: 21px; fill: var(--mosar-ink); }
+.pie-label { font-size: 16px; }
+.summary-title { font-size: 16px; fill: var(--mosar-ink); }
+.summary-value { font-size: 27px; fill: var(--mosar-ink); }
 
 .summary-rect {
   fill: var(--mosar-panel);
   stroke: var(--mosar-border);
-  stroke-width: 1.5;
+  stroke-width: 1.2;
 }
 
 .brace {
   fill: none;
   stroke: var(--mosar-blue-2);
-  stroke-width: 5;
+  stroke-width: 4;
   stroke-linecap: round;
 }
 
 .level-legend {
-  max-width: 1050px;
-  margin: .5rem auto 0;
-  padding: 1rem 1.25rem;
+  padding: .8rem .9rem;
   background: var(--mosar-panel);
   border: 1px solid var(--mosar-border);
-  border-radius: .75rem;
-}
-
-.level-legend h2 {
-  margin: 0 0 .6rem;
-  color: var(--mosar-ink);
+  border-radius: .65rem;
+  font-size: .73rem;
+  line-height: 1.35;
 }
 
 .legend-item {
   display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: .7rem;
+  grid-template-columns: 14px 1fr;
+  gap: .55rem;
   align-items: start;
-  margin: .55rem 0;
+  margin: .45rem 0;
 }
 
+.legend-item:first-child { margin-top: 0; }
+.legend-item:last-child { margin-bottom: 0; }
 .legend-item p { margin: 0; }
+
 .legend-dot {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  margin-top: .25rem;
+  margin-top: .18rem;
 }
+
 .level-1 { background: var(--mosar-blue-1); }
 .level-2 { background: var(--mosar-blue-2); }
 .level-3 { background: var(--mosar-blue-3); }
 .level-4 { background: var(--mosar-blue-4); }
 
 @media (max-width: 700px) {
-  .pie-label { font-size: 18px; }
-  .summary-title { font-size: 20px; }
-  .summary-value { font-size: 32px; }
-  .total-text { font-size: 18px; }
+  .md-header__title .md-header__topic:first-child::after {
+    font-size: .42rem;
+    max-width: 16rem;
+    white-space: normal;
+  }
+
+  .statistics-title {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .chart-actions {
+    justify-content: center;
+  }
+
+  .chart-layout {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .proximity-chart {
+    max-width: 430px;
+  }
+
+  .pie-label { font-size: 15px; }
+  .summary-title { font-size: 15px; }
+  .summary-value { font-size: 25px; }
+
+  .level-legend {
+    font-size: .7rem;
+  }
 }
