@@ -95,7 +95,7 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 /* Statistiques : proportions calées sur la maquette de référence. */
 .statistics-title {
   max-width: 780px;
-  margin: 0 0 1.2rem !important;
+  margin: 0 0 .75rem !important;
   text-align: left;
   font-size: 1.55rem;
   line-height: 1.25;
@@ -107,6 +107,25 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   width: 100%;
   max-width: 1000px;
   margin: 0 0 1.25rem;
+}
+
+/* Zone éditoriale provisoire en tête de la page Statistiques. */
+.chart-block::before {
+  order: 0;
+  display: block;
+  max-width: 860px;
+  margin: 0 0 1.2rem;
+  padding: .7rem .85rem;
+  border-left: 3px solid var(--mosar-blue-2);
+  background: color-mix(in srgb, var(--mosar-panel) 72%, transparent);
+  color: var(--mosar-ink);
+  font-size: .78rem;
+  line-height: 1.45;
+  content: "Cette page présentera progressivement les principaux indicateurs statistiques du projet Mosar. Elle permettra d’explorer le corpus de revues selon différents critères, avec des représentations graphiques et des données téléchargeables.";
+}
+
+html[lang^="en"] .chart-block::before {
+  content: "This page will progressively present the main statistical indicators produced by the Mosar project. It will provide ways to explore the journal corpus through different criteria, with graphical representations and downloadable data.";
 }
 
 .chart-layout {
@@ -223,9 +242,10 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 }
 
 .chart-download-icon {
+  position: relative;
   display: inline-flex;
-  width: .9rem;
-  height: 1.05rem;
+  width: 1.15rem;
+  height: 1.3rem;
   flex: 0 0 auto;
   color: currentColor;
 }
@@ -240,6 +260,25 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Le format est inscrit directement dans le pictogramme de fichier. */
+.chart-download-icon::after {
+  position: absolute;
+  left: 50%;
+  bottom: .17rem;
+  transform: translateX(-50%);
+  padding: 0 .05rem;
+  background: var(--mosar-panel);
+  color: currentColor;
+  font-size: .28rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.chart-download:nth-child(1) .chart-download-icon::after { content: "CSV"; }
+.chart-download:nth-child(2) .chart-download-icon::after { content: "JPG"; }
+.chart-download:nth-child(3) .chart-download-icon::after { content: "SVG"; }
 
 .chart-download:hover {
   border-color: var(--mosar-blue-2);
@@ -263,6 +302,11 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
     max-width: none;
     text-align: center;
     font-size: 1.25rem;
+  }
+
+  .chart-block::before {
+    max-width: none;
+    font-size: .72rem;
   }
 
   .chart-layout {
