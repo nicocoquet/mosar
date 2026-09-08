@@ -112,6 +112,7 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: .38rem;
   min-height: 1.8rem;
   padding: .28rem .55rem;
   border: 1px solid var(--mosar-border);
@@ -121,6 +122,25 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-size: .68rem;
   font-weight: 700;
   text-decoration: none !important;
+}
+
+.chart-download-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+.chart-download-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .chart-download:hover {
