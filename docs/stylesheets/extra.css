@@ -1,0 +1,111 @@
+:root {
+  --mosar-blue-1: #07558c;
+  --mosar-blue-2: #367fb8;
+  --mosar-blue-3: #67a9df;
+  --mosar-blue-4: #a7d5f5;
+  --mosar-ink: #08264a;
+  --mosar-panel: #f2f7fc;
+  --mosar-border: #dce7f2;
+}
+
+[data-md-color-scheme="slate"] {
+  --mosar-ink: #f1f6fb;
+  --mosar-panel: #132536;
+  --mosar-border: #33495d;
+}
+
+.md-header__title .md-header__topic:first-child {
+  font-weight: 800;
+}
+
+.md-typeset h1 {
+  color: var(--mosar-ink);
+  font-weight: 800;
+  text-align: center;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart-shell {
+  max-width: 980px;
+  margin: 0 auto 1rem;
+}
+
+.proximity-chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.pie-sector {
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2.5;
+}
+
+.pie-label,
+.summary-title,
+.summary-value,
+.total-text {
+  font-family: var(--md-text-font-family);
+  font-weight: 800;
+}
+
+.pie-label { font-size: 21px; }
+.summary-title { font-size: 23px; fill: var(--mosar-ink); }
+.summary-value { font-size: 38px; fill: var(--mosar-ink); }
+.total-text { font-size: 21px; fill: var(--mosar-ink); }
+
+.summary-rect {
+  fill: var(--mosar-panel);
+  stroke: var(--mosar-border);
+  stroke-width: 1.5;
+}
+
+.brace {
+  fill: none;
+  stroke: var(--mosar-blue-2);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.level-legend {
+  max-width: 1050px;
+  margin: .5rem auto 0;
+  padding: 1rem 1.25rem;
+  background: var(--mosar-panel);
+  border: 1px solid var(--mosar-border);
+  border-radius: .75rem;
+}
+
+.level-legend h2 {
+  margin: 0 0 .6rem;
+  color: var(--mosar-ink);
+}
+
+.legend-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: .7rem;
+  align-items: start;
+  margin: .55rem 0;
+}
+
+.legend-item p { margin: 0; }
+.legend-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-top: .25rem;
+}
+.level-1 { background: var(--mosar-blue-1); }
+.level-2 { background: var(--mosar-blue-2); }
+.level-3 { background: var(--mosar-blue-3); }
+.level-4 { background: var(--mosar-blue-4); }
+
+@media (max-width: 700px) {
+  .pie-label { font-size: 18px; }
+  .summary-title { font-size: 20px; }
+  .summary-value { font-size: 32px; }
+  .total-text { font-size: 18px; }
+}
