@@ -22,7 +22,10 @@
   background-color: var(--mosar-brand);
 }
 
-/* Sélecteur de langue : même principe que Trinketa, avec le drapeau de la langue active. */
+.md-sidebar--primary {
+  display: none;
+}
+
 .md-header__option .md-select > .md-header__button {
   width: 2rem;
   background-position: center;
@@ -87,83 +90,76 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-weight: 800;
 }
 
-.statistics-title {
-  max-width: 980px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: left;
-  font-size: 1.55rem;
+.statistics-page-title {
+  margin: 0 0 .45rem !important;
+  color: var(--mosar-ink);
+  font-size: 1.1rem !important;
   line-height: 1.25;
 }
 
-.chart-block {
-  max-width: 980px;
-  margin: 0 auto 1.25rem;
+.statistics-intro {
+  max-width: 860px;
+  margin: 0 0 1.35rem;
+  padding: .7rem .85rem;
+  border-left: 3px solid var(--mosar-blue-2);
+  background: color-mix(in srgb, var(--mosar-panel) 72%, transparent);
+  color: var(--mosar-ink);
+  font-size: .78rem;
+  line-height: 1.45;
 }
 
-.chart-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: .4rem;
-  margin: 0 0 .55rem;
+.statistics-intro p {
+  margin: 0;
 }
 
-.chart-download {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .38rem;
-  min-height: 1.8rem;
-  padding: .28rem .55rem;
-  border: 1px solid var(--mosar-border);
-  border-radius: .35rem;
-  background: var(--mosar-panel);
+.statistics-title {
+  max-width: 780px;
+  margin: 0 0 .75rem !important;
   color: var(--mosar-ink) !important;
-  font-size: .68rem;
-  font-weight: 700;
-  text-decoration: none !important;
+  text-align: left;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
 }
 
-.chart-download-icon {
-  display: inline-flex;
-  width: 1rem;
-  height: 1.15rem;
-  flex: 0 0 auto;
-  color: currentColor;
+.statistics-placeholder-title {
+  margin: 1.8rem 0 .35rem !important;
+  color: var(--mosar-ink) !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
 }
 
-.chart-download-icon svg {
-  display: block;
+.statistics-placeholder {
+  max-width: 720px;
+  margin: 0 0 1.2rem !important;
+  color: var(--md-default-fg-color--light);
+  font-size: .76rem;
+}
+
+.chart-block {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.chart-download:hover {
-  border-color: var(--mosar-blue-2);
+  max-width: 1000px;
+  margin: 0 0 1.25rem;
 }
 
 .chart-layout {
+  order: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
-  gap: 1.1rem;
+  grid-template-columns: minmax(0, 540px) minmax(330px, 425px);
+  gap: 1.55rem;
   align-items: center;
 }
 
-.chart-shell {
-  min-width: 0;
-}
+.chart-shell { min-width: 0; }
 
 .proximity-chart {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
   display: block;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  margin: 0;
   overflow: visible;
 }
 
@@ -197,12 +193,14 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 }
 
 .level-legend {
-  padding: .8rem .9rem;
+  width: 100%;
+  max-width: 425px;
+  padding: .7rem .85rem;
   background: var(--mosar-panel);
   border: 1px solid var(--mosar-border);
   border-radius: .65rem;
-  font-size: .73rem;
-  line-height: 1.35;
+  font-size: .72rem;
+  line-height: 1.28;
 }
 
 .legend-item {
@@ -210,7 +208,7 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   grid-template-columns: 14px 1fr;
   gap: .55rem;
   align-items: start;
-  margin: .45rem 0;
+  margin: .38rem 0;
 }
 
 .legend-item:first-child { margin-top: 0; }
@@ -221,13 +219,69 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-top: .18rem;
+  margin-top: .16rem;
 }
 
 .level-1 { background: var(--mosar-blue-1); }
 .level-2 { background: var(--mosar-blue-2); }
 .level-3 { background: var(--mosar-blue-3); }
 .level-4 { background: var(--mosar-blue-4); }
+
+.chart-actions {
+  order: 2;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: .35rem;
+  width: 540px;
+  max-width: 100%;
+  margin: .45rem 0 0;
+  padding-left: .25rem;
+}
+
+.chart-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .32rem;
+  min-height: 1.65rem;
+  padding: .22rem .48rem;
+  border: 1px solid var(--mosar-border);
+  border-radius: .35rem;
+  background: var(--mosar-panel);
+  color: var(--mosar-ink) !important;
+  font-size: .6rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.chart-download-icon {
+  display: inline-flex;
+  width: 1.15rem;
+  height: 1.3rem;
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+.chart-download-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-download:hover { border-color: var(--mosar-blue-2); }
+
+@media (max-width: 900px) {
+  .chart-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .78fr);
+    gap: 1rem;
+  }
+}
 
 @media (max-width: 700px) {
   .md-header__title .md-header__topic:first-child::after {
@@ -236,13 +290,19 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
     white-space: normal;
   }
 
-  .statistics-title {
+  .statistics-page-title {
     text-align: center;
-    font-size: 1.25rem;
   }
 
-  .chart-actions {
-    justify-content: center;
+  .statistics-intro {
+    max-width: none;
+    font-size: .72rem;
+  }
+
+  .statistics-title {
+    max-width: none;
+    text-align: center;
+    font-size: 1.25rem !important;
   }
 
   .chart-layout {
@@ -251,14 +311,22 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   }
 
   .proximity-chart {
-    max-width: 430px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .level-legend {
+    max-width: none;
+    font-size: .7rem;
+  }
+
+  .chart-actions {
+    width: auto;
+    justify-content: center;
+    padding-left: 0;
   }
 
   .pie-label { font-size: 15px; }
   .summary-title { font-size: 15px; }
   .summary-value { font-size: 25px; }
-
-  .level-legend {
-    font-size: .7rem;
-  }
 }
