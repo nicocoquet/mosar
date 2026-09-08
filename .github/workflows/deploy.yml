@@ -43,6 +43,10 @@ jobs:
         if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
         run: python scripts/generate_statistics.py
 
+      - name: Préparer les graphiques réutilisables
+        if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
+        run: python scripts/prepare_reusable_charts.py
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
