@@ -36,13 +36,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/images/bib/"/>
     </url>
     <url>
-        <loc>https://nicocoquet.github.io/mosar/assets/logos/bib/</loc>
-        <lastmod>2026-09-08</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/assets/logos/bib/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/logos/bib/"/>
-    </url>
-    <url>
         <loc>https://nicocoquet.github.io/mosar/en/</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>daily</changefreq>
@@ -76,12 +69,5 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/images/bib/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/assets/images/bib/"/>
-    </url>
-    <url>
-        <loc>https://nicocoquet.github.io/mosar/en/assets/logos/bib/</loc>
-        <lastmod>2026-09-08</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/logos/bib/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/assets/logos/bib/"/>
     </url>
 </urlset>
