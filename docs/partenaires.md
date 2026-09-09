@@ -1,4 +1,4 @@
-# Partenaires
+# Contacts
 
 <div class="partner-card" markdown="1">
 <div class="partner-logo" markdown="1">
