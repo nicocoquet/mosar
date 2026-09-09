@@ -8,6 +8,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/"/>
     </url>
     <url>
+        <loc>https://nicocoquet.github.io/mosar/mirabel/</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/mirabel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/mirabel/"/>
+    </url>
+    <url>
         <loc>https://nicocoquet.github.io/mosar/partenaires/</loc>
         <lastmod>2026-09-09</lastmod>
         <changefreq>daily</changefreq>
@@ -34,6 +41,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/"/>
+    </url>
+    <url>
+        <loc>https://nicocoquet.github.io/mosar/en/mirabel/</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/mirabel/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/mirabel/"/>
     </url>
     <url>
         <loc>https://nicocoquet.github.io/mosar/en/partenaires/</loc>
