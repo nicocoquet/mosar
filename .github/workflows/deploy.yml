@@ -47,6 +47,9 @@ jobs:
         if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
         run: python scripts/prepare_reusable_charts.py
 
+      - name: Actualiser la grappe Mir@bel
+        run: python scripts/generate_mirabel_cluster.py
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
