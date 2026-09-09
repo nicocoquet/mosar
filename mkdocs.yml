@@ -62,5 +62,6 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/header.css
+  - stylesheets/home.css
 
 copyright: "Mosar | FNSO"
