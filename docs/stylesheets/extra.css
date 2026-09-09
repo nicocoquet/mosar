@@ -92,7 +92,7 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 
 .partner-card {
   display: grid;
-  grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
+  grid-template-columns: minmax(270px, 360px) minmax(0, 1fr);
   gap: 1.35rem;
   align-items: center;
   margin: 0 0 1rem;
@@ -115,8 +115,8 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 .partner-logo img {
   display: block;
   width: auto;
-  max-width: 190px;
-  max-height: 92px;
+  max-width: 350px;
+  max-height: 170px;
   margin: 0 auto;
   object-fit: contain;
 }
@@ -373,8 +373,8 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   }
 
   .partner-logo img {
-    max-width: 165px;
-    max-height: 78px;
+    max-width: 300px;
+    max-height: 140px;
   }
 
   .partner-people p {
