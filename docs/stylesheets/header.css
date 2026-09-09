@@ -18,21 +18,23 @@
 /* En-tête : titre et sous-titre sur deux lignes, dans l’esprit du pipeline AdlFI. */
 .md-header__title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  align-self: flex-start;
   min-height: 2.7rem;
   height: auto;
   margin-left: .45rem;
+  padding-top: .22rem;
   line-height: 1.1;
-  transform: translateY(-.35rem);
+  transform: none;
 }
 
 .md-header__title .md-header__topic:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: max-content;
   max-width: min(70vw, 46rem);
-  padding: .2rem 0 .22rem;
+  padding: 0 0 .18rem;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.08;
@@ -58,9 +60,10 @@
 
 @media (max-width: 700px) {
   .md-header__title {
+    align-self: center;
     min-width: 0;
     margin-left: .2rem;
-    transform: none;
+    padding-top: 0;
   }
 
   .md-header__title .md-header__topic:first-child {
