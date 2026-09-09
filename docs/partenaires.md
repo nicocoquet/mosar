@@ -3,7 +3,7 @@
 ## MSH Mondes
 
 * David Rochefort (responsable du pôle éditorial)
-* Ibtissam Quaddi
+* Ibtissam Qaddi
 * Nicolas Coquet (responsable du pôle Données et humanités numériques)
 
 ![MSH Mondes](/docs/assets/logos/logo_mshm.png)
