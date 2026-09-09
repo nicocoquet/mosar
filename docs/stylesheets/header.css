@@ -1,0 +1,71 @@
+/* Ajustements d’en-tête Mosar : hiérarchie titre/sous-titre et navigation mobile. */
+
+/* La navigation primaire est inutile sur grand écran puisque les trois rubriques
+   sont déjà exposées par les onglets, mais elle doit rester disponible dans le
+   tiroir mobile de Material for MkDocs. */
+@media (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+}
+
+@media (max-width: 76.24em) {
+  .md-sidebar--primary {
+    display: block;
+  }
+}
+
+/* En-tête : titre et sous-titre sur deux lignes, dans l’esprit du pipeline AdlFI. */
+.md-header__title {
+  display: flex;
+  align-items: center;
+  min-height: 2.7rem;
+  height: auto;
+  margin-left: .45rem;
+  line-height: 1.1;
+}
+
+.md-header__title .md-header__topic:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+  max-width: min(70vw, 46rem);
+  padding: .2rem 0 .22rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+.md-header__title .md-header__topic:first-child::after {
+  content: "Modèle ouvert de soutien et d’accompagnement des revues";
+  display: block;
+  margin-top: .16rem;
+  font-size: .62rem;
+  font-weight: 400;
+  line-height: 1.15;
+  opacity: .88;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .md-header__title {
+    min-width: 0;
+    margin-left: .2rem;
+  }
+
+  .md-header__title .md-header__topic:first-child {
+    max-width: 58vw;
+    font-size: .78rem;
+    white-space: normal;
+  }
+
+  .md-header__title .md-header__topic:first-child::after {
+    max-width: 58vw;
+    margin-top: .1rem;
+    font-size: .43rem;
+    line-height: 1.15;
+    white-space: normal;
+  }
+}
