@@ -1,86 +1,47 @@
 from pathlib import Path
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 FRAGMENTS = ROOT / "generated" / "charts"
-
-# Registre minimal des graphiques réutilisables.
-# L'identifiant stable sert aux fragments, aux exports et aux futures insertions
-# dans des bilans ou d'autres pages éditoriales.
-CHARTS = {
-    "proximite-revues": {
-        "title": {
-            "fr": "Répartition des revues selon le degré de proximité avec les universités Paris Nanterre, Paris 1 et la MSH Mondes",
-            "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes",
-        },
-        "source": "recencement:Niveau rattachement",
-        "type": "pie",
-        "pages": {
-            "fr": DOCS / "statistiques.md",
-            "en": DOCS / "statistiques.en.md",
-        },
-        "fragments": {
-            "fr": FRAGMENTS / "proximite-revues.fr.md",
-            "en": FRAGMENTS / "proximite-revues.en.md",
-        },
-    }
-}
-
-START = "## "
-END_MARKERS = ("## Graphique 2", "## Chart 2")
+CHART_IDS = [
+    "proximite-revues",
+    "acces-ouvert-rattachement",
+    "format-publication",
+    "acces-format-publication",
+    "annee-creation",
+    "periode-creation",
+    "acces-date-creation",
+    "periodicite-revues",
+    "disciplines-revues",
+    "structures-editoriales",
+    "acces-structure-editoriale",
+    "droits-reutilisation",
+]
+PAGES = {"fr": DOCS / "statistiques.md", "en": DOCS / "statistiques.en.md"}
 
 
-def normalize_headings(page_text: str, chart_title: str, lang: str) -> str:
-    page_title = "Statistiques" if lang == "fr" else "Statistics"
-    graph_2 = "Graphique 2" if lang == "fr" else "Chart 2"
-    graph_3 = "Graphique 3" if lang == "fr" else "Chart 3"
-
-    replacements = {
-        f'<h1 class="statistics-page-title">{page_title}</h1>': f'# {page_title} {{.statistics-page-title}}',
-        f'<h2 class="statistics-title">{chart_title}</h2>': f'## {chart_title} {{.statistics-title}}',
-        f'<h2 class="statistics-placeholder-title">{graph_2}</h2>': f'## {graph_2} {{.statistics-placeholder-title}}',
-        f'<h2 class="statistics-placeholder-title">{graph_3}</h2>': f'## {graph_3} {{.statistics-placeholder-title}}',
-    }
-
-    for html_heading, markdown_heading in replacements.items():
-        if html_heading not in page_text:
-            raise SystemExit(f"Titre généré introuvable : {html_heading}")
-        page_text = page_text.replace(html_heading, markdown_heading, 1)
-    return page_text
-
-
-def extract_first_chart(page_text: str) -> tuple[str, str, str]:
-    start = page_text.index(START, page_text.index("statistics-intro"))
-    end = min(
-        page_text.index(marker, start)
-        for marker in END_MARKERS
-        if marker in page_text[start:]
-    )
-    before = page_text[:start].rstrip()
-    chart = page_text[start:end].strip()
-    after = page_text[end:].lstrip()
-    return before, chart, after
-
-
-def snippet_path(chart_id: str, lang: str) -> str:
+def snippet(chart_id, lang):
     return f'--8<-- "generated/charts/{chart_id}.{lang}.md"'
 
 
 def main():
     FRAGMENTS.mkdir(parents=True, exist_ok=True)
-
-    for chart_id, chart in CHARTS.items():
-        for lang, page_path in chart["pages"].items():
-            text = page_path.read_text(encoding="utf-8")
-            text = normalize_headings(text, chart["title"][lang], lang)
-            before, fragment, after = extract_first_chart(text)
-            chart["fragments"][lang].write_text(fragment + "\n", encoding="utf-8")
-            page_path.write_text(
-                f"{before}\n\n{snippet_path(chart_id, lang)}\n\n{after}",
-                encoding="utf-8",
+    for lang, page in PAGES.items():
+        text = page.read_text(encoding="utf-8")
+        for chart_id in CHART_IDS:
+            pattern = re.compile(
+                rf"<!-- CHART:{re.escape(chart_id)}:START -->\n(.*?)\n<!-- CHART:{re.escape(chart_id)}:END -->",
+                re.S,
             )
-
-    print("Composants graphiques générés : " + ", ".join(CHARTS))
+            match = pattern.search(text)
+            if not match:
+                raise SystemExit(f"Bloc graphique introuvable : {chart_id} ({lang})")
+            fragment = match.group(1).strip() + "\n"
+            (FRAGMENTS / f"{chart_id}.{lang}.md").write_text(fragment, encoding="utf-8")
+            text = text[: match.start()] + snippet(chart_id, lang) + text[match.end() :]
+        page.write_text(text, encoding="utf-8")
+    print("Composants graphiques générés : " + ", ".join(CHART_IDS))
 
 
 if __name__ == "__main__":
