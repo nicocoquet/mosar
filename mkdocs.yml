@@ -6,7 +6,6 @@ nav:
   - Home: index.md
   - Partners: partenaires.md
   - Statistics: statistiques.md
-
 theme:
   name: material
   language: fr
@@ -57,5 +56,6 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/header.css
 
 copyright: "Mosar | FNSO"
