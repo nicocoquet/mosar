@@ -23,6 +23,7 @@
   height: auto;
   margin-left: .45rem;
   line-height: 1.1;
+  transform: translateY(-.35rem);
 }
 
 .md-header__title .md-header__topic:first-child {
@@ -49,10 +50,17 @@
   white-space: nowrap;
 }
 
+/* Tiroir de navigation mobile : même teinte terre cuite que l’en-tête. */
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  background-color: var(--mosar-brand);
+  color: #fff;
+}
+
 @media (max-width: 700px) {
   .md-header__title {
     min-width: 0;
     margin-left: .2rem;
+    transform: none;
   }
 
   .md-header__title .md-header__topic:first-child {
@@ -61,11 +69,9 @@
     white-space: normal;
   }
 
+  /* Sur téléphone, on conserve uniquement le titre pour libérer l’espace. */
   .md-header__title .md-header__topic:first-child::after {
-    max-width: 58vw;
-    margin-top: .1rem;
-    font-size: .43rem;
-    line-height: 1.15;
-    white-space: normal;
+    display: none;
+    content: none;
   }
 }
