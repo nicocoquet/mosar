@@ -4,9 +4,9 @@ site_url: https://nicocoquet.github.io/mosar/
 
 nav:
   - Home: index.md
-  - Partners: partenaires.md
+  - Journals: mirabel.md
   - Statistics: statistiques.md
-  - Mirabel: mirabel.md
+  - Contacts: partenaires.md
 theme:
   name: material
   language: fr
@@ -42,9 +42,9 @@ plugins:
           build: true
           nav_translations:
             Home: Accueil
-            Partners: Partenaires
+            Journals: Revues
             Statistics: Statistiques
-            Mirabel: Mir@bel
+            Contacts: Contacts
         - locale: en
           name: English
           build: true
