@@ -1,6 +1,6 @@
 # Partenaires
 
-![MSH Mondes](assets/logos/logo_edch.png)
+![MSH Mondes](assets/logos/logo_mshm.png)
 
 * David Rochefort<br/>*Responsable du pôle éditorial*
 * Ibtissam Qaddi<br/>*Chargée de projet édition et science ouverte*
