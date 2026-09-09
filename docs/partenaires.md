@@ -8,14 +8,14 @@
 </div>
 <div class="partner-people" markdown="1">
 
-**David Rochefort** [:material-email:](mailto:david.rochefort@example.org "Envoyer un courriel à David Rochefort"){ .partner-mail }  
-*Responsable du pôle éditorial*
+**David Rochefort** [:material-email:](mailto:david.rochefort@cnrs.fr "Écrire un e-mail"){ .partner-mail }  
+*Responsable du pôle éditorial, coordinateur du projet*
 
-**Ibtissam Qaddi** [:material-email:](mailto:ibtissam.qaddi@example.org "Envoyer un courriel à Ibtissam Qaddi"){ .partner-mail }  
+**Ibtissam Qaddi** [:material-email:](mailto:ibtissam.qaddi@cnrs.fr "Écrire un e-mail"){ .partner-mail }  
 *Chargée de projet édition et science ouverte*
 
-**Nicolas Coquet** [:material-email:](mailto:nicolas.coquet@example.org "Envoyer un courriel à Nicolas Coquet"){ .partner-mail }  
-*Responsable du pôle Données et humanités numériques*
+**Nicolas Coquet** [:material-email:](mailto:nicolas.coquet@cnrs.fr "Écrire un e-mail"){ .partner-mail }  
+*Responsable du pôle Données et humanités numériques (DHUNE)*
 
 </div>
 </div>
@@ -28,11 +28,11 @@
 </div>
 <div class="partner-people" markdown="1">
 
-**Marion Paulhac** [:material-email:](mailto:marion.paulhac@example.org "Envoyer un courriel à Marion Paulhac"){ .partner-mail }  
-*EDCH community manager*
+**Marion Paulhac** [:material-email:](mailto:marion.paulhac@operas-eu.org "Écrire un e-mail"){ .partner-mail }  
+*Community manager de l'EDCH*
 
-**Pierre Mounier** [:material-email:](mailto:pierre.mounier@example.org "Envoyer un courriel à Pierre Mounier"){ .partner-mail }  
-*Co-coordinator de l'EDCH*
+**Pierre Mounier** [:material-email:](mailto:pierre.mounier@operas-eu.org "Écrire un e-mail"){ .partner-mail }  
+*Co-coordinateur de l'EDCH*
 
 </div>
 </div>
@@ -45,10 +45,10 @@
 </div>
 <div class="partner-people" markdown="1">
 
-**Laurence Patarit** [:material-email:](mailto:laurence.patarit@example.org "Envoyer un courriel à Laurence Patarit"){ .partner-mail }  
+**Laurence Patarit** [:material-email:](mailto:lpatarit@parisnanterre.fr "Écrire un e-mail"){ .partner-mail }  
 *Responsable éditoriale des Presses universitaires de Paris Nanterre*
 
-**Élise Breton** [:material-email:](mailto:elise.breton@example.org "Envoyer un courriel à Élise Breton"){ .partner-mail }  
+**Élise Breton** [:material-email:](mailto:breton.e@parisnanterre.fr "Écrire un e-mail"){ .partner-mail }  
 *Responsable du département Services à la recherche, SCD Paris Nanterre*
 
 </div>
@@ -62,10 +62,10 @@
 </div>
 <div class="partner-people" markdown="1">
 
-**Alexandra Gottely** [:material-email:](mailto:alexandra.gottely@example.org "Envoyer un courriel à Alexandra Gottely"){ .partner-mail }  
+**Alexandra Gottely** [:material-email:](mailto:alexandra.gottely@univ-paris1.fr "Écrire un e-mail"){ .partner-mail }  
 *Responsable du service partenariats et appui à la recherche (SPAR)*
 
-**Rémy Ienco** [:material-email:](mailto:remy.ienco@example.org "Envoyer un courriel à Rémy Ienco"){ .partner-mail }  
+**Rémy Ienco** [:material-email:](mailto:remy.ienco@univ-paris1.fr "Écrire un e-mail"){ .partner-mail }  
 *Chargé de science ouverte et humanités numériques*
 
 </div>
