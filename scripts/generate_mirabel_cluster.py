@@ -96,7 +96,7 @@ def render(records: list[dict], fetched_at: str, fallback: bool, lang: str) -> s
     count, date, rows = len(records), fetched_at[:10], build_rows(records)
     if lang == "fr":
         status = "cache local de secours" if fallback else "API Mir@bel"
-        return f'''# Grappe Mir@bel
+        return f'''# Revues
 
 ## PCP Sciences de l’Antiquité et Archéologie
 
@@ -115,7 +115,7 @@ Les données Mir@bel sont réutilisées sous Licence Ouverte ; Mir@bel demeure l
 {rows}
 '''
     status = "local fallback cache" if fallback else "Mir@bel API"
-    return f'''# Mir@bel cluster
+    return f'''# Journals
 
 ## PCP Ancient Studies and Archaeology
 
