@@ -1,6 +1,6 @@
 # Projet Mosar
 **Modèle ouvert de soutien et d’accompagnement des revues**
-
+---
 La [MSH Mondes](https://www.mshmondes.cnrs.fr/) a inauguré en novembre 2023 la première clinique éditoriale en France. Ce service innovant propose aux revues de son périmètre ([université Paris 1 Panthéon-Sorbonne](https://www.pantheonsorbonne.fr/) et [université Paris Nanterre](https://www.parisnanterre.fr/)) un accompagnement sur mesure et gratuit, inspiré par le modèle des cliniques juridiques.
 
 Le projet Mosar entend répondre à **trois questions** :<br/>
