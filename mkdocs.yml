@@ -6,6 +6,7 @@ nav:
   - Home: index.md
   - Partners: partenaires.md
   - Statistics: statistiques.md
+  - Mirabel: mirabel.md
 theme:
   name: material
   language: fr
@@ -43,6 +44,7 @@ plugins:
             Home: Accueil
             Partners: Partenaires
             Statistics: Statistiques
+            Mirabel: Mir@bel
         - locale: en
           name: English
           build: true
