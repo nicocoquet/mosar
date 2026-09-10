@@ -134,14 +134,12 @@ Mosar est **lauréat du 4<sup>e</sup> appel à projets Publication et édition s
 - Établissement coordinateur : CNRS - MSH Mondes<br/>
 - Partenaire(s) : EDCH (OPERAS), Université Paris Nanterre, Université Paris 1 Panthéon Sorbonne
 
-[Fiche du projet Mosar sur Ouvrir la Science](https://www.ouvrirlascience.fr/mosar/){ target="_blank" rel="noopener" }
+[>> Fiche du projet Mosar sur Ouvrir la Science](https://www.ouvrirlascience.fr/mosar/){ target="_blank" rel="noopener" }
 
 </div>
 </section>
 
 <section class="home-section home-partners" markdown="1">
-
-## Partenaires
 
 <div class="home-partner-strip">
   <a href="https://www.mshmondes.cnrs.fr/" target="_blank" rel="noopener" aria-label="MSH Mondes"><img src="assets/logos/logo_mshm.png" alt="MSH Mondes"></a>
