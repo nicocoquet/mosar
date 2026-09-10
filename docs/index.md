@@ -130,9 +130,9 @@ Un *toolkit* trilingue destiné à rendre réutilisables le modèle et les outil
 
 Le **Fonds national pour la science ouverte (FNSO)** constitue l’instrument financier du [Plan national pour la science ouverte](https://www.ouvrirlascience.fr/deuxieme-plan-national-pour-la-science-ouverte/). Il a pour vocation de soutenir financièrement des projets et des initiatives concourant au développement de la science ouverte, notamment dans le domaine de la publication et de l’édition scientifiques ouvertes.
 
-Mosar est **lauréat du 4<sup>e</sup> appel à projets Publication et édition scientifiques ouvertes**.<br/>
+**Mosar** est lauréat du **4<sup>e</sup> appel à projets** Publication et édition scientifiques ouvertes.<br/>
 - Établissement coordinateur : CNRS - MSH Mondes<br/>
-- Partenaire(s) : EDCH (OPERAS), Université Paris Nanterre, Université Paris 1 Panthéon Sorbonne
+- Partenaires : EDCH (OPERAS), Université Paris Nanterre, Université Paris 1 Panthéon Sorbonne
 
 [>> Fiche du projet Mosar sur Ouvrir la Science](https://www.ouvrirlascience.fr/mosar/){ target="_blank" rel="noopener" }
 
