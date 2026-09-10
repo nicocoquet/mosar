@@ -9,7 +9,8 @@
 <div class="partner-people" markdown="1">
 
 **David Rochefort** [:material-email:](mailto:david.rochefort@cnrs.fr "Écrire un e-mail"){ .partner-mail }  
-*Responsable du pôle éditorial, coordinateur du projet*
+*Responsable du pôle éditorial*
+*Coordinateur du projet*
 
 **Ibtissam Qaddi** [:material-email:](mailto:ibtissam.qaddi@cnrs.fr "Écrire un e-mail"){ .partner-mail }  
 *Chargée de projet édition et science ouverte*
