@@ -8,7 +8,7 @@ hide:
 <div class="home-hero" markdown="1">
 <div class="home-hero-copy" markdown="1">
 
-# Projet Mosar
+# Mosar
 
 <p class="home-kicker">Modèle ouvert de soutien et d’accompagnement des revues</p>
 
@@ -16,7 +16,7 @@ La [MSH Mondes](https://www.mshmondes.cnrs.fr/){ target="_blank" rel="noopener" 
 
 </div>
 <div class="home-hero-visual" aria-label="Emplacement de la future illustration Mosar">
-  <span>Illustration Mosar</span>
+  <span>Illustration</span>
 </div>
 </div>
 
@@ -55,7 +55,7 @@ Comment monter en généralité pour rendre ce dispositif réutilisable au nivea
 
 <section class="home-section" markdown="1">
 
-## Le projet en trois temps
+## Trois temps
 
 <div class="home-steps" markdown="1">
 <div class="home-step" markdown="1">
@@ -71,7 +71,7 @@ Réaliser une enquête qualitative et quantitative dressant un état des lieux d
 
 ### Accompagner
 
-À partir de cette enquête, sélectionner un panel de 20 revues à accompagner sur la durée et créer un parcours conciliant suivi individualisé et progression vers les standards de l’accès ouvert diamant (DOAS).
+À partir de cette enquête, sélectionner un panel de revues à accompagner sur la durée, en créant un parcours conciliant suivi individualisé et progression vers les standards de l’accès ouvert diamant ([DOAS](https://resources.edch.eu/fr/diamond-open-access-standard-doas)).
 
 </div>
 <div class="home-step" markdown="1">
@@ -79,7 +79,7 @@ Réaliser une enquête qualitative et quantitative dressant un état des lieux d
 
 ### Modéliser
 
-Formaliser l’offre de services et mettre à disposition les outils d’accompagnement afin de rendre le dispositif réutilisable au niveau national, notamment en lien avec le RnMSH, et européen.
+Formaliser l’offre de services et mettre à disposition les outils d’accompagnement afin de rendre le dispositif réutilisable au niveau national, notamment en lien avec le [RnMSH](https://www.msh-reseau.fr/), et européen.
 
 </div>
 </div>
@@ -95,21 +95,21 @@ Formaliser l’offre de services et mettre à disposition les outils d’accompa
 
 ### :material-chart-box-outline: Un état des lieux
 
-Un rapport décrivant le paysage éditorial des revues de Paris 1 et Paris Nanterre.
+Un rapport décrivant le paysage éditorial des revues des universités Paris 1 Panthéon-Sorbonne et Paris Nanterre.
 
 </div>
 <div class="home-card" markdown="1">
 
 ### :material-account-group-outline: Une offre de services
 
-Une offre complète destinée aux 186 revues du périmètre : formations, ressources et indicateurs quantitatifs et qualitatifs permettant de documenter les trajectoires d’évolution.
+Une offre complète destinée aux revues du périmètre : formations, ressources et indicateurs quantitatifs et qualitatifs permettant de documenter les trajectoires d’évolution.
 
 </div>
 <div class="home-card" markdown="1">
 
 ### :material-toolbox-outline: Un toolkit
 
-Un toolkit trilingue destiné à rendre réutilisables le modèle et les outils de Mosar en France et en Europe.
+Un *toolkit* trilingue destiné à rendre réutilisables le modèle et les outils de Mosar à l’échelle française et européenne.
 
 </div>
 </div>
@@ -128,11 +128,13 @@ Un toolkit trilingue destiné à rendre réutilisables le modèle et les outils 
 
 ## Un projet soutenu par le FNSO
 
-Le **Fonds national pour la science ouverte (FNSO)** est l’instrument financier du Plan national pour la science ouverte. Il soutient des projets et des initiatives qui contribuent au développement de la science ouverte, notamment dans le domaine de la publication et de l’édition scientifiques ouvertes.
+Le **Fonds national pour la science ouverte (FNSO)** constitue l’instrument financier du [Plan national pour la science ouverte](https://www.ouvrirlascience.fr/deuxieme-plan-national-pour-la-science-ouverte/). Il a pour vocation de soutenir financièrement des projets et des initiatives concourant au développement de la science ouverte, notamment dans le domaine de la publication et de l’édition scientifiques ouvertes.
 
-Mosar est **lauréat du quatrième appel à projets du FNSO en faveur de l’édition scientifique ouverte**. Porté par le CNRS – MSH Mondes avec ses partenaires, le projet est financé pour une durée de 24 mois afin de consolider la clinique éditoriale, accompagner les revues vers l’accès ouvert diamant et rendre le modèle transférable.
+Mosar est **lauréat du 4<sup>e/<sup> appel à projets Publication et édition scientifiques ouvertes**.
+* Établissement coordinateur : CNRS - MSH Mondes
+* Partenaire(s) : EDCH (OPERAS), Université Paris Nanterre, Université Paris 1 Panthéon Sorbonne
 
-[Découvrir la fiche du projet Mosar sur Ouvrir la Science](https://www.ouvrirlascience.fr/mosar/){ target="_blank" rel="noopener" }
+[Fiche du projet Mosar sur Ouvrir la Science](https://www.ouvrirlascience.fr/mosar/){ target="_blank" rel="noopener" }
 
 </div>
 </section>
