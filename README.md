@@ -3,6 +3,7 @@
 **Modèle ouvert de soutien et d’accompagnement des revues**
 
 Mosar est un projet financé par le **Fonds national pour la science ouverte (FNSO)** pour la période **2026-2028**. Il prolonge l’expérience de la clinique éditoriale inaugurée par la **MSH Mondes** en novembre 2023 pour proposer aux revues du périmètre des universités **Paris 1 Panthéon-Sorbonne** et **Paris Nanterre** un accompagnement individualisé pour les revues, notamment vers les standards de l’accès ouvert diamant.
+Ce projet porté par la MSH Mondes,  co-corté par OPERAS, l'université Paris Nanterre et l'université Paris 1 Panthéon-Sorbonne.
 
 Le projet poursuit trois objectifs complémentaires :
 
