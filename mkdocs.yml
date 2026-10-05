@@ -16,20 +16,9 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Passer au mode sombre
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-sunny
-        name: Passer au mode clair
+    scheme: default
+    primary: indigo
+    accent: blue
 
 plugins:
   - search
