@@ -50,6 +50,9 @@ jobs:
       - name: Générer la page Revues
         run: python scripts/generate_revues_exploration.py
 
+      - name: Générer la page Revues test depuis la grappe 146
+        run: python scripts/generate_revues_test.py
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
