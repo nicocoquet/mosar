@@ -47,10 +47,7 @@ jobs:
         if: ${{ hashFiles('data/Recensement-revues-stat.xlsx') != '' }}
         run: python scripts/prepare_reusable_charts.py
 
-      - name: Actualiser la grappe Mir@bel
-        run: python scripts/generate_mirabel_cluster.py
-
-      - name: Générer le prototype Revues — exploration
+      - name: Générer la page Revues
         run: python scripts/generate_revues_exploration.py
 
       - name: Vérifier la construction du site
