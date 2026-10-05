@@ -46,47 +46,20 @@ def load_mosar() -> tuple[dict[int, dict], str]:
         headers = [str(v).strip() if v is not None else "" for v in next(rows)]
         if "ID Mir@bel" in headers:
             pos = {h: i for i, h in enumerate(headers)}
-            fields = {
-                "nom_revue": "Nom revue", "niveau_rattachement": "Niveau rattachement",
-                "acces_ouvert": "Accès ouvert", "discipline": "Discipline",
-                "periodicite": "Nombre de n°s par an", "format": "Format",
-                "type_editeur": "Type d'éditeur", "licence": "Licence",
-            }
+            fields = {"nom_revue":"Nom revue","niveau_rattachement":"Niveau rattachement","acces_ouvert":"Accès ouvert","discipline":"Discipline","periodicite":"Nombre de n°s par an","format":"Format","type_editeur":"Type d'éditeur","licence":"Licence"}
             out = {}
             for row in rows:
                 raw = row[pos["ID Mir@bel"]]
-                if raw in (None, ""):
-                    continue
-                rid = int(raw)
-                out[rid] = {key: row[pos[col]] if col in pos else None for key, col in fields.items()}
+                if raw in (None, ""): continue
+                out[int(raw)] = {key: row[pos[col]] if col in pos else None for key, col in fields.items()}
             return out, "XLSX Mosar"
     except Exception as exc:
         print(f"Lecture XLSX impossible pour la jointure ({exc}); recours au CSV de prototype.")
-
     out = {}
     with FALLBACK.open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle):
-            rid = int(row.pop("mirabel_id"))
-            out[rid] = row
+            rid = int(row.pop("mirabel_id")); out[rid] = row
     return out, "CSV de prototype (extrait du XLSX fourni)"
-
-
-def normalize_periodicity(value):
-    if value is None or value == "": return "Non renseignée"
-    s = str(value).strip().lower().replace(",", ".")
-    if s == "parution continue": return "Parution continue"
-    if s == "parution irrégulière": return "Parution irrégulière"
-    try:
-        n = float(s)
-        if n == .5: return "Un numéro tous les deux ans"
-        if n == 1: return "Annuel"
-        if n == 2: return "Semestriel"
-        if n == 3: return "Quadrimestriel"
-        if n == 4: return "Trimestriel"
-        if n > 4: return "Plus de 4 numéros/an"
-    except ValueError:
-        pass
-    return str(value).strip()
 
 
 def normalize_open(value):
@@ -100,26 +73,47 @@ def normalize_open(value):
 def publication_format(issns):
     supports = {str(x.get("support") or "").strip().casefold() for x in (issns or []) if isinstance(x, dict)}
     supports.discard("")
-    has_paper = "papier" in supports
-    has_digital = "electronique" in supports or "électronique" in supports
-    if has_paper and has_digital: return "Papier et numérique"
-    if has_digital: return "Numérique"
-    if has_paper: return "Papier"
+    paper = "papier" in supports
+    digital = "electronique" in supports or "électronique" in supports
+    if paper and digital: return "Papier et numérique"
+    if digital: return "Numérique"
+    if paper: return "Papier"
     return None
 
 
 def external_links(t):
     out = []
     for item in t.get("liensext") or []:
-        if isinstance(item, (list, tuple)) and len(item) >= 2:
-            out.append({"url": item[0], "label": item[1]})
+        if isinstance(item, (list, tuple)) and len(item) >= 2: out.append({"url": item[0], "label": item[1]})
     return out
 
 
-def title_label(t: dict) -> str:
-    prefix = (t.get("prefixe") or "").strip()
-    name = (t.get("titre") or "Titre sans nom").strip()
-    return f"{prefix} {name}".strip()
+def title_label(t):
+    return f"{(t.get('prefixe') or '').strip()} {(t.get('titre') or 'Titre sans nom').strip()}".strip()
+
+
+def country_value(t):
+    """Tolère les variantes de nommage rencontrées dans les réponses Mir@bel."""
+    value = t.get("pays") or t.get("payspublication") or t.get("pays_publication") or t.get("country")
+    if isinstance(value, dict):
+        return value.get("nom") or value.get("name") or value.get("libelle")
+    if isinstance(value, list):
+        vals = []
+        for item in value:
+            if isinstance(item, dict): vals.append(item.get("nom") or item.get("name") or item.get("libelle"))
+            elif item: vals.append(str(item))
+        return ", ".join(v for v in vals if v) or None
+    return str(value).strip() if value not in (None, "") else None
+
+
+def proximity_sort_key(record):
+    raw = ((record.get("mosar") or {}).get("proximity_level") or "").strip()
+    try:
+        level = int(raw)
+        if level not in (1, 2, 3, 4): level = 99
+    except (TypeError, ValueError):
+        level = 99
+    return (level, record["title"].casefold())
 
 
 def main():
@@ -127,17 +121,12 @@ def main():
     themes_payload = api_json(f"/themes/grappe/{GRAPPE_ID}")
     themes_by_revue = {int(x["revueid"]): [t.get("nom") for t in x.get("themes", []) if t.get("nom")] for x in themes_payload}
     mosar, mosar_source = load_mosar()
-
-    by_revue: dict[int, dict] = {}
-    duplicate_active_titles = Counter()
+    by_revue = {}; duplicate_active_titles = Counter()
     for t in titles:
         rid = t.get("revueid")
-        if not rid:
-            continue
-        rid = int(rid)
-        duplicate_active_titles[rid] += 1
-        if rid in by_revue:
-            continue
+        if not rid: continue
+        rid = int(rid); duplicate_active_titles[rid] += 1
+        if rid in by_revue: continue
         issn_objects = t.get("issns") or []
         issns = [x["issn"] for x in issn_objects if isinstance(x, dict) and x.get("issn")]
         links = external_links(t)
@@ -145,57 +134,23 @@ def main():
         labels = [str(x).strip() for x in (t.get("labellisation") or []) if str(x).strip()]
         m = mosar.get(rid)
         by_revue[rid] = {
-            "mirabel_id": rid,
-            "title": title_label(t),
-            "sigle": t.get("sigle") or "",
-            "issn": list(dict.fromkeys(issns)),
-            "languages": t.get("langues") or [],
-            "publishers": t.get("editeurs") or [],
+            "mirabel_id": rid, "title": title_label(t), "sigle": t.get("sigle") or "",
+            "issn": list(dict.fromkeys(issns)), "languages": t.get("langues") or [],
+            "publishers": t.get("editeurs") or [], "country": country_value(t),
             "periodicity": (t.get("periodicite") or "").strip() or None,
             "publication_format": publication_format(issn_objects),
-            # L'API Mir@bel 1.6.3 n'expose pas encore le champ visible « Frais de publication ».
-            # Le modèle est néanmoins prêt : la facette apparaîtra dès qu'une valeur API sera disponible.
             "publication_fees": t.get("fraispublication") or t.get("frais_publication") or None,
-            "labels": labels,
-            "ddh": ddh,
-            "themes": themes_by_revue.get(rid, []),
-            "journal_url": t.get("url") or "",
-            "mirabel_url": t.get("url_revue_mirabel") or f"https://reseau-mirabel.info/revue/{rid}",
-            "illustration": "../assets/images/revues/gallia-card.jpg" if rid == 853 else None,
-            "mosar": None if not m else {
-                "proximity_level": str(m.get("niveau_rattachement") or "").strip(),
-                "open_access": normalize_open(m.get("acces_ouvert")),
-                "discipline": str(m.get("discipline") or "").strip(),
-                "editorial_structure": str(m.get("type_editeur") or "").strip(),
-                "licence": str(m.get("licence") or "").strip(),
-            },
+            "labels": labels, "ddh": ddh, "themes": themes_by_revue.get(rid, []),
+            "journal_url": t.get("url") or "", "mirabel_url": t.get("url_revue_mirabel") or f"https://reseau-mirabel.info/revue/{rid}",
+            "mosar": None if not m else {"proximity_level": str(m.get("niveau_rattachement") or "").strip(), "open_access": normalize_open(m.get("acces_ouvert")), "discipline": str(m.get("discipline") or "").strip(), "editorial_structure": str(m.get("type_editeur") or "").strip(), "licence": str(m.get("licence") or "").strip()},
         }
+    records = sorted(by_revue.values(), key=proximity_sort_key)
+    cluster_ids=set(by_revue); mosar_ids=set(mosar); matched=sorted(cluster_ids & mosar_ids)
+    report={"generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),"cluster_id":GRAPPE_ID,"mirabel_active_titles":len(titles),"mirabel_unique_reviews":len(records),"mosar_source":mosar_source,"mosar_ids":len(mosar_ids),"matched_ids":matched,"matched_count":len(matched),"mirabel_without_mosar_count":len(cluster_ids-mosar_ids),"mosar_outside_cluster_ids":sorted(mosar_ids-cluster_ids),"duplicate_active_title_review_ids":sorted(rid for rid,n in duplicate_active_titles.items() if n>1)}
+    OUT_JSON.parent.mkdir(parents=True,exist_ok=True); OUT_REPORT.parent.mkdir(parents=True,exist_ok=True)
+    OUT_JSON.write_text(json.dumps({"meta":report,"records":records},ensure_ascii=False,indent=2),encoding="utf-8")
+    OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    OUT_MD.write_text('''---\nhide:\n  - toc\n---\n# Revues — exploration\n\nCette page est un **prototype hors navigation**. Elle teste l’articulation entre les métadonnées de la grappe Mir@bel n° 15 et les données analytiques propres au projet Mosar. La page **Revues** actuelle n’est pas modifiée.\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
+    print(json.dumps(report,ensure_ascii=False,indent=2))
 
-    records = sorted(by_revue.values(), key=lambda r: r["title"].casefold())
-    cluster_ids = set(by_revue)
-    mosar_ids = set(mosar)
-    matched = sorted(cluster_ids & mosar_ids)
-    report = {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "cluster_id": GRAPPE_ID,
-        "mirabel_active_titles": len(titles),
-        "mirabel_unique_reviews": len(records),
-        "mosar_source": mosar_source,
-        "mosar_ids": len(mosar_ids),
-        "matched_ids": matched,
-        "matched_count": len(matched),
-        "mirabel_without_mosar_count": len(cluster_ids - mosar_ids),
-        "mosar_outside_cluster_ids": sorted(mosar_ids - cluster_ids),
-        "duplicate_active_title_review_ids": sorted(rid for rid, n in duplicate_active_titles.items() if n > 1),
-    }
-
-    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps({"meta": report, "records": records}, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUT_REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUT_MD.write_text('''---\nhide:\n  - toc\n---\n# Revues — exploration\n\nCette page est un **prototype hors navigation**. Elle teste l’articulation entre les métadonnées de la grappe Mir@bel n° 15 et les données analytiques propres au projet Mosar. La page **Revues** actuelle n’est pas modifiée.\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json">\n  <p class="explorer-loading">Chargement des revues…</p>\n</div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''', encoding="utf-8")
-    print(json.dumps(report, ensure_ascii=False, indent=2))
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
