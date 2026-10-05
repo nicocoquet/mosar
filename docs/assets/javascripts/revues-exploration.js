@@ -7,7 +7,7 @@
   const langLabel = code => LANG[String(code).toLowerCase()] || String(code).toUpperCase();
   const valueOrUnknown = value => value === null || value === undefined || String(value).trim()==='' ? 'Non renseigné' : String(value).trim();
   const listOrUnknown = values => Array.isArray(values) && values.length ? values.filter(Boolean).map(String) : ['Non renseigné'];
-  const state = {q:'', proximity:new Set(), access:new Set(), fees:new Set(), format:new Set(), periodicity:new Set(), themes:new Set(), languages:new Set(), countries:new Set(), publishers:new Set()};
+  const state = {q:'', proximity:new Set(), access:new Set(), format:new Set(), periodicity:new Set(), themes:new Set(), languages:new Set(), publishers:new Set()};
   const ICON_BASE='../assets/images/icons/', REVUE_IMAGE_BASE='../assets/images/revues/';
   const icons={open:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11v-4a4 4 0 0 1 7.8-1.25"/></svg>',closed:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11v-4a4 4 0 0 1 8 0v4"/></svg>',paper:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5a2.5 2.5 0 0 1 2.5-2.5h13.5"/><path d="M6.5 2h13.5v20h-13.5a2.5 2.5 0 0 1-2.5-2.5v-15a2.5 2.5 0 0 1 2.5-2.5z"/></svg>',digital:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4m0 2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z"/><path d="M8 20h8"/><path d="M12 18v2"/></svg>',world:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18"/><path d="M12.5 3a17 17 0 0 1 0 18"/></svg>'};
 
@@ -26,12 +26,10 @@
     const specs=[
       ['proximity','Niveau de proximité',r=>[r.mosar?.proximity_level?`Niveau ${r.mosar.proximity_level}`:'Non renseigné']],
       ['access','Accès',r=>[valueOrUnknown(r.mosar?.open_access)]],
-      ['fees','Frais de publication',r=>[valueOrUnknown(r.publication_fees)]],
       ['format','Format de publication',r=>[valueOrUnknown(r.publication_format)]],
       ['periodicity','Périodicité',r=>[valueOrUnknown(r.periodicity)]],
       ['themes','Thématiques',r=>listOrUnknown(r.themes)],
       ['languages','Langues',r=>(r.languages?.length?r.languages.map(langLabel):['Non renseigné'])],
-      ['countries','Pays de publication',r=>[valueOrUnknown(r.country||r.publication_country||r.country_name)]],
       ['publishers','Éditeur',r=>listOrUnknown(r.publishers)]
     ];
     const box=root.querySelector('.rx-facet-list');
@@ -47,7 +45,7 @@
   }
 
   function matchesSet(selected,vals){return !selected.size||vals.some(v=>selected.has(v));}
-  function recordValues(r){return {proximity:[r.mosar?.proximity_level?`Niveau ${r.mosar.proximity_level}`:'Non renseigné'],access:[valueOrUnknown(r.mosar?.open_access)],fees:[valueOrUnknown(r.publication_fees)],format:[valueOrUnknown(r.publication_format)],periodicity:[valueOrUnknown(r.periodicity)],themes:listOrUnknown(r.themes),languages:r.languages?.length?r.languages.map(langLabel):['Non renseigné'],countries:[valueOrUnknown(r.country||r.publication_country||r.country_name)],publishers:listOrUnknown(r.publishers)};}
+  function recordValues(r){return {proximity:[r.mosar?.proximity_level?`Niveau ${r.mosar.proximity_level}`:'Non renseigné'],access:[valueOrUnknown(r.mosar?.open_access)],format:[valueOrUnknown(r.publication_format)],periodicity:[valueOrUnknown(r.periodicity)],themes:listOrUnknown(r.themes),languages:r.languages?.length?r.languages.map(langLabel):['Non renseigné'],publishers:listOrUnknown(r.publishers)};}
   function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>matchesSet(state[k],v[k]));});}
   function sortRecords(rows){return [...rows].sort((a,b)=>{const parse=r=>{const n=parseInt(r.mosar?.proximity_level,10);return [Number.isInteger(n)&&n>=1&&n<=4?n:99,(r.title||'').toLocaleLowerCase('fr')];};const ka=parse(a),kb=parse(b);return ka[0]-kb[0]||ka[1].localeCompare(kb[1],'fr');});}
   function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size);}
