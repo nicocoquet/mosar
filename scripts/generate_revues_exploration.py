@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prototype d'exploration des revues : Mir@bel + enrichissements Mosar."""
+"""Explorateur des revues : métadonnées Mir@bel + enrichissements analytiques Mosar."""
 from __future__ import annotations
 
 import csv
@@ -39,7 +39,6 @@ def fetch_titles() -> list[dict]:
 
 
 def load_mosar() -> tuple[dict[int, dict], str]:
-    """Lit d'abord le XLSX cible ; utilise le CSV seulement tant que le XLSX du dépôt n'a pas la colonne."""
     try:
         from openpyxl import load_workbook
         ws = load_workbook(XLSX, data_only=True, read_only=True)["recencement"]
@@ -98,6 +97,25 @@ def normalize_open(value):
     return str(value).strip()
 
 
+def publication_format(issns):
+    supports = {str(x.get("support") or "").strip().casefold() for x in (issns or []) if isinstance(x, dict)}
+    supports.discard("")
+    has_paper = "papier" in supports
+    has_digital = "electronique" in supports or "électronique" in supports
+    if has_paper and has_digital: return "Papier et numérique"
+    if has_digital: return "Numérique"
+    if has_paper: return "Papier"
+    return None
+
+
+def external_links(t):
+    out = []
+    for item in t.get("liensext") or []:
+        if isinstance(item, (list, tuple)) and len(item) >= 2:
+            out.append({"url": item[0], "label": item[1]})
+    return out
+
+
 def title_label(t: dict) -> str:
     prefix = (t.get("prefixe") or "").strip()
     name = (t.get("titre") or "Titre sans nom").strip()
@@ -110,7 +128,6 @@ def main():
     themes_by_revue = {int(x["revueid"]): [t.get("nom") for t in x.get("themes", []) if t.get("nom")] for x in themes_payload}
     mosar, mosar_source = load_mosar()
 
-    # Un objet par revue : /titres?actif=1 fournit le titre courant ; on dédoublonne par revueid.
     by_revue: dict[int, dict] = {}
     duplicate_active_titles = Counter()
     for t in titles:
@@ -121,10 +138,11 @@ def main():
         duplicate_active_titles[rid] += 1
         if rid in by_revue:
             continue
-        issns = []
-        for item in t.get("issns") or []:
-            if isinstance(item, dict) and item.get("issn"):
-                issns.append(item["issn"])
+        issn_objects = t.get("issns") or []
+        issns = [x["issn"] for x in issn_objects if isinstance(x, dict) and x.get("issn")]
+        links = external_links(t)
+        ddh = next((x for x in links if str(x["label"]).strip().casefold() == "ddh"), None)
+        labels = [str(x).strip() for x in (t.get("labellisation") or []) if str(x).strip()]
         m = mosar.get(rid)
         by_revue[rid] = {
             "mirabel_id": rid,
@@ -133,16 +151,21 @@ def main():
             "issn": list(dict.fromkeys(issns)),
             "languages": t.get("langues") or [],
             "publishers": t.get("editeurs") or [],
-            "mirabel_periodicity": t.get("periodicite") or "",
+            "periodicity": (t.get("periodicite") or "").strip() or None,
+            "publication_format": publication_format(issn_objects),
+            # L'API Mir@bel 1.6.3 n'expose pas encore le champ visible « Frais de publication ».
+            # Le modèle est néanmoins prêt : la facette apparaîtra dès qu'une valeur API sera disponible.
+            "publication_fees": t.get("fraispublication") or t.get("frais_publication") or None,
+            "labels": labels,
+            "ddh": ddh,
             "themes": themes_by_revue.get(rid, []),
             "journal_url": t.get("url") or "",
             "mirabel_url": t.get("url_revue_mirabel") or f"https://reseau-mirabel.info/revue/{rid}",
+            "illustration": "../assets/images/revues/gallia-card.jpg" if rid == 853 else None,
             "mosar": None if not m else {
                 "proximity_level": str(m.get("niveau_rattachement") or "").strip(),
                 "open_access": normalize_open(m.get("acces_ouvert")),
                 "discipline": str(m.get("discipline") or "").strip(),
-                "periodicity": normalize_periodicity(m.get("periodicite")),
-                "format": str(m.get("format") or "").strip(),
                 "editorial_structure": str(m.get("type_editeur") or "").strip(),
                 "licence": str(m.get("licence") or "").strip(),
             },
