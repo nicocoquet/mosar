@@ -13,7 +13,7 @@ Le projet poursuit trois objectifs complémentaires :
 
 Ce dépôt contient le site web du projet et les traitements qui permettent de produire ses pages de données à partir du recensement Mosar et de sources externes.
 
-> **État de la documentation.** Ce README décrit l’architecture effectivement utilisée par Mosar à ce jour. La transformation de cette architecture en dispositif générique et configurable, réutilisable par d’autres organismes, constitue une étape ultérieure du projet et sera documentée lorsqu’elle sera opérationnelle.
+> **État de la documentation.** Ce README décrit l’architecture effectivement utilisée par le repository GitHub Mosar à ce jour. La transformation de cette architecture en dispositif générique et configurable, réutilisable par d’autres organismes, constitue une étape ultérieure du projet et sera documentée lorsqu’elle sera opérationnelle.
 
 ## Architecture générale
 
