@@ -71,24 +71,6 @@ def load_mosar() -> tuple[dict[int, dict], str]:
     return out, "CSV de prototype (extrait du XLSX fourni)"
 
 
-def normalize_periodicity(value):
-    if value is None or value == "": return "Non renseignée"
-    s = str(value).strip().lower().replace(",", ".")
-    if s == "parution continue": return "Parution continue"
-    if s == "parution irrégulière": return "Parution irrégulière"
-    try:
-        n = float(s)
-        if n == .5: return "Un numéro tous les deux ans"
-        if n == 1: return "Annuel"
-        if n == 2: return "Semestriel"
-        if n == 3: return "Quadrimestriel"
-        if n == 4: return "Trimestriel"
-        if n > 4: return "Plus de 4 numéros/an"
-    except ValueError:
-        pass
-    return str(value).strip()
-
-
 def normalize_open(value):
     if value is None: return None
     s = str(value).strip().casefold()
@@ -154,14 +136,15 @@ def main():
             "periodicity": (t.get("periodicite") or "").strip() or None,
             "publication_format": publication_format(issn_objects),
             # L'API Mir@bel 1.6.3 n'expose pas encore le champ visible « Frais de publication ».
-            # Le modèle est néanmoins prêt : la facette apparaîtra dès qu'une valeur API sera disponible.
             "publication_fees": t.get("fraispublication") or t.get("frais_publication") or None,
             "labels": labels,
             "ddh": ddh,
             "themes": themes_by_revue.get(rid, []),
             "journal_url": t.get("url") or "",
             "mirabel_url": t.get("url_revue_mirabel") or f"https://reseau-mirabel.info/revue/{rid}",
-            "illustration": "../assets/images/revues/gallia-card.jpg" if rid == 853 else None,
+            # Convention canonique : une image 900 × 300 px nommée avec l'ID Mir@bel.
+            # Le navigateur bascule sur default.jpg si l'image spécifique est absente.
+            "illustration": f"../assets/images/revues/{rid}.jpg",
             "mosar": None if not m else {
                 "proximity_level": str(m.get("niveau_rattachement") or "").strip(),
                 "open_access": normalize_open(m.get("acces_ouvert")),
