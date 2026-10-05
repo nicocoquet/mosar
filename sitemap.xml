@@ -22,13 +22,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/partenaires/"/>
     </url>
     <url>
-        <loc>https://nicocoquet.github.io/mosar/revues-exploration/</loc>
-        <lastmod>2026-10-05</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/revues-exploration/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/revues-exploration/"/>
-    </url>
-    <url>
         <loc>https://nicocoquet.github.io/mosar/statistiques/</loc>
         <lastmod>2026-10-05</lastmod>
         <changefreq>daily</changefreq>
@@ -55,13 +48,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/partenaires/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/partenaires/"/>
-    </url>
-    <url>
-        <loc>https://nicocoquet.github.io/mosar/en/revues-exploration/</loc>
-        <lastmod>2026-10-05</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/revues-exploration/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/revues-exploration/"/>
     </url>
     <url>
         <loc>https://nicocoquet.github.io/mosar/en/statistiques/</loc>
