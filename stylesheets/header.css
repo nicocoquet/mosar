@@ -51,17 +51,18 @@
     display: none;
   }
 
-  /* Identité compacte : logo rapproché et proportionné au bloc typographique. */
+  /* Identité compacte : logo et bloc typographique partagent le même axe vertical. */
   .md-header__inner {
     min-height: 2.35rem;
+    align-items: flex-start;
   }
 
   .md-header__button.md-logo {
     display: flex;
     align-items: center;
-    align-self: center;
+    align-self: flex-start;
     margin: 0;
-    padding: .28rem .22rem .28rem 0;
+    padding: .39rem .22rem 0 0;
   }
 
   .md-header__button.md-logo img,
