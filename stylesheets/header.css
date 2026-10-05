@@ -1,6 +1,20 @@
-/* Ajustements d’en-tête Mosar : hiérarchie titre/sous-titre et navigation mobile. */
+/* ==========================================================================
+   Mosar — en-tête Material for MkDocs
+   ========================================================================== */
 
-/* En-tête : titre et sous-titre sur deux lignes, dans l’esprit du pipeline AdlFI. */
+/*
+ * Cette feuille constitue la principale couche de couplage entre l'identité
+ * graphique Mosar et la structure HTML du thème Material for MkDocs.
+ *
+ * Les sélecteurs .md-* ci-dessous dépendent du DOM et des breakpoints de
+ * Material. Ils devront donc être contrôlés lors de toute mise à jour majeure
+ * du thème ou lors d'une migration vers un autre générateur de site.
+ */
+
+/* --------------------------------------------------------------------------
+   1. Identité : titre et sous-titre
+   -------------------------------------------------------------------------- */
+
 .md-header__title {
   display: flex;
   align-items: flex-start;
@@ -26,6 +40,10 @@
   white-space: nowrap;
 }
 
+/*
+ * Material n'expose pas nativement le sous-titre dans cette zone : il est
+ * donc ajouté visuellement par CSS. Le texte éditorial reste défini ici.
+ */
 .md-header__title .md-header__topic:first-child::after {
   content: "Modèle ouvert de soutien et d’accompagnement des revues";
   display: block;
@@ -37,21 +55,31 @@
   white-space: nowrap;
 }
 
-/* Tiroir de navigation mobile : même teinte terre cuite que l’en-tête. */
+/* --------------------------------------------------------------------------
+   2. Navigation mobile
+   -------------------------------------------------------------------------- */
+
+/* Tiroir mobile : même teinte terre cuite que l'en-tête principal. */
 .md-nav--primary .md-nav__title[for="__drawer"] {
   background-color: var(--mosar-brand);
   color: #fff;
 }
 
-/* La navigation primaire est inutile sur grand écran puisque les rubriques
-   sont déjà exposées par les onglets, mais elle doit rester disponible dans le
-   tiroir mobile de Material for MkDocs. */
+/* --------------------------------------------------------------------------
+   3. Grand écran
+   -------------------------------------------------------------------------- */
+
+/*
+ * 76.25em est le breakpoint structurel utilisé par Material pour le passage
+ * entre navigation latérale/mobile et navigation desktop.
+ */
 @media (min-width: 76.25em) {
+  /* Les rubriques sont déjà exposées par les onglets : pas de sidebar desktop. */
   .md-sidebar--primary {
     display: none;
   }
 
-  /* Identité compacte : logo et bloc typographique partagent le même axe vertical. */
+  /* Logo et bloc typographique partagent le même axe vertical. */
   .md-header__inner {
     min-height: 2.35rem;
     align-items: flex-start;
@@ -88,7 +116,7 @@
     line-height: 1.08;
   }
 
-  /* Deuxième niveau du header : navigation plus proche de l’identité. */
+  /* Deuxième niveau du header : navigation compacte. */
   .md-tabs,
   .md-tabs__list,
   .md-tabs__item {
@@ -105,11 +133,15 @@
     font-size: .66rem;
   }
 
-  /* Le contenu remonte pour profiter de la hauteur récupérée. */
+  /* Le contenu remonte pour profiter de la hauteur récupérée dans le header. */
   .md-main__inner {
     margin-top: .75rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   4. Écrans intermédiaires et mobiles
+   -------------------------------------------------------------------------- */
 
 @media (max-width: 76.24em) {
   .md-sidebar--primary {
@@ -131,7 +163,7 @@
     white-space: normal;
   }
 
-  /* Sur téléphone, on conserve uniquement le titre pour libérer l’espace. */
+  /* Sur téléphone, seul le titre est conservé pour libérer l'espace. */
   .md-header__title .md-header__topic:first-child::after {
     display: none;
     content: none;
