@@ -90,6 +90,15 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-weight: 800;
 }
 
+/* Titres courts des pages de premier niveau : même gabarit que Statistiques. */
+.page-title-compact {
+  margin: 0 0 .45rem !important;
+  color: var(--mosar-ink) !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+}
+
 .partner-card {
   display: grid;
   grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
@@ -381,7 +390,8 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
     margin: .55rem 0;
   }
 
-  .statistics-page-title {
+  .statistics-page-title,
+  .page-title-compact {
     text-align: center;
   }
 
