@@ -1,84 +1,5 @@
 /* Ajustements d’en-tête Mosar : hiérarchie titre/sous-titre et navigation mobile. */
 
-/* La navigation primaire est inutile sur grand écran puisque les rubriques
-   sont déjà exposées par les onglets, mais elle doit rester disponible dans le
-   tiroir mobile de Material for MkDocs. */
-@media (min-width: 76.25em) {
-  .md-sidebar--primary {
-    display: none;
-  }
-
-  /*
-   * Desktop : l’identité reste sur deux niveaux, mais l’ensemble est volontairement
-   * compact afin de préserver la hauteur utile sur les écrans d’ordinateur portable.
-   */
-  .md-header__inner {
-    min-height: 2.35rem;
-  }
-
-  .md-header__button.md-logo {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    margin: 0;
-    padding: .28rem .22rem .28rem 0;
-  }
-
-  .md-header__button.md-logo img,
-  .md-header__button.md-logo svg {
-    width: 1.62rem;
-    height: 1.62rem;
-  }
-
-  .md-header__title {
-    min-height: 2.2rem;
-    margin-left: .32rem;
-    padding-top: .18rem;
-  }
-
-  .md-header__title .md-header__topic:first-child {
-    font-size: .88rem;
-    line-height: 1.04;
-  }
-
-  .md-header__title .md-header__topic:first-child::after {
-    margin-top: .12rem;
-    font-size: .53rem;
-    line-height: 1.08;
-  }
-
-  /* Deuxième niveau du header : navigation plus proche de l’identité. */
-  .md-tabs {
-    height: 1.9rem;
-  }
-
-  .md-tabs__list {
-    height: 1.9rem;
-  }
-
-  .md-tabs__item {
-    height: 1.9rem;
-    padding-right: .85rem;
-    padding-left: .85rem;
-  }
-
-  .md-tabs__link {
-    margin-top: .48rem;
-    font-size: .66rem;
-  }
-
-  /* Le contenu n’a plus besoin de compenser un en-tête aussi haut. */
-  .md-main__inner {
-    margin-top: .75rem;
-  }
-}
-
-@media (max-width: 76.24em) {
-  .md-sidebar--primary {
-    display: block;
-  }
-}
-
 /* En-tête : titre et sous-titre sur deux lignes, dans l’esprit du pipeline AdlFI. */
 .md-header__title {
   display: flex;
@@ -120,6 +41,79 @@
 .md-nav--primary .md-nav__title[for="__drawer"] {
   background-color: var(--mosar-brand);
   color: #fff;
+}
+
+/* La navigation primaire est inutile sur grand écran puisque les rubriques
+   sont déjà exposées par les onglets, mais elle doit rester disponible dans le
+   tiroir mobile de Material for MkDocs. */
+@media (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+
+  /* Identité compacte : logo rapproché et proportionné au bloc typographique. */
+  .md-header__inner {
+    min-height: 2.35rem;
+  }
+
+  .md-header__button.md-logo {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin: 0;
+    padding: .28rem .22rem .28rem 0;
+  }
+
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    width: 1.62rem;
+    height: 1.62rem;
+  }
+
+  .md-header__title {
+    min-height: 2.2rem;
+    margin-left: .32rem;
+    padding-top: .18rem;
+  }
+
+  .md-header__title .md-header__topic:first-child {
+    font-size: .88rem;
+    line-height: 1.04;
+  }
+
+  .md-header__title .md-header__topic:first-child::after {
+    margin-top: .12rem;
+    font-size: .53rem;
+    line-height: 1.08;
+  }
+
+  /* Deuxième niveau du header : navigation plus proche de l’identité. */
+  .md-tabs,
+  .md-tabs__list,
+  .md-tabs__item {
+    height: 1.9rem;
+  }
+
+  .md-tabs__item {
+    padding-right: .85rem;
+    padding-left: .85rem;
+  }
+
+  .md-tabs__link {
+    margin-top: .48rem;
+    font-size: .66rem;
+  }
+
+  /* Le contenu remonte pour profiter de la hauteur récupérée. */
+  .md-main__inner {
+    margin-top: .75rem;
+  }
+}
+
+@media (max-width: 76.24em) {
+  .md-sidebar--primary {
+    display: block;
+  }
 }
 
 @media (max-width: 700px) {
