@@ -1,5 +1,4 @@
-# Contacts
-{ .page-title-compact }
+# Contacts { .page-title-compact }
 
 <div class="partner-card" markdown="1">
 <div class="partner-logo" markdown="1">
