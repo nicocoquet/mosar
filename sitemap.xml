@@ -36,13 +36,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/statistiques/"/>
     </url>
     <url>
-        <loc>https://nicocoquet.github.io/mosar/assets/images/icons/test/</loc>
-        <lastmod>2026-10-05</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/assets/images/icons/test/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/images/icons/test/"/>
-    </url>
-    <url>
         <loc>https://nicocoquet.github.io/mosar/en/</loc>
         <lastmod>2026-10-05</lastmod>
         <changefreq>daily</changefreq>
@@ -76,12 +69,5 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/statistiques/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/statistiques/"/>
-    </url>
-    <url>
-        <loc>https://nicocoquet.github.io/mosar/en/assets/images/icons/test/</loc>
-        <lastmod>2026-10-05</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/assets/images/icons/test/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/assets/images/icons/test/"/>
     </url>
 </urlset>
