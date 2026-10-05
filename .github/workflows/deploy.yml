@@ -50,6 +50,9 @@ jobs:
       - name: Actualiser la grappe Mir@bel
         run: python scripts/generate_mirabel_cluster.py
 
+      - name: Générer le prototype Revues — exploration
+        run: python scripts/generate_revues_exploration.py
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
