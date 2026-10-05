@@ -1,3 +1,17 @@
+/* ==========================================================================
+   Mosar — styles globaux
+   ========================================================================== */
+
+/*
+ * Cette feuille définit l'identité visuelle et les composants de contenu
+ * transversaux du site. Les adaptations propres au DOM de Material for MkDocs
+ * sont, autant que possible, isolées dans header.css.
+ */
+
+/* --------------------------------------------------------------------------
+   1. Identité visuelle et couleurs sémantiques
+   -------------------------------------------------------------------------- */
+
 :root {
   --mosar-brand: #b74f17;
   --mosar-blue-1: #07558c;
@@ -7,13 +21,9 @@
   --mosar-ink: #08264a;
   --mosar-panel: #f2f7fc;
   --mosar-border: #dce7f2;
-  --md-primary-fg-color: var(--mosar-brand);
-}
-
-[data-md-color-scheme="slate"] {
-  --mosar-ink: #f1f6fb;
-  --mosar-panel: #132536;
-  --mosar-border: #33495d;
+  --mosar-success: #2f7f25;
+  --mosar-danger: #b42318;
+  --mosar-level: #4f7fa3;
   --md-primary-fg-color: var(--mosar-brand);
 }
 
@@ -22,10 +32,14 @@
   background-color: var(--mosar-brand);
 }
 
-.md-sidebar--primary {
-  display: none;
-}
+/* --------------------------------------------------------------------------
+   2. Sélecteur de langue
+   -------------------------------------------------------------------------- */
 
+/*
+ * Le sélecteur i18n de Material conserve son comportement natif ; seules les
+ * icônes sont remplacées par les drapeaux FR/EN du projet.
+ */
 .md-header__option .md-select > .md-header__button {
   width: 2rem;
   background-position: center;
@@ -65,32 +79,16 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   display: none;
 }
 
-.md-header__title {
-  height: auto;
-  line-height: 1.15;
-}
-
-.md-header__title .md-header__topic:first-child {
-  font-weight: 800;
-  padding-top: .18rem;
-}
-
-.md-header__title .md-header__topic:first-child::after {
-  content: "Modèle ouvert de soutien et d’accompagnement des revues";
-  display: block;
-  margin-top: .08rem;
-  font-size: .5rem;
-  font-weight: 400;
-  line-height: 1.15;
-  opacity: .82;
-}
+/* --------------------------------------------------------------------------
+   3. Typographie et titres de pages
+   -------------------------------------------------------------------------- */
 
 .md-typeset h1 {
   color: var(--mosar-ink);
   font-weight: 800;
 }
 
-/* Titres courts des pages de premier niveau : même gabarit que Statistiques. */
+/* Gabarit commun aux titres courts des pages de premier niveau. */
 .page-title-compact {
   margin: 0 0 .45rem !important;
   color: var(--mosar-ink) !important;
@@ -98,6 +96,22 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-weight: 800 !important;
   line-height: 1.25;
 }
+
+/*
+ * Classe historique encore utilisée par la page Statistiques. Elle partage
+ * volontairement le même gabarit que .page-title-compact jusqu'à migration du
+ * balisage généré.
+ */
+.statistics-page-title {
+  margin: 0 0 .45rem !important;
+  color: var(--mosar-ink);
+  font-size: 1.1rem !important;
+  line-height: 1.25;
+}
+
+/* --------------------------------------------------------------------------
+   4. Contacts et partenaires
+   -------------------------------------------------------------------------- */
 
 .partner-card {
   display: grid;
@@ -175,12 +189,9 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   height: .92em;
 }
 
-.statistics-page-title {
-  margin: 0 0 .45rem !important;
-  color: var(--mosar-ink);
-  font-size: 1.1rem !important;
-  line-height: 1.25;
-}
+/* --------------------------------------------------------------------------
+   5. Page Statistiques
+   -------------------------------------------------------------------------- */
 
 .statistics-intro {
   max-width: 860px;
@@ -221,6 +232,10 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-size: .76rem;
 }
 
+/* --------------------------------------------------------------------------
+   6. Graphiques statistiques
+   -------------------------------------------------------------------------- */
+
 .chart-block {
   display: flex;
   flex-direction: column;
@@ -237,7 +252,9 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   align-items: center;
 }
 
-.chart-shell { min-width: 0; }
+.chart-shell {
+  min-width: 0;
+}
 
 .proximity-chart {
   display: block;
@@ -260,9 +277,19 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   font-weight: 800;
 }
 
-.pie-label { font-size: 16px; }
-.summary-title { font-size: 16px; fill: var(--mosar-ink); }
-.summary-value { font-size: 27px; fill: var(--mosar-ink); }
+.pie-label {
+  font-size: 16px;
+}
+
+.summary-title {
+  font-size: 16px;
+  fill: var(--mosar-ink);
+}
+
+.summary-value {
+  font-size: 27px;
+  fill: var(--mosar-ink);
+}
 
 .summary-rect {
   fill: var(--mosar-panel);
@@ -281,9 +308,9 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   width: 100%;
   max-width: 425px;
   padding: .7rem .85rem;
-  background: var(--mosar-panel);
   border: 1px solid var(--mosar-border);
   border-radius: .65rem;
+  background: var(--mosar-panel);
   font-size: .72rem;
   line-height: 1.28;
 }
@@ -296,15 +323,23 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   margin: .38rem 0;
 }
 
-.legend-item:first-child { margin-top: 0; }
-.legend-item:last-child { margin-bottom: 0; }
-.legend-item p { margin: 0; }
+.legend-item:first-child {
+  margin-top: 0;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-item p {
+  margin: 0;
+}
 
 .legend-dot {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
   margin-top: .16rem;
+  border-radius: 50%;
 }
 
 .level-1 { background: var(--mosar-blue-1); }
@@ -312,14 +347,18 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 .level-3 { background: var(--mosar-blue-3); }
 .level-4 { background: var(--mosar-blue-4); }
 
+/* --------------------------------------------------------------------------
+   7. Téléchargement des graphiques
+   -------------------------------------------------------------------------- */
+
 .chart-actions {
   order: 2;
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: .35rem;
   width: 540px;
   max-width: 100%;
+  flex-wrap: wrap;
+  gap: .35rem;
+  justify-content: flex-start;
   margin: .45rem 0 0;
   padding-left: .25rem;
 }
@@ -359,7 +398,13 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
   stroke-linejoin: round;
 }
 
-.chart-download:hover { border-color: var(--mosar-blue-2); }
+.chart-download:hover {
+  border-color: var(--mosar-blue-2);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive
+   -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
   .chart-layout {
@@ -369,12 +414,6 @@ html[lang^="en"] .md-select__item:has(.md-select__link[hreflang="en"]) {
 }
 
 @media (max-width: 700px) {
-  .md-header__title .md-header__topic:first-child::after {
-    font-size: .42rem;
-    max-width: 16rem;
-    white-space: normal;
-  }
-
   .partner-card {
     grid-template-columns: 1fr;
     gap: .8rem;
