@@ -16,7 +16,7 @@ XLSX = Path("data/Recensement-revues-stat.xlsx")
 FALLBACK = Path("data/mirabel/mosar-test-enrichment.csv")
 OUT_JSON = Path("docs/assets/data/revues-exploration.json")
 OUT_REPORT = Path("data/revues/join-report.json")
-OUT_MD = Path("docs/mirabel.md")
+OUT_MD = Path("docs/revues.md")
 
 
 def api_json(path: str):
@@ -149,7 +149,8 @@ def main():
     OUT_JSON.parent.mkdir(parents=True,exist_ok=True); OUT_REPORT.parent.mkdir(parents=True,exist_ok=True)
     OUT_JSON.write_text(json.dumps({"meta":report,"records":records},ensure_ascii=False,indent=2),encoding="utf-8")
     OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
-    OUT_MD.write_text('''---\nhide:\n  - toc\n---\n# Revues\n\n<!-- Introduction de la page Revues : à remplacer par le texte éditorial définitif. -->\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
+    refresh_date = report["generated_at"][:10]
+    OUT_MD.write_text(f'''---\nhide:\n  - toc\n---\n# Revues\n\nCette page est un **prototype d’intégration** des données de <img src="../assets/logos/logo_mirabel.png" alt="Mir@bel" style="height:1.45em;width:auto;vertical-align:-0.35em;margin:0 .12em;"> dans le site Mosar.\nElle teste l’articulation entre les métadonnées de la grappe Mir@bel n° 15 « PCP Sciences de l’Antiquité et Archéologie » et les données analytiques propres au projet Mosar.\n\nDernière actualisation : **{refresh_date}** (API Mir@bel).  \n> [Consulter la grappe sur Mir@bel](https://reseau-mirabel.info/grappe/15/PCP-Sciences-de-l-Antiquite-et-Archeologie){{ target="_blank" }}\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
 
 if __name__ == "__main__": main()
