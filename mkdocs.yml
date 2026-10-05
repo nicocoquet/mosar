@@ -4,7 +4,7 @@ site_url: https://nicocoquet.github.io/mosar/
 
 nav:
   - Home: index.md
-  - Journals: mirabel.md
+  - Journals: revues.md
   - Statistics: statistiques.md
   - Contacts: partenaires.md
 theme:
