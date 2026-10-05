@@ -2,6 +2,9 @@
   const root = document.getElementById('revues-explorer');
   if (!root) return;
   const source = root.dataset.source;
+  const DEFAULT_IMAGE = '../assets/images/revues/default.jpg';
+  const ICON_MIRABEL = '../assets/images/icons/picto_mirabel.png';
+  const ICON_DDH = '../assets/images/icons/picto_ddh.png';
   const esc = (s='') => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const LANG = {fre:'Français',fra:'Français',eng:'Anglais',deu:'Allemand',ger:'Allemand',ita:'Italien',spa:'Espagnol',por:'Portugais',dut:'Néerlandais',nld:'Néerlandais',cat:'Catalan',pol:'Polonais',rus:'Russe',ara:'Arabe',gre:'Grec moderne',ell:'Grec moderne',lat:'Latin',tur:'Turc',rum:'Roumain',ron:'Roumain',hun:'Hongrois',cze:'Tchèque',ces:'Tchèque',slo:'Slovaque',slk:'Slovaque',hrv:'Croate',srp:'Serbe',slv:'Slovène',bul:'Bulgare',ukr:'Ukrainien',heb:'Hébreu',jpn:'Japonais',chi:'Chinois',zho:'Chinois'};
   const langLabel = code => LANG[String(code).toLowerCase()] || String(code).toUpperCase();
@@ -71,7 +74,7 @@
       if(label.toLowerCase().includes('ddh diamond journal')) out.push(`<span class="rx-label rx-label--diamond" title="Labellisation : Diamond journal"><span aria-hidden="true">◆</span> Diamond journal</span>`);
       else out.push(`<span class="rx-label">${esc(label)}</span>`);
     });
-    if(r.ddh?.url) out.push(`<a class="rx-label rx-label--ddh" href="${esc(r.ddh.url)}" target="_blank" rel="noopener" title="Voir la revue dans le Directory of Diamond Journals"><span aria-hidden="true">◇</span> DDH</a>`);
+    if(r.ddh?.url) out.push(`<a class="rx-label rx-label--ddh" href="${esc(r.ddh.url)}" target="_blank" rel="noopener" title="Voir la revue dans le Diamond Discovery Hub"><img src="${ICON_DDH}" alt="" aria-hidden="true"> <span>DDH</span></a>`);
     return out.join('');
   }
 
@@ -81,7 +84,7 @@
     const cards=root.querySelector('.rx-cards');
     if(!rows.length){ cards.innerHTML='<div class="rx-empty">Aucune revue ne correspond aux filtres sélectionnés.</div>'; return; }
     cards.innerHTML=rows.map(r=>{
-      const illustration = r.illustration ? `<div class="rx-card-visual"><img src="${esc(r.illustration)}" alt="" loading="lazy"></div>` : `<div class="rx-card-visual rx-card-visual--empty" aria-hidden="true"></div>`;
+      const illustration = `<div class="rx-card-visual"><img src="${esc(r.illustration || DEFAULT_IMAGE)}" data-fallback="${DEFAULT_IMAGE}" alt="" loading="lazy"></div>`;
       const top=[]; if(r.mosar?.proximity_level) top.push(`<span class="rx-proximity">Niveau ${esc(r.mosar.proximity_level)}</span>`);
       const details=[];
       if(r.publishers?.length) details.push(`<span>${esc(r.publishers.join(', '))}</span>`);
@@ -91,8 +94,12 @@
       if(r.mosar?.open_access) signals.push(`<span class="rx-signal rx-signal--access">${icon('open')}<span>${esc(r.mosar.open_access)}</span></span>`);
       if(r.publication_format) signals.push(formatMark(r.publication_format));
       const labels=labelMarks(r);
-      const links=[`<a href="${esc(r.mirabel_url)}" target="_blank" rel="noopener">Mir@bel ↗</a>`]; if(r.journal_url) links.unshift(`<a href="${esc(r.journal_url)}" target="_blank" rel="noopener">Site web ↗</a>`);
-      return `<article class="rx-card">${illustration}<div class="rx-card-body"><div class="rx-card-top">${top.join('')}</div><h2>${esc(r.title)}</h2><div class="rx-card-details">${details.join('<span class="rx-dot">·</span>')}</div><div class="rx-signals">${signals.join('')}</div>${labels?`<div class="rx-labels">${labels}</div>`:''}<div class="rx-card-foot"><span class="rx-issn">${r.issn?.length?`ISSN ${esc(r.issn.join(', '))}`:''}</span><span class="rx-links">${links.join('')}</span></div></div></article>`;
+      const mirabelLink=`<a class="rx-source-link" href="${esc(r.mirabel_url)}" target="_blank" rel="noopener" title="Voir la notice Mir@bel"><img src="${ICON_MIRABEL}" alt="Mir@bel"></a>`;
+      const links=[]; if(r.journal_url) links.push(`<a href="${esc(r.journal_url)}" target="_blank" rel="noopener">Site web ↗</a>`);
+      return `<article class="rx-card">${illustration}<div class="rx-card-body"><div class="rx-card-top">${top.join('')}</div><h2>${esc(r.title)}</h2><div class="rx-card-details">${details.join('<span class="rx-dot">·</span>')}</div><div class="rx-signals">${signals.join('')}</div>${labels?`<div class="rx-labels">${labels}</div>`:''}<div class="rx-card-foot"><span class="rx-issn">${r.issn?.length?`ISSN ${esc(r.issn.join(', '))}`:''}</span><span class="rx-links">${links.join('')}${mirabelLink}</span></div></div></article>`;
     }).join('');
+    cards.querySelectorAll('.rx-card-visual img[data-fallback]').forEach(img=>{
+      img.addEventListener('error',()=>{ if(img.src.endsWith('/default.jpg')) return; img.src=img.dataset.fallback; },{once:true});
+    });
   }
 })();
