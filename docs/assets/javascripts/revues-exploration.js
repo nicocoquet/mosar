@@ -6,6 +6,8 @@
   const LANG = {fre:'Français',fra:'Français',eng:'Anglais',deu:'Allemand',ger:'Allemand',ita:'Italien',spa:'Espagnol',por:'Portugais',dut:'Néerlandais',nld:'Néerlandais',cat:'Catalan',pol:'Polonais',rus:'Russe',ara:'Arabe',gre:'Grec moderne',ell:'Grec moderne',lat:'Latin',tur:'Turc',rum:'Roumain',ron:'Roumain',hun:'Hongrois',cze:'Tchèque',ces:'Tchèque',slo:'Slovaque',slk:'Slovaque',hrv:'Croate',srp:'Serbe',slv:'Slovène',bul:'Bulgare',ukr:'Ukrainien',heb:'Hébreu',jpn:'Japonais',chi:'Chinois',zho:'Chinois'};
   const langLabel = code => LANG[String(code).toLowerCase()] || String(code).toUpperCase();
   const state = {q:'', proximity:new Set(), access:new Set(), fees:new Set(), periodicity:new Set(), format:new Set(), themes:new Set(), languages:new Set()};
+  const ICON_BASE = '../assets/images/icons/';
+  const REVUE_IMAGE_BASE = '../assets/images/revues/';
 
   fetch(source).then(r => { if(!r.ok) throw new Error(r.status); return r.json(); }).then(data => init(data)).catch(err => { root.innerHTML = `<p>Impossible de charger les données (${esc(err.message)}).</p>`; });
 
@@ -71,7 +73,7 @@
       if(label.toLowerCase().includes('ddh diamond journal')) out.push(`<span class="rx-label rx-label--diamond" title="Labellisation : Diamond journal"><span aria-hidden="true">◆</span> Diamond journal</span>`);
       else out.push(`<span class="rx-label">${esc(label)}</span>`);
     });
-    if(r.ddh?.url) out.push(`<a class="rx-label rx-label--ddh" href="${esc(r.ddh.url)}" target="_blank" rel="noopener" title="Voir la revue dans le Directory of Diamond Journals"><span aria-hidden="true">◇</span> DDH</a>`);
+    if(r.ddh?.url) out.push(`<a class="rx-label rx-label--ddh" href="${esc(r.ddh.url)}" target="_blank" rel="noopener" title="Voir la revue dans le Diamond Discovery Hub"><img class="rx-brand-icon" src="${ICON_BASE}picto_ddh.png" alt="">DDH</a>`);
     return out.join('');
   }
 
@@ -81,7 +83,9 @@
     const cards=root.querySelector('.rx-cards');
     if(!rows.length){ cards.innerHTML='<div class="rx-empty">Aucune revue ne correspond aux filtres sélectionnés.</div>'; return; }
     cards.innerHTML=rows.map(r=>{
-      const illustration = r.illustration ? `<div class="rx-card-visual"><img src="${esc(r.illustration)}" alt="" loading="lazy"></div>` : `<div class="rx-card-visual rx-card-visual--empty" aria-hidden="true"></div>`;
+      const specific = `${REVUE_IMAGE_BASE}${encodeURIComponent(r.mirabel_id)}.jpg`;
+      const fallback = `${REVUE_IMAGE_BASE}default.jpg`;
+      const illustration = `<div class="rx-card-visual"><img src="${specific}" data-fallback="${fallback}" alt="" loading="lazy"></div>`;
       const top=[]; if(r.mosar?.proximity_level) top.push(`<span class="rx-proximity">Niveau ${esc(r.mosar.proximity_level)}</span>`);
       const details=[];
       if(r.publishers?.length) details.push(`<span>${esc(r.publishers.join(', '))}</span>`);
@@ -91,8 +95,15 @@
       if(r.mosar?.open_access) signals.push(`<span class="rx-signal rx-signal--access">${icon('open')}<span>${esc(r.mosar.open_access)}</span></span>`);
       if(r.publication_format) signals.push(formatMark(r.publication_format));
       const labels=labelMarks(r);
-      const links=[`<a href="${esc(r.mirabel_url)}" target="_blank" rel="noopener">Mir@bel ↗</a>`]; if(r.journal_url) links.unshift(`<a href="${esc(r.journal_url)}" target="_blank" rel="noopener">Site web ↗</a>`);
+      const links=[`<a class="rx-mirabel-link" href="${esc(r.mirabel_url)}" target="_blank" rel="noopener" title="Voir la revue dans Mir@bel"><img class="rx-brand-icon" src="${ICON_BASE}picto_mirabel.png" alt="">Mir@bel</a>`];
+      if(r.journal_url) links.unshift(`<a href="${esc(r.journal_url)}" target="_blank" rel="noopener">Site web ↗</a>`);
       return `<article class="rx-card">${illustration}<div class="rx-card-body"><div class="rx-card-top">${top.join('')}</div><h2>${esc(r.title)}</h2><div class="rx-card-details">${details.join('<span class="rx-dot">·</span>')}</div><div class="rx-signals">${signals.join('')}</div>${labels?`<div class="rx-labels">${labels}</div>`:''}<div class="rx-card-foot"><span class="rx-issn">${r.issn?.length?`ISSN ${esc(r.issn.join(', '))}`:''}</span><span class="rx-links">${links.join('')}</span></div></div></article>`;
     }).join('');
+    cards.querySelectorAll('.rx-card-visual img[data-fallback]').forEach(img => {
+      img.addEventListener('error', () => {
+        const fallback = img.dataset.fallback;
+        if (fallback && img.getAttribute('src') !== fallback) img.setAttribute('src', fallback);
+      }, {once:true});
+    });
   }
 })();
