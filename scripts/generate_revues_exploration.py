@@ -11,6 +11,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from config import load_config, project_path
+from mosar_model import PROXIMITY_LEVELS
 from revues_model import build_record, proximity_sort_key
 
 CONFIG = load_config()
@@ -101,7 +102,18 @@ def main():
     cluster_ids=set(by_revue); mosar_ids=set(mosar); matched=sorted(cluster_ids & mosar_ids)
     report={"generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),"cluster_id":GRAPPE_ID,"mirabel_active_titles":len(titles),"mirabel_unique_reviews":len(records),"mosar_source":mosar_source,"mosar_ids":len(mosar_ids),"matched_ids":matched,"matched_count":len(matched),"mirabel_without_mosar_count":len(cluster_ids-mosar_ids),"mosar_outside_cluster_ids":sorted(mosar_ids-cluster_ids),"duplicate_active_title_review_ids":sorted(rid for rid,n in duplicate_active_titles.items() if n>1)}
     OUT_JSON.parent.mkdir(parents=True,exist_ok=True); OUT_REPORT.parent.mkdir(parents=True,exist_ok=True)
-    OUT_JSON.write_text(json.dumps({"meta":report,"records":records},ensure_ascii=False,indent=2),encoding="utf-8")
+    OUT_JSON.write_text(
+        json.dumps(
+            {
+                "meta": report,
+                "model": {"proximity_levels": list(PROXIMITY_LEVELS)},
+                "records": records,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     refresh_date = report["generated_at"][:10]
     OUT_MD.write_text(f'''---\nhide:\n  - toc\n---\n# Revues {{ .page-title-compact }}\n\nCette page est un **prototype d’intégration** des données de <img src="../assets/logos/logo_mirabel.png" alt="Mir@bel" style="height:1.45em;width:auto;vertical-align:-0.35em;margin:0 .12em;"> dans le site Mosar.\nElle teste l’articulation entre les métadonnées de la grappe Mir@bel n° {GRAPPE_ID} « {GRAPPE_NAME} » et les données analytiques propres au projet {PROJECT_NAME}.\n\n<p class="revues-source-link"><a href="{GRAPPE_URL}" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>\n<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-config.js" defer></script>\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
