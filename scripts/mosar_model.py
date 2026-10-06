@@ -22,6 +22,18 @@ PROX_DEFS = {
 
 PROXIMITY_LEVELS = tuple(PROX_DEFS["fr"])
 
+
+def proximity_sort_key(record):
+    """Trie les revues selon le niveau de proximité Mosar puis le titre."""
+    raw = ((record.get("mosar") or {}).get("proximity_level") or "").strip()
+    try:
+        level = int(raw)
+        if level not in PROXIMITY_LEVELS:
+            level = 99
+    except (TypeError, ValueError):
+        level = 99
+    return level, record["title"].casefold()
+
 DISCIPLINE_MAP = {
     "Histoire": "Histoire", "Pluridisciplinaire": "Pluridisciplinaire", "Archéologie": "Archéologie", "Droit": "Droit", "Science politique": "Sciences politiques",
     "Économie": "Économie, gestion, finance, marketing", "Littérature": "Littérature", "Philosophie": "Philosophie", "Géographie": "Géographie", "Études des aires culturelles": "Études des aires culturelles",
