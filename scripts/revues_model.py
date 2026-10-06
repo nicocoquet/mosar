@@ -5,8 +5,6 @@ métadonnées déjà chargées en enregistrements publiables par l'explorateur.
 """
 from __future__ import annotations
 
-from mosar_model import PROXIMITY_LEVELS
-
 
 def normalize_open(value):
     if value is None:
@@ -70,17 +68,6 @@ def country_value(title):
                 values.append(str(item))
         return ", ".join(item for item in values if item) or None
     return str(value).strip() if value not in (None, "") else None
-
-
-def proximity_sort_key(record):
-    raw = ((record.get("mosar") or {}).get("proximity_level") or "").strip()
-    try:
-        level = int(raw)
-        if level not in PROXIMITY_LEVELS:
-            level = 99
-    except (TypeError, ValueError):
-        level = 99
-    return level, record["title"].casefold()
 
 
 def build_record(title, themes, mosar_data):
