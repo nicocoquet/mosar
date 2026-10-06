@@ -3,13 +3,12 @@ from pathlib import Path
 
 from openpyxl import Workbook, load_workbook
 
-SHEET = "recencement"
-FORBIDDEN_COLUMNS = {
-    "Contacts",
-    "Divers",
-    "Questionnaire envoyé le",
-    "Réponse reçue le",
-}
+from config import load_config, project_path
+
+CONFIG = load_config()
+SHEET = CONFIG["data"]["sheet"]
+FORBIDDEN_COLUMNS = set(CONFIG["privacy"]["forbidden_columns"])
+DEFAULT_OUTPUT = project_path(CONFIG["data"]["file"])
 
 
 def normalize_header(value):
@@ -74,7 +73,7 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/Recensement-revues-stat.xlsx"),
+        default=DEFAULT_OUTPUT,
     )
     parser.add_argument("--check", type=Path)
     args = parser.parse_args()
