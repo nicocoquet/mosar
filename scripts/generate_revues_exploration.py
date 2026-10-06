@@ -11,8 +11,8 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from config import load_config, project_path
-from mosar_model import PROXIMITY_LEVELS
-from revues_model import build_record, proximity_sort_key
+from mosar_model import PROXIMITY_LEVELS, proximity_sort_key
+from revues_model import build_record
 
 CONFIG = load_config()
 COLUMNS = CONFIG["columns"]
