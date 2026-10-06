@@ -39,6 +39,12 @@ REQUIRED_MOSAR_KEYS = {
 def main():
     payload = json.loads(SOURCE.read_text(encoding="utf-8"))
     assert isinstance(payload.get("meta"), dict), "Bloc meta absent ou invalide"
+    model = payload.get("model")
+    assert isinstance(model, dict), "Bloc model absent ou invalide"
+    assert model.get("proximity_levels") == list(PROXIMITY_LEVELS), (
+        "Les niveaux de proximité publiés divergent du modèle Mosar"
+    )
+
     records = payload.get("records")
     assert isinstance(records, list), "Bloc records absent ou invalide"
 
