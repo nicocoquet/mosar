@@ -77,3 +77,75 @@ PERIODICITY_LABELS = {
     3: "Quadrimestriel (3 nᵒˢ/an)",
     4: "Trimestriel (4 nᵒˢ/an)",
 }
+
+
+PERIODICITY_SPECIAL_LABELS = {
+    "irrégulier": "Parution irrégulière",
+    "parution continue": "Parution continue",
+}
+PERIODICITY_ABOVE_FOUR_LABEL = "Plus de 4 nᵒˢ/an"
+
+
+def creation_period(year):
+    """Classe une année de création selon les périodes analytiques Mosar."""
+    if year < 1800:
+        return f"{(year // 100) + 1}e siècle"
+    if year <= 1899:
+        return "XIXe siècle"
+    if year <= 1924:
+        return "1900–1924"
+    if year <= 1949:
+        return "1925–1949"
+    if year <= 1959:
+        return "Années 1950"
+    if year <= 1969:
+        return "Années 1960"
+    if year <= 1979:
+        return "Années 1970"
+    if year <= 1989:
+        return "Années 1980"
+    if year <= 1999:
+        return "Années 1990"
+    if year <= 2009:
+        return "Années 2000"
+    if year <= 2019:
+        return "Années 2010"
+    return "Années 2020"
+
+
+def date_access_group(year):
+    """Classe une année dans les groupes utilisés pour l'analyse de l'accès."""
+    return next(
+        label
+        for label, minimum, maximum in DATE_ACCESS_GROUPS
+        if (minimum is None or year >= minimum)
+        and (maximum is None or year <= maximum)
+    )
+
+
+def normalize_structure(structure):
+    """Normalise le libellé de structure pour la distribution éditoriale."""
+    if structure == "Coédition privé/Association":
+        return "Coédition privé/association"
+    return structure
+
+
+def group_structure_for_access(structure):
+    """Regroupe les structures selon le modèle Mosar d'analyse de l'accès."""
+    if structure.startswith("Coédition"):
+        return "Coédition éditeur privé & structure publique ou associative"
+    if structure == "Organisme de recherche public":
+        return "Organisme public de recherche"
+    return structure
+
+
+def periodicity_label(value):
+    """Retourne la catégorie Mosar d'une périodicité déjà normalisée."""
+    if value in PERIODICITY_SPECIAL_LABELS:
+        return PERIODICITY_SPECIAL_LABELS[value]
+    number = float(value.replace(",", "."))
+    if number in PERIODICITY_LABELS:
+        return PERIODICITY_LABELS[number]
+    if number > 4:
+        return PERIODICITY_ABOVE_FOUR_LABEL
+    raise ValueError(value)
