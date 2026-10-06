@@ -11,6 +11,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from config import load_config, project_path
+from revues_model import build_record, proximity_sort_key
 
 CONFIG = load_config()
 COLUMNS = CONFIG["columns"]
@@ -80,59 +81,6 @@ def load_mosar() -> tuple[dict[int, dict], str]:
     return out, "CSV de prototype (extrait du XLSX fourni)"
 
 
-def normalize_open(value):
-    if value is None: return None
-    s = str(value).strip().casefold()
-    if s == "oui": return "Accès ouvert"
-    if s == "non": return "Accès restreint"
-    return str(value).strip()
-
-
-def publication_format(issns):
-    supports = {str(x.get("support") or "").strip().casefold() for x in (issns or []) if isinstance(x, dict)}
-    supports.discard("")
-    paper = "papier" in supports
-    digital = "electronique" in supports or "électronique" in supports
-    if paper and digital: return "Papier et numérique"
-    if digital: return "Numérique"
-    if paper: return "Papier"
-    return None
-
-
-def external_links(t):
-    out = []
-    for item in t.get("liensext") or []:
-        if isinstance(item, (list, tuple)) and len(item) >= 2: out.append({"url": item[0], "label": item[1]})
-    return out
-
-
-def title_label(t):
-    return f"{(t.get('prefixe') or '').strip()} {(t.get('titre') or 'Titre sans nom').strip()}".strip()
-
-
-def country_value(t):
-    value = t.get("pays") or t.get("payspublication") or t.get("pays_publication") or t.get("country")
-    if isinstance(value, dict):
-        return value.get("nom") or value.get("name") or value.get("libelle")
-    if isinstance(value, list):
-        vals = []
-        for item in value:
-            if isinstance(item, dict): vals.append(item.get("nom") or item.get("name") or item.get("libelle"))
-            elif item: vals.append(str(item))
-        return ", ".join(v for v in vals if v) or None
-    return str(value).strip() if value not in (None, "") else None
-
-
-def proximity_sort_key(record):
-    raw = ((record.get("mosar") or {}).get("proximity_level") or "").strip()
-    try:
-        level = int(raw)
-        if level not in (1, 2, 3, 4): level = 99
-    except (TypeError, ValueError):
-        level = 99
-    return (level, record["title"].casefold())
-
-
 def main():
     titles = fetch_titles()
     themes_payload = api_json(f"/themes/grappe/{GRAPPE_ID}")
@@ -144,23 +92,11 @@ def main():
         if not rid: continue
         rid = int(rid); duplicate_active_titles[rid] += 1
         if rid in by_revue: continue
-        issn_objects = t.get("issns") or []
-        issns = [x["issn"] for x in issn_objects if isinstance(x, dict) and x.get("issn")]
-        links = external_links(t)
-        ddh = next((x for x in links if str(x["label"]).strip().casefold() == "ddh"), None)
-        labels = [str(x).strip() for x in (t.get("labellisation") or []) if str(x).strip()]
-        m = mosar.get(rid)
-        by_revue[rid] = {
-            "mirabel_id": rid, "title": title_label(t), "sigle": t.get("sigle") or "",
-            "issn": list(dict.fromkeys(issns)), "languages": t.get("langues") or [],
-            "publishers": t.get("editeurs") or [], "country": country_value(t),
-            "periodicity": (t.get("periodicite") or "").strip() or None,
-            "publication_format": publication_format(issn_objects),
-            "publication_fees": t.get("fraispublication") or t.get("frais_publication") or None,
-            "labels": labels, "ddh": ddh, "themes": themes_by_revue.get(rid, []),
-            "journal_url": t.get("url") or "", "mirabel_url": t.get("url_revue_mirabel") or f"https://reseau-mirabel.info/revue/{rid}",
-            "mosar": None if not m else {"proximity_level": str(m.get("niveau_rattachement") or "").strip(), "open_access": normalize_open(m.get("acces_ouvert")), "discipline": str(m.get("discipline") or "").strip(), "editorial_structure": str(m.get("type_editeur") or "").strip(), "licence": str(m.get("licence") or "").strip()},
-        }
+        by_revue[rid] = build_record(
+            t,
+            themes_by_revue.get(rid, []),
+            mosar.get(rid),
+        )
     records = sorted(by_revue.values(), key=proximity_sort_key)
     cluster_ids=set(by_revue); mosar_ids=set(mosar); matched=sorted(cluster_ids & mosar_ids)
     report={"generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),"cluster_id":GRAPPE_ID,"mirabel_active_titles":len(titles),"mirabel_unique_reviews":len(records),"mosar_source":mosar_source,"mosar_ids":len(mosar_ids),"matched_ids":matched,"matched_count":len(matched),"mirabel_without_mosar_count":len(cluster_ids-mosar_ids),"mosar_outside_cluster_ids":sorted(mosar_ids-cluster_ids),"duplicate_active_title_review_ids":sorted(rid for rid,n in duplicate_active_titles.items() if n>1)}
