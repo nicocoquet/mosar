@@ -24,26 +24,6 @@ SHEET = CONFIG["data"]["sheet"]
 OUTPUTS = {"fr": ROOT / "docs/statistiques.md", "en": ROOT / "docs/statistiques.en.md"}
 DOWNLOADS = ROOT / "docs/downloads"
 
-INTRO = {
-    "fr": "Cette page réunit les principaux indicateurs produits à partir du recensement des revues du projet Mosar. Les graphiques permettent d’explorer la composition du corpus, les caractéristiques éditoriales des revues et leurs modalités de diffusion.",
-    "en": "This page brings together the main indicators produced from the Mosar journal survey. The charts explore the composition of the corpus, the journals’ editorial characteristics and their dissemination models.",
-}
-
-TITLES = {
-    "proximite-revues": {"fr": "Répartition des revues selon le degré de proximité avec les universités Paris Nanterre, Paris 1 et la MSH Mondes", "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes"},
-    "acces-ouvert-rattachement": {"fr": "Pourcentage de revues en accès ouvert selon le degré de rattachement", "en": "Percentage of open-access journals by degree of affiliation"},
-    "format-publication": {"fr": "Répartition des revues selon leur format de publication", "en": "Distribution of journals by publication format"},
-    "acces-format-publication": {"fr": "Nombre de revues diffusées en accès ouvert ou restreint selon leur format de publication", "en": "Number of open- or restricted-access journals by publication format"},
-    "annee-creation": {"fr": "Répartition des revues selon leur année de création", "en": "Distribution of journals by year of creation"},
-    "periode-creation": {"fr": "Répartition des revues selon leur période de création", "en": "Distribution of journals by period of creation"},
-    "acces-date-creation": {"fr": "Nombre de revues en accès ouvert ou restreint selon la date de création", "en": "Number of open- or restricted-access journals by date of creation"},
-    "periodicite-revues": {"fr": "Périodicité des revues du périmètre", "en": "Publication frequency of journals in the corpus"},
-    "disciplines-revues": {"fr": "Répartition des revues du périmètre selon la discipline", "en": "Distribution of journals in the corpus by discipline"},
-    "structures-editoriales": {"fr": "Types de structures éditoriales des revues du périmètre", "en": "Types of editorial structures of journals in the corpus"},
-    "acces-structure-editoriale": {"fr": "Pourcentage de revues en accès ouvert ou restreint selon le type de structure éditoriale", "en": "Percentage of open- or restricted-access journals by editorial structure type"},
-    "droits-reutilisation": {"fr": "Type de droits de réutilisation", "en": "Reuse rights"},
-}
-
 def norm(v):
     return "" if v is None else re.sub(r"\s+", " ", str(v).strip())
 
