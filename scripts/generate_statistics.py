@@ -1,4 +1,4 @@
-from statistics_data import OUTPUTS, DOWNLOADS, read_rows, derive
+from statistics_data import DOWNLOADS, OUTPUTS, derive, read_rows
 from statistics_build import build
 
 
