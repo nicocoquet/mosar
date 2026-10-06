@@ -25,11 +25,11 @@
     root.innerHTML=`<div class="rx-layout"><aside class="rx-facets"><div class="rx-facets-head"><h2>${esc(config.facetsTitle)}</h2><div class="rx-active-filters" aria-live="polite"></div><button class="rx-reset" type="button" disabled>${esc(config.resetLabel)}</button></div><div class="rx-facet-list"></div></aside><div class="rx-results"><div class="rx-toolbar"><input class="rx-search" type="search" placeholder="${esc(config.searchPlaceholder)}" aria-label="${esc(config.searchAriaLabel)}"><div class="rx-summary"></div></div><section class="rx-cards" aria-live="polite"></section></div></div>`;
     root.querySelector('.rx-search').addEventListener('input',e=>{state.q=e.target.value.trim().toLocaleLowerCase(config.locale);render(records, proximityLevels);});
     root.querySelector('.rx-reset').addEventListener('click',()=>{Object.keys(state).forEach(k=>k==='q'?state.q='':state[k].clear());root.querySelector('.rx-search').value='';root.querySelectorAll('input[type=checkbox]').forEach(i=>i.checked=false);render(records, proximityLevels);});
-    buildFacets(records); render(records, proximityLevels);
+    buildFacets(records, proximityLevels); render(records, proximityLevels);
   }
 
   function values(records,getter){const c=new Map();records.flatMap(getter).filter(Boolean).forEach(v=>c.set(v,(c.get(v)||0)+1));return [...c.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fr'));}
-  function buildFacets(records){
+  function buildFacets(records, proximityLevels){
     const getters={
       proximity:r=>[r.mosar?.proximity_level?`Niveau ${r.mosar.proximity_level}`:config.unknownLabel],
       access:r=>[valueOrUnknown(r.mosar?.open_access)],
