@@ -29,7 +29,7 @@
   }
 
   function values(records,getter){const c=new Map();records.flatMap(getter).filter(Boolean).forEach(v=>c.set(v,(c.get(v)||0)+1));return [...c.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fr'));}
-  function buildFacets(records, proximityLevels){
+  function buildFacets(records){
     const getters={
       proximity:r=>[r.mosar?.proximity_level?`Niveau ${r.mosar.proximity_level}`:config.unknownLabel],
       access:r=>[valueOrUnknown(r.mosar?.open_access)],
