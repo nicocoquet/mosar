@@ -46,7 +46,7 @@ La logique métier est volontairement placée principalement dans les scripts Py
 
 ### Recensement Mosar
 
-Le fichier [`data/Recensement-revues-stat.xlsx`](data/Recensement-revues-stat.xlsx) constitue actuellement la source analytique interne du projet. Le traitement principal utilise l’onglet `recencement`.
+Le fichier [`data/Recensement-revues-stat.xlsx`](data/Recensement-revues-stat.xlsx) constitue actuellement la source analytique interne du projet. Le traitement principal utilise l’onglet `recensement`.
 
 Il contient notamment les informations propres à l’analyse Mosar : niveau de rattachement ou de proximité, accès ouvert, format de publication, année de création, périodicité, discipline, type de structure éditoriale et licence.
 
