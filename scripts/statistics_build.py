@@ -1,5 +1,16 @@
+from mosar_dashboard import (
+    DATE_ACCESS_CATEGORIES,
+    FORMAT_CATEGORIES,
+    INTRO,
+    PAGE_TITLES,
+    PERIODICITY_CATEGORIES,
+    PERIOD_ORDER,
+    RIGHTS_CATEGORIES,
+    STRUCTURE_ACCESS_ORDER,
+    TITLES,
+)
 from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
-from statistics_data import INTRO, OUTPUTS, TITLES, rpct
+from statistics_data import rpct
 from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, stacked_svg
 
 
@@ -41,7 +52,7 @@ def build(data, lang):
     export_jpg_stacked("acces-ouvert-rattachement", categories, series, grouped, percent=True, average=average)
     out.append(block("acces-ouvert-rattachement", svg, lang))
 
-    categories = ["Numérique", "Papier", "Papier et numérique"]
+    categories = list(FORMAT_CATEGORIES)
     values = [data["formats"][c] for c in categories]
     svg = pie_svg(categories, values, lang)
     export_csv("format-publication", ["Format", "Nombre", "Pourcentage"], [(c, data["formats"][c], rpct(data["formats"][c], total)) for c in categories])
@@ -64,8 +75,7 @@ def build(data, lang):
     export_jpg_bar("annee-creation", [str(y) for y in years], values)
     out.append(block("annee-creation", svg, lang))
 
-    period_order = ["XIXe siècle", "1900–1924", "1925–1949", "Années 1950", "Années 1960", "Années 1970", "Années 1980", "Années 1990", "Années 2000", "Années 2010", "Années 2020"]
-    categories = [c for c in [k for k in data["periods"] if k not in period_order] + period_order if data["periods"][c]]
+    categories = [c for c in [k for k in data["periods"] if k not in PERIOD_ORDER] + list(PERIOD_ORDER) if data["periods"][c]]
     values = [data["periods"][c] for c in categories]
     svg = bar_svg(categories, values)
     export_csv("periode-creation", ["Période", "Nombre"], zip(categories, values))
@@ -73,7 +83,7 @@ def build(data, lang):
     export_jpg_bar("periode-creation", categories, values)
     out.append(block("periode-creation", svg, lang))
 
-    categories = ["Avant 1960", "1960–1999", "À partir de 2000"]
+    categories = list(DATE_ACCESS_CATEGORIES)
     grouped = {c: data["date_access"][c] for c in categories}
     svg = stacked_svg(categories, series, grouped, lang)
     export_csv("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(c, grouped[c]["open"], grouped[c]["restricted"]) for c in categories])
@@ -81,10 +91,7 @@ def build(data, lang):
     export_jpg_stacked("acces-date-creation", categories, series, grouped)
     out.append(block("acces-date-creation", svg, lang))
 
-    categories = [
-        "Un numéro tous les deux ans", "Annuel (1 nᵒ/an)", "Semestriel (2 nᵒˢ/an)", "Quadrimestriel (3 nᵒˢ/an)",
-        "Trimestriel (4 nᵒˢ/an)", "Plus de 4 nᵒˢ/an", "Parution irrégulière", "Parution continue",
-    ]
+    categories = list(PERIODICITY_CATEGORIES)
     values = [data["periodicities"][c] for c in categories]
     svg = pie_svg(categories, values, lang)
     export_csv("periodicite-revues", ["Périodicité", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(categories, values)])
@@ -108,8 +115,7 @@ def build(data, lang):
     export_jpg_pie("structures-editoriales", categories, values)
     out.append(block("structures-editoriales", svg, lang))
 
-    structure_order = ["Éditeur privé", "Éditeur public", "Organisme public de recherche", "Association", "Coédition éditeur privé & structure publique ou associative"]
-    categories = [c for c in structure_order if c in data["struct_access"]]
+    categories = [c for c in STRUCTURE_ACCESS_ORDER if c in data["struct_access"]]
     grouped = {c: data["struct_access"][c] for c in categories}
     svg = stacked_svg(categories, series, grouped, lang, percent=True)
     export_csv("acces-structure-editoriale", ["Structure", "Accès ouvert", "Accès restreint"], [(c, grouped[c]["open"], grouped[c]["restricted"]) for c in categories])
@@ -117,7 +123,7 @@ def build(data, lang):
     export_jpg_stacked("acces-structure-editoriale", categories, series, grouped, percent=True)
     out.append(block("acces-structure-editoriale", svg, lang))
 
-    categories = ["Licence Creative Commons", "Tous droits réservés", "Licence CC ou DR variable pour une même publication"]
+    categories = list(RIGHTS_CATEGORIES)
     values = [data["rights"][c] for c in categories]
     svg = pie_svg(categories, values, lang)
     export_csv("droits-reutilisation", ["Droits", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(categories, values)])
@@ -125,5 +131,5 @@ def build(data, lang):
     export_jpg_pie("droits-reutilisation", categories, values)
     out.append(block("droits-reutilisation", svg, lang))
 
-    title = "Statistiques" if lang == "fr" else "Statistics"
+    title = PAGE_TITLES[lang]
     return f'# {title} {{.statistics-page-title}}\n\n<div class="statistics-intro"><p>{INTRO[lang]}</p></div>\n\n' + "\n\n".join(out) + "\n"
