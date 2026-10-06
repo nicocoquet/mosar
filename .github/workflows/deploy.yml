@@ -57,6 +57,9 @@ jobs:
       - name: Contrôler la structure des données Revues
         run: python scripts/check_revues_output.py
 
+      - name: Contrôler le JavaScript Revues
+        run: node scripts/check_revues_js.js
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
