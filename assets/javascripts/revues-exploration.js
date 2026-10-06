@@ -23,9 +23,9 @@
     const records=data.records||[];
     const proximityLevels=data.model?.proximity_levels||[];
     root.innerHTML=`<div class="rx-layout"><aside class="rx-facets"><div class="rx-facets-head"><h2>${esc(config.facetsTitle)}</h2><div class="rx-active-filters" aria-live="polite"></div><button class="rx-reset" type="button" disabled>${esc(config.resetLabel)}</button></div><div class="rx-facet-list"></div></aside><div class="rx-results"><div class="rx-toolbar"><input class="rx-search" type="search" placeholder="${esc(config.searchPlaceholder)}" aria-label="${esc(config.searchAriaLabel)}"><div class="rx-summary"></div></div><section class="rx-cards" aria-live="polite"></section></div></div>`;
-    root.querySelector('.rx-search').addEventListener('input',e=>{state.q=e.target.value.trim().toLocaleLowerCase(config.locale);render(records);});
-    root.querySelector('.rx-reset').addEventListener('click',()=>{Object.keys(state).forEach(k=>k==='q'?state.q='':state[k].clear());root.querySelector('.rx-search').value='';root.querySelectorAll('input[type=checkbox]').forEach(i=>i.checked=false);render(records);});
-    buildFacets(records); render(records);
+    root.querySelector('.rx-search').addEventListener('input',e=>{state.q=e.target.value.trim().toLocaleLowerCase(config.locale);render(records, proximityLevels);});
+    root.querySelector('.rx-reset').addEventListener('click',()=>{Object.keys(state).forEach(k=>k==='q'?state.q='':state[k].clear());root.querySelector('.rx-search').value='';root.querySelectorAll('input[type=checkbox]').forEach(i=>i.checked=false);render(records, proximityLevels);});
+    buildFacets(records); render(records, proximityLevels);
   }
 
   function values(records,getter){const c=new Map();records.flatMap(getter).filter(Boolean).forEach(v=>c.set(v,(c.get(v)||0)+1));return [...c.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fr'));}
@@ -49,7 +49,7 @@
       section.innerHTML=`<summary><span>${esc(title)}</span><span class="rx-chevron" aria-hidden="true"></span></summary><div class="rx-facet-options${scroll}">${vals.map(([v,n])=>`<label class="rx-option"><input type="checkbox" data-facet="${key}" value="${esc(v)}"><span>${esc(v)}</span><span class="rx-count">${n}</span></label>`).join('')}</div>`;
       box.appendChild(section);
     });
-    box.addEventListener('change',e=>{const i=e.target.closest('input[data-facet]');if(!i)return;const set=state[i.dataset.facet];i.checked?set.add(i.value):set.delete(i.value);if(i.checked)i.closest('details').open=true;render(records);});
+    box.addEventListener('change',e=>{const i=e.target.closest('input[data-facet]');if(!i)return;const set=state[i.dataset.facet];i.checked?set.add(i.value):set.delete(i.value);if(i.checked)i.closest('details').open=true;render(records, proximityLevels);});
   }
 
   function matchesSet(selected,vals){return !selected.size||vals.some(v=>selected.has(v));}
@@ -63,8 +63,8 @@
   function isDiamond(r){return(r.labels||[]).some(label=>label.toLowerCase().includes('ddh diamond journal'));}
   function metaTags(r){const tags=[];if(r.mosar?.proximity_level)tags.push(`<span class="rx-meta-tag rx-meta-tag--proximity">Niveau ${esc(r.mosar.proximity_level)}</span>`);const country=r.country||r.publication_country||r.country_name;if(country)tags.push(`<span class="rx-meta-tag">${esc(country)}</span>`);(r.languages||[]).map(langLabel).forEach(v=>tags.push(`<span class="rx-meta-tag">${esc(v)}</span>`));if(r.periodicity)tags.push(`<span class="rx-meta-tag">${esc(r.periodicity)}</span>`);return tags.join('<span class="rx-meta-sep">·</span>');}
 
-  function render(records){
-    const rows=sortRecords(filtered(records));root.querySelector('.rx-summary').textContent=`${rows.length} revue${rows.length>1?'s':''} sur ${records.length}`;root.querySelector('.rx-reset').disabled=!activeFilters();renderActiveFilters();
+  function render(records, proximityLevels){
+    const rows=sortRecords(filtered(records), proximityLevels);root.querySelector('.rx-summary').textContent=`${rows.length} revue${rows.length>1?'s':''} sur ${records.length}`;root.querySelector('.rx-reset').disabled=!activeFilters();renderActiveFilters();
     const cards=root.querySelector('.rx-cards');if(!rows.length){cards.innerHTML=`<div class="rx-empty">${esc(config.emptyLabel)}</div>`;return;}
     cards.innerHTML=rows.map(r=>{const specific=`${REVUE_IMAGE_BASE}${encodeURIComponent(r.mirabel_id)}.jpg`,fallback=`${REVUE_IMAGE_BASE}default.jpg`;const diamond=isDiamond(r)?`<span class="rx-diamond-medal" title="Labellisation : Diamond journal" aria-label="Diamond journal"><img src="${ICON_BASE}picto_diamond-access.png" alt=""></span>`:'';const illustration=`<div class="rx-card-visual"><img src="${specific}" data-fallback="${fallback}" alt="" loading="lazy">${diamond}</div>`;const publisher=r.publishers?.length?`<div class="rx-publisher">${esc(r.publishers.join(', '))}</div>`:'';const signals=[];if(r.mosar?.open_access)signals.push(accessMark(r.mosar.open_access));if(r.publication_format)signals.push(formatMark(r.publication_format));const actions=[];if(r.ddh?.url)actions.push(`<a class="rx-action" href="${esc(r.ddh.url)}" target="_blank" rel="noopener" title="Voir la revue dans le Diamond Discovery Hub"><img class="rx-brand-icon" src="${ICON_BASE}picto_ddh.png" alt="">DDH</a>`);actions.push(`<a class="rx-action" href="${esc(r.mirabel_url)}" target="_blank" rel="noopener" title="Voir la revue dans Mir@bel"><img class="rx-brand-icon" src="${ICON_BASE}picto_mirabel.png" alt="">Mir@bel</a>`);if(r.journal_url)actions.push(`<a class="rx-action rx-action--website" href="${esc(r.journal_url)}" target="_blank" rel="noopener" title="Site web de la revue">${icons.world}<span>Site web</span></a>`);const tags=metaTags(r);return `<article class="rx-card">${illustration}<div class="rx-card-body"><h2>${esc(r.title)}</h2>${publisher}<div class="rx-signals">${signals.join('')}</div><div class="rx-actions">${actions.join('')}</div><div class="rx-issn">${r.issn?.length?`ISSN ${esc(r.issn.join(', '))}`:''}</div>${tags?`<div class="rx-meta-tags">${tags}</div>`:''}</div></article>`;}).join('');
     cards.querySelectorAll('.rx-card-visual img[data-fallback]').forEach(img=>{img.addEventListener('error',()=>{const fallback=img.dataset.fallback;if(fallback&&img.getAttribute('src')!==fallback)img.setAttribute('src',fallback);},{once:true});});
