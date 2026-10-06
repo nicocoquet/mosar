@@ -8,7 +8,6 @@ window.MOSAR_REVUES_CONFIG = {
   searchAriaLabel: 'Rechercher',
   emptyLabel: 'Aucune revue ne correspond aux filtres sélectionnés.',
   facetScrollThreshold: 8,
-  proximityLevels: [1, 2, 3, 4],
   facets: [
     {key: 'proximity', label: 'Niveau de proximité'},
     {key: 'access', label: 'Accès'},
