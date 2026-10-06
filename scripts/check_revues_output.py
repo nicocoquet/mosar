@@ -5,6 +5,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from mosar_model import PROXIMITY_LEVELS
+
 
 SOURCE = Path("docs/assets/data/revues-exploration.json")
 REQUIRED_RECORD_KEYS = {
@@ -62,7 +64,7 @@ def main():
         raw_level = ((mosar or {}).get("proximity_level") or "").strip()
         try:
             level = int(raw_level)
-            if level not in (1, 2, 3, 4):
+            if level not in PROXIMITY_LEVELS:
                 level = 99
         except (TypeError, ValueError):
             level = 99
