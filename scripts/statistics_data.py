@@ -8,12 +8,15 @@ from openpyxl import load_workbook
 from config import load_config, project_path
 from mosar_model import (
     ALLOWED_STRUCTURES,
-    DATE_ACCESS_GROUPS,
     DISCIPLINE_MAP,
     FORMAT_MAP,
     LICENCE_MAP,
-    PERIODICITY_LABELS,
     PROXIMITY_LEVELS,
+    creation_period,
+    date_access_group,
+    group_structure_for_access,
+    normalize_structure,
+    periodicity_label,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,35 +77,13 @@ def year(v, row_number):
     return y
 
 
-def creation_period(y):
-    if y < 1800:
-        return f"{(y // 100) + 1}e siècle"
-    if y <= 1899: return "XIXe siècle"
-    if y <= 1924: return "1900–1924"
-    if y <= 1949: return "1925–1949"
-    if y <= 1959: return "Années 1950"
-    if y <= 1969: return "Années 1960"
-    if y <= 1979: return "Années 1970"
-    if y <= 1989: return "Années 1980"
-    if y <= 1999: return "Années 1990"
-    if y <= 2009: return "Années 2000"
-    if y <= 2019: return "Années 2010"
-    return "Années 2020"
-
 
 def periodicity(v, row_number):
     x = norm(v).casefold()
-    if x == "irrégulier": return "Parution irrégulière"
-    if x == "parution continue": return "Parution continue"
     try:
-        n = float(x.replace(",", "."))
-    except ValueError:
+        return periodicity_label(x)
+    except (TypeError, ValueError):
         raise SystemExit(f"Périodicité invalide ligne {row_number}: {v!r}")
-    if n in PERIODICITY_LABELS:
-        return PERIODICITY_LABELS[n]
-    if n > 4:
-        return "Plus de 4 nᵒˢ/an"
-    raise SystemExit(f"Périodicité invalide ligne {row_number}: {v!r}")
 
 
 def derive(rows):
@@ -132,11 +113,7 @@ def derive(rows):
         y = year(row[COLUMNS["creation_year"]], rn)
         years[y] += 1
         periods[creation_period(y)] += 1
-        date_group = next(
-            label
-            for label, minimum, maximum in DATE_ACCESS_GROUPS
-            if (minimum is None or y >= minimum) and (maximum is None or y <= maximum)
-        )
+        date_group = date_access_group(y)
         date_access[date_group][a] += 1
 
         periodicities[periodicity(row[COLUMNS["periodicity"]], rn)] += 1
@@ -149,8 +126,8 @@ def derive(rows):
         structure = norm(row[COLUMNS["publisher_type"]])
         if structure not in ALLOWED_STRUCTURES:
             raise SystemExit(f"Type d'éditeur inattendu ligne {rn}: {structure!r}")
-        structures["Coédition privé/association" if structure == "Coédition privé/Association" else structure] += 1
-        grouped_structure = "Coédition éditeur privé & structure publique ou associative" if structure.startswith("Coédition") else ("Organisme public de recherche" if structure == "Organisme de recherche public" else structure)
+        structures[normalize_structure(structure)] += 1
+        grouped_structure = group_structure_for_access(structure)
         structure_access[grouped_structure][a] += 1
 
         licence = norm(row[COLUMNS["licence"]])
