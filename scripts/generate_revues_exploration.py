@@ -24,10 +24,11 @@ XLSX = project_path(CONFIG["data"]["file"])
 SHEET = CONFIG["data"]["sheet"]
 PROJECT_NAME = CONFIG["project"]["name"]
 SITE_URL = CONFIG["project"]["site_url"]
-FALLBACK = Path("data/mirabel/mosar-test-enrichment.csv")
-OUT_JSON = Path("docs/assets/data/revues-exploration.json")
-OUT_REPORT = Path("data/revues/join-report.json")
-OUT_MD = Path("docs/revues.md")
+REVUES_PUBLICATION = CONFIG["publication"]["revues"]
+FALLBACK = project_path(REVUES_PUBLICATION["fallback_file"])
+OUT_JSON = project_path(REVUES_PUBLICATION["data_file"])
+OUT_REPORT = project_path(REVUES_PUBLICATION["report_file"])
+OUT_MD = project_path(REVUES_PUBLICATION["page_file"])
 
 
 def api_json(path: str):
