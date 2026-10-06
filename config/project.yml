@@ -5,7 +5,7 @@ project:
 
 data:
   file: "data/Recensement-revues-stat.xlsx"
-  sheet: "recencement"
+  sheet: "recensement"
 
 columns:
   journal_name: "Nom revue"
