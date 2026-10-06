@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
-
+from config import load_config, project_path
 from mosar_model import PROXIMITY_LEVELS
 
 
-SOURCE = Path("docs/assets/data/revues-exploration.json")
+CONFIG = load_config()
+SOURCE = project_path(CONFIG["publication"]["revues"]["data_file"])
 REQUIRED_RECORD_KEYS = {
     "mirabel_id",
     "title",
