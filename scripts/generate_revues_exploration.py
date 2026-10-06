@@ -10,9 +10,18 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-GRAPPE_ID = 15
-API = "https://reseau-mirabel.info/api"
-XLSX = Path("data/Recensement-revues-stat.xlsx")
+from config import load_config, project_path
+
+CONFIG = load_config()
+COLUMNS = CONFIG["columns"]
+GRAPPE_ID = CONFIG["mirabel"]["cluster_id"]
+GRAPPE_NAME = CONFIG["mirabel"]["cluster_name"]
+GRAPPE_URL = CONFIG["mirabel"]["cluster_url"]
+API = CONFIG["mirabel"]["api"].rstrip("/")
+XLSX = project_path(CONFIG["data"]["file"])
+SHEET = CONFIG["data"]["sheet"]
+PROJECT_NAME = CONFIG["project"]["name"]
+SITE_URL = CONFIG["project"]["site_url"]
 FALLBACK = Path("data/mirabel/mosar-test-enrichment.csv")
 OUT_JSON = Path("docs/assets/data/revues-exploration.json")
 OUT_REPORT = Path("data/revues/join-report.json")
@@ -20,7 +29,7 @@ OUT_MD = Path("docs/revues.md")
 
 
 def api_json(path: str):
-    req = Request(f"{API}{path}", headers={"User-Agent": "Mosar/1.0 (+https://nicocoquet.github.io/mosar/)"})
+    req = Request(f"{API}{path}", headers={"User-Agent": f"{PROJECT_NAME}/1.0 (+{SITE_URL})"})
     with urlopen(req, timeout=45) as response:
         return json.load(response)
 
@@ -41,18 +50,27 @@ def fetch_titles() -> list[dict]:
 def load_mosar() -> tuple[dict[int, dict], str]:
     try:
         from openpyxl import load_workbook
-        ws = load_workbook(XLSX, data_only=True, read_only=True)["recencement"]
+        ws = load_workbook(XLSX, data_only=True, read_only=True)[SHEET]
         rows = ws.iter_rows(values_only=True)
         headers = [str(v).strip() if v is not None else "" for v in next(rows)]
-        if "ID Mir@bel" in headers:
+        if COLUMNS["mirabel_id"] in headers:
             pos = {h: i for i, h in enumerate(headers)}
-            fields = {"nom_revue":"Nom revue","niveau_rattachement":"Niveau rattachement","acces_ouvert":"Accès ouvert","discipline":"Discipline","periodicite":"Nombre de n°s par an","format":"Format","type_editeur":"Type d'éditeur","licence":"Licence"}
+            fields = {
+                "nom_revue": COLUMNS["journal_name"],
+                "niveau_rattachement": COLUMNS["proximity"],
+                "acces_ouvert": COLUMNS["open_access"],
+                "discipline": COLUMNS["discipline"],
+                "periodicite": COLUMNS["periodicity"],
+                "format": COLUMNS["format"],
+                "type_editeur": COLUMNS["publisher_type"],
+                "licence": COLUMNS["licence"],
+            }
             out = {}
             for row in rows:
-                raw = row[pos["ID Mir@bel"]]
+                raw = row[pos[COLUMNS["mirabel_id"]]]
                 if raw in (None, ""): continue
                 out[int(raw)] = {key: row[pos[col]] if col in pos else None for key, col in fields.items()}
-            return out, "XLSX Mosar"
+            return out, f"XLSX {PROJECT_NAME}"
     except Exception as exc:
         print(f"Lecture XLSX impossible pour la jointure ({exc}); recours au CSV de prototype.")
     out = {}
@@ -150,7 +168,7 @@ def main():
     OUT_JSON.write_text(json.dumps({"meta":report,"records":records},ensure_ascii=False,indent=2),encoding="utf-8")
     OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     refresh_date = report["generated_at"][:10]
-    OUT_MD.write_text(f'''---\nhide:\n  - toc\n---\n# Revues {{ .page-title-compact }}\n\nCette page est un **prototype d’intégration** des données de <img src="../assets/logos/logo_mirabel.png" alt="Mir@bel" style="height:1.45em;width:auto;vertical-align:-0.35em;margin:0 .12em;"> dans le site Mosar.\nElle teste l’articulation entre les métadonnées de la grappe Mir@bel n° 15 « PCP Sciences de l’Antiquité et Archéologie » et les données analytiques propres au projet Mosar.\n\n<p class="revues-source-link"><a href="https://reseau-mirabel.info/grappe/15/PCP-Sciences-de-l-Antiquite-et-Archeologie" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>\n<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
+    OUT_MD.write_text(f'''---\nhide:\n  - toc\n---\n# Revues {{ .page-title-compact }}\n\nCette page est un **prototype d’intégration** des données de <img src="../assets/logos/logo_mirabel.png" alt="Mir@bel" style="height:1.45em;width:auto;vertical-align:-0.35em;margin:0 .12em;"> dans le site Mosar.\nElle teste l’articulation entre les métadonnées de la grappe Mir@bel n° {GRAPPE_ID} « {GRAPPE_NAME} » et les données analytiques propres au projet {PROJECT_NAME}.\n\n<p class="revues-source-link"><a href="{GRAPPE_URL}" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>\n<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
 
 if __name__ == "__main__": main()
