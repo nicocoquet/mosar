@@ -5,6 +5,8 @@ métadonnées déjà chargées en enregistrements publiables par l'explorateur.
 """
 from __future__ import annotations
 
+from mosar_model import PROXIMITY_LEVELS
+
 
 def normalize_open(value):
     if value is None:
@@ -74,7 +76,7 @@ def proximity_sort_key(record):
     raw = ((record.get("mosar") or {}).get("proximity_level") or "").strip()
     try:
         level = int(raw)
-        if level not in (1, 2, 3, 4):
+        if level not in PROXIMITY_LEVELS:
             level = 99
     except (TypeError, ValueError):
         level = 99
