@@ -54,6 +54,9 @@ jobs:
       - name: Générer la page Revues
         run: python scripts/generate_revues_exploration.py
 
+      - name: Contrôler la structure des données Revues
+        run: python scripts/check_revues_output.py
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
