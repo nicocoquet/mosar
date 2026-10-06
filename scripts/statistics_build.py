@@ -1,4 +1,5 @@
-from statistics_data import INTRO, OUTPUTS, PROX_DEFS, TITLES, rpct
+from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
+from statistics_data import INTRO, OUTPUTS, TITLES, rpct
 from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, stacked_svg
 
 
@@ -19,15 +20,15 @@ def build(data, lang):
         ("Accès restreint" if lang == "fr" else "Restricted access", "restricted", OPEN["restricted"]),
     ]
 
-    labels = [f"Niveau {n}" if lang == "fr" else f"Level {n}" for n in (1, 2, 3, 4)]
-    values = [data["levels"][n] for n in (1, 2, 3, 4)]
+    labels = [f"Niveau {n}" if lang == "fr" else f"Level {n}" for n in PROXIMITY_LEVELS]
+    values = [data["levels"][n] for n in PROXIMITY_LEVELS]
     svg = pie_svg(labels, values, lang)
-    export_csv("proximite-revues", ["Niveau", "Nombre", "Pourcentage"], [(n, data["levels"][n], rpct(data["levels"][n], total)) for n in (1, 2, 3, 4)])
+    export_csv("proximite-revues", ["Niveau", "Nombre", "Pourcentage"], [(n, data["levels"][n], rpct(data["levels"][n], total)) for n in PROXIMITY_LEVELS])
     export_svg("proximite-revues", svg)
     export_jpg_pie("proximite-revues", labels, values)
     legend = '<section class="level-legend">' + "".join(
         f'<div class="legend-item"><span class="legend-dot level-{n}"></span><p><strong>{labels[n-1]} :</strong> {PROX_DEFS[lang][n]}</p></div>'
-        for n in (1, 2, 3, 4)
+        for n in PROXIMITY_LEVELS
     ) + "</section>"
     out.append(block("proximite-revues", svg, lang, legend))
 
