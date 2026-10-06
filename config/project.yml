@@ -27,10 +27,12 @@ mirabel:
 
 publication:
   revues:
-    fallback_file: "data/mirabel/mosar-test-enrichment.csv"
     data_file: "docs/assets/data/revues-exploration.json"
     report_file: "data/revues/join-report.json"
     page_file: "docs/revues.md"
+    fallback:
+      enabled: false
+      file: "data/mirabel/mosar-test-enrichment.csv"
 
 privacy:
   forbidden_columns:
