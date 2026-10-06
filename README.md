@@ -247,10 +247,11 @@ Le build strict constitue un contrôle important : une référence invalide ou u
 
 ```text
 .github/workflows/     automatisation du build et du déploiement
+config/project.yml      configuration de l’instance Mosar
 data/                  données sources et rapports de contrôle
 docs/                  contenus publiés par MkDocs
 docs/assets/           données web, images, pictogrammes, JavaScript et CSS spécifiques
- docs/stylesheets/      styles globaux du site
+docs/stylesheets/       styles globaux du site
 generated/charts/      fragments statistiques produits lors du build
 scripts/                traitements Python
 mkdocs.yml              configuration du site
@@ -272,9 +273,11 @@ L’architecture actuelle suit plusieurs principes qui orientent le développeme
 
 ## Reproductibilité : état actuel et perspective
 
-Mosar porte dès l’origine une ambition de réutilisation au-delà du périmètre de la MSH Mondes. Le dépôt constitue déjà une base documentée et versionnée, mais plusieurs paramètres propres à l’instance Mosar sont encore codés directement dans les scripts ou les contenus : identifiant de grappe Mir@bel, chemins, critères analytiques, textes et identité visuelle.
+Mosar porte dès l’origine une ambition de réutilisation au-delà du périmètre de la MSH Mondes. Une première étape de généricisation est désormais opérationnelle : `config/project.yml` centralise l’identité de l’instance, le chemin et l’onglet du tableur, le mapping des colonnes, la source Mir@bel et les règles d’expurgation du XLSX. Les scripts concernés lisent cette configuration via `scripts/config.py`.
 
-La prochaine étape architecturale consistera donc à distinguer plus nettement :
+Les règles analytiques proprement dites — notamment les niveaux de proximité, les regroupements disciplinaires et de licences, les catégories statistiques, certains textes et l’identité visuelle — restent volontairement propres à Mosar à ce stade.
+
+L’architecture évolue donc progressivement vers une distinction plus nette entre :
 
 ```text
 code générique
@@ -284,7 +287,7 @@ contenus éditoriaux
 présentation graphique
 ```
 
-Cette évolution fera l’objet d’un chantier et d’une documentation propres. Le présent README doit rester la description fidèle de l’état opérationnel du projet, et non anticiper une généricité qui n’est pas encore implémentée.
+Cette évolution est menée par étapes réversibles, en conservant les sorties du site et les règles métier existantes. Le présent README décrit l’état opérationnel du projet et distingue les éléments déjà configurables de ceux qui restent spécifiques à Mosar.
 
 ## Licence et réutilisation
 
