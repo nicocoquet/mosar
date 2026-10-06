@@ -25,7 +25,9 @@ SHEET = CONFIG["data"]["sheet"]
 PROJECT_NAME = CONFIG["project"]["name"]
 SITE_URL = CONFIG["project"]["site_url"]
 REVUES_PUBLICATION = CONFIG["publication"]["revues"]
-FALLBACK = project_path(REVUES_PUBLICATION["fallback_file"])
+FALLBACK_CONFIG = REVUES_PUBLICATION["fallback"]
+FALLBACK_ENABLED = bool(FALLBACK_CONFIG.get("enabled", False))
+FALLBACK = project_path(FALLBACK_CONFIG["file"])
 OUT_JSON = project_path(REVUES_PUBLICATION["data_file"])
 OUT_REPORT = project_path(REVUES_PUBLICATION["report_file"])
 OUT_MD = project_path(REVUES_PUBLICATION["page_file"])
@@ -75,12 +77,21 @@ def load_mosar() -> tuple[dict[int, dict], str]:
                 out[int(raw)] = {key: row[pos[col]] if col in pos else None for key, col in fields.items()}
             return out, f"XLSX {PROJECT_NAME}"
     except Exception as exc:
-        print(f"Lecture XLSX impossible pour la jointure ({exc}); recours au CSV de prototype.")
+        if not FALLBACK_ENABLED:
+            raise RuntimeError(
+                "Lecture XLSX impossible pour la jointure Mosar et fallback CSV désactivé"
+            ) from exc
+        print(
+            f"Lecture XLSX impossible pour la jointure ({exc}); "
+            f"recours au CSV configuré : {FALLBACK}."
+        )
+
     out = {}
     with FALLBACK.open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle):
-            rid = int(row.pop("mirabel_id")); out[rid] = row
-    return out, "CSV de prototype (extrait du XLSX fourni)"
+            rid = int(row.pop("mirabel_id"))
+            out[rid] = row
+    return out, f"CSV de fallback ({FALLBACK})"
 
 
 def main():
