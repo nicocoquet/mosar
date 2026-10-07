@@ -6,6 +6,7 @@ Elles doivent être mises à jour explicitement lorsqu'une évolution des
 données source est volontaire.
 """
 from statistics_data import derive, read_rows
+from statistics_project import DEFAULT_SOURCE
 
 
 EXPECTED = {
@@ -28,7 +29,8 @@ EXPECTED = {
 
 
 def main():
-    data = derive(read_rows())
+    rows = read_rows(DEFAULT_SOURCE)
+    data = derive(rows, DEFAULT_SOURCE)
 
     assert data["total"] == EXPECTED["total"], (
         f"Corpus inattendu : {data['total']} au lieu de {EXPECTED['total']}"

@@ -6,7 +6,6 @@ import re
 
 from openpyxl import load_workbook
 
-from config import load_config, project_path
 from mosar_model import (
     ALLOWED_STRUCTURES,
     DISCIPLINE_MAP,
@@ -20,24 +19,12 @@ from mosar_model import (
     periodicity_label,
 )
 
-CONFIG = load_config()
-COLUMNS = CONFIG["columns"]
-XLSX = project_path(CONFIG["data"]["file"])
-SHEET = CONFIG["data"]["sheet"]
-
 
 @dataclass(frozen=True)
 class StatisticsSource:
     xlsx: Path
     sheet: str
     columns: dict
-
-
-DEFAULT_SOURCE = StatisticsSource(
-    xlsx=XLSX,
-    sheet=SHEET,
-    columns=COLUMNS,
-)
 
 
 def norm(v):
@@ -48,8 +35,7 @@ def rpct(v, total):
     return math.floor(v * 100 / total + 0.5) if total else 0
 
 
-def read_rows(source=None):
-    source = source or DEFAULT_SOURCE
+def read_rows(source):
 
     wb = load_workbook(source.xlsx, read_only=True, data_only=True)
     if source.sheet not in wb.sheetnames:
@@ -116,8 +102,7 @@ def periodicity(v, row_number):
         raise SystemExit(f"Périodicité invalide ligne {row_number}: {v!r}")
 
 
-def derive(rows, source=None):
-    source = source or DEFAULT_SOURCE
+def derive(rows, source):
     columns = source.columns
     total = len(rows)
     levels, formats, years, periods = Counter(), Counter(), Counter(), Counter()
