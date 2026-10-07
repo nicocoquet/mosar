@@ -41,6 +41,9 @@ jobs:
       - name: Tester le moteur statistique sur le corpus fixture
         run: python tests/check_fixture.py
 
+      - name: Tester le pipeline Revues sur la fixture
+        run: python tests/check_journals_fixture.py
+
       - name: Générer les statistiques depuis le XLSX
         run: python scripts/generate_statistics.py
 
