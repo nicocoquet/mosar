@@ -4,11 +4,6 @@ Ce module décrit les textes, l'ordre et les catégories d'affichage des
 graphiques. Il ne contient ni lecture de données ni code de rendu SVG/JPEG.
 """
 
-INTRO = {
-    "fr": "Cette page réunit les principaux indicateurs produits à partir du recensement des revues du projet Mosar. Les graphiques permettent d’explorer la composition du corpus, les caractéristiques éditoriales des revues et leurs modalités de diffusion.",
-    "en": "This page brings together the main indicators produced from the Mosar journal survey. The charts explore the composition of the corpus, the journals’ editorial characteristics and their dissemination models.",
-}
-
 TITLES = {
     "proximite-revues": {"fr": "Répartition des revues selon le degré de proximité avec les universités Paris Nanterre, Paris 1 et la MSH Mondes", "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes"},
     "acces-ouvert-rattachement": {"fr": "Pourcentage de revues en accès ouvert selon le degré de rattachement", "en": "Percentage of open-access journals by degree of affiliation"},

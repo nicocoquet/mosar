@@ -24,7 +24,18 @@ CONFIG = load_config()
 COLUMNS = CONFIG["columns"]
 XLSX = project_path(CONFIG["data"]["file"])
 SHEET = CONFIG["data"]["sheet"]
-OUTPUTS = {"fr": ROOT / "docs/statistiques.md", "en": ROOT / "docs/statistiques.en.md"}
+STATISTICS_PAGES = CONFIG["publication"]["statistics"]["pages"]
+
+OUTPUTS = {
+    lang: project_path(page["output"])
+    for lang, page in STATISTICS_PAGES.items()
+}
+
+INTRO_FILES = {
+    lang: project_path(page["intro"])
+    for lang, page in STATISTICS_PAGES.items()
+}
+
 DOWNLOADS = ROOT / "docs/downloads"
 
 def norm(v):

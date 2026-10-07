@@ -25,12 +25,14 @@ SHEET = CONFIG["data"]["sheet"]
 PROJECT_NAME = CONFIG["project"]["name"]
 SITE_URL = CONFIG["project"]["site_url"]
 REVUES_PUBLICATION = CONFIG["publication"]["revues"]
+REVUES_PAGE = REVUES_PUBLICATION["pages"]["fr"]
 FALLBACK_CONFIG = REVUES_PUBLICATION["fallback"]
 FALLBACK_ENABLED = bool(FALLBACK_CONFIG.get("enabled", False))
 FALLBACK = project_path(FALLBACK_CONFIG["file"])
 OUT_JSON = project_path(REVUES_PUBLICATION["data_file"])
 OUT_REPORT = project_path(REVUES_PUBLICATION["report_file"])
-OUT_MD = project_path(REVUES_PUBLICATION["page_file"])
+INTRO_FILE = project_path(REVUES_PAGE["intro"])
+OUT_MD = project_path(REVUES_PAGE["output"])
 
 
 def api_json(path: str):
@@ -94,6 +96,14 @@ def load_mosar() -> tuple[dict[int, dict], str]:
     return out, f"CSV de fallback ({FALLBACK})"
 
 
+def load_intro() -> str:
+    if not INTRO_FILE.is_file():
+        raise SystemExit(
+            f"Introduction éditoriale de la page Revues introuvable : {INTRO_FILE}"
+        )
+    return INTRO_FILE.read_text(encoding="utf-8").strip()
+
+
 def main():
     titles = fetch_titles()
     themes_payload = api_json(f"/themes/grappe/{GRAPPE_ID}")
@@ -128,7 +138,34 @@ def main():
     )
     OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     refresh_date = report["generated_at"][:10]
-    OUT_MD.write_text(f'''---\nhide:\n  - toc\n---\n# Revues {{ .page-title-compact }}\n\nCette page est un **prototype d’intégration** des données de <img src="../assets/logos/logo_mirabel.png" alt="Mir@bel" style="height:1.45em;width:auto;vertical-align:-0.35em;margin:0 .12em;"> dans le site Mosar.\nElle teste l’articulation entre les métadonnées de la grappe Mir@bel n° {GRAPPE_ID} « {GRAPPE_NAME} » et les données analytiques propres au projet {PROJECT_NAME}.\n\n<p class="revues-source-link"><a href="{GRAPPE_URL}" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>\n<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>\n\n<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">\n\n<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>\n\n<script src="../assets/javascripts/revues-config.js" defer></script>\n<script src="../assets/javascripts/revues-exploration.js" defer></script>\n''',encoding="utf-8")
+    intro = load_intro()
+    OUT_MD.write_text(
+        f'''---
+hide:
+  - toc
+---
+# Revues {{ .page-title-compact }}
+
+<div class="revues-intro" markdown="1">
+
+{intro}
+
+</div>
+
+<p class="revues-source">Grappe Mir@bel n° {GRAPPE_ID} « {GRAPPE_NAME} ».</p>
+<p class="revues-source-link"><a href="{GRAPPE_URL}" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>
+<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>
+
+<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">
+
+<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>
+
+<script src="../assets/javascripts/revues-config.js" defer></script>
+<script src="../assets/javascripts/revues-exploration.js" defer></script>
+''',
+        encoding="utf-8",
+    )
     print(json.dumps(report,ensure_ascii=False,indent=2))
+
 
 if __name__ == "__main__": main()

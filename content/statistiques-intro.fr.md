@@ -1,0 +1,1 @@
+Cette page réunit les principaux indicateurs produits à partir du recensement des revues du projet Mosar. Les graphiques permettent d’explorer la composition du corpus, les caractéristiques éditoriales des revues et leurs modalités de diffusion.

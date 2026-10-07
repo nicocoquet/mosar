@@ -26,10 +26,22 @@ mirabel:
   cluster_url: "https://reseau-mirabel.info/grappe/15/PCP-Sciences-de-l-Antiquite-et-Archeologie"
 
 publication:
+  statistics:
+    pages:
+      fr:
+        intro: "content/statistiques-intro.fr.md"
+        output: "docs/statistiques.md"
+      en:
+        intro: "content/statistiques-intro.en.md"
+        output: "docs/statistiques.en.md"
+
   revues:
+    pages:
+      fr:
+        intro: "content/revues-intro.fr.md"
+        output: "docs/revues.md"
     data_file: "docs/assets/data/revues-exploration.json"
     report_file: "data/revues/join-report.json"
-    page_file: "docs/revues.md"
     fallback:
       enabled: false
       file: "data/mirabel/mosar-test-enrichment.csv"

@@ -1,7 +1,6 @@
 from mosar_dashboard import (
     DATE_ACCESS_CATEGORIES,
     FORMAT_CATEGORIES,
-    INTRO,
     PAGE_TITLES,
     PERIODICITY_CATEGORIES,
     PERIOD_ORDER,
@@ -10,7 +9,7 @@ from mosar_dashboard import (
     TITLES,
 )
 from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
-from statistics_data import rpct
+from statistics_data import INTRO_FILES, rpct
 from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, stacked_svg
 
 
@@ -21,6 +20,15 @@ def block(chart_id, svg, lang, extra=""):
         f'<div class="chart-block"><div class="chart-layout" style="display:block;max-width:960px"><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n'
         f'<!-- CHART:{chart_id}:END -->'
     )
+
+
+def load_intro(lang):
+    path = INTRO_FILES[lang]
+    if not path.is_file():
+        raise SystemExit(
+            f"Introduction éditoriale des statistiques introuvable : {path}"
+        )
+    return path.read_text(encoding="utf-8").strip()
 
 
 def build(data, lang):
@@ -132,4 +140,13 @@ def build(data, lang):
     out.append(block("droits-reutilisation", svg, lang))
 
     title = PAGE_TITLES[lang]
-    return f'# {title} {{.statistics-page-title}}\n\n<div class="statistics-intro"><p>{INTRO[lang]}</p></div>\n\n' + "\n\n".join(out) + "\n"
+    intro = load_intro(lang)
+
+    return (
+        f'# {title} {{.statistics-page-title}}\n\n'
+        f'<div class="statistics-intro" markdown="1">\n\n'
+        f'{intro}\n\n'
+        f'</div>\n\n'
+        + "\n\n".join(out)
+        + "\n"
+    )

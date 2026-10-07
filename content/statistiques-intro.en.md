@@ -1,0 +1,1 @@
+This page brings together the main indicators produced from the Mosar journal survey. The charts explore the composition of the corpus, the journals’ editorial characteristics and their dissemination models.

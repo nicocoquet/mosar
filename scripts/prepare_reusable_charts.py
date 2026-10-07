@@ -1,8 +1,9 @@
 from pathlib import Path
 import re
 
+from statistics_data import OUTPUTS
+
 ROOT = Path(__file__).resolve().parents[1]
-DOCS = ROOT / "docs"
 FRAGMENTS = ROOT / "generated" / "charts"
 CHART_IDS = [
     "proximite-revues",
@@ -18,7 +19,6 @@ CHART_IDS = [
     "acces-structure-editoriale",
     "droits-reutilisation",
 ]
-PAGES = {"fr": DOCS / "statistiques.md", "en": DOCS / "statistiques.en.md"}
 
 
 def snippet(chart_id, lang):
@@ -27,7 +27,7 @@ def snippet(chart_id, lang):
 
 def main():
     FRAGMENTS.mkdir(parents=True, exist_ok=True)
-    for lang, page in PAGES.items():
+    for lang, page in OUTPUTS.items():
         text = page.read_text(encoding="utf-8")
         for chart_id in CHART_IDS:
             pattern = re.compile(
