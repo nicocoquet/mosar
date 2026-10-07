@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "2026-10-06T11:44:20+00:00",
+    "generated_at": "2026-10-07T08:23:55+00:00",
     "cluster_id": 15,
     "mirabel_active_titles": 1161,
     "mirabel_unique_reviews": 1161,
-    "mosar_source": "CSV de fallback (/home/runner/work/mosar/mosar/data/mirabel/mosar-test-enrichment.csv)",
+    "mosar_source": "XLSX Mosar",
     "mosar_ids": 14,
     "matched_ids": [
       731,
@@ -26275,19 +26275,18 @@
       "title": "Raydān : Journal of ancient yemeni antiquities and epigraphy",
       "sigle": "",
       "issn": [
-        "1015-4523"
+        "1015-4523",
+        "3136-9367"
       ],
       "languages": [
         "eng",
         "fre",
         "ara"
       ],
-      "publishers": [
-        "Yemeni centre for cultural and archaeological research"
-      ],
+      "publishers": [],
       "country": null,
       "periodicity": "irrégulier",
-      "publication_format": "Papier",
+      "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
       "ddh": null,
@@ -26298,7 +26297,7 @@
         "Antiquité",
         "Europe du Sud"
       ],
-      "journal_url": "",
+      "journal_url": "https://raydan.goam.gov.ye/index.php/raydan/about",
       "mirabel_url": "https://reseau-mirabel.info/revue/15679",
       "mosar": null
     },
