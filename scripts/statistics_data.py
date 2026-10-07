@@ -46,11 +46,14 @@ def rpct(v, total):
     return math.floor(v * 100 / total + 0.5) if total else 0
 
 
-def read_rows():
-    wb = load_workbook(XLSX, read_only=True, data_only=True)
-    if SHEET not in wb.sheetnames:
-        raise SystemExit(f"Onglet attendu introuvable : {SHEET}")
-    ws = wb[SHEET]
+def read_rows(xlsx=None, sheet=None):
+    source = Path(xlsx) if xlsx is not None else XLSX
+    worksheet = sheet if sheet is not None else SHEET
+
+    wb = load_workbook(source, read_only=True, data_only=True)
+    if worksheet not in wb.sheetnames:
+        raise SystemExit(f"Onglet attendu introuvable : {worksheet}")
+    ws = wb[worksheet]
     headers = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     required = [
         COLUMNS["journal_name"], COLUMNS["proximity"], COLUMNS["open_access"],

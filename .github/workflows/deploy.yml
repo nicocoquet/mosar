@@ -38,6 +38,9 @@ jobs:
       - name: Vérifier que le XLSX est expurgé
         run: python scripts/sanitize_xlsx.py --check
 
+      - name: Tester le moteur statistique sur le corpus fixture
+        run: python tests/check_fixture.py
+
       - name: Générer les statistiques depuis le XLSX
         run: python scripts/generate_statistics.py
 
