@@ -75,7 +75,12 @@ def main():
         type=Path,
         default=DEFAULT_OUTPUT,
     )
-    parser.add_argument("--check", type=Path)
+    parser.add_argument(
+        "--check",
+        nargs="?",
+        type=Path,
+        const=DEFAULT_OUTPUT,
+    )
     args = parser.parse_args()
 
     if args.check:
