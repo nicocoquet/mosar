@@ -5,3 +5,7 @@ private/
 # Fichiers temporaires
 ~$*.xlsx
 *.tmp
+
+# Python
+__pycache__/
+*.py[cod]
