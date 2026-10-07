@@ -2,293 +2,362 @@
 
 **Modèle ouvert de soutien et d’accompagnement des revues**
 
-Mosar est un projet financé par le **Fonds national pour la science ouverte (FNSO)** pour la période **2026-2028**. Il prolonge l’expérience de la clinique éditoriale inaugurée par la **MSH Mondes** en novembre 2023 pour proposer aux revues du périmètre des universités **Paris 1 Panthéon-Sorbonne** et **Paris Nanterre** un accompagnement individualisé pour les revues, notamment vers les standards de l’accès ouvert diamant.
-Ce projet est porté par la [MSH Mondes](https://www.mshmondes.cnrs.fr/), co-porté par ’l[EDCH (OPERAS)](https://edch.eu/), l’[université Paris Nanterre](https://www.parisnanterre.fr/) et l’[université Paris 1 Panthéon-Sorbonne](https://www.pantheonsorbonne.fr/).
+Mosar est un projet financé par le **Fonds national pour la science ouverte (FNSO)** pour la période **2026-2028**. Il prolonge l’expérience de la clinique éditoriale inaugurée par la **MSH Mondes** en novembre 2023 et vise à proposer aux revues du périmètre des universités **Paris 1 Panthéon-Sorbonne** et **Paris Nanterre** un accompagnement individualisé, notamment vers les standards de l’accès ouvert diamant.
 
-Le projet poursuit trois objectifs complémentaires :
+Le projet est porté par la [MSH Mondes](https://www.mshmondes.cnrs.fr/), avec l’[EDCH (OPERAS)](https://edch.eu/), l’[université Paris Nanterre](https://www.parisnanterre.fr/) et l’[université Paris 1 Panthéon-Sorbonne](https://www.pantheonsorbonne.fr/).
 
-- **observer** le paysage éditorial du site à partir d’une enquête qualitative et quantitative ;
+Mosar poursuit trois objectifs complémentaires :
+
+- **observer** le paysage éditorial du site à partir d’un recensement qualitatif et quantitatif ;
 - **accompagner** les revues selon leurs besoins et leur degré de proximité avec les établissements partenaires ;
 - **modéliser** l’offre de services et les outils produits afin de préparer leur réutilisation dans d’autres contextes institutionnels.
 
-Ce dépôt contient le site web du projet et les traitements qui permettent de produire ses pages de données à partir du recensement Mosar et de sources externes.
+Ce dépôt contient le site web du projet, ses sources de données publiables et les traitements qui produisent les pages de données. Le README décrit **l’état opérationnel actuel** du dépôt : il ne constitue ni un journal de développement ni la description d’une architecture générique qui resterait à réaliser.
 
-> **État de la documentation.** Ce README décrit l’architecture effectivement utilisée par le repository GitHub Mosar à ce jour. La transformation de cette architecture en dispositif générique et configurable, réutilisable par d’autres organismes, constitue une étape ultérieure du projet et sera documentée lorsqu’elle sera opérationnelle.
+## Enjeux et choix d’architecture
 
-## Architecture générale
+Le dispositif technique a été conçu autour de quelques choix structurants.
 
-Le site est statique. Les données sont transformées lors de la construction du site ; aucun serveur applicatif ni base de données ne sont nécessaires pour sa consultation.
+**Conserver des sources de travail identifiables.** Le recensement Mosar reste un tableur XLSX, format adapté au travail collectif. Les données externes utilisées pour décrire les revues proviennent de Mir@bel. Les traitements ne masquent pas ces provenances : ils les contrôlent, les normalisent et les combinent pour la publication.
+
+**Fonder les rapprochements sur des identifiants.** L’ID numérique Mir@bel constitue la clé de jointure entre le recensement Mosar et les métadonnées récupérées par API. Une correspondance sur les titres de revues serait trop fragile.
+
+**Séparer données, règles métier et publication.** Les règles d’analyse et de normalisation sont portées par les scripts Python ; les contenus éditoriaux rédigés à la main sont séparés des fichiers générés ; MkDocs et Material for MkDocs interviennent dans la couche finale de publication.
+
+**Produire un site statique.** Les transformations sont effectuées au moment du build. Le site publié ne nécessite ni serveur applicatif Mosar ni base de données pour être consulté.
+
+**Rendre les traitements contrôlables et reproductibles.** Les transformations sont versionnées, les sorties intermédiaires peuvent être examinées, des fixtures déterministes testent les principaux contrats métier et la CI reconstruit le site avant publication.
+
+**Préparer la réutilisation sans prétendre à une généricité achevée.** La configuration d’instance et les moteurs de traitement sont progressivement dissociés, mais certaines règles analytiques, catégories, textes et choix graphiques restent propres à Mosar. Le dépôt documente ce qui est effectivement réutilisable aujourd’hui.
+
+## Architecture actuelle
 
 ```text
-Recensement Mosar (XLSX) ───────┬──> scripts statistiques ──> pages et graphiques
+                         ┌─────────────────────────────┐
+                         │ config/project.yml          │
+                         │ configuration de l'instance │
+                         └──────────────┬──────────────┘
+                                        │
+                ┌───────────────────────┴───────────────────────┐
+                │                                               │
+                v                                               v
+     Recensement Mosar (XLSX)                            API Mir@bel
+                │                                               │
+                │                           ┌───────────────────┘
+                │                           │
+                v                           v
+      pipeline Statistiques         acquisition Revues
+                │                           │
+                │                           v
+                │                    pipeline de jointure
+                │                           │
+                │                           v
+                │                    modèle normalisé
+                │                           │
+                v                           v
+       pages + graphiques           JSON + rapport + page
+                │                           │
+                └───────────────┬───────────┘
+                                v
+                 contenus éditoriaux + CSS/JS
                                 │
-                                └──> jointure par ID Mir@bel ───────┐
-                                                                    │
-API Mir@bel ──> métadonnées des revues ────────────────────────────┤
-                                                                    v
-                                                          JSON normalisé
-                                                                    │
-                                                                    v
-                                                     explorateur Revues (JS)
-
-Markdown éditorial + données générées + CSS/JS
-                         │
-                         v
-                  MkDocs / Material
-                         │
-                         v
-                    GitHub Pages
+                                v
+                     MkDocs / Material
+                                │
+                                v
+                        GitHub Pages
 ```
 
-La logique métier est volontairement placée principalement dans les scripts Python et dans des données intermédiaires explicites. MkDocs assemble ensuite les contenus et les composants du site.
+La logique de données et les règles métier ne dépendent donc pas directement de MkDocs. Le générateur de site assemble des contenus déjà préparés et les composants de présentation.
 
 ## Sources de données
 
 ### Recensement Mosar
 
-Le fichier [`data/Recensement-revues-stat.xlsx`](data/Recensement-revues-stat.xlsx) constitue actuellement la source analytique interne du projet. Le traitement principal utilise l’onglet `recensement`.
+Le fichier `data/Recensement-revues-stat.xlsx` constitue la source analytique interne publiée avec le projet. Le traitement utilise l’onglet `recensement`.
 
-Il contient notamment les informations propres à l’analyse Mosar : niveau de rattachement ou de proximité, accès ouvert, format de publication, année de création, périodicité, discipline, type de structure éditoriale et licence.
+Il contient notamment le niveau de rattachement, l’accès ouvert, le format de publication, l’année de création, la périodicité, la discipline, le type de structure éditoriale, la licence et l’identifiant Mir@bel.
 
-Le tableur reste un format de travail collaboratif : les scripts contrôlent et transforment ses données pour la publication, sans en faire un format de diffusion web.
+Le tableur est conservé comme **format pivot collaboratif**. Avant publication, `scripts/sanitize_xlsx.py` vérifie que les colonnes définies comme privées ne sont pas présentes dans la version destinée au dépôt.
 
 ### Mir@bel
 
-La page **Revues** combine le recensement Mosar avec des métadonnées récupérées depuis l’API de [Mir@bel](https://reseau-mirabel.info/).
+La page **Revues** associe les données analytiques Mosar à des métadonnées récupérées depuis l’API de [Mir@bel](https://reseau-mirabel.info/).
 
-À l’état actuel du projet, le générateur interroge encore la **grappe Mir@bel n° 15 « PCP Sciences de l’Antiquité et Archéologie »**, utilisée pendant le développement du prototype. La grappe propre au projet Mosar, **n° 146**, a été créée mais n’est pas encore utilisée par le pipeline de production tant que ses métadonnées ne sont pas accessibles dans les conditions attendues via l’API.
+À l’état actuel, le pipeline de production interroge encore la **grappe n° 15 « PCP Sciences de l’Antiquité et Archéologie »**, utilisée pour le prototype. La grappe propre à Mosar, **n° 146**, existe mais n’est pas encore utilisée tant que son accès par l’API ne fournit pas les données attendues.
 
-L’**ID numérique Mir@bel de la revue** sert de clé de jointure entre les données récupérées par API et le recensement Mosar. Cette clé évite une jointure fragile sur les titres de revues.
+Mir@bel est utilisé comme source descriptive et référentielle ; le XLSX Mosar apporte les informations analytiques propres au projet.
 
-## Pipeline Statistiques
+## Deux pipelines complémentaires
 
-La production des statistiques est répartie entre plusieurs scripts afin de séparer lecture des données, normalisation, construction des pages et préparation des composants réutilisables.
+### Statistiques
 
-### `scripts/statistics_data.py`
+Le pipeline statistique part du XLSX et produit les indicateurs, graphiques et pages française et anglaise.
 
-Ce module :
-
-- lit `data/Recensement-revues-stat.xlsx` avec `openpyxl` ;
-- vérifie la présence des colonnes attendues ;
-- normalise plusieurs catégories utilisées dans les analyses ;
-- calcule les données nécessaires aux graphiques et indicateurs ;
-- définit les sorties française et anglaise.
-
-Les règles de regroupement utilisées pour les disciplines, licences et autres catégories analytiques sont donc explicites et versionnées avec le code.
-
-### `scripts/generate_statistics.py`
-
-Ce script construit les pages :
-
-- `docs/statistiques.md` ;
-- `docs/statistiques.en.md`.
-
-Les pages sont régénérées à partir du XLSX : elles ne doivent donc pas être considérées comme des contenus éditoriaux indépendants de leur source.
-
-### `scripts/prepare_reusable_charts.py`
-
-Après génération des pages statistiques, ce script extrait les graphiques identifiés dans des fragments Markdown placés dans `generated/charts/`. Les pages utilisent ensuite ces fragments au moyen de `pymdownx.snippets`.
-
-Cette organisation permet de conserver des graphiques identifiés et réutilisables sans dupliquer leur balisage.
-
-## Pipeline Revues
-
-La page **Revues** est produite par `scripts/generate_journals_exploration.py`.
-
-Le script :
-
-1. interroge l’API Mir@bel pour les titres actifs de la grappe configurée ;
-2. récupère les métadonnées utiles à l’explorateur ;
-3. lit le recensement Mosar et indexe les lignes possédant un `ID Mir@bel` ;
-4. joint les deux sources sur cet identifiant ;
-5. normalise les données au niveau de la revue ;
-6. produit un JSON destiné à l’interface ;
-7. produit un rapport de jointure ;
-8. génère `docs/revues.md`.
-
-Les principales sorties sont :
+Ses responsabilités sont réparties entre plusieurs modules :
 
 ```text
-docs/assets/data/revues-exploration.json   données consommées par l'interface
-data/revues/join-report.json               contrôle de la jointure
-docs/revues.md                             page MkDocs générée
+statistics_project.py
+    adaptation de la configuration à la source statistique
+
+statistics_data.py
+    lecture, validation, normalisation et agrégation
+
+mosar_model.py
+    règles analytiques propres à Mosar
+
+mosar_dashboard.py
+    définition éditoriale du tableau de bord
+
+statistics_build.py
+    construction des pages statistiques
+
+statistics_render.py
+    rendu et exports des graphiques
+
+statistics_publication.py
+    destinations et paramètres de publication
+
+generate_statistics.py
+    orchestration de la génération
 ```
 
-Le rapport permet notamment de repérer les identifiants présents dans une seule des deux sources et les éventuels doublons de titres actifs renvoyés par Mir@bel.
+Les douze graphiques du tableau de bord disposent également d’exports CSV, SVG et JPEG. `prepare_reusable_charts.py` prépare les fragments graphiques réutilisés lors de la construction du site.
 
-### Interface de consultation
+Les textes introductifs rédigés à la main sont conservés hors de `docs/` :
 
-L’interactivité est réalisée côté navigateur par :
+```text
+content/statistiques-intro.fr.md
+content/statistiques-intro.en.md
+```
+
+Les pages `docs/statistiques.md` et `docs/statistiques.en.md` sont des **sorties générées**.
+
+### Revues
+
+Le pipeline Revues combine Mir@bel et le recensement Mosar. Ses responsabilités sont volontairement séparées :
+
+```text
+journals_sources.py
+    acquisition des données Mir@bel et Mosar
+
+journals_model.py
+    normalisation d'une revue
+
+journals_pipeline.py
+    jointure, dédoublonnage, tri et rapport
+
+journals_publication.py
+    production du JSON, du rapport et de la page
+
+generate_journals_exploration.py
+    orchestration
+```
+
+Le générateur produit actuellement :
+
+```text
+docs/assets/data/revues-exploration.json
+data/revues/join-report.json
+docs/revues.md
+```
+
+Le rapport de jointure permet de contrôler les identifiants communs aux deux sources, les revues présentes dans une seule source et les éventuels doublons de titres actifs renvoyés par Mir@bel.
+
+L’interface de consultation est exécutée dans le navigateur. Elle repose principalement sur :
 
 ```text
 docs/assets/javascripts/revues-exploration.js
+docs/assets/javascripts/revues-config.js
 docs/assets/stylesheets/revues-exploration.css
 ```
 
-Le JavaScript assure notamment :
+Elle fournit notamment recherche, facettes, filtres actifs, tri et cartes de revues. Les composants propres à cet explorateur utilisent le préfixe `.rx-` afin de limiter les collisions avec le thème du site.
 
-- la recherche libre ;
-- les facettes ;
-- l’affichage des filtres sélectionnés ;
-- le tri des revues par niveau de proximité puis par ordre alphabétique ;
-- la construction des cartes de revues ;
-- le recours à une image générique lorsqu’aucune illustration spécifique n’est disponible.
+L’introduction éditoriale française est séparée du fichier généré dans `content/revues-intro.fr.md`. Une introduction anglaise existe également ; la finalisation de la page Revues en anglais reste à achever.
 
-Les images spécifiques sont nommées à partir de l’ID Mir@bel de la revue et placées dans :
+## Configuration et portabilité
 
-```text
-docs/assets/images/revues/
-```
+`config/project.yml` centralise les principaux paramètres propres à l’instance Mosar :
 
-L’interface peut également afficher les liens vers Mir@bel, le **Diamond Discovery Hub (DDH)** et le site de la revue, ainsi que les informations de labellisation et de diffusion disponibles.
+- identité et URL du projet ;
+- fichier XLSX et feuille de travail ;
+- correspondance entre noms logiques et colonnes du tableur ;
+- API et grappe Mir@bel ;
+- chemins des contenus éditoriaux et des sorties ;
+- configuration du fallback éventuel ;
+- colonnes interdites dans le XLSX publiable.
+
+`scripts/config.py` charge et valide ce contrat de configuration.
+
+Cette organisation évite que les moteurs de données aient à connaître les chemins du dépôt ou les destinations MkDocs. Elle permet également de distinguer ce qui relève d’un **moteur réutilisable**, de la **configuration d’une instance** et des **règles scientifiques ou éditoriales propres à Mosar**.
 
 ## Contenus éditoriaux et contenus générés
 
-Une distinction importante doit être conservée entre les fichiers rédigés directement et ceux reconstruits par les scripts.
+La distinction entre les deux est importante pour la maintenance.
 
-**Contenus éditoriaux**, par exemple :
+Les introductions des pages générées sont rédigées dans `content/`. Les pages, données et fragments produits par les scripts sont reconstruits lors du build et ne constituent pas la source éditoriale à modifier directement.
 
-```text
-docs/index.md
-docs/index.en.md
-docs/partenaires.md
-docs/partenaires.en.md
-```
-
-**Contenus générés**, notamment :
+Exemples :
 
 ```text
-docs/statistiques.md
-docs/statistiques.en.md
-docs/revues.md
-docs/assets/data/revues-exploration.json
-generated/charts/
+content/
+    revues-intro.fr.md
+    revues-intro.en.md
+    statistiques-intro.fr.md
+    statistiques-intro.en.md
+
+docs/
+    statistiques.md          généré
+    statistiques.en.md       généré
+    revues.md                généré
+
+generated/charts/            généré
 ```
 
-Lorsqu’une correction concerne une donnée ou une règle de génération, il faut intervenir sur la source ou sur le script correspondant plutôt que modifier uniquement le fichier généré.
+Lorsqu’une correction porte sur une donnée ou une règle, elle doit être effectuée dans la source, la configuration ou le module concerné, et non uniquement dans la sortie générée.
 
-## Styles et interface
+## Tests et reproductibilité
 
-Les styles sont répartis selon leur responsabilité :
+La reproductibilité ne repose pas uniquement sur la capacité à relancer les scripts sur les données de production.
+
+Le moteur statistique dispose d’un corpus fictif autonome :
 
 ```text
-docs/stylesheets/extra.css                 identité globale et composants transversaux
-docs/stylesheets/header.css                adaptations spécifiques à Material for MkDocs
-docs/stylesheets/home.css                  page d'accueil
-docs/assets/stylesheets/revues-exploration.css
-                                           explorateur de revues
+tests/fixtures/minimal-corpus.xlsx
+tests/check_fixture.py
 ```
 
-Les composants propres à l’explorateur utilisent le préfixe `.rx-` afin de limiter les collisions avec le thème et de faciliter leur identification.
+Il permet de vérifier les principales dimensions analytiques sans dépendre du XLSX de production.
 
-`header.css` concentre volontairement la majeure partie du couplage à la structure HTML de **Material for MkDocs**. Cette séparation doit faciliter l’identification des adaptations nécessaires lors d’une future évolution ou migration du générateur de site.
+Le pipeline Revues dispose également d’une fixture déterministe :
+
+```text
+tests/check_journals_fixture.py
+```
+
+Elle teste en mémoire la jointure, le dédoublonnage, les normalisations, le tri et le rapport sans appel à l’API Mir@bel, sans XLSX de production et sans MkDocs.
+
+Des contrôles complémentaires vérifient la non-régression statistique, la structure des données Revues et le comportement JavaScript de l’explorateur.
+
+Cette séparation permet de distinguer les **tests métier déterministes** des **tests d’intégration utilisant les sources réelles**.
 
 ## Internationalisation
 
-Le site utilise `mkdocs-static-i18n` avec une structure par suffixe :
+Le site utilise `mkdocs-static-i18n` et une convention par suffixe :
 
 ```text
 page.md       français
 page.en.md    anglais
 ```
 
-Le français est la langue par défaut. Toutes les pages générées ne disposent pas encore nécessairement du même niveau de traduction ; il faut donc distinguer l’infrastructure bilingue de la couverture éditoriale effective.
+Le français est la langue par défaut. Le pipeline statistique produit déjà ses pages française et anglaise. L’infrastructure et le contenu introductif anglais de Revues sont en place, mais la page Revues anglaise n’est pas encore finalisée.
+
+## Couche de publication
+
+Le site est actuellement publié avec **MkDocs**, **Material for MkDocs** et **GitHub Pages**.
+
+Le couplage au générateur de site est volontairement maintenu dans la couche de publication et dans les styles qui lui sont propres. Les moteurs de données, la jointure Mir@bel/Mosar et les règles analytiques ne doivent pas dépendre de la structure HTML du thème.
+
+Ce choix est important pour la pérennité du projet : une évolution future de la couche de publication doit pouvoir être envisagée sans réécrire les traitements de données.
 
 ## Développement local
 
-Le projet nécessite Python. Les dépendances sont déclarées dans `requirements.txt` :
-
-- Material for MkDocs ;
-- `mkdocs-static-i18n` ;
-- `openpyxl` ;
-- `matplotlib`.
-
-Installation :
+Les dépendances Python sont déclarées dans `requirements.txt`.
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Pour reproduire localement les principales étapes du build :
+Les principaux contrôles et générations peuvent être reproduits localement :
 
 ```bash
-python scripts/sanitize_xlsx.py --check data/Recensement-revues-stat.xlsx
+python scripts/sanitize_xlsx.py --check
+python tests/check_fixture.py
+python tests/check_journals_fixture.py
+
 python scripts/generate_statistics.py
+python scripts/check_regression.py
 python scripts/prepare_reusable_charts.py
+
 python scripts/generate_journals_exploration.py
+python scripts/check_journals_output.py
+
+node --check scripts/check_journals_js.js
+node scripts/check_journals_js.js
+
 mkdocs build --strict
 ```
 
-Pour travailler avec le serveur local MkDocs :
+La génération à partir des données réelles de Mir@bel nécessite un accès réseau. Le test `check_journals_fixture.py`, en revanche, est entièrement local.
+
+Pour consulter le site localement après génération :
 
 ```bash
 mkdocs serve
 ```
 
-Le générateur de la page Revues interroge l’API Mir@bel : cette étape nécessite donc un accès réseau.
+## Intégration continue et déploiement
 
-## Déploiement
+Le workflow `.github/workflows/deploy.yml` contrôle et reconstruit le projet.
 
-Le workflow `.github/workflows/deploy.yml` s’exécute sur les `push` et les pull requests visant `main`, ainsi que manuellement.
+Il vérifie notamment :
 
-Il :
+1. le caractère publiable du XLSX ;
+2. la fixture statistique ;
+3. la fixture Revues ;
+4. la génération et la non-régression statistiques ;
+5. la génération Revues à partir des sources réelles ;
+6. la structure des données produites et les interactions JavaScript ;
+7. le build strict de MkDocs.
 
-1. installe Python 3.12 et les dépendances ;
-2. vérifie que le XLSX peut être publié dans le dépôt dans son état prévu ;
-3. régénère les statistiques ;
-4. prépare les fragments graphiques ;
-5. régénère la page Revues depuis les sources ;
-6. exécute `mkdocs build --strict` ;
-7. publie sur GitHub Pages lors des exécutions qui ne proviennent pas d’une pull request.
+La publication sur GitHub Pages intervient après validation du build selon les conditions définies dans le workflow.
 
-Le build strict constitue un contrôle important : une référence invalide ou une erreur détectée par MkDocs bloque la publication plutôt que de produire silencieusement un site incohérent.
+Les fichiers générés ne sont donc pas considérés comme une vérité autonome : ils doivent pouvoir être reconstruits depuis les sources versionnées et les sources externes prévues.
 
 ## Arborescence fonctionnelle
 
 ```text
-.github/workflows/     automatisation du build et du déploiement
-config/project.yml      configuration de l’instance Mosar
-data/                  données sources et rapports de contrôle
-docs/                  contenus publiés par MkDocs
-docs/assets/           données web, images, pictogrammes, JavaScript et CSS spécifiques
-docs/stylesheets/       styles globaux du site
-generated/charts/      fragments statistiques produits lors du build
-scripts/                traitements Python
-mkdocs.yml              configuration du site
-requirements.txt        dépendances Python
+.github/workflows/       intégration continue et déploiement
+config/                  configuration de l'instance
+content/                 fragments éditoriaux des pages générées
+data/                    données sources publiables et rapports
+docs/                    contenus et ressources du site
+generated/               sorties intermédiaires du build
+scripts/                 modèles, traitements, publication et contrôles
+tests/                   fixtures et tests déterministes
+mkdocs.yml               configuration du site
+requirements.txt         dépendances Python
 ```
 
-## Principes techniques
+## À propos du développement du code
 
-L’architecture actuelle suit plusieurs principes qui orientent le développement du projet :
+Les scripts de ce dépôt ont été **essentiellement développés par vibe coding**, dans le cadre d’un travail itératif associant définition des besoins, génération de code avec assistance d’IA, tests sur les données réelles, revue des résultats et refactorisations successives.
 
-- **sources explicites** : le XLSX Mosar et les données Mir@bel restent identifiables comme sources des informations publiées ;
-- **jointures sur identifiants** : l’ID Mir@bel est préféré à une correspondance textuelle sur les titres ;
-- **traitements versionnés** : les normalisations et transformations sont exprimées dans le code ;
-- **sorties contrôlables** : JSON intermédiaire et rapport de jointure permettent d’examiner ce qui est produit ;
-- **site statique** : l’interface publiée ne dépend pas d’un backend Mosar ;
-- **séparation des responsabilités** : données, traitements, contenu éditorial, présentation et déploiement sont distingués autant que possible ;
-- **maintenabilité** : le CSS spécifique à Material est isolé du CSS des composants métier ;
-- **reproductibilité comme objectif** : le projet doit pouvoir servir de base à des dispositifs analogues, sans prétendre que l’architecture actuelle est déjà entièrement générique.
+Cette origine est indiquée explicitement par souci de transparence. Elle ne dispense pas le code des exigences appliquées au projet : les règles métier doivent rester explicites, les responsabilités séparées, les transformations testables et les résultats reproductibles. Les fixtures, contrôles de non-régression et validations de CI ont précisément pour fonction de rendre ces exigences vérifiables indépendamment de la manière dont le code a été initialement produit.
 
-## Reproductibilité : état actuel et perspective
+## État actuel et limites
 
-Mosar porte dès l’origine une ambition de réutilisation au-delà du périmètre de la MSH Mondes. Une première étape de généricisation est désormais opérationnelle : `config/project.yml` centralise l’identité de l’instance, le chemin et l’onglet du tableur, le mapping des colonnes, la source Mir@bel et les règles d’expurgation du XLSX. Les scripts concernés lisent cette configuration via `scripts/config.py`.
-
-Les règles analytiques proprement dites — notamment les niveaux de proximité, les regroupements disciplinaires et de licences, les catégories statistiques, certains textes et l’identité visuelle — restent volontairement propres à Mosar à ce stade.
-
-L’architecture évolue donc progressivement vers une distinction plus nette entre :
+L’architecture est aujourd’hui suffisamment séparée pour distinguer :
 
 ```text
-code générique
-configuration d'une instance
 sources de données
-contenus éditoriaux
-présentation graphique
+        ↓
+acquisition / lecture
+        ↓
+règles métier et normalisation
+        ↓
+traitements et agrégations
+        ↓
+publication
+        ↓
+MkDocs / interface web
 ```
 
-Cette évolution est menée par étapes réversibles, en conservant les sorties du site et les règles métier existantes. Le présent README décrit l’état opérationnel du projet et distingue les éléments déjà configurables de ceux qui restent spécifiques à Mosar.
+Cette organisation constitue le socle actuel du projet. Elle ne signifie pas que Mosar soit déjà un logiciel générique prêt à être déployé tel quel dans n’importe quel contexte.
+
+Restent notamment spécifiques à Mosar les règles analytiques, certaines catégories statistiques, les textes éditoriaux et l’identité visuelle. La page Revues anglaise reste à finaliser. La grappe Mir@bel propre à Mosar devra remplacer la grappe prototype lorsque son exploitation par l’API sera opérationnelle.
 
 ## Licence et réutilisation
 
-Les conditions de licence du code, des contenus et des ressources graphiques doivent être précisées explicitement avant de considérer le dépôt comme un paquet réutilisable autonome. Les métadonnées provenant de services externes restent soumises aux conditions de leurs sources respectives.
+Les conditions de licence du code, des contenus et des ressources graphiques doivent encore être précisées explicitement avant de présenter le dépôt comme un paquet réutilisable autonome. Les métadonnées provenant de services externes restent soumises aux conditions de leurs sources respectives.
