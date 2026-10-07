@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-07T08:23:55+00:00",
+    "generated_at": "2026-10-07T08:57:44+00:00",
     "cluster_id": 15,
     "mirabel_active_titles": 1161,
     "mirabel_unique_reviews": 1161,
@@ -26283,7 +26283,9 @@
         "fre",
         "ara"
       ],
-      "publishers": [],
+      "publishers": [
+        "الهيئة العامة للآثار والمتاحف= Autorité générale des antiquités et des musées = General Organization of Antiquities and Museums"
+      ],
       "country": null,
       "periodicity": "irrégulier",
       "publication_format": "Papier et numérique",
