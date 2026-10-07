@@ -8,7 +8,7 @@ from mosar_model import PROXIMITY_LEVELS
 
 
 CONFIG = load_config()
-SOURCE = project_path(CONFIG["publication"]["revues"]["data_file"])
+SOURCE = project_path(CONFIG["publication"]["journals"]["data_file"])
 REQUIRED_RECORD_KEYS = {
     "mirabel_id",
     "title",

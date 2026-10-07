@@ -35,7 +35,7 @@ publication:
         intro: "content/statistiques-intro.en.md"
         output: "docs/statistiques.en.md"
 
-  revues:
+  journals:
     pages:
       fr:
         intro: "content/revues-intro.fr.md"

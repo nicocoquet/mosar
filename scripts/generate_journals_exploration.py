@@ -12,7 +12,7 @@ from urllib.request import Request, urlopen
 
 from config import load_config, project_path
 from mosar_model import PROXIMITY_LEVELS, proximity_sort_key
-from revues_model import build_record
+from journals_model import build_record
 
 CONFIG = load_config()
 COLUMNS = CONFIG["columns"]
@@ -24,15 +24,15 @@ XLSX = project_path(CONFIG["data"]["file"])
 SHEET = CONFIG["data"]["sheet"]
 PROJECT_NAME = CONFIG["project"]["name"]
 SITE_URL = CONFIG["project"]["site_url"]
-REVUES_PUBLICATION = CONFIG["publication"]["revues"]
-REVUES_PAGE = REVUES_PUBLICATION["pages"]["fr"]
-FALLBACK_CONFIG = REVUES_PUBLICATION["fallback"]
+JOURNALS_PUBLICATION = CONFIG["publication"]["journals"]
+JOURNALS_PAGE = JOURNALS_PUBLICATION["pages"]["fr"]
+FALLBACK_CONFIG = JOURNALS_PUBLICATION["fallback"]
 FALLBACK_ENABLED = bool(FALLBACK_CONFIG.get("enabled", False))
 FALLBACK = project_path(FALLBACK_CONFIG["file"])
-OUT_JSON = project_path(REVUES_PUBLICATION["data_file"])
-OUT_REPORT = project_path(REVUES_PUBLICATION["report_file"])
-INTRO_FILE = project_path(REVUES_PAGE["intro"])
-OUT_MD = project_path(REVUES_PAGE["output"])
+OUT_JSON = project_path(JOURNALS_PUBLICATION["data_file"])
+OUT_REPORT = project_path(JOURNALS_PUBLICATION["report_file"])
+INTRO_FILE = project_path(JOURNALS_PAGE["intro"])
+OUT_MD = project_path(JOURNALS_PAGE["output"])
 
 
 def api_json(path: str):

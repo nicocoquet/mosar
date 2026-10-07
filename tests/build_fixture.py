@@ -4,7 +4,7 @@ from openpyxl import Workbook
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "tests" / "fixtures" / "corpus-minimal.xlsx"
+OUTPUT = ROOT / "tests" / "fixtures" / "minimal-corpus.xlsx"
 
 HEADERS = [
     "Identifiant",

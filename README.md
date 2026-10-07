@@ -93,7 +93,7 @@ Cette organisation permet de conserver des graphiques identifiés et réutilisab
 
 ## Pipeline Revues
 
-La page **Revues** est produite par `scripts/generate_revues_exploration.py`.
+La page **Revues** est produite par `scripts/generate_journals_exploration.py`.
 
 Le script :
 
@@ -215,7 +215,7 @@ Pour reproduire localement les principales étapes du build :
 python scripts/sanitize_xlsx.py --check data/Recensement-revues-stat.xlsx
 python scripts/generate_statistics.py
 python scripts/prepare_reusable_charts.py
-python scripts/generate_revues_exploration.py
+python scripts/generate_journals_exploration.py
 mkdocs build --strict
 ```
 

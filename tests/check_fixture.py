@@ -8,7 +8,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from statistics_data import StatisticsSource, derive, read_rows
 
 
-FIXTURE = ROOT / "tests" / "fixtures" / "corpus-minimal.xlsx"
+FIXTURE = ROOT / "tests" / "fixtures" / "minimal-corpus.xlsx"
 
 FIXTURE_COLUMNS = {
     "journal_name": "Nom revue",
