@@ -1,4 +1,5 @@
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 import math
 import re
@@ -38,6 +39,21 @@ INTRO_FILES = {
 
 DOWNLOADS = ROOT / "docs/downloads"
 
+
+@dataclass(frozen=True)
+class StatisticsSource:
+    xlsx: Path
+    sheet: str
+    columns: dict
+
+
+DEFAULT_SOURCE = StatisticsSource(
+    xlsx=XLSX,
+    sheet=SHEET,
+    columns=COLUMNS,
+)
+
+
 def norm(v):
     return "" if v is None else re.sub(r"\s+", " ", str(v).strip())
 
@@ -46,27 +62,37 @@ def rpct(v, total):
     return math.floor(v * 100 / total + 0.5) if total else 0
 
 
-def read_rows(xlsx=None, sheet=None):
-    source = Path(xlsx) if xlsx is not None else XLSX
-    worksheet = sheet if sheet is not None else SHEET
+def read_rows(source=None):
+    source = source or DEFAULT_SOURCE
 
-    wb = load_workbook(source, read_only=True, data_only=True)
-    if worksheet not in wb.sheetnames:
-        raise SystemExit(f"Onglet attendu introuvable : {worksheet}")
-    ws = wb[worksheet]
+    wb = load_workbook(source.xlsx, read_only=True, data_only=True)
+    if source.sheet not in wb.sheetnames:
+        raise SystemExit(f"Onglet attendu introuvable : {source.sheet}")
+    ws = wb[source.sheet]
+
     headers = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     required = [
-        COLUMNS["journal_name"], COLUMNS["proximity"], COLUMNS["open_access"],
-        COLUMNS["format"], COLUMNS["creation_year"], COLUMNS["periodicity"],
-        COLUMNS["discipline"], COLUMNS["publisher_type"], COLUMNS["licence"],
+        source.columns["journal_name"],
+        source.columns["proximity"],
+        source.columns["open_access"],
+        source.columns["format"],
+        source.columns["creation_year"],
+        source.columns["periodicity"],
+        source.columns["discipline"],
+        source.columns["publisher_type"],
+        source.columns["licence"],
     ]
     missing = [x for x in required if x not in headers]
     if missing:
         raise SystemExit("Colonnes manquantes : " + ", ".join(missing))
+
     rows = []
-    for row_number, values in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
+    for row_number, values in enumerate(
+        ws.iter_rows(min_row=2, values_only=True),
+        start=2,
+    ):
         row = dict(zip(headers, values))
-        if norm(row[COLUMNS["journal_name"]]):
+        if norm(row[source.columns["journal_name"]]):
             row["_row"] = row_number
             rows.append(row)
     return rows
@@ -105,16 +131,18 @@ def periodicity(v, row_number):
         raise SystemExit(f"Périodicité invalide ligne {row_number}: {v!r}")
 
 
-def derive(rows):
+def derive(rows, source=None):
+    source = source or DEFAULT_SOURCE
+    columns = source.columns
     total = len(rows)
     levels, formats, years, periods = Counter(), Counter(), Counter(), Counter()
     periodicities, disciplines, structures, rights = Counter(), Counter(), Counter(), Counter()
     level_access, format_access, date_access, structure_access = defaultdict(Counter), defaultdict(Counter), defaultdict(Counter), defaultdict(Counter)
     for row in rows:
         rn = row["_row"]
-        a = access(row[COLUMNS["open_access"]], rn)
+        a = access(row[columns["open_access"]], rn)
         try:
-            level = int(row[COLUMNS["proximity"]])
+            level = int(row[columns["proximity"]])
         except (TypeError, ValueError):
             raise SystemExit(f"Niveau de rattachement invalide ligne {rn}")
         if level not in PROXIMITY_LEVELS:
@@ -122,37 +150,37 @@ def derive(rows):
         levels[level] += 1
         level_access[level][a] += 1
 
-        f = norm(row[COLUMNS["format"]])
+        f = norm(row[columns["format"]])
         if f not in FORMAT_MAP:
             raise SystemExit(f"Format inattendu ligne {rn}: {f!r}")
         f = FORMAT_MAP[f]
         formats[f] += 1
         format_access[f][a] += 1
 
-        y = year(row[COLUMNS["creation_year"]], rn)
+        y = year(row[columns["creation_year"]], rn)
         if y is not None:
             years[y] += 1
             periods[creation_period(y)] += 1
             date_group = date_access_group(y)
             date_access[date_group][a] += 1
 
-        periodicity_value = row[COLUMNS["periodicity"]]
+        periodicity_value = row[columns["periodicity"]]
         if periodicity_value is not None and norm(periodicity_value) != "":
             periodicities[periodicity(periodicity_value, rn)] += 1
 
-        discipline = norm(row[COLUMNS["discipline"]])
+        discipline = norm(row[columns["discipline"]])
         if discipline not in DISCIPLINE_MAP:
             raise SystemExit(f"Discipline non référencée ligne {rn}: {discipline!r}")
         disciplines[DISCIPLINE_MAP[discipline]] += 1
 
-        structure = norm(row[COLUMNS["publisher_type"]])
+        structure = norm(row[columns["publisher_type"]])
         if structure not in ALLOWED_STRUCTURES:
             raise SystemExit(f"Type d'éditeur inattendu ligne {rn}: {structure!r}")
         structures[normalize_structure(structure)] += 1
         grouped_structure = group_structure_for_access(structure)
         structure_access[grouped_structure][a] += 1
 
-        licence = norm(row[COLUMNS["licence"]])
+        licence = norm(row[columns["licence"]])
         if licence:
             if licence not in LICENCE_MAP:
                 raise SystemExit(f"Licence non référencée ligne {rn}: {licence!r}")

@@ -5,10 +5,28 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from statistics_data import derive, read_rows
+from statistics_data import StatisticsSource, derive, read_rows
 
 
 FIXTURE = ROOT / "tests" / "fixtures" / "corpus-minimal.xlsx"
+
+FIXTURE_COLUMNS = {
+    "journal_name": "Nom revue",
+    "proximity": "Niveau rattachement",
+    "open_access": "Accès ouvert",
+    "format": "Format",
+    "creation_year": "Année de création",
+    "periodicity": "Nombre de n°s par an",
+    "discipline": "Discipline",
+    "publisher_type": "Type d'éditeur",
+    "licence": "Licence",
+}
+
+FIXTURE_SOURCE = StatisticsSource(
+    xlsx=FIXTURE,
+    sheet="recensement",
+    columns=FIXTURE_COLUMNS,
+)
 
 
 def assert_equal(actual, expected, label):
@@ -25,8 +43,8 @@ def nested_dict(value):
 
 
 def main():
-    rows = read_rows(FIXTURE, "recensement")
-    data = derive(rows)
+    rows = read_rows(FIXTURE_SOURCE)
+    data = derive(rows, FIXTURE_SOURCE)
 
     assert_equal(
         data["total"],
