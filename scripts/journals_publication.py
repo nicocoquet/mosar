@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 
 from config import load_config, project_path
-from mosar_model import PROXIMITY_LEVELS
 
 
 CONFIG = load_config()
@@ -43,6 +42,8 @@ def load_intro(lang: str) -> str:
 def write_data(
     records: list[dict],
     report: dict,
+    *,
+    proximity_levels,
 ) -> None:
     """Publier les données de l'explorateur et le rapport de jointure."""
 
@@ -54,7 +55,7 @@ def write_data(
             {
                 "meta": report,
                 "model": {
-                    "proximity_levels": list(PROXIMITY_LEVELS),
+                     "proximity_levels": list(proximity_levels),
                 },
                 "records": records,
             },

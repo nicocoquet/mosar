@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 
 from config import load_config, project_path
+from mosar_model import PROXIMITY_LEVELS
 from journals_pipeline import build_journals_dataset
 from journals_publication import write_data, write_page
 from journals_sources import (
@@ -57,7 +58,11 @@ def main() -> None:
         mosar_source=mosar_source,
     )
 
-    write_data(records, report)
+    write_data(
+        records,
+        report,
+        proximity_levels=PROXIMITY_LEVELS,
+    )
     write_page(
         report,
         cluster_id=GRAPPE_ID,
