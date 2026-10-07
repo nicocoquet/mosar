@@ -27,6 +27,7 @@ mirabel:
 
 publication:
   statistics:
+    downloads: "docs/downloads"
     pages:
       fr:
         intro: "content/statistiques-intro.fr.md"

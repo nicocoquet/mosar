@@ -42,6 +42,105 @@ def _validate(config: dict[str, Any]) -> None:
                 + ", ".join(missing)
             )
 
+    publication = config.get("publication")
+    if not isinstance(publication, dict):
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : publication"
+        )
+
+    statistics = publication.get("statistics")
+    if not isinstance(statistics, dict):
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : "
+            "publication.statistics"
+        )
+
+    if statistics.get("downloads") in (None, ""):
+        raise SystemExit(
+            "Clé de configuration manquante : publication.statistics.downloads"
+        )
+
+    statistics_pages = statistics.get("pages")
+    if not isinstance(statistics_pages, dict) or not statistics_pages:
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : "
+            "publication.statistics.pages"
+        )
+
+    for lang, page in statistics_pages.items():
+        if not isinstance(page, dict):
+            raise SystemExit(
+                f"Configuration invalide : publication.statistics.pages.{lang}"
+            )
+        missing = [
+            key for key in ("intro", "output")
+            if page.get(key) in (None, "")
+        ]
+        if missing:
+            raise SystemExit(
+                f"Clés de configuration manquantes dans "
+                f"publication.statistics.pages.{lang} : "
+                + ", ".join(missing)
+            )
+
+    journals = publication.get("journals")
+    if not isinstance(journals, dict):
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : "
+            "publication.journals"
+        )
+
+    missing = [
+        key for key in ("data_file", "report_file")
+        if journals.get(key) in (None, "")
+    ]
+    if missing:
+        raise SystemExit(
+            "Clés de configuration manquantes dans publication.journals : "
+            + ", ".join(missing)
+        )
+
+    journal_pages = journals.get("pages")
+    if not isinstance(journal_pages, dict) or not journal_pages:
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : "
+            "publication.journals.pages"
+        )
+
+    for lang, page in journal_pages.items():
+        if not isinstance(page, dict):
+            raise SystemExit(
+                f"Configuration invalide : publication.journals.pages.{lang}"
+            )
+        missing = [
+            key for key in ("intro", "output")
+            if page.get(key) in (None, "")
+        ]
+        if missing:
+            raise SystemExit(
+                f"Clés de configuration manquantes dans "
+                f"publication.journals.pages.{lang} : "
+                + ", ".join(missing)
+            )
+
+    fallback = journals.get("fallback")
+    if not isinstance(fallback, dict):
+        raise SystemExit(
+            "Section de configuration manquante ou invalide : "
+            "publication.journals.fallback"
+        )
+
+    if not isinstance(fallback.get("enabled"), bool):
+        raise SystemExit(
+            "publication.journals.fallback.enabled doit être un booléen."
+        )
+
+    if fallback.get("file") in (None, ""):
+        raise SystemExit(
+            "Clé de configuration manquante : "
+            "publication.journals.fallback.file"
+        )
+
     if not isinstance(config["privacy"]["forbidden_columns"], list):
         raise SystemExit("privacy.forbidden_columns doit être une liste.")
 

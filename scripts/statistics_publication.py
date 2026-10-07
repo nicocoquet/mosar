@@ -1,11 +1,9 @@
-from pathlib import Path
-
 from config import load_config, project_path
 
 
-ROOT = Path(__file__).resolve().parents[1]
 CONFIG = load_config()
-STATISTICS_PAGES = CONFIG["publication"]["statistics"]["pages"]
+STATISTICS_PUBLICATION = CONFIG["publication"]["statistics"]
+STATISTICS_PAGES = STATISTICS_PUBLICATION["pages"]
 
 OUTPUTS = {
     lang: project_path(page["output"])
@@ -17,4 +15,4 @@ INTRO_FILES = {
     for lang, page in STATISTICS_PAGES.items()
 }
 
-DOWNLOADS = ROOT / "docs/downloads"
+DOWNLOADS = project_path(STATISTICS_PUBLICATION["downloads"])
