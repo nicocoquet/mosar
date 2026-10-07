@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-from statistics_data import OUTPUTS
+from statistics_publication import OUTPUTS
 
 ROOT = Path(__file__).resolve().parents[1]
 FRAGMENTS = ROOT / "generated" / "charts"
@@ -31,15 +31,25 @@ def main():
         text = page.read_text(encoding="utf-8")
         for chart_id in CHART_IDS:
             pattern = re.compile(
-                rf"<!-- CHART:{re.escape(chart_id)}:START -->\n(.*?)\n<!-- CHART:{re.escape(chart_id)}:END -->",
+                rf"<!-- CHART:{re.escape(chart_id)}:START -->\n(.*?)\n"
+                rf"<!-- CHART:{re.escape(chart_id)}:END -->",
                 re.S,
             )
             match = pattern.search(text)
             if not match:
-                raise SystemExit(f"Bloc graphique introuvable : {chart_id} ({lang})")
+                raise SystemExit(
+                    f"Bloc graphique introuvable : {chart_id} ({lang})"
+                )
             fragment = match.group(1).strip() + "\n"
-            (FRAGMENTS / f"{chart_id}.{lang}.md").write_text(fragment, encoding="utf-8")
-            text = text[: match.start()] + snippet(chart_id, lang) + text[match.end() :]
+            (FRAGMENTS / f"{chart_id}.{lang}.md").write_text(
+                fragment,
+                encoding="utf-8",
+            )
+            text = (
+                text[: match.start()]
+                + snippet(chart_id, lang)
+                + text[match.end() :]
+            )
         page.write_text(text, encoding="utf-8")
     print("Composants graphiques générés : " + ", ".join(CHART_IDS))
 

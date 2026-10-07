@@ -9,7 +9,8 @@ from mosar_dashboard import (
     TITLES,
 )
 from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
-from statistics_data import INTRO_FILES, rpct
+from statistics_data import rpct
+from statistics_publication import INTRO_FILES
 from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, stacked_svg
 
 
@@ -63,7 +64,7 @@ def build(data, lang):
     categories = list(FORMAT_CATEGORIES)
     values = [data["formats"][c] for c in categories]
     svg = pie_svg(categories, values, lang)
-    export_csv("format-publication", ["Format", "Nombre", "Pourcentage"], [(c, data["formats"][c], rpct(data["formats"][c], total)) for c in categories])
+    export_csv("format-publication", ["Format", "Nombre", "Pourcentage"], [(c, data["formats"][c],rpct(data["formats"][c], total)) for c in categories])
     export_svg("format-publication", svg)
     export_jpg_pie("format-publication", categories, values)
     out.append(block("format-publication", svg, lang))

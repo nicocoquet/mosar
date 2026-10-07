@@ -20,24 +20,10 @@ from mosar_model import (
     periodicity_label,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
 CONFIG = load_config()
 COLUMNS = CONFIG["columns"]
 XLSX = project_path(CONFIG["data"]["file"])
 SHEET = CONFIG["data"]["sheet"]
-STATISTICS_PAGES = CONFIG["publication"]["statistics"]["pages"]
-
-OUTPUTS = {
-    lang: project_path(page["output"])
-    for lang, page in STATISTICS_PAGES.items()
-}
-
-INTRO_FILES = {
-    lang: project_path(page["intro"])
-    for lang, page in STATISTICS_PAGES.items()
-}
-
-DOWNLOADS = ROOT / "docs/downloads"
 
 
 @dataclass(frozen=True)
@@ -122,7 +108,6 @@ def year(v, row_number):
     return y
 
 
-
 def periodicity(v, row_number):
     x = norm(v).casefold()
     try:
@@ -138,6 +123,7 @@ def derive(rows, source=None):
     levels, formats, years, periods = Counter(), Counter(), Counter(), Counter()
     periodicities, disciplines, structures, rights = Counter(), Counter(), Counter(), Counter()
     level_access, format_access, date_access, structure_access = defaultdict(Counter), defaultdict(Counter), defaultdict(Counter), defaultdict(Counter)
+
     for row in rows:
         rn = row["_row"]
         a = access(row[columns["open_access"]], rn)
@@ -214,7 +200,17 @@ def derive(rows, source=None):
             )
 
     return {
-        "total": total, "levels": levels, "level_access": level_access, "formats": formats, "format_access": format_access,
-        "years": years, "periods": periods, "date_access": date_access, "periodicities": periodicities,
-        "disciplines": disciplines, "structures": structures, "struct_access": structure_access, "rights": rights,
+        "total": total,
+        "levels": levels,
+        "level_access": level_access,
+        "formats": formats,
+        "format_access": format_access,
+        "years": years,
+        "periods": periods,
+        "date_access": date_access,
+        "periodicities": periodicities,
+        "disciplines": disciplines,
+        "structures": structures,
+        "struct_access": structure_access,
+        "rights": rights,
     }

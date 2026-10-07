@@ -6,7 +6,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from statistics_data import DOWNLOADS, rpct
+from statistics_data import rpct
+from statistics_publication import DOWNLOADS
 
 BLUES = ["#07558c", "#367fb8", "#67a9df", "#a7d5f5", "#8fc1e8", "#bdddf4", "#4d91c7", "#245f92"]
 OPEN = {"open": "#07558c", "restricted": "#a7d5f5"}
@@ -98,7 +99,7 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
     lx = left
     for label, key, color in series:
-        parts.append(f'<rect x="{lx}" y="{height-29}" width="12" height="12" fill="{color}"/><text x="{lx+18}" y="{height-19}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
+        parts.append(f'<rect x="{lx}" y="{height-29}" width="12" height="12" fill="{color}"/><textx="{lx+18}" y="{height-19}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
         lx += 230
     return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
