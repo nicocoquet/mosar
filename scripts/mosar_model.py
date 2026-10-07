@@ -46,7 +46,7 @@ DISCIPLINE_MAP = {
     "Langues et cultures étrangères": "Études des aires culturelles", "Relations internationales": "Histoire", "Marketing": "Économie, gestion, finance, marketing", "Linguistique, Neurosciences": "STM (sciences, technologie, médecine)",
     "Architecture": "Pluridisciplinaire", "Logistique": "Économie, gestion, finance, marketing", "Mécanique": "STM (sciences, technologie, médecine)", "Droit (histoire et anthropologie)": "Droit",
     "Mathématiques": "STM (sciences, technologie, médecine)", "Informatique": "STM (sciences, technologie, médecine)", "Histoire de l'art": "Arts", "Étude de genre": "Sociologie",
-    "Histoire et sociologie des sciences": "Pluridisciplinaire", "Ethnologie": "Anthropologie",
+    "Histoire et sociologie des sciences": "Pluridisciplinaire", "Ethnologie": "Anthropologie", "Philosophie, pluridisciplinaire": "Philosophie",
 }
 
 LICENCE_MAP = {

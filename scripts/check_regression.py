@@ -9,12 +9,20 @@ from statistics_data import derive, read_rows
 
 
 EXPECTED = {
-    "total": 186,
-    "open_access": 101,
+    "total": 193,
+    "open_access": 105,
     "formats": {
-        "Papier et numérique": 130,
-        "Numérique": 51,
-        "Papier": 5,
+        "Numérique": 54,
+        "Papier et numérique": 135,
+        "Papier": 4,
+    },
+    "coverage": {
+        "levels": 193,
+        "years": 192,
+        "periodicities": 192,
+        "disciplines": 193,
+        "structures": 193,
+        "rights": 192,
     },
 }
 
@@ -38,15 +46,17 @@ def main():
         f"Formats inattendus : {dict(data['formats'])!r}"
     )
 
-    assert sum(data["levels"].values()) == EXPECTED["total"]
-    assert sum(data["periodicities"].values()) == EXPECTED["total"]
-    assert sum(data["disciplines"].values()) == EXPECTED["total"]
-    assert sum(data["structures"].values()) == EXPECTED["total"]
-    assert sum(data["rights"].values()) == EXPECTED["total"]
+    for name, expected in EXPECTED["coverage"].items():
+        actual = sum(data[name].values())
+        assert actual == expected, (
+            f"Couverture inattendue pour {name} : "
+            f"{actual} au lieu de {expected}"
+        )
 
     print(
         "Non-régression statistiques : OK "
-        f"({EXPECTED['total']} revues, {EXPECTED['open_access']} en accès ouvert)"
+        f"({EXPECTED['total']} revues, "
+        f"{EXPECTED['open_access']} en accès ouvert)"
     )
 
 

@@ -68,12 +68,17 @@ def access(v, row_number):
 
 
 def year(v, row_number):
+    if v is None or norm(v) == "":
+        return None
+
     try:
         y = int(float(v))
     except (TypeError, ValueError):
         raise SystemExit(f"Année de création invalide ligne {row_number}: {v!r}")
+
     if not 1500 <= y <= 2100:
         raise SystemExit(f"Année de création hors plage ligne {row_number}: {y}")
+
     return y
 
 
@@ -111,12 +116,15 @@ def derive(rows):
         format_access[f][a] += 1
 
         y = year(row[COLUMNS["creation_year"]], rn)
-        years[y] += 1
-        periods[creation_period(y)] += 1
-        date_group = date_access_group(y)
-        date_access[date_group][a] += 1
+        if y is not None:
+            years[y] += 1
+            periods[creation_period(y)] += 1
+            date_group = date_access_group(y)
+            date_access[date_group][a] += 1
 
-        periodicities[periodicity(row[COLUMNS["periodicity"]], rn)] += 1
+        periodicity_value = row[COLUMNS["periodicity"]]
+        if periodicity_value is not None and norm(periodicity_value) != "":
+            periodicities[periodicity(periodicity_value, rn)] += 1
 
         discipline = norm(row[COLUMNS["discipline"]])
         if discipline not in DISCIPLINE_MAP:
@@ -131,13 +139,37 @@ def derive(rows):
         structure_access[grouped_structure][a] += 1
 
         licence = norm(row[COLUMNS["licence"]])
-        if licence not in LICENCE_MAP:
-            raise SystemExit(f"Licence non référencée ligne {rn}: {licence!r}")
-        rights[LICENCE_MAP[licence]] += 1
+        if licence:
+            if licence not in LICENCE_MAP:
+                raise SystemExit(f"Licence non référencée ligne {rn}: {licence!r}")
+            rights[LICENCE_MAP[licence]] += 1
 
-    for name, counter in [("niveaux", levels), ("formats", formats), ("années", years), ("périodicités", periodicities), ("disciplines", disciplines), ("structures", structures), ("droits", rights)]:
+    complete_counters = [
+        ("niveaux", levels),
+        ("formats", formats),
+        ("disciplines", disciplines),
+        ("structures", structures),
+    ]
+
+    for name, counter in complete_counters:
         if sum(counter.values()) != total:
-            raise SystemExit(f"Contrôle de total échoué pour {name}: {sum(counter.values())}/{total}")
+            raise SystemExit(
+                f"Contrôle de total échoué pour {name}: "
+                f"{sum(counter.values())}/{total}"
+            )
+
+    partial_counters = [
+        ("années", years),
+        ("périodicités", periodicities),
+        ("droits", rights),
+    ]
+
+    for name, counter in partial_counters:
+        if sum(counter.values()) > total:
+            raise SystemExit(
+                f"Contrôle de total incohérent pour {name}: "
+                f"{sum(counter.values())}/{total}"
+            )
 
     return {
         "total": total, "levels": levels, "level_access": level_access, "formats": formats, "format_access": format_access,
