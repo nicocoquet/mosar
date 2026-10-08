@@ -10,7 +10,7 @@ const REVUES_TRANSLATIONS = {
     searchAriaLabel: 'Rechercher',
     emptyLabel: 'Aucune revue ne correspond aux filtres sélectionnés.',
     resultsLabel: (count, total) =>
-      `${count} revue${count > 1 ? 's' : ''} sur ${total}`,
+      [`${new Intl.NumberFormat('fr-FR').format(count)} revue${count > 1 ? 's' : ''}`, `sur ${new Intl.NumberFormat('fr-FR').format(total)}`],
     levelLabel: number => `Niveau ${number}`,
     formatTitle: 'Format de publication',
     diamondTitle: 'Labellisation : Diamond journal',
@@ -151,7 +151,7 @@ const REVUES_TRANSLATIONS = {
     searchAriaLabel: 'Search',
     emptyLabel: 'No journals match the selected filters.',
     resultsLabel: (count, total) =>
-      `${count} journal${count !== 1 ? 's' : ''} out of ${total}`,
+      [`${new Intl.NumberFormat('en-US').format(count)} journal${count !== 1 ? 's' : ''}`, `out of ${new Intl.NumberFormat('en-US').format(total)}`],
     levelLabel: number => `Level ${number}`,
     formatTitle: 'Publication format',
     diamondTitle: 'Label: Diamond journal',
