@@ -169,3 +169,53 @@
     content: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Sélecteur FR | EN (liens natifs du plugin i18n)
+   -------------------------------------------------------------------------- */
+
+.md-header__inner .mosar-language-switch {
+  order: 30;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: .3rem;
+  margin: .2rem 0 .2rem .55rem;
+  white-space: nowrap;
+  font-size: .68rem;
+  line-height: 1.4;
+}
+
+.mosar-language-switch a {
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+  padding: .25rem .08rem;
+}
+
+.mosar-language-switch a:hover,
+.mosar-language-switch a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.mosar-language-switch a[aria-current="page"] {
+  color: #fff;
+  font-weight: 800;
+}
+
+.mosar-language-switch .mosar-language-divider {
+  color: rgba(255,255,255,.65);
+}
+
+/* Conserver le sélecteur natif comme solution de repli si JS est désactivé. */
+html.mosar-language-ready .md-header__option:has(.md-select__link[hreflang]) {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .md-header__inner .mosar-language-switch {
+    gap: .2rem;
+    margin-left: .15rem;
+    font-size: .58rem;
+  }
+}
