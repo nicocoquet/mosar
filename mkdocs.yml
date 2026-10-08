@@ -6,7 +6,7 @@ nav:
   - Home: index.md
   - Journals: revues.md
   - Statistics: statistiques.md
-  - Contacts: partenaires.md
+  - Contacts: contacts.md
 theme:
   name: material
   language: fr
