@@ -5,6 +5,9 @@ import math
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+from openpyxl.utils import get_column_letter
 
 from statistics_data import rpct
 from statistics_publication import downloads_for
@@ -22,18 +25,77 @@ def fmt_pct(value, total, lang):
     return f"{value} %" if lang == "fr" else f"{value}%"
 
 
-def icon(label):
-    return f'<span class="chart-download-icon" aria-hidden="true"><svg viewBox="0 0 48 56"><path d="M8 2h21l11 11v39a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M29 2v12h11"/><text x="24" y="38" text-anchor="middle" fill="currentColor" stroke="none" font-family="Arial,sans-serif" font-size="9" font-weight="700">{label}</text></svg></span>'
+def icon(ext):
+    """Inline decorative SVG; the format remains accessible HTML text below."""
+    shapes = {
+        "csv": '<path d="M8 3h19l11 11v31H8z"/><path d="M27 3v11h11"/><path d="M15 23h16M15 29h16M15 35h11"/>',
+        "xlsx": '<rect x="8" y="5" width="30" height="39" rx="2"/><path d="M8 17h30M8 27h30M8 37h30M23 17v27"/>',
+        "jpg": '<rect x="6" y="7" width="34" height="34" rx="3"/><circle cx="17" cy="17" r="3"/><path d="m9 35 11-11 7 7 5-5 6 9"/>',
+        "svg": '<path d="M8 3h19l11 11v31H8z"/><path d="M27 3v11h11"/><circle cx="16" cy="33" r="2"/><circle cx="30" cy="23" r="2"/><circle cx="30" cy="37" r="2"/><path d="M18 32c5-11 10-10 10-9M18 34c5 7 9 5 10 3"/>',
+    }
+    return (
+        '<span class="chart-download-icon" aria-hidden="true">'
+        '<svg viewBox="0 0 46 48" focusable="false" fill="none" '
+        'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+        + shapes[ext] + '</svg></span>'
+    )
 
 
 def actions(chart_id, lang):
-    verb = "Télécharger" if lang == "fr" else "Download"
-    nouns = {"csv": "les données" if lang == "fr" else "data", "jpg": "le graphique" if lang == "fr" else "chart", "svg": "le graphique" if lang == "fr" else "chart"}
     base = "../downloads/" if lang == "fr" else "../../downloads/en/"
-    links = []
-    for ext in ("csv", "jpg", "svg"):
-        links.append(f'<a class="chart-download" href="{base}{chart_id}.{ext}" download>{icon(ext.upper())}<span>{verb} {nouns[ext]}</span></a>')
-    return '<div class="chart-actions">' + "".join(links) + "</div>"
+    groups = (
+        (("Données", ("csv", "xlsx")), ("Graphique", ("jpg", "svg")))
+        if lang == "fr" else
+        (("Data", ("csv", "xlsx")), ("Chart", ("jpg", "svg")))
+    )
+
+    def group(label, formats):
+        links = []
+        for ext in formats:
+            description = (
+                ("Télécharger les données" if ext in ("csv", "xlsx") else "Télécharger le graphique")
+                if lang == "fr" else
+                ("Download data" if ext in ("csv", "xlsx") else "Download chart")
+            )
+            readable = ext.upper()
+            links.append(
+                f'<a class="chart-download" href="{base}{chart_id}.{ext}" download '
+                f'aria-label="{description} ({readable})" title="{description} ({readable})">'
+                f'{icon(ext)}<span class="chart-download-format">{readable}</span></a>'
+            )
+        return (
+            '<div class="chart-actions-row">'
+            f'<span class="chart-actions-label">{label} :</span>'
+            '<div class="chart-actions-formats">' + "".join(links) + '</div>'
+            '</div>'
+        )
+
+    return '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups) + '</div>'
+
+
+def pie_legend(labels, values, lang, sort_by_count=True):
+    """HTML legend, sorted visually without altering sector positions or colors."""
+    total = sum(values)
+    items = list(enumerate(zip(labels, values)))
+    if sort_by_count:
+        items.sort(key=lambda item: -item[1][1])  # stable on ties
+    entries = []
+    for i, (label, value) in items:
+        entries.append(
+            f'<span class="chart-legend-item"><span class="chart-legend-swatch" '
+            f'style="background:{BLUES[i % len(BLUES)]}" aria-hidden="true"></span>'
+            f'<span>{esc(label)} — {value} ({fmt_pct(value, total, lang)})</span></span>'
+        )
+    return '<div class="chart-legend" role="group" aria-label="' + ('Légende' if lang == 'fr' else 'Legend') + '">' + ''.join(entries) + '</div>'
+
+
+def stacked_legend(series, lang):
+    entries = [
+        f'<span class="chart-legend-item"><span class="chart-legend-swatch" '
+        f'style="background:{color}" aria-hidden="true"></span><span>{esc(label)}</span></span>'
+        for label, key, color in series
+    ]
+    return '<div class="chart-legend" role="group" aria-label="' + ('Légende' if lang == 'fr' else 'Legend') + '">' + ''.join(entries) + '</div>'
 
 
 def pie_svg(labels, values, lang):
@@ -56,12 +118,7 @@ def pie_svg(labels, values, lang):
             parts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:#08264a"><tspan x="{tx:.1f}">{value}</tspan><tspan x="{tx:.1f}" dy="18">{fmt_pct(value,total,lang)}</tspan></text>')
         angle += sweep
 
-    lx = 380
-    height = max(380, 60 + len(labels) * 25)
-    for i, (label, value) in enumerate(zip(labels, values)):
-        y = 30 + i * 25
-        parts.append(f'<rect x="{lx}" y="{y-10}" width="12" height="12" fill="{BLUES[i % len(BLUES)]}"/><text x="{lx+19}" y="{y}" style="font:13px Arial;fill:#08264a">{esc(label)} — {value} ({fmt_pct(value,total,lang)})</text>')
-    return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 920 {height}">' + "".join(parts) + "</svg>"
+    return f'<svg style="display:block;width:100%;max-width:540px;height:auto" viewBox="0 0 360 360">' + "".join(parts) + "</svg>"
 
 
 def stacked_svg(categories, series, values, lang, percent=False, average=None):
@@ -98,10 +155,6 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
         label = (f"Moyenne sur l’ensemble des revues du périmètre ({opened} % en accès ouvert, {restricted} % en accès restreint)" if lang == "fr" else f"Average across all journals in the corpus ({opened}% open access, {restricted}% restricted access)")
         parts.append(f'<line x1="{left}" y1="{ay:.1f}" x2="{width-right}" y2="{ay:.1f}" stroke="#b74f17" stroke-width="2" stroke-dasharray="7 5"/><text x="{left+5}" y="{max(top+14,ay-7):.1f}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
 
-    lx = left
-    for label, key, color in series:
-        parts.append(f'<rect x="{lx}" y="{height-29}" width="12" height="12" fill="{color}"/><text x="{lx+18}" y="{height-19}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
-        lx += 230
     return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
@@ -124,12 +177,41 @@ def bar_svg(labels, values):
 
 
 def export_csv(chart_id, headers, rows, lang="fr"):
+    """Export the same tabular data as CSV and as a typed Excel workbook."""
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
+    rows = list(rows)
+
     with (destination / f"{chart_id}.csv").open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.writer(f, delimiter=";")
         writer.writerow(headers)
         writer.writerows(rows)
+
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Données" if lang == "fr" else "Data"
+    sheet.append(list(headers))
+    for row in rows:
+        sheet.append([_excel_value(value) for value in row])
+
+    header_fill = PatternFill(fill_type="solid", fgColor="08264A")
+    for cell in sheet[1]:
+        cell.fill = header_fill
+        cell.font = Font(bold=True, color="FFFFFF")
+    sheet.freeze_panes = "A2"
+    sheet.auto_filter.ref = sheet.dimensions
+    for column in sheet.columns:
+        letter = get_column_letter(column[0].column)
+        width = min(60, max(12, max(len(str(cell.value or "")) for cell in column) + 2))
+        sheet.column_dimensions[letter].width = width
+    workbook.save(destination / f"{chart_id}.xlsx")
+
+
+def _excel_value(value):
+    """Keep genuine numbers numeric; leave textual labels unchanged."""
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return value
+    return value
 
 
 def export_svg(chart_id, svg, lang="fr"):

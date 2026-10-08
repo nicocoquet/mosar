@@ -12,16 +12,69 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, stacked_svg
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend
 
 
-def block(chart_id, svg, lang, extra=""):
+# Rubriques de navigation : ordre identique à celui des graphiques.
+# Les libellés courts sont réservés à la table des matières.
+STATISTICS_SECTIONS = (
+    ("rattachement", {"fr": "Rattachement des revues", "en": "Journal affiliation"}, (
+        ("proximite-revues", "Niveaux de rattachement", "Affiliation levels"),
+        ("acces-ouvert-rattachement", "Accès selon le rattachement", "Access by affiliation"),
+    )),
+    ("formats", {"fr": "Formats de publication", "en": "Publication formats"}, (
+        ("format-publication", "Répartition par format", "Distribution by format"),
+        ("acces-format-publication", "Accès selon le format", "Access by format"),
+    )),
+    ("anciennete", {"fr": "Ancienneté des revues", "en": "Journal age"}, (
+        ("annee-creation", "Année de création", "Year founded"),
+        ("periode-creation", "Période de création", "Founding period"),
+        ("acces-date-creation", "Accès selon la création", "Access by founding date"),
+    )),
+    ("edition", {"fr": "Caractéristiques éditoriales", "en": "Editorial characteristics"}, (
+        ("periodicite-revues", "Périodicité", "Publication frequency"),
+        ("disciplines-revues", "Disciplines", "Disciplines"),
+        ("structures-editoriales", "Structures éditoriales", "Editorial structures"),
+        ("acces-structure-editoriale", "Accès selon la structure", "Access by structure"),
+        ("droits-reutilisation", "Droits de réutilisation", "Reuse rights"),
+    )),
+)
+
+SHORT_TITLES = {
+    chart_id: {"fr": short_fr, "en": short_en}
+    for _, _, charts in STATISTICS_SECTIONS
+    for chart_id, short_fr, short_en in charts
+}
+
+
+def block(chart_id, svg, lang, extra="", legend_html=""):
+    # Markdown dans HTML (md_in_html) permet au titre h3 d'être repris par la ToC.
+    short = SHORT_TITLES[chart_id][lang]
     return (
         f'<!-- CHART:{chart_id}:START -->\n'
-        f'## {TITLES[chart_id][lang]} {{.statistics-title}}\n\n'
-        f'<div class="chart-block"><div class="chart-layout" style="display:block;max-width:960px"><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n'
+        '<section class="statistics-card" markdown="1">\n\n'
+        f'### {TITLES[chart_id][lang]} {{#{chart_id} .statistics-title data-toc-label="{short}"}}\n\n'
+        f'{legend_html}<div class="chart-block"><div class="chart-layout" style="display:block;max-width:960px"><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
+        '</section>\n'
         f'<!-- CHART:{chart_id}:END -->'
     )
+
+
+def grouped_blocks(blocks, lang):
+    """Regroupe les fiches sans changer l'ordre ni les identifiants des graphiques."""
+    if len(blocks) != len(SHORT_TITLES):
+        raise ValueError(f"Nombre inattendu de graphiques : {len(blocks)}")
+    grouped = []
+    index = 0
+    for section_id, titles, charts in STATISTICS_SECTIONS:
+        grouped.append(f'## {titles[lang]} {{#statistiques-{section_id} .statistics-section-title}}')
+        for chart_id, _, _ in charts:
+            marker = f'<!-- CHART:{chart_id}:START -->'
+            if marker not in blocks[index]:
+                raise ValueError(f"Ordre inattendu : {chart_id} à la position {index + 1}")
+            grouped.append(blocks[index])
+            index += 1
+    return "\n\n".join(grouped)
 
 
 def load_intro(lang):
@@ -64,7 +117,7 @@ def build(data, lang):
         f'<div class="legend-item"><span class="legend-dot level-{n}"></span><p><strong>{labels[n-1]} :</strong> {PROX_DEFS[lang][n]}</p></div>'
         for n in PROXIMITY_LEVELS
     ) + "</section>"
-    out.append(block("proximite-revues", svg, lang, legend))
+    out.append(block("proximite-revues", svg, lang, legend, pie_legend(labels, values, lang, sort_by_count=False)))
 
     categories = labels
     grouped = {categories[i]: data["level_access"][i + 1] for i in range(4)}
@@ -73,7 +126,7 @@ def build(data, lang):
     export_table("acces-ouvert-rattachement", ["Niveau", "Accès ouvert", "Accès restreint"], [(i + 1, data["level_access"][i + 1]["open"], data["level_access"][i + 1]["restricted"]) for i in range(4)], lang=lang)
     export_svg("acces-ouvert-rattachement", svg, lang=lang)
     export_jpg_stacked("acces-ouvert-rattachement", categories, series, grouped, percent=True, average=average, lang=lang)
-    out.append(block("acces-ouvert-rattachement", svg, lang))
+    out.append(block("acces-ouvert-rattachement", svg, lang, legend_html=stacked_legend(series, lang)))
 
     categories = list(FORMAT_CATEGORIES)
     values = [data["formats"][c] for c in categories]
@@ -82,14 +135,14 @@ def build(data, lang):
     export_table("format-publication", ["Format", "Nombre", "Pourcentage"], [(label, data["formats"][c],rpct(data["formats"][c], total)) for c, label in zip(categories, labels)], lang=lang)
     export_svg("format-publication", svg, lang=lang)
     export_jpg_pie("format-publication", labels, values, lang=lang)
-    out.append(block("format-publication", svg, lang))
+    out.append(block("format-publication", svg, lang, legend_html=pie_legend(labels, values, lang)))
 
     labels, grouped = display_grouped(categories, data["format_access"], lang)
     svg = stacked_svg(labels, series, grouped, lang)
     export_table("acces-format-publication", ["Format", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
     export_svg("acces-format-publication", svg, lang=lang)
     export_jpg_stacked("acces-format-publication", labels, series, grouped, lang=lang)
-    out.append(block("acces-format-publication", svg, lang))
+    out.append(block("acces-format-publication", svg, lang, legend_html=stacked_legend(series, lang)))
 
     years = sorted(data["years"])
     values = [data["years"][y] for y in years]
@@ -114,7 +167,7 @@ def build(data, lang):
     export_table("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
     export_svg("acces-date-creation", svg, lang=lang)
     export_jpg_stacked("acces-date-creation", labels, series, grouped, lang=lang)
-    out.append(block("acces-date-creation", svg, lang))
+    out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang)))
 
     categories = list(PERIODICITY_CATEGORIES)
     values = [data["periodicities"][c] for c in categories]
@@ -123,7 +176,7 @@ def build(data, lang):
     export_table("periodicite-revues", ["Périodicité", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("periodicite-revues", svg, lang=lang)
     export_jpg_pie("periodicite-revues", labels, values, lang=lang)
-    out.append(block("periodicite-revues", svg, lang))
+    out.append(block("periodicite-revues", svg, lang, legend_html=pie_legend(labels, values, lang)))
 
     categories = [c for c, _ in data["disciplines"].most_common()]
     values = [data["disciplines"][c] for c in categories]
@@ -132,7 +185,7 @@ def build(data, lang):
     export_table("disciplines-revues", ["Discipline", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("disciplines-revues", svg, lang=lang)
     export_jpg_pie("disciplines-revues", labels, values, lang=lang)
-    out.append(block("disciplines-revues", svg, lang))
+    out.append(block("disciplines-revues", svg, lang, legend_html=pie_legend(labels, values, lang)))
 
     categories = [c for c, _ in data["structures"].most_common()]
     values = [data["structures"][c] for c in categories]
@@ -141,7 +194,7 @@ def build(data, lang):
     export_table("structures-editoriales", ["Structure", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("structures-editoriales", svg, lang=lang)
     export_jpg_pie("structures-editoriales", labels, values, lang=lang)
-    out.append(block("structures-editoriales", svg, lang))
+    out.append(block("structures-editoriales", svg, lang, legend_html=pie_legend(labels, values, lang)))
 
     categories = [c for c in STRUCTURE_ACCESS_ORDER if c in data["struct_access"]]
     labels, grouped = display_grouped(categories, data["struct_access"], lang)
@@ -149,7 +202,7 @@ def build(data, lang):
     export_table("acces-structure-editoriale", ["Structure", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
     export_svg("acces-structure-editoriale", svg, lang=lang)
     export_jpg_stacked("acces-structure-editoriale", labels, series, grouped, percent=True, lang=lang)
-    out.append(block("acces-structure-editoriale", svg, lang))
+    out.append(block("acces-structure-editoriale", svg, lang, legend_html=stacked_legend(series, lang)))
 
     categories = list(RIGHTS_CATEGORIES)
     values = [data["rights"][c] for c in categories]
@@ -158,7 +211,7 @@ def build(data, lang):
     export_table("droits-reutilisation", ["Droits", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("droits-reutilisation", svg, lang=lang)
     export_jpg_pie("droits-reutilisation", labels, values, lang=lang)
-    out.append(block("droits-reutilisation", svg, lang))
+    out.append(block("droits-reutilisation", svg, lang, legend_html=pie_legend(labels, values, lang)))
 
     title = PAGE_TITLES[lang]
     intro = load_intro(lang)
@@ -168,6 +221,6 @@ def build(data, lang):
         f'<div class="statistics-intro" markdown="1">\n\n'
         f'{intro}\n\n'
         f'</div>\n\n'
-        + "\n\n".join(out)
+        + grouped_blocks(out, lang)
         + "\n"
     )

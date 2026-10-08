@@ -41,6 +41,8 @@ plugins:
           build: true
 
 markdown_extensions:
+  - toc:
+      toc_depth: "2-3"
   - attr_list
   - md_in_html
   - pymdownx.emoji:
