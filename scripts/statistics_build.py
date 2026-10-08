@@ -50,11 +50,16 @@ SHORT_TITLES = {
 def block(chart_id, svg, lang, extra="", legend_html=""):
     # Markdown dans HTML (md_in_html) permet au titre h3 d'être repris par la ToC.
     short = SHORT_TITLES[chart_id][lang]
+    layout_style = (
+        ""
+        if chart_id == "proximite-revues"
+        else ' style="display:block;max-width:960px"'
+    )
     return (
         f'<!-- CHART:{chart_id}:START -->\n'
         '<section class="statistics-card" markdown="1">\n\n'
         f'### {TITLES[chart_id][lang]} {{#{chart_id} .statistics-title data-toc-label="{short}"}}\n\n'
-        f'{legend_html}<div class="chart-block"><div class="chart-layout" style="display:block;max-width:960px"><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
+        f'{legend_html}<div class="chart-block"><div class="chart-layout"{layout_style}><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
         '</section>\n'
         f'<!-- CHART:{chart_id}:END -->'
     )
