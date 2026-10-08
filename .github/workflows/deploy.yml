@@ -62,6 +62,9 @@ jobs:
       - name: Contrôler le JavaScript Revues
         run: node scripts/check_journals_js.js
 
+      - name: Contrôler les traductions des données Revues
+        run: node tests/check_journals_translations.js
+
       - name: Vérifier la construction du site
         run: mkdocs build --strict
 
