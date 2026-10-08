@@ -127,7 +127,7 @@ const REVUES_TRANSLATIONS = {
       'Sciences de la Terre et de l\'Univers': 'Earth and Space Sciences',
       'Sciences de la vie': 'Life Sciences',
       'Sciences et techniques': 'Science and Technology',
-      'Sociologie ': 'Sociology',
+      'Sociologie\u00a0': 'Sociology',
       'Sports': 'Sports',
       'Stratégie, défense': 'Strategy and Defence',
       'Économie, gestion': 'Economics and Management',
