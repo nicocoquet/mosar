@@ -307,35 +307,61 @@
 .chart-actions {
   order: 2;
   display: flex;
-  width: 540px;
-  max-width: 100%;
   flex-wrap: wrap;
-  gap: .35rem;
+  align-items: stretch;
   justify-content: flex-start;
-  margin: .45rem 0 0;
-  padding-left: .25rem;
+  gap: .65rem;
+  width: 100%;
+  max-width: 540px;
+  margin: .6rem 0 0;
+}
+
+.chart-actions-row {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: .65rem;
+  min-width: 0;
+  padding: .4rem .65rem;
+  border: 1px solid var(--mosar-border);
+  border-radius: .45rem;
+  background: var(--mosar-panel);
+}
+
+.chart-actions-label {
+  flex: 0 0 auto;
+  color: var(--mosar-ink);
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.chart-actions-formats {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
 }
 
 .chart-download {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .32rem;
-  min-height: 1.65rem;
-  padding: .22rem .48rem;
-  border: 1px solid var(--mosar-border);
-  border-radius: .35rem;
-  background: var(--mosar-panel);
+  gap: .12rem;
+  min-width: 2.25rem;
+  padding: .15rem .2rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
   color: var(--mosar-ink) !important;
-  font-size: .6rem;
-  font-weight: 700;
   text-decoration: none !important;
+  transition: background-color .15s ease, border-color .15s ease;
 }
 
 .chart-download-icon {
   display: inline-flex;
-  width: 1.15rem;
-  height: 1.3rem;
+  width: 1.45rem;
+  height: 1.5rem;
   flex: 0 0 auto;
   color: currentColor;
 }
@@ -344,15 +370,25 @@
   display: block;
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
-.chart-download:hover {
-  border-color: var(--mosar-blue-2);
+.chart-download-format {
+  color: inherit;
+  font-size: .52rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: .015em;
+}
+
+.chart-download:hover,
+.chart-download:focus-visible {
+  border-color: var(--mosar-border);
+  background: #e3effa;
+}
+
+.chart-download:focus-visible {
+  outline: 2px solid var(--mosar-blue-2);
+  outline-offset: 2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -414,12 +450,113 @@
   }
 
   .chart-actions {
-    width: auto;
-    justify-content: center;
-    padding-left: 0;
+    justify-content: flex-start;
+  }
+
+  .chart-actions-row {
+    max-width: 100%;
   }
 
   .pie-label { font-size: 15px; }
   .summary-title { font-size: 15px; }
   .summary-value { font-size: 25px; }
 }
+
+/* --------------------------------------------------------------------------
+   9. Fiches statistiques et navigation hiérarchisée
+   -------------------------------------------------------------------------- */
+
+.statistics-section-title {
+  margin: 2rem 0 .85rem !important;
+  padding-bottom: .35rem;
+  border-bottom: 2px solid var(--mosar-border);
+  color: var(--mosar-blue-1) !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3;
+}
+
+.statistics-card {
+  min-width: 0;
+  margin: 0 0 1.3rem;
+  padding: 1rem 1.15rem .9rem;
+  border: 1px solid var(--mosar-border);
+  border-radius: .65rem;
+  background: var(--md-default-bg-color, #fff);
+}
+
+.statistics-card .statistics-title {
+  max-width: none;
+  margin: 0 0 .8rem !important;
+  padding-left: .7rem;
+  border-left: 3px solid var(--mosar-blue-2);
+  font-size: 1.08rem !important;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.statistics-card .chart-block {
+  max-width: 100%;
+  margin: 0;
+}
+
+.statistics-card .chart-layout,
+.statistics-card .chart-shell {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.statistics-card .chart-shell > svg {
+  max-width: 100%;
+}
+
+.statistics-card .chart-actions {
+  max-width: none;
+  margin-top: .8rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--mosar-border);
+}
+
+/* Les rubriques (h2) sont distinctes des fiches (h3) dans la ToC Material. */
+.md-sidebar--secondary .md-nav--secondary .md-nav__item .md-nav__item {
+  padding-left: .6rem;
+  border-left: 1px solid var(--mosar-border);
+}
+
+.md-sidebar--secondary .md-nav--secondary .md-nav__item .md-nav__item > .md-nav__link {
+  font-size: .68rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 700px) {
+  .statistics-card { padding: .75rem .7rem; }
+  .statistics-card .statistics-title { font-size: .98rem !important; }
+  .statistics-section-title { font-size: 1rem !important; }
+}
+
+/* Légendes horizontales sous les titres des fiches statistiques. */
+.statistics-card .chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.1rem;
+  row-gap: .35rem;
+  margin: -.3rem 0 .7rem;
+  color: var(--mosar-ink);
+  font-size: .72rem;
+  line-height: 1.35;
+}
+.statistics-card .chart-legend-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .38rem;
+  min-width: 0;
+}
+.statistics-card .chart-legend-swatch {
+  display: inline-block;
+  width: .62rem;
+  height: .62rem;
+  flex: 0 0 .62rem;
+}
+.statistics-card .chart-shell > svg { width: 100%; height: auto; }
+.statistics-card .chart-shell > svg[viewBox="0 0 360 360"] { max-width: 540px; }
