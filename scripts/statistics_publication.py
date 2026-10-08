@@ -16,3 +16,11 @@ INTRO_FILES = {
 }
 
 DOWNLOADS = project_path(STATISTICS_PUBLICATION["downloads"])
+
+def downloads_for(lang):
+    """Répertoire des exports statistiques selon la langue."""
+    if lang == "fr":
+        return DOWNLOADS
+    if lang == "en":
+        return DOWNLOADS / "en"
+    raise ValueError(f"Langue non prise en charge : {lang}")

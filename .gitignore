@@ -15,3 +15,5 @@ __pycache__/
 
 # Site MkDocs généré localement
 /site/
+
+/docs/downloads/

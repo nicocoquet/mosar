@@ -7,7 +7,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from statistics_data import rpct
-from statistics_publication import DOWNLOADS
+from statistics_publication import downloads_for
 
 BLUES = ["#07558c", "#367fb8", "#67a9df", "#a7d5f5", "#8fc1e8", "#bdddf4", "#4d91c7", "#245f92"]
 OPEN = {"open": "#07558c", "restricted": "#a7d5f5"}
@@ -29,9 +29,10 @@ def icon(label):
 def actions(chart_id, lang):
     verb = "Télécharger" if lang == "fr" else "Download"
     nouns = {"csv": "les données" if lang == "fr" else "data", "jpg": "le graphique" if lang == "fr" else "chart", "svg": "le graphique" if lang == "fr" else "chart"}
+    base = "../downloads/" if lang == "fr" else "../../downloads/en/"
     links = []
     for ext in ("csv", "jpg", "svg"):
-        links.append(f'<a class="chart-download" href="../downloads/{chart_id}.{ext}" download>{icon(ext.upper())}<span>{verb} {nouns[ext]}</span></a>')
+        links.append(f'<a class="chart-download" href="{base}{chart_id}.{ext}" download>{icon(ext.upper())}<span>{verb} {nouns[ext]}</span></a>')
     return '<div class="chart-actions">' + "".join(links) + "</div>"
 
 
@@ -122,36 +123,45 @@ def bar_svg(labels, values):
     return f'<svg style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
-def export_csv(chart_id, headers, rows):
-    DOWNLOADS.mkdir(parents=True, exist_ok=True)
-    with (DOWNLOADS / f"{chart_id}.csv").open("w", encoding="utf-8-sig", newline="") as f:
+def export_csv(chart_id, headers, rows, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    with (destination / f"{chart_id}.csv").open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.writer(f, delimiter=";")
         writer.writerow(headers)
         writer.writerows(rows)
 
 
-def export_svg(chart_id, svg):
-    (DOWNLOADS / f"{chart_id}.svg").write_text('<?xml version="1.0" encoding="UTF-8"?>\n' + svg.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ', 1), encoding="utf-8")
+def export_svg(chart_id, svg, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination / f"{chart_id}.svg").write_text('<?xml version="1.0" encoding="UTF-8"?>\n' + svg.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ', 1), encoding="utf-8")
 
 
-def export_jpg_pie(chart_id, labels, values):
+def export_jpg_pie(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(8, 5), dpi=150)
     ax.pie(values, labels=labels, autopct=lambda p: f"{round(p)}%", colors=[BLUES[i % len(BLUES)] for i in range(len(values))], startangle=90)
     ax.axis("equal")
-    fig.savefig(DOWNLOADS / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
     plt.close(fig)
 
 
-def export_jpg_bar(chart_id, labels, values):
+def export_jpg_bar(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(10, 5), dpi=150)
     ax.bar(range(len(values)), values)
     ax.set_xticks(range(len(labels)), labels, rotation=45, ha="right")
     fig.tight_layout()
-    fig.savefig(DOWNLOADS / f"{chart_id}.jpg", facecolor="white")
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white")
     plt.close(fig)
 
 
-def export_jpg_stacked(chart_id, categories, series, values, percent=False, average=None):
+def export_jpg_stacked(chart_id, categories, series, values, percent=False, average=None, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(9, 5), dpi=150)
     bottom = [0] * len(categories)
     for label, key, color in series:
@@ -166,5 +176,5 @@ def export_jpg_stacked(chart_id, categories, series, values, percent=False, aver
     ax.legend()
     ax.tick_params(axis="x", rotation=30)
     fig.tight_layout()
-    fig.savefig(DOWNLOADS / f"{chart_id}.jpg", facecolor="white")
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white")
     plt.close(fig)
