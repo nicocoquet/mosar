@@ -18,24 +18,24 @@ from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar
 # Rubriques de navigation : ordre identique à celui des graphiques.
 # Les libellés courts sont réservés à la table des matières.
 STATISTICS_SECTIONS = (
-    ("rattachement", {"fr": "Rattachement des revues", "en": "Journal affiliation"}, (
-        ("proximite-revues", "Niveaux de rattachement", "Affiliation levels"),
-        ("acces-ouvert-rattachement", "Accès selon le rattachement", "Access by affiliation"),
+    ("rattachement", {"fr": "Proximité des revues", "en": "Journal proximity"}, (
+        ("proximite-revues", "Degrés de proximité", "Degrees of proximity"),
+        ("acces-ouvert-rattachement", "Ouverture selon la proximité", "Open access by proximity"),
     )),
     ("formats", {"fr": "Formats de publication", "en": "Publication formats"}, (
         ("format-publication", "Répartition par format", "Distribution by format"),
-        ("acces-format-publication", "Accès selon le format", "Access by format"),
+        ("acces-format-publication", "Ouverture par format", "Open access by format"),
     )),
     ("anciennete", {"fr": "Ancienneté des revues", "en": "Journal age"}, (
         ("annee-creation", "Année de création", "Year founded"),
         ("periode-creation", "Période de création", "Founding period"),
-        ("acces-date-creation", "Accès selon la création", "Access by founding date"),
+        ("acces-date-creation", "Ouverture par période", "Open access by founding period"),
     )),
     ("edition", {"fr": "Caractéristiques éditoriales", "en": "Editorial characteristics"}, (
         ("periodicite-revues", "Périodicité", "Publication frequency"),
         ("disciplines-revues", "Disciplines", "Disciplines"),
-        ("structures-editoriales", "Structures éditoriales", "Editorial structures"),
-        ("acces-structure-editoriale", "Accès selon la structure", "Access by structure"),
+        ("structures-editoriales", "Structures éditoriales", "Publishing organisations"),
+        ("acces-structure-editoriale", "Ouverture par structure", "Open access by publishing organisation"),
         ("droits-reutilisation", "Droits de réutilisation", "Reuse rights"),
     )),
 )

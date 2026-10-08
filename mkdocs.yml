@@ -54,6 +54,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/language-switch.js
+  - javascripts/statistics-toc.js
 
 extra_css:
   - stylesheets/extra.css
