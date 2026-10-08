@@ -50,6 +50,9 @@ markdown_extensions:
       base_path:
         - .
 
+extra_javascript:
+  - javascripts/language-switch.js
+
 extra_css:
   - stylesheets/extra.css
   - stylesheets/header.css

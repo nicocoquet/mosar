@@ -9,13 +9,13 @@
 <div class="partner-people" markdown="1">
 
 **David Rochefort** [:material-email:](mailto:david.rochefort@cnrs.fr "Send an email"){ .partner-mail }  
-*Head of the Scholarly Publishing Unit · Project Coordinator*
+*Head of the Editorial Service · Project Coordinator*
 
 **Ibtissam Qaddi** [:material-email:](mailto:ibtissam.qaddi@cnrs.fr "Send an email"){ .partner-mail }  
 *Scholarly Publishing and Open Science Project Officer*
 
 **Nicolas Coquet** [:material-email:](mailto:nicolas.coquet@cnrs.fr "Send an email"){ .partner-mail }  
-*Head of the Data and Digital Humanities Unit (DHUNE)*
+*Head of the Data and Digital Humanities Service (DHUNE)*
 
 </div>
 </div>
@@ -49,7 +49,7 @@
 *Editorial Manager, Presses universitaires de Paris Nanterre*
 
 **Élise Breton** [:material-email:](mailto:breton.e@parisnanterre.fr "Send an email"){ .partner-mail }  
-*Head of Research Support Services, Paris Nanterre University Library Service (SCD)*
+*Head of Research Support Services, SCD Paris Nanterre University*
 
 </div>
 </div>
