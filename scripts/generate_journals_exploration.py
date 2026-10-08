@@ -63,12 +63,15 @@ def main() -> None:
         report,
         proximity_levels=PROXIMITY_LEVELS,
     )
-    write_page(
-        report,
-        cluster_id=GRAPPE_ID,
-        cluster_name=GRAPPE_NAME,
-        cluster_url=GRAPPE_URL,
-    )
+
+    for lang in JOURNALS_PUBLICATION["pages"]:
+        write_page(
+            report,
+            cluster_id=GRAPPE_ID,
+            cluster_name=GRAPPE_NAME,
+            cluster_url=GRAPPE_URL,
+            lang=lang,
+        )
 
     print(json.dumps(report, ensure_ascii=False, indent=2))
 

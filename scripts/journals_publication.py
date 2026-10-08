@@ -74,6 +74,22 @@ def write_data(
         encoding="utf-8",
     )
 
+PAGE_LABELS = {
+    "fr": {
+        "title": "Revues",
+        "cluster": "Grappe Mir@bel n°",
+        "cluster_link": "Consulter la grappe sur Mir@bel",
+        "updated": "Dernière actualisation",
+        "loading": "Chargement des revues…",
+    },
+    "en": {
+        "title": "Journals",
+        "cluster": "Mir@bel cluster no.",
+        "cluster_link": "View the cluster on Mir@bel",
+        "updated": "Last updated",
+        "loading": "Loading journals…",
+    },
+}
 
 def write_page(
     report: dict,
@@ -88,6 +104,11 @@ def write_page(
     intro = load_intro(lang)
     output = OUTPUTS[lang]
     refresh_date = report["generated_at"][:10]
+    labels = PAGE_LABELS[lang]
+
+    assets_prefix = "../assets/" if lang == "fr" else "../../assets/"
+    intro = intro.replace("../assets/", assets_prefix)
+    labels = PAGE_LABELS[lang]
 
     output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -96,7 +117,7 @@ def write_page(
 hide:
   - toc
 ---
-# Revues {{ .page-title-compact }}
+# {labels["title"]} {{ .page-title-compact }}
 
 <div class="revues-intro" markdown="1">
 
@@ -104,16 +125,16 @@ hide:
 
 </div>
 
-<p class="revues-source">Grappe Mir@bel n° {cluster_id} « {cluster_name} ».</p>
-<p class="revues-source-link"><a href="{cluster_url}" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>
-<p class="revues-updated">Dernière actualisation : <strong>{refresh_date}</strong> (API Mir@bel).</p>
+<p class="revues-source">{labels["cluster"]} {cluster_id} « {cluster_name} ».</p>
+<p class="revues-source-link"><a href="{cluster_url}" target="_blank" rel="noopener">{labels["cluster_link"]}</a></p>
+<p class="revues-updated">{labels["updated"]} : <strong>{refresh_date}</strong> (API Mir@bel).</p>
 
-<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">
+<link rel="stylesheet" href="{assets_prefix}stylesheets/revues-exploration.css">
 
-<div id="revues-explorer" class="revues-explorer" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>
+<div id="revues-explorer" class="revues-explorer" lang="{lang}" data-source="{assets_prefix}data/revues-exploration.json"><p class="explorer-loading">{labels["loading"]}</p></div>
 
-<script src="../assets/javascripts/revues-config.js" defer></script>
-<script src="../assets/javascripts/revues-exploration.js" defer></script>
+<script src="{assets_prefix}javascripts/revues-config.js" defer></script>
+<script src="{assets_prefix}javascripts/revues-exploration.js" defer></script>
 """,
         encoding="utf-8",
     )

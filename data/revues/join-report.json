@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-10-08T05:34:13+00:00",
+  "cluster_id": 15,
+  "mirabel_active_titles": 1161,
+  "mirabel_unique_reviews": 1161,
+  "mosar_source": "XLSX Mosar",
+  "mosar_ids": 14,
+  "matched_ids": [
+    731,
+    743,
+    853,
+    854,
+    3196,
+    9193,
+    11043
+  ],
+  "matched_count": 7,
+  "mirabel_without_mosar_count": 1154,
+  "mosar_outside_cluster_ids": [
+    2359,
+    5413,
+    5519,
+    6197,
+    6218,
+    7206,
+    10190
+  ],
+  "duplicate_active_title_review_ids": []
+}

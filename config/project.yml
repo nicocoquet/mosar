@@ -41,6 +41,9 @@ publication:
       fr:
         intro: "content/revues-intro.fr.md"
         output: "docs/revues.md"
+      en:
+        intro: "content/revues-intro.en.md"
+        output: "docs/revues.en.md"
     data_file: "docs/assets/data/revues-exploration.json"
     report_file: "data/revues/join-report.json"
     fallback:
