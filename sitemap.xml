@@ -8,11 +8,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/"/>
     </url>
     <url>
-        <loc>https://nicocoquet.github.io/mosar/partenaires/</loc>
+        <loc>https://nicocoquet.github.io/mosar/contacts/</loc>
         <lastmod>2026-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/partenaires/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/partenaires/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/contacts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/contacts/"/>
     </url>
     <url>
         <loc>https://nicocoquet.github.io/mosar/revues/</loc>
@@ -36,11 +36,11 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/"/>
     </url>
     <url>
-        <loc>https://nicocoquet.github.io/mosar/en/partenaires/</loc>
+        <loc>https://nicocoquet.github.io/mosar/en/contacts/</loc>
         <lastmod>2026-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/partenaires/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/partenaires/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/contacts/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/contacts/"/>
     </url>
     <url>
         <loc>https://nicocoquet.github.io/mosar/en/revues/</loc>
