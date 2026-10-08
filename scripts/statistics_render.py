@@ -100,7 +100,7 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
     lx = left
     for label, key, color in series:
-        parts.append(f'<rect x="{lx}" y="{height-29}" width="12" height="12" fill="{color}"/><textx="{lx+18}" y="{height-19}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
+        parts.append(f'<rect x="{lx}" y="{height-29}" width="12" height="12" fill="{color}"/><text x="{lx+18}" y="{height-19}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
         lx += 230
     return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
