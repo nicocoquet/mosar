@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-09T17:59:47+00:00",
+    "generated_at": "2026-10-09T19:59:00+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 172,
     "mirabel_unique_reviews": 172,
@@ -197,6 +197,8 @@
     {
       "mirabel_id": 6197,
       "title": "Americae",
+      "subtitle": "European Journal of Americanist Archaeology",
+      "mirabel_title": "Americae",
       "sigle": "",
       "issn": [
         "2497-1510"
@@ -232,43 +234,10 @@
       }
     },
     {
-      "mirabel_id": 1456,
-      "title": "Archives européennes de sociologie / European Journal of Sociology",
-      "sigle": "",
-      "issn": [
-        "0003-9756",
-        "1474-0583"
-      ],
-      "languages": [
-        "fre",
-        "eng",
-        "ger"
-      ],
-      "publishers": [
-        "Cambridge University Press"
-      ],
-      "country": null,
-      "periodicity": "quadrimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Sociologie "
-      ],
-      "journal_url": "http://journals.cambridge.org/action/displayJournal?jid=EUR",
-      "mirabel_url": "https://reseau-mirabel.info/revue/1456",
-      "mosar": {
-        "proximity_level": "1",
-        "open_access": "Accès ouvert",
-        "discipline": "Sociologie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés et CC variable selon les articles"
-      }
-    },
-    {
       "mirabel_id": 2359,
       "title": "Archéologie de la France – Informations",
+      "subtitle": "",
+      "mirabel_title": "Archéologie de la France – Informations",
       "sigle": "AdlFI",
       "issn": [
         "2114-0502"
@@ -305,6 +274,8 @@
     {
       "mirabel_id": 5797,
       "title": "Biens symboliques / Symbolic Goods",
+      "subtitle": "Revue de sciences sociales sur les arts, la culture et les idées",
+      "mirabel_title": "Biens symboliques / Symbolic Goods",
       "sigle": "",
       "issn": [
         "2490-9424"
@@ -344,6 +315,8 @@
     {
       "mirabel_id": 731,
       "title": "Bulletin de la Société préhistorique française",
+      "subtitle": "",
+      "mirabel_title": "Bulletin de la Société préhistorique française",
       "sigle": "BSPF",
       "issn": [
         "0249-7638",
@@ -378,7 +351,9 @@
     },
     {
       "mirabel_id": 3231,
-      "title": "Diasporas : circulations, migrations, histoire",
+      "title": "Diasporas",
+      "subtitle": "Circulations, migrations, histoire",
+      "mirabel_title": "Diasporas : circulations, migrations, histoire",
       "sigle": "",
       "issn": [
         "1637-5823",
@@ -418,6 +393,8 @@
     {
       "mirabel_id": 189,
       "title": "Espaces et sociétés",
+      "subtitle": "",
+      "mirabel_title": "Espaces et sociétés",
       "sigle": "",
       "issn": [
         "0014-0481",
@@ -454,6 +431,8 @@
     {
       "mirabel_id": 542,
       "title": "Ethnologie française",
+      "subtitle": "",
+      "mirabel_title": "Ethnologie française",
       "sigle": "",
       "issn": [
         "0046-2616",
@@ -488,8 +467,47 @@
       }
     },
     {
+      "mirabel_id": 1456,
+      "title": "European Journal of Sociology",
+      "subtitle": "Archives Européennes de Sociologie",
+      "mirabel_title": "Archives européennes de sociologie / European Journal of Sociology",
+      "sigle": "",
+      "issn": [
+        "0003-9756",
+        "1474-0583"
+      ],
+      "languages": [
+        "fre",
+        "eng",
+        "ger"
+      ],
+      "publishers": [
+        "Cambridge University Press"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Sociologie "
+      ],
+      "journal_url": "http://journals.cambridge.org/action/displayJournal?jid=EUR",
+      "mirabel_url": "https://reseau-mirabel.info/revue/1456",
+      "mosar": {
+        "proximity_level": "1",
+        "open_access": "Accès ouvert",
+        "discipline": "Sociologie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés et CC variable selon les articles"
+      }
+    },
+    {
       "mirabel_id": 853,
-      "title": "Gallia : archéologie des Gaules",
+      "title": "Gallia",
+      "subtitle": "Archéologie des Gaules",
+      "mirabel_title": "Gallia : archéologie des Gaules",
       "sigle": "",
       "issn": [
         "0016-4119",
@@ -530,6 +548,8 @@
     {
       "mirabel_id": 854,
       "title": "Gallia Préhistoire",
+      "subtitle": "Préhistoire de la France dans son contexte européen",
+      "mirabel_title": "Gallia Préhistoire",
       "sigle": "",
       "issn": [
         "0016-4127",
@@ -571,6 +591,8 @@
     {
       "mirabel_id": 679,
       "title": "Journal de la Société des américanistes",
+      "subtitle": "",
+      "mirabel_title": "Journal de la Société des américanistes",
       "sigle": "JSA",
       "issn": [
         "0037-9174",
@@ -618,6 +640,8 @@
     {
       "mirabel_id": 3836,
       "title": "Justice spatiale/Spatial Justice",
+      "subtitle": "",
+      "mirabel_title": "Justice spatiale/Spatial Justice",
       "sigle": "jssj",
       "issn": [
         "2105-0392"
@@ -652,7 +676,9 @@
     },
     {
       "mirabel_id": 3407,
-      "title": "L' Atelier",
+      "title": "L'Atelier",
+      "subtitle": "",
+      "mirabel_title": "L' Atelier",
       "sigle": "",
       "issn": [
         "2109-9103"
@@ -685,7 +711,9 @@
     },
     {
       "mirabel_id": 1849,
-      "title": "Linx : Revue des linguistes de l'Université Paris X Nanterre",
+      "title": "Linx",
+      "subtitle": "Revue des linguistes de l'Université Paris Ouest Nanterre La Défense",
+      "mirabel_title": "Linx : Revue des linguistes de l'Université Paris X Nanterre",
       "sigle": "",
       "issn": [
         "0246-8743",
@@ -725,6 +753,8 @@
     {
       "mirabel_id": 21657,
       "title": "Littérales",
+      "subtitle": "",
+      "mirabel_title": "Littérales",
       "sigle": "",
       "issn": [
         "2802-3293",
@@ -768,6 +798,8 @@
     {
       "mirabel_id": 740,
       "title": "Matériaux pour l'histoire de notre temps",
+      "subtitle": "",
+      "mirabel_title": "Matériaux pour l'histoire de notre temps",
       "sigle": "",
       "issn": [
         "0769-3206",
@@ -803,6 +835,8 @@
     {
       "mirabel_id": 9646,
       "title": "Narrativa",
+      "subtitle": "nuova serie",
+      "mirabel_title": "Narrativa",
       "sigle": "",
       "issn": [
         "1166-3243",
@@ -844,6 +878,8 @@
     {
       "mirabel_id": 743,
       "title": "Paléorient",
+      "subtitle": "Revue pluridisciplinaire de Préhistoire et de Protohistoire de l'Asie du sud-ouest et de l'Asie centrale",
+      "mirabel_title": "Paléorient",
       "sigle": "",
       "issn": [
         "0153-9345",
@@ -887,6 +923,8 @@
     {
       "mirabel_id": 8757,
       "title": "Photographica",
+      "subtitle": "",
+      "mirabel_title": "Photographica",
       "sigle": "",
       "issn": [
         "2740-5826",
@@ -925,6 +963,8 @@
     {
       "mirabel_id": 597,
       "title": "Revue d'histoire des sciences humaines",
+      "subtitle": "",
+      "mirabel_title": "Revue d'histoire des sciences humaines",
       "sigle": "RHSH",
       "issn": [
         "1622-468X",
@@ -967,6 +1007,8 @@
     {
       "mirabel_id": 95,
       "title": "Revue internationale des études du développement",
+      "subtitle": "",
+      "mirabel_title": "Revue internationale des études du développement",
       "sigle": "Ried",
       "issn": [
         "2554-3415",
@@ -1009,6 +1051,8 @@
     {
       "mirabel_id": 705,
       "title": "Socio-anthropologie",
+      "subtitle": "",
+      "mirabel_title": "Socio-anthropologie",
       "sigle": "",
       "issn": [
         "1276-8707",
@@ -1048,6 +1092,8 @@
     {
       "mirabel_id": 796,
       "title": "Sociétés & Représentations",
+      "subtitle": "",
+      "mirabel_title": "Sociétés & Représentations",
       "sigle": "",
       "issn": [
         "1262-2966",
@@ -1088,7 +1134,9 @@
     },
     {
       "mirabel_id": 711,
-      "title": "Terrain. Anthropologie & sciences humaines",
+      "title": "Terrain",
+      "subtitle": "Anthropologie & sciences humaines",
+      "mirabel_title": "Terrain. Anthropologie & sciences humaines",
       "sigle": "",
       "issn": [
         "0760-5668",
@@ -1132,6 +1180,8 @@
     {
       "mirabel_id": 2509,
       "title": "Terrains/Théories",
+      "subtitle": "",
+      "mirabel_title": "Terrains/Théories",
       "sigle": "",
       "issn": [
         "2427-9188"
@@ -1169,7 +1219,9 @@
     },
     {
       "mirabel_id": 712,
-      "title": "Tracés : revue de sciences humaines",
+      "title": "Tracés",
+      "subtitle": "Revue de sciences humaines",
+      "mirabel_title": "Tracés : revue de sciences humaines",
       "sigle": "",
       "issn": [
         "1763-0061",
@@ -1210,6 +1262,8 @@
     {
       "mirabel_id": 9648,
       "title": "Écritures",
+      "subtitle": "",
+      "mirabel_title": "Écritures",
       "sigle": "",
       "issn": [
         "1953-244X"
@@ -1245,6 +1299,8 @@
     {
       "mirabel_id": 2237,
       "title": "Études Lawrenciennes",
+      "subtitle": "",
+      "mirabel_title": "Études Lawrenciennes",
       "sigle": "",
       "issn": [
         "0994-5490",
@@ -1284,6 +1340,8 @@
     {
       "mirabel_id": 505,
       "title": "Actuel Marx",
+      "subtitle": "",
+      "mirabel_title": "Actuel Marx",
       "sigle": "",
       "issn": [
         "0994-4524",
@@ -1318,7 +1376,9 @@
     },
     {
       "mirabel_id": 3196,
-      "title": "Afrique : Archéologie et Arts",
+      "title": "Afrique",
+      "subtitle": "Archéologie et Arts",
+      "mirabel_title": "Afrique : Archéologie et Arts",
       "sigle": "",
       "issn": [
         "1634-3123",
@@ -1359,7 +1419,9 @@
     },
     {
       "mirabel_id": 1041,
-      "title": "Afriques. Débats, méthodes et terrains d'histoire",
+      "title": "Afriques",
+      "subtitle": "Débats, méthodes et terrains d'histoire",
+      "mirabel_title": "Afriques. Débats, méthodes et terrains d'histoire",
       "sigle": "",
       "issn": [
         "2108-6796"
@@ -1399,6 +1461,8 @@
     {
       "mirabel_id": 9197,
       "title": "Approches Théoriques en Information-Communication",
+      "subtitle": "",
+      "mirabel_title": "Approches Théoriques en Information-Communication",
       "sigle": "ATIC",
       "issn": [
         "2779-1106"
@@ -1431,6 +1495,8 @@
     {
       "mirabel_id": 764,
       "title": "Archives de politique criminelle",
+      "subtitle": "",
+      "mirabel_title": "Archives de politique criminelle",
       "sigle": "",
       "issn": [
         "0242-5637",
@@ -1463,7 +1529,9 @@
     },
     {
       "mirabel_id": 10190,
-      "title": "ARTA : Achaemenid Research on Texts and Archaeology",
+      "title": "ARTA",
+      "subtitle": "Achaemenid Research on Texts and Archaeology",
+      "mirabel_title": "ARTA : Achaemenid Research on Texts and Archaeology",
       "sigle": "",
       "issn": [
         "2110-6118"
@@ -1496,6 +1564,8 @@
     {
       "mirabel_id": 637,
       "title": "Ateliers d'anthropologie",
+      "subtitle": "Laboratoire d'ethnologie et de sociologie comparative",
+      "mirabel_title": "Ateliers d'anthropologie",
       "sigle": "",
       "issn": [
         "2117-3869"
@@ -1533,6 +1603,8 @@
     {
       "mirabel_id": 1064,
       "title": "Cahiers \"Mondes Anciens\"",
+      "subtitle": "Anthropologie et histoire des mondes antiques",
+      "mirabel_title": "Cahiers \"Mondes Anciens\"",
       "sigle": "",
       "issn": [
         "2107-0199"
@@ -1575,6 +1647,8 @@
     {
       "mirabel_id": 774,
       "title": "Cahiers d'économie politique",
+      "subtitle": "Papers in political economy",
+      "mirabel_title": "Cahiers d'économie politique",
       "sigle": "",
       "issn": [
         "0154-8344",
@@ -1611,6 +1685,8 @@
     {
       "mirabel_id": 1476,
       "title": "Cahiers du Centre Gustave-Glotz",
+      "subtitle": "",
+      "mirabel_title": "Cahiers du Centre Gustave-Glotz",
       "sigle": "",
       "issn": [
         "1016-9008",
@@ -1649,6 +1725,8 @@
     {
       "mirabel_id": 1137,
       "title": "Crisol",
+      "subtitle": "",
+      "mirabel_title": "Crisol",
       "sigle": "",
       "issn": [
         "0764-7611",
@@ -1683,7 +1761,9 @@
     },
     {
       "mirabel_id": 659,
-      "title": "Cybergeo : Revue européenne de géographie",
+      "title": "Cybergeo",
+      "subtitle": "european journal of geography",
+      "mirabel_title": "Cybergeo : Revue européenne de géographie",
       "sigle": "",
       "issn": [
         "1278-3366"
@@ -1727,7 +1807,9 @@
     },
     {
       "mirabel_id": 24823,
-      "title": "Design, arts, médias",
+      "title": "Design, Arts, Médias",
+      "subtitle": "",
+      "mirabel_title": "Design, arts, médias",
       "sigle": "",
       "issn": [
         "2743-0332"
@@ -1763,6 +1845,8 @@
     {
       "mirabel_id": 12954,
       "title": "Documents de travail du Centre d'économie de la Sorbonne",
+      "subtitle": "",
+      "mirabel_title": "Documents de travail du Centre d'économie de la Sorbonne",
       "sigle": "DT du CES",
       "issn": [
         "1955-611X",
@@ -1800,6 +1884,8 @@
     {
       "mirabel_id": 648,
       "title": "EchoGéo",
+      "subtitle": "",
+      "mirabel_title": "EchoGéo",
       "sigle": "",
       "issn": [
         "1963-1197"
@@ -1835,41 +1921,10 @@
       }
     },
     {
-      "mirabel_id": 532,
-      "title": "Espace géographique",
-      "sigle": "",
-      "issn": [
-        "0046-2497",
-        "1776-2936"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Belin éditeur"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Géographie, cartographie"
-      ],
-      "journal_url": "",
-      "mirabel_url": "https://reseau-mirabel.info/revue/532",
-      "mosar": {
-        "proximity_level": "2",
-        "open_access": "Accès restreint",
-        "discipline": "Géographie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
       "mirabel_id": 13751,
       "title": "Histoire, Europe et relations internationales",
+      "subtitle": "Cahiers Sirice-Pierre Renouvin",
+      "mirabel_title": "Histoire, Europe et relations internationales",
       "sigle": "",
       "issn": [
         "2968-3556"
@@ -1903,7 +1958,9 @@
     },
     {
       "mirabel_id": 21831,
-      "title": "Intersections : Revue semestrielle Genre & Droit",
+      "title": "Intersections",
+      "subtitle": "Revue semestrielle Genre & Droit",
+      "mirabel_title": "Intersections : Revue semestrielle Genre & Droit",
       "sigle": "",
       "issn": [
         "3038-9712"
@@ -1933,8 +1990,45 @@
       }
     },
     {
+      "mirabel_id": 532,
+      "title": "L'Espace géographique",
+      "subtitle": "",
+      "mirabel_title": "Espace géographique",
+      "sigle": "",
+      "issn": [
+        "0046-2497",
+        "1776-2936"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Belin éditeur"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Géographie, cartographie"
+      ],
+      "journal_url": "",
+      "mirabel_url": "https://reseau-mirabel.info/revue/532",
+      "mosar": {
+        "proximity_level": "2",
+        "open_access": "Accès restreint",
+        "discipline": "Géographie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 2169,
       "title": "La Revue des Droits de l'Homme",
+      "subtitle": "Revue du Centre de recherches et d'études sur les droits fondamentaux",
+      "mirabel_title": "La Revue des Droits de l'Homme",
       "sigle": "RevDH",
       "issn": [
         "2264-119X"
@@ -1972,6 +2066,8 @@
     {
       "mirabel_id": 561,
       "title": "Le Mouvement social",
+      "subtitle": "",
+      "mirabel_title": "Le Mouvement social",
       "sigle": "",
       "issn": [
         "0027-2671",
@@ -2008,7 +2104,9 @@
     },
     {
       "mirabel_id": 768,
-      "title": "Mètis. Anthropologie des mondes grecs anciens",
+      "title": "Mètis",
+      "subtitle": "Anthropologie des mondes grecs et romains",
+      "mirabel_title": "Mètis. Anthropologie des mondes grecs anciens",
       "sigle": "",
       "issn": [
         "1105-2201",
@@ -2052,7 +2150,9 @@
     },
     {
       "mirabel_id": 25832,
-      "title": "Mélété. Cahiers d'histoire et d'anthropologie du droit",
+      "title": "Mélété",
+      "subtitle": "Cahiers d'histoire et d'anthropologie du droit",
+      "mirabel_title": "Mélété. Cahiers d'histoire et d'anthropologie du droit",
       "sigle": "",
       "issn": [
         "3095-3820"
@@ -2091,7 +2191,9 @@
     },
     {
       "mirabel_id": 24137,
-      "title": "Page 19 - Bulletin des doctorant-e-s",
+      "title": "Page 19",
+      "subtitle": "Bulletin des doctorants et jeunes chercheurs du Centre d'Histoire du XIXè siècle",
+      "mirabel_title": "Page 19 - Bulletin des doctorant-e-s",
       "sigle": "",
       "issn": [
         "2272-7396"
@@ -2124,6 +2226,8 @@
     {
       "mirabel_id": 2151,
       "title": "Philonsorbonne",
+      "subtitle": "",
+      "mirabel_title": "Philonsorbonne",
       "sigle": "",
       "issn": [
         "1961-4829",
@@ -2160,6 +2264,8 @@
     {
       "mirabel_id": 4364,
       "title": "Plastik",
+      "subtitle": "La revue d'art & sciences",
+      "mirabel_title": "Plastik",
       "sigle": "",
       "issn": [
         "2101-0323",
@@ -2192,7 +2298,9 @@
     },
     {
       "mirabel_id": 78,
-      "title": "Politix. Revue des sciences sociales du politique",
+      "title": "Politix",
+      "subtitle": "Revue des sciences sociales du politique",
+      "mirabel_title": "Politix. Revue des sciences sociales du politique",
       "sigle": "",
       "issn": [
         "0295-2319",
@@ -2228,6 +2336,8 @@
     {
       "mirabel_id": 696,
       "title": "Revue d'histoire du XIXe siècle",
+      "subtitle": "",
+      "mirabel_title": "Revue d'histoire du XIXe siècle",
       "sigle": "",
       "issn": [
         "1265-1354",
@@ -2263,6 +2373,8 @@
     {
       "mirabel_id": 1553,
       "title": "Revue internationale de l'éducation familiale",
+      "subtitle": "",
+      "mirabel_title": "Revue internationale de l'éducation familiale",
       "sigle": "Rief",
       "issn": [
         "1279-7766",
@@ -2297,7 +2409,9 @@
     },
     {
       "mirabel_id": 17811,
-      "title": "Revue Juridique de la Sorbonne",
+      "title": "Revue juridique de la Sorbonne",
+      "subtitle": "Sorbonne Law Review",
+      "mirabel_title": "Revue Juridique de la Sorbonne",
       "sigle": "",
       "issn": [
         "2739-6649"
@@ -2330,6 +2444,8 @@
     {
       "mirabel_id": 85,
       "title": "Revue économique",
+      "subtitle": "",
+      "mirabel_title": "Revue économique",
       "sigle": "",
       "issn": [
         "0035-2764",
@@ -2364,6 +2480,8 @@
     {
       "mirabel_id": 14234,
       "title": "Salariat",
+      "subtitle": "",
+      "mirabel_title": "Salariat",
       "sigle": "",
       "issn": [
         "2967-3666",
@@ -2397,6 +2515,8 @@
     {
       "mirabel_id": 852,
       "title": "Savoirs",
+      "subtitle": "Revue internationale de recherches en éducation et formation des adultes",
+      "mirabel_title": "Savoirs",
       "sigle": "",
       "issn": [
         "1763-4229",
@@ -2432,7 +2552,9 @@
     },
     {
       "mirabel_id": 5392,
-      "title": "Sorbonne Student Law Review = Revue juridique des étudiants de la Sorbonne",
+      "title": "Sorbonne Student Law Review",
+      "subtitle": "Revue juridique des étudiants de la Sorbonne",
+      "mirabel_title": "Sorbonne Student Law Review = Revue juridique des étudiants de la Sorbonne",
       "sigle": "SSLR = RJES",
       "issn": [
         "2647-4867"
@@ -2466,6 +2588,8 @@
     {
       "mirabel_id": 2600,
       "title": "SpécifiCITéS",
+      "subtitle": "La revue des terrains sensibles",
+      "mirabel_title": "SpécifiCITéS",
       "sigle": "",
       "issn": [
         "2256-7186",
@@ -2500,7 +2624,9 @@
     },
     {
       "mirabel_id": 1949,
-      "title": "Via. Tourism Review",
+      "title": "Via.Tourism Review",
+      "subtitle": "Revue internationale interdisciplinaire du tourisme",
+      "mirabel_title": "Via. Tourism Review",
       "sigle": "",
       "issn": [
         "2259-924X"
@@ -2546,6 +2672,8 @@
     {
       "mirabel_id": 28,
       "title": "Actes de la recherche en sciences sociales",
+      "subtitle": "",
+      "mirabel_title": "Actes de la recherche en sciences sociales",
       "sigle": "ARSS",
       "issn": [
         "0335-5322",
@@ -2581,6 +2709,8 @@
     {
       "mirabel_id": 18436,
       "title": "Analisi e diritto",
+      "subtitle": "",
+      "mirabel_title": "Analisi e diritto",
       "sigle": "",
       "issn": [
         "1126-5779",
@@ -2614,7 +2744,9 @@
     },
     {
       "mirabel_id": 718,
-      "title": "Annales : Histoire, Sciences Sociales",
+      "title": "Annales",
+      "subtitle": "Histoire, Sciences Sociales",
+      "mirabel_title": "Annales : Histoire, Sciences Sociales",
       "sigle": "",
       "issn": [
         "1953-8146",
@@ -2650,6 +2782,8 @@
     {
       "mirabel_id": 717,
       "title": "Annales de géographie",
+      "subtitle": "",
+      "mirabel_title": "Annales de géographie",
       "sigle": "",
       "issn": [
         "0003-4010",
@@ -2684,7 +2818,9 @@
     },
     {
       "mirabel_id": 4090,
-      "title": "Antiquité tardive = Antigüedad Tardia = Late Antiquity = Spätantike = Tarda Antichitá",
+      "title": "Antiquité tardive",
+      "subtitle": "Revue internationale d'Histoire et d'Archéologie (IVe-VIIIe siècles)",
+      "mirabel_title": "Antiquité tardive = Antigüedad Tardia = Late Antiquity = Spätantike = Tarda Antichitá",
       "sigle": "AnTard",
       "issn": [
         "1250-7334",
@@ -2727,6 +2863,8 @@
     {
       "mirabel_id": 10547,
       "title": "Articulation(s)",
+      "subtitle": "",
+      "mirabel_title": "Articulation(s)",
       "sigle": "",
       "issn": [
         "2728-834X"
@@ -2761,7 +2899,9 @@
     },
     {
       "mirabel_id": 7206,
-      "title": "Asian perspectives  : the Journal of Archaeology for Asia and the Pacific",
+      "title": "Asian Perspectives",
+      "subtitle": "The Journal of Archaeology for Asia and the Pacific",
+      "mirabel_title": "Asian perspectives  : the Journal of Archaeology for Asia and the Pacific",
       "sigle": "",
       "issn": [
         "0066-8435",
@@ -2796,6 +2936,8 @@
     {
       "mirabel_id": 2143,
       "title": "Belphégor",
+      "subtitle": "Littératures populaires et culture médiatique",
+      "mirabel_title": "Belphégor",
       "sigle": "",
       "issn": [
         "1499-7185"
@@ -2839,7 +2981,9 @@
     },
     {
       "mirabel_id": 2010,
-      "title": "Brésil(s). Sciences humaines et sociales",
+      "title": "Brésil(s)",
+      "subtitle": "Sciences humaines et sociales",
+      "mirabel_title": "Brésil(s). Sciences humaines et sociales",
       "sigle": "",
       "issn": [
         "2257-0543",
@@ -2884,6 +3028,8 @@
     {
       "mirabel_id": 646,
       "title": "Cahiers d'études africaines",
+      "subtitle": "",
+      "mirabel_title": "Cahiers d'études africaines",
       "sigle": "",
       "issn": [
         "0008-0055",
@@ -2923,7 +3069,9 @@
     },
     {
       "mirabel_id": 2097,
-      "title": "Cliopsy : revue clinique d'orientation psychanalytique dans le champ de l'éducation et de la formation",
+      "title": "Cliopsy",
+      "subtitle": "Revue clinique d'orientation psychanalytique dans le champ de l'éducation et de la formation",
+      "mirabel_title": "Cliopsy : revue clinique d'orientation psychanalytique dans le champ de l'éducation et de la formation",
       "sigle": "",
       "issn": [
         "2100-0670"
@@ -2958,6 +3106,8 @@
     {
       "mirabel_id": 1031,
       "title": "Culture & Musées",
+      "subtitle": "Muséologie et recherches sur la culture",
+      "mirabel_title": "Culture & Musées",
       "sigle": "",
       "issn": [
         "1766-2923",
@@ -2999,6 +3149,8 @@
     {
       "mirabel_id": 46,
       "title": "Cultures & Conflits",
+      "subtitle": "",
+      "mirabel_title": "Cultures & Conflits",
       "sigle": "",
       "issn": [
         "1157-996X",
@@ -3035,6 +3187,8 @@
     {
       "mirabel_id": 1588,
       "title": "Droit et Cultures",
+      "subtitle": "Revue internationale interdisciplinaire",
+      "mirabel_title": "Droit et Cultures",
       "sigle": "",
       "issn": [
         "0247-9788",
@@ -3073,7 +3227,9 @@
     },
     {
       "mirabel_id": 526,
-      "title": "Droit et Société. Revue internationale de théorie du droit et de sociologie juridique",
+      "title": "Droit et Société",
+      "subtitle": "Revue internationale de théorie du droit et de sociologie juridique",
+      "mirabel_title": "Droit et Société. Revue internationale de théorie du droit et de sociologie juridique",
       "sigle": "",
       "issn": [
         "0769-3362",
@@ -3108,7 +3264,9 @@
     },
     {
       "mirabel_id": 3895,
-      "title": "e-Phaïstos : Revue d'histoire des techniques / Journal of History of Technology",
+      "title": "E-Phaïstos",
+      "subtitle": "Revue d'histoire des techniques",
+      "mirabel_title": "e-Phaïstos : Revue d'histoire des techniques / Journal of History of Technology",
       "sigle": "",
       "issn": [
         "2262-7340",
@@ -3147,6 +3305,8 @@
     {
       "mirabel_id": 778,
       "title": "Finance",
+      "subtitle": "",
+      "mirabel_title": "Finance",
       "sigle": "",
       "issn": [
         "0752-6180",
@@ -3182,6 +3342,8 @@
     {
       "mirabel_id": 737,
       "title": "Flux",
+      "subtitle": "Cahiers scientifiques internationaux Réseaux et territoires",
+      "mirabel_title": "Flux",
       "sigle": "",
       "issn": [
         "1154-2721",
@@ -3219,6 +3381,8 @@
     {
       "mirabel_id": 481,
       "title": "French Politics",
+      "subtitle": "",
+      "mirabel_title": "French Politics",
       "sigle": "",
       "issn": [
         "1476-3419",
@@ -3253,6 +3417,8 @@
     {
       "mirabel_id": 2046,
       "title": "Géographie et cultures",
+      "subtitle": "",
+      "mirabel_title": "Géographie et cultures",
       "sigle": "",
       "issn": [
         "1165-0354",
@@ -3291,7 +3457,9 @@
     },
     {
       "mirabel_id": 11184,
-      "title": "HispanismeS: revue de la société des hispanistes français",
+      "title": "HispanismeS",
+      "subtitle": "Revue de la société des hispanistes français",
+      "mirabel_title": "HispanismeS: revue de la société des hispanistes français",
       "sigle": "",
       "issn": [
         "2270-0765"
@@ -3333,6 +3501,8 @@
     {
       "mirabel_id": 1530,
       "title": "InMedia",
+      "subtitle": "The French Journal of Media Studies",
+      "mirabel_title": "InMedia",
       "sigle": "",
       "issn": [
         "2259-4728"
@@ -3370,6 +3540,8 @@
     {
       "mirabel_id": 53,
       "title": "International Economics",
+      "subtitle": "",
+      "mirabel_title": "International Economics",
       "sigle": "",
       "issn": [
         "2110-7017",
@@ -3407,6 +3579,8 @@
     {
       "mirabel_id": 1536,
       "title": "International Review of Social Psychology",
+      "subtitle": "",
+      "mirabel_title": "International Review of Social Psychology",
       "sigle": "IRPS",
       "issn": [
         "2397-8570"
@@ -3441,6 +3615,8 @@
     {
       "mirabel_id": 680,
       "title": "Journal des africanistes",
+      "subtitle": "",
+      "mirabel_title": "Journal des africanistes",
       "sigle": "",
       "issn": [
         "0399-0346",
@@ -3478,6 +3654,8 @@
     {
       "mirabel_id": 5519,
       "title": "Journal of Archaeological Method and Theory",
+      "subtitle": "",
+      "mirabel_title": "Journal of Archaeological Method and Theory",
       "sigle": "",
       "issn": [
         "1072-5369",
@@ -3511,6 +3689,8 @@
     {
       "mirabel_id": 2863,
       "title": "Journal of Eastern African Studies",
+      "subtitle": "",
+      "mirabel_title": "Journal of Eastern African Studies",
       "sigle": "",
       "issn": [
         "1753-1055",
@@ -3545,7 +3725,9 @@
     },
     {
       "mirabel_id": 1090,
-      "title": "La Révolution française : cahiers de l'Institut d'histoire de la Révolution française",
+      "title": "La Révolution française",
+      "subtitle": "Cahiers de l'IHRF",
+      "mirabel_title": "La Révolution française : cahiers de l'Institut d'histoire de la Révolution française",
       "sigle": "",
       "issn": [
         "2105-2557"
@@ -3585,6 +3767,8 @@
     {
       "mirabel_id": 24735,
       "title": "Marronnages",
+      "subtitle": "Les questions raciales au crible des sciences sociales",
+      "mirabel_title": "Marronnages",
       "sigle": "",
       "issn": [
         "2781-8306"
@@ -3625,7 +3809,9 @@
     },
     {
       "mirabel_id": 1571,
-      "title": "Monde(s) : histoire, espaces, relations",
+      "title": "Monde(s)",
+      "subtitle": "Histoire, Espaces, Relations",
+      "mirabel_title": "Monde(s) : histoire, espaces, relations",
       "sigle": "",
       "issn": [
         "2261-6268",
@@ -3660,7 +3846,9 @@
     },
     {
       "mirabel_id": 951,
-      "title": "Moussons : Recherches en sciences humaines sur l'Asie du Sud-Est",
+      "title": "Moussons",
+      "subtitle": "Recherches en sciences humaines sur l'Asie du Sud-Est",
+      "mirabel_title": "Moussons : Recherches en sciences humaines sur l'Asie du Sud-Est",
       "sigle": "",
       "issn": [
         "1620-3224",
@@ -3702,6 +3890,8 @@
     {
       "mirabel_id": 565,
       "title": "Multitudes",
+      "subtitle": "",
+      "mirabel_title": "Multitudes",
       "sigle": "",
       "issn": [
         "0292-0107",
@@ -3735,7 +3925,9 @@
     },
     {
       "mirabel_id": 1559,
-      "title": "Natures Sciences Sociétés : recherches et débats interdisciplinaires",
+      "title": "Natures Sciences Sociétés",
+      "subtitle": "Recherches et débats interdisciplinaires",
+      "mirabel_title": "Natures Sciences Sociétés : recherches et débats interdisciplinaires",
       "sigle": "NSS",
       "issn": [
         "1240-1307",
@@ -3777,7 +3969,9 @@
     },
     {
       "mirabel_id": 5413,
-      "title": "NeHet  : Revue numérique d'Egyptologie",
+      "title": "NeHeT",
+      "subtitle": "Revue numérique d'égyptologie",
+      "mirabel_title": "NeHet  : Revue numérique d'Egyptologie",
       "sigle": "",
       "issn": [
         "2429-2702",
@@ -3815,6 +4009,8 @@
     {
       "mirabel_id": 688,
       "title": "Nuevo Mundo, Mundos Nuevos",
+      "subtitle": "",
+      "mirabel_title": "Nuevo Mundo, Mundos Nuevos",
       "sigle": "",
       "issn": [
         "1626-0252"
@@ -3857,6 +4053,8 @@
     {
       "mirabel_id": 6823,
       "title": "passés futurs",
+      "subtitle": "",
+      "mirabel_title": "passés futurs",
       "sigle": "PF",
       "issn": [
         "2558-7935"
@@ -3891,6 +4089,8 @@
     {
       "mirabel_id": 1604,
       "title": "Philosophique",
+      "subtitle": "",
+      "mirabel_title": "Philosophique",
       "sigle": "",
       "issn": [
         "0980-0891",
@@ -3930,6 +4130,8 @@
     {
       "mirabel_id": 324,
       "title": "Politique africaine",
+      "subtitle": "",
+      "mirabel_title": "Politique africaine",
       "sigle": "",
       "issn": [
         "0244-7827",
@@ -3967,6 +4169,8 @@
     {
       "mirabel_id": 22,
       "title": "Politique américaine",
+      "subtitle": "",
+      "mirabel_title": "Politique américaine",
       "sigle": "",
       "issn": [
         "1771-8848",
@@ -4007,6 +4211,8 @@
     {
       "mirabel_id": 3806,
       "title": "Polysèmes",
+      "subtitle": "Revue d'études intertextuelles et intermédiales",
+      "mirabel_title": "Polysèmes",
       "sigle": "",
       "issn": [
         "0999-4203",
@@ -4046,6 +4252,8 @@
     {
       "mirabel_id": 1155,
       "title": "Recherches familiales",
+      "subtitle": "",
+      "mirabel_title": "Recherches familiales",
       "sigle": "",
       "issn": [
         "1763-718X",
@@ -4079,6 +4287,8 @@
     {
       "mirabel_id": 17917,
       "title": "Regards croisés",
+      "subtitle": "Revue franco-allemande d'histoire de l'art, d'esthétique et de littérature comparée",
+      "mirabel_title": "Regards croisés",
       "sigle": "",
       "issn": [
         "2509-4750",
@@ -4118,7 +4328,9 @@
     },
     {
       "mirabel_id": 1859,
-      "title": "ReS Futurae - Revue d'études sur la science-fiction",
+      "title": "ReS Futurae",
+      "subtitle": "Revue d'études sur la science-fiction",
+      "mirabel_title": "ReS Futurae - Revue d'études sur la science-fiction",
       "sigle": "",
       "issn": [
         "2264-6949"
@@ -4156,6 +4368,8 @@
     {
       "mirabel_id": 11456,
       "title": "Revue d'histoire culturelle : XVIIIe-XXIe siècles",
+      "subtitle": "",
+      "mirabel_title": "Revue d'histoire culturelle : XVIIIe-XXIe siècles",
       "sigle": "RHC",
       "issn": [
         "2780-4143"
@@ -4196,6 +4410,8 @@
     {
       "mirabel_id": 1522,
       "title": "Revue d'histoire de la protection sociale",
+      "subtitle": "",
+      "mirabel_title": "Revue d'histoire de la protection sociale",
       "sigle": "RHPS",
       "issn": [
         "1969-9123",
@@ -4232,6 +4448,8 @@
     {
       "mirabel_id": 19260,
       "title": "Revue de l'arbitrage",
+      "subtitle": "",
+      "mirabel_title": "Revue de l'arbitrage",
       "sigle": "",
       "issn": [
         "0556-7440"
@@ -4264,6 +4482,8 @@
     {
       "mirabel_id": 3863,
       "title": "Revue de science criminelle et de droit pénal comparé",
+      "subtitle": "",
+      "mirabel_title": "Revue de science criminelle et de droit pénal comparé",
       "sigle": "RSC",
       "issn": [
         "0035-1733",
@@ -4296,7 +4516,9 @@
     },
     {
       "mirabel_id": 1607,
-      "title": "Revue des Études Grecques",
+      "title": "Revue des études grecques",
+      "subtitle": "",
+      "mirabel_title": "Revue des Études Grecques",
       "sigle": "REG",
       "issn": [
         "0035-2039",
@@ -4333,7 +4555,9 @@
     },
     {
       "mirabel_id": 4840,
-      "title": "Semitica et Classica. Revue Internationale d'études orientales et méditerranéennes",
+      "title": "Semitica et Classica",
+      "subtitle": "Revue Internationale d'études orientales et méditerranéennes",
+      "mirabel_title": "Semitica et Classica. Revue Internationale d'études orientales et méditerranéennes",
       "sigle": "SemClass",
       "issn": [
         "2031-5937",
@@ -4371,6 +4595,8 @@
     {
       "mirabel_id": 3063,
       "title": "Social Choice and Welfare",
+      "subtitle": "",
+      "mirabel_title": "Social Choice and Welfare",
       "sigle": "",
       "issn": [
         "0176-1714",
@@ -4404,6 +4630,8 @@
     {
       "mirabel_id": 710,
       "title": "Techniques & Culture",
+      "subtitle": "Revue semestrielle d'anthropologie des techniques",
+      "mirabel_title": "Techniques & Culture",
       "sigle": "",
       "issn": [
         "0248-6016",
@@ -4437,7 +4665,9 @@
     },
     {
       "mirabel_id": 8094,
-      "title": "Ædificare : revue internationale d'histoire de la construction",
+      "title": "Ædificare",
+      "subtitle": "Revue internationale d'histoire de la construction",
+      "mirabel_title": "Ædificare : revue internationale d'histoire de la construction",
       "sigle": "",
       "issn": [
         "2557-3659",
@@ -4473,6 +4703,8 @@
     {
       "mirabel_id": 3656,
       "title": "Activités",
+      "subtitle": "",
+      "mirabel_title": "Activités",
       "sigle": "",
       "issn": [
         "1765-2723"
@@ -4510,6 +4742,8 @@
     {
       "mirabel_id": 8184,
       "title": "American Journal of Industrial and Business Management",
+      "subtitle": "",
+      "mirabel_title": "American Journal of Industrial and Business Management",
       "sigle": "",
       "issn": [
         "2164-5175",
@@ -4542,7 +4776,9 @@
     },
     {
       "mirabel_id": 506,
-      "title": "Archives de Philosophie",
+      "title": "Archives de philosophie",
+      "subtitle": "",
+      "mirabel_title": "Archives de Philosophie",
       "sigle": "",
       "issn": [
         "0003-9632",
@@ -4576,6 +4812,8 @@
     {
       "mirabel_id": 13662,
       "title": "Brain and Cognition",
+      "subtitle": "",
+      "mirabel_title": "Brain and Cognition",
       "sigle": "",
       "issn": [
         "0278-2626",
@@ -4610,6 +4848,8 @@
     {
       "mirabel_id": 21155,
       "title": "Brain and Language",
+      "subtitle": "",
+      "mirabel_title": "Brain and Language",
       "sigle": "",
       "issn": [
         "0093-934X",
@@ -4644,6 +4884,8 @@
     {
       "mirabel_id": 12914,
       "title": "British journal for the history of philosophy",
+      "subtitle": "",
+      "mirabel_title": "British journal for the history of philosophy",
       "sigle": "",
       "issn": [
         "0960-8788",
@@ -4678,6 +4920,8 @@
     {
       "mirabel_id": 7618,
       "title": "Bulletin critique des annales islamologiques",
+      "subtitle": "",
+      "mirabel_title": "Bulletin critique des annales islamologiques",
       "sigle": "BCAI",
       "issn": [
         "0259-7373",
@@ -4718,7 +4962,9 @@
     },
     {
       "mirabel_id": 2295,
-      "title": "Bulletin de l'Association de Géographes Français",
+      "title": "Bulletin de l'Association de géographes français",
+      "subtitle": "",
+      "mirabel_title": "Bulletin de l'Association de Géographes Français",
       "sigle": "BAGF",
       "issn": [
         "0004-5322",
@@ -4757,7 +5003,9 @@
     },
     {
       "mirabel_id": 487,
-      "title": "Cahiers des amériques latines",
+      "title": "Cahiers des Amériques latines",
+      "subtitle": "",
+      "mirabel_title": "Cahiers des amériques latines",
       "sigle": "",
       "issn": [
         "1141-7161",
@@ -4801,6 +5049,8 @@
     {
       "mirabel_id": 3307,
       "title": "Cahiers Droit, Sciences & Technologies",
+      "subtitle": "",
+      "mirabel_title": "Cahiers Droit, Sciences & Technologies",
       "sigle": "Cahiers DST",
       "issn": [
         "2431-8663",
@@ -4841,7 +5091,9 @@
     },
     {
       "mirabel_id": 6726,
-      "title": "Cahiers RAMAU",
+      "title": "Cahiers Ramau",
+      "subtitle": "Revue du Réseau activités et métiers de l'architecture et de l'urbanisme",
+      "mirabel_title": "Cahiers RAMAU",
       "sigle": "",
       "issn": [
         "1623-1333",
@@ -4876,6 +5128,8 @@
     {
       "mirabel_id": 836,
       "title": "Caravelle",
+      "subtitle": "",
+      "mirabel_title": "Caravelle",
       "sigle": "",
       "issn": [
         "1147-6753",
@@ -4918,7 +5172,9 @@
     },
     {
       "mirabel_id": 10324,
-      "title": "Clio@Themis : revue électronique d'histoire du droit",
+      "title": "Clio@Themis",
+      "subtitle": "Revue électronique d'histoire du droit",
+      "mirabel_title": "Clio@Themis : revue électronique d'histoire du droit",
       "sigle": "",
       "issn": [
         "2105-0929"
@@ -4961,6 +5217,8 @@
     {
       "mirabel_id": 5117,
       "title": "Composite Structures",
+      "subtitle": "",
+      "mirabel_title": "Composite Structures",
       "sigle": "",
       "issn": [
         "0263-8223",
@@ -4994,6 +5252,8 @@
     {
       "mirabel_id": 156,
       "title": "Contrats et marchés publics",
+      "subtitle": "",
+      "mirabel_title": "Contrats et marchés publics",
       "sigle": "",
       "issn": [
         "1624-8716",
@@ -5028,7 +5288,9 @@
     },
     {
       "mirabel_id": 5562,
-      "title": "Economic theory",
+      "title": "Economic Theory",
+      "subtitle": "",
+      "mirabel_title": "Economic theory",
       "sigle": "",
       "issn": [
         "0938-2259",
@@ -5062,6 +5324,8 @@
     {
       "mirabel_id": 6572,
       "title": "Encyclopédie berbère",
+      "subtitle": "",
+      "mirabel_title": "Encyclopédie berbère",
       "sigle": "",
       "issn": [
         "1015-7344",
@@ -5097,6 +5361,8 @@
     {
       "mirabel_id": 7064,
       "title": "Esclavages & Post-esclavages",
+      "subtitle": "Slaveries & Post-slaveries",
+      "mirabel_title": "Esclavages & Post-esclavages",
       "sigle": "",
       "issn": [
         "2540-6647"
@@ -5139,8 +5405,47 @@
       }
     },
     {
+      "mirabel_id": 10693,
+      "title": "European Journal of Political Economy",
+      "subtitle": "",
+      "mirabel_title": "Europäische Zeitschrift für politische Ökonomie = European Journal of Political Economy",
+      "sigle": "",
+      "issn": [
+        "0176-2680",
+        "1873-5703"
+      ],
+      "languages": [
+        "ger",
+        "eng"
+      ],
+      "publishers": [
+        "Elsevier"
+      ],
+      "country": null,
+      "periodicity": "5 numéros par an",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Administration, gouvernement",
+        "Relations internationales"
+      ],
+      "journal_url": "https://www.sciencedirect.com/journal/european-journal-of-political-economy",
+      "mirabel_url": "https://reseau-mirabel.info/revue/10693",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 3977,
       "title": "European Journal of Pragmatism and American Philosophy",
+      "subtitle": "",
+      "mirabel_title": "European Journal of Pragmatism and American Philosophy",
       "sigle": "EJPAP",
       "issn": [
         "2036-4091"
@@ -5178,7 +5483,9 @@
     },
     {
       "mirabel_id": 4568,
-      "title": "European Review of Applied Psychology  = Revue européenne de psychologie appliquée",
+      "title": "European Review of Applied Psychology",
+      "subtitle": "",
+      "mirabel_title": "European Review of Applied Psychology  = Revue européenne de psychologie appliquée",
       "sigle": "ERAP",
       "issn": [
         "1162-9088",
@@ -5215,43 +5522,10 @@
       }
     },
     {
-      "mirabel_id": 10693,
-      "title": "Europäische Zeitschrift für politische Ökonomie = European Journal of Political Economy",
-      "sigle": "",
-      "issn": [
-        "0176-2680",
-        "1873-5703"
-      ],
-      "languages": [
-        "ger",
-        "eng"
-      ],
-      "publishers": [
-        "Elsevier"
-      ],
-      "country": null,
-      "periodicity": "5 numéros par an",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Administration, gouvernement",
-        "Relations internationales"
-      ],
-      "journal_url": "https://www.sciencedirect.com/journal/european-journal-of-political-economy",
-      "mirabel_url": "https://reseau-mirabel.info/revue/10693",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Économie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
       "mirabel_id": 1249,
-      "title": "Finance contrôle stratégie",
+      "title": "Finance Contrôle Stratégie",
+      "subtitle": "",
+      "mirabel_title": "Finance contrôle stratégie",
       "sigle": "",
       "issn": [
         "1287-1141",
@@ -5285,6 +5559,8 @@
     {
       "mirabel_id": 58,
       "title": "Genèses",
+      "subtitle": "Sciences sociales et histoire",
+      "mirabel_title": "Genèses",
       "sigle": "",
       "issn": [
         "1155-3219",
@@ -5320,6 +5596,8 @@
     {
       "mirabel_id": 20006,
       "title": "Geographical Analysis",
+      "subtitle": "An International Journal of Theoretical Geopraphy",
+      "mirabel_title": "Geographical Analysis",
       "sigle": "",
       "issn": [
         "0016-7363",
@@ -5351,8 +5629,864 @@
       }
     },
     {
+      "mirabel_id": 4506,
+      "title": "Histoire de l'art",
+      "subtitle": "",
+      "mirabel_title": "Histoire de l'art",
+      "sigle": "",
+      "issn": [
+        "0992-2059",
+        "2802-3285"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Association des professeurs d'archéologie et d'histoire de l'art des universités"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Histoire et archéologie",
+        "Arts visuels"
+      ],
+      "journal_url": "http://blog.apahau.org/category/la-revue-histoire-de-lart-2/la-revue/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/4506",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Arts visuels",
+        "editorial_structure": "association",
+        "licence": "CC BY-NC-ND"
+      }
+    },
+    {
+      "mirabel_id": 1600,
+      "title": "Images re-vues",
+      "subtitle": "Histoire, anthropologie et théorie de l'art",
+      "mirabel_title": "Images re-vues",
+      "sigle": "",
+      "issn": [
+        "1778-3801"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Centre d'histoire et théorie des arts"
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [
+        "DDH diamond journal"
+      ],
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/9698",
+        "label": "DDH"
+      },
+      "themes": [
+        "Histoire et archéologie",
+        "Anthropologie, ethnologie",
+        "Archéologie",
+        "Histoire",
+        "Arts visuels"
+      ],
+      "journal_url": "https://journals.openedition.org/imagesrevues/58",
+      "mirabel_url": "https://reseau-mirabel.info/revue/1600",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Pluridisciplinaire",
+        "editorial_structure": "organisme de recherche public",
+        "licence": "CC BY-NC"
+      }
+    },
+    {
+      "mirabel_id": 14206,
+      "title": "International Journal of Antennas and Propagation",
+      "subtitle": "",
+      "mirabel_title": "International Journal of Antennas and Propagation",
+      "sigle": "",
+      "issn": [
+        "1687-5869",
+        "1687-5877"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "John Wiley & Sons, Inc."
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Ingénierie, technologies"
+      ],
+      "journal_url": "https://onlinelibrary.wiley.com/journal/8039",
+      "mirabel_url": "https://reseau-mirabel.info/revue/14206",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Ingénierie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 12977,
+      "title": "Iride",
+      "subtitle": "Filosofia e discussione pubblica",
+      "mirabel_title": "Iride",
+      "sigle": "",
+      "issn": [
+        "1122-7893",
+        "2612-2170"
+      ],
+      "languages": [
+        "ita"
+      ],
+      "publishers": [
+        "Mulino"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Science politique, droit et vie publique",
+        "Éthique",
+        "Philosophie"
+      ],
+      "journal_url": "https://www.mulino.it/riviste/issn/1122-7893",
+      "mirabel_url": "https://reseau-mirabel.info/revue/12977",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Philosophie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 12500,
+      "title": "Journal for General Philosophy of Science",
+      "subtitle": "",
+      "mirabel_title": "Journal for General Philosophy of Science",
+      "sigle": "",
+      "issn": [
+        "0925-4560",
+        "1572-8587"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Springer Verlag GmbH"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Sciences et techniques",
+        "Philosophie"
+      ],
+      "journal_url": "https://www.springer.com/journal/10838",
+      "mirabel_url": "https://reseau-mirabel.info/revue/12500",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Philosophie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 11085,
+      "title": "Journal of Asset Management",
+      "subtitle": "",
+      "mirabel_title": "Journal of Asset Management",
+      "sigle": "",
+      "issn": [
+        "1470-8272",
+        "1479-179X"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Palgrave Macmillan"
+      ],
+      "country": null,
+      "periodicity": "7 numéros par an",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Gestion, comptabilité"
+      ],
+      "journal_url": "https://www.palgrave.com/fr/journal/41260",
+      "mirabel_url": "https://reseau-mirabel.info/revue/11085",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Gestion",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 2379,
+      "title": "Journal of Decision Systems",
+      "subtitle": "",
+      "mirabel_title": "Journal of decision systems",
+      "sigle": "",
+      "issn": [
+        "1246-0125",
+        "2116-7052"
+      ],
+      "languages": [
+        "eng",
+        "fre"
+      ],
+      "publishers": [
+        "Taylor & Francis Group"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Europe de l'Ouest"
+      ],
+      "journal_url": "http://www.tandfonline.com/toc/tjds20/current#.U71GoE1WG70",
+      "mirabel_url": "https://reseau-mirabel.info/revue/2379",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie, gestion",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 11293,
+      "title": "Journal of Enterprise Information Management",
+      "subtitle": "",
+      "mirabel_title": "Journal of Enterprise Information Management",
+      "sigle": "",
+      "issn": [
+        "1741-0398",
+        "1758-7409"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Emerald Group Publishing"
+      ],
+      "country": null,
+      "periodicity": "bimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Gestion, comptabilité"
+      ],
+      "journal_url": "https://www.emerald.com/insight/publication/issn/1741-0398",
+      "mirabel_url": "https://reseau-mirabel.info/revue/11293",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Gestion",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, avec possibilité de CC"
+      }
+    },
+    {
+      "mirabel_id": 15743,
+      "title": "Journal of Global History",
+      "subtitle": "",
+      "mirabel_title": "Journal of Global History",
+      "sigle": "",
+      "issn": [
+        "1740-0228",
+        "1740-0236"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Cambridge University Press"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Sciences économiques",
+        "Histoire",
+        "Sciences politiques"
+      ],
+      "journal_url": "https://www.cambridge.org/core/journals/journal-of-global-history",
+      "mirabel_url": "https://reseau-mirabel.info/revue/15743",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Histoire",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 23731,
+      "title": "Journal of Neurolinguistics",
+      "subtitle": "",
+      "mirabel_title": "Journal of Neurolinguistics",
+      "sigle": "",
+      "issn": [
+        "0911-6044",
+        "1873-8052"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Elsevier"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Langues,  linguistique",
+        "Sciences de la vie"
+      ],
+      "journal_url": "https://shop.elsevier.com/journals/journal-of-neurolinguistics/0911-6044",
+      "mirabel_url": "https://reseau-mirabel.info/revue/23731",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Linguistique, Neurosciences",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 11043,
+      "title": "Karthago",
+      "subtitle": "Revue d'archéologie méditerranéenne",
+      "mirabel_title": "Karthago",
+      "sigle": "",
+      "issn": [
+        "0453-3429",
+        "1783-1563"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Institut d'art et d'archéologie (Paris)",
+        "Klincksieck",
+        "Peeters Publishers"
+      ],
+      "country": null,
+      "periodicity": "irrégulier",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Archéologie",
+        "Proche et Moyen-Orient ancien",
+        "Antiquité",
+        "Afrique du Nord"
+      ],
+      "journal_url": "https://www.orient-mediterranee.com/review/karthago/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/11043",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Archéologie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 4680,
+      "title": "L'Évolution psychiatrique",
+      "subtitle": "Cahiers de psychologie clinique et de psychopathologie",
+      "mirabel_title": "L' Évolution psychiatrique : Cahiers de psychologie clinique et de psychopathologie",
+      "sigle": "",
+      "issn": [
+        "0014-3855",
+        "1769-6674"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Elsevier Masson"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Psychologie",
+        "Psychiatrie, santé mentale"
+      ],
+      "journal_url": "https://www.sciencedirect.com/journal/levolution-psychiatrique",
+      "mirabel_url": "https://reseau-mirabel.info/revue/4680",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Psychiatrie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 6218,
+      "title": "Latin American Antiquity",
+      "subtitle": "",
+      "mirabel_title": "Latin American Antiquity",
+      "sigle": "",
+      "issn": [
+        "1045-6635",
+        "2325-5080"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Cambridge University Press",
+        "Society for American Archaeology"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [
+        "Catálogo 2.0 Latindex"
+      ],
+      "ddh": null,
+      "themes": [
+        "Archéologie",
+        "Amériques",
+        "Antilles"
+      ],
+      "journal_url": "https://www.saa.org/publications/latin-american-antiquity",
+      "mirabel_url": "https://reseau-mirabel.info/revue/6218",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Archéologie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, avec possibilité de CC"
+      }
+    },
+    {
+      "mirabel_id": 2567,
+      "title": "Logistique et management",
+      "subtitle": "",
+      "mirabel_title": "Logistique et management",
+      "sigle": "",
+      "issn": [
+        "1250-7970",
+        "2377-9640"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "KEDGE Business School"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Distribution, logistique"
+      ],
+      "journal_url": "https://www.tandfonline.com/toc/tlam20/current",
+      "mirabel_url": "https://reseau-mirabel.info/revue/2567",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Logistique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 26870,
+      "title": "Museum, Materials and Discussions",
+      "subtitle": "Journal of Museum Studies",
+      "mirabel_title": "Museum, Materials and Discussions",
+      "sigle": "MMD",
+      "issn": [
+        "3034-9699"
+      ],
+      "languages": [
+        "fre",
+        "eng",
+        "ita"
+      ],
+      "publishers": [
+        "ABIS-AlmaDL"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Patrimoine, musées, bibliothèques"
+      ],
+      "journal_url": "https://mmdjournal.unibo.it/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/26870",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Muséologie",
+        "editorial_structure": "organisme de recherche public",
+        "licence": "CC BY"
+      }
+    },
+    {
+      "mirabel_id": 4702,
+      "title": "Neuropsychiatrie de l'enfance et de l'adolescence",
+      "subtitle": "",
+      "mirabel_title": "Neuropsychiatrie de l'enfance et de l'adolescence",
+      "sigle": "",
+      "issn": [
+        "0222-9617",
+        "1769-6615"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Elsevier",
+        "Expansion scientifique française"
+      ],
+      "country": null,
+      "periodicity": "mensuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Démographie, populations",
+        "Psychologie",
+        "Médecine, pharmacie",
+        "Psychiatrie, santé mentale"
+      ],
+      "journal_url": "https://www.sciencedirect.com/journal/neuropsychiatrie-de-lenfance-et-de-ladolescence",
+      "mirabel_url": "https://reseau-mirabel.info/revue/4702",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Psychiatrie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, avec possibilité de CC"
+      }
+    },
+    {
+      "mirabel_id": 14231,
+      "title": "Philosophies",
+      "subtitle": "",
+      "mirabel_title": "Philosophies",
+      "sigle": "",
+      "issn": [
+        "2409-9287"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Multidisciplinary digital publishing institute"
+      ],
+      "country": null,
+      "periodicity": "bimestriel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Philosophie",
+        "Psychologie",
+        "Religion, théologie"
+      ],
+      "journal_url": "https://www.mdpi.com/journal/philosophies",
+      "mirabel_url": "https://reseau-mirabel.info/revue/14231",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Philosophie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, CC-BY"
+      }
+    },
+    {
+      "mirabel_id": 24746,
+      "title": "Requirements Engineering",
+      "subtitle": "",
+      "mirabel_title": "Requirements Engineering",
+      "sigle": "",
+      "issn": [
+        "0947-3602",
+        "1432-010X"
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Springer Verlag GmbH"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Information-communication",
+        "Informatique",
+        "Ingénierie, technologies"
+      ],
+      "journal_url": "https://link.springer.com/journal/766",
+      "mirabel_url": "https://reseau-mirabel.info/revue/24746",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Informatique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 13575,
+      "title": "Revue d'histoire du théâtre",
+      "subtitle": "",
+      "mirabel_title": "Revue d'histoire du théâtre",
+      "sigle": "",
+      "issn": [
+        "2550-8148",
+        "1291-2530"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Société d'histoire du théâtre"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Arts vivants"
+      ],
+      "journal_url": "https://sht.asso.fr/revue/revue-histoire-du-theatre/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/13575",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Arts vivants",
+        "editorial_structure": "association",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 349,
+      "title": "Revue d'économie industrielle",
+      "subtitle": "",
+      "mirabel_title": "Revue d'économie industrielle",
+      "sigle": "",
+      "issn": [
+        "0154-3229",
+        "1773-0198"
+      ],
+      "languages": [
+        "fre",
+        "eng"
+      ],
+      "publishers": [
+        "De Boeck Supérieur"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Économie, gestion"
+      ],
+      "journal_url": "https://www.cairn.info/revue-d-economie-industrielle.htm",
+      "mirabel_url": "https://reseau-mirabel.info/revue/349",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie",
+        "editorial_structure": "éditeur privé",
+        "licence": "CC BY-NC-ND 4.0 ou Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 698,
+      "title": "Revue des mondes musulmans et de la Méditerranée",
+      "subtitle": "",
+      "mirabel_title": "Revue des mondes musulmans et de la Méditerranée",
+      "sigle": "REMMM",
+      "issn": [
+        "0997-1327",
+        "2105-2271"
+      ],
+      "languages": [
+        "fre",
+        "eng"
+      ],
+      "publishers": [
+        "Association pour les études en sciences humaines et sociales sur l'Afrique du Nord et les mondes musulmans"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [
+        "DDH diamond journal"
+      ],
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/9683",
+        "label": "DDH"
+      },
+      "themes": [
+        "Religion, théologie"
+      ],
+      "journal_url": "https://journals.openedition.org/remmm/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/698",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Études des aires culturelles",
+        "editorial_structure": "éditeur public",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "mirabel_id": 1162,
+      "title": "Revue des études byzantines",
+      "subtitle": "",
+      "mirabel_title": "Revue des études byzantines",
+      "sigle": "",
+      "issn": [
+        "0766-5598",
+        "0771-3444"
+      ],
+      "languages": [
+        "fre",
+        "eng",
+        "ger",
+        "ita",
+        "spa"
+      ],
+      "publishers": [
+        "Institut Français d'Études Byzantines",
+        "Peeters Publishers"
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Antiquité tardive",
+        "Moyen Âge",
+        "Proche et Moyen-Orient"
+      ],
+      "journal_url": "https://www.icp.fr/recherche/instituts-de-recherche/institut-francais-detudes-byzantines-ifeb/revue-des-etudes-byzantines",
+      "mirabel_url": "https://reseau-mirabel.info/revue/1162",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Histoire",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 1744,
+      "title": "Revue interdisciplinaire d'études juridiques",
+      "subtitle": "",
+      "mirabel_title": "Revue interdisciplinaire d'études juridiques",
+      "sigle": "RIEJ",
+      "issn": [
+        "0770-2310",
+        "2406-4742"
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Presses de l'Université Saint-Louis Bruxelles"
+      ],
+      "country": null,
+      "periodicity": null,
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "ddh": null,
+      "themes": [
+        "Droit, justice, criminologie"
+      ],
+      "journal_url": "",
+      "mirabel_url": "https://reseau-mirabel.info/revue/1744",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Droit",
+        "editorial_structure": "éditeur public",
+        "licence": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 5491,
-      "title": "HiMA : revue internationale d'Histoire Militaire Ancienne",
+      "title": "Revue internationale d'histoire militaire ancienne",
+      "subtitle": "",
+      "mirabel_title": "HiMA : revue internationale d'Histoire Militaire Ancienne",
       "sigle": "HiMA",
       "issn": [
         "2491-6943",
@@ -5395,816 +6529,10 @@
       }
     },
     {
-      "mirabel_id": 4506,
-      "title": "Histoire de l'art",
-      "sigle": "",
-      "issn": [
-        "0992-2059",
-        "2802-3285"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Association des professeurs d'archéologie et d'histoire de l'art des universités"
-      ],
-      "country": null,
-      "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Histoire et archéologie",
-        "Arts visuels"
-      ],
-      "journal_url": "http://blog.apahau.org/category/la-revue-histoire-de-lart-2/la-revue/",
-      "mirabel_url": "https://reseau-mirabel.info/revue/4506",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Arts visuels",
-        "editorial_structure": "association",
-        "licence": "CC BY-NC-ND"
-      }
-    },
-    {
-      "mirabel_id": 1600,
-      "title": "Images re-vues",
-      "sigle": "",
-      "issn": [
-        "1778-3801"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Centre d'histoire et théorie des arts"
-      ],
-      "country": null,
-      "periodicity": "annuel",
-      "publication_format": "Numérique",
-      "publication_fees": null,
-      "labels": [
-        "DDH diamond journal"
-      ],
-      "ddh": {
-        "url": "https://ddh.diamas.org/en/journals/9698",
-        "label": "DDH"
-      },
-      "themes": [
-        "Histoire et archéologie",
-        "Anthropologie, ethnologie",
-        "Archéologie",
-        "Histoire",
-        "Arts visuels"
-      ],
-      "journal_url": "https://journals.openedition.org/imagesrevues/58",
-      "mirabel_url": "https://reseau-mirabel.info/revue/1600",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Pluridisciplinaire",
-        "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC"
-      }
-    },
-    {
-      "mirabel_id": 14206,
-      "title": "International Journal of Antennas and Propagation",
-      "sigle": "",
-      "issn": [
-        "1687-5869",
-        "1687-5877"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "John Wiley & Sons, Inc."
-      ],
-      "country": null,
-      "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Ingénierie, technologies"
-      ],
-      "journal_url": "https://onlinelibrary.wiley.com/journal/8039",
-      "mirabel_url": "https://reseau-mirabel.info/revue/14206",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Ingénierie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 12977,
-      "title": "Iride",
-      "sigle": "",
-      "issn": [
-        "1122-7893",
-        "2612-2170"
-      ],
-      "languages": [
-        "ita"
-      ],
-      "publishers": [
-        "Mulino"
-      ],
-      "country": null,
-      "periodicity": "quadrimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Science politique, droit et vie publique",
-        "Éthique",
-        "Philosophie"
-      ],
-      "journal_url": "https://www.mulino.it/riviste/issn/1122-7893",
-      "mirabel_url": "https://reseau-mirabel.info/revue/12977",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Philosophie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 12500,
-      "title": "Journal for General Philosophy of Science",
-      "sigle": "",
-      "issn": [
-        "0925-4560",
-        "1572-8587"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Springer Verlag GmbH"
-      ],
-      "country": null,
-      "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Sciences et techniques",
-        "Philosophie"
-      ],
-      "journal_url": "https://www.springer.com/journal/10838",
-      "mirabel_url": "https://reseau-mirabel.info/revue/12500",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Philosophie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 11085,
-      "title": "Journal of Asset Management",
-      "sigle": "",
-      "issn": [
-        "1470-8272",
-        "1479-179X"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Palgrave Macmillan"
-      ],
-      "country": null,
-      "periodicity": "7 numéros par an",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Gestion, comptabilité"
-      ],
-      "journal_url": "https://www.palgrave.com/fr/journal/41260",
-      "mirabel_url": "https://reseau-mirabel.info/revue/11085",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Gestion",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 2379,
-      "title": "Journal of decision systems",
-      "sigle": "",
-      "issn": [
-        "1246-0125",
-        "2116-7052"
-      ],
-      "languages": [
-        "eng",
-        "fre"
-      ],
-      "publishers": [
-        "Taylor & Francis Group"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Europe de l'Ouest"
-      ],
-      "journal_url": "http://www.tandfonline.com/toc/tjds20/current#.U71GoE1WG70",
-      "mirabel_url": "https://reseau-mirabel.info/revue/2379",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Économie, gestion",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 11293,
-      "title": "Journal of Enterprise Information Management",
-      "sigle": "",
-      "issn": [
-        "1741-0398",
-        "1758-7409"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Emerald Group Publishing"
-      ],
-      "country": null,
-      "periodicity": "bimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Gestion, comptabilité"
-      ],
-      "journal_url": "https://www.emerald.com/insight/publication/issn/1741-0398",
-      "mirabel_url": "https://reseau-mirabel.info/revue/11293",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Gestion",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
-      }
-    },
-    {
-      "mirabel_id": 15743,
-      "title": "Journal of Global History",
-      "sigle": "",
-      "issn": [
-        "1740-0228",
-        "1740-0236"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Cambridge University Press"
-      ],
-      "country": null,
-      "periodicity": "quadrimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Sciences économiques",
-        "Histoire",
-        "Sciences politiques"
-      ],
-      "journal_url": "https://www.cambridge.org/core/journals/journal-of-global-history",
-      "mirabel_url": "https://reseau-mirabel.info/revue/15743",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Histoire",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 23731,
-      "title": "Journal of Neurolinguistics",
-      "sigle": "",
-      "issn": [
-        "0911-6044",
-        "1873-8052"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Elsevier"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Langues,  linguistique",
-        "Sciences de la vie"
-      ],
-      "journal_url": "https://shop.elsevier.com/journals/journal-of-neurolinguistics/0911-6044",
-      "mirabel_url": "https://reseau-mirabel.info/revue/23731",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Linguistique, Neurosciences",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 11043,
-      "title": "Karthago",
-      "sigle": "",
-      "issn": [
-        "0453-3429",
-        "1783-1563"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Institut d'art et d'archéologie (Paris)",
-        "Klincksieck",
-        "Peeters Publishers"
-      ],
-      "country": null,
-      "periodicity": "irrégulier",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Archéologie",
-        "Proche et Moyen-Orient ancien",
-        "Antiquité",
-        "Afrique du Nord"
-      ],
-      "journal_url": "https://www.orient-mediterranee.com/review/karthago/",
-      "mirabel_url": "https://reseau-mirabel.info/revue/11043",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Archéologie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 4680,
-      "title": "L' Évolution psychiatrique : Cahiers de psychologie clinique et de psychopathologie",
-      "sigle": "",
-      "issn": [
-        "0014-3855",
-        "1769-6674"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Elsevier Masson"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Psychologie",
-        "Psychiatrie, santé mentale"
-      ],
-      "journal_url": "https://www.sciencedirect.com/journal/levolution-psychiatrique",
-      "mirabel_url": "https://reseau-mirabel.info/revue/4680",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Psychiatrie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 6218,
-      "title": "Latin American Antiquity",
-      "sigle": "",
-      "issn": [
-        "1045-6635",
-        "2325-5080"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Cambridge University Press",
-        "Society for American Archaeology"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [
-        "Catálogo 2.0 Latindex"
-      ],
-      "ddh": null,
-      "themes": [
-        "Archéologie",
-        "Amériques",
-        "Antilles"
-      ],
-      "journal_url": "https://www.saa.org/publications/latin-american-antiquity",
-      "mirabel_url": "https://reseau-mirabel.info/revue/6218",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Archéologie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
-      }
-    },
-    {
-      "mirabel_id": 2567,
-      "title": "Logistique et management",
-      "sigle": "",
-      "issn": [
-        "1250-7970",
-        "2377-9640"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "KEDGE Business School"
-      ],
-      "country": null,
-      "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Distribution, logistique"
-      ],
-      "journal_url": "https://www.tandfonline.com/toc/tlam20/current",
-      "mirabel_url": "https://reseau-mirabel.info/revue/2567",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Logistique",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 26870,
-      "title": "Museum, Materials and Discussions",
-      "sigle": "MMD",
-      "issn": [
-        "3034-9699"
-      ],
-      "languages": [
-        "fre",
-        "eng",
-        "ita"
-      ],
-      "publishers": [
-        "ABIS-AlmaDL"
-      ],
-      "country": null,
-      "periodicity": "semestriel",
-      "publication_format": "Numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Patrimoine, musées, bibliothèques"
-      ],
-      "journal_url": "https://mmdjournal.unibo.it/",
-      "mirabel_url": "https://reseau-mirabel.info/revue/26870",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Muséologie",
-        "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY"
-      }
-    },
-    {
-      "mirabel_id": 4702,
-      "title": "Neuropsychiatrie de l'enfance et de l'adolescence",
-      "sigle": "",
-      "issn": [
-        "0222-9617",
-        "1769-6615"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Elsevier",
-        "Expansion scientifique française"
-      ],
-      "country": null,
-      "periodicity": "mensuel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Démographie, populations",
-        "Psychologie",
-        "Médecine, pharmacie",
-        "Psychiatrie, santé mentale"
-      ],
-      "journal_url": "https://www.sciencedirect.com/journal/neuropsychiatrie-de-lenfance-et-de-ladolescence",
-      "mirabel_url": "https://reseau-mirabel.info/revue/4702",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Psychiatrie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
-      }
-    },
-    {
-      "mirabel_id": 14231,
-      "title": "Philosophies",
-      "sigle": "",
-      "issn": [
-        "2409-9287"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Multidisciplinary digital publishing institute"
-      ],
-      "country": null,
-      "periodicity": "bimestriel",
-      "publication_format": "Numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Philosophie",
-        "Psychologie",
-        "Religion, théologie"
-      ],
-      "journal_url": "https://www.mdpi.com/journal/philosophies",
-      "mirabel_url": "https://reseau-mirabel.info/revue/14231",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Philosophie",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, CC-BY"
-      }
-    },
-    {
-      "mirabel_id": 24746,
-      "title": "Requirements Engineering",
-      "sigle": "",
-      "issn": [
-        "0947-3602",
-        "1432-010X"
-      ],
-      "languages": [
-        "eng"
-      ],
-      "publishers": [
-        "Springer Verlag GmbH"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Information-communication",
-        "Informatique",
-        "Ingénierie, technologies"
-      ],
-      "journal_url": "https://link.springer.com/journal/766",
-      "mirabel_url": "https://reseau-mirabel.info/revue/24746",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Informatique",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 13575,
-      "title": "Revue d'histoire du théâtre",
-      "sigle": "",
-      "issn": [
-        "2550-8148",
-        "1291-2530"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Société d'histoire du théâtre"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Arts vivants"
-      ],
-      "journal_url": "https://sht.asso.fr/revue/revue-histoire-du-theatre/",
-      "mirabel_url": "https://reseau-mirabel.info/revue/13575",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Arts vivants",
-        "editorial_structure": "association",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 349,
-      "title": "Revue d'économie industrielle",
-      "sigle": "",
-      "issn": [
-        "0154-3229",
-        "1773-0198"
-      ],
-      "languages": [
-        "fre",
-        "eng"
-      ],
-      "publishers": [
-        "De Boeck Supérieur"
-      ],
-      "country": null,
-      "periodicity": "trimestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Économie, gestion"
-      ],
-      "journal_url": "https://www.cairn.info/revue-d-economie-industrielle.htm",
-      "mirabel_url": "https://reseau-mirabel.info/revue/349",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Économie",
-        "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND 4.0 ou Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 698,
-      "title": "Revue des mondes musulmans et de la Méditerranée",
-      "sigle": "REMMM",
-      "issn": [
-        "0997-1327",
-        "2105-2271"
-      ],
-      "languages": [
-        "fre",
-        "eng"
-      ],
-      "publishers": [
-        "Association pour les études en sciences humaines et sociales sur l'Afrique du Nord et les mondes musulmans"
-      ],
-      "country": null,
-      "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [
-        "DDH diamond journal"
-      ],
-      "ddh": {
-        "url": "https://ddh.diamas.org/en/journals/9683",
-        "label": "DDH"
-      },
-      "themes": [
-        "Religion, théologie"
-      ],
-      "journal_url": "https://journals.openedition.org/remmm/",
-      "mirabel_url": "https://reseau-mirabel.info/revue/698",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès ouvert",
-        "discipline": "Études des aires culturelles",
-        "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "mirabel_id": 1162,
-      "title": "Revue des études byzantines",
-      "sigle": "",
-      "issn": [
-        "0766-5598",
-        "0771-3444"
-      ],
-      "languages": [
-        "fre",
-        "eng",
-        "ger",
-        "ita",
-        "spa"
-      ],
-      "publishers": [
-        "Institut Français d'Études Byzantines",
-        "Peeters Publishers"
-      ],
-      "country": null,
-      "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Antiquité tardive",
-        "Moyen Âge",
-        "Proche et Moyen-Orient"
-      ],
-      "journal_url": "https://www.icp.fr/recherche/instituts-de-recherche/institut-francais-detudes-byzantines-ifeb/revue-des-etudes-byzantines",
-      "mirabel_url": "https://reseau-mirabel.info/revue/1162",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Histoire",
-        "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
-      "mirabel_id": 1744,
-      "title": "Revue interdisciplinaire d'études juridiques",
-      "sigle": "RIEJ",
-      "issn": [
-        "0770-2310",
-        "2406-4742"
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Presses de l'Université Saint-Louis Bruxelles"
-      ],
-      "country": null,
-      "periodicity": null,
-      "publication_format": "Papier et numérique",
-      "publication_fees": null,
-      "labels": [],
-      "ddh": null,
-      "themes": [
-        "Droit, justice, criminologie"
-      ],
-      "journal_url": "",
-      "mirabel_url": "https://reseau-mirabel.info/revue/1744",
-      "mosar": {
-        "proximity_level": "4",
-        "open_access": "Accès restreint",
-        "discipline": "Droit",
-        "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
-      }
-    },
-    {
       "mirabel_id": 361,
       "title": "Sahara et Sahel",
+      "subtitle": "",
+      "mirabel_title": "Sahara et Sahel",
       "sigle": "",
       "issn": [
         "2801-4472"
@@ -6240,6 +6568,8 @@
     {
       "mirabel_id": 10695,
       "title": "The European Journal of the History of Economic Thought",
+      "subtitle": "",
+      "mirabel_title": "The European Journal of the History of Economic Thought",
       "sigle": "",
       "issn": [
         "0967-2567",
@@ -6273,6 +6603,8 @@
     {
       "mirabel_id": 13098,
       "title": "The Southern Journal of Philosophy",
+      "subtitle": "",
+      "mirabel_title": "The Southern Journal of Philosophy",
       "sigle": "",
       "issn": [
         "0038-4283",
@@ -6306,6 +6638,8 @@
     {
       "mirabel_id": 25149,
       "title": "The Spanish Journal of Psychology",
+      "subtitle": "",
+      "mirabel_title": "The Spanish Journal of Psychology",
       "sigle": "",
       "issn": [
         "1138-7416",
@@ -6342,6 +6676,8 @@
     {
       "mirabel_id": 9879,
       "title": "Theory and Decision",
+      "subtitle": "",
+      "mirabel_title": "Theory and Decision",
       "sigle": "",
       "issn": [
         "0040-5833",
@@ -6376,6 +6712,8 @@
     {
       "mirabel_id": 13155,
       "title": "Théâtre/Public",
+      "subtitle": "",
+      "mirabel_title": "Théâtre/Public",
       "sigle": "",
       "issn": [
         "0335-2927"
@@ -6411,6 +6749,8 @@
     {
       "mirabel_id": 725,
       "title": "Travail, genre et sociétés",
+      "subtitle": "",
+      "mirabel_title": "Travail, genre et sociétés",
       "sigle": "",
       "issn": [
         "1294-6303",
@@ -6446,6 +6786,8 @@
     {
       "mirabel_id": 12395,
       "title": "Travaux et mémoires",
+      "subtitle": "",
+      "mirabel_title": "Travaux et mémoires",
       "sigle": "",
       "issn": [
         "0577-1471"
@@ -6478,7 +6820,9 @@
     },
     {
       "mirabel_id": 3960,
-      "title": "Zilsel",
+      "title": "ZILSEL",
+      "subtitle": "Science, technique, société",
+      "mirabel_title": "Zilsel",
       "sigle": "",
       "issn": [
         "2553-6133",
