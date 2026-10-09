@@ -23,7 +23,7 @@ EXPECTED = {
         "periodicities": 192,
         "disciplines": 193,
         "structures": 193,
-        "rights": 192,
+        "rights": 193,
     },
 }
 

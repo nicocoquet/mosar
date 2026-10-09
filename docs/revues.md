@@ -12,9 +12,9 @@ Elle teste l’articulation entre les métadonnées de Mir@bel et les données a
 
 </div>
 
-<p class="revues-source">Grappe Mir@bel n° 15 « PCP Sciences de l’Antiquité et Archéologie ».</p>
-<p class="revues-source-link"><a href="https://reseau-mirabel.info/grappe/15/PCP-Sciences-de-l-Antiquite-et-Archeologie" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>
-<p class="revues-updated">Dernière actualisation : <strong>2026-10-08</strong> (API Mir@bel).</p>
+<p class="revues-source">Grappe Mir@bel n° 146 « Mosar ».</p>
+<p class="revues-source-link"><a href="https://reseau-mirabel.info/grappe/146" target="_blank" rel="noopener">Consulter la grappe sur Mir@bel</a></p>
+<p class="revues-updated">Dernière actualisation : <strong>2026-10-09</strong> (API Mir@bel).</p>
 
 <link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">
 

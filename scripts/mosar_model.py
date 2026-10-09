@@ -50,6 +50,13 @@ DISCIPLINE_MAP = {
 }
 
 LICENCE_MAP = {
+    'CC BY-NC': 'Licence Creative Commons',
+    'CC BY-NC-ND 4.0 ou Tous droits réservés': 'Licence CC ou DR variable pour une même publication',
+    'Tous droits réservés (18 mois), puis CC BY-NC-ND 4.0': 'Licence CC ou DR variable pour une même publication',
+    'Tous droits réservés (sur Cairn) et CC BY-NC-ND sur OpenEdition': 'Licence CC ou DR variable pour une même publication',
+    'Tous droits réservés, avec possibilité de CC': 'Licence CC ou DR variable pour une même publication',
+    'pas de mention': 'Tous droits réservés',
+    'Tous droits réservés et CC variable selon les articles': 'Licence CC ou DR variable pour une même publication',
     "Tous droits réservés": "Tous droits réservés", "tous droits réservés": "Tous droits réservés", "CC BY": "Licence Creative Commons", "CC BY NC ND": "Licence Creative Commons",
     "CC BY NC ND 4.0": "Licence Creative Commons", "CC BY-NC-ND 4.0": "Licence Creative Commons", "CC BY SA 4.0": "Licence Creative Commons", "Pas de mention, tous droits réservés": "Tous droits réservés",
     "CC BY NC": "Licence Creative Commons", "CC BY NC SA 4.0": "Licence Creative Commons", "CC BY 4.0": "Licence Creative Commons", "tous droits réservés, avec possibilité de CC": "Licence CC ou DR variable pour une même publication",
@@ -68,12 +75,12 @@ FORMAT_MAP = {
 }
 
 ALLOWED_STRUCTURES = {
-    "Éditeur privé",
-    "Organisme de recherche public",
-    "Éditeur public",
-    "Association",
-    "Coédition public/privé",
-    "Coédition privé/Association",
+    "éditeur privé",
+    "organisme de recherche public",
+    "éditeur public",
+    "association",
+    "coédition public/privé",
+    "coédition privé/association",
 }
 
 DATE_ACCESS_GROUPS = (
@@ -137,18 +144,16 @@ def date_access_group(year):
 
 def normalize_structure(structure):
     """Normalise le libellé de structure pour la distribution éditoriale."""
-    if structure == "Coédition privé/Association":
-        return "Coédition privé/association"
-    return structure
+    return structure[0].upper() + structure[1:]
 
 
 def group_structure_for_access(structure):
     """Regroupe les structures selon le modèle Mosar d'analyse de l'accès."""
-    if structure.startswith("Coédition"):
+    if structure.startswith("coédition"):
         return "Coédition éditeur privé & structure publique ou associative"
-    if structure == "Organisme de recherche public":
+    if structure == "organisme de recherche public":
         return "Organisme public de recherche"
-    return structure
+    return normalize_structure(structure)
 
 
 def periodicity_label(value):
