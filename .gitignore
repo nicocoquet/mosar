@@ -17,3 +17,5 @@ __pycache__/
 /site/
 
 /docs/downloads/
+# Fichiers intermédiaires générés localement
+/generated/

@@ -361,6 +361,18 @@
   line-height: 1.2;
 }
 
+.rx-card h2:has(+ .rx-subtitle) {
+  margin-bottom: .15rem !important;
+}
+
+.rx-subtitle {
+  margin: 0 0 .35rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .68rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
 .rx-publisher {
   min-height: 1.15rem;
   color: var(--md-default-fg-color--light);

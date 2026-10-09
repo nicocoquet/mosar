@@ -128,6 +128,7 @@ def load_mosar_journals(
 
             fields = {
                 "nom_revue": source.columns["journal_name"],
+                "sous_titre": source.columns["journal_subtitle"],
                 "niveau_rattachement": source.columns["proximity"],
                 "acces_ouvert": source.columns["open_access"],
                 "discipline": source.columns["discipline"],

@@ -9,6 +9,7 @@ data:
 
 columns:
   journal_name: "Nom"
+  journal_subtitle: "Sous-titre/complément"
   mirabel_id: "Mir@bel_ID"
   proximity: "Niveau rattachement"
   open_access: "Accès ouvert"

@@ -93,9 +93,25 @@ def build_record(title, themes, mosar_data):
         if str(item).strip()
     ]
 
+    mirabel_title = title_label(title)
+
+    mosar_title = (
+        str(mosar_data.get("nom_revue") or "").strip()
+        if mosar_data
+        else ""
+    )
+
+    mosar_subtitle = (
+        str(mosar_data.get("sous_titre") or "").strip()
+        if mosar_data
+        else ""
+    )
+
     return {
         "mirabel_id": rid,
-        "title": title_label(title),
+        "title": mosar_title or mirabel_title,
+        "subtitle": mosar_subtitle,
+        "mirabel_title": mirabel_title,
         "sigle": title.get("sigle") or "",
         "issn": list(dict.fromkeys(issns)),
         "languages": title.get("langues") or [],
