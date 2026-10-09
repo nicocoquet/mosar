@@ -21,9 +21,9 @@ columns:
 
 mirabel:
   api: "https://reseau-mirabel.info/api"
-  cluster_id: 15
-  cluster_name: "PCP Sciences de l’Antiquité et Archéologie"
-  cluster_url: "https://reseau-mirabel.info/grappe/15/PCP-Sciences-de-l-Antiquite-et-Archeologie"
+  cluster_id: 146
+  cluster_name: "Mosar"
+  cluster_url: "https://reseau-mirabel.info/grappe/146"
 
 publication:
   statistics:
