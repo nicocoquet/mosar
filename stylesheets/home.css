@@ -1,3 +1,4 @@
+/* Conteneur principal et bandeau d'accueil. */
 .home-page {
   width: 100%;
   max-width: 1080px;
@@ -55,6 +56,7 @@
   text-transform: uppercase;
 }
 
+/* Sections éditoriales, cartes de présentation et étapes du projet. */
 .home-section {
   margin: 2.2rem 0 0;
 }
@@ -160,6 +162,7 @@
   line-height: 1.5;
 }
 
+/* Présentation du financement FNSO. */
 .home-fnso {
   display: grid;
   grid-template-columns: minmax(170px, 230px) minmax(0, 1fr);
@@ -209,6 +212,7 @@
   margin-bottom: 0;
 }
 
+/* Bandeau des partenaires institutionnels. */
 .home-partners {
   margin-bottom: .8rem;
 }
@@ -245,6 +249,7 @@
   object-fit: contain;
 }
 
+/* Adaptations pour tablettes et écrans intermédiaires. */
 @media (max-width: 900px) {
   .home-hero {
     grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr);
@@ -266,6 +271,7 @@
   }
 }
 
+/* Mise en page sur écran étroit : sections empilées. */
 @media (max-width: 700px) {
   .home-hero {
     grid-template-columns: 1fr;
