@@ -4,10 +4,11 @@ site_url: https://nicocoquet.github.io/mosar/
 
 nav:
   - Home: index.md
-  - Journals: revues.md
-  - Report: rapport.md
+  - 2026 Survey: rapport.md
   - Statistics: statistiques.md
+  - Journals: revues.md
   - Contacts: contacts.md
+
 theme:
   name: material
   language: fr
@@ -32,9 +33,9 @@ plugins:
           build: true
           nav_translations:
             Home: Accueil
-            Journals: Revues
-            Report: Rapport
+            2026 Survey: Enquête 2026
             Statistics: Statistiques
+            Journals: Revues
             Contacts: Contacts
         - locale: en
           name: English
