@@ -4,7 +4,12 @@ Ce module ne connaît ni l'API Mir@bel ni le XLSX : il transforme les
 métadonnées déjà chargées en enregistrements publiables par l'explorateur.
 """
 from __future__ import annotations
-
+from mosar_model import (
+    ALLOWED_STRUCTURES,
+    DISCIPLINE_MAP,
+    LICENCE_MAP,
+    normalize_structure,
+)
 
 def normalize_open(value):
     if value is None:
@@ -16,6 +21,36 @@ def normalize_open(value):
         return "Accès restreint"
     return str(value).strip()
 
+def normalize_mosar_category(value, mapping, field, journal_id):
+    """Normaliser une catégorie Mosar avec validation stricte."""
+    text = str(value).strip() if value is not None else ""
+
+    if not text:
+        return None
+
+    if text not in mapping:
+        raise ValueError(
+            f"Revue Mir@bel {journal_id} : "
+            f"valeur inconnue pour {field} : {text!r}"
+        )
+
+    return mapping[text]
+
+
+def normalize_editorial_structure(value, journal_id):
+    """Normaliser la structure éditoriale selon le référentiel Mosar."""
+    text = str(value).strip() if value is not None else ""
+
+    if not text:
+        return None
+
+    if text not in ALLOWED_STRUCTURES:
+        raise ValueError(
+            f"Revue Mir@bel {journal_id} : "
+            f"structure éditoriale inconnue : {text!r}"
+        )
+
+    return normalize_structure(text)
 
 def publication_format(issns):
     supports = {
@@ -42,6 +77,22 @@ def external_links(title):
             links.append({"url": item[0], "label": item[1]})
     return links
 
+def journal_references(links):
+    """Extraire les référencements DDH, DOAJ et Wikidata."""
+    supported = {"ddh": "DDH", "doaj": "DOAJ", "wikidata": "Wikidata"}
+    references = {}
+
+    for item in links:
+        label = str(item.get("label") or "").strip().casefold()
+        url = str(item.get("url") or "").strip()
+
+        if label in supported and url:
+            references[supported[label]] = {
+                "label": supported[label],
+                "url": url,
+            }
+
+    return references
 
 def title_label(title):
     return (
@@ -79,6 +130,7 @@ def build_record(title, themes, mosar_data):
         if isinstance(item, dict) and item.get("issn")
     ]
     links = external_links(title)
+    references = journal_references(links)
     ddh = next(
         (
             item
@@ -87,11 +139,17 @@ def build_record(title, themes, mosar_data):
         ),
         None,
     )
+
     labels = [
         str(item).strip()
         for item in (title.get("labellisation") or [])
         if str(item).strip()
     ]
+
+    is_diamond = any(
+        label.casefold() == "ddh diamond journal"
+        for label in labels
+    )
 
     mirabel_title = title_label(title)
 
@@ -123,6 +181,8 @@ def build_record(title, themes, mosar_data):
         or title.get("frais_publication")
         or None,
         "labels": labels,
+        "is_diamond": is_diamond,
+        "references": references,
         "ddh": ddh,
         "themes": themes,
         "journal_url": title.get("url") or "",
@@ -140,5 +200,21 @@ def build_record(title, themes, mosar_data):
                 mosar_data.get("type_editeur") or ""
             ).strip(),
             "licence": str(mosar_data.get("licence") or "").strip(),
+            "discipline_normalized": normalize_mosar_category(
+                mosar_data.get("discipline"),
+                DISCIPLINE_MAP,
+                "discipline",
+                rid,
+            ),
+            "editorial_structure_normalized": normalize_editorial_structure(
+                mosar_data.get("type_editeur"),
+                rid,
+            ),
+            "licence_normalized": normalize_mosar_category(
+                mosar_data.get("licence"),
+                LICENCE_MAP,
+                "licence",
+                rid,
+            ),
         },
     }

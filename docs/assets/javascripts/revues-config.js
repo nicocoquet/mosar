@@ -1,7 +1,13 @@
 const REVUES_TRANSLATIONS = {
   fr: {
     locale: 'fr',
-    values: {},
+    values: {
+      // Licences de diffusion
+      'Licence Creative Commons': 'Licence Creative Commons (CC)',
+      'Tous droits réservés': 'Tous droits réservés (DR)',
+      'Licence CC ou DR variable pour une même publication':
+        'Licence CC ou DR variable pour une même publication'
+    },
     unknownLabel: 'Non renseigné',
     facetsTitle: 'Filtrer la recherche',
     resetLabel: 'Réinitialiser les filtres',
@@ -14,6 +20,7 @@ const REVUES_TRANSLATIONS = {
     levelLabel: number => `Niveau ${number}`,
     formatTitle: 'Format de publication',
     diamondTitle: 'Labellisation : Diamond journal',
+    diamondFacetLabel: 'Revue Diamant',
     ddhTitle: 'Voir la revue dans le Diamond Discovery Hub',
     mirabelTitle: 'Voir la revue dans Mir@bel',
     websiteTitle: 'Site web de la revue',
@@ -24,10 +31,15 @@ const REVUES_TRANSLATIONS = {
       {key: 'proximity', label: 'Niveau de proximité'},
       {key: 'access', label: 'Accès'},
       {key: 'format', label: 'Format de publication'},
-      {key: 'periodicity', label: 'Périodicité'},
+      {key: 'labelling', label: 'Labellisation'},
+      {key: 'discipline', label: 'Disciplines'},
       {key: 'themes', label: 'Thématiques'},
       {key: 'languages', label: 'Langues'},
-      {key: 'publishers', label: 'Éditeur'}
+      {key: 'periodicity', label: 'Périodicité'},
+      {key: 'licence', label: 'Licence de diffusion'},
+      {key: 'editorial_structure', label: 'Structure éditoriale'},
+      {key: 'publishers', label: 'Éditeur'},
+      {key: 'indexing', label: 'Référencement'}
     ],
     languages: {
       fre:'Français', fra:'Français', eng:'Anglais',
@@ -48,6 +60,30 @@ const REVUES_TRANSLATIONS = {
   en: {
     locale: 'en',
     values: {
+      // Licences de diffusion
+      'Licence Creative Commons': 'Creative Commons licence (CC)',
+      'Tous droits réservés': 'All rights reserved (DR)',
+      'Licence CC ou DR variable pour une même publication':
+      'Variable CC licence or all rights reserved within the same journal',
+
+      // Structures éditoriales
+      'Association': 'Association',
+      'Coédition privé/association': 'Private publisher / association co-publishing',
+      'Coédition public/privé': 'Public / private co-publishing',
+      'Organisme de recherche public': 'Public research organisation',
+      'Éditeur privé': 'Private publisher',
+      'Éditeur public': 'Public publisher',
+
+      // Disciplines Mosar
+      'Anthropologie': 'Anthropology',
+      'Arts': 'Arts',
+      'Droit': 'Law',
+      'Géographie': 'Geography',
+      'Pluridisciplinaire': 'Multidisciplinary',
+      'Linguistique': 'Linguistics',
+      'STM (sciences, technologie, médecine)': 'STEM (science, technology, medicine)',
+      'Sociologie': 'Sociology',
+      'Économie, gestion, finance, marketing': 'Economics, management, finance and marketing',
       'Accès ouvert': 'Open access',
       'Accès restreint': 'Restricted access',
       'Papier et numérique': 'Print and online',
@@ -98,6 +134,7 @@ const REVUES_TRANSLATIONS = {
       '7 numéros par an': 'Seven issues per year',
       '9 numéros par an': 'Nine issues per year',
       'parution continue': 'Continuous publication',
+
       // Thématiques Mir@bel
       'Acquisitions des savoirs': 'Knowledge Acquisition',
       'Actualité, presse': 'Current Affairs and Press',
@@ -187,6 +224,7 @@ const REVUES_TRANSLATIONS = {
     levelLabel: number => `Level ${number}`,
     formatTitle: 'Publication format',
     diamondTitle: 'Label: Diamond journal',
+    diamondFacetLabel: 'Diamond journal',
     ddhTitle: 'View journal in the Diamond Discovery Hub',
     mirabelTitle: 'View journal on Mir@bel',
     websiteTitle: 'Journal website',
@@ -197,10 +235,15 @@ const REVUES_TRANSLATIONS = {
       {key: 'proximity', label: 'Level of proximity'},
       {key: 'access', label: 'Access'},
       {key: 'format', label: 'Publication format'},
-      {key: 'periodicity', label: 'Publication frequency'},
+      {key: 'labelling', label: 'Labelling'},
+      {key: 'discipline', label: 'Disciplines'},
       {key: 'themes', label: 'Topics'},
       {key: 'languages', label: 'Languages'},
-      {key: 'publishers', label: 'Publisher'}
+      {key: 'periodicity', label: 'Publication frequency'},
+      {key: 'licence', label: 'Publication licence'},
+      {key: 'editorial_structure', label: 'Editorial structure'},
+      {key: 'publishers', label: 'Publisher'},
+      {key: 'indexing', label: 'Indexing'}
     ],
     languages: {
       fre:'French', fra:'French', eng:'English',
