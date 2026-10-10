@@ -210,6 +210,9 @@ def main():
             "discipline": "Archéologie",
             "editorial_structure": "Éditeur public",
             "licence": "CC BY",
+            "discipline_normalized": "Archéologie",
+            "editorial_structure_normalized": "Éditeur public",
+            "licence_normalized": "Licence Creative Commons",
         },
         "Enrichissement Mosar",
     )

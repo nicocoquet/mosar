@@ -44,13 +44,15 @@ def normalize_editorial_structure(value, journal_id):
     if not text:
         return None
 
-    if text not in ALLOWED_STRUCTURES:
+    canonical = text.lower()
+
+    if canonical not in ALLOWED_STRUCTURES:
         raise ValueError(
             f"Revue Mir@bel {journal_id} : "
             f"structure éditoriale inconnue : {text!r}"
         )
 
-    return normalize_structure(text)
+    return normalize_structure(canonical)
 
 def publication_format(issns):
     supports = {
