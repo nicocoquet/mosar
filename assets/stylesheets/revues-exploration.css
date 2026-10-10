@@ -274,6 +274,14 @@
   accent-color: var(--rx-accent);
 }
 
+.rx-facet-diamond-icon {
+  width: .9rem;
+  height: .9rem;
+  flex: 0 0 .9rem;
+  object-fit: contain;
+  align-self: center;
+}
+
 .rx-count {
   margin-left: auto;
   color: var(--md-default-fg-color--lighter);

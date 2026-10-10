@@ -10,7 +10,9 @@
     return;
   }
   const displayValue = value =>
-  config.values?.[String(value)] ?? String(value);
+    value === 'diamond'
+      ? config.diamondFacetLabel
+      : (config.values?.[String(value)] ?? String(value));
   const esc = (s='') => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const langLabel = code => config.languages[String(code).toLowerCase()] || String(code).toUpperCase();
   const valueOrUnknown = value => value === null || value === undefined || String(value).trim()==='' ? config.unknownLabel : String(value).trim();
@@ -35,38 +37,122 @@
   }
 
   function values(records,getter){const c=new Map();records.flatMap(getter).filter(Boolean).forEach(v=>c.set(v,(c.get(v)||0)+1));return [...c.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fr'));}
-  function buildFacets(records, proximityLevels){
-    const getters={
-      proximity:r=>[r.mosar?.proximity_level?config.levelLabel(r.mosar.proximity_level):config.unknownLabel],
-      access:r=>[valueOrUnknown(r.mosar?.open_access)],
-      format:r=>[valueOrUnknown(r.publication_format)],
-      periodicity:r=>[valueOrUnknown(r.periodicity)],
-      themes:r=>listOrUnknown(r.themes),
-      languages:r=>(r.languages?.length?r.languages.map(langLabel):[config.unknownLabel]),
-      publishers:r=>listOrUnknown(r.publishers)
-    };
-    const specs=config.facets.map(({key,label})=>[key,label,getters[key]]);
-    const box=root.querySelector('.rx-facet-list');
-    specs.forEach(([key,title,getter])=>{
-      let vals=values(records,getter);
-      if(key==='proximity') vals.sort((a,b)=>{const na=parseInt(a[0].match(/\d+/)?.[0]||99),nb=parseInt(b[0].match(/\d+/)?.[0]||99);return na-nb;});
-      const section=document.createElement('details'); section.className='rx-facet'; section.dataset.facet=key;
-      const scroll=vals.length>config.facetScrollThreshold?' rx-facet-options--scroll':'';
-      section.innerHTML=`<summary><span>${esc(title)}</span><span class="rx-chevron" aria-hidden="true"></span></summary><div class="rx-facet-options${scroll}">${vals.map(([v,n])=>`<label class="rx-option"><input type="checkbox" data-facet="${key}" value="${esc(v)}"><span>${esc(displayValue(v))}</span><span class="rx-count">${n}</span></label>`).join('')}</div>`;
+  function buildFacets(records, proximityLevels) {
+    const box = root.querySelector('.rx-facet-list');
+
+    config.facets.forEach(({key, label}) => {
+      let vals = values(records, r => recordValues(r)[key]);
+
+      if (key === 'proximity') {
+        vals.sort((a, b) => {
+          const na = parseInt(a[0].match(/\d+/)?.[0] || 99);
+          const nb = parseInt(b[0].match(/\d+/)?.[0] || 99);
+          return na - nb;
+        });
+      }
+
+      if (key === 'indexing') {
+        const order = ['DDH', 'DOAJ', 'Wikidata'];
+        vals.sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
+      }
+
+      const section = document.createElement('details');
+      section.className = 'rx-facet';
+      section.dataset.facet = key;
+
+      const scroll = vals.length > config.facetScrollThreshold
+        ? ' rx-facet-options--scroll'
+        : '';
+
+      const options = vals.map(([value, count]) => {
+        const isDiamondOption = key === 'labelling' && value === 'diamond';
+
+        const labelText = isDiamondOption
+          ? config.diamondFacetLabel
+          : displayValue(value);
+
+        const pictogram = isDiamondOption
+          ? `<img class="rx-facet-diamond-icon"
+                   src="${ICON_BASE}picto_diamond-access.png"
+                   alt="">`
+          : '';
+
+        return `
+          <label class="rx-option">
+            <input type="checkbox"
+                   data-facet="${esc(key)}"
+                   value="${esc(value)}">
+            ${pictogram}
+            <span>${esc(labelText)}</span>
+            <span class="rx-count">${count}</span>
+          </label>`;
+      }).join('');
+
+      section.innerHTML = `
+        <summary>
+          <span>${esc(label)}</span>
+          <span class="rx-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="rx-facet-options${scroll}">
+          ${options}
+        </div>`;
+
       box.appendChild(section);
     });
-    box.addEventListener('change',e=>{const i=e.target.closest('input[data-facet]');if(!i)return;const set=state[i.dataset.facet];i.checked?set.add(i.value):set.delete(i.value);if(i.checked)i.closest('details').open=true;render(records, proximityLevels);});
+
+    box.addEventListener('change', e => {
+      const input = e.target.closest('input[data-facet]');
+      if (!input) return;
+
+      const selected = state[input.dataset.facet];
+
+      if (input.checked) {
+        selected.add(input.value);
+        input.closest('details').open = true;
+      } else {
+        selected.delete(input.value);
+      }
+
+      render(records, proximityLevels);
+    });
   }
 
   function matchesSet(selected,vals){return !selected.size||vals.some(v=>selected.has(v));}
-  function recordValues(r){return {proximity:[r.mosar?.proximity_level?config.levelLabel(r.mosar.proximity_level):config.unknownLabel],access:[valueOrUnknown(r.mosar?.open_access)],format:[valueOrUnknown(r.publication_format)],periodicity:[valueOrUnknown(r.periodicity)],themes:listOrUnknown(r.themes),languages:r.languages?.length?r.languages.map(langLabel):[config.unknownLabel],publishers:listOrUnknown(r.publishers)};}
+  function recordValues(r) {
+    return {
+      proximity: [
+        r.mosar?.proximity_level
+          ? config.levelLabel(r.mosar.proximity_level)
+          : config.unknownLabel
+      ],
+      access: [valueOrUnknown(r.mosar?.open_access)],
+      format: [valueOrUnknown(r.publication_format)],
+      labelling: r.is_diamond ? ['diamond'] : [],
+      discipline: [valueOrUnknown(r.mosar?.discipline_normalized)],
+      themes: listOrUnknown(r.themes),
+      languages: r.languages?.length
+        ? r.languages.map(langLabel)
+        : [config.unknownLabel],
+      periodicity: [valueOrUnknown(r.periodicity)],
+      licence: [valueOrUnknown(r.mosar?.licence_normalized)],
+      editorial_structure: [
+        valueOrUnknown(r.mosar?.editorial_structure_normalized)
+      ],
+      publishers: listOrUnknown(r.publishers),
+      indexing: ['DDH', 'DOAJ', 'Wikidata'].filter(
+        name => Boolean(r.references?.[name]?.url)
+      )
+    };
+  }
   function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>matchesSet(state[k],v[k]));});}
   function sortRecords(rows, proximityLevels){return [...rows].sort((a,b)=>{const parse=r=>{const n=parseInt(r.mosar?.proximity_level,10);return [Number.isInteger(n)&&proximityLevels.includes(n)?n:99,(r.title||'').toLocaleLowerCase('fr')];};const ka=parse(a),kb=parse(b);return ka[0]-kb[0]||ka[1].localeCompare(kb[1],'fr');});}
   function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size);}
   function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(displayValue(value))}</span>`));});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
   function formatMark(format){if(!format)return'';const marks=format==='Papier et numérique'?`${icons.paper}${icons.digital}`:format==='Papier'?icons.paper:icons.digital;return `<span class="rx-signal" title="${esc(config.formatTitle)} : ${esc(displayValue(format))}"><span class="rx-format-icons">${marks}</span><span>${esc(displayValue(format))}</span></span>`;}
   function accessMark(access){if(!access)return'';const restricted=/restreint|fermé|ferme/i.test(access);return `<span class="rx-signal ${restricted?'rx-signal--restricted':'rx-signal--open'}" title="${esc(displayValue(access))}">${restricted?icons.closed:icons.open}<span>${esc(displayValue(access))}</span></span>`;}
-  function isDiamond(r){return(r.labels||[]).some(label=>label.toLowerCase().includes('ddh diamond journal'));}
+  function isDiamond(r) {
+    return r.is_diamond === true;
+  }
     function metaTags(r) {
     const tags = [];
 

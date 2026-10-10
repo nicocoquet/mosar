@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-09T19:59:00+00:00",
+    "generated_at": "2026-10-10T06:25:59+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 172,
     "mirabel_unique_reviews": 172,
@@ -218,6 +218,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -230,7 +232,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -254,6 +259,13 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96696866"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -268,7 +280,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -294,6 +309,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22009"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2490-9424"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q126369756"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22009",
         "label": "DDH"
@@ -309,7 +339,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -333,6 +366,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -346,7 +381,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -372,6 +410,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2431-1472"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18853"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50520948"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18853",
         "label": "DDH"
@@ -387,7 +440,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -411,6 +467,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3058353"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sociologie ",
@@ -425,7 +488,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -450,6 +516,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3059306"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -463,7 +536,10 @@
         "open_access": "Accès restreint",
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -489,6 +565,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15755082"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sociologie "
@@ -500,7 +583,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Sociologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés et CC variable selon les articles"
+        "licence": "Tous droits réservés et CC variable selon les articles",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -526,6 +612,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2109-9588"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9690"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3094813"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9690",
         "label": "DDH"
@@ -542,7 +643,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA"
+        "licence": "CC BY-SA",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -568,6 +672,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2109-9642"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22928"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15762215"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22928",
         "label": "DDH"
@@ -585,7 +704,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -614,6 +736,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1957-7842"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9689"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3186853"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9689",
         "label": "DDH"
@@ -634,7 +771,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Anthropologie",
         "editorial_structure": "association",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -658,6 +798,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -671,7 +813,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -695,6 +840,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Arts visuels"
@@ -706,7 +853,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-SA 4.0"
+        "licence": "CC BY-NC-SA 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -733,6 +883,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22358"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q58493863"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22358",
         "label": "DDH"
@@ -747,7 +908,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Linguistique",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Linguistique",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -774,6 +938,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22359"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q131825416"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22359",
         "label": "DDH"
@@ -792,7 +967,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY 4.0"
+        "licence": "CC BY 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -816,6 +994,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q42020894"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire",
@@ -829,7 +1014,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "association",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -857,6 +1045,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23130"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2804-1224"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23130",
         "label": "DDH"
@@ -872,7 +1071,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -900,6 +1102,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23133"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7127244"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23133",
         "label": "DDH"
@@ -917,7 +1130,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC-BY-NC-ND"
+        "licence": "CC-BY-NC-ND",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -943,6 +1159,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2740-5826"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/1075"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q117358247"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/1075",
         "label": "DDH"
@@ -957,7 +1188,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Arts visuels",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA"
+        "licence": "CC BY-SA",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -984,6 +1218,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1963-1022"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/1108"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15755948"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/1108",
         "label": "DDH"
@@ -1001,7 +1250,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1027,6 +1279,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2554-3555"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18837"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q56760393"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18837",
         "label": "DDH"
@@ -1045,7 +1312,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Économie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1071,6 +1341,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1773-018X"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18852"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3487472"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18852",
         "label": "DDH"
@@ -1086,7 +1371,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1112,6 +1400,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23151"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q21031268"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23151",
         "label": "DDH"
@@ -1129,7 +1428,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1158,6 +1460,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23154"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3518551"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23154",
         "label": "DDH"
@@ -1174,7 +1487,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Anthropologie",
         "editorial_structure": "association",
-        "licence": "CC-BY-NC-ND 4.0"
+        "licence": "CC-BY-NC-ND 4.0",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1199,6 +1515,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2427-9188"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9741"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q60180067"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9741",
         "label": "DDH"
@@ -1214,7 +1545,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1240,6 +1574,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1963-1812"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9436"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3536363"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9436",
         "label": "DDH"
@@ -1256,7 +1605,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1281,6 +1633,8 @@
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Littérature",
@@ -1293,7 +1647,10 @@
         "open_access": "Accès restreint",
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1319,6 +1676,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2272-4001"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9569"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50497569"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9569",
         "label": "DDH"
@@ -1334,7 +1706,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1358,6 +1733,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2823791"
+        }
+      },
       "ddh": null,
       "themes": [
         "Philosophie",
@@ -1371,7 +1753,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1397,6 +1782,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2431-2045"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10928"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96698250"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10928",
         "label": "DDH"
@@ -1414,7 +1814,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC"
+        "licence": "CC BY-NC",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1440,6 +1843,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2108-6796"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10933"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50815451"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10933",
         "label": "DDH"
@@ -1455,7 +1873,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1478,6 +1899,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Information-communication"
@@ -1489,7 +1912,10 @@
         "open_access": "Accès restreint",
         "discipline": "Information-communication",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Information-communication",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1513,6 +1939,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q47009253"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -1524,7 +1957,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1547,6 +1983,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Archéologie"
@@ -1558,7 +1996,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1583,6 +2024,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2117-3869"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10837"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10837",
         "label": "DDH"
@@ -1597,7 +2049,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Anthropologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1623,6 +2078,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2107-0199"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9624"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50815455"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9624",
         "label": "DDH"
@@ -1641,7 +2111,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-SA 4.0"
+        "licence": "CC BY-NC-SA 4.0",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1666,6 +2139,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q47009269"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -1679,7 +2159,10 @@
         "open_access": "Accès restreint",
         "discipline": "Sciences économiques",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1704,6 +2187,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15755339"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -1719,7 +2209,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1744,6 +2237,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Langues,  linguistique",
@@ -1756,7 +2251,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1787,6 +2285,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1278-3366"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/2997"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3008153"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/2997",
         "label": "DDH"
@@ -1802,7 +2315,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Géographie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1826,6 +2342,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Information-communication",
@@ -1839,7 +2357,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Arts",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1867,6 +2388,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Sciences économiques"
@@ -1878,7 +2401,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Sciences économiques",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1903,6 +2429,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1963-1197"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10735"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3047006"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10735",
         "label": "DDH"
@@ -1917,7 +2458,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Géographie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -1940,6 +2484,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Histoire",
@@ -1953,7 +2499,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Relations internationales",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -1974,6 +2523,13 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q134088912"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études de genre",
@@ -1986,7 +2542,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2010,6 +2569,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3203243"
+        }
+      },
       "ddh": null,
       "themes": [
         "Géographie, cartographie"
@@ -2021,7 +2587,10 @@
         "open_access": "Accès restreint",
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2046,6 +2615,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22349"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q28132512"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22349",
         "label": "DDH"
@@ -2060,7 +2640,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2086,6 +2669,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3224839"
+        }
+      },
       "ddh": null,
       "themes": [
         "Travail",
@@ -2099,7 +2689,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "coédition privé/association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Coédition privé/association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2128,6 +2721,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q58467827"
+        }
+      },
       "ddh": null,
       "themes": [
         "Anthropologie, ethnologie",
@@ -2145,7 +2745,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
-        "licence": "Licence OpenEdition Books"
+        "licence": "Licence OpenEdition Books",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2170,6 +2773,13 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23652"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23652",
         "label": "DDH"
@@ -2186,7 +2796,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit (histoire et anthropologie)",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-SA 4.0"
+        "licence": "CC BY-NC-SA 4.0",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2209,6 +2822,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Histoire"
@@ -2220,7 +2835,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2244,6 +2862,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23101"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96725595"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23101",
         "label": "DDH"
@@ -2258,7 +2887,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Philosophie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2282,6 +2914,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Arts visuels"
@@ -2293,7 +2927,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Arts",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2317,6 +2954,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3395239"
+        }
+      },
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -2330,7 +2974,10 @@
         "open_access": "Accès restreint",
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2354,6 +3001,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3428647"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire",
@@ -2367,7 +3021,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "association",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2391,6 +3048,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q16652648"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences et techniques",
@@ -2404,7 +3068,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2427,6 +3094,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -2438,7 +3107,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2463,6 +3135,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7318991"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion"
@@ -2474,7 +3153,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2498,6 +3180,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Travail"
@@ -2509,7 +3193,10 @@
         "open_access": "Accès restreint",
         "discipline": "Sociologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2533,6 +3220,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q23638505"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences et techniques",
@@ -2547,7 +3241,10 @@
         "open_access": "Accès restreint",
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2571,6 +3268,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -2582,7 +3281,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2606,6 +3308,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q47010068"
+        }
+      },
       "ddh": null,
       "themes": [
         "Éducation",
@@ -2619,7 +3328,10 @@
         "open_access": "Accès restreint",
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2651,6 +3363,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2259-924X"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9459"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96732645"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9459",
         "label": "DDH"
@@ -2666,7 +3393,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2690,6 +3420,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2823586"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences et techniques",
@@ -2703,7 +3440,10 @@
         "open_access": "Accès restreint",
         "discipline": "Sociologie",
         "editorial_structure": "coédition public/privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Coédition public/privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2727,6 +3467,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Philosophie",
@@ -2739,7 +3481,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés (18 mois), puis CC BY-NC-ND 4.0"
+        "licence": "Tous droits réservés (18 mois), puis CC BY-NC-ND 4.0",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -2764,6 +3509,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Anthropologie, ethnologie",
@@ -2776,7 +3523,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "coédition public/privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Coédition public/privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2800,6 +3550,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2850670"
+        }
+      },
       "ddh": null,
       "themes": [
         "Espaces, environnement",
@@ -2813,7 +3570,10 @@
         "open_access": "Accès restreint",
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2842,6 +3602,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15749508"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études classiques",
@@ -2857,7 +3624,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2880,6 +3650,13 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2728-834X"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -2894,7 +3671,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Travail social",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -2918,6 +3698,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4806718"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire et archéologie",
@@ -2930,7 +3717,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -2960,6 +3750,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1499-7185"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10900"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15766653"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10900",
         "label": "DDH"
@@ -2976,7 +3781,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature, Arts visuels",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3005,6 +3813,21 @@
         "Catálogo 2.0 Latindex",
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2425-231X"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10898"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50811207"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10898",
         "label": "DDH"
@@ -3022,7 +3845,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3048,6 +3874,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2933118"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -3064,7 +3897,10 @@
         "open_access": "Accès restreint",
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3087,6 +3923,13 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3428596"
+        }
+      },
       "ddh": null,
       "themes": [
         "Éducation",
@@ -3100,7 +3943,10 @@
         "open_access": "Accès restreint",
         "discipline": "Psychiatrie, éducation",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3127,6 +3973,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23114"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2111-4528"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q58467787"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23114",
         "label": "DDH"
@@ -3143,7 +4004,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Muséologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3168,6 +4032,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3007476"
+        }
+      },
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -3181,7 +4052,10 @@
         "open_access": "Accès restreint",
         "discipline": "Science politique",
         "editorial_structure": "coédition privé/association",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Coédition privé/association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3207,6 +4081,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2109-9421"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10741"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50434897"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10741",
         "label": "DDH"
@@ -3222,7 +4111,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Anthropologie et histoire du droit",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3247,6 +4139,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15753106"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie",
@@ -3259,7 +4158,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3285,6 +4187,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22301"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96695418"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22301",
         "label": "DDH"
@@ -3299,7 +4212,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire des sciences",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3324,6 +4240,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15760333"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -3336,7 +4259,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie, gestion",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3361,6 +4287,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q58822300"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences économiques",
@@ -3375,7 +4308,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3399,6 +4335,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15817711"
+        }
+      },
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -3411,7 +4354,10 @@
         "open_access": "Accès restreint",
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3437,6 +4383,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2267-6759"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22483"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3123451"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22483",
         "label": "DDH"
@@ -3452,7 +4413,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-SA"
+        "licence": "CC BY-SA",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3480,6 +4444,13 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22332"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22332",
         "label": "DDH"
@@ -3495,7 +4466,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Langues et cultures étrangères",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3520,6 +4494,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22340"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q135792719"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22340",
         "label": "DDH"
@@ -3534,7 +4519,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Information-communication",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC"
+        "licence": "CC BY-NC",
+        "discipline_normalized": "Information-communication",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3560,6 +4548,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96331920"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -3573,7 +4568,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Économie",
         "editorial_structure": "coédition public/privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Coédition public/privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3598,6 +4596,17 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2397-8570"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50505909"
+        }
+      },
       "ddh": null,
       "themes": [
         "Psychologie"
@@ -3609,7 +4618,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Psychologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3633,6 +4645,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -3648,7 +4662,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "association",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3672,6 +4689,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15765046"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie"
@@ -3683,7 +4707,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3707,6 +4734,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15816621"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -3720,7 +4754,10 @@
         "open_access": "Accès restreint",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3746,6 +4783,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22348"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96723952"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22348",
         "label": "DDH"
@@ -3761,7 +4809,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3785,6 +4836,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -3804,7 +4857,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "association",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3829,6 +4885,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96716175"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire",
@@ -3841,7 +4904,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -3869,6 +4935,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2262-8363"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18781"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15759472"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18781",
         "label": "DDH"
@@ -3884,7 +4965,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Etude des aires culturelles",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3908,6 +4992,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q779301"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -3920,7 +5011,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie, pluridisciplinaire",
         "editorial_structure": "association",
-        "licence": "CC BY-NC"
+        "licence": "CC BY-NC",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3947,6 +5041,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1765-2979"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/1283"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15752466"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/1283",
         "label": "DDH"
@@ -3964,7 +5073,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "coédition privé/association",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Coédition privé/association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -3989,6 +5101,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Égyptologie",
@@ -4003,7 +5117,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4032,6 +5149,21 @@
         "Catálogo 2.0 Latindex",
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1626-0252"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9647"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3346085"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9647",
         "label": "DDH"
@@ -4047,7 +5179,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4071,6 +5206,8 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -4083,7 +5220,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Science politique",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4110,6 +5250,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q16669804"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23134"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23134",
         "label": "DDH"
@@ -4124,7 +5275,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4149,6 +5303,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2101486"
+        }
+      },
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -4163,7 +5324,10 @@
         "open_access": "Accès restreint",
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4190,6 +5354,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3394328"
+        }
+      },
       "ddh": null,
       "themes": [
         "Administration, gouvernement",
@@ -4205,7 +5376,10 @@
         "open_access": "Accès restreint",
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4232,6 +5406,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22370"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96727040"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22370",
         "label": "DDH"
@@ -4246,7 +5431,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4270,6 +5458,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96716812"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sociologie "
@@ -4281,7 +5476,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Sociologie",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4308,6 +5506,13 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22382"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22382",
         "label": "DDH"
@@ -4323,7 +5528,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-SA 4.0"
+        "licence": "CC BY-NC-SA 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4348,6 +5556,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2264-6949"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/59"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50816420"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/59",
         "label": "DDH"
@@ -4362,7 +5585,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4388,6 +5614,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2780-4143"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/16901"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q111969431"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/16901",
         "label": "DDH"
@@ -4404,7 +5645,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire de l'art",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4428,6 +5672,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96725331"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire",
@@ -4442,7 +5693,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4465,6 +5719,8 @@
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -4476,7 +5732,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4500,6 +5759,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96725417"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -4511,7 +5777,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4536,6 +5805,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3428697"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études classiques",
@@ -4550,7 +5826,10 @@
         "open_access": "Accès restreint",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4575,6 +5854,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q91776627"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -4589,7 +5875,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4613,6 +5902,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15767104"
+        }
+      },
       "ddh": null,
       "themes": [
         "Mathématiques"
@@ -4624,7 +5920,10 @@
         "open_access": "Accès restreint",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4648,6 +5947,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15753772"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -4660,7 +5966,10 @@
         "open_access": "Accès restreint",
         "discipline": "Ethnologie",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés (sur Cairn) et CC BY-NC-ND sur OpenEdition"
+        "licence": "Tous droits réservés (sur Cairn) et CC BY-NC-ND sur OpenEdition",
+        "discipline_normalized": "Anthropologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -4684,6 +5993,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Histoire et archéologie",
@@ -4697,7 +6008,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire, Architecture",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4722,6 +6036,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1765-2723"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10921"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50814603"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10921",
         "label": "DDH"
@@ -4736,7 +6065,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Ergonomie",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4760,6 +6092,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96700763"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion"
@@ -4771,7 +6110,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Économie, gestion",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4795,6 +6137,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2860449"
+        }
+      },
       "ddh": null,
       "themes": [
         "Philosophie"
@@ -4806,7 +6155,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4830,6 +6182,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4955810"
+        }
+      },
       "ddh": null,
       "themes": [
         "Psychologie",
@@ -4842,7 +6201,10 @@
         "open_access": "Accès restreint",
         "discipline": "Neurosciences",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4866,6 +6228,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2474530"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences cognitives",
@@ -4878,7 +6247,10 @@
         "open_access": "Accès restreint",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4902,6 +6274,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4970182"
+        }
+      },
       "ddh": null,
       "themes": [
         "Philosophie",
@@ -4914,7 +6293,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -4940,6 +6322,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22283"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q102180879"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22283",
         "label": "DDH"
@@ -4957,7 +6350,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire et archéologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-SA 4.0"
+        "licence": "CC BY-NC-SA 4.0",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -4983,6 +6379,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2275-5195"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18783"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15817262"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18783",
         "label": "DDH"
@@ -4998,7 +6409,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Géographie",
         "editorial_structure": "association",
-        "licence": "CC BY 4.0"
+        "licence": "CC BY 4.0",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5025,6 +6439,17 @@
         "Catálogo 2.0 Latindex",
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2268-4247"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10843"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10843",
         "label": "DDH"
@@ -5043,7 +6468,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5070,6 +6498,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/23110"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2431-8663"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96699043"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/23110",
         "label": "DDH"
@@ -5086,7 +6529,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY 4.0"
+        "licence": "CC BY 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5110,6 +6556,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Études urbaines et rurales",
@@ -5122,7 +6570,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Architecture",
         "editorial_structure": "éditeur public",
-        "licence": "pas de mention"
+        "licence": "pas de mention",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5153,6 +6604,21 @@
         "Catálogo 2.0 Latindex",
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2272-9828"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/18835"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15757315"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/18835",
         "label": "DDH"
@@ -5167,7 +6633,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Etude des aires culturelles",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5196,6 +6665,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2105-0929"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10727"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q24192340"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/10727",
         "label": "DDH"
@@ -5211,7 +6695,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-SA"
+        "licence": "CC BY-NC-SA",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5235,6 +6722,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15756436"
+        }
+      },
       "ddh": null,
       "themes": [
         "Ingénierie, technologies"
@@ -5246,7 +6740,10 @@
         "open_access": "Accès restreint",
         "discipline": "Ingénierie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5270,6 +6767,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -5283,7 +6782,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5307,6 +6809,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4037916"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences économiques"
@@ -5318,7 +6827,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5342,6 +6854,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Histoire et archéologie",
@@ -5355,7 +6869,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5383,6 +6900,17 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22310"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96699572"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/22310",
         "label": "DDH"
@@ -5401,7 +6929,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5426,6 +6957,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15750930"
+        }
+      },
       "ddh": null,
       "themes": [
         "Administration, gouvernement",
@@ -5438,7 +6976,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5463,6 +7004,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2036-4091"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/12871"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50808314"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/12871",
         "label": "DDH"
@@ -5478,7 +7034,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Philosophie",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND 4.0"
+        "licence": "CC BY-NC-ND 4.0",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5505,6 +7064,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15765090"
+        }
+      },
       "ddh": null,
       "themes": [
         "Psychologie",
@@ -5518,7 +7084,10 @@
         "open_access": "Accès restreint",
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Psychologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5542,6 +7111,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15708777"
+        }
+      },
       "ddh": null,
       "themes": [
         "Finance"
@@ -5553,7 +7129,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Finance",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5577,6 +7156,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3100984"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sociologie ",
@@ -5590,7 +7176,10 @@
         "open_access": "Accès restreint",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5614,6 +7203,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15716430"
+        }
+      },
       "ddh": null,
       "themes": [
         "Géographie, cartographie"
@@ -5625,7 +7221,10 @@
         "open_access": "Accès restreint",
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Géographie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5649,6 +7248,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q91912628"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire et archéologie",
@@ -5661,7 +7267,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Arts visuels",
         "editorial_structure": "association",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5686,6 +7295,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1778-3801"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9698"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15761261"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9698",
         "label": "DDH"
@@ -5704,7 +7328,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-NC"
+        "licence": "CC BY-NC",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -5728,6 +7355,17 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1687-5877"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15750673"
+        }
+      },
       "ddh": null,
       "themes": [
         "Ingénierie, technologies"
@@ -5739,7 +7377,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Ingénierie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5763,6 +7404,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15753984"
+        }
+      },
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
@@ -5776,7 +7424,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5800,6 +7451,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Sciences et techniques",
@@ -5812,7 +7465,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5836,6 +7492,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15746358"
+        }
+      },
       "ddh": null,
       "themes": [
         "Gestion, comptabilité"
@@ -5847,7 +7510,10 @@
         "open_access": "Accès restreint",
         "discipline": "Gestion",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5872,6 +7538,8 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Europe de l'Ouest"
@@ -5883,7 +7551,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie, gestion",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5907,6 +7578,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15750409"
+        }
+      },
       "ddh": null,
       "themes": [
         "Gestion, comptabilité"
@@ -5918,7 +7596,10 @@
         "open_access": "Accès restreint",
         "discipline": "Gestion",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
+        "licence": "Tous droits réservés, avec possibilité de CC",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -5942,6 +7623,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15767415"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences économiques",
@@ -5955,7 +7643,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -5979,6 +7670,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15749749"
+        }
+      },
       "ddh": null,
       "themes": [
         "Langues,  linguistique",
@@ -5991,7 +7689,10 @@
         "open_access": "Accès restreint",
         "discipline": "Linguistique, Neurosciences",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6017,6 +7718,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15751436"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -6031,7 +7739,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6055,6 +7766,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3592885"
+        }
+      },
       "ddh": null,
       "themes": [
         "Psychologie",
@@ -6067,7 +7785,10 @@
         "open_access": "Accès restreint",
         "discipline": "Psychiatrie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6094,6 +7815,13 @@
       "labels": [
         "Catálogo 2.0 Latindex"
       ],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q6496198"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie",
@@ -6107,7 +7835,10 @@
         "open_access": "Accès restreint",
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
+        "licence": "Tous droits réservés, avec possibilité de CC",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -6131,6 +7862,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q63871732"
+        }
+      },
       "ddh": null,
       "themes": [
         "Distribution, logistique"
@@ -6142,7 +7880,10 @@
         "open_access": "Accès restreint",
         "discipline": "Logistique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6167,6 +7908,13 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/3034-9699"
+        }
+      },
       "ddh": null,
       "themes": [
         "Patrimoine, musées, bibliothèques"
@@ -6178,7 +7926,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Muséologie",
         "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY"
+        "licence": "CC BY",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -6203,6 +7954,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q27712280"
+        }
+      },
       "ddh": null,
       "themes": [
         "Démographie, populations",
@@ -6217,7 +7975,10 @@
         "open_access": "Accès restreint",
         "discipline": "Psychiatrie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, avec possibilité de CC"
+        "licence": "Tous droits réservés, avec possibilité de CC",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -6240,6 +8001,17 @@
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2409-9287"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q50431709"
+        }
+      },
       "ddh": null,
       "themes": [
         "Philosophie",
@@ -6253,7 +8025,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés, CC-BY"
+        "licence": "Tous droits réservés, CC-BY",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -6277,6 +8052,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15752610"
+        }
+      },
       "ddh": null,
       "themes": [
         "Information-communication",
@@ -6290,7 +8072,10 @@
         "open_access": "Accès restreint",
         "discipline": "Informatique",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6314,6 +8099,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15758945"
+        }
+      },
       "ddh": null,
       "themes": [
         "Arts vivants"
@@ -6325,7 +8117,10 @@
         "open_access": "Accès restreint",
         "discipline": "Arts vivants",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6350,6 +8145,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3428657"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion"
@@ -6361,7 +8163,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND 4.0 ou Tous droits réservés"
+        "licence": "CC BY-NC-ND 4.0 ou Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
     },
     {
@@ -6388,6 +8193,21 @@
       "labels": [
         "DDH diamond journal"
       ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2105-2271"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/9683"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3428686"
+        }
+      },
       "ddh": {
         "url": "https://ddh.diamas.org/en/journals/9683",
         "label": "DDH"
@@ -6402,7 +8222,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY-SA 4.0"
+        "licence": "CC BY-SA 4.0",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -6431,6 +8254,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15766077"
+        }
+      },
       "ddh": null,
       "themes": [
         "Antiquité tardive",
@@ -6444,7 +8274,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6468,6 +8301,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96725517"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -6479,7 +8319,10 @@
         "open_access": "Accès restreint",
         "discipline": "Droit",
         "editorial_structure": "éditeur public",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Droit",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6508,6 +8351,17 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q124672530"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2981-2984"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire et archéologie",
@@ -6525,7 +8379,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Histoire et archéologie",
         "editorial_structure": "éditeur public",
-        "licence": "CC BY 4.0"
+        "licence": "CC BY 4.0",
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Éditeur public",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -6548,6 +8405,8 @@
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {},
       "ddh": null,
       "themes": [
         "Anthropologie, ethnologie",
@@ -6562,7 +8421,10 @@
         "open_access": "Accès restreint",
         "discipline": "Études des aires culturelles",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Études des aires culturelles",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6586,6 +8448,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15746646"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences économiques"
@@ -6597,7 +8466,10 @@
         "open_access": "Accès restreint",
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6621,6 +8493,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7570060"
+        }
+      },
       "ddh": null,
       "themes": [
         "Philosophie"
@@ -6632,7 +8511,10 @@
         "open_access": "Accès restreint",
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6659,6 +8541,13 @@
       "labels": [
         "Catálogo 2.0 Latindex"
       ],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15765798"
+        }
+      },
       "ddh": null,
       "themes": [
         "Psychologie"
@@ -6670,7 +8559,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
-        "licence": "CC BY-NC-ND"
+        "licence": "CC BY-NC-ND",
+        "discipline_normalized": "Psychologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -6695,6 +8587,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2419336"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion"
@@ -6706,7 +8605,10 @@
         "open_access": "Accès restreint",
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6730,6 +8632,13 @@
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q111011948"
+        }
+      },
       "ddh": null,
       "themes": [
         "Arts vivants",
@@ -6743,7 +8652,10 @@
         "open_access": "Accès restreint",
         "discipline": "Arts vivants",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6768,6 +8680,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15758093"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études de genre",
@@ -6780,7 +8699,10 @@
         "open_access": "Accès ouvert",
         "discipline": "Étude de genre",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Sociologie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6803,6 +8725,13 @@
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15764236"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études classiques",
@@ -6815,7 +8744,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire",
         "editorial_structure": "association",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -6839,6 +8771,13 @@
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q47010263"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences et techniques",
@@ -6852,7 +8791,10 @@
         "open_access": "Accès restreint",
         "discipline": "Histoire et sociologie des sciences",
         "editorial_structure": "éditeur privé",
-        "licence": "Tous droits réservés"
+        "licence": "Tous droits réservés",
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     }
   ]
