@@ -107,8 +107,8 @@ def write_page(
     labels = PAGE_LABELS[lang]
 
     assets_prefix = "../assets/" if lang == "fr" else "../../assets/"
+    # Les pages anglaises sont publiées un niveau plus bas par mkdocs-static-i18n.
     intro = intro.replace("../assets/", assets_prefix)
-    labels = PAGE_LABELS[lang]
 
     output.parent.mkdir(parents=True, exist_ok=True)
 
