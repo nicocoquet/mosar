@@ -14,28 +14,143 @@
    1. Introduction et provenance des données
    -------------------------------------------------------------------------- */
 
+/* Présentation compacte, avec provenance Mir@bel en colonne latérale. */
+.revues-header {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(12rem, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin: .35rem 0 .25rem;
+}
+
+.revues-intro,
+.revues-levels {
+  min-width: 0;
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.revues-intro > p,
+.revues-levels > p {
+  margin: 0 0 .45rem;
+  font-size: .68rem;
+  line-height: 1.4;
+}
+
+.revues-intro > p:last-child { margin-bottom: 0; }
+
+.revues-levels h2,
+.revues-levels h3 {
+  margin: .25rem 0 .2rem;
+  font-size: .82rem;
+  line-height: 1.3;
+}
+
+/* La liste est une grille, indépendamment des paragraphes entre titre et liste. */
+.md-typeset .revues-levels > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem;
+  margin: .35rem 0 .55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset .revues-levels > ul > li {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: start;
+  column-gap: .28rem;
+  margin: 0;
+  padding: .48rem .6rem;
+  font-size: .68rem;
+  line-height: 1.35;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .55rem;
+  background: color-mix(in srgb, var(--md-default-bg-color) 95%, var(--mosar-panel));
+  list-style: none;
+}
+
+/* Même palette que les badges de proximité des fiches de revues. */
+.revues-level-badge {
+  display: inline-block;
+  margin-right: 0;
+  padding: .1rem .3rem;
+  border-radius: .25rem;
+  background: var(--mosar-level);
+  color: #fff;
+  font-size: .63rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.revues-level-title { font-weight: 700; }
+.revues-level-description { min-width: 0; }
+
+.revues-provenance {
+  min-width: 0;
+  transition: background-color .18s ease, border-color .18s ease;
+  padding: .55rem .7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .65rem;
+  background: color-mix(in srgb, var(--md-default-bg-color) 96%, var(--mosar-panel));
+}
+
 .revues-source-link {
-  margin: .8rem 0 .15rem;
-}
-
-.revues-source-link a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
   color: var(--mosar-brand) !important;
+  font-size: .72rem;
   font-weight: 600;
-  text-decoration: none;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none !important;
 }
 
-.revues-source-link a:hover {
-  text-decoration: underline;
+/* Le cartouche entier réagit au survol, sans souligner le lien. */
+.revues-provenance:hover,
+.revues-provenance:focus-within {
+  background: color-mix(in srgb, var(--md-default-bg-color) 85%, var(--mosar-panel));
+  border-color: var(--md-default-fg-color--lighter);
+}
+.revues-source-link:hover,
+.revues-source-link:focus-visible { text-decoration: none !important; }
+.revues-source-link:focus-visible { outline: 2px solid var(--mosar-brand); outline-offset: 3px; }
+
+.revues-source-link img {
+  display: block;
+  width: 100%;
+  max-width: 6.7rem;
+  height: auto;
+  max-height: 3rem;
+  object-fit: contain;
 }
 
 .revues-updated {
-  margin: .1rem 0 1rem;
+  margin: .4rem 0 0;
   color: var(--md-default-fg-color--light);
-  font-size: .7rem;
+  font-size: .62rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
-.revues-updated strong {
-  font-weight: 500;
+.revues-updated strong { font-weight: 500; }
+
+/* Deux lignes distinctes pour la provenance, dans les deux langues. */
+.revues-updated-label,
+.revues-updated-value { display: block; }
+
+@media (max-width: 900px) {
+  .revues-header { grid-template-columns: minmax(0, 1fr); }
+  .revues-provenance { max-width: 22rem; }
+}
+
+@media (max-width: 760px) {
+  .md-typeset .revues-levels > ul { grid-template-columns: 1fr; }
 }
 
 /* --------------------------------------------------------------------------
@@ -46,7 +161,9 @@
   --rx-border: var(--md-default-fg-color--lightest);
   --rx-panel: color-mix(in srgb, var(--md-default-bg-color) 94%, var(--mosar-panel));
   --rx-accent: var(--mosar-brand);
-  margin-top: 1rem;
+  margin-top: 2.2rem;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .rx-layout {
