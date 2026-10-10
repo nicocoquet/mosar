@@ -12,6 +12,7 @@ from mosar_model import (
 )
 
 def normalize_open(value):
+    """Harmoniser les valeurs d’accès ouvert issues du recensement Mosar."""
     if value is None:
         return None
     text = str(value).strip().casefold()
@@ -55,6 +56,7 @@ def normalize_editorial_structure(value, journal_id):
     return normalize_structure(canonical)
 
 def publication_format(issns):
+    """Déduire les supports de publication des ISSN fournis par Mir@bel."""
     supports = {
         str(item.get("support") or "").strip().casefold()
         for item in (issns or [])
@@ -73,6 +75,7 @@ def publication_format(issns):
 
 
 def external_links(title):
+    """Convertir les liens externes Mir@bel en objets URL/libellé."""
     links = []
     for item in title.get("liensext") or []:
         if isinstance(item, (list, tuple)) and len(item) >= 2:
@@ -97,6 +100,7 @@ def journal_references(links):
     return references
 
 def title_label(title):
+    """Assembler le préfixe et le titre de revue fournis par Mir@bel."""
     return (
         f"{(title.get('prefixe') or '').strip()} "
         f"{(title.get('titre') or 'Titre sans nom').strip()}"
@@ -104,6 +108,7 @@ def title_label(title):
 
 
 def country_value(title):
+    """Lire le pays malgré les différentes formes possibles de l’API."""
     value = (
         title.get("pays")
         or title.get("payspublication")
@@ -124,6 +129,7 @@ def country_value(title):
 
 
 def build_record(title, themes, mosar_data):
+    """Fusionner les métadonnées Mir@bel et les champs analytiques Mosar."""
     rid = int(title["revueid"])
     issn_objects = title.get("issns") or []
     issns = [
