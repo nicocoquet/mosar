@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-10T15:39:21+00:00",
+    "generated_at": "2026-10-11T08:57:53+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 172,
     "mirabel_unique_reviews": 172,
@@ -529,7 +529,7 @@
         "Anthropologie, ethnologie",
         "Acquisitions des savoirs"
       ],
-      "journal_url": "http://ethnologie-francaise.fr/",
+      "journal_url": "https://shs.cairn.info/journal-ethnologie-francaise",
       "mirabel_url": "https://reseau-mirabel.info/revue/542",
       "mosar": {
         "proximity_level": "1",
@@ -1007,7 +1007,7 @@
         "Sciences politiques",
         "Époque contemporaine"
       ],
-      "journal_url": "http://www.lacontemporaine.fr/publications-librairie/publications-de-la-bdic#materiaux",
+      "journal_url": "https://lcbam.hypotheses.org/revue-materiaux",
       "mirabel_url": "https://reseau-mirabel.info/revue/740",
       "mosar": {
         "proximity_level": "1",
@@ -1480,7 +1480,7 @@
         "Anthropologie, ethnologie",
         "Europe"
       ],
-      "journal_url": "https://journals.openedition.org/terrain/",
+      "journal_url": "http://www.revueterrain.fr/",
       "mirabel_url": "https://reseau-mirabel.info/revue/711",
       "mosar": {
         "proximity_level": "1",
