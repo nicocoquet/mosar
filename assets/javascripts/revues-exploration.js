@@ -139,6 +139,12 @@
         valueOrUnknown(r.mosar?.editorial_structure_normalized)
       ],
       publishers: listOrUnknown(r.publishers),
+      perimetre: Array.isArray(r.mosar?.perimetre) && r.mosar.perimetre.length
+        ? r.mosar.perimetre
+        : ['Non renseigné'],
+      laboratoires: Array.isArray(r.mosar?.laboratoires)
+        ? r.mosar.laboratoires.filter(Boolean)
+        : [],
       indexing: ['DDH', 'DOAJ', 'Wikidata'].filter(
         name => Boolean(r.references?.[name]?.url)
       )
