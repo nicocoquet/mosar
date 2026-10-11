@@ -10,6 +10,12 @@
   const api = (root.dataset.apiUrl || '').trim().replace(/\/$/, '');
   const configured = /^https:\/\/[^/]+$/i.test(api);
   const state = {session: null, file: null, encoded: null, previewToken: null, jobToken: null, busy: false};
+  // Noms d'affichage uniquement ; les autorisations restent fondées sur le login GitHub.
+  const displayNames = Object.freeze({
+    nicocoquet: 'Nicolas Coquet (MSH Mondes)',
+    'gaelle-david': 'Gaëlle David (MSH Mondes)',
+  });
+  function displayName(login) { return displayNames[String(login || '').toLowerCase()] || login; }
   const MAX_BYTES = 15 * 1024 * 1024;
   const POLL_MS = 8000;
   let pollTimer = null;
@@ -161,7 +167,7 @@
     const candidate = hash.get('session');
     if (candidate) { history.replaceState(null, '', window.location.pathname + window.location.search); state.session = candidate; }
     if (state.session) {
-      try { const info = await request('/auth/session'); $('admin-user').textContent = t('Connecté : ', 'Signed in: ') + info.user.login; }
+      try { const info = await request('/auth/session'); $('admin-user').textContent = t('Connexion : ', 'Account: ') + displayName(info.user.login); }
       catch (e) { state.session = null; error(e.message); }
     }
     sync();
