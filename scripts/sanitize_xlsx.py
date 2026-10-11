@@ -1,9 +1,12 @@
 from argparse import ArgumentParser
 from pathlib import Path
+import sys
 
-from openpyxl import Workbook, load_workbook
+from openpyxl import load_workbook
 
 from config import load_config, project_path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from xlsx_preview import prepare_xlsx
 
 CONFIG = load_config()
 SHEET = CONFIG["data"]["sheet"]
@@ -110,65 +113,33 @@ def sanitize(source: Path, output: Path):
     if source.resolve() == output.resolve():
         raise SystemExit("Le fichier source et le fichier de sortie doivent être différents.")
     try:
-        wb = load_workbook(source, read_only=True, data_only=False)
-    except (OSError, ValueError, KeyError) as error:
+        result = prepare_xlsx(
+            source.read_bytes(),
+            sheet=SHEET,
+            allowed_columns=ALLOWED_COLUMNS,
+            forbidden_columns=FORBIDDEN_COLUMNS,
+        )
+    except OSError as error:
         raise SystemExit(f"Impossible de lire le classeur source : {error}") from error
-    try:
-        if SHEET not in wb.sheetnames:
-            raise SystemExit(f"Onglet attendu introuvable : {SHEET}")
-        ws = wb[SHEET]
-        headers = get_headers(ws)
-        if len(headers) != len(set(headers)):
-            raise SystemExit("En-têtes de colonnes dupliqués dans le classeur source.")
-        id_column = require_id_column(headers)
-        removed_columns = sorted(FORBIDDEN_COLUMNS & set(headers))
-        unknown_columns = sorted(set(headers) - ALLOWED_COLUMNS - FORBIDDEN_COLUMNS)
-        keep_indexes = [i for i, header in enumerate(headers) if header in ALLOWED_COLUMNS]
-        removed_sheets = [name for name in wb.sheetnames if name != SHEET]
+    except ValueError as error:
+        raise SystemExit(str(error)) from error
 
-        clean_wb = Workbook()
-        clean_ws = clean_wb.active
-        clean_ws.title = SHEET
-        excluded_rows = 0
-        retained_rows = 0
-        for row_number, row in enumerate(ws.iter_rows(values_only=True), start=1):
-            if row_number > 1:
-                identifier = row[id_column]
-                if identifier is None or not str(identifier).strip():
-                    excluded_rows += 1
-                    continue
-                retained_rows += 1
-            values = []
-            for index in keep_indexes:
-                value = row[index]
-                if row_number > 1 and isinstance(value, str) and value.startswith("="):
-                    raise SystemExit(
-                        f"Formule Excel interdite : {SHEET}, ligne {row_number}, "
-                        f"colonne '{headers[index]}'."
-                    )
-                values.append(value)
-            clean_ws.append(values)
-    finally:
-        wb.close()
-
-    # Valider le résultat en mémoire avant de remplacer le fichier de destination.
-    if clean_ws.max_row < 2:
-        raise SystemExit("Aucune revue avec ID_Mosar : fichier de sortie non créé.")
+    # Conserver la validation et le remplacement atomique déjà utilisés par la CI.
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_name(output.name + ".tmp.xlsx")
     try:
-        clean_wb.save(temporary)
+        temporary.write_bytes(result.content)
         validate_sanitized(temporary)
         temporary.replace(output)
     finally:
         temporary.unlink(missing_ok=True)
-        clean_wb.close()
 
-    print(f"Onglets exclus ({len(removed_sheets)}) : {', '.join(removed_sheets) or 'aucun'}")
-    print(f"Colonnes confidentielles supprimées ({len(removed_columns)}) : {', '.join(removed_columns) or 'aucune'}")
-    print(f"Colonnes non autorisées supprimées ({len(unknown_columns)}) : {', '.join(unknown_columns) or 'aucune'}")
-    print(f"Lignes sans ID_Mosar exclues : {excluded_rows}")
-    print(f"Lignes de données conservées : {retained_rows}")
+    report = result.report
+    print(f"Onglets exclus ({len(report['sheets_removed'])}) : {', '.join(report['sheets_removed']) or 'aucun'}")
+    print(f"Colonnes confidentielles supprimées ({len(report['private_columns_removed'])}) : {', '.join(report['private_columns_removed']) or 'aucune'}")
+    print(f"Colonnes non autorisées supprimées ({len(report['unknown_columns_removed'])}) : {', '.join(report['unknown_columns_removed']) or 'aucune'}")
+    print(f"Lignes sans ID_Mosar exclues : {report['rows_without_id_removed']}")
+    print(f"Lignes de données conservées : {report['rows_retained']}")
     print(f"Fichier expurgé créé : {output}")
 
 
