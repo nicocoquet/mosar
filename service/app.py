@@ -188,7 +188,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         nonce = secrets.token_urlsafe(32)
         oauth_states[nonce] = now + 600
         state = sign({"returnTo": destination, "nonce": nonce, "exp": now + 600}, settings.session_secret)
-        return RedirectResponse("https://github.com/login/oauth/authorize?" + urlencode({"client_id": settings.client_id, "state": state}))
+        return RedirectResponse("https://github.com/login/oauth/authorize?" + urlencode({"client_id": settings.client_id, "state": state, "scope": "public_repo"}))
 
     @app.get("/auth/callback")
     async def callback(code: str, state: str):
