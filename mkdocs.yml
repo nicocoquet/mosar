@@ -56,10 +56,12 @@ markdown_extensions:
 extra_javascript:
   - javascripts/language-switch.js
   - javascripts/statistics-toc.js
+  - javascripts/admin.js
 
 extra_css:
   - stylesheets/extra.css
   - stylesheets/header.css
   - stylesheets/home.css
+  - stylesheets/admin.css
 
 copyright: "Projet Mosar | FNSO (2026-2028)"
