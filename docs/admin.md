@@ -7,7 +7,7 @@ hide:
 
 Cette page permet aux personnes autorisées de mettre à jour le recensement des revues. Le classeur est contrôlé et expurgé **avant toute publication**.
 
-<div id="mosar-admin" class="mosar-admin" data-lang="fr" data-api-url="" data-site-url="https://nicocoquet.github.io/mosar/">
+<div id="mosar-admin" class="mosar-admin" data-lang="fr" data-api-url="https://mosar-auth.onrender.com" data-site-url="https://nicocoquet.github.io/mosar/">
   <div class="admin-notice" role="status" id="admin-config-notice">L'interface sera activée après la configuration du service d'administration.</div>
   <section class="admin-panel" aria-labelledby="admin-login-title">
     <span class="admin-step">01 · Connexion</span>

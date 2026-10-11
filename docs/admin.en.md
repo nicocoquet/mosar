@@ -7,7 +7,7 @@ hide:
 
 Authorized users can update the journal survey here. The workbook is checked and sanitized **before any publication**.
 
-<div id="mosar-admin" class="mosar-admin" data-lang="en" data-api-url="" data-site-url="https://nicocoquet.github.io/mosar/">
+<div id="mosar-admin" class="mosar-admin" data-lang="en" data-api-url="https://mosar-auth.onrender.com" data-site-url="https://nicocoquet.github.io/mosar/">
   <div class="admin-notice" role="status" id="admin-config-notice">The interface will become available once the administration service is configured.</div>
   <section class="admin-panel" aria-labelledby="admin-login-title">
     <span class="admin-step">01 · Sign in</span>
