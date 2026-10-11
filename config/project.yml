@@ -4,7 +4,7 @@ project:
   site_url: "https://nicocoquet.github.io/mosar/"
 
 data:
-  file: "data/Recensement-revues-stat.xlsx"
+  file: "data/Recensement-revues-Mosar.xlsx"
   sheet: "recensement"
 
 columns:
@@ -58,6 +58,8 @@ publication:
 privacy:
   forbidden_columns:
     - "Contacts"
+    - "Personnel à disposition"
+    - "Source de financement"
     - "Divers"
     - "Questionnaire envoyé le"
     - "Réponse reçue le"

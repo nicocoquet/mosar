@@ -101,7 +101,7 @@ La logique de données et les règles métier ne dépendent donc pas directement
 
 ### Recensement Mosar
 
-Le fichier `data/Recensement-revues-stat.xlsx` constitue la source analytique interne publiée avec le projet. Le traitement utilise l’onglet `recensement`.
+Le fichier `data/Recensement-revues-Mosar.xlsx` constitue la source analytique interne publiée avec le projet. Le traitement utilise l’onglet `recensement`.
 
 Le tableur est conservé comme **format pivot collaboratif**. Avant publication, `scripts/sanitize_xlsx.py` vérifie que les colonnes définies comme privées ne sont pas présentes dans la version destinée au dépôt.
 
