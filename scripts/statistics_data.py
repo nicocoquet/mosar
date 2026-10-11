@@ -80,7 +80,7 @@ def access(v, row_number):
 
 
 def year(v, row_number):
-    if v is None or norm(v) == "":
+    if v is None or norm(v) in ("", "?"):
         return None
 
     try:
@@ -136,7 +136,7 @@ def derive(rows, source):
             date_access[date_group][a] += 1
 
         periodicity_value = row[columns["periodicity"]]
-        if periodicity_value is not None and norm(periodicity_value) != "":
+        if periodicity_value is not None and norm(periodicity_value) not in ("", "?"):
             periodicities[periodicity(periodicity_value, rn)] += 1
 
         discipline = norm(row[columns["discipline"]])

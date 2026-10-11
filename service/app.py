@@ -8,8 +8,9 @@ import json
 import os
 import secrets
 import sys
+import tempfile
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode, urlparse
@@ -23,6 +24,9 @@ from pydantic import BaseModel
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from config import load_config  # noqa: E402
+from statistics_build import build  # noqa: E402
+from statistics_data import derive, read_rows  # noqa: E402
+from statistics_project import DEFAULT_SOURCE  # noqa: E402
 from xlsx_preview import prepare_xlsx  # noqa: E402
 
 GITHUB_API = "https://api.github.com"
@@ -151,14 +155,26 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def preview(upload: Upload):
         data = decode_upload(upload)
         try:
-            return prepare_xlsx(
+            result = prepare_xlsx(
                 data,
                 sheet=config["data"]["sheet"],
                 allowed_columns=set(config["privacy"]["allowed_columns"]),
                 forbidden_columns=set(config["privacy"]["forbidden_columns"]),
             )
-        except ValueError as exc:
-            raise HTTPException(422, str(exc)) from exc
+            # Valider exclusivement le classeur assaini, identique à celui publié.
+            # Le moteur statistique attend un chemin XLSX ; le fichier temporaire
+            # est supprimé automatiquement, y compris en cas d'erreur.
+            with tempfile.TemporaryDirectory(prefix="mosar-preview-") as directory:
+                xlsx = Path(directory) / "recensement.xlsx"
+                xlsx.write_bytes(result.content)
+                source = replace(DEFAULT_SOURCE, xlsx=xlsx)
+                statistics = derive(read_rows(source), source)
+                # Vérifier aussi la construction des deux pages, sans les écrire.
+                for lang in ("fr", "en"):
+                    build(statistics, lang)
+            return result
+        except (ValueError, SystemExit) as exc:
+            raise HTTPException(422, f"Classeur non publiable : {exc}") from exc
 
     @app.get("/health")
     async def health():

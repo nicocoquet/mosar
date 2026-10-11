@@ -1,9 +1,7 @@
 """Tests API Mosar, sans OAuth externe ni écriture GitHub réelle."""
 import base64
-import importlib.util
 import io
 import sys
-import types
 import unittest
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -32,28 +30,34 @@ def make_xlsx(name="Revue", secret="secret"):
 class ApiTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Réutilise le vrai moteur, et simule uniquement la configuration du projet.
-        fake = types.ModuleType("config")
-        fake.load_config = lambda: CONFIG
-        cls.original_config = sys.modules.get("config")
-        sys.modules["config"] = fake
+        # Importer la vraie configuration et ses fonctions utilitaires : les
+        # modules statistiques en dépendent dès l'import de service.app.
         sys.path.insert(0, str(ROOT / "scripts"))
-        # Pour l'installation, le vrai moteur se trouve dans scripts/.
         from service.app import Settings, create_app
         cls.settings_class = Settings
         cls.create_app = staticmethod(create_app)
 
-    @classmethod
-    def tearDownClass(cls):
-        if cls.original_config is None:
-            sys.modules.pop("config", None)
-        else:
-            sys.modules["config"] = cls.original_config
-
     def setUp(self):
         settings = self.settings_class("id", "secret", "x" * 48)
+        # Les tests historiques utilisent volontairement un classeur minimal.
+        # On isole ici le moteur statistique, testé séparément, sans neutraliser
+        # l'assainissement, l'authentification ni la logique de publication.
+        self.config_patch = patch("service.app.load_config", return_value=CONFIG)
+        self.config_patch.start()
+        self.addCleanup(self.config_patch.stop)
+        self.rows_patch = patch("service.app.read_rows", return_value=[])
+        self.rows_mock = self.rows_patch.start()
+        self.addCleanup(self.rows_patch.stop)
+        self.derive_patch = patch("service.app.derive", return_value={})
+        self.derive_mock = self.derive_patch.start()
+        self.addCleanup(self.derive_patch.stop)
+        self.build_patch = patch("service.app.build", return_value="Contenu valide")
+        self.build_mock = self.build_patch.start()
+        self.addCleanup(self.build_patch.stop)
+
         self.app = self.create_app(settings)
         self.client = TestClient(self.app)
+        self.addCleanup(self.client.close)
         self.key = self.app.state.sessions.create("nicocoquet", "fake-github-token")
         self.headers = {"Authorization": f"Bearer {self.key}"}
 
@@ -110,6 +114,44 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.json()["report"]["private_columns_removed"], ["Contacts"])
         self.assertNotIn("private-contact-value", response.text)
         self.assertEqual(response.json()["report"]["rows_retained"], 1)
+
+    def test_preview_checks_sanitized_statistics_in_both_languages(self):
+        response = self.client.post("/api/preview", json=self.payload(), headers=self.headers)
+        self.assertEqual(response.status_code, 200, response.text)
+        self.rows_mock.assert_called_once()
+        source = self.rows_mock.call_args.args[0]
+        self.assertEqual(source.xlsx.name, "recensement.xlsx")
+        self.derive_mock.assert_called_once()
+        self.assertEqual(self.build_mock.call_count, 2)
+        self.assertEqual([call.args[1] for call in self.build_mock.call_args_list], ["fr", "en"])
+
+    def test_invalid_statistics_refused_before_github(self):
+        self.derive_mock.side_effect = SystemExit("Périodicité invalide ligne 93: 'inconnue'")
+        with patch("service.app.github_request", new_callable=AsyncMock) as github:
+            response = self.client.post("/api/preview", json=self.payload(), headers=self.headers)
+            self.assertEqual(response.status_code, 422, response.text)
+            self.assertIn("Périodicité invalide ligne 93", response.json()["detail"])
+            github.assert_not_awaited()
+
+    def test_invalid_page_build_refused_before_github(self):
+        self.build_mock.side_effect = ValueError("Statistiques non générables")
+        with patch("service.app.github_request", new_callable=AsyncMock) as github:
+            response = self.client.post("/api/preview", json=self.payload(), headers=self.headers)
+            self.assertEqual(response.status_code, 422, response.text)
+            github.assert_not_awaited()
+
+    def test_publish_rechecks_statistics_before_github(self):
+        response = self.client.post("/api/preview", json=self.payload(), headers=self.headers)
+        self.assertEqual(response.status_code, 200, response.text)
+        token = response.json()["preview_token"]
+        self.derive_mock.side_effect = SystemExit("Année de création invalide ligne 2")
+        with patch("service.app.github_request", new_callable=AsyncMock) as github:
+            result = self.client.post(
+                "/api/publish", json={**self.payload(), "preview_token": token},
+                headers=self.headers,
+            )
+            self.assertEqual(result.status_code, 422, result.text)
+            github.assert_not_awaited()
 
     def test_invalid_xlsx_rejected(self):
         response = self.client.post("/api/preview", json={"filename": "file.xlsx", "content": base64.b64encode(b"bad").decode()}, headers=self.headers)
