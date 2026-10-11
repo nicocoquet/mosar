@@ -32,6 +32,18 @@ def validate_sanitized(path: Path):
         raise SystemExit(
             "Colonnes interdites encore présentes : " + ", ".join(remaining)
         )
+    id_column = get_headers(wb[SHEET]).index("ID_Mosar")
+
+    for row_number, row in enumerate(
+        wb[SHEET].iter_rows(min_row=2, values_only=True),
+        start=2
+    ):
+        identifier = row[id_column]
+
+        if identifier is None or not str(identifier).strip():
+            raise SystemExit(
+                f"Contrôle échoué : ID_Mosar vide à la ligne {row_number}."
+            )
     print("Contrôle d’expurgation réussi.")
 
 
@@ -58,8 +70,20 @@ def sanitize(source: Path, output: Path):
     clean_ws = clean_wb.active
     clean_ws.title = SHEET
 
-    for row in ws.iter_rows(values_only=True):
+    id_column = headers.index("ID_Mosar")
+    excluded_rows = 0
+
+    for row_number, row in enumerate(ws.iter_rows(values_only=True), start=1):
+        if row_number > 1:
+            identifier = row[id_column]
+
+            if identifier is None or not str(identifier).strip():
+                excluded_rows += 1
+                continue
+
         clean_ws.append([row[index] for index in keep_indexes])
+
+    print(f"Lignes sans ID_Mosar exclues : {excluded_rows}")
 
     output.parent.mkdir(parents=True, exist_ok=True)
     clean_wb.save(output)

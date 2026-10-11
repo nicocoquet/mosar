@@ -136,6 +136,10 @@ def load_mosar_journals(
                 "format": source.columns["format"],
                 "type_editeur": source.columns["publisher_type"],
                 "licence": source.columns["licence"],
+                "msh": source.columns["msh"],
+                "upn": source.columns["upn"],
+                "up1": source.columns["up1"],
+                "laboratoire": source.columns["laboratory"],
             }
 
             output: dict[int, dict] = {}

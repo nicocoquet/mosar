@@ -19,6 +19,10 @@ columns:
   discipline: "Discipline"
   publisher_type: "Type d'éditeur"
   licence: "Licence"
+  msh: "MSH"
+  upn: "UPN"
+  up1: "UP1"
+  laboratory: "Laboratoire"
 
 mirabel:
   api: "https://reseau-mirabel.info/api"

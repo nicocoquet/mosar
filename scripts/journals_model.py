@@ -128,6 +128,38 @@ def country_value(title):
     return str(value).strip() if value not in (None, "") else None
 
 
+def normalize_perimetre(mosar_data):
+    """Construire les appartenances institutionnelles à partir des indicateurs Mosar."""
+    correspondances = (
+        ("msh", "MSH Mondes"),
+        ("upn", "Université Paris Nanterre"),
+        ("up1", "Université Paris 1 Panthéon-Sorbonne"),
+    )
+    perimetres = [
+        libelle
+        for champ, libelle in correspondances
+        if str(mosar_data.get(champ, "")).strip() == "1"
+    ]
+    return perimetres if perimetres else ["Non renseigné"]
+
+
+def normalize_laboratoires(mosar_data):
+    """Extraire les laboratoires séparés par |, sans modifier leurs intitulés."""
+    valeur = mosar_data.get("laboratoire")
+    if valeur is None:
+        return []
+
+    laboratoires = []
+    deja_vus = set()
+    for fragment in str(valeur).split("|"):
+        laboratoire = fragment.strip()
+        if not laboratoire or laboratoire == "/" or laboratoire in deja_vus:
+            continue
+        deja_vus.add(laboratoire)
+        laboratoires.append(laboratoire)
+    return laboratoires
+
+
 def build_record(title, themes, mosar_data):
     """Fusionner les métadonnées Mir@bel et les champs analytiques Mosar."""
     rid = int(title["revueid"])
@@ -208,6 +240,8 @@ def build_record(title, themes, mosar_data):
                 mosar_data.get("type_editeur") or ""
             ).strip(),
             "licence": str(mosar_data.get("licence") or "").strip(),
+            "perimetre": normalize_perimetre(mosar_data),
+            "laboratoires": normalize_laboratoires(mosar_data),
             "discipline_normalized": normalize_mosar_category(
                 mosar_data.get("discipline"),
                 DISCIPLINE_MAP,

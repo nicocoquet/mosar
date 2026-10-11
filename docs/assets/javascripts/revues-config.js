@@ -29,6 +29,8 @@ const REVUES_TRANSLATIONS = {
     configError: 'Configuration de l’explorateur introuvable.',
     facets: [
       {key: 'proximity', label: 'Niveau de proximité'},
+      {key: 'perimetre', label: 'Périmètre'},
+      {key: 'laboratoires', label: 'Laboratoires'},
       {key: 'access', label: 'Accès'},
       {key: 'format', label: 'Format de publication'},
       {key: 'labelling', label: 'Labellisation'},
@@ -65,6 +67,9 @@ const REVUES_TRANSLATIONS = {
       'Tous droits réservés': 'All rights reserved (DR)',
       'Licence CC ou DR variable pour une même publication':
       'Variable CC licence or all rights reserved within the same journal',
+
+      // Périmètre du projet
+      'Non renseigné': 'Not specified',
 
       // Structures éditoriales
       'Association': 'Association',
@@ -233,6 +238,8 @@ const REVUES_TRANSLATIONS = {
     configError: 'Explorer configuration not found.',
     facets: [
       {key: 'proximity', label: 'Level of proximity'},
+      {key: 'perimetre', label: 'Project scope'},
+      {key: 'laboratoires', label: 'Research laboratories'},
       {key: 'access', label: 'Access'},
       {key: 'format', label: 'Publication format'},
       {key: 'labelling', label: 'Labelling'},
