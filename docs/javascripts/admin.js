@@ -167,7 +167,7 @@
     const candidate = hash.get('session');
     if (candidate) { history.replaceState(null, '', window.location.pathname + window.location.search); state.session = candidate; }
     if (state.session) {
-      try { const info = await request('/auth/session'); $('admin-user').textContent = t('Connecté : ', 'Signed in: ') + displayName(info.user.login); }
+      try { const info = await request('/auth/session'); $('admin-user').textContent = t('Connexion : ', 'Account: ') + displayName(info.user.login); }
       catch (e) { state.session = null; error(e.message); }
     }
     sync();
