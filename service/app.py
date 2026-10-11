@@ -134,6 +134,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         raise RuntimeError("SESSION_SECRET trop court.")
     config = load_config()
     sessions = SessionStore()
+    oauth_states: dict[str, float] = {}
     app = FastAPI(title="Administration Mosar", docs_url=None, redoc_url=None)
     pages = urlparse(settings.pages_url)
     origin = f"{pages.scheme}://{pages.netloc}"
@@ -163,22 +164,39 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     async def health():
         return {"status": "ok"}
 
+    def admin_destination(return_to: str) -> str:
+        """Allow only the two published admin pages, without query or fragment."""
+        base = settings.pages_url.rstrip("/") + "/"
+        allowed = {base + "admin/", base + "en/admin/"}
+        parsed = urlparse(return_to)
+        if parsed.scheme != "https" or parsed.query or parsed.fragment or parsed.params:
+            raise HTTPException(400, "Adresse de retour non autorisée.")
+        if return_to not in allowed:
+            raise HTTPException(400, "Adresse de retour non autorisée.")
+        return return_to
+
     @app.get("/auth/github")
     async def login(returnTo: str = Query(default="")):  # noqa: N803
         if not settings.client_id or not settings.client_secret:
             raise HTTPException(503, "OAuth GitHub non configuré.")
-        # Ne permettre que le site Mosar comme destination.
-        destination = settings.pages_url
-        if returnTo:
-            parsed = urlparse(returnTo)
-            if (parsed.scheme, parsed.netloc, parsed.path) == (pages.scheme, pages.netloc, pages.path):
-                destination = returnTo.split("#", 1)[0]
-        state = sign({"returnTo": destination, "nonce": secrets.token_urlsafe(16), "exp": time.time() + 600}, settings.session_secret)
+        destination = admin_destination(returnTo or settings.pages_url.rstrip("/") + "/admin/")
+        now = time.time()
+        # In-memory one-use states; no external persistence required on a single worker.
+        for expired, deadline in list(oauth_states.items()):
+            if deadline <= now:
+                oauth_states.pop(expired, None)
+        nonce = secrets.token_urlsafe(32)
+        oauth_states[nonce] = now + 600
+        state = sign({"returnTo": destination, "nonce": nonce, "exp": now + 600}, settings.session_secret)
         return RedirectResponse("https://github.com/login/oauth/authorize?" + urlencode({"client_id": settings.client_id, "state": state}))
 
     @app.get("/auth/callback")
     async def callback(code: str, state: str):
         payload = verify(state, settings.session_secret)
+        nonce = payload.get("nonce")
+        if not isinstance(nonce, str) or oauth_states.pop(nonce, 0) <= time.time():
+            raise HTTPException(400, "Connexion expirée ou déjà utilisée.")
+        destination = admin_destination(str(payload.get("returnTo", "")))
         if not settings.client_id or not settings.client_secret:
             raise HTTPException(503, "OAuth GitHub non configuré.")
         async with httpx.AsyncClient(timeout=30) as client:
@@ -192,7 +210,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if name not in settings.allowed_users:
             raise HTTPException(403, "Compte GitHub non autorisé.")
         key = sessions.create(name, token)
-        return RedirectResponse(payload["returnTo"] + "#session=" + key)
+        return RedirectResponse(destination + "#session=" + key, status_code=303)
+
+    @app.post("/auth/logout")
+    async def logout(authorization: str = Header(default=""), user: dict = Depends(authenticated)):
+        sessions.delete(authorization[7:].strip())
+        return {"status": "logged_out"}
 
     @app.get("/auth/session")
     async def session_info(user: dict = Depends(authenticated)):

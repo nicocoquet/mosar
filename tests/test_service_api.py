@@ -6,6 +6,7 @@ import sys
 import types
 import unittest
 from pathlib import Path
+from urllib.parse import urlparse, parse_qs
 from unittest.mock import AsyncMock, patch
 
 from fastapi.testclient import TestClient
@@ -58,6 +59,43 @@ class ApiTests(unittest.TestCase):
 
     def payload(self, name="Revue", secret="secret"):
         return {"filename": "recensement.xlsx", "content": base64.b64encode(make_xlsx(name, secret)).decode()}
+
+    def oauth_state(self, destination):
+        result = self.client.get("/auth/github", params={"returnTo": destination}, follow_redirects=False)
+        self.assertEqual(result.status_code, 307)
+        return parse_qs(urlparse(result.headers["location"]).query)["state"][0]
+
+    def test_oauth_destinations(self):
+        for destination in ("https://nicocoquet.github.io/mosar/admin/", "https://nicocoquet.github.io/mosar/en/admin/"):
+            with self.subTest(destination=destination):
+                self.assertTrue(self.oauth_state(destination))
+        for destination in ("https://evil.example/mosar/admin/", "https://nicocoquet.github.io/mosar/", "https://nicocoquet.github.io/mosar/admin/?next=evil", "https://nicocoquet.github.io/mosar/admin/#fragment", "http://nicocoquet.github.io/mosar/admin/"):
+            with self.subTest(destination=destination):
+                response = self.client.get("/auth/github", params={"returnTo": destination}, follow_redirects=False)
+                self.assertEqual(response.status_code, 400)
+
+    def test_oauth_callback_one_use_state(self):
+        from unittest.mock import MagicMock
+        destination = "https://nicocoquet.github.io/mosar/en/admin/"
+        state = self.oauth_state(destination)
+        fake_response = MagicMock()
+        fake_response.json.return_value = {"access_token": "fake-token"}
+        fake_response.raise_for_status.return_value = None
+        fake_client = AsyncMock()
+        fake_client.post.return_value = fake_response
+        fake_context = AsyncMock()
+        fake_context.__aenter__.return_value = fake_client
+        with patch("service.app.httpx.AsyncClient", return_value=fake_context), patch("service.app.github_request", new_callable=AsyncMock, return_value={"login": "nicocoquet"}):
+            response = self.client.get("/auth/callback", params={"code": "code", "state": state}, follow_redirects=False)
+            self.assertEqual(response.status_code, 303, response.text)
+            self.assertTrue(response.headers["location"].startswith(destination + "#session="))
+            replay = self.client.get("/auth/callback", params={"code": "code", "state": state}, follow_redirects=False)
+            self.assertEqual(replay.status_code, 400)
+
+    def test_logout_revokes_session(self):
+        self.assertEqual(self.client.get("/auth/session", headers=self.headers).status_code, 200)
+        self.assertEqual(self.client.post("/auth/logout", headers=self.headers).status_code, 200)
+        self.assertEqual(self.client.get("/auth/session", headers=self.headers).status_code, 401)
 
     def test_health(self):
         self.assertEqual(self.client.get("/health").json(), {"status": "ok"})
