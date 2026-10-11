@@ -1,1 +1,21 @@
 .mosar-admin{max-width:860px;margin:1.8rem auto 3rem}.mosar-admin .admin-panel{border:1px solid var(--md-default-fg-color--lightest);border-radius:10px;padding:1.5rem;margin:1rem 0;background:var(--md-default-bg-color);box-shadow:0 3px 14px #00000008}.mosar-admin .admin-panel h2{margin:.3rem 0 1rem}.mosar-admin .admin-step{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--md-primary-fg-color)}.mosar-admin .admin-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}.mosar-admin .md-button:disabled{opacity:.45;cursor:not-allowed}.mosar-admin input[type=file]{display:block;width:100%;border:1px dashed var(--md-default-fg-color--light);padding:1rem;border-radius:6px;margin:.6rem 0}.mosar-admin .admin-notice,.mosar-admin .admin-warning{padding:.8rem 1rem;background:var(--md-code-bg-color);border-left:3px solid var(--md-primary-fg-color);border-radius:4px}.mosar-admin .admin-error{padding:.8rem 1rem;border-left:3px solid #b3261e;background:var(--md-code-bg-color)}.mosar-admin .admin-muted{color:var(--md-default-fg-color--light)}.mosar-admin .admin-check{display:flex;gap:.5rem;align-items:flex-start;margin-top:1rem}.mosar-admin .admin-report-list{display:grid;grid-template-columns:minmax(150px,1fr) 2fr;gap:.5rem 1rem}.mosar-admin .admin-report-list dt{font-weight:600}.mosar-admin .admin-report-list dd{margin:0;overflow-wrap:anywhere}.mosar-admin [hidden]{display:none!important}@media(max-width:640px){.mosar-admin .admin-panel{padding:1rem}.mosar-admin .admin-report-list{grid-template-columns:1fr}.mosar-admin .admin-report-list dd{margin-bottom:.7rem}}
+
+/* Mosar — carte d'identification inspirée du pipeline AdlFI. */
+.mosar-admin .admin-session-card{display:flex;align-items:center;gap:1rem;padding:1.05rem 1.15rem;margin-top:1.2rem;background:var(--md-code-bg-color);border:1px solid var(--md-default-fg-color--lightest);border-radius:.65rem}
+.mosar-admin .admin-session-avatar{display:grid;place-items:center;flex:0 0 3.1rem;width:3.1rem;height:3.1rem;border-radius:50%;background:var(--mosar-ink,#08264a);color:#fff}
+.mosar-admin .admin-github-icon{display:block;width:1.55rem;height:1.55rem;flex-shrink:0}
+.mosar-admin .admin-session-copy{display:flex;flex:1 1 12rem;min-width:0;flex-direction:column;gap:.12rem}
+.mosar-admin .admin-session-kicker{font-size:.7rem;color:var(--md-default-fg-color--light);font-weight:650}
+.mosar-admin .admin-session-label{font-size:.95rem;color:var(--md-default-fg-color);line-height:1.3;overflow-wrap:anywhere}
+.mosar-admin .admin-session-help{font-size:.7rem;color:var(--md-default-fg-color--light);line-height:1.35}
+.mosar-admin .admin-session-copy #admin-user{margin:.15rem 0 0;font-size:.75rem;font-weight:650}
+.mosar-admin .admin-session-actions{display:flex;flex:0 1 auto;flex-direction:column;align-items:flex-end;gap:.5rem}
+.mosar-admin .admin-github-button{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;white-space:nowrap;font-size:.76rem}
+.mosar-admin .admin-github-button .admin-github-icon{width:1.15rem;height:1.15rem}
+.mosar-admin .admin-session-authorized{display:none;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:var(--mosar-success,#2f7f25)}
+.mosar-admin .admin-session-indicator{width:.55rem;height:.55rem;border-radius:50%;background:currentColor}
+.mosar-admin .admin-logout-button{font-size:.73rem;padding:.45rem .7rem}
+.mosar-admin:has(#admin-logout:not([hidden])) .admin-session-label{display:none}
+.mosar-admin:has(#admin-logout:not([hidden])) .admin-session-help{display:none}
+.mosar-admin:has(#admin-logout:not([hidden])) .admin-session-authorized{display:inline-flex}
+@media(max-width:680px){.mosar-admin .admin-session-card{flex-wrap:wrap}.mosar-admin .admin-session-actions{flex:1 1 100%;align-items:stretch}.mosar-admin .admin-github-button{white-space:normal}}
