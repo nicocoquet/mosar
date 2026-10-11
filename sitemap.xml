@@ -8,6 +8,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/"/>
     </url>
     <url>
+        <loc>https://nicocoquet.github.io/mosar/admin/</loc>
+        <lastmod>2026-10-11</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/admin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/admin/"/>
+    </url>
+    <url>
         <loc>https://nicocoquet.github.io/mosar/contacts/</loc>
         <lastmod>2026-10-11</lastmod>
         <changefreq>daily</changefreq>
@@ -41,6 +48,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/"/>
+    </url>
+    <url>
+        <loc>https://nicocoquet.github.io/mosar/en/admin/</loc>
+        <lastmod>2026-10-11</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nicocoquet.github.io/mosar/en/admin/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://nicocoquet.github.io/mosar/admin/"/>
     </url>
     <url>
         <loc>https://nicocoquet.github.io/mosar/en/contacts/</loc>
