@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-11T19:48:19+00:00",
+    "generated_at": "2026-10-11T20:54:35+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 172,
     "mirabel_unique_reviews": 172,
@@ -238,9 +238,7 @@
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-SA 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -290,9 +288,7 @@
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -403,9 +399,7 @@
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -524,9 +518,7 @@
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -580,9 +572,7 @@
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -635,9 +625,7 @@
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés et CC variable selon les articles",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -703,9 +691,7 @@
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -772,9 +758,7 @@
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -847,9 +831,7 @@
         "editorial_structure": "association",
         "licence": "CC BY-SA 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -898,8 +880,7 @@
         "licence": "pas de mention",
         "perimetre": [
           "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)",
@@ -1251,9 +1232,7 @@
         "editorial_structure": "éditeur public",
         "licence": "CC-BY-NC-ND",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -1638,9 +1617,7 @@
         "editorial_structure": "association",
         "licence": "CC-BY-NC-ND 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
@@ -1769,9 +1746,7 @@
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND 4.0",
         "perimetre": [
-          "MSH Mondes",
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "MSH Mondes"
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
