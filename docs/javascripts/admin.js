@@ -11,6 +11,13 @@
   const configured = /^https:\/\/[^/]+$/i.test(api);
   const state = {session: null, file: null, encoded: null, previewToken: null, jobToken: null, busy: false};
   const MAX_BYTES = 15 * 1024 * 1024;
+  const POLL_MS = 8000;
+  let pollTimer = null;
+  function stopPolling() { if (pollTimer !== null) { clearTimeout(pollTimer); pollTimer = null; } }
+  function schedulePolling() {
+    stopPolling();
+    if (state.session && state.jobToken) pollTimer = setTimeout(refresh, POLL_MS);
+  }
   function error(message) { $('admin-error').textContent = message || ''; $('admin-error').hidden = !message; }
   function busy(value) { state.busy = value; sync(); }
   function sync() {
@@ -39,7 +46,7 @@
     let payload = {};
     try { payload = await response.json(); } catch { /* empty response */ }
     if (!response.ok) {
-      if (response.status === 401) { state.session = null; resetPreview(); sync(); }
+      if (response.status === 401) { state.session = null; stopPolling(); resetPreview(); $('admin-user').textContent = ''; sync(); }
       throw new Error(typeof payload.detail === 'string' ? payload.detail : t('Erreur du service.', 'Service error.'));
     }
     return payload;
@@ -90,7 +97,16 @@
         const a = safeLink(job.site_url, t('Voir le site Mosar', 'Visit Mosar site'));
         if (a) { if (links.childNodes.length) links.append(' · '); links.append(a); }
       }
-    } catch (e) { error(e.message); }
+      if (job.status === 'queued' || job.status === 'processing') schedulePolling();
+      else stopPolling();
+    } catch (e) {
+      if (!state.session) {
+        error(t('Session expirée. Reconnectez-vous à GitHub. La publication déjà transmise continue sur GitHub Actions ; vous pouvez en consulter le résultat depuis le dépôt.', 'Session expired. Sign in to GitHub again. The submitted publication continues on GitHub Actions; you can check its result in the repository.'));
+      } else {
+        error(e.message);
+        schedulePolling();
+      }
+    }
     finally { busy(false); }
   }
   $('admin-login').addEventListener('click', () => {
@@ -101,7 +117,7 @@
   $('admin-logout').addEventListener('click', async () => {
     busy(true);
     try { await request('/auth/logout', {method: 'POST'}); } catch { /* local logout still proceeds */ }
-    state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
+    stopPolling(); state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
   });
   $('admin-file').addEventListener('change', () => {
     state.file = $('admin-file').files?.[0] || null; resetPreview(); error('');
@@ -132,7 +148,8 @@
       const result = await request('/api/publish', {method:'POST', body:JSON.stringify({filename:state.file.name, content:state.encoded, preview_token:state.previewToken})});
       state.jobToken = result.job_token; state.encoded = null; state.file = null; resetPreview(); $('admin-file').value = '';
       $('admin-job-panel').hidden = false;
-      $('admin-job-status').textContent = t('Classeur transmis à GitHub.', 'Workbook submitted to GitHub.');
+      $('admin-job-status').textContent = t('Classeur transmis à GitHub. Suivi automatique du déploiement…', 'Workbook submitted to GitHub. Tracking deployment automatically…');
+      schedulePolling();
     } catch (e) { error(e.message); }
     finally { busy(false); }
   });
