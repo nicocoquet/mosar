@@ -94,3 +94,13 @@
 .mosar-admin .admin-panel--identity #admin-login{display:flex;width:100%;max-width:100%;min-width:0;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere}
 .mosar-admin .admin-panel--identity #admin-login span{min-width:0}
 .mosar-admin .admin-panel--identity .admin-session-actions .admin-logout-button{align-self:flex-start}
+
+/* Rapport compact : quatre indicateurs puis détail des suppressions. */
+.mosar-admin .admin-report-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin:.9rem 0 1rem}
+.mosar-admin .admin-report-metric{display:flex;flex-direction:column;justify-content:space-between;gap:.35rem;padding:.65rem .5rem;border:1px solid var(--md-default-fg-color--lightest);border-radius:.35rem;background:var(--md-code-bg-color);min-width:0}
+.mosar-admin .admin-report-metric dt{font-size:.65rem;line-height:1.3;font-weight:650;color:var(--md-default-fg-color--light)}
+.mosar-admin .admin-report-metric dd{margin:0!important;font-size:1.08rem;line-height:1.25;font-weight:750;color:var(--mosar-ink,#08264a);overflow-wrap:anywhere}
+.mosar-admin .admin-report-details{margin:0}
+.mosar-admin .admin-report-details dt{font-size:.75rem;font-weight:750;line-height:1.4;margin:.85rem 0 .2rem}
+.mosar-admin .admin-report-details dd{font-size:.72rem;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.mosar-admin .admin-panel--report .admin-check{font-size:.72rem;line-height:1.35}
