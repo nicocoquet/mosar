@@ -104,3 +104,14 @@
 .mosar-admin .admin-report-details dt{font-size:.75rem;font-weight:750;line-height:1.4;margin:.85rem 0 .2rem}
 .mosar-admin .admin-report-details dd{font-size:.72rem;line-height:1.5;margin:0;overflow-wrap:anywhere}
 .mosar-admin .admin-panel--report .admin-check{font-size:.72rem;line-height:1.35}
+
+/* Rapport : indicateurs plus discrets, libellés et valeurs sans coupure forcée. */
+.mosar-admin .admin-report-summary{gap:.4rem;margin:.7rem 0 .8rem}
+.mosar-admin .admin-report-metric{padding:.5rem .45rem;gap:.25rem;min-height:0}
+.mosar-admin .admin-report-metric dt{font-size:.57rem;line-height:1.2;font-weight:600;overflow-wrap:normal;word-break:normal}
+.mosar-admin .admin-report-metric dd{font-size:.83rem;line-height:1.2;overflow-wrap:normal;word-break:normal;letter-spacing:-.02em}
+.mosar-admin .admin-report-metric:nth-child(3) dd{font-size:.67rem;letter-spacing:-.035em}
+.mosar-admin .admin-drop-status.is-busy{display:flex;align-items:center;justify-content:center;gap:.55rem}
+.mosar-admin .admin-drop-status.is-busy::before{content:"";display:inline-block;width:.8rem;height:.8rem;flex:0 0 .8rem;border:2px solid var(--md-default-fg-color--lightest);border-top-color:var(--mosar-ochre,#b44f12);border-radius:50%;animation:mosar-admin-spin .8s linear infinite}
+@keyframes mosar-admin-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.mosar-admin .admin-drop-status.is-busy::before{animation-duration:2s}}
