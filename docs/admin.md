@@ -41,9 +41,8 @@ hide:
     <span class="admin-step">03 · Contrôle préalable</span>
     <h2 id="admin-report-title">Rapport de contrôle</h2>
     <div id="admin-report" aria-live="polite"></div>
-    <p class="admin-warning">Seul le classeur expurgé sera enregistré dans GitHub. Vérifiez le rapport avant de confirmer.</p>
-    <label class="admin-check"><input type="checkbox" id="admin-confirm"> Je confirme la publication de ce classeur expurgé.</label>
-    <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-publish" disabled>Confirmer et publier</button><button type="button" class="md-button" id="admin-reset">Choisir un autre fichier</button></div>
+    <label class="admin-check"><input type="checkbox" id="admin-confirm"> Je confirme le nettoyage des données.</label>
+    <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-publish" disabled>Publier</button><button type="button" class="md-button" id="admin-reset">Choisir un autre fichier</button></div>
   </section>
   </div>
   <div class="admin-processing-grid" id="admin-processing-grid" hidden>
