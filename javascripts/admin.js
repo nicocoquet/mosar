@@ -35,6 +35,7 @@
     const drop = $('admin-dropzone');
     drop.setAttribute('aria-disabled', String(!connected || state.busy || !!state.jobToken));
     $('admin-selected-file').textContent = state.file ? state.file.name : '';
+    $('admin-drop-status').classList.toggle('is-busy', state.busy && connected);
     $('admin-drop-status').textContent = !connected
       ? t('Connectez-vous avec GitHub pour commencer.', 'Sign in with GitHub to get started.')
       : state.busy ? t('Préparation en cours…', 'Preparing…')
@@ -98,7 +99,6 @@
     const fields = [
       [t('Colonnes confidentielles supprimées', 'Private columns removed'), report.private_columns_removed],
       [t('Autres colonnes supprimées', 'Other columns removed'), report.unknown_columns_removed],
-      [t('Onglets exclus', 'Worksheets removed'), report.sheets_removed],
     ];
     for (const [label, value] of fields) {
       const dt = document.createElement('dt'); dt.textContent = label;
