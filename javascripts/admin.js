@@ -78,21 +78,35 @@
     });
   }
   function renderReport(report) {
-    const pairs = [
+    const summary = document.createElement('dl');
+    summary.className = 'admin-report-summary';
+    const metrics = [
       [t('Revues conservées', 'Journals retained'), report.rows_retained],
       [t('Colonnes conservées', 'Columns retained'), report.columns_retained],
+      [t('Onglet conservé', 'Worksheet retained'), 'recensement'],
       [t('Lignes sans ID exclues', 'Rows without ID removed'), report.rows_without_id_removed],
+    ];
+    for (const [label, value] of metrics) {
+      const item = document.createElement('div');
+      item.className = 'admin-report-metric';
+      const dt = document.createElement('dt'); dt.textContent = label;
+      const dd = document.createElement('dd'); dd.textContent = String(value ?? '—');
+      item.append(dt, dd); summary.append(item);
+    }
+    const details = document.createElement('dl');
+    details.className = 'admin-report-details';
+    const fields = [
       [t('Colonnes confidentielles supprimées', 'Private columns removed'), report.private_columns_removed],
       [t('Autres colonnes supprimées', 'Other columns removed'), report.unknown_columns_removed],
       [t('Onglets exclus', 'Worksheets removed'), report.sheets_removed],
     ];
-    const list = document.createElement('dl'); list.className = 'admin-report-list';
-    for (const [label, value] of pairs) {
+    for (const [label, value] of fields) {
       const dt = document.createElement('dt'); dt.textContent = label;
-      const dd = document.createElement('dd'); dd.textContent = Array.isArray(value) ? (value.join(', ') || '—') : String(value ?? '—');
-      list.append(dt, dd);
+      const dd = document.createElement('dd');
+      dd.textContent = Array.isArray(value) ? (value.join(', ') || '—') : String(value ?? '—');
+      details.append(dt, dd);
     }
-    $('admin-report').replaceChildren(list);
+    $('admin-report').replaceChildren(summary, details);
   }
   function safeLink(url, label) {
     if (!/^https:\/\//i.test(url || '')) return null;
