@@ -44,7 +44,6 @@
     $('admin-preview').disabled = !connected || !state.file || state.busy || !!state.jobToken;
     $('admin-publish').disabled = !connected || !state.previewToken || !$('admin-confirm').checked || state.busy;
     $('admin-reset').disabled = state.busy;
-    $('admin-refresh').disabled = !connected || !state.jobToken || state.busy;
   }
   function resetPreview() {
     state.previewToken = null; state.encoded = null;
@@ -112,6 +111,49 @@
     if (!/^https:\/\//i.test(url || '')) return null;
     const a = document.createElement('a'); a.href = url; a.textContent = label; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a;
   }
+  const STAGES = [
+    {fr:'Dépôt du fichier', en:'Workbook uploaded', names:[]},
+    {fr:'Contrôle du classeur', en:'Workbook validation', names:['Vérifier que le XLSX est expurgé','Tester le moteur statistique sur le corpus fixture','Tester le pipeline Revues sur la fixture']},
+    {fr:'Calcul des variables', en:'Compute indicators', names:['Générer les statistiques depuis le XLSX']},
+    {fr:'Production des contenus', en:'Generate content', names:['Préparer les graphiques réutilisables','Générer la page Revues']},
+    {fr:'Contrôles du site', en:'Site validation', names:['Contrôler la non-régression statistique','Contrôler la structure des données Revues','Contrôler le JavaScript Revues','Contrôler les traductions des données Revues','Vérifier la construction du site']},
+    {fr:'Mise en ligne', en:'Publish website', names:['Publier sur GitHub Pages']}
+  ];
+  function showStages(job) {
+    const steps = new Map((job.stages || []).map(step => [step.name, step]));
+    const list = $('admin-stages');
+    list.replaceChildren();
+    STAGES.forEach((stage, index) => {
+      const statuses = stage.names.map(name => steps.get(name));
+      const failed = statuses.some(s => s?.conclusion === 'failure');
+      const done = index === 0 || (statuses.length > 0 && statuses.every(s => s?.conclusion === 'success'));
+      const active = !done && !failed && statuses.some(s => s?.status === 'in_progress');
+      const item = document.createElement('li');
+      item.className = 'admin-stage ' + (failed ? 'is-failed' : done ? 'is-done' : active ? 'is-active' : 'is-pending');
+      const dot = document.createElement('span');
+      dot.className = 'admin-stage-dot';
+      dot.textContent = failed ? '×' : done ? '✓' : String(index + 1);
+      const label = document.createElement('span');
+      label.textContent = en ? stage.en : stage.fr;
+      item.append(dot, label);
+      list.append(item);
+    });
+  }
+  function downloadErrorReport(job) {
+    const lines = [
+      'Mosar — ' + t('rapport d’échec de publication', 'publication failure report'),
+      'Statut : ' + job.status,
+      'Workflow : ' + (job.workflow_url || '—'),
+      '',
+      t('Étapes en échec :', 'Failed steps:'),
+      ...(job.error_steps?.length ? job.error_steps : [t('Étape non identifiée : consulter le workflow.', 'Unknown step: check the workflow.')])
+    ];
+    const blob = new Blob([lines.join(String.fromCharCode(10))], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'mosar-rapport-erreur.txt'; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
   async function refresh() {
     if (!state.jobToken) return;
     busy(true); error('');
@@ -119,6 +161,8 @@
       const job = await request('/api/jobs/' + encodeURIComponent(state.jobToken));
       const labels = {queued: t('En attente de GitHub Actions…', 'Waiting for GitHub Actions…'), processing: t('Génération en cours…', 'Building site…'), failed: t('La publication a échoué. Consultez le workflow.', 'Publication failed. Check the workflow.'), completed: t('Workflow terminé avec succès.', 'Workflow completed successfully.')};
       $('admin-job-status').textContent = labels[job.status] || job.status;
+      showStages(job);
+      $('admin-result-panel').hidden = job.status !== 'completed' && job.status !== 'failed';
       const resultStatus = $('admin-result-status');
       resultStatus.className = job.status === 'completed' ? 'admin-result-success' : job.status === 'failed' ? 'admin-result-failure' : '';
       resultStatus.textContent = job.status === 'completed'
@@ -126,6 +170,12 @@
         : job.status === 'failed'
           ? t('Échec de la publication. Consultez le suivi détaillé.', 'Publication failed. See detailed status.')
           : t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
+      const icon = $('admin-result-icon');
+      icon.textContent = job.status === 'completed' ? '✓' : job.status === 'failed' ? '×' : '';
+      icon.className = 'admin-outcome-icon ' + (job.status === 'completed' ? 'is-success' : 'is-failure');
+      const reportButton = $('admin-error-download');
+      reportButton.hidden = job.status !== 'failed';
+      reportButton.onclick = job.status === 'failed' ? () => downloadErrorReport(job) : null;
       const links = $('admin-job-links'); links.replaceChildren();
       if (job.workflow_url) { const a = safeLink(job.workflow_url, t('Consulter le workflow', 'View workflow')); if (a) links.append(a); }
       if (job.status === 'completed' && job.site_url) {
@@ -206,6 +256,8 @@
       state.jobToken = result.job_token; state.encoded = null; state.file = null; resetPreview(); $('admin-file').value = '';
       $('admin-processing-grid').hidden = false;
       $('admin-job-panel').hidden = false;
+      $('admin-result-panel').hidden = true;
+      showStages({stages:[]});
       $('admin-result-status').className = '';
       $('admin-result-status').textContent = t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
       $('admin-job-status').textContent = t('Classeur transmis à GitHub. Suivi automatique du déploiement…', 'Workbook submitted to GitHub. Tracking deployment automatically…');
@@ -213,7 +265,6 @@
     } catch (e) { error(e.message); }
     finally { busy(false); }
   });
-  $('admin-refresh').addEventListener('click', refresh);
   async function init() {
     if (!configured) { $('admin-config-notice').hidden = false; sync(); return; }
     $('admin-config-notice').hidden = true;
