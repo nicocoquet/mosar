@@ -35,3 +35,18 @@
 .mosar-admin .admin-panel--report,.mosar-admin .admin-panel--job{margin:1.1rem 0}
 .mosar-admin .admin-panel--job{border-top:3px solid var(--md-primary-fg-color)}
 @media(max-width:800px){.mosar-admin .admin-top-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel{height:auto}}
+
+/* Grille progressive : 3 tiers en haut, puis 2/3 + 1/3 en bas. */
+.mosar-admin .admin-top-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.mosar-admin .admin-top-grid>.admin-panel--report{margin:0;min-width:0;box-sizing:border-box}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list{grid-template-columns:minmax(0,1fr);gap:.2rem}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list dd{margin:0 0 .55rem;font-weight:650}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-actions{gap:.4rem}
+.mosar-admin .admin-top-grid>.admin-panel--report .md-button{font-size:.7rem;padding:.55rem .7rem}
+.mosar-admin .admin-processing-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1.1rem;align-items:stretch;margin:1.1rem 0}
+.mosar-admin .admin-processing-grid>.admin-panel{margin:0;min-width:0;box-sizing:border-box}
+.mosar-admin .admin-panel--result{border-top:3px solid var(--md-primary-fg-color)}
+.mosar-admin .admin-result-success{color:var(--mosar-success,#2f7f25);font-weight:700}
+.mosar-admin .admin-result-failure{color:#b3261e;font-weight:700}
+@media(max-width:1000px){.mosar-admin .admin-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:1/-1}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list{grid-template-columns:minmax(150px,1fr) 2fr}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list dd{margin:0}}
+@media(max-width:800px){.mosar-admin .admin-top-grid,.mosar-admin .admin-processing-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:auto}}
