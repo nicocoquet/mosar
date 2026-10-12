@@ -97,6 +97,13 @@
       const job = await request('/api/jobs/' + encodeURIComponent(state.jobToken));
       const labels = {queued: t('En attente de GitHub Actions…', 'Waiting for GitHub Actions…'), processing: t('Génération en cours…', 'Building site…'), failed: t('La publication a échoué. Consultez le workflow.', 'Publication failed. Check the workflow.'), completed: t('Workflow terminé avec succès.', 'Workflow completed successfully.')};
       $('admin-job-status').textContent = labels[job.status] || job.status;
+      const resultStatus = $('admin-result-status');
+      resultStatus.className = job.status === 'completed' ? 'admin-result-success' : job.status === 'failed' ? 'admin-result-failure' : '';
+      resultStatus.textContent = job.status === 'completed'
+        ? t('Publication terminée avec succès.', 'Publication completed successfully.')
+        : job.status === 'failed'
+          ? t('Échec de la publication. Consultez le suivi détaillé.', 'Publication failed. See detailed status.')
+          : t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
       const links = $('admin-job-links'); links.replaceChildren();
       if (job.workflow_url) { const a = safeLink(job.workflow_url, t('Consulter le workflow', 'View workflow')); if (a) links.append(a); }
       if (job.status === 'completed' && job.site_url) {
@@ -123,7 +130,7 @@
   $('admin-logout').addEventListener('click', async () => {
     busy(true);
     try { await request('/auth/logout', {method: 'POST'}); } catch { /* local logout still proceeds */ }
-    stopPolling(); state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
+    stopPolling(); $('admin-processing-grid').hidden = true; state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
   });
   $('admin-file').addEventListener('change', () => {
     state.file = $('admin-file').files?.[0] || null; resetPreview(); error('');
@@ -153,7 +160,10 @@
     try {
       const result = await request('/api/publish', {method:'POST', body:JSON.stringify({filename:state.file.name, content:state.encoded, preview_token:state.previewToken})});
       state.jobToken = result.job_token; state.encoded = null; state.file = null; resetPreview(); $('admin-file').value = '';
+      $('admin-processing-grid').hidden = false;
       $('admin-job-panel').hidden = false;
+      $('admin-result-status').className = '';
+      $('admin-result-status').textContent = t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
       $('admin-job-status').textContent = t('Classeur transmis à GitHub. Suivi automatique du déploiement…', 'Workbook submitted to GitHub. Tracking deployment automatically…');
       schedulePolling();
     } catch (e) { error(e.message); }
