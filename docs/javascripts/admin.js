@@ -148,7 +148,7 @@
       t('Étapes en échec :', 'Failed steps:'),
       ...(job.error_steps?.length ? job.error_steps : [t('Étape non identifiée : consulter le workflow.', 'Unknown step: check the workflow.')])
     ];
-    const blob = new Blob([lines.join('\\n')], {type:'text/plain;charset=utf-8'});
+    const blob = new Blob([lines.join(String.fromCharCode(10))], {type:'text/plain;charset=utf-8'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url; a.download = 'mosar-rapport-erreur.txt'; a.click();
