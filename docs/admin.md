@@ -10,7 +10,7 @@ hide:
   <div class="admin-top-grid">
   <section class="admin-panel admin-panel--identity" aria-labelledby="admin-login-title">
     <span class="admin-step">01 · Accès aux données</span>
-    <h2 id="admin-login-title">Data access</h2>
+    <h2 id="admin-login-title">Connexion</h2>
     <div class="admin-session-card">
       <span class="admin-session-avatar" aria-hidden="true"><svg class="admin-github-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.13c-3.1.68-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.61 3.22 1.87.1-.72.4-1.21.72-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14A10.5 10.5 0 0 1 12 6.05c.95 0 1.89.13 2.77.38 2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.22 2.67.11 2.95.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.22-5.08 5.49.4.35.76 1.02.76 2.06v3.2c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></span>
       <div class="admin-session-copy">
@@ -23,12 +23,13 @@ hide:
         <button type="button" class="md-button admin-logout-button" id="admin-logout" hidden>Se déconnecter</button>
       </div>
     </div>
+    <div class="admin-partner-logo"><img src="../assets/logos/logo_mshm.png" alt="MSH Mondes" loading="lazy"></div>
   </section>
   <section class="admin-panel admin-panel--upload" aria-labelledby="admin-upload-title">
     <span class="admin-step">02 · Recensement des revues</span>
     <h2 id="admin-upload-title">Déposer le fichier XLSX</h2>
     <div class="admin-dropzone" id="admin-dropzone" aria-disabled="true">
-      <span class="admin-file-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5"/><path d="m10 12-2 2 2 2m5-4 2 2-2 2"/></svg></span>
+      <span class="admin-file-icon admin-file-icon--xlsx" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 4h25l12 12v44H14z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M39 4v12h12" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="5" y="27" width="45" height="23" rx="3" fill="currentColor"/><text x="27.5" y="43" text-anchor="middle" font-size="13" font-family="Arial,sans-serif" font-weight="700" fill="#fff">XLSX</text></svg></span>
       <label for="admin-file" class="admin-file-select md-button">Sélectionner un fichier</label>
       <input type="file" id="admin-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" disabled>
       <p class="admin-drop-help">ou le faire glisser ici · 15 Mo maximum</p>
