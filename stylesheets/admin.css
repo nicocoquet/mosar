@@ -115,3 +115,21 @@
 .mosar-admin .admin-drop-status.is-busy::before{content:"";display:inline-block;width:.8rem;height:.8rem;flex:0 0 .8rem;border:2px solid var(--md-default-fg-color--lightest);border-top-color:var(--mosar-ochre,#b44f12);border-radius:50%;animation:mosar-admin-spin .8s linear infinite}
 @keyframes mosar-admin-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.mosar-admin .admin-drop-status.is-busy::before{animation-duration:2s}}
+
+/* Suivi des étapes GitHub Actions et résultat uniquement en fin de traitement. */
+.mosar-admin .admin-processing-grid:has(#admin-result-panel[hidden]){grid-template-columns:minmax(0,1fr)}
+.mosar-admin .admin-stages{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.5rem;margin:1.3rem 0;padding:0}
+.mosar-admin .admin-stage{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.55rem;font-size:.67rem;font-weight:650;line-height:1.3;color:#66717c;min-width:0}
+.mosar-admin .admin-stage-dot{display:grid;place-items:center;width:2.15rem;height:2.15rem;border-radius:50%;border:2px solid #cbd1d8;background:#f4f5f6;font-size:.9rem}
+.mosar-admin .admin-stage.is-done .admin-stage-dot{background:#2f7f25;border-color:#2f7f25;color:white}
+.mosar-admin .admin-stage.is-active .admin-stage-dot{border-color:#b44f12;color:#b44f12;animation:mosar-stage-pulse 1.5s ease-in-out infinite}
+.mosar-admin .admin-stage.is-failed .admin-stage-dot{background:#b3261e;border-color:#b3261e;color:white}
+.mosar-admin .admin-outcome-icon{display:grid;place-items:center;width:4.2rem;height:4.2rem;border-radius:50%;font-size:2.8rem;font-weight:700;margin:1rem auto}
+.mosar-admin .admin-outcome-icon.is-success{background:#e9f5e7;color:#2f7f25}
+.mosar-admin .admin-outcome-icon.is-failure{background:#fbe9e7;color:#b3261e}
+.mosar-admin .admin-panel--result{text-align:center}
+@keyframes mosar-stage-pulse{50%{box-shadow:0 0 0 .35rem #b44f1222}}
+@media(max-width:680px){.mosar-admin .admin-stages{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:1rem}}
+@media(prefers-reduced-motion:reduce){.mosar-admin .admin-stage.is-active .admin-stage-dot{animation:none}}
+
+.mosar-admin .admin-processing-grid[hidden],.mosar-admin #admin-result-panel[hidden]{display:none!important}
