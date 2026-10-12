@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-11T21:57:59+00:00",
+    "generated_at": "2026-10-12T14:26:08+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 172,
     "mirabel_unique_reviews": 172,
@@ -918,7 +918,7 @@
       "themes": [
         "Arts visuels"
       ],
-      "journal_url": "http://ojs.u-paris10.fr/index.php/latelier/index",
+      "journal_url": "https://ojs.parisnanterre.fr/index.php/latelier",
       "mirabel_url": "https://reseau-mirabel.info/revue/3407",
       "mosar": {
         "proximity_level": "1",
@@ -2343,7 +2343,7 @@
         "Histoire",
         "Antiquité"
       ],
-      "journal_url": "https://www.anhima.fr/publications/revue/cahier-glotz/40-cahiers-du-centre-gustave-glotz",
+      "journal_url": "https://edizionicafoscari.unive.it/it/edizioni4/riviste/cahiers-du-centre-gustave-glotz/",
       "mirabel_url": "https://reseau-mirabel.info/revue/1476",
       "mosar": {
         "proximity_level": "2",
@@ -2837,7 +2837,7 @@
       "themes": [
         "Géographie, cartographie"
       ],
-      "journal_url": "",
+      "journal_url": "https://espacegeographique.cnrs.fr/",
       "mirabel_url": "https://reseau-mirabel.info/revue/532",
       "mosar": {
         "proximity_level": "2",
@@ -2972,7 +2972,7 @@
       "mirabel_id": 768,
       "title": "Mètis",
       "subtitle": "Anthropologie des mondes grecs et romains",
-      "mirabel_title": "Mètis. Anthropologie des mondes grecs anciens",
+      "mirabel_title": "Mètis. Anthropologie des mondes grecs et romains",
       "sigle": "",
       "issn": [
         "1105-2201",
@@ -5564,7 +5564,7 @@
       "mirabel_id": 5413,
       "title": "NeHeT",
       "subtitle": "Revue numérique d'égyptologie",
-      "mirabel_title": "NeHet  : Revue numérique d'Egyptologie",
+      "mirabel_title": "NeHet  : Revue numérique d'égyptologie",
       "sigle": "",
       "issn": [
         "2429-2702",
@@ -6378,7 +6378,7 @@
       "mirabel_id": 4840,
       "title": "Semitica et Classica",
       "subtitle": "Revue Internationale d'études orientales et méditerranéennes",
-      "mirabel_title": "Semitica et Classica. Revue Internationale d'études orientales et méditerranéennes",
+      "mirabel_title": "Semitica et Classica. Revue internationale d'études orientales et méditerranéennes",
       "sigle": "SemClass",
       "issn": [
         "2031-5937",

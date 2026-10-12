@@ -32,6 +32,14 @@
     $('admin-logout').hidden = !connected;
     $('admin-logout').disabled = state.busy;
     $('admin-file').disabled = !connected || state.busy || !!state.jobToken;
+    const drop = $('admin-dropzone');
+    drop.setAttribute('aria-disabled', String(!connected || state.busy || !!state.jobToken));
+    $('admin-selected-file').textContent = state.file ? state.file.name : '';
+    $('admin-drop-status').textContent = !connected
+      ? t('Connectez-vous avec GitHub pour commencer.', 'Sign in with GitHub to get started.')
+      : state.busy ? t('Préparation en cours…', 'Preparing…')
+      : state.file ? t('Fichier prêt pour le contrôle.', 'File ready for validation.')
+      : t('Sélectionnez un fichier XLSX pour commencer.', 'Select an XLSX file to begin.');
     $('admin-preview').disabled = !connected || !state.file || state.busy || !!state.jobToken;
     $('admin-publish').disabled = !connected || !state.previewToken || !$('admin-confirm').checked || state.busy;
     $('admin-reset').disabled = state.busy;
@@ -97,6 +105,13 @@
       const job = await request('/api/jobs/' + encodeURIComponent(state.jobToken));
       const labels = {queued: t('En attente de GitHub Actions…', 'Waiting for GitHub Actions…'), processing: t('Génération en cours…', 'Building site…'), failed: t('La publication a échoué. Consultez le workflow.', 'Publication failed. Check the workflow.'), completed: t('Workflow terminé avec succès.', 'Workflow completed successfully.')};
       $('admin-job-status').textContent = labels[job.status] || job.status;
+      const resultStatus = $('admin-result-status');
+      resultStatus.className = job.status === 'completed' ? 'admin-result-success' : job.status === 'failed' ? 'admin-result-failure' : '';
+      resultStatus.textContent = job.status === 'completed'
+        ? t('Publication terminée avec succès.', 'Publication completed successfully.')
+        : job.status === 'failed'
+          ? t('Échec de la publication. Consultez le suivi détaillé.', 'Publication failed. See detailed status.')
+          : t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
       const links = $('admin-job-links'); links.replaceChildren();
       if (job.workflow_url) { const a = safeLink(job.workflow_url, t('Consulter le workflow', 'View workflow')); if (a) links.append(a); }
       if (job.status === 'completed' && job.site_url) {
@@ -123,8 +138,30 @@
   $('admin-logout').addEventListener('click', async () => {
     busy(true);
     try { await request('/auth/logout', {method: 'POST'}); } catch { /* local logout still proceeds */ }
-    stopPolling(); state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
+    stopPolling(); $('admin-processing-grid').hidden = true; state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
   });
+  const dropzone = $('admin-dropzone');
+  function canDrop() { return !($('admin-file').disabled); }
+  function acceptDroppedFile(file) {
+    if (!canDrop() || !file) return;
+    // Un seul fichier, même validation que via le sélecteur natif.
+    const transfer = new DataTransfer(); transfer.items.add(file);
+    $('admin-file').files = transfer.files;
+    $('admin-file').dispatchEvent(new Event('change', {bubbles:true}));
+  }
+  ['dragenter', 'dragover'].forEach(type => dropzone.addEventListener(type, event => {
+    event.preventDefault();
+    if (canDrop()) { event.dataTransfer.dropEffect = 'copy'; dropzone.classList.add('is-dragover'); }
+    else event.dataTransfer.dropEffect = 'none';
+  }));
+  ['dragleave', 'drop'].forEach(type => dropzone.addEventListener(type, event => {
+    event.preventDefault(); dropzone.classList.remove('is-dragover');
+    if (type === 'drop' && canDrop()) {
+      const files = event.dataTransfer?.files;
+      if (files?.length === 1) acceptDroppedFile(files[0]);
+      else error(t('Déposez un seul fichier XLSX.', 'Drop a single XLSX file.'));
+    }
+  }));
   $('admin-file').addEventListener('change', () => {
     state.file = $('admin-file').files?.[0] || null; resetPreview(); error('');
     if (state.file && (!/\.xlsx$/i.test(state.file.name) || !state.file.size || state.file.size > MAX_BYTES)) {
@@ -153,7 +190,10 @@
     try {
       const result = await request('/api/publish', {method:'POST', body:JSON.stringify({filename:state.file.name, content:state.encoded, preview_token:state.previewToken})});
       state.jobToken = result.job_token; state.encoded = null; state.file = null; resetPreview(); $('admin-file').value = '';
+      $('admin-processing-grid').hidden = false;
       $('admin-job-panel').hidden = false;
+      $('admin-result-status').className = '';
+      $('admin-result-status').textContent = t('Traitement en cours. Résultat en attente…', 'Processing. Outcome pending…');
       $('admin-job-status').textContent = t('Classeur transmis à GitHub. Suivi automatique du déploiement…', 'Workbook submitted to GitHub. Tracking deployment automatically…');
       schedulePolling();
     } catch (e) { error(e.message); }
