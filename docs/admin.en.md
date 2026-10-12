@@ -23,12 +23,13 @@ hide:
         <button type="button" class="md-button admin-logout-button" id="admin-logout" hidden>Sign out</button>
       </div>
     </div>
+    <div class="admin-partner-logo"><img src="../assets/logos/logo_mshm.png" alt="MSH Mondes" loading="lazy"></div>
   </section>
   <section class="admin-panel admin-panel--upload" aria-labelledby="admin-upload-title">
     <span class="admin-step">02 · File</span>
     <h2 id="admin-upload-title">Upload the XLSX file</h2>
     <div class="admin-dropzone" id="admin-dropzone" aria-disabled="true">
-      <span class="admin-file-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5"/><path d="m10 12-2 2 2 2m5-4 2 2-2 2"/></svg></span>
+      <span class="admin-file-icon admin-file-icon--xlsx" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 4h25l12 12v44H14z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M39 4v12h12" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="5" y="27" width="45" height="23" rx="3" fill="currentColor"/><text x="27.5" y="43" text-anchor="middle" font-size="13" font-family="Arial,sans-serif" font-weight="700" fill="#fff">XLSX</text></svg></span>
       <label for="admin-file" class="admin-file-select md-button">Select a file</label>
       <input type="file" id="admin-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" disabled>
       <p class="admin-drop-help">or drag it here · 15 MB maximum</p>
