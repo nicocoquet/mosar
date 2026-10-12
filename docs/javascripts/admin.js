@@ -32,6 +32,14 @@
     $('admin-logout').hidden = !connected;
     $('admin-logout').disabled = state.busy;
     $('admin-file').disabled = !connected || state.busy || !!state.jobToken;
+    const drop = $('admin-dropzone');
+    drop.setAttribute('aria-disabled', String(!connected || state.busy || !!state.jobToken));
+    $('admin-selected-file').textContent = state.file ? state.file.name : '';
+    $('admin-drop-status').textContent = !connected
+      ? t('Connectez-vous avec GitHub pour commencer.', 'Sign in with GitHub to get started.')
+      : state.busy ? t('Préparation en cours…', 'Preparing…')
+      : state.file ? t('Fichier prêt pour le contrôle.', 'File ready for validation.')
+      : t('Sélectionnez un fichier XLSX pour commencer.', 'Select an XLSX file to begin.');
     $('admin-preview').disabled = !connected || !state.file || state.busy || !!state.jobToken;
     $('admin-publish').disabled = !connected || !state.previewToken || !$('admin-confirm').checked || state.busy;
     $('admin-reset').disabled = state.busy;
@@ -132,6 +140,28 @@
     try { await request('/auth/logout', {method: 'POST'}); } catch { /* local logout still proceeds */ }
     stopPolling(); $('admin-processing-grid').hidden = true; state.session = null; state.file = null; state.jobToken = null; $('admin-file').value = ''; resetPreview(); $('admin-user').textContent = ''; error(''); busy(false);
   });
+  const dropzone = $('admin-dropzone');
+  function canDrop() { return !($('admin-file').disabled); }
+  function acceptDroppedFile(file) {
+    if (!canDrop() || !file) return;
+    // Un seul fichier, même validation que via le sélecteur natif.
+    const transfer = new DataTransfer(); transfer.items.add(file);
+    $('admin-file').files = transfer.files;
+    $('admin-file').dispatchEvent(new Event('change', {bubbles:true}));
+  }
+  ['dragenter', 'dragover'].forEach(type => dropzone.addEventListener(type, event => {
+    event.preventDefault();
+    if (canDrop()) { event.dataTransfer.dropEffect = 'copy'; dropzone.classList.add('is-dragover'); }
+    else event.dataTransfer.dropEffect = 'none';
+  }));
+  ['dragleave', 'drop'].forEach(type => dropzone.addEventListener(type, event => {
+    event.preventDefault(); dropzone.classList.remove('is-dragover');
+    if (type === 'drop' && canDrop()) {
+      const files = event.dataTransfer?.files;
+      if (files?.length === 1) acceptDroppedFile(files[0]);
+      else error(t('Déposez un seul fichier XLSX.', 'Drop a single XLSX file.'));
+    }
+  }));
   $('admin-file').addEventListener('change', () => {
     state.file = $('admin-file').files?.[0] || null; resetPreview(); error('');
     if (state.file && (!/\.xlsx$/i.test(state.file.name) || !state.file.size || state.file.size > MAX_BYTES)) {
