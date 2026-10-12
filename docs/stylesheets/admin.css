@@ -131,3 +131,5 @@
 @keyframes mosar-stage-pulse{50%{box-shadow:0 0 0 .35rem #b44f1222}}
 @media(max-width:680px){.mosar-admin .admin-stages{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:1rem}}
 @media(prefers-reduced-motion:reduce){.mosar-admin .admin-stage.is-active .admin-stage-dot{animation:none}}
+
+.mosar-admin .admin-processing-grid[hidden],.mosar-admin #admin-result-panel[hidden]{display:none!important}
