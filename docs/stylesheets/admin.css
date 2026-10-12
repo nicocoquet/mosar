@@ -133,3 +133,11 @@
 @media(prefers-reduced-motion:reduce){.mosar-admin .admin-stage.is-active .admin-stage-dot{animation:none}}
 
 .mosar-admin .admin-processing-grid[hidden],.mosar-admin #admin-result-panel[hidden]{display:none!important}
+
+/* Étapes compactes sur un axe horizontal, sans héritage des listes MkDocs. */
+.mosar-admin .admin-processing-grid>.admin-panel h2{font-family:inherit;font-size:1.25rem;font-weight:750;line-height:1.25;color:var(--mosar-ink,#08264a);margin:.45rem 0 .9rem}
+.mosar-admin ol.admin-stages{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:flex-start;justify-content:space-between;position:relative;gap:.3rem;padding:0!important;margin:1.2rem 0 .4rem!important;list-style:none!important}
+.mosar-admin ol.admin-stages::before{content:"";position:absolute;top:.75rem;left:8.333%;right:8.333%;height:2px;background:var(--md-default-fg-color--lightest);z-index:0}
+.mosar-admin ol.admin-stages>li.admin-stage{display:flex!important;flex:1 1 0;flex-direction:column;align-items:center;gap:.45rem;min-width:0;position:relative;margin:0!important;padding:0 .1rem!important;list-style:none!important;font-size:.61rem;line-height:1.25}
+.mosar-admin ol.admin-stages .admin-stage-dot{position:relative;z-index:1;box-sizing:border-box;flex:0 0 1.5rem;width:1.5rem;height:1.5rem;border-width:1.5px;font-size:.72rem}
+@media(max-width:680px){.mosar-admin ol.admin-stages{gap:.1rem}.mosar-admin ol.admin-stages>li.admin-stage{font-size:.53rem;padding:0!important}.mosar-admin ol.admin-stages .admin-stage-dot{flex-basis:1.25rem;width:1.25rem;height:1.25rem;font-size:.65rem}.mosar-admin ol.admin-stages::before{top:.625rem}}

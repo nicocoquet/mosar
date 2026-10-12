@@ -26,7 +26,7 @@ hide:
   </section>
   <section class="admin-panel admin-panel--upload" aria-labelledby="admin-upload-title">
     <span class="admin-step">02 · Recensement des revues</span>
-    <h2 id="admin-upload-title">Déposer le fichier XLSX</h2>
+    <h2 id="admin-upload-title">Déposer le tableur Excel</h2>
     <div class="admin-dropzone" id="admin-dropzone" aria-disabled="true">
       <span class="admin-file-icon admin-file-icon--xlsx" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 4h25l12 12v44H14z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M39 4v12h12" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="5" y="27" width="45" height="23" rx="3" fill="currentColor"/><text x="27.5" y="43" text-anchor="middle" font-size="13" font-family="Arial,sans-serif" font-weight="700" fill="#fff">XLSX</text></svg></span>
       <label for="admin-file" class="admin-file-select md-button">Sélectionner un fichier</label>
@@ -50,7 +50,7 @@ hide:
     <span class="admin-step">04 · Traitement</span>
     <h2 id="admin-job-title">Suivi de la publication</h2>
     <p id="admin-job-status" role="status" aria-live="polite"></p>
-    <p id="admin-job-links"></p>
+    <p id="admin-job-links" hidden></p>
     <ol class="admin-stages" id="admin-stages" aria-label="Étapes de publication"></ol>
   </section>
   <section class="admin-panel admin-panel--result" id="admin-result-panel" hidden aria-labelledby="admin-result-title">
