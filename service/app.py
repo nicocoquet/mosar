@@ -277,13 +277,29 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         owner, repo = settings.repository.split("/", 1)
         runs = await github_request("GET", f"/repos/{owner}/{repo}/actions/workflows/deploy.yml/runs", user["token"], params={"head_sha": job["sha"], "per_page": 1})
         if not runs.get("workflow_runs"):
-            return {"status": "queued"}
+            return {"status": "queued", "stages": []}
         run = runs["workflow_runs"][0]
-        if run["status"] != "completed":
-            return {"status": "processing", "workflow_url": run["html_url"]}
-        if run["conclusion"] != "success":
-            return {"status": "failed", "workflow_url": run["html_url"]}
-        return {"status": "completed", "workflow_url": run["html_url"], "site_url": settings.pages_url}
+        jobs = await github_request(
+            "GET", f"/repos/{owner}/{repo}/actions/runs/{run['id']}/jobs",
+            user["token"], params={"per_page": 100},
+        )
+        steps = [
+            {"name": step.get("name", ""), "status": step.get("status", ""),
+             "conclusion": step.get("conclusion")}
+            for action_job in jobs.get("jobs", [])
+            for step in action_job.get("steps", [])
+        ]
+        response = {"status": "processing", "workflow_url": run["html_url"],
+                    "stages": steps}
+        if run["status"] == "completed":
+            response["status"] = "completed" if run["conclusion"] == "success" else "failed"
+            if response["status"] == "completed":
+                response["site_url"] = settings.pages_url
+            else:
+                response["error_steps"] = [
+                    step["name"] for step in steps if step["conclusion"] == "failure"
+                ]
+        return response
 
     # Uniquement pour les tests : aucune route exposée.
     app.state.sessions = sessions
