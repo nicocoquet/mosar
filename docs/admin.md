@@ -34,21 +34,28 @@ Cette page permet aux personnes autorisées de mettre à jour le recensement des
     <input type="file" id="admin-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" disabled>
     <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-preview" disabled>Contrôler le fichier</button></div>
   </section>
-  </div>
   <section class="admin-panel admin-panel--report" id="admin-report-panel" aria-labelledby="admin-report-title" hidden>
-    <span class="admin-step">02 · Contrôle préalable</span>
+    <span class="admin-step">03 · Contrôle préalable</span>
     <h2 id="admin-report-title">Rapport de contrôle</h2>
     <div id="admin-report" aria-live="polite"></div>
     <p class="admin-warning">Seul le classeur expurgé sera enregistré dans GitHub. Vérifiez le rapport avant de confirmer.</p>
     <label class="admin-check"><input type="checkbox" id="admin-confirm"> Je confirme la publication de ce classeur expurgé.</label>
     <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-publish" disabled>Confirmer et publier</button><button type="button" class="md-button" id="admin-reset">Choisir un autre fichier</button></div>
   </section>
+  </div>
+  <div class="admin-processing-grid" id="admin-processing-grid" hidden>
   <section class="admin-panel admin-panel--job" id="admin-job-panel" aria-labelledby="admin-job-title" hidden>
-    <span class="admin-step">03 · Traitement</span>
+    <span class="admin-step">04 · Traitement</span>
     <h2 id="admin-job-title">Suivi de la publication</h2>
     <p id="admin-job-status" role="status" aria-live="polite"></p>
     <p id="admin-job-links"></p>
     <button type="button" class="md-button" id="admin-refresh">Actualiser le statut</button>
   </section>
+  <section class="admin-panel admin-panel--result" id="admin-result-panel" aria-labelledby="admin-result-title">
+    <span class="admin-step">05 · Résultat</span>
+    <h2 id="admin-result-title">État de la publication</h2>
+    <p id="admin-result-status" role="status" aria-live="polite">En attente du traitement…</p>
+  </section>
+  </div>
   <p class="admin-error" id="admin-error" role="alert" hidden></p>
 </div>
