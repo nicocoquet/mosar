@@ -51,12 +51,14 @@ hide:
     <h2 id="admin-job-title">Suivi de la publication</h2>
     <p id="admin-job-status" role="status" aria-live="polite"></p>
     <p id="admin-job-links"></p>
-    <button type="button" class="md-button" id="admin-refresh">Actualiser le statut</button>
+    <ol class="admin-stages" id="admin-stages" aria-label="Étapes de publication"></ol>
   </section>
-  <section class="admin-panel admin-panel--result" id="admin-result-panel" aria-labelledby="admin-result-title">
+  <section class="admin-panel admin-panel--result" id="admin-result-panel" hidden aria-labelledby="admin-result-title">
     <span class="admin-step">05 · Résultat</span>
     <h2 id="admin-result-title">État de la publication</h2>
+    <div id="admin-result-icon" class="admin-outcome-icon" aria-hidden="true"></div>
     <p id="admin-result-status" role="status" aria-live="polite">En attente du traitement…</p>
+    <button type="button" class="md-button" id="admin-error-download" hidden>Télécharger le rapport d’erreur</button>
   </section>
   </div>
   <p class="admin-error" id="admin-error" role="alert" hidden></p>
