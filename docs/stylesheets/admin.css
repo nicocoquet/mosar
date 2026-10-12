@@ -50,3 +50,30 @@
 .mosar-admin .admin-result-failure{color:#b3261e;font-weight:700}
 @media(max-width:1000px){.mosar-admin .admin-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:1/-1}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list{grid-template-columns:minmax(150px,1fr) 2fr}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list dd{margin:0}}
 @media(max-width:800px){.mosar-admin .admin-top-grid,.mosar-admin .admin-processing-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:auto}}
+
+/* Habillage Mosar — inspiré des interfaces de dépôt AdlFI. */
+.mosar-admin .admin-step{color:var(--mosar-ochre,#b44f12)}
+.mosar-admin .admin-top-grid>.admin-panel{padding:1.2rem;box-shadow:0 2px 12px #10283a0b}
+.mosar-admin .admin-top-grid>.admin-panel h2{font-family:inherit;font-size:1.25rem;font-weight:750;color:var(--mosar-ink,#08264a)}
+.mosar-admin .admin-panel--identity .admin-session-card{display:flex;flex-direction:column;align-items:stretch;text-align:left;border:0;padding:0;margin-top:1.1rem;gap:.85rem}
+.mosar-admin .admin-panel--identity .admin-session-avatar{display:none}
+.mosar-admin .admin-panel--identity .admin-session-copy{flex:auto;min-width:0}
+.mosar-admin .admin-panel--identity .admin-session-label{font-size:1.15rem;font-weight:750;color:var(--mosar-ink,#08264a)}
+.mosar-admin .admin-panel--identity .admin-session-actions{width:100%;align-items:stretch}
+.mosar-admin .admin-github-button,.mosar-admin .admin-file-select,.mosar-admin .admin-send-button{background:var(--mosar-ink,#08264a)!important;color:#fff!important;border-color:var(--mosar-ink,#08264a)!important;text-align:center;font-weight:700}
+.mosar-admin .admin-github-button{width:100%;padding:.8rem .45rem;font-size:.77rem}
+.mosar-admin .admin-github-button:hover,.mosar-admin .admin-file-select:hover,.mosar-admin .admin-send-button:not(:disabled):hover{background:var(--mosar-ochre,#b44f12)!important;border-color:var(--mosar-ochre,#b44f12)!important}
+.mosar-admin .admin-dropzone{display:flex;flex-direction:column;align-items:center;gap:.7rem;padding:1.1rem .7rem;border:2px dashed #b8c0ca;border-radius:.4rem;text-align:center;transition:border-color .15s,background .15s}
+.mosar-admin .admin-dropzone.is-dragover{border-color:var(--mosar-ochre,#b44f12);background:#b44f120a}
+.mosar-admin .admin-dropzone[aria-disabled=true]{background:var(--md-code-bg-color);opacity:.58}
+.mosar-admin .admin-file-icon{color:var(--mosar-ochre,#b44f12);width:2.6rem;height:2.6rem}
+.mosar-admin .admin-file-icon svg{width:100%;height:100%}
+.mosar-admin .admin-dropzone #admin-file{position:absolute;width:1px;height:1px;padding:0;margin:0;opacity:0;overflow:hidden;border:0;clip-path:inset(50%)}
+.mosar-admin .admin-file-select{display:block;cursor:pointer;padding:.65rem .8rem;width:100%;box-sizing:border-box;font-size:.78rem}
+.mosar-admin .admin-dropzone[aria-disabled=true] .admin-file-select{cursor:not-allowed;pointer-events:none}
+.mosar-admin .admin-drop-help,.mosar-admin .admin-selected-file,.mosar-admin .admin-drop-status{font-size:.72rem;line-height:1.35;margin:0;color:var(--md-default-fg-color--light)}
+.mosar-admin .admin-selected-file:not(:empty){font-weight:700;color:var(--mosar-ink,#08264a);overflow-wrap:anywhere}
+.mosar-admin .admin-send-button{width:100%;font-size:.75rem;padding:.7rem .4rem;line-height:1.35;white-space:normal}
+.mosar-admin .admin-send-button:disabled{background:#929ba4!important;border-color:#929ba4!important;color:#fff!important;opacity:.7}
+.mosar-admin .admin-drop-status{background:var(--md-code-bg-color);width:100%;box-sizing:border-box;padding:.55rem .35rem}
+.mosar-admin .admin-panel--report .md-button--primary{background:var(--mosar-ochre,#b44f12);border-color:var(--mosar-ochre,#b44f12)}
