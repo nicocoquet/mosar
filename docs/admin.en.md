@@ -34,21 +34,28 @@ Authorized users can update the journal survey here. The workbook is checked and
     <input type="file" id="admin-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" disabled>
     <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-preview" disabled>Check file</button></div>
   </section>
-  </div>
   <section class="admin-panel admin-panel--report" id="admin-report-panel" aria-labelledby="admin-report-title" hidden>
-    <span class="admin-step">02 · Pre-publication check</span>
+    <span class="admin-step">03 · Pre-publication check</span>
     <h2 id="admin-report-title">Validation report</h2>
     <div id="admin-report" aria-live="polite"></div>
     <p class="admin-warning">Only the sanitized workbook will be saved to GitHub. Review the report before confirming.</p>
     <label class="admin-check"><input type="checkbox" id="admin-confirm"> I confirm publication of this sanitized workbook.</label>
     <div class="admin-actions"><button type="button" class="md-button md-button--primary" id="admin-publish" disabled>Confirm and publish</button><button type="button" class="md-button" id="admin-reset">Choose another file</button></div>
   </section>
+  </div>
+  <div class="admin-processing-grid" id="admin-processing-grid" hidden>
   <section class="admin-panel admin-panel--job" id="admin-job-panel" aria-labelledby="admin-job-title" hidden>
-    <span class="admin-step">03 · Processing</span>
+    <span class="admin-step">04 · Processing</span>
     <h2 id="admin-job-title">Publication status</h2>
     <p id="admin-job-status" role="status" aria-live="polite"></p>
     <p id="admin-job-links"></p>
     <button type="button" class="md-button" id="admin-refresh">Refresh status</button>
   </section>
+  <section class="admin-panel admin-panel--result" id="admin-result-panel" aria-labelledby="admin-result-title">
+    <span class="admin-step">05 · Result</span>
+    <h2 id="admin-result-title">Publication outcome</h2>
+    <p id="admin-result-status" role="status" aria-live="polite">Waiting for processing…</p>
+  </section>
+  </div>
   <p class="admin-error" id="admin-error" role="alert" hidden></p>
 </div>
