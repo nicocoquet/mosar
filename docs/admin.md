@@ -50,6 +50,7 @@ hide:
     <span class="admin-step">04 · Traitement</span>
     <h2 id="admin-job-title">Suivi de la publication</h2>
     <p id="admin-job-status" role="status" aria-live="polite"></p>
+    <p id="admin-job-links" hidden></p>
     <ol class="admin-stages" id="admin-stages" aria-label="Étapes de publication"></ol>
   </section>
   <section class="admin-panel admin-panel--result" id="admin-result-panel" hidden aria-labelledby="admin-result-title">
