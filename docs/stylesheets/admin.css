@@ -19,3 +19,19 @@
 .mosar-admin:has(#admin-logout:not([hidden])) .admin-session-help{display:none}
 .mosar-admin:has(#admin-logout:not([hidden])) .admin-session-authorized{display:inline-flex}
 @media(max-width:680px){.mosar-admin .admin-session-card{flex-wrap:wrap}.mosar-admin .admin-session-actions{flex:1 1 100%;align-items:stretch}.mosar-admin .admin-github-button{white-space:normal}}
+
+/* Mise en page : connexion et dépôt en miroir, suivi en pleine largeur. */
+.mosar-admin{max-width:1100px}
+.mosar-admin .admin-top-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.1rem;align-items:stretch;margin:1rem 0}
+.mosar-admin .admin-top-grid>.admin-panel{margin:0;min-width:0;height:100%;box-sizing:border-box}
+.mosar-admin .admin-top-grid>.admin-panel h2{font-size:1.35rem;line-height:1.25;margin:.45rem 0 .9rem}
+.mosar-admin .admin-panel--identity .admin-session-card{margin-top:.7rem;flex-wrap:wrap;align-items:center;padding:1rem;gap:.8rem;background:transparent;border:0;border-top:1px solid var(--md-default-fg-color--lightest);border-radius:0}
+.mosar-admin .admin-panel--identity .admin-session-avatar{width:2.65rem;height:2.65rem;flex-basis:2.65rem}
+.mosar-admin .admin-panel--identity .admin-session-copy{flex:1 1 9rem}
+.mosar-admin .admin-panel--identity .admin-session-actions{flex:1 1 100%;align-items:flex-start;gap:.55rem}
+.mosar-admin .admin-panel--identity .admin-github-button{white-space:normal}
+.mosar-admin .admin-panel--identity:has(#admin-logout:not([hidden])) #admin-login{display:none}
+.mosar-admin .admin-panel--upload input[type=file]{box-sizing:border-box;max-width:100%;font-size:.78rem}
+.mosar-admin .admin-panel--report,.mosar-admin .admin-panel--job{margin:1.1rem 0}
+.mosar-admin .admin-panel--job{border-top:3px solid var(--md-primary-fg-color)}
+@media(max-width:800px){.mosar-admin .admin-top-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel{height:auto}}
