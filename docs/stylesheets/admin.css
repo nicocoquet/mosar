@@ -19,3 +19,78 @@
 .mosar-admin:has(#admin-logout:not([hidden])) .admin-session-help{display:none}
 .mosar-admin:has(#admin-logout:not([hidden])) .admin-session-authorized{display:inline-flex}
 @media(max-width:680px){.mosar-admin .admin-session-card{flex-wrap:wrap}.mosar-admin .admin-session-actions{flex:1 1 100%;align-items:stretch}.mosar-admin .admin-github-button{white-space:normal}}
+
+/* Mise en page : connexion et dépôt en miroir, suivi en pleine largeur. */
+.mosar-admin{max-width:1100px}
+.mosar-admin .admin-top-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.1rem;align-items:stretch;margin:1rem 0}
+.mosar-admin .admin-top-grid>.admin-panel{margin:0;min-width:0;height:100%;box-sizing:border-box}
+.mosar-admin .admin-top-grid>.admin-panel h2{font-size:1.35rem;line-height:1.25;margin:.45rem 0 .9rem}
+.mosar-admin .admin-panel--identity .admin-session-card{margin-top:.7rem;flex-wrap:wrap;align-items:center;padding:1rem;gap:.8rem;background:transparent;border:0;border-top:1px solid var(--md-default-fg-color--lightest);border-radius:0}
+.mosar-admin .admin-panel--identity .admin-session-avatar{width:2.65rem;height:2.65rem;flex-basis:2.65rem}
+.mosar-admin .admin-panel--identity .admin-session-copy{flex:1 1 9rem}
+.mosar-admin .admin-panel--identity .admin-session-actions{flex:1 1 100%;align-items:flex-start;gap:.55rem}
+.mosar-admin .admin-panel--identity .admin-github-button{white-space:normal}
+.mosar-admin .admin-panel--identity:has(#admin-logout:not([hidden])) #admin-login{display:none}
+.mosar-admin .admin-panel--upload input[type=file]{box-sizing:border-box;max-width:100%;font-size:.78rem}
+.mosar-admin .admin-panel--report,.mosar-admin .admin-panel--job{margin:1.1rem 0}
+.mosar-admin .admin-panel--job{border-top:3px solid var(--md-primary-fg-color)}
+@media(max-width:800px){.mosar-admin .admin-top-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel{height:auto}}
+
+/* Grille progressive : 3 tiers en haut, puis 2/3 + 1/3 en bas. */
+.mosar-admin .admin-top-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.mosar-admin .admin-top-grid>.admin-panel--report{margin:0;min-width:0;box-sizing:border-box}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list{grid-template-columns:minmax(0,1fr);gap:.2rem}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list dd{margin:0 0 .55rem;font-weight:650}
+.mosar-admin .admin-top-grid>.admin-panel--report .admin-actions{gap:.4rem}
+.mosar-admin .admin-top-grid>.admin-panel--report .md-button{font-size:.7rem;padding:.55rem .7rem}
+.mosar-admin .admin-processing-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1.1rem;align-items:stretch;margin:1.1rem 0}
+.mosar-admin .admin-processing-grid>.admin-panel{margin:0;min-width:0;box-sizing:border-box}
+.mosar-admin .admin-panel--result{border-top:3px solid var(--md-primary-fg-color)}
+.mosar-admin .admin-result-success{color:var(--mosar-success,#2f7f25);font-weight:700}
+.mosar-admin .admin-result-failure{color:#b3261e;font-weight:700}
+@media(max-width:1000px){.mosar-admin .admin-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:1/-1}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list{grid-template-columns:minmax(150px,1fr) 2fr}.mosar-admin .admin-top-grid>.admin-panel--report .admin-report-list dd{margin:0}}
+@media(max-width:800px){.mosar-admin .admin-top-grid,.mosar-admin .admin-processing-grid{grid-template-columns:minmax(0,1fr)}.mosar-admin .admin-top-grid>.admin-panel--report{grid-column:auto}}
+
+/* Habillage Mosar — inspiré des interfaces de dépôt AdlFI. */
+.mosar-admin .admin-step{color:var(--mosar-ochre,#b44f12)}
+.mosar-admin .admin-top-grid>.admin-panel{padding:1.2rem;box-shadow:0 2px 12px #10283a0b}
+.mosar-admin .admin-top-grid>.admin-panel h2{font-family:inherit;font-size:1.25rem;font-weight:750;color:var(--mosar-ink,#08264a)}
+.mosar-admin .admin-panel--identity .admin-session-card{display:flex;flex-direction:column;align-items:stretch;text-align:left;border:0;padding:0;margin-top:1.1rem;gap:.85rem}
+.mosar-admin .admin-panel--identity .admin-session-avatar{display:none}
+.mosar-admin .admin-panel--identity .admin-session-copy{flex:auto;min-width:0}
+.mosar-admin .admin-panel--identity .admin-session-label{font-size:1.15rem;font-weight:750;color:var(--mosar-ink,#08264a)}
+.mosar-admin .admin-panel--identity .admin-session-actions{width:100%;align-items:stretch}
+.mosar-admin .admin-github-button,.mosar-admin .admin-file-select,.mosar-admin .admin-send-button{background:var(--mosar-ink,#08264a)!important;color:#fff!important;border-color:var(--mosar-ink,#08264a)!important;text-align:center;font-weight:700}
+.mosar-admin .admin-github-button{width:100%;padding:.8rem .45rem;font-size:.77rem}
+.mosar-admin .admin-github-button:hover,.mosar-admin .admin-file-select:hover,.mosar-admin .admin-send-button:not(:disabled):hover{background:var(--mosar-ochre,#b44f12)!important;border-color:var(--mosar-ochre,#b44f12)!important}
+.mosar-admin .admin-dropzone{display:flex;flex-direction:column;align-items:center;gap:.7rem;padding:1.1rem .7rem;border:2px dashed #b8c0ca;border-radius:.4rem;text-align:center;transition:border-color .15s,background .15s}
+.mosar-admin .admin-dropzone.is-dragover{border-color:var(--mosar-ochre,#b44f12);background:#b44f120a}
+.mosar-admin .admin-dropzone[aria-disabled=true]{background:var(--md-code-bg-color);opacity:.58}
+.mosar-admin .admin-file-icon{color:var(--mosar-ochre,#b44f12);width:2.6rem;height:2.6rem}
+.mosar-admin .admin-file-icon svg{width:100%;height:100%}
+.mosar-admin .admin-dropzone #admin-file{position:absolute;width:1px;height:1px;padding:0;margin:0;opacity:0;overflow:hidden;border:0;clip-path:inset(50%)}
+.mosar-admin .admin-file-select{display:block;cursor:pointer;padding:.65rem .8rem;width:100%;box-sizing:border-box;font-size:.78rem}
+.mosar-admin .admin-dropzone[aria-disabled=true] .admin-file-select{cursor:not-allowed;pointer-events:none}
+.mosar-admin .admin-drop-help,.mosar-admin .admin-selected-file,.mosar-admin .admin-drop-status{font-size:.72rem;line-height:1.35;margin:0;color:var(--md-default-fg-color--light)}
+.mosar-admin .admin-selected-file:not(:empty){font-weight:700;color:var(--mosar-ink,#08264a);overflow-wrap:anywhere}
+.mosar-admin .admin-send-button{width:100%;font-size:.75rem;padding:.7rem .4rem;line-height:1.35;white-space:normal}
+.mosar-admin .admin-send-button:disabled{background:#929ba4!important;border-color:#929ba4!important;color:#fff!important;opacity:.7}
+.mosar-admin .admin-drop-status{background:var(--md-code-bg-color);width:100%;box-sizing:border-box;padding:.55rem .35rem}
+.mosar-admin .admin-panel--report .md-button--primary{background:var(--mosar-ochre,#b44f12);border-color:var(--mosar-ochre,#b44f12)}
+
+/* Ajustements des cartouches : identité MSH Mondes et pictogramme XLSX. */
+.mosar-admin .admin-panel--identity{display:flex;flex-direction:column}
+.mosar-admin .admin-panel--identity .admin-partner-logo{margin-top:auto;padding:2.2rem .7rem .5rem;display:flex;align-items:center;justify-content:center}
+.mosar-admin .admin-partner-logo img{display:block;width:auto;max-width:78%;max-height:105px;object-fit:contain}
+.mosar-admin .admin-file-icon--xlsx{width:3.25rem;height:3.25rem}
+.mosar-admin .admin-file-icon--xlsx svg{width:100%;height:100%}
+@media(max-width:800px){.mosar-admin .admin-panel--identity .admin-partner-logo{padding:1.3rem .5rem .3rem}.mosar-admin .admin-partner-logo img{max-height:75px}}
+
+/* Correctif du débordement GitHub et simplification de la connexion. */
+.mosar-admin .admin-panel--identity .admin-session-card{width:100%;min-width:0;box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch}
+.mosar-admin .admin-panel--identity .admin-session-copy{flex:0 0 auto;min-width:0;width:100%}
+.mosar-admin .admin-panel--identity .admin-session-copy:has(#admin-user:empty){display:none}
+.mosar-admin .admin-panel--identity .admin-session-actions{display:flex;flex:0 0 auto;min-width:0;width:100%;max-width:100%;box-sizing:border-box;align-items:stretch}
+.mosar-admin .admin-panel--identity #admin-login{display:flex;width:100%;max-width:100%;min-width:0;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere}
+.mosar-admin .admin-panel--identity #admin-login span{min-width:0}
+.mosar-admin .admin-panel--identity .admin-session-actions .admin-logout-button{align-self:flex-start}
