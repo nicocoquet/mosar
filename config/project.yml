@@ -17,6 +17,7 @@ columns:
   creation_year: "Année de création"
   periodicity: "Nombre de n°s par an"
   discipline: "Discipline"
+  sector: "Secteur"
   publisher_type: "Type d'éditeur"
   licence: "Licence"
   msh: "MSH"
