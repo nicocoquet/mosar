@@ -11,7 +11,6 @@ CHART_IDS = [
     "format-publication",
     "acces-format-publication",
     "annee-creation",
-    "periode-creation",
     "acces-date-creation",
     "periodicite-revues",
     "disciplines-revues",

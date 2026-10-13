@@ -70,7 +70,14 @@ def actions(chart_id, lang):
             '</div>'
         )
 
-    return '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups) + '</div>'
+    result = '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups)
+    if chart_id == "annee-creation":
+        result += '<div class="chart-actions-row"><span class="chart-actions-label">' + ("Décennies :" if lang == "fr" else "Decades:") + '</span><div class="chart-actions-formats">'
+        for ext in ("csv", "xlsx"):
+            label = ("Télécharger les données décennales" if lang == "fr" else "Download decade data")
+            result += f'<a class="chart-download" href="{base}annee-creation-decennies.{ext}" download aria-label="{label} ({ext.upper()})" title="{label} ({ext.upper()})">{icon(ext)}<span class="chart-download-format">{ext.upper()}</span></a>'
+        result += "</div></div>"
+    return result + "</div>"
 
 
 def pie_legend(labels, values, lang, sort_by_count=True):
@@ -542,7 +549,7 @@ def structure_access_horizontal_svg(categories, series, values, lang):
     return f'<svg aria-label="{esc("Accès ouvert et restreint par structure éditoriale" if lang == "fr" else "Open and restricted access by editorial structure")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
-def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr"):
+def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr", consistent_percent=False):
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, max(3.5, len(categories) * .8)), dpi=150)
@@ -558,7 +565,7 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
             if widths[i] >= 6:
                 total = sum(values[categories[i]].values())
                 open_pct = round(100 * values[categories[i]].get("open", 0) / total) if total else 0
-                pct = open_pct if key == "open" else 100 - open_pct
+                pct = (open_pct if key == "open" else 100 - open_pct) if consistent_percent else round(100 * values[categories[i]].get(key, 0) / total) if total else 0
                 ax.text(lefts[i] + widths[i] / 2, bar.get_y() + bar.get_height() / 2,
                         f"{pct} %", ha="center", va="center", fontsize=10,
                         color="white" if key == "open" else "#08264a", fontweight="bold")
@@ -572,31 +579,44 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
 
 
 
+def creation_decades(year_counts, first=1860, last=2026):
+    """Decade totals and yearly means, clipped to the observed display window."""
+    decades = []
+    for start in range((first // 10) * 10, last + 1, 10):
+        lo, hi = max(start, first), min(start + 9, last)
+        if lo > hi:
+            continue
+        total = sum(year_counts.get(y, 0) for y in range(lo, hi + 1))
+        decades.append((lo, hi, total, total / (hi - lo + 1)))
+    return decades
+
+
 def creation_years_svg(year_counts, lang, first=1860, last=2026):
-    """Continuous yearly scale, including zero-count years, with accessible tooltips."""
     width, height, left, right, top, bottom = 960, 390, 35, 25, 25, 55
-    plot_width = width - left - right
-    plot_height = height - top - bottom
-    maximum = max((year_counts.get(year, 0) for year in range(first, last + 1)), default=0) or 1
+    plot_width, plot_height = width - left - right, height - top - bottom
+    decades = creation_decades(year_counts, first, last)
+    maximum = max([year_counts.get(y, 0) for y in range(first, last + 1)] +
+                  [mean for _, _, _, mean in decades] + [1])
     step = plot_width / (last - first + 1)
     baseline = top + plot_height
     parts = [f'<line x1="{left}" y1="{baseline}" x2="{width-right}" y2="{baseline}" stroke="#dce7f2"/>']
+    for lo, hi, count, mean in decades:
+        x = left + (lo - first) * step
+        h = plot_height * mean / maximum
+        label = f"{lo}–{hi} : {count} revues, moyenne {mean:.2f}/an" if lang == "fr" else f"{lo}–{hi}: {count} journals, mean {mean:.2f}/year"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(label)}" data-tooltip-label="{lo}–{hi}" data-tooltip-count="{count}" data-tooltip-extra="{esc(("Moyenne annuelle : " if lang == "fr" else "Yearly mean: ") + format(mean, ".2f"))}"><rect x="{x:.2f}" y="{baseline-h:.2f}" width="{(hi-lo+1)*step:.2f}" height="{h:.2f}" fill="#a9d4f1"/></g>')
     for year in range(first, last + 1):
         count = year_counts.get(year, 0)
+        if not count:
+            continue
         x = left + (year - first) * step
         h = plot_height * count / maximum
-        if count:
-            label = f"{year} : {count} revues" if lang == "fr" else f"{year}: {count} journals"
-            parts.append(
-                f'<g class="chart-tooltip-target" tabindex="0" role="button" '
-                f'aria-label="{esc(label)}" data-tooltip-label="{year}" data-tooltip-count="{count}" '
-                f'data-tooltip-unit="journals"><rect x="{x:.2f}" y="{baseline-h:.2f}" '
-                f'width="{step:.2f}" height="{h:.2f}" fill="#0c598f"/></g>'
-            )
+        label = f"{year} : {count} revues" if lang == "fr" else f"{year}: {count} journals"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(label)}" data-tooltip-label="{year}" data-tooltip-count="{count}"><rect x="{x:.2f}" y="{baseline-h:.2f}" width="{step:.2f}" height="{h:.2f}" fill="#0c598f"/></g>')
     for year in (1860, 1900, 1950, 2000, 2026):
         x = left + (year - first + .5) * step
         parts.append(f'<text x="{x:.2f}" y="{baseline+25}" text-anchor="middle" style="font:13px Arial;fill:#08264a">{year}</text>')
-    description = "Année de création des revues" if lang == "fr" else "Journal founding years"
+    description = "Année/décennie de création des revues" if lang == "fr" else "Journal founding year/decade"
     return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
 
 
@@ -606,6 +626,8 @@ def export_jpg_creation_years(chart_id, year_counts, lang="fr", first=1860, last
     years = list(range(first, last + 1))
     counts = [year_counts.get(year, 0) for year in years]
     fig, ax = plt.subplots(figsize=(12, 4.4), dpi=150)
+    for lo, hi, total, mean in creation_decades(year_counts, first, last):
+        ax.bar((lo + hi) / 2, mean, width=hi-lo+1, color="#a9d4f1", linewidth=0)
     ax.bar(years, counts, width=1.0, color="#0c598f", linewidth=0)
     ax.set_xlim(first - .5, last + .5)
     ax.set_xticks([1860, 1900, 1950, 2000, 2026])
@@ -613,6 +635,32 @@ def export_jpg_creation_years(chart_id, year_counts, lang="fr", first=1860, last
     fig.tight_layout()
     fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
     plt.close(fig)
+
+
+def quantile_access_svg(labels, grouped, series, lang):
+    """One horizontal 100%-stacked bar per quantile class."""
+    width, left, right, top, row_height, bottom = 960, 190, 25, 20, 70, 20
+    height = top + len(labels) * row_height + bottom
+    plot_width = width - left - right
+    parts = []
+    for i, label in enumerate(labels):
+        y = top + i * row_height
+        total = sum(grouped[label].values())
+        parts.append(f'<text x="12" y="{y+30}" style="font:14px Arial;fill:#08264a">{esc(label)}</text>')
+        x = left
+        for series_label, key, color in series:
+            count = grouped[label].get(key, 0)
+            w = plot_width * count / total if total else 0
+            open_pct = round(100 * grouped[label].get("open", 0) / total) if total else 0
+            percent = open_pct if key == "open" else 100 - open_pct
+            detail = f"{label} — {series_label} : {count} revues ({percent} %)" if lang == "fr" else f"{label} — {series_label}: {count} journals ({percent}%)"
+            parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label + " — " + series_label)}" data-tooltip-count="{count}" data-tooltip-percent="{percent}"><rect x="{x:.2f}" y="{y+5}" width="{w:.2f}" height="40" fill="{color}"/>')
+            if w >= 45:
+                text_color = "#fff" if key == "open" else "#08264a"
+                parts.append(f'<text x="{x+w/2:.2f}" y="{y+30}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{percent} %</text>')
+            parts.append('</g>')
+            x += w
+    return f'<svg aria-label="{esc("Ouverture selon l’ancienneté" if lang == "fr" else "Open access by journal age")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
 
 
 

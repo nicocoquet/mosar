@@ -102,12 +102,53 @@ def periodicity(v, row_number):
         raise SystemExit(f"Périodicité invalide ligne {row_number}: {v!r}")
 
 
+
+def creation_quantiles(year_access, groups=4):
+    """Contiguous quantile classes, keeping all journals of a year together."""
+    years = sorted(year_access)
+    if not years:
+        return []
+    weights = [sum(year_access[y].values()) for y in years]
+    total = sum(weights)
+    # Dynamic programming: minimize squared deviation from target group size.
+    k = min(groups, len(years))
+    prefix = [0]
+    for weight in weights:
+        prefix.append(prefix[-1] + weight)
+    target = total / k
+    dp = [[float("inf")] * (len(years) + 1) for _ in range(k + 1)]
+    paths = [[None] * (len(years) + 1) for _ in range(k + 1)]
+    dp[0][0] = 0
+    for count in range(1, k + 1):
+        for end in range(count, len(years) + 1):
+            for start in range(count - 1, end):
+                score = dp[count - 1][start] + (prefix[end] - prefix[start] - target) ** 2
+                if score < dp[count][end]:
+                    dp[count][end], paths[count][end] = score, start
+    boundaries = []
+    end = len(years)
+    for count in range(k, 0, -1):
+        start = paths[count][end]
+        boundaries.append((start, end))
+        end = start
+    boundaries.reverse()
+    result = []
+    for start, end in boundaries:
+        counts = Counter()
+        for y in years[start:end]:
+            counts.update(year_access[y])
+        result.append((years[start], years[end - 1], dict(counts)))
+    assert sum(sum(counts.values()) for _, _, counts in result) == total
+    return result
+
+
 def derive(rows, source):
     columns = source.columns
     total = len(rows)
     levels, formats, years, periods = Counter(), Counter(), Counter(), Counter()
     periodicities, disciplines, structures, rights = Counter(), Counter(), Counter(), Counter()
     level_access, format_access, date_access, structure_access = defaultdict(Counter), defaultdict(Counter), defaultdict(Counter), defaultdict(Counter)
+    year_access = defaultdict(Counter)
 
     for row in rows:
         rn = row["_row"]
@@ -131,6 +172,7 @@ def derive(rows, source):
         y = year(row[columns["creation_year"]], rn)
         if y is not None:
             years[y] += 1
+            year_access[y][a] += 1
             periods[creation_period(y)] += 1
             date_group = date_access_group(y)
             date_access[date_group][a] += 1
@@ -191,6 +233,8 @@ def derive(rows, source):
         "formats": formats,
         "format_access": format_access,
         "years": years,
+        "year_access": year_access,
+        "creation_quantiles": creation_quantiles(year_access),
         "periods": periods,
         "date_access": date_access,
         "periodicities": periodicities,
