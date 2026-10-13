@@ -5,7 +5,7 @@ graphiques. Il ne contient ni lecture de données ni code de rendu SVG/JPEG.
 """
 
 TITLES = {
-    "proximite-revues": {"fr": "Ventilation des revues selon le degré de proximité", "en": "Breakdown of journals by degree of proximity"},
+    "proximite-revues": {"fr": "Ventilation des revues du corpus selon le degré de proximité", "en": "Breakdown of corpus journals by degree of proximity"},
     "acces-ouvert-rattachement": {"fr": "Ouverture selon le degré de proximité", "en": "Open access by degree of proximity"},
     "format-publication": {"fr": "Ventilation des revues selon leur format de publication", "en": "Breakdown of journals by publication format"},
     "acces-format-publication": {"fr": "Ouverture selon le format de publication", "en": "Open access by publication format"},

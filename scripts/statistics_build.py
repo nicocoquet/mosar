@@ -54,11 +54,12 @@ def block(chart_id, svg, lang, extra="", legend_html="", pre_chart_html=""):
         if chart_id == "proximite-revues"
         else ' style="display:block;max-width:960px"'
     )
+    downloads = actions(chart_id, lang)
     return (
         f'<!-- CHART:{chart_id}:START -->\n'
         '<section class="statistics-card" markdown="1">\n\n'
         f'### {TITLES[chart_id][lang]} {{#{chart_id} .statistics-title data-toc-label="{short}"}}\n\n'
-        f'{pre_chart_html}{legend_html}<div class="chart-block"><div class="chart-layout"{layout_style}><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
+        f'{pre_chart_html}{legend_html}<div class="chart-block"><div class="chart-layout"{layout_style}><div class="chart-shell">{svg}</div>{extra}</div>{downloads}</div>\n\n'
         '</section>\n'
         f'<!-- CHART:{chart_id}:END -->'
     )
@@ -130,7 +131,18 @@ def build(data, lang):
     export_table("acces-ouvert-rattachement", ["Niveau", "Accès ouvert", "Accès restreint"], [(i + 1, data["level_access"][i + 1]["open"], data["level_access"][i + 1]["restricted"]) for i in range(4)], lang=lang)
     export_svg("acces-ouvert-rattachement", svg, lang=lang)
     export_jpg_stacked("acces-ouvert-rattachement", categories, series, grouped, percent=True, average=average, lang=lang)
-    out.append(block("acces-ouvert-rattachement", svg, lang, legend_html=stacked_legend(series, lang)))
+    reference_label = (
+        "Taux d'accès ouvert sur l'ensemble du corpus" if lang == "fr"
+        else "Open-access rate across the entire corpus"
+    )
+    reference_legend = (
+        '<span class="chart-legend-item">'
+        '<span class="chart-legend-dash" aria-hidden="true"></span>'
+        f'<span>{reference_label}</span></span>'
+    )
+    access_legend = stacked_legend(series, lang)
+    access_legend = access_legend.replace('</div>', reference_legend + '</div>', 1)
+    out.append(block("acces-ouvert-rattachement", svg, lang, legend_html=access_legend))
 
     categories = ["Papier", "Numérique", "Papier et numérique"]
     assert set(categories) == set(FORMAT_CATEGORIES)
@@ -220,8 +232,6 @@ def build(data, lang):
         [(label, key, color) for label, key, color in
          zip(sector_labels, sector_keys, ("#07558c", "#a7d5f5", "#4d91c7"))], lang
     )
-    sector_heading = ("Répartition par secteur" if lang == "fr" else "Distribution by sector")
-    discipline_heading = ("Répartition par discipline" if lang == "fr" else "Distribution by discipline")
     sector_note = ""
     if sector_total != total:
         sector_note = (
@@ -230,10 +240,8 @@ def build(data, lang):
             f'<p class="statistics-method-note">{total-sector_total} journal(s) with no sector recorded.</p>'
         )
     sector_html = (
-        f'<div class="statistics-subchart"><h4>{sector_heading}</h4>{sector_legend}'
-        f'{sector_note}<div class="chart-shell">{sector_svg}</div>'
-        f'{actions("secteurs-revues", lang)}</div>'
-        f'<h4 class="statistics-discipline-heading">{discipline_heading}</h4>'
+        f'<div class="statistics-subchart">{sector_legend}'
+        f'{sector_note}<div class="chart-shell">{sector_svg}</div></div>'
     )
     out.append(block("disciplines-revues", svg, lang, pre_chart_html=sector_html))
 

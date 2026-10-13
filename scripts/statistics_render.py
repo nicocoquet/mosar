@@ -42,42 +42,48 @@ def icon(ext):
 
 
 def actions(chart_id, lang):
+    """Group downloads by dataset or chart, including composite cards."""
     base = "../downloads/" if lang == "fr" else "../../downloads/en/"
-    groups = (
-        (("Données", ("csv", "xlsx")), ("Graphique", ("jpg", "svg")))
-        if lang == "fr" else
-        (("Data", ("csv", "xlsx")), ("Chart", ("jpg", "svg")))
-    )
 
-    def group(label, formats):
+    if chart_id == "annee-creation":
+        groups = [
+            ("Données (années)" if lang == "fr" else "Data (years)", "annee-creation", ("csv", "xlsx")),
+            ("Données (décennies)" if lang == "fr" else "Data (decades)", "annee-creation-decennies", ("csv", "xlsx")),
+            ("Graphique" if lang == "fr" else "Chart", "annee-creation", ("jpg", "svg")),
+        ]
+    elif chart_id == "disciplines-revues":
+        groups = [
+            ("Données (secteurs)" if lang == "fr" else "Data (sectors)", "secteurs-revues", ("csv", "xlsx")),
+            ("Données (disciplines)" if lang == "fr" else "Data (disciplines)", "disciplines-revues", ("csv", "xlsx")),
+            ("Graphique (secteurs)" if lang == "fr" else "Chart (sectors)", "secteurs-revues", ("jpg", "svg")),
+            ("Graphique (disciplines)" if lang == "fr" else "Chart (disciplines)", "disciplines-revues", ("jpg", "svg")),
+        ]
+    else:
+        groups = [
+            ("Données" if lang == "fr" else "Data", chart_id, ("csv", "xlsx")),
+            ("Graphique" if lang == "fr" else "Chart", chart_id, ("jpg", "svg")),
+        ]
+
+    result = []
+    for label, file_id, formats in groups:
         links = []
         for ext in formats:
             description = (
-                ("Télécharger les données" if ext in ("csv", "xlsx") else "Télécharger le graphique")
-                if lang == "fr" else
-                ("Download data" if ext in ("csv", "xlsx") else "Download chart")
+                "Télécharger " + label.lower() if lang == "fr"
+                else "Download " + label.lower()
             )
-            readable = ext.upper()
             links.append(
-                f'<a class="chart-download" href="{base}{chart_id}.{ext}" download '
-                f'aria-label="{description} ({readable})" title="{description} ({readable})">'
-                f'{icon(ext)}<span class="chart-download-format">{readable}</span></a>'
+                f'<a class="chart-download" href="{base}{file_id}.{ext}" download '
+                f'aria-label="{esc(description)} ({ext.upper()})" '
+                f'title="{esc(description)} ({ext.upper()})">'
+                f'{icon(ext)}<span class="chart-download-format">{ext.upper()}</span></a>'
             )
-        return (
+        result.append(
             '<div class="chart-actions-row">'
-            f'<span class="chart-actions-label">{label} :</span>'
-            '<div class="chart-actions-formats">' + "".join(links) + '</div>'
-            '</div>'
+            f'<span class="chart-actions-label">{esc(label)} :</span>'
+            '<div class="chart-actions-formats">' + "".join(links) + '</div></div>'
         )
-
-    result = '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups)
-    if chart_id == "annee-creation":
-        result += '<div class="chart-actions-row"><span class="chart-actions-label">' + ("Décennies :" if lang == "fr" else "Decades:") + '</span><div class="chart-actions-formats">'
-        for ext in ("csv", "xlsx"):
-            label = ("Télécharger les données décennales" if lang == "fr" else "Download decade data")
-            result += f'<a class="chart-download" href="{base}annee-creation-decennies.{ext}" download aria-label="{label} ({ext.upper()})" title="{label} ({ext.upper()})">{icon(ext)}<span class="chart-download-format">{ext.upper()}</span></a>'
-        result += "</div></div>"
-    return result + "</div>"
+    return '<div class="chart-actions">' + "".join(result) + '</div>'
 
 
 def pie_legend(labels, values, lang, sort_by_count=True):
@@ -130,7 +136,7 @@ def pie_svg(labels, values, lang):
 
 
 def stacked_svg(categories, series, values, lang, percent=False, average=None):
-    width, height, left, right, top, bottom = 900, 520, 70, 30, 30, 145
+    width, height, left, right, top, bottom = 900, 420, 70, 30, 30, 55
     plot_width = width - left - right
     plot_height = height - top - bottom
     gap = plot_width / max(len(categories), 1)
@@ -160,9 +166,13 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
     if average is not None and percent:
         ay = top + plot_height * (1 - average)
         opened = round(average * 100)
-        restricted = 100 - opened
-        label = (f"Moyenne sur l’ensemble des revues du périmètre ({opened} % en accès ouvert, {restricted} % en accès restreint)" if lang == "fr" else f"Average across all journals in the corpus ({opened}% open access, {restricted}% restricted access)")
-        parts.append(f'<line x1="{left}" y1="{ay:.1f}" x2="{width-right}" y2="{ay:.1f}" stroke="#b74f17" stroke-width="2" stroke-dasharray="7 5"/><text x="{left+5}" y="{max(top+14,ay-7):.1f}" style="font:13px Arial;fill:#08264a">{esc(label)}</text>')
+        # Keep the rate outside the plot, immediately before the reference line.
+        parts.append(
+            f'<line x1="{left}" y1="{ay:.1f}" x2="{width-right}" y2="{ay:.1f}" '
+            f'stroke="#b74f17" stroke-width="2" stroke-dasharray="7 5"/>'
+            f'<text x="{left-9}" y="{ay+4:.1f}" text-anchor="end" '
+            f'style="font:700 13px Arial;fill:#b74f17">{opened} %</text>'
+        )
 
     return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
@@ -654,7 +664,7 @@ def creation_decades(year_counts, first=1860, last=2026):
 
 
 def creation_years_svg(year_counts, lang, first=1860, last=2026):
-    width, height, left, right, top, bottom = 960, 390, 35, 25, 25, 55
+    width, height, left, right, top, bottom = 960, 350, 35, 25, 16, 45
     plot_width, plot_height = width - left - right, height - top - bottom
     decades = creation_decades(year_counts, first, last)
     maximum = max([year_counts.get(y, 0) for y in range(first, last + 1)] +
