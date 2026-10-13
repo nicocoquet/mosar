@@ -558,6 +558,13 @@
   height: .62rem;
   flex: 0 0 .62rem;
 }
+/* Notes de lecture des graphiques : même corps que les légendes, interligne resserré. */
+.statistics-card .statistics-method-note {
+  margin: -.35rem 0 .7rem;
+  color: var(--mosar-ink);
+  font-size: .72rem;
+  line-height: 1.35;
+}
 .statistics-card .chart-shell > svg { width: 100%; height: auto; }
 .statistics-card .chart-shell > svg[viewBox="0 0 360 360"] { max-width: 540px; }
 
