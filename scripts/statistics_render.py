@@ -159,6 +159,83 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
 
 
+
+def rights_legend(labels, lang):
+    """Legend for the three distinct rights categories, without counts."""
+    names = (
+        ("Licence Creative Commons (CC)", "Tous droits réservés (DR)",
+         "Licence CC ou DR variable pour une même publication")
+        if lang == "fr" else
+        ("Creative Commons licence (CC)", "All rights reserved (DR)",
+         "CC licence or all rights reserved, varying within one publication")
+    )
+    return '<div class="chart-legend" role="group" aria-label="' + ("Légende" if lang == "fr" else "Legend") + '">' + "".join(
+        f'<span class="chart-legend-item"><span class="chart-legend-swatch" style="background:{BLUES[i % len(BLUES)]}" aria-hidden="true"></span><span>{esc(name)}</span></span>'
+        for i, name in enumerate(names)
+    ) + '</div>'
+
+
+def rights_horizontal_svg(labels, values, lang):
+    """Single 100% stacked bar, with native SVG tooltips and keyboard focus."""
+    total = sum(values)
+    width, height, left, top, bar_width, bar_height = 960, 110, 25, 25, 910, 56
+    x = left
+    parts = []
+    # Largest-remainder rounding: displayed integers sum to exactly 100.
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    remainder = 100 - sum(rounded) if total else 0
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:remainder]:
+        rounded[i] += 1
+    for i, (label, value) in enumerate(zip(labels, values)):
+        w = bar_width * value / total if total else 0
+        color = BLUES[i % len(BLUES)]
+        detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
+        parts.append(f'<g tabindex="0" role="group" aria-label="{esc(detail)}"><title>{esc(detail)}</title><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
+        if w >= 52:
+            text_color = "#fff" if i in (0, 2) else "#08264a"
+            parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
+        parts.append('</g>')
+        x += w
+    return f'<svg role="img" aria-label="{esc("Répartition des droits de réutilisation" if lang == "fr" else "Reuse rights distribution")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
+
+
+def export_jpg_rights_horizontal(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    remainder = 100 - sum(rounded) if total else 0
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:remainder]:
+        rounded[i] += 1
+    fig, ax = plt.subplots(figsize=(10, 2.2), dpi=150)
+    x = 0
+    for i, (label, value) in enumerate(zip(labels, values)):
+        pct = 100 * value / total if total else 0
+        ax.barh([0], [pct], left=x, height=.55, color=BLUES[i % len(BLUES)], label=label)
+        if pct >= 6:
+            ax.text(x + pct/2, 0, f"{rounded[i]} %", ha="center", va="center",
+                    color="white" if i in (0, 2) else "#08264a", fontweight="bold")
+        x += pct
+    ax.set_xlim(0, 100)
+    ax.set_yticks([])
+    ax.legend(loc="upper center", bbox_to_anchor=(.5, -.05), fontsize=8, ncol=1)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
+def structure_access_display_lines(category, lang):
+    """Presentation-only labels; preserve original category keys and exports."""
+    if lang == "fr":
+        if category == "Organisme public de recherche":
+            return ("Organisme public", "de recherche")
+        if category == "Coédition éditeur privé & structure publique ou associative":
+            return ("Éditeur privé/structure publique", "ou associative")
+    return (category,)
+
+
 def structure_access_horizontal_svg(categories, series, values, lang):
     """100% horizontal stacked bars, ordered by exact open-access rate."""
     width, left, right, top, row_height, bottom = 960, 315, 35, 20, 70, 20
@@ -171,7 +248,11 @@ def structure_access_horizontal_svg(categories, series, values, lang):
         open_count = values[category].get("open", 0)
         open_pct = round(100 * open_count / total) if total else 0
         percentages = {"open": open_pct, "restricted": 100 - open_pct}
-        parts.append(f'<text x="{left-16}" y="{y+30}" text-anchor="end" style="font:14px Arial;fill:#08264a">{esc(category)}</text>')
+        lines = structure_access_display_lines(category, lang)
+        line_height = 17
+        first_y = y + 30 - (len(lines) - 1) * line_height / 2
+        tspans = "".join(f'<tspan x="{left-16}" y="{first_y+j*line_height:.1f}">{esc(line)}</tspan>' for j, line in enumerate(lines))
+        parts.append(f'<text text-anchor="end" style="font:14px Arial;fill:#08264a">{tspans}</text>')
         x = left
         for label, key, color in series:
             count = values[category].get(key, 0)
@@ -188,13 +269,14 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, max(3.5, len(categories) * .8)), dpi=150)
+    display_labels = ["\\n".join(structure_access_display_lines(category, lang)) for category in categories]
     lefts = [0.0] * len(categories)
     for label, key, color in series:
         widths = []
         for category in categories:
             total = sum(values[category].values())
             widths.append(100 * values[category].get(key, 0) / total if total else 0)
-        bars = ax.barh(categories, widths, left=lefts, label=label, color=color, height=.62)
+        bars = ax.barh(display_labels, widths, left=lefts, label=label, color=color, height=.62)
         for i, bar in enumerate(bars):
             if widths[i] >= 6:
                 total = sum(values[categories[i]].values())
