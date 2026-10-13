@@ -310,14 +310,26 @@ def export_jpg_category_treemap(chart_id, labels, values, lang="fr"):
             continue
         x, y, w, h = rects[i]
         ax.add_patch(Rectangle((x, y), w, h, facecolor=BLUES[i % len(BLUES)], edgecolor="white", linewidth=2))
-        if w >= 145 and h >= 85:
-            color = "white" if i % len(BLUES) in (0, 1, 7) else "#08264a"
-            max_chars = max(10, int(w / 9))
+        if (w >= 115 and h >= 70) or (w >= 42 and h >= 130):
             import textwrap
-            lines = textwrap.wrap(label, width=max_chars)
-            if len(lines) <= max(1, int((h - 40) / 18)):
-                ax.text(x+w/2, y+h/2-10, "\\n".join(lines), ha="center", va="center", fontsize=10, color=color, fontweight="bold")
-                ax.text(x+w/2, y+h/2+max(18, len(lines)*9), f"{rounded[i]} %", ha="center", va="center", fontsize=12, color=color, fontweight="bold")
+            color = "white" if i % len(BLUES) in (0, 1, 7) else "#08264a"
+            periodicity = chart_id == "periodicite-revues"
+            fragments = label.split(" (", 1) if periodicity and " (" in label else [label]
+            if len(fragments) == 2:
+                fragments[1] = "(" + fragments[1]
+            lines = []
+            for fragment in fragments:
+                lines.extend(textwrap.wrap(fragment, width=max(9, int(w / 9)), break_long_words=False) or [fragment])
+            vertical = False
+            if (len(lines)*18+28 > h or any(len(line)*8 > w-12 for line in lines)) and w >= 42 and h >= 130:
+                lines = []
+                for fragment in fragments:
+                    lines.extend(textwrap.wrap(fragment, width=max(9, int(h / 9)), break_long_words=False) or [fragment])
+                vertical = len(lines)*18+28 <= w-8 and all(len(line)*8 <= h-14 for line in lines)
+            if vertical or (len(lines)*18+28 <= h-8 and all(len(line)*8 <= w-12 for line in lines)):
+                rotation = 90 if vertical else 0
+                ax.text(x+w/2, y+h/2-12, chr(10).join(lines), ha="center", va="center", fontsize=10, color=color, fontweight="bold", rotation=rotation)
+                ax.text(x+w/2, y+h/2+max(18, len(lines)*9), f"{rounded[i]} %", ha="center", va="center", fontsize=12, color=color, fontweight="bold", rotation=rotation)
     ax.set_xlim(0, 920)
     ax.set_ylim(450, 0)
     ax.set_aspect("equal")
