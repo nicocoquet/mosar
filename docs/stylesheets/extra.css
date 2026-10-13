@@ -558,6 +558,15 @@
   height: .62rem;
   flex: 0 0 .62rem;
 }
+.statistics-card .chart-legend-dash {
+  display: inline-block;
+  width: 1.2rem;
+  flex: 0 0 1.2rem;
+  height: 0;
+  border-top: 2px dashed #b74f17;
+  vertical-align: middle;
+  transform: translateY(-.18rem);
+}
 /* Notes de lecture des graphiques : même corps que les légendes, interligne resserré. */
 .statistics-card .statistics-method-note {
   margin: -.35rem 0 .7rem;
@@ -570,7 +579,7 @@
 
 /* Sous-graphiques secteur / discipline dans une même fiche. */
 .statistics-card .statistics-subchart {
-  margin: .3rem 0 1.15rem;
+  margin: .3rem 0 .8rem;
 }
 .statistics-card .statistics-subchart h4,
 .statistics-card .statistics-discipline-heading {
@@ -581,9 +590,6 @@
 }
 .statistics-card .statistics-subchart .chart-shell {
   max-width: 960px;
-}
-.statistics-card .statistics-subchart .chart-actions {
-  margin-top: .35rem;
 }
 /* Infobulles SVG accessibles, partagées par les graphiques statistiques. */
 .mosar-chart-tooltip {
@@ -605,4 +611,11 @@
 .statistics-card .chart-tooltip-target:focus-visible rect {
   stroke: #e18734;
   stroke-width: 3px;
+}
+
+/* Compact spacing for proximity and creation charts. */
+.statistics-card:has(#acces-ouvert-rattachement) .chart-actions,
+.statistics-card:has(#annee-creation) .chart-actions {
+  margin-top: .25rem;
+  padding-top: .55rem;
 }
