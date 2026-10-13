@@ -159,6 +159,73 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
 
 
+
+def rights_legend(labels, lang):
+    """Legend for the three distinct rights categories, without counts."""
+    names = (
+        ("Licence Creative Commons (CC)", "Tous droits réservés (DR)",
+         "Licence CC ou DR variable pour une même publication")
+        if lang == "fr" else
+        ("Creative Commons licence (CC)", "All rights reserved (DR)",
+         "CC licence or all rights reserved, varying within one publication")
+    )
+    return '<div class="chart-legend" role="group" aria-label="' + ("Légende" if lang == "fr" else "Legend") + '">' + "".join(
+        f'<span class="chart-legend-item"><span class="chart-legend-swatch" style="background:{BLUES[i % len(BLUES)]}" aria-hidden="true"></span><span>{esc(name)}</span></span>'
+        for i, name in enumerate(names)
+    ) + '</div>'
+
+
+def rights_horizontal_svg(labels, values, lang):
+    """Single 100% stacked bar, with native SVG tooltips and keyboard focus."""
+    total = sum(values)
+    width, height, left, top, bar_width, bar_height = 960, 110, 25, 25, 910, 56
+    x = left
+    parts = []
+    # Largest-remainder rounding: displayed integers sum to exactly 100.
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    remainder = 100 - sum(rounded) if total else 0
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:remainder]:
+        rounded[i] += 1
+    for i, (label, value) in enumerate(zip(labels, values)):
+        w = bar_width * value / total if total else 0
+        color = BLUES[i % len(BLUES)]
+        detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
+        parts.append(f'<g tabindex="0" role="group" aria-label="{esc(detail)}"><title>{esc(detail)}</title><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
+        if w >= 52:
+            text_color = "#fff" if i in (0, 2) else "#08264a"
+            parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
+        parts.append('</g>')
+        x += w
+    return f'<svg role="img" aria-label="{esc("Répartition des droits de réutilisation" if lang == "fr" else "Reuse rights distribution")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
+
+
+def export_jpg_rights_horizontal(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    remainder = 100 - sum(rounded) if total else 0
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:remainder]:
+        rounded[i] += 1
+    fig, ax = plt.subplots(figsize=(10, 2.2), dpi=150)
+    x = 0
+    for i, (label, value) in enumerate(zip(labels, values)):
+        pct = 100 * value / total if total else 0
+        ax.barh([0], [pct], left=x, height=.55, color=BLUES[i % len(BLUES)], label=label)
+        if pct >= 6:
+            ax.text(x + pct/2, 0, f"{rounded[i]} %", ha="center", va="center",
+                    color="white" if i in (0, 2) else "#08264a", fontweight="bold")
+        x += pct
+    ax.set_xlim(0, 100)
+    ax.set_yticks([])
+    ax.legend(loc="upper center", bbox_to_anchor=(.5, -.05), fontsize=8, ncol=1)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
 def structure_access_display_lines(category, lang):
     """Presentation-only labels; preserve original category keys and exports."""
     if lang == "fr":
