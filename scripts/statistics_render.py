@@ -145,7 +145,7 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
                 parts.append(f'<text x="{x+bar_width/2:.1f}" y="{y+height_value/2+5:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:{text_color}">{text}</text>')
             base = y
         tx = x + bar_width / 2
-        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="end" transform="rotate(-90 {tx:.1f},{top+plot_height+22})" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
+        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="middle" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
 
     parts.append(f'<line x1="{left}" y1="{top+plot_height}" x2="{width-right}" y2="{top+plot_height}" stroke="#dce7f2"/>')
     if average is not None and percent:
@@ -569,6 +569,51 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
     fig.tight_layout()
     fig.savefig(destination / f"{chart_id}.jpg", facecolor="white", bbox_inches="tight")
     plt.close(fig)
+
+
+
+def creation_years_svg(year_counts, lang, first=1860, last=2026):
+    """Continuous yearly scale, including zero-count years, with accessible tooltips."""
+    width, height, left, right, top, bottom = 960, 390, 35, 25, 25, 55
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    maximum = max((year_counts.get(year, 0) for year in range(first, last + 1)), default=0) or 1
+    step = plot_width / (last - first + 1)
+    baseline = top + plot_height
+    parts = [f'<line x1="{left}" y1="{baseline}" x2="{width-right}" y2="{baseline}" stroke="#dce7f2"/>']
+    for year in range(first, last + 1):
+        count = year_counts.get(year, 0)
+        x = left + (year - first) * step
+        h = plot_height * count / maximum
+        if count:
+            label = f"{year} : {count} revues" if lang == "fr" else f"{year}: {count} journals"
+            parts.append(
+                f'<g class="chart-tooltip-target" tabindex="0" role="button" '
+                f'aria-label="{esc(label)}" data-tooltip-label="{year}" data-tooltip-count="{count}" '
+                f'data-tooltip-unit="journals"><rect x="{x:.2f}" y="{baseline-h:.2f}" '
+                f'width="{step:.2f}" height="{h:.2f}" fill="#0c598f"/></g>'
+            )
+    for year in (1860, 1900, 1950, 2000, 2026):
+        x = left + (year - first + .5) * step
+        parts.append(f'<text x="{x:.2f}" y="{baseline+25}" text-anchor="middle" style="font:13px Arial;fill:#08264a">{year}</text>')
+    description = "Année de création des revues" if lang == "fr" else "Journal founding years"
+    return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
+
+
+def export_jpg_creation_years(chart_id, year_counts, lang="fr", first=1860, last=2026):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    years = list(range(first, last + 1))
+    counts = [year_counts.get(year, 0) for year in years]
+    fig, ax = plt.subplots(figsize=(12, 4.4), dpi=150)
+    ax.bar(years, counts, width=1.0, color="#0c598f", linewidth=0)
+    ax.set_xlim(first - .5, last + .5)
+    ax.set_xticks([1860, 1900, 1950, 2000, 2026])
+    ax.set_ylim(bottom=0)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
 
 
 def bar_svg(labels, values):

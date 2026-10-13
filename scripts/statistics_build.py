@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types, creation_years_svg, export_jpg_creation_years
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -152,10 +152,10 @@ def build(data, lang):
 
     years = sorted(data["years"])
     values = [data["years"][y] for y in years]
-    svg = bar_svg([str(y) for y in years], values)
+    svg = creation_years_svg(data["years"], lang)
     export_table("annee-creation", ["Année", "Nombre"], zip(years, values), lang=lang)
     export_svg("annee-creation", svg, lang=lang)
-    export_jpg_bar("annee-creation", [str(y) for y in years], values, lang=lang)
+    export_jpg_creation_years("annee-creation", data["years"], lang=lang)
     out.append(block("annee-creation", svg, lang))
 
     categories = [c for c in [k for k in data["periods"] if k not in PERIOD_ORDER] + list(PERIOD_ORDER) if data["periods"][c]]
@@ -211,7 +211,7 @@ def build(data, lang):
     export_table("structures-editoriales", ["Structure", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("structures-editoriales", svg, lang=lang)
     export_jpg_structure_types("structures-editoriales", labels, values, lang=lang)
-    out.append(block("structures-editoriales", svg, lang, legend_html=simple_category_legend(labels, lang)))
+    out.append(block("structures-editoriales", svg, lang))
 
     categories = [c for c in STRUCTURE_ACCESS_ORDER if c in data["struct_access"]]
     categories.sort(key=lambda c: -(data["struct_access"][c]["open"] / sum(data["struct_access"][c].values()) if sum(data["struct_access"][c].values()) else 0))

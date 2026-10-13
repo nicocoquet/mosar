@@ -25,7 +25,8 @@
     heading.textContent = target.dataset.tooltipLabel || '';
     const info = document.createElement('span');
     info.textContent = (en ? 'Count: ' : 'Effectif : ') + count.toLocaleString(en ? 'en' : 'fr') +
-      (en ? ' journals' : ' revues') + ' · ' + (target.dataset.tooltipPercent || '0') + ' %';
+      (en ? ' journals' : ' revues') +
+      (target.dataset.tooltipPercent !== undefined ? ' · ' + target.dataset.tooltipPercent + ' %' : '');
     tooltip.append(heading, info);
     tooltip.hidden = false;
     target.setAttribute('aria-describedby', tooltip.id);
