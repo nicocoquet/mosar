@@ -560,3 +560,25 @@
 }
 .statistics-card .chart-shell > svg { width: 100%; height: auto; }
 .statistics-card .chart-shell > svg[viewBox="0 0 360 360"] { max-width: 540px; }
+
+/* Infobulles SVG accessibles, partagées par les graphiques statistiques. */
+.mosar-chart-tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: min(340px, calc(100vw - 16px));
+  padding: 10px 13px;
+  border-radius: 6px;
+  background: #08264a;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(8,38,74,.22);
+  pointer-events: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.mosar-chart-tooltip[hidden] { display: none; }
+.mosar-chart-tooltip strong, .mosar-chart-tooltip span { display: block; }
+.statistics-card .chart-tooltip-target { cursor: pointer; outline: none; }
+.statistics-card .chart-tooltip-target:focus-visible rect {
+  stroke: #e18734;
+  stroke-width: 3px;
+}
