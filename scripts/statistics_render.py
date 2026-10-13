@@ -123,7 +123,7 @@ def pie_svg(labels, values, lang):
         mid = math.radians(angle + sweep / 2 - 90)
         tx, ty = cx + radius * .62 * math.cos(mid), cy + radius * .62 * math.sin(mid)
         if sweep >= 18:
-            parts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:#08264a"><tspan x="{tx:.1f}">{value}</tspan><tspan x="{tx:.1f}" dy="18">{fmt_pct(value,total,lang)}</tspan></text>')
+            parts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:#08264a"><tspan x="{tx:.1f}">{value}</tspan><tspan x="{tx:.1f}" dy="18">{fmt_pct(value,total,lang)}</tspan></text>')
         angle += sweep
 
     return f'<svg style="display:block;width:100%;max-width:540px;height:auto" viewBox="0 0 360 360">' + "".join(parts) + "</svg>"
