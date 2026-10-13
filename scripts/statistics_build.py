@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types, creation_years_svg, export_jpg_creation_years, creation_decades, quantile_access_svg
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types, creation_years_svg, export_jpg_creation_years, creation_decades, quantile_access_svg, sector_horizontal_svg, export_jpg_sector_horizontal
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -46,7 +46,7 @@ SHORT_TITLES = {
 }
 
 
-def block(chart_id, svg, lang, extra="", legend_html=""):
+def block(chart_id, svg, lang, extra="", legend_html="", pre_chart_html=""):
     # Markdown dans HTML (md_in_html) permet au titre h3 d'être repris par la ToC.
     short = SHORT_TITLES[chart_id][lang]
     layout_style = (
@@ -58,7 +58,7 @@ def block(chart_id, svg, lang, extra="", legend_html=""):
         f'<!-- CHART:{chart_id}:START -->\n'
         '<section class="statistics-card" markdown="1">\n\n'
         f'### {TITLES[chart_id][lang]} {{#{chart_id} .statistics-title data-toc-label="{short}"}}\n\n'
-        f'{legend_html}<div class="chart-block"><div class="chart-layout"{layout_style}><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
+        f'{pre_chart_html}{legend_html}<div class="chart-block"><div class="chart-layout"{layout_style}><div class="chart-shell">{svg}</div>{extra}</div>{actions(chart_id, lang)}</div>\n\n'
         '</section>\n'
         f'<!-- CHART:{chart_id}:END -->'
     )
@@ -203,7 +203,39 @@ def build(data, lang):
     export_table("disciplines-revues", ["Discipline", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("disciplines-revues", svg, lang=lang)
     export_jpg_category_treemap("disciplines-revues", labels, values, lang=lang)
-    out.append(block("disciplines-revues", svg, lang))
+    sector_keys = ("SHS", "STM", "SHS + STM")
+    sector_labels = (
+        ("Sciences humaines et sociales (SHS)", "Sciences, technologie et médecine (STM)", "Mixte (SHS et STM)")
+        if lang == "fr" else
+        ("Humanities and social sciences (SHS)", "Science, technology and medicine (STM)", "Mixed (SHS and STM)")
+    )
+    sector_values = [data["sectors"][key] for key in sector_keys]
+    sector_total = sum(sector_values)
+    sector_svg = sector_horizontal_svg(sector_labels, sector_values, lang)
+    export_table("secteurs-revues", ["Secteur", "Nombre", "Pourcentage"],
+                 [(label, value, rpct(value, sector_total)) for label, value in zip(sector_labels, sector_values)], lang=lang)
+    export_svg("secteurs-revues", sector_svg, lang=lang)
+    export_jpg_sector_horizontal("secteurs-revues", sector_labels, sector_values, lang=lang)
+    sector_legend = stacked_legend(
+        [(label, key, color) for label, key, color in
+         zip(sector_labels, sector_keys, ("#07558c", "#a7d5f5", "#4d91c7"))], lang
+    )
+    sector_heading = ("Répartition par secteur" if lang == "fr" else "Distribution by sector")
+    discipline_heading = ("Répartition par discipline" if lang == "fr" else "Distribution by discipline")
+    sector_note = ""
+    if sector_total != total:
+        sector_note = (
+            f'<p class="statistics-method-note">{total-sector_total} revue(s) sans secteur renseigné.</p>'
+            if lang == "fr" else
+            f'<p class="statistics-method-note">{total-sector_total} journal(s) with no sector recorded.</p>'
+        )
+    sector_html = (
+        f'<div class="statistics-subchart"><h4>{sector_heading}</h4>{sector_legend}'
+        f'{sector_note}<div class="chart-shell">{sector_svg}</div>'
+        f'{actions("secteurs-revues", lang)}</div>'
+        f'<h4 class="statistics-discipline-heading">{discipline_heading}</h4>'
+    )
+    out.append(block("disciplines-revues", svg, lang, pre_chart_html=sector_html))
 
     categories = [c for c, _ in data["structures"].most_common()]
     values = [data["structures"][c] for c in categories]
