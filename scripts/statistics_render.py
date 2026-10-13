@@ -145,7 +145,7 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
                 parts.append(f'<text x="{x+bar_width/2:.1f}" y="{y+height_value/2+5:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:{text_color}">{text}</text>')
             base = y
         tx = x + bar_width / 2
-        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="end" transform="rotate(-32 {tx:.1f},{top+plot_height+22})" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
+        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="end" transform="rotate(-90 {tx:.1f},{top+plot_height+22})" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
 
     parts.append(f'<line x1="{left}" y1="{top+plot_height}" x2="{width-right}" y2="{top+plot_height}" stroke="#dce7f2"/>')
     if average is not None and percent:
@@ -459,7 +459,7 @@ def structure_access_display_lines(category, lang):
 
 def structure_access_horizontal_svg(categories, series, values, lang):
     """100% horizontal stacked bars, ordered by exact open-access rate."""
-    width, left, right, top, row_height, bottom = 960, 260, 35, 20, 70, 20
+    width, left, right, top, row_height, bottom = 960, 205, 25, 20, 70, 20
     height = top + row_height * len(categories) + bottom
     plot_width = width - left - right
     parts = []
