@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -136,17 +136,17 @@ def build(data, lang):
     categories = list(FORMAT_CATEGORIES)
     values = [data["formats"][c] for c in categories]
     labels = translate_categories(categories, lang)
-    svg = pie_svg(labels, values, lang)
+    svg = format_horizontal_svg(labels, values, lang)
     export_table("format-publication", ["Format", "Nombre", "Pourcentage"], [(label, data["formats"][c],rpct(data["formats"][c], total)) for c, label in zip(categories, labels)], lang=lang)
     export_svg("format-publication", svg, lang=lang)
-    export_jpg_pie("format-publication", labels, values, lang=lang)
-    out.append(block("format-publication", svg, lang, legend_html=pie_legend(labels, values, lang)))
+    export_jpg_format_horizontal("format-publication", labels, values, lang=lang)
+    out.append(block("format-publication", svg, lang, legend_html=simple_category_legend(labels, lang)))
 
     labels, grouped = display_grouped(categories, data["format_access"], lang)
-    svg = stacked_svg(labels, series, grouped, lang)
+    svg = structure_access_horizontal_svg(labels, series, grouped, lang)
     export_table("acces-format-publication", ["Format", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
     export_svg("acces-format-publication", svg, lang=lang)
-    export_jpg_stacked("acces-format-publication", labels, series, grouped, lang=lang)
+    export_jpg_structure_horizontal("acces-format-publication", labels, series, grouped, lang=lang)
     out.append(block("acces-format-publication", svg, lang, legend_html=stacked_legend(series, lang)))
 
     years = sorted(data["years"])
@@ -192,16 +192,16 @@ def build(data, lang):
     export_table("periodicite-revues", ["Périodicité", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("periodicite-revues", svg, lang=lang)
     export_jpg_periodicity_treemap("periodicite-revues", values, lang=lang)
-    out.append(block("periodicite-revues", svg, lang, legend_html=periodicity_legend(lang)))
+    out.append(block("periodicite-revues", svg, lang))
 
     categories = [c for c, _ in data["disciplines"].most_common()]
     values = [data["disciplines"][c] for c in categories]
     labels = translate_categories(categories, lang)
-    svg = pie_svg(labels, values, lang)
+    svg = category_treemap_svg(labels, values, lang, "Répartition des revues par discipline" if lang == "fr" else "Journals by discipline")
     export_table("disciplines-revues", ["Discipline", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("disciplines-revues", svg, lang=lang)
-    export_jpg_pie("disciplines-revues", labels, values, lang=lang)
-    out.append(block("disciplines-revues", svg, lang, legend_html=pie_legend(labels, values, lang)))
+    export_jpg_category_treemap("disciplines-revues", labels, values, lang=lang)
+    out.append(block("disciplines-revues", svg, lang))
 
     categories = [c for c, _ in data["structures"].most_common()]
     values = [data["structures"][c] for c in categories]
