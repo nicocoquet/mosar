@@ -121,7 +121,7 @@ Un *toolkit* trilingue destiné à rendre réutilisables le modèle et les outil
 <section class="home-section home-fnso" markdown="1">
 <div class="home-fnso-logo">
   <a href="https://www.ouvrirlascience.fr/le-fonds-national-pour-la-science-ouverte/" target="_blank" rel="noopener" aria-label="Fonds national pour la science ouverte">
-    <span>FNSO</span>
+    <img src="assets/logos/logo_fnso.png" alt="Fonds national pour la science ouverte">
   </a>
 </div>
 <div class="home-fnso-copy" markdown="1">
