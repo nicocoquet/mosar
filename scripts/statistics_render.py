@@ -380,6 +380,52 @@ def simple_category_legend(labels, lang):
     ) + '</div>'
 
 
+
+def structure_type_horizontal_svg(labels, values, lang):
+    """One horizontal 100% bar per editorial structure, like format access."""
+    total = sum(values)
+    percentages = _treemap_percentages(values)
+    width, left, right, top, row_height, bottom = 960, 205, 25, 20, 70, 20
+    height = top + len(labels) * row_height + bottom
+    plot_width = width - left - right
+    parts = []
+    for i, (label, count) in enumerate(zip(labels, values)):
+        y = top + i * row_height
+        lines = structure_access_display_lines(label, lang)
+        if len(lines) == 1 and len(label) > 24:
+            import textwrap
+            lines = textwrap.wrap(label, width=24, break_long_words=False)
+        first_y = y + 30 - (len(lines) - 1) * 17 / 2
+        for j, line in enumerate(lines):
+            parts.append(f'<text x="12" y="{first_y+j*17:.1f}" style="font:14px Arial;fill:#08264a">{esc(line)}</text>')
+        w = plot_width * count / total if total else 0
+        detail = f"{label} : {count} revues ({percentages[i]} %)" if lang == "fr" else f"{label}: {count} journals ({percentages[i]}%)"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{count}" data-tooltip-percent="{percentages[i]}"><rect x="{left}" y="{y+5}" width="{w:.2f}" height="40" fill="{BLUES[i % len(BLUES)]}"/>')
+        if w >= 42:
+            color = "#fff" if i % len(BLUES) in (0, 1, 7) else "#08264a"
+            parts.append(f'<text x="{left+w/2:.2f}" y="{y+30}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{color}">{percentages[i]} %</text>')
+        parts.append('</g>')
+    return f'<svg aria-label="{esc("Structures éditoriales" if lang == "fr" else "Editorial structures")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
+
+
+def export_jpg_structure_types(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    percentages = _treemap_percentages(values)
+    fig, ax = plt.subplots(figsize=(11, max(3.5, len(labels)*.8)), dpi=150)
+    widths = [100 * v / total if total else 0 for v in values]
+    bars = ax.barh(labels, widths, color=[BLUES[i % len(BLUES)] for i in range(len(labels))], height=.62)
+    for i, bar in enumerate(bars):
+        if widths[i] >= 6:
+            ax.text(widths[i]/2, bar.get_y()+bar.get_height()/2, f"{percentages[i]} %", ha="center", va="center", fontsize=10, color="white" if i % len(BLUES) in (0, 1, 7) else "#08264a", fontweight="bold")
+    ax.invert_yaxis()
+    ax.set_xlim(0, 100)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white", bbox_inches="tight")
+    plt.close(fig)
+
+
 def rights_legend(labels, lang):
     """Legend for the three distinct rights categories, without counts."""
     names = (
