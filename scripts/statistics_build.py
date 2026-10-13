@@ -207,7 +207,7 @@ def build(data, lang):
     svg = structure_access_horizontal_svg(labels, series, grouped, lang)
     export_table("acces-structure-editoriale", ["Structure", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
     export_svg("acces-structure-editoriale", svg, lang=lang)
-    export_jpg_stacked("acces-structure-editoriale", labels, series, grouped, percent=True, lang=lang)
+    export_jpg_structure_horizontal("acces-structure-editoriale", labels, series, grouped, lang=lang)
     out.append(block("acces-structure-editoriale", svg, lang, legend_html=stacked_legend(series, lang)))
 
     categories = list(RIGHTS_CATEGORIES)
