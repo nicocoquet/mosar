@@ -26,7 +26,8 @@
     const info = document.createElement('span');
     info.textContent = (en ? 'Count: ' : 'Effectif : ') + count.toLocaleString(en ? 'en' : 'fr') +
       (en ? ' journals' : ' revues') +
-      (target.dataset.tooltipPercent !== undefined ? ' · ' + target.dataset.tooltipPercent + ' %' : '');
+      (target.dataset.tooltipPercent !== undefined ? ' · ' + target.dataset.tooltipPercent + ' %' : '') +
+      (target.dataset.tooltipExtra ? ' · ' + target.dataset.tooltipExtra : '');
     tooltip.append(heading, info);
     tooltip.hidden = false;
     target.setAttribute('aria-describedby', tooltip.id);
