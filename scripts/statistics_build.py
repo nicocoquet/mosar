@@ -156,7 +156,8 @@ def build(data, lang):
     export_table("annee-creation-decennies", ["Début", "Fin", "Nombre", "Moyenne annuelle"], creation_decades(data["years"]), lang=lang)
     export_svg("annee-creation", svg, lang=lang)
     export_jpg_creation_years("annee-creation", data["years"], lang=lang)
-    out.append(block("annee-creation", svg, lang))
+    decade_note = ("Les barres claires représentent la moyenne annuelle par décennie ; la période 2020–2026 ne couvre que sept années." if lang == "fr" else "Light bars show the annual mean for each decade; the 2020–2026 period covers only seven years.")
+    out.append(block("annee-creation", svg, lang, legend_html=f'<p class="statistics-method-note">{decade_note}</p>'))
 
     # Quantile boundaries are calculated upstream from actual founding years.
     quantiles = data["creation_quantiles"]
