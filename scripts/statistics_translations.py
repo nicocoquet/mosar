@@ -91,6 +91,7 @@ HEADERS_EN = {
     "Période": "Period",
     "Périodicité": "Publication frequency",
     "Discipline": "Discipline",
+    "Secteur": "Sector",
     "Structure": "Editorial structure",
     "Droits": "Reuse rights",
 }
