@@ -165,8 +165,8 @@ def build(data, lang):
     svg = quantile_access_svg(labels, grouped, series, lang)
     export_table("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(label, grouped[label].get("open", 0), grouped[label].get("restricted", 0)) for label in labels], lang=lang)
     export_svg("acces-date-creation", svg, lang=lang)
-    export_jpg_structure_horizontal("acces-date-creation", labels, series, grouped, lang=lang)
-    note = ('Les revues sont réparties en quatre groupes d’effectifs comparables, calculés à partir de leur année de création (quantiles). Les bornes chronologiques sont déterminées automatiquement à partir des données.' if lang == "fr" else 'Journals are divided into four groups of comparable size based on their founding year (quantiles). Chronological boundaries are calculated automatically from the data.')
+    export_jpg_structure_horizontal("acces-date-creation", labels, series, grouped, lang=lang, consistent_percent=True)
+    note = ('Les revues dont l’année de création est connue sont réparties en quatre classes chronologiques d’effectifs aussi équilibrés que possible. Les limites sont calculées à partir des données, sans séparer les revues créées la même année. Les classes ne correspondent donc pas nécessairement à des quartiles exacts.' if lang == "fr" else 'Journals with a known founding year are divided into four chronological groups with sizes as balanced as possible. Boundaries are calculated from the data without splitting journals founded in the same year; groups may therefore differ from exact quartiles.')
     out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang) + f'<p class="statistics-method-note">{note}</p>'))
 
     # Presentation order follows publication frequency, not population size.
