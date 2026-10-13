@@ -51,6 +51,7 @@ def read_rows(source):
         source.columns["creation_year"],
         source.columns["periodicity"],
         source.columns["discipline"],
+        *([source.columns["sector"]] if "sector" in source.columns else []),
         source.columns["publisher_type"],
         source.columns["licence"],
     ]
@@ -147,6 +148,7 @@ def derive(rows, source):
     total = len(rows)
     levels, formats, years, periods = Counter(), Counter(), Counter(), Counter()
     periodicities, disciplines, structures, rights = Counter(), Counter(), Counter(), Counter()
+    sectors = Counter()
     level_access, format_access, date_access, structure_access = defaultdict(Counter), defaultdict(Counter), defaultdict(Counter), defaultdict(Counter)
     year_access = defaultdict(Counter)
 
@@ -186,6 +188,17 @@ def derive(rows, source):
             raise SystemExit(f"Discipline non référencée ligne {rn}: {discipline!r}")
         disciplines[DISCIPLINE_MAP[discipline]] += 1
 
+        raw_sector = norm(row[columns["sector"]]) if "sector" in columns else ""
+        sector_values = {part.strip().upper() for part in raw_sector.split("|") if part.strip()}
+        if sector_values == {"SHS"}:
+            sectors["SHS"] += 1
+        elif sector_values == {"STM"}:
+            sectors["STM"] += 1
+        elif sector_values == {"SHS", "STM"}:
+            sectors["SHS + STM"] += 1
+        elif raw_sector not in ("", "?"):
+            raise SystemExit(f"Secteur inattendu ligne {rn}: {raw_sector!r}")
+
         structure = norm(row[columns["publisher_type"]])
         if structure not in ALLOWED_STRUCTURES:
             raise SystemExit(f"Type d'éditeur inattendu ligne {rn}: {structure!r}")
@@ -217,6 +230,7 @@ def derive(rows, source):
         ("années", years),
         ("périodicités", periodicities),
         ("droits", rights),
+        ("secteurs", sectors),
     ]
 
     for name, counter in partial_counters:
@@ -239,6 +253,7 @@ def derive(rows, source):
         "date_access": date_access,
         "periodicities": periodicities,
         "disciplines": disciplines,
+        "sectors": sectors,
         "structures": structures,
         "struct_access": structure_access,
         "rights": rights,

@@ -118,11 +118,12 @@ def pie_svg(labels, values, lang):
         x2, y2 = cx + radius * math.cos(a2), cy + radius * math.sin(a2)
         large = 1 if sweep > 180 else 0
         color = BLUES[i % len(BLUES)]
-        parts.append(f'<path d="M {cx},{cy} L {x1:.2f},{y1:.2f} A {radius},{radius} 0 {large},1 {x2:.2f},{y2:.2f} Z" fill="{color}" stroke="#fff" stroke-width="2"/>')
+        detail = f"{label} : {value} revues ({fmt_pct(value, total, lang)})" if lang == "fr" else f"{label}: {value} journals ({fmt_pct(value, total, lang)})"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{value}" data-tooltip-percent="{rpct(value, total)}"><path d="M {cx},{cy} L {x1:.2f},{y1:.2f} A {radius},{radius} 0 {large},1 {x2:.2f},{y2:.2f} Z" fill="{color}" stroke="#fff" stroke-width="2"/></g>')
         mid = math.radians(angle + sweep / 2 - 90)
         tx, ty = cx + radius * .62 * math.cos(mid), cy + radius * .62 * math.sin(mid)
         if sweep >= 18:
-            parts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:#08264a"><tspan x="{tx:.1f}">{value}</tspan><tspan x="{tx:.1f}" dy="18">{fmt_pct(value,total,lang)}</tspan></text>')
+            parts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:#08264a"><tspan x="{tx:.1f}">{value}</tspan><tspan x="{tx:.1f}" dy="18">{fmt_pct(value,total,lang)}</tspan></text>')
         angle += sweep
 
     return f'<svg style="display:block;width:100%;max-width:540px;height:auto" viewBox="0 0 360 360">' + "".join(parts) + "</svg>"
@@ -145,7 +146,8 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
             value = values[category].get(key, 0)
             height_value = plot_height * (value / total if percent and total else value / max_total)
             y = base - height_value
-            parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_width:.1f}" height="{height_value:.1f}" fill="{color}"/>')
+            detail = f"{category} — {label} : {value} revues ({fmt_pct(value, total, lang)})" if lang == "fr" else f"{category} — {label}: {value} journals ({fmt_pct(value, total, lang)})"
+            parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(category + " — " + label)}" data-tooltip-count="{value}" data-tooltip-percent="{rpct(value, total)}"><rect x="{x:.1f}" y="{y:.1f}" width="{bar_width:.1f}" height="{height_value:.1f}" fill="{color}"/></g>')
             text = fmt_pct(value, total, lang) if percent else str(value)
             if height_value > 25:
                 text_color = "#fff" if key == "open" else "#08264a"
@@ -166,6 +168,66 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
 
 
+
+
+SECTOR_COLORS = ("#07558c", "#a7d5f5", "#4d91c7")
+
+
+def sector_horizontal_svg(labels, values, lang):
+    """One proportional bar, with a third exclusive mixed-sector category."""
+    total = sum(values)
+    width, height, left, right = 960, 90, 10, 10
+    plot_width = width - left - right
+    x = left
+    parts = []
+    for index, (label, value) in enumerate(zip(labels, values)):
+        segment_width = plot_width * value / total if total else 0
+        percentage = rpct(value, total)
+        detail = (f"{label} : {value} revues ({percentage} %)" if lang == "fr"
+                  else f"{label}: {value} journals ({percentage}%)")
+        parts.append(
+            f'<g class="chart-tooltip-target" tabindex="0" role="button" '
+            f'aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" '
+            f'data-tooltip-count="{value}" data-tooltip-percent="{percentage}">'
+            f'<rect x="{x:.2f}" y="15" width="{segment_width:.2f}" height="52" '
+            f'fill="{SECTOR_COLORS[index]}"/>'
+        )
+        if segment_width >= 52:
+            ink = "#08264a" if index == 1 else "#fff"
+            parts.append(
+                f'<text x="{x + segment_width / 2:.2f}" y="46" '
+                f'text-anchor="middle" pointer-events="none" '
+                f'style="font:700 16px Arial;fill:{ink}">{percentage} %</text>'
+            )
+        parts.append("</g>")
+        x += segment_width
+    title = ("Répartition par secteur scientifique" if lang == "fr"
+             else "Distribution by scientific sector")
+    return (f'<svg role="img" aria-label="{esc(title)}" '
+            f'style="display:block;width:100%;max-width:960px;height:auto" '
+            f'viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>")
+
+
+def export_jpg_sector_horizontal(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    fig, ax = plt.subplots(figsize=(11, 2.1), dpi=150)
+    left = 0
+    for index, (label, value) in enumerate(zip(labels, values)):
+        percentage = 100 * value / total if total else 0
+        ax.barh([""], [percentage], left=left, color=SECTOR_COLORS[index], height=.55, label=label)
+        if percentage >= 6:
+            ax.text(left + percentage / 2, 0, f"{rpct(value, total)} %",
+                    ha="center", va="center", fontweight="bold",
+                    color="#08264a" if index == 1 else "white")
+        left += percentage
+    ax.set_xlim(0, 100)
+    ax.set_yticks([])
+    ax.legend(loc="upper center", bbox_to_anchor=(.5, 1.4), ncol=3)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white", bbox_inches="tight")
+    plt.close(fig)
 
 
 def periodicity_display_labels(lang):

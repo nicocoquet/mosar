@@ -568,6 +568,23 @@
 .statistics-card .chart-shell > svg { width: 100%; height: auto; }
 .statistics-card .chart-shell > svg[viewBox="0 0 360 360"] { max-width: 540px; }
 
+/* Sous-graphiques secteur / discipline dans une même fiche. */
+.statistics-card .statistics-subchart {
+  margin: .3rem 0 1.15rem;
+}
+.statistics-card .statistics-subchart h4,
+.statistics-card .statistics-discipline-heading {
+  margin: .5rem 0 .75rem;
+  color: var(--mosar-ink);
+  font-size: .82rem;
+  font-weight: 700;
+}
+.statistics-card .statistics-subchart .chart-shell {
+  max-width: 960px;
+}
+.statistics-card .statistics-subchart .chart-actions {
+  margin-top: .35rem;
+}
 /* Infobulles SVG accessibles, partagées par les graphiques statistiques. */
 .mosar-chart-tooltip {
   position: fixed;
