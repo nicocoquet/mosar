@@ -156,8 +156,14 @@ def build(data, lang):
     export_table("annee-creation-decennies", ["Début", "Fin", "Nombre", "Moyenne annuelle"], creation_decades(data["years"]), lang=lang)
     export_svg("annee-creation", svg, lang=lang)
     export_jpg_creation_years("annee-creation", data["years"], lang=lang)
-    decade_note = ("Les barres claires représentent la moyenne annuelle par décennie ; la période 2020–2026 ne couvre que sept années." if lang == "fr" else "Light bars show the annual mean for each decade; the 2020–2026 period covers only seven years.")
-    out.append(block("annee-creation", svg, lang, legend_html=f'<p class="statistics-method-note">{decade_note}</p>'))
+    decade_legend = (
+        stacked_legend([
+            ("Par année" if lang == "fr" else "By year", "year", "#0c598f"),
+            ("Par décennie (moyenne annuelle)" if lang == "fr" else "By decade (annual mean)", "decade", "#a9d4f1"),
+        ], lang)
+    )
+    decade_note = ("Note : la période 2020–2026 ne couvre que sept années." if lang == "fr" else "Note: the 2020–2026 period covers only seven years.")
+    out.append(block("annee-creation", svg, lang, legend_html=decade_legend + f'<p class="statistics-method-note">{decade_note}</p>'))
 
     # Quantile boundaries are calculated upstream from actual founding years.
     quantiles = data["creation_quantiles"]
@@ -167,7 +173,7 @@ def build(data, lang):
     export_table("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(label, grouped[label].get("open", 0), grouped[label].get("restricted", 0)) for label in labels], lang=lang)
     export_svg("acces-date-creation", svg, lang=lang)
     export_jpg_structure_horizontal("acces-date-creation", labels, series, grouped, lang=lang, consistent_percent=True)
-    note = ('Les revues dont l’année de création est connue sont réparties en quatre classes chronologiques d’effectifs aussi équilibrés que possible. Les limites sont calculées à partir des données, sans séparer les revues créées la même année. Les classes ne correspondent donc pas nécessairement à des quartiles exacts.' if lang == "fr" else 'Journals with a known founding year are divided into four chronological groups with sizes as balanced as possible. Boundaries are calculated from the data without splitting journals founded in the same year; groups may therefore differ from exact quartiles.')
+    note = ('Les revues dont l’année de création est connue sont réparties en quatre classes chronologiques d’effectifs aussi équilibrés que possible, sans séparer les revues d’une même année de création. Les classes ne correspondent donc pas nécessairement à des quartiles exacts.' if lang == "fr" else 'Journals with a known founding year are divided into four chronological groups with sizes as balanced as possible, without splitting journals founded in the same year. The groups therefore do not necessarily correspond to exact quartiles.')
     out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang) + f'<p class="statistics-method-note">{note}</p>'))
 
     # Presentation order follows publication frequency, not population size.
