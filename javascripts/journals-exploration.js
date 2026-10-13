@@ -21,8 +21,8 @@
   config.facets.forEach(({key}) => { state[key] = new Set(); });
   const FACET_LABELS = Object.fromEntries(config.facets.map(({key,label}) => [key,label]));
   const ASSET_BASE = new URL('../', document.currentScript.src).href;
-  const ICON_BASE = `${ASSET_BASE}images/icons/`;
-  const REVUE_IMAGE_BASE = `${ASSET_BASE}images/revues/`;
+  const ICON_BASE = `${ASSET_BASE}assets/icons/`;
+  const REVUE_IMAGE_BASE = `${ASSET_BASE}assets/journals/`;
   const icons={open:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11v-4a4 4 0 0 1 7.8-1.25"/></svg>',closed:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11v-4a4 4 0 0 1 8 0v4"/></svg>',paper:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5a2.5 2.5 0 0 1 2.5-2.5h13.5"/><path d="M6.5 2h13.5v20h-13.5a2.5 2.5 0 0 1-2.5-2.5v-15a2.5 2.5 0 0 1 2.5-2.5z"/></svg>',digital:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4m0 2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z"/><path d="M8 20h8"/><path d="M12 18v2"/></svg>',world:'<svg class="rx-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18"/><path d="M12.5 3a17 17 0 0 1 0 18"/></svg>'};
 
   fetch(source).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>init(data)).catch(err=>{root.innerHTML=`<p>${esc(config.loadError)} (${esc(err.message)}).</p>`;});
