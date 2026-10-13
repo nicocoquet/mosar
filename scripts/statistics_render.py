@@ -70,7 +70,14 @@ def actions(chart_id, lang):
             '</div>'
         )
 
-    return '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups) + '</div>'
+    result = '<div class="chart-actions">' + "".join(group(label, formats) for label, formats in groups)
+    if chart_id == "annee-creation":
+        result += '<div class="chart-actions-row"><span class="chart-actions-label">' + ("Décennies :" if lang == "fr" else "Decades:") + '</span><div class="chart-actions-formats">'
+        for ext in ("csv", "xlsx"):
+            label = ("Télécharger les données décennales" if lang == "fr" else "Download decade data")
+            result += f'<a class="chart-download" href="{base}annee-creation-decennies.{ext}" download aria-label="{label} ({ext.upper()})" title="{label} ({ext.upper()})">{icon(ext)}<span class="chart-download-format">{ext.upper()}</span></a>'
+        result += "</div></div>"
+    return result + "</div>"
 
 
 def pie_legend(labels, values, lang, sort_by_count=True):
@@ -542,7 +549,7 @@ def structure_access_horizontal_svg(categories, series, values, lang):
     return f'<svg aria-label="{esc("Accès ouvert et restreint par structure éditoriale" if lang == "fr" else "Open and restricted access by editorial structure")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
-def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr"):
+def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr", consistent_percent=False):
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, max(3.5, len(categories) * .8)), dpi=150)
@@ -558,7 +565,7 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
             if widths[i] >= 6:
                 total = sum(values[categories[i]].values())
                 open_pct = round(100 * values[categories[i]].get("open", 0) / total) if total else 0
-                pct = open_pct if key == "open" else 100 - open_pct
+                pct = (open_pct if key == "open" else 100 - open_pct) if consistent_percent else round(100 * values[categories[i]].get(key, 0) / total) if total else 0
                 ax.text(lefts[i] + widths[i] / 2, bar.get_y() + bar.get_height() / 2,
                         f"{pct} %", ha="center", va="center", fontsize=10,
                         color="white" if key == "open" else "#08264a", fontweight="bold")
@@ -644,7 +651,8 @@ def quantile_access_svg(labels, grouped, series, lang):
         for series_label, key, color in series:
             count = grouped[label].get(key, 0)
             w = plot_width * count / total if total else 0
-            percent = round(count * 100 / total) if total else 0
+            open_pct = round(100 * grouped[label].get("open", 0) / total) if total else 0
+            percent = open_pct if key == "open" else 100 - open_pct
             detail = f"{label} — {series_label} : {count} revues ({percent} %)" if lang == "fr" else f"{label} — {series_label}: {count} journals ({percent}%)"
             parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label + " — " + series_label)}" data-tooltip-count="{count}" data-tooltip-percent="{percent}"><rect x="{x:.2f}" y="{y+5}" width="{w:.2f}" height="40" fill="{color}"/>')
             if w >= 45:
