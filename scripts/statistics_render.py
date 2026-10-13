@@ -145,7 +145,7 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
                 parts.append(f'<text x="{x+bar_width/2:.1f}" y="{y+height_value/2+5:.1f}" text-anchor="middle" style="font:700 14px Arial;fill:{text_color}">{text}</text>')
             base = y
         tx = x + bar_width / 2
-        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="end" transform="rotate(-32 {tx:.1f},{top+plot_height+22})" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
+        parts.append(f'<text x="{tx:.1f}" y="{top+plot_height+22}" text-anchor="end" transform="rotate(-90 {tx:.1f},{top+plot_height+22})" style="font:13px Arial;fill:#08264a">{esc(category)}</text>')
 
     parts.append(f'<line x1="{left}" y1="{top+plot_height}" x2="{width-right}" y2="{top+plot_height}" stroke="#dce7f2"/>')
     if average is not None and percent:
@@ -245,7 +245,7 @@ def _treemap_layout(values, width=920, height=450):
     return periodicity_treemap_rectangles(display, width, height)
 
 
-def category_treemap_svg(labels, values, lang, description):
+def category_treemap_svg(labels, values, lang, description, periodicity=False):
     width, height = 960, 490
     rects = _treemap_layout(values)
     rounded = _treemap_percentages(values)
@@ -265,40 +265,37 @@ def category_treemap_svg(labels, values, lang, description):
             f'fill="{color}" stroke="#fff" stroke-width="2"/>'
         )
         # Only show text when it fits, otherwise the tooltip is authoritative.
-        if rw >= 145 and rh >= 85:
+        if (rw >= 115 and rh >= 70) or (rw >= 42 and rh >= 130):
             text_color = "#fff" if i % len(BLUES) in (0, 1, 7) else "#08264a"
             cx, cy = x + rw / 2, y + rh / 2
-            words = label.split()
+            import textwrap
+            fragments = label.split(" (", 1) if periodicity and " (" in label else [label]
+            if len(fragments) == 2:
+                fragments[1] = "(" + fragments[1]
             lines = []
-            line = ""
-            max_chars = max(10, int(rw / 9))
-            for word in words:
-                candidate = (line + " " + word).strip()
-                if len(candidate) > max_chars and line:
-                    lines.append(line)
-                    line = word
-                else:
-                    line = candidate
-            if line:
-                lines.append(line)
-            if len(lines) <= max(1, int((rh - 40) / 18)):
+            for fragment in fragments:
+                lines.extend(textwrap.wrap(fragment, width=max(9, int(rw / 9)), break_long_words=False) or [fragment])
+            vertical = False
+            if (len(lines) * 18 + 28 > rh or any(len(line) * 8 > rw - 12 for line in lines)) and rw >= 42 and rh >= 130:
+                lines = []
+                for fragment in fragments:
+                    lines.extend(textwrap.wrap(fragment, width=max(9, int(rh / 9)), break_long_words=False) or [fragment])
+                vertical = len(lines) * 18 + 28 <= rw - 8 and all(len(line) * 8 <= rh - 14 for line in lines)
+            if vertical or (len(lines) * 18 + 28 <= rh - 8 and all(len(line) * 8 <= rw - 12 for line in lines)):
+                transform = f' transform="rotate(-90 {cx:.2f} {cy:.2f})"' if vertical else ""
+                parts.append(f'<g{transform} pointer-events="none">')
                 first_y = cy - (len(lines) * 18 + 22) / 2 + 14
                 for j, line in enumerate(lines):
-                    parts.append(
-                        f'<text x="{cx:.2f}" y="{first_y+j*18:.2f}" text-anchor="middle" '
-                        f'pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{esc(line)}</text>'
-                    )
-                parts.append(
-                    f'<text x="{cx:.2f}" y="{first_y+len(lines)*18+7:.2f}" text-anchor="middle" '
-                    f'pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>'
-                )
+                    parts.append(f'<text x="{cx:.2f}" y="{first_y+j*18:.2f}" text-anchor="middle" style="font:700 14px Arial;fill:{text_color}">{esc(line)}</text>')
+                parts.append(f'<text x="{cx:.2f}" y="{first_y+len(lines)*18+7:.2f}" text-anchor="middle" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
+                parts.append('</g>')
         parts.append('</g>')
     return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
 
 
 def periodicity_treemap_svg(values, lang):
     description = "Périodicité de publication" if lang == "fr" else "Publication frequency"
-    return category_treemap_svg(periodicity_display_labels(lang), values, lang, description)
+    return category_treemap_svg(periodicity_display_labels(lang), values, lang, description, periodicity=True)
 
 
 def export_jpg_category_treemap(chart_id, labels, values, lang="fr"):
@@ -313,14 +310,26 @@ def export_jpg_category_treemap(chart_id, labels, values, lang="fr"):
             continue
         x, y, w, h = rects[i]
         ax.add_patch(Rectangle((x, y), w, h, facecolor=BLUES[i % len(BLUES)], edgecolor="white", linewidth=2))
-        if w >= 145 and h >= 85:
-            color = "white" if i % len(BLUES) in (0, 1, 7) else "#08264a"
-            max_chars = max(10, int(w / 9))
+        if (w >= 115 and h >= 70) or (w >= 42 and h >= 130):
             import textwrap
-            lines = textwrap.wrap(label, width=max_chars)
-            if len(lines) <= max(1, int((h - 40) / 18)):
-                ax.text(x+w/2, y+h/2-10, "\\n".join(lines), ha="center", va="center", fontsize=10, color=color, fontweight="bold")
-                ax.text(x+w/2, y+h/2+max(18, len(lines)*9), f"{rounded[i]} %", ha="center", va="center", fontsize=12, color=color, fontweight="bold")
+            color = "white" if i % len(BLUES) in (0, 1, 7) else "#08264a"
+            periodicity = chart_id == "periodicite-revues"
+            fragments = label.split(" (", 1) if periodicity and " (" in label else [label]
+            if len(fragments) == 2:
+                fragments[1] = "(" + fragments[1]
+            lines = []
+            for fragment in fragments:
+                lines.extend(textwrap.wrap(fragment, width=max(9, int(w / 9)), break_long_words=False) or [fragment])
+            vertical = False
+            if (len(lines)*18+28 > h or any(len(line)*8 > w-12 for line in lines)) and w >= 42 and h >= 130:
+                lines = []
+                for fragment in fragments:
+                    lines.extend(textwrap.wrap(fragment, width=max(9, int(h / 9)), break_long_words=False) or [fragment])
+                vertical = len(lines)*18+28 <= w-8 and all(len(line)*8 <= h-14 for line in lines)
+            if vertical or (len(lines)*18+28 <= h-8 and all(len(line)*8 <= w-12 for line in lines)):
+                rotation = 90 if vertical else 0
+                ax.text(x+w/2, y+h/2-12, chr(10).join(lines), ha="center", va="center", fontsize=10, color=color, fontweight="bold", rotation=rotation)
+                ax.text(x+w/2, y+h/2+max(18, len(lines)*9), f"{rounded[i]} %", ha="center", va="center", fontsize=12, color=color, fontweight="bold", rotation=rotation)
     ax.set_xlim(0, 920)
     ax.set_ylim(450, 0)
     ax.set_aspect("equal")
@@ -378,6 +387,52 @@ def simple_category_legend(labels, lang):
         f'<span class="chart-legend-item"><span class="chart-legend-swatch" style="background:{BLUES[i]}" aria-hidden="true"></span><span>{esc(label)}</span></span>'
         for i, label in enumerate(labels)
     ) + '</div>'
+
+
+
+def structure_type_horizontal_svg(labels, values, lang):
+    """One horizontal 100% bar per editorial structure, like format access."""
+    total = sum(values)
+    percentages = _treemap_percentages(values)
+    width, left, right, top, row_height, bottom = 960, 205, 25, 20, 70, 20
+    height = top + len(labels) * row_height + bottom
+    plot_width = width - left - right
+    parts = []
+    for i, (label, count) in enumerate(zip(labels, values)):
+        y = top + i * row_height
+        lines = structure_access_display_lines(label, lang)
+        if len(lines) == 1 and len(label) > 24:
+            import textwrap
+            lines = textwrap.wrap(label, width=24, break_long_words=False)
+        first_y = y + 30 - (len(lines) - 1) * 17 / 2
+        for j, line in enumerate(lines):
+            parts.append(f'<text x="12" y="{first_y+j*17:.1f}" style="font:14px Arial;fill:#08264a">{esc(line)}</text>')
+        w = plot_width * count / total if total else 0
+        detail = f"{label} : {count} revues ({percentages[i]} %)" if lang == "fr" else f"{label}: {count} journals ({percentages[i]}%)"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{count}" data-tooltip-percent="{percentages[i]}"><rect x="{left}" y="{y+5}" width="{w:.2f}" height="40" fill="{BLUES[i % len(BLUES)]}"/>')
+        if w >= 42:
+            color = "#fff" if i % len(BLUES) in (0, 1, 7) else "#08264a"
+            parts.append(f'<text x="{left+w/2:.2f}" y="{y+30}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{color}">{percentages[i]} %</text>')
+        parts.append('</g>')
+    return f'<svg aria-label="{esc("Structures éditoriales" if lang == "fr" else "Editorial structures")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
+
+
+def export_jpg_structure_types(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    percentages = _treemap_percentages(values)
+    fig, ax = plt.subplots(figsize=(11, max(3.5, len(labels)*.8)), dpi=150)
+    widths = [100 * v / total if total else 0 for v in values]
+    bars = ax.barh(labels, widths, color=[BLUES[i % len(BLUES)] for i in range(len(labels))], height=.62)
+    for i, bar in enumerate(bars):
+        if widths[i] >= 6:
+            ax.text(widths[i]/2, bar.get_y()+bar.get_height()/2, f"{percentages[i]} %", ha="center", va="center", fontsize=10, color="white" if i % len(BLUES) in (0, 1, 7) else "#08264a", fontweight="bold")
+    ax.invert_yaxis()
+    ax.set_xlim(0, 100)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white", bbox_inches="tight")
+    plt.close(fig)
 
 
 def rights_legend(labels, lang):
@@ -459,7 +514,7 @@ def structure_access_display_lines(category, lang):
 
 def structure_access_horizontal_svg(categories, series, values, lang):
     """100% horizontal stacked bars, ordered by exact open-access rate."""
-    width, left, right, top, row_height, bottom = 960, 260, 35, 20, 70, 20
+    width, left, right, top, row_height, bottom = 960, 205, 25, 20, 70, 20
     height = top + row_height * len(categories) + bottom
     plot_width = width - left - right
     parts = []

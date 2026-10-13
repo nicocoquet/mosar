@@ -5,17 +5,17 @@ graphiques. Il ne contient ni lecture de données ni code de rendu SVG/JPEG.
 """
 
 TITLES = {
-    "proximite-revues": {"fr": "Répartition des revues selon le degré de proximité avec les universités Paris Nanterre, Paris 1 et la MSH Mondes", "en": "Distribution of journals by degree of proximity to Paris Nanterre University, Paris 1 University and MSH Mondes"},
-    "acces-ouvert-rattachement": {"fr": "Pourcentage de revues en accès ouvert selon le degré de rattachement", "en": "Percentage of open-access journals by degree of affiliation"},
-    "format-publication": {"fr": "Répartition des revues selon leur format de publication", "en": "Distribution of journals by publication format"},
-    "acces-format-publication": {"fr": "Nombre de revues diffusées en accès ouvert ou restreint selon leur format de publication", "en": "Number of open- or restricted-access journals by publication format"},
+    "proximite-revues": {"fr": "Ventilation des revues selon le degré de proximité", "en": "Breakdown of journals by degree of proximity"},
+    "acces-ouvert-rattachement": {"fr": "Ouverture selon le degré de proximité", "en": "Open access by degree of proximity"},
+    "format-publication": {"fr": "Ventilation des revues selon leur format de publication", "en": "Breakdown of journals by publication format"},
+    "acces-format-publication": {"fr": "Ouverture selon le format de publication", "en": "Open access by publication format"},
     "annee-creation": {"fr": "Répartition des revues selon leur année de création", "en": "Distribution of journals by year of creation"},
     "periode-creation": {"fr": "Répartition des revues selon leur période de création", "en": "Distribution of journals by period of creation"},
     "acces-date-creation": {"fr": "Nombre de revues en accès ouvert ou restreint selon la date de création", "en": "Number of open- or restricted-access journals by date of creation"},
     "periodicite-revues": {"fr": "Périodicité de publication", "en": "Publication frequency"},
     "disciplines-revues": {"fr": "Répartition des revues du périmètre selon la discipline", "en": "Distribution of journals in the corpus by discipline"},
     "structures-editoriales": {"fr": "Types de structures éditoriales des revues du périmètre", "en": "Types of editorial structures of journals in the corpus"},
-    "acces-structure-editoriale": {"fr": "Accès ouvert/restreint selon le type de structure éditoriale", "en": "Open/restricted access by editorial structure type"},
+    "acces-structure-editoriale": {"fr": "Ouverture selon le type de structure éditoriale", "en": "Open access by editorial structure type"},
     "droits-reutilisation": {"fr": "Droits de réutilisation", "en": "Reuse rights"},
 }
 
