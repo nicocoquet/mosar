@@ -12,7 +12,7 @@ TITLES = {
     "annee-creation": {"fr": "Répartition des revues selon leur année de création", "en": "Distribution of journals by year of creation"},
     "periode-creation": {"fr": "Répartition des revues selon leur période de création", "en": "Distribution of journals by period of creation"},
     "acces-date-creation": {"fr": "Nombre de revues en accès ouvert ou restreint selon la date de création", "en": "Number of open- or restricted-access journals by date of creation"},
-    "periodicite-revues": {"fr": "Périodicité des revues du périmètre", "en": "Publication frequency of journals in the corpus"},
+    "periodicite-revues": {"fr": "Périodicité de publication", "en": "Publication frequency"},
     "disciplines-revues": {"fr": "Répartition des revues du périmètre selon la discipline", "en": "Distribution of journals in the corpus by discipline"},
     "structures-editoriales": {"fr": "Types de structures éditoriales des revues du périmètre", "en": "Types of editorial structures of journals in the corpus"},
     "acces-structure-editoriale": {"fr": "Accès ouvert/restreint selon le type de structure éditoriale", "en": "Open/restricted access by editorial structure type"},
