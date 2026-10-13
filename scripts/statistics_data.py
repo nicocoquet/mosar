@@ -51,7 +51,7 @@ def read_rows(source):
         source.columns["creation_year"],
         source.columns["periodicity"],
         source.columns["discipline"],
-        source.columns["sector"],
+        *([source.columns["sector"]] if "sector" in source.columns else []),
         source.columns["publisher_type"],
         source.columns["licence"],
     ]
@@ -188,7 +188,7 @@ def derive(rows, source):
             raise SystemExit(f"Discipline non référencée ligne {rn}: {discipline!r}")
         disciplines[DISCIPLINE_MAP[discipline]] += 1
 
-        raw_sector = norm(row[columns["sector"]])
+        raw_sector = norm(row[columns["sector"]]) if "sector" in columns else ""
         sector_values = {part.strip().upper() for part in raw_sector.split("|") if part.strip()}
         if sector_values == {"SHS"}:
             sectors["SHS"] += 1
