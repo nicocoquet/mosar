@@ -16,7 +16,7 @@ TITLES = {
     "disciplines-revues": {"fr": "Répartition des revues du périmètre selon la discipline", "en": "Distribution of journals in the corpus by discipline"},
     "structures-editoriales": {"fr": "Types de structures éditoriales des revues du périmètre", "en": "Types of editorial structures of journals in the corpus"},
     "acces-structure-editoriale": {"fr": "Accès ouvert/restreint selon le type de structure éditoriale", "en": "Open/restricted access by editorial structure type"},
-    "droits-reutilisation": {"fr": "Type de droits de réutilisation", "en": "Reuse rights"},
+    "droits-reutilisation": {"fr": "Droits de réutilisation", "en": "Reuse rights"},
 }
 
 CHART_ORDER = tuple(TITLES)
