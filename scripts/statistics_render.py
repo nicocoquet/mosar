@@ -158,6 +158,60 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
     return f'<svg style="display:block;width:100%;max-width:900px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
+
+def structure_access_horizontal_svg(categories, series, values, lang):
+    """100% horizontal stacked bars, ordered by exact open-access rate."""
+    width, left, right, top, row_height, bottom = 960, 315, 35, 20, 70, 20
+    height = top + row_height * len(categories) + bottom
+    plot_width = width - left - right
+    parts = []
+    for i, category in enumerate(categories):
+        y = top + i * row_height
+        total = sum(values[category].values())
+        open_count = values[category].get("open", 0)
+        open_pct = round(100 * open_count / total) if total else 0
+        percentages = {"open": open_pct, "restricted": 100 - open_pct}
+        parts.append(f'<text x="{left-16}" y="{y+30}" text-anchor="end" style="font:14px Arial;fill:#08264a">{esc(category)}</text>')
+        x = left
+        for label, key, color in series:
+            count = values[category].get(key, 0)
+            segment_width = plot_width * count / total if total else 0
+            parts.append(f'<rect x="{x:.2f}" y="{y+5}" width="{segment_width:.2f}" height="40" fill="{color}"/>')
+            if segment_width >= 38:
+                color_text = "#fff" if key == "open" else "#08264a"
+                parts.append(f'<text x="{x+segment_width/2:.2f}" y="{y+30}" text-anchor="middle" style="font:700 14px Arial;fill:{color_text}">{percentages[key]} %</text>')
+            x += segment_width
+    return f'<svg role="img" aria-label="{esc("Accès ouvert et restreint par structure éditoriale" if lang == "fr" else "Open and restricted access by editorial structure")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
+
+
+def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(11, max(3.5, len(categories) * .8)), dpi=150)
+    lefts = [0.0] * len(categories)
+    for label, key, color in series:
+        widths = []
+        for category in categories:
+            total = sum(values[category].values())
+            widths.append(100 * values[category].get(key, 0) / total if total else 0)
+        bars = ax.barh(categories, widths, left=lefts, label=label, color=color, height=.62)
+        for i, bar in enumerate(bars):
+            if widths[i] >= 6:
+                total = sum(values[categories[i]].values())
+                open_pct = round(100 * values[categories[i]].get("open", 0) / total) if total else 0
+                pct = open_pct if key == "open" else 100 - open_pct
+                ax.text(lefts[i] + widths[i] / 2, bar.get_y() + bar.get_height() / 2,
+                        f"{pct} %", ha="center", va="center", fontsize=10,
+                        color="white" if key == "open" else "#08264a", fontweight="bold")
+        lefts = [a+b for a, b in zip(lefts, widths)]
+    ax.invert_yaxis()
+    ax.set_xlim(0, 100)
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", facecolor="white", bbox_inches="tight")
+    plt.close(fig)
+
+
 def bar_svg(labels, values):
     width, height, left, right, top, bottom = 960, 430, 55, 25, 25, 95
     plot_width = width - left - right

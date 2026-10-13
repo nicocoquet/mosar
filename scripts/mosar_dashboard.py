@@ -15,7 +15,7 @@ TITLES = {
     "periodicite-revues": {"fr": "Périodicité des revues du périmètre", "en": "Publication frequency of journals in the corpus"},
     "disciplines-revues": {"fr": "Répartition des revues du périmètre selon la discipline", "en": "Distribution of journals in the corpus by discipline"},
     "structures-editoriales": {"fr": "Types de structures éditoriales des revues du périmètre", "en": "Types of editorial structures of journals in the corpus"},
-    "acces-structure-editoriale": {"fr": "Pourcentage de revues en accès ouvert ou restreint selon le type de structure éditoriale", "en": "Percentage of open- or restricted-access journals by editorial structure type"},
+    "acces-structure-editoriale": {"fr": "Accès ouvert/restreint selon le type de structure éditoriale", "en": "Open/restricted access by editorial structure type"},
     "droits-reutilisation": {"fr": "Type de droits de réutilisation", "en": "Reuse rights"},
 }
 
