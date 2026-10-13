@@ -225,73 +225,102 @@ def periodicity_treemap_rectangles(values, width=920, height=450):
     return result
 
 
-def periodicity_treemap_svg(values, lang):
-    labels = periodicity_display_labels(lang)
+
+def _treemap_percentages(values):
     total = sum(values)
-    width, height = 960, 490
-    rects = periodicity_treemap_rectangles(values, 920, 450)
-    exact = [100 * v / total if total else 0 for v in values]
-    rounded = [math.floor(v) for v in exact]
+    exact = [100 * value / total if total else 0 for value in values]
+    rounded = [math.floor(value) for value in exact]
     for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:100 - sum(rounded) if total else 0]:
         rounded[i] += 1
+    return rounded
+
+
+def _treemap_layout(values, width=920, height=450):
+    """Keep tiny positive values visible; all rectangles remain interactive."""
+    # Reserve at least 0.35% of the canvas for each positive category.
+    # This is a visual minimum, not a modification of statistical values.
+    total = sum(values)
+    floor = total * .0035
+    display = [max(value, floor) if value else 0 for value in values]
+    return periodicity_treemap_rectangles(display, width, height)
+
+
+def category_treemap_svg(labels, values, lang, description):
+    width, height = 960, 490
+    rects = _treemap_layout(values)
+    rounded = _treemap_percentages(values)
     parts = []
     for i, (label, count) in enumerate(zip(labels, values)):
         if not count or i not in rects:
             continue
         rx, ry, rw, rh = rects[i]
         x, y = rx + 20, ry + 20
-        color = BLUES[i]
+        color = BLUES[i % len(BLUES)]
         detail = f"{label} : {count} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {count} journals ({rounded[i]}%)"
         parts.append(
             f'<g class="chart-tooltip-target" tabindex="0" role="button" '
             f'aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" '
             f'data-tooltip-count="{count}" data-tooltip-percent="{rounded[i]}">'
             f'<rect x="{x:.2f}" y="{y:.2f}" width="{rw:.2f}" height="{rh:.2f}" '
-            f'fill="{color}" stroke="#fff" stroke-width="4"/>'
+            f'fill="{color}" stroke="#fff" stroke-width="2"/>'
         )
-        if rw >= 92 and rh >= 58:
-            text_color = "#fff" if i in (0, 1, 7) else "#08264a"
+        # Only show text when it fits, otherwise the tooltip is authoritative.
+        if rw >= 145 and rh >= 85:
+            text_color = "#fff" if i % len(BLUES) in (0, 1, 7) else "#08264a"
             cx, cy = x + rw / 2, y + rh / 2
-            parts.append(
-                f'<text x="{cx:.2f}" y="{cy-5:.2f}" text-anchor="middle" '
-                f'pointer-events="none" style="font:700 20px Arial;fill:{text_color}">'
-                f'{rounded[i]} %</text>'
-                f'<text x="{cx:.2f}" y="{cy+19:.2f}" text-anchor="middle" '
-                f'pointer-events="none" style="font:15px Arial;fill:{text_color}">'
-                f'{count} {"revues" if lang == "fr" else "journals"}</text>'
-            )
-        elif rw >= 50 and rh >= 30:
-            parts.append(
-                f'<text x="{x+rw/2:.2f}" y="{y+rh/2+5:.2f}" text-anchor="middle" '
-                f'pointer-events="none" style="font:700 13px Arial;fill:#08264a">{rounded[i]} %</text>'
-            )
+            words = label.split()
+            lines = []
+            line = ""
+            max_chars = max(10, int(rw / 9))
+            for word in words:
+                candidate = (line + " " + word).strip()
+                if len(candidate) > max_chars and line:
+                    lines.append(line)
+                    line = word
+                else:
+                    line = candidate
+            if line:
+                lines.append(line)
+            if len(lines) <= max(1, int((rh - 40) / 18)):
+                first_y = cy - (len(lines) * 18 + 22) / 2 + 14
+                for j, line in enumerate(lines):
+                    parts.append(
+                        f'<text x="{cx:.2f}" y="{first_y+j*18:.2f}" text-anchor="middle" '
+                        f'pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{esc(line)}</text>'
+                    )
+                parts.append(
+                    f'<text x="{cx:.2f}" y="{first_y+len(lines)*18+7:.2f}" text-anchor="middle" '
+                    f'pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>'
+                )
         parts.append('</g>')
-    description = "Répartition des revues selon leur périodicité de publication" if lang == "fr" else "Distribution of journals by publication frequency"
     return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
 
 
-def export_jpg_periodicity_treemap(chart_id, values, lang="fr"):
+def periodicity_treemap_svg(values, lang):
+    description = "Périodicité de publication" if lang == "fr" else "Publication frequency"
+    return category_treemap_svg(periodicity_display_labels(lang), values, lang, description)
+
+
+def export_jpg_category_treemap(chart_id, labels, values, lang="fr"):
+    from matplotlib.patches import Rectangle
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
-    total = sum(values)
-    exact = [100 * v / total if total else 0 for v in values]
-    rounded = [math.floor(v) for v in exact]
-    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:100 - sum(rounded) if total else 0]:
-        rounded[i] += 1
-    rects = periodicity_treemap_rectangles(values, 920, 450)
-    from matplotlib.patches import Rectangle
+    rects = _treemap_layout(values)
+    rounded = _treemap_percentages(values)
     fig, ax = plt.subplots(figsize=(12, 6), dpi=150)
-    for i, count in enumerate(values):
+    for i, (label, count) in enumerate(zip(labels, values)):
         if not count or i not in rects:
             continue
         x, y, w, h = rects[i]
-        ax.add_patch(Rectangle((x, y), w, h, facecolor=BLUES[i], edgecolor="white", linewidth=3))
-        if w >= 92 and h >= 58:
-            color = "white" if i in (0, 1, 7) else "#08264a"
-            ax.text(x+w/2, y+h/2-10, f"{rounded[i]} %", ha="center", va="center", fontsize=15, color=color, fontweight="bold")
-            ax.text(x+w/2, y+h/2+13, f"{count} " + ("revues" if lang == "fr" else "journals"), ha="center", va="center", fontsize=11, color=color)
-        elif w >= 50 and h >= 30:
-            ax.text(x+w/2, y+h/2, f"{rounded[i]} %", ha="center", va="center", fontsize=10, color="#08264a")
+        ax.add_patch(Rectangle((x, y), w, h, facecolor=BLUES[i % len(BLUES)], edgecolor="white", linewidth=2))
+        if w >= 145 and h >= 85:
+            color = "white" if i % len(BLUES) in (0, 1, 7) else "#08264a"
+            max_chars = max(10, int(w / 9))
+            import textwrap
+            lines = textwrap.wrap(label, width=max_chars)
+            if len(lines) <= max(1, int((h - 40) / 18)):
+                ax.text(x+w/2, y+h/2-10, "\\n".join(lines), ha="center", va="center", fontsize=10, color=color, fontweight="bold")
+                ax.text(x+w/2, y+h/2+max(18, len(lines)*9), f"{rounded[i]} %", ha="center", va="center", fontsize=12, color=color, fontweight="bold")
     ax.set_xlim(0, 920)
     ax.set_ylim(450, 0)
     ax.set_aspect("equal")
@@ -300,6 +329,55 @@ def export_jpg_periodicity_treemap(chart_id, values, lang="fr"):
     fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
     plt.close(fig)
 
+
+def export_jpg_periodicity_treemap(chart_id, values, lang="fr"):
+    export_jpg_category_treemap(chart_id, periodicity_display_labels(lang), values, lang)
+
+
+def format_horizontal_svg(labels, values, lang):
+    total = sum(values)
+    rounded = _treemap_percentages(values)
+    width, height, left, top, bar_width, bar_height = 960, 110, 25, 25, 910, 56
+    x = left
+    parts = []
+    for i, (label, value) in enumerate(zip(labels, values)):
+        w = bar_width * value / total if total else 0
+        detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{value}" data-tooltip-percent="{rounded[i]}"><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{BLUES[i]}"/>')
+        if w >= 34:
+            color = "#fff" if i in (0, 1) else "#08264a"
+            parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{color}">{rounded[i]} %</text>')
+        parts.append('</g>')
+        x += w
+    return f'<svg aria-label="{esc("Formats de publication" if lang == "fr" else "Publication formats")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
+
+
+def export_jpg_format_horizontal(chart_id, labels, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    rounded = _treemap_percentages(values)
+    fig, ax = plt.subplots(figsize=(10, 2.2), dpi=150)
+    x = 0
+    for i, (label, value) in enumerate(zip(labels, values)):
+        pct = 100 * value / total if total else 0
+        ax.barh([0], [pct], left=x, height=.55, color=BLUES[i], label=label)
+        if pct >= 3.7:
+            ax.text(x+pct/2, 0, f"{rounded[i]} %", ha="center", va="center", color="white" if i in (0, 1) else "#08264a", fontweight="bold", fontsize=10)
+        x += pct
+    ax.set_xlim(0, 100)
+    ax.set_yticks([])
+    ax.legend(loc="upper center", bbox_to_anchor=(.5, -.05), fontsize=8, ncol=1)
+    fig.tight_layout()
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
+def simple_category_legend(labels, lang):
+    return '<div class="chart-legend" role="group" aria-label="' + ("Légende" if lang == "fr" else "Legend") + '">' + "".join(
+        f'<span class="chart-legend-item"><span class="chart-legend-swatch" style="background:{BLUES[i]}" aria-hidden="true"></span><span>{esc(label)}</span></span>'
+        for i, label in enumerate(labels)
+    ) + '</div>'
 
 
 def rights_legend(labels, lang):
