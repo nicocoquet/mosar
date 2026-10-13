@@ -245,7 +245,7 @@ def _treemap_layout(values, width=920, height=450):
     return periodicity_treemap_rectangles(display, width, height)
 
 
-def category_treemap_svg(labels, values, lang, description):
+def category_treemap_svg(labels, values, lang, description, periodicity=False):
     width, height = 960, 490
     rects = _treemap_layout(values)
     rounded = _treemap_percentages(values)
@@ -265,40 +265,37 @@ def category_treemap_svg(labels, values, lang, description):
             f'fill="{color}" stroke="#fff" stroke-width="2"/>'
         )
         # Only show text when it fits, otherwise the tooltip is authoritative.
-        if rw >= 145 and rh >= 85:
+        if (rw >= 115 and rh >= 70) or (rw >= 42 and rh >= 130):
             text_color = "#fff" if i % len(BLUES) in (0, 1, 7) else "#08264a"
             cx, cy = x + rw / 2, y + rh / 2
-            words = label.split()
+            import textwrap
+            fragments = label.split(" (", 1) if periodicity and " (" in label else [label]
+            if len(fragments) == 2:
+                fragments[1] = "(" + fragments[1]
             lines = []
-            line = ""
-            max_chars = max(10, int(rw / 9))
-            for word in words:
-                candidate = (line + " " + word).strip()
-                if len(candidate) > max_chars and line:
-                    lines.append(line)
-                    line = word
-                else:
-                    line = candidate
-            if line:
-                lines.append(line)
-            if len(lines) <= max(1, int((rh - 40) / 18)):
+            for fragment in fragments:
+                lines.extend(textwrap.wrap(fragment, width=max(9, int(rw / 9)), break_long_words=False) or [fragment])
+            vertical = False
+            if (len(lines) * 18 + 28 > rh or any(len(line) * 8 > rw - 12 for line in lines)) and rw >= 42 and rh >= 130:
+                lines = []
+                for fragment in fragments:
+                    lines.extend(textwrap.wrap(fragment, width=max(9, int(rh / 9)), break_long_words=False) or [fragment])
+                vertical = len(lines) * 18 + 28 <= rw - 8 and all(len(line) * 8 <= rh - 14 for line in lines)
+            if vertical or (len(lines) * 18 + 28 <= rh - 8 and all(len(line) * 8 <= rw - 12 for line in lines)):
+                transform = f' transform="rotate(-90 {cx:.2f} {cy:.2f})"' if vertical else ""
+                parts.append(f'<g{transform} pointer-events="none">')
                 first_y = cy - (len(lines) * 18 + 22) / 2 + 14
                 for j, line in enumerate(lines):
-                    parts.append(
-                        f'<text x="{cx:.2f}" y="{first_y+j*18:.2f}" text-anchor="middle" '
-                        f'pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{esc(line)}</text>'
-                    )
-                parts.append(
-                    f'<text x="{cx:.2f}" y="{first_y+len(lines)*18+7:.2f}" text-anchor="middle" '
-                    f'pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>'
-                )
+                    parts.append(f'<text x="{cx:.2f}" y="{first_y+j*18:.2f}" text-anchor="middle" style="font:700 14px Arial;fill:{text_color}">{esc(line)}</text>')
+                parts.append(f'<text x="{cx:.2f}" y="{first_y+len(lines)*18+7:.2f}" text-anchor="middle" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
+                parts.append('</g>')
         parts.append('</g>')
     return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
 
 
 def periodicity_treemap_svg(values, lang):
     description = "Périodicité de publication" if lang == "fr" else "Publication frequency"
-    return category_treemap_svg(periodicity_display_labels(lang), values, lang, description)
+    return category_treemap_svg(periodicity_display_labels(lang), values, lang, description, periodicity=True)
 
 
 def export_jpg_category_treemap(chart_id, labels, values, lang="fr"):
