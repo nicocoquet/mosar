@@ -411,6 +411,49 @@ Cette organisation constitue le socle actuel du projet. Elle ne signifie pas que
 
 Restent notamment spécifiques à Mosar : les règles analytiques, certaines catégories statistiques, les textes éditoriaux et l’identité visuelle.
 
+
+## Administration et service FastAPI
+
+L'interface d'administration Mosar est fournie par les pages `docs/admin.md` et `docs/admin.en.md`. Elle utilise le service FastAPI indépendant situé dans `service/`, notamment pour l'authentification GitHub, la prévisualisation et la publication contrôlée du classeur XLSX expurgé. Le service ne conserve pas le fichier XLSX source sur disque ni dans le dépôt GitHub.
+
+### Configuration du service
+
+Variables d'environnement à configurer sur le service d'hébergement, **sans versionner les secrets** :
+
+- `GITHUB_CLIENT_ID` : identifiant de l'application OAuth GitHub Mosar ;
+- `GITHUB_CLIENT_SECRET` : secret de cette application ;
+- `SESSION_SECRET` : chaîne aléatoire d'au moins 32 caractères ;
+- `GITHUB_REPOSITORY` : dépôt cible (`nicocoquet/mosar` par défaut) ;
+- `PAGES_URL` : URL du site (`https://nicocoquet.github.io/mosar/` par défaut) ;
+- `ALLOWED_USERS` : identifiants GitHub autorisés, séparés par des virgules.
+
+L'URL de rappel OAuth est `https://<service-render>/auth/callback` (remplacer `<service-render>` par le domaine réel du service).
+
+### API d'administration
+
+| Méthode et route | Fonction |
+| --- | --- |
+| `GET /health` | Contrôle de disponibilité |
+| `GET /auth/github` et `GET /auth/callback` | Authentification OAuth GitHub |
+| `GET /auth/session` | Vérification de la session |
+| `POST /api/preview` | Prévisualisation du classeur : JSON avec `filename` et `content` (base64), renvoyant un rapport et un jeton de prévisualisation |
+| `POST /api/publish` | Publication après validation : JSON avec `filename`, `content` (base64) et `preview_token` ; revalidation puis publication du XLSX expurgé |
+| `GET /api/jobs/{job_token}` | État du workflow GitHub Actions |
+
+Les endpoints métier protégés utilisent l'en-tête `Authorization: Bearer <session>`.
+
+### Développement et tests locaux du service
+
+Depuis la racine du dépôt :
+
+```bash
+python -m pip install -r service/requirements.txt
+python -m unittest discover -s tests -p 'test_service_api.py' -v
+SESSION_SECRET="une-longue-cle-aleatoire-de-plus-de-32-caracteres" uvicorn service.main:app --reload
+```
+
+Les sessions sont conservées en mémoire : un redémarrage du service entraîne une nouvelle authentification. La présence de la page d'administration dans le site statique ne constitue pas en soi un mécanisme de contrôle d'accès ; la protection des opérations repose sur le service et ses autorisations.
+
 ## Licence et réutilisation
 
 Les conditions de licence du code, des contenus et des ressources graphiques doivent encore être précisées explicitement avant de présenter le dépôt comme un paquet réutilisable autonome. Les métadonnées provenant de services externes restent soumises aux conditions de leurs sources respectives.
