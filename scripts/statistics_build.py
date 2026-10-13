@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -174,14 +174,25 @@ def build(data, lang):
     export_jpg_stacked("acces-date-creation", labels, series, grouped, lang=lang)
     out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang)))
 
-    categories = list(PERIODICITY_CATEGORIES)
+    # Presentation order follows publication frequency, not population size.
+    categories = [
+        "Plus de 4 nᵒˢ/an",
+        "Trimestriel (4 nᵒˢ/an)",
+        "Quadrimestriel (3 nᵒˢ/an)",
+        "Semestriel (2 nᵒˢ/an)",
+        "Annuel (1 nᵒ/an)",
+        "Un numéro tous les deux ans",
+        "Parution continue",
+        "Parution irrégulière",
+    ]
+    assert set(categories) == set(PERIODICITY_CATEGORIES)
     values = [data["periodicities"][c] for c in categories]
     labels = translate_categories(categories, lang)
-    svg = pie_svg(labels, values, lang)
+    svg = periodicity_treemap_svg(values, lang)
     export_table("periodicite-revues", ["Périodicité", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("periodicite-revues", svg, lang=lang)
-    export_jpg_pie("periodicite-revues", labels, values, lang=lang)
-    out.append(block("periodicite-revues", svg, lang, legend_html=pie_legend(labels, values, lang)))
+    export_jpg_periodicity_treemap("periodicite-revues", values, lang=lang)
+    out.append(block("periodicite-revues", svg, lang, legend_html=periodicity_legend(lang)))
 
     categories = [c for c, _ in data["disciplines"].most_common()]
     values = [data["disciplines"][c] for c in categories]

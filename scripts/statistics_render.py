@@ -160,6 +160,148 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
 
 
+
+def periodicity_display_labels(lang):
+    """Ordered presentation labels, independent of source category keys."""
+    if lang == "fr":
+        return (
+            "Plus de 4 nᵒˢ/an", "Trimestriel (4 nᵒˢ/an)",
+            "Quadrimestriel (3 nᵒˢ/an)", "Semestriel (2 nᵒˢ/an)",
+            "Annuel (1 nᵒ/an)", "Biennal (0,5 nᵒ/an)",
+            "Parution continue", "Parution irrégulière",
+        )
+    return (
+        "More than 4 issues/year", "Quarterly (4 issues/year)",
+        "Three issues/year", "Semiannual (2 issues/year)",
+        "Annual (1 issue/year)", "Biennial (0.5 issue/year)",
+        "Continuous publication", "Irregular publication",
+    )
+
+
+def periodicity_legend(lang):
+    """Frequency-ordered legend without numerical counts."""
+    labels = periodicity_display_labels(lang)
+    entries = []
+    for i, label in enumerate(labels):
+        if lang == "fr":
+            label = (esc(label).replace("nᵒˢ", "n<sup>os</sup>")
+                     .replace("nᵒ", "n<sup>o</sup>"))
+        else:
+            label = esc(label)
+        entries.append(
+            f'<span class="chart-legend-item"><span class="chart-legend-swatch" '
+            f'style="background:{BLUES[i]}" aria-hidden="true"></span><span>{label}</span></span>'
+        )
+    return '<div class="chart-legend" role="group" aria-label="' + ('Légende' if lang == 'fr' else 'Legend') + '">' + ''.join(entries) + '</div>'
+
+
+def periodicity_treemap_rectangles(values, width=920, height=450):
+    """Binary treemap: exact area shares, stable order by size for layout only."""
+    items = sorted(enumerate(values), key=lambda pair: (-pair[1], pair[0]))
+    result = {}
+    def partition(group, x, y, w, h):
+        if not group:
+            return
+        if len(group) == 1:
+            result[group[0][0]] = (x, y, w, h)
+            return
+        total = sum(value for _, value in group)
+        if not total:
+            return
+        half = total / 2
+        cut = 1
+        running = group[0][1]
+        while cut < len(group) - 1 and abs(running + group[cut][1] - half) < abs(running - half):
+            running += group[cut][1]
+            cut += 1
+        share = running / total
+        if w >= h:
+            partition(group[:cut], x, y, w * share, h)
+            partition(group[cut:], x + w * share, y, w * (1 - share), h)
+        else:
+            partition(group[:cut], x, y, w, h * share)
+            partition(group[cut:], x, y + h * share, w, h * (1 - share))
+    partition(items, 0, 0, width, height)
+    return result
+
+
+def periodicity_treemap_svg(values, lang):
+    labels = periodicity_display_labels(lang)
+    total = sum(values)
+    width, height = 960, 490
+    rects = periodicity_treemap_rectangles(values, 920, 450)
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:100 - sum(rounded) if total else 0]:
+        rounded[i] += 1
+    parts = []
+    for i, (label, count) in enumerate(zip(labels, values)):
+        if not count or i not in rects:
+            continue
+        rx, ry, rw, rh = rects[i]
+        x, y = rx + 20, ry + 20
+        color = BLUES[i]
+        detail = f"{label} : {count} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {count} journals ({rounded[i]}%)"
+        parts.append(
+            f'<g class="chart-tooltip-target" tabindex="0" role="button" '
+            f'aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" '
+            f'data-tooltip-count="{count}" data-tooltip-percent="{rounded[i]}">'
+            f'<rect x="{x:.2f}" y="{y:.2f}" width="{rw:.2f}" height="{rh:.2f}" '
+            f'fill="{color}" stroke="#fff" stroke-width="4"/>'
+        )
+        if rw >= 92 and rh >= 58:
+            text_color = "#fff" if i in (0, 1, 7) else "#08264a"
+            cx, cy = x + rw / 2, y + rh / 2
+            parts.append(
+                f'<text x="{cx:.2f}" y="{cy-5:.2f}" text-anchor="middle" '
+                f'pointer-events="none" style="font:700 20px Arial;fill:{text_color}">'
+                f'{rounded[i]} %</text>'
+                f'<text x="{cx:.2f}" y="{cy+19:.2f}" text-anchor="middle" '
+                f'pointer-events="none" style="font:15px Arial;fill:{text_color}">'
+                f'{count} {"revues" if lang == "fr" else "journals"}</text>'
+            )
+        elif rw >= 50 and rh >= 30:
+            parts.append(
+                f'<text x="{x+rw/2:.2f}" y="{y+rh/2+5:.2f}" text-anchor="middle" '
+                f'pointer-events="none" style="font:700 13px Arial;fill:#08264a">{rounded[i]} %</text>'
+            )
+        parts.append('</g>')
+    description = "Répartition des revues selon leur périodicité de publication" if lang == "fr" else "Distribution of journals by publication frequency"
+    return f'<svg aria-label="{esc(description)}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + '</svg>'
+
+
+def export_jpg_periodicity_treemap(chart_id, values, lang="fr"):
+    destination = downloads_for(lang)
+    destination.mkdir(parents=True, exist_ok=True)
+    total = sum(values)
+    exact = [100 * v / total if total else 0 for v in values]
+    rounded = [math.floor(v) for v in exact]
+    for i in sorted(range(len(values)), key=lambda i: (-(exact[i] - rounded[i]), i))[:100 - sum(rounded) if total else 0]:
+        rounded[i] += 1
+    rects = periodicity_treemap_rectangles(values, 920, 450)
+    from matplotlib.patches import Rectangle
+    fig, ax = plt.subplots(figsize=(12, 6), dpi=150)
+    for i, count in enumerate(values):
+        if not count or i not in rects:
+            continue
+        x, y, w, h = rects[i]
+        ax.add_patch(Rectangle((x, y), w, h, facecolor=BLUES[i], edgecolor="white", linewidth=3))
+        if w >= 92 and h >= 58:
+            color = "white" if i in (0, 1, 7) else "#08264a"
+            ax.text(x+w/2, y+h/2-10, f"{rounded[i]} %", ha="center", va="center", fontsize=15, color=color, fontweight="bold")
+            ax.text(x+w/2, y+h/2+13, f"{count} " + ("revues" if lang == "fr" else "journals"), ha="center", va="center", fontsize=11, color=color)
+        elif w >= 50 and h >= 30:
+            ax.text(x+w/2, y+h/2, f"{rounded[i]} %", ha="center", va="center", fontsize=10, color="#08264a")
+    ax.set_xlim(0, 920)
+    ax.set_ylim(450, 0)
+    ax.set_aspect("equal")
+    ax.axis("off")
+    fig.tight_layout(pad=.2)
+    fig.savefig(destination / f"{chart_id}.jpg", bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
+
 def rights_legend(labels, lang):
     """Legend for the three distinct rights categories, without counts."""
     names = (
