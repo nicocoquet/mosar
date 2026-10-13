@@ -10,7 +10,7 @@
 const fs = require('fs');
 const vm = require('vm');
 
-const scriptPath = 'docs/assets/javascripts/revues-exploration.js';
+const scriptPath = 'docs/javascripts/journals-exploration.js';
 const source = fs.readFileSync(scriptPath, 'utf8');
 
 new vm.Script(source, { filename: scriptPath });

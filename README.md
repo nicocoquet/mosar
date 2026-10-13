@@ -202,8 +202,8 @@ generate_journals_exploration.py
 Le générateur produit actuellement :
 
 ```text
-docs/assets/data/revues-exploration.json
-data/revues/join-report.json
+docs/data/journals-exploration.json
+data/journals/join-report.json
 docs/revues.md
 docs/revues.en.md
 ```
@@ -213,9 +213,9 @@ Le rapport de jointure permet de contrôler les identifiants communs aux deux so
 L’interface de consultation est exécutée dans le navigateur. Elle repose principalement sur :
 
 ```text
-docs/assets/javascripts/revues-exploration.js
-docs/assets/javascripts/revues-config.js
-docs/assets/stylesheets/revues-exploration.css
+docs/javascripts/journals-exploration.js
+docs/javascripts/journals-config.js
+docs/stylesheets/journals-exploration.css
 ```
 
 Elle fournit notamment recherche, facettes, filtres actifs, tri et cartes de revues. Les composants propres à cet explorateur utilisent le préfixe `.rx-` afin de limiter les collisions avec le thème du site.
@@ -410,6 +410,49 @@ MkDocs / interface web
 Cette organisation constitue le socle actuel du projet. Elle ne signifie pas que le site Mosar et ses pipelines de traitements soient déjà génériques et prêts à être déployés tel quel dans n’importe quel contexte.
 
 Restent notamment spécifiques à Mosar : les règles analytiques, certaines catégories statistiques, les textes éditoriaux et l’identité visuelle.
+
+
+## Administration et service FastAPI
+
+L'interface d'administration Mosar est fournie par les pages `docs/admin.md` et `docs/admin.en.md`. Elle utilise le service FastAPI indépendant situé dans `service/`, notamment pour l'authentification GitHub, la prévisualisation et la publication contrôlée du classeur XLSX expurgé. Le service ne conserve pas le fichier XLSX source sur disque ni dans le dépôt GitHub.
+
+### Configuration du service
+
+Variables d'environnement à configurer sur le service d'hébergement, **sans versionner les secrets** :
+
+- `GITHUB_CLIENT_ID` : identifiant de l'application OAuth GitHub Mosar ;
+- `GITHUB_CLIENT_SECRET` : secret de cette application ;
+- `SESSION_SECRET` : chaîne aléatoire d'au moins 32 caractères ;
+- `GITHUB_REPOSITORY` : dépôt cible (`nicocoquet/mosar` par défaut) ;
+- `PAGES_URL` : URL du site (`https://nicocoquet.github.io/mosar/` par défaut) ;
+- `ALLOWED_USERS` : identifiants GitHub autorisés, séparés par des virgules.
+
+L'URL de rappel OAuth est `https://<service-render>/auth/callback` (remplacer `<service-render>` par le domaine réel du service).
+
+### API d'administration
+
+| Méthode et route | Fonction |
+| --- | --- |
+| `GET /health` | Contrôle de disponibilité |
+| `GET /auth/github` et `GET /auth/callback` | Authentification OAuth GitHub |
+| `GET /auth/session` | Vérification de la session |
+| `POST /api/preview` | Prévisualisation du classeur : JSON avec `filename` et `content` (base64), renvoyant un rapport et un jeton de prévisualisation |
+| `POST /api/publish` | Publication après validation : JSON avec `filename`, `content` (base64) et `preview_token` ; revalidation puis publication du XLSX expurgé |
+| `GET /api/jobs/{job_token}` | État du workflow GitHub Actions |
+
+Les endpoints métier protégés utilisent l'en-tête `Authorization: Bearer <session>`.
+
+### Développement et tests locaux du service
+
+Depuis la racine du dépôt :
+
+```bash
+python -m pip install -r service/requirements.txt
+python -m unittest discover -s tests -p 'test_service_api.py' -v
+SESSION_SECRET="une-longue-cle-aleatoire-de-plus-de-32-caracteres" uvicorn service.main:app --reload
+```
+
+Les sessions sont conservées en mémoire : un redémarrage du service entraîne une nouvelle authentification. La présence de la page d'administration dans le site statique ne constitue pas en soi un mécanisme de contrôle d'accès ; la protection des opérations repose sur le service et ses autorisations.
 
 ## Licence et réutilisation
 
