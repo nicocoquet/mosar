@@ -159,6 +159,16 @@ def stacked_svg(categories, series, values, lang, percent=False, average=None):
 
 
 
+def structure_access_display_lines(category, lang):
+    """Presentation-only labels; preserve original category keys and exports."""
+    if lang == "fr":
+        if category == "Organisme public de recherche":
+            return ("Organisme public", "de recherche")
+        if category == "Coédition éditeur privé & structure publique ou associative":
+            return ("Éditeur privé/structure publique", "ou associative")
+    return (category,)
+
+
 def structure_access_horizontal_svg(categories, series, values, lang):
     """100% horizontal stacked bars, ordered by exact open-access rate."""
     width, left, right, top, row_height, bottom = 960, 315, 35, 20, 70, 20
@@ -171,7 +181,11 @@ def structure_access_horizontal_svg(categories, series, values, lang):
         open_count = values[category].get("open", 0)
         open_pct = round(100 * open_count / total) if total else 0
         percentages = {"open": open_pct, "restricted": 100 - open_pct}
-        parts.append(f'<text x="{left-16}" y="{y+30}" text-anchor="end" style="font:14px Arial;fill:#08264a">{esc(category)}</text>')
+        lines = structure_access_display_lines(category, lang)
+        line_height = 17
+        first_y = y + 30 - (len(lines) - 1) * line_height / 2
+        tspans = "".join(f'<tspan x="{left-16}" y="{first_y+j*line_height:.1f}">{esc(line)}</tspan>' for j, line in enumerate(lines))
+        parts.append(f'<text text-anchor="end" style="font:14px Arial;fill:#08264a">{tspans}</text>')
         x = left
         for label, key, color in series:
             count = values[category].get(key, 0)
@@ -188,13 +202,14 @@ def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="
     destination = downloads_for(lang)
     destination.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, max(3.5, len(categories) * .8)), dpi=150)
+    display_labels = ["\\n".join(structure_access_display_lines(category, lang)) for category in categories]
     lefts = [0.0] * len(categories)
     for label, key, color in series:
         widths = []
         for category in categories:
             total = sum(values[category].values())
             widths.append(100 * values[category].get(key, 0) / total if total else 0)
-        bars = ax.barh(categories, widths, left=lefts, label=label, color=color, height=.62)
+        bars = ax.barh(display_labels, widths, left=lefts, label=label, color=color, height=.62)
         for i, bar in enumerate(bars):
             if widths[i] >= 6:
                 total = sum(values[categories[i]].values())
