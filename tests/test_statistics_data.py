@@ -12,11 +12,33 @@ sys.path.insert(
 
 from statistics_data import (
     ALLOWED_STRUCTURES, DISCIPLINE_MAP, FORMAT_MAP, PROXIMITY_LEVELS,
-    derive, periodicity, year,
+    derive, periodicity, year, creation_quantiles,
 )
 
 
 class StatisticsDataTests(unittest.TestCase):
+
+    def test_quantiles_preserve_same_year_and_totals(self):
+        from collections import Counter
+        years = {
+            1900: Counter(open=3, restricted=1),
+            1901: Counter(open=2),
+            1950: Counter(restricted=5),
+            1980: Counter(open=4),
+            2000: Counter(restricted=3),
+            2020: Counter(open=2),
+        }
+        groups = creation_quantiles(years, groups=4)
+        self.assertEqual(len(groups), 4)
+        self.assertEqual(sum(sum(v.values()) for _, _, v in groups), 20)
+        self.assertEqual(groups[0][0], 1900)
+        self.assertEqual(groups[-1][1], 2020)
+        self.assertTrue(all(groups[i][1] < groups[i+1][0] for i in range(3)))
+
+    def test_quantiles_with_fewer_distinct_years(self):
+        from collections import Counter
+        groups = creation_quantiles({1990: Counter(open=3), 2000: Counter(restricted=2)})
+        self.assertEqual(len(groups), 2)
 
     def test_year_unknown(self):
         """Les années absentes ou inconnues ne sont pas bloquantes."""
