@@ -306,10 +306,10 @@ def rights_legend(labels, lang):
     """Legend for the three distinct rights categories, without counts."""
     names = (
         ("Licence Creative Commons (CC)", "Tous droits réservés (DR)",
-         "Licence CC ou DR variable pour une même publication")
+         "Licence variable (CC ou DR)")
         if lang == "fr" else
         ("Creative Commons licence (CC)", "All rights reserved (DR)",
-         "CC licence or all rights reserved, varying within one publication")
+         "Variable licence (CC or all rights reserved)")
     )
     return '<div class="chart-legend" role="group" aria-label="' + ("Légende" if lang == "fr" else "Legend") + '">' + "".join(
         f'<span class="chart-legend-item"><span class="chart-legend-swatch" style="background:{BLUES[i % len(BLUES)]}" aria-hidden="true"></span><span>{esc(name)}</span></span>'
@@ -334,9 +334,9 @@ def rights_horizontal_svg(labels, values, lang):
         color = BLUES[i % len(BLUES)]
         detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
         parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{value}" data-tooltip-percent="{rounded[i]}"><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
-        if w >= 52:
+        if w >= 34:
             text_color = "#fff" if i in (0, 2) else "#08264a"
-            parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
+            parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{rounded[i]} %</text>')
         parts.append('</g>')
         x += w
     return f'<svg aria-label="{esc("Répartition des droits de réutilisation" if lang == "fr" else "Reuse rights distribution")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
@@ -356,9 +356,9 @@ def export_jpg_rights_horizontal(chart_id, labels, values, lang="fr"):
     for i, (label, value) in enumerate(zip(labels, values)):
         pct = 100 * value / total if total else 0
         ax.barh([0], [pct], left=x, height=.55, color=BLUES[i % len(BLUES)], label=label)
-        if pct >= 6:
+        if pct >= 3.5:
             ax.text(x + pct/2, 0, f"{rounded[i]} %", ha="center", va="center",
-                    color="white" if i in (0, 2) else "#08264a", fontweight="bold")
+                    color="white" if i in (0, 2) else "#08264a", fontweight="bold", fontsize=10)
         x += pct
     ax.set_xlim(0, 100)
     ax.set_yticks([])
@@ -380,7 +380,7 @@ def structure_access_display_lines(category, lang):
 
 def structure_access_horizontal_svg(categories, series, values, lang):
     """100% horizontal stacked bars, ordered by exact open-access rate."""
-    width, left, right, top, row_height, bottom = 960, 315, 35, 20, 70, 20
+    width, left, right, top, row_height, bottom = 960, 270, 25, 20, 70, 20
     height = top + row_height * len(categories) + bottom
     plot_width = width - left - right
     parts = []
@@ -393,8 +393,8 @@ def structure_access_horizontal_svg(categories, series, values, lang):
         lines = structure_access_display_lines(category, lang)
         line_height = 17
         first_y = y + 30 - (len(lines) - 1) * line_height / 2
-        tspans = "".join(f'<tspan x="{left-16}" y="{first_y+j*line_height:.1f}">{esc(line)}</tspan>' for j, line in enumerate(lines))
-        parts.append(f'<text text-anchor="end" style="font:14px Arial;fill:#08264a">{tspans}</text>')
+        tspans = "".join(f'<tspan x="12" y="{first_y+j*line_height:.1f}">{esc(line)}</tspan>' for j, line in enumerate(lines))
+        parts.append(f'<text text-anchor="start" style="font:14px Arial;fill:#08264a">{tspans}</text>')
         x = left
         for label, key, color in series:
             count = values[category].get(key, 0)
