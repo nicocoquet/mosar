@@ -192,10 +192,12 @@
   text-decoration: none !important;
 }
 
-.home-fnso-logo span {
-  font-size: 1.65rem;
-  font-weight: 900;
-  letter-spacing: .06em;
+.home-fnso-logo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: contain;
 }
 
 .home-fnso-copy > h2 {
