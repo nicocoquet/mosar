@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types, creation_years_svg, export_jpg_creation_years
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend, periodicity_treemap_svg, export_jpg_periodicity_treemap, periodicity_legend, category_treemap_svg, export_jpg_category_treemap, format_horizontal_svg, export_jpg_format_horizontal, simple_category_legend, structure_type_horizontal_svg, export_jpg_structure_types, creation_years_svg, export_jpg_creation_years, creation_decades, quantile_access_svg
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -27,9 +27,8 @@ STATISTICS_SECTIONS = (
         ("acces-format-publication", "Ouverture par format", "Open access by format"),
     )),
     ("anciennete", {"fr": "Ancienneté des revues", "en": "Journal age"}, (
-        ("annee-creation", "Année de création", "Year founded"),
-        ("periode-creation", "Période de création", "Founding period"),
-        ("acces-date-creation", "Ouverture par période", "Open access by founding period"),
+        ("annee-creation", "Année/décennie de création", "Founding year/decade"),
+        ("acces-date-creation", "Ouverture selon l’ancienneté", "Open access by journal age"),
     )),
     ("edition", {"fr": "Caractéristiques éditoriales", "en": "Editorial characteristics"}, (
         ("periodicite-revues", "Périodicité", "Publication frequency"),
@@ -154,26 +153,21 @@ def build(data, lang):
     values = [data["years"][y] for y in years]
     svg = creation_years_svg(data["years"], lang)
     export_table("annee-creation", ["Année", "Nombre"], zip(years, values), lang=lang)
+    export_table("annee-creation-decennies", ["Début", "Fin", "Nombre", "Moyenne annuelle"], creation_decades(data["years"]), lang=lang)
     export_svg("annee-creation", svg, lang=lang)
     export_jpg_creation_years("annee-creation", data["years"], lang=lang)
     out.append(block("annee-creation", svg, lang))
 
-    categories = [c for c in [k for k in data["periods"] if k not in PERIOD_ORDER] + list(PERIOD_ORDER) if data["periods"][c]]
-    values = [data["periods"][c] for c in categories]
-    labels = translate_categories(categories, lang)
-    svg = bar_svg(labels, values)
-    export_table("periode-creation", ["Période", "Nombre"], zip(labels, values), lang=lang)
-    export_svg("periode-creation", svg, lang=lang)
-    export_jpg_bar("periode-creation", labels, values, lang=lang)
-    out.append(block("periode-creation", svg, lang))
-
-    categories = list(DATE_ACCESS_CATEGORIES)
-    labels, grouped = display_grouped(categories, data["date_access"], lang)
-    svg = stacked_svg(labels, series, grouped, lang)
-    export_table("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(label, grouped[label]["open"], grouped[label]["restricted"]) for label in labels], lang=lang)
+    # Quantile boundaries are calculated upstream from actual founding years.
+    quantiles = data["creation_quantiles"]
+    labels = [f"{start}–{end}" if start != end else str(start) for start, end, _ in quantiles]
+    grouped = {label: counts for label, (_, _, counts) in zip(labels, quantiles)}
+    svg = quantile_access_svg(labels, grouped, series, lang)
+    export_table("acces-date-creation", ["Période", "Accès ouvert", "Accès restreint"], [(label, grouped[label].get("open", 0), grouped[label].get("restricted", 0)) for label in labels], lang=lang)
     export_svg("acces-date-creation", svg, lang=lang)
-    export_jpg_stacked("acces-date-creation", labels, series, grouped, lang=lang)
-    out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang)))
+    export_jpg_structure_horizontal("acces-date-creation", labels, series, grouped, lang=lang)
+    note = ('Les revues sont réparties en quatre groupes d’effectifs comparables, calculés à partir de leur année de création (quantiles). Les bornes chronologiques sont déterminées automatiquement à partir des données.' if lang == "fr" else 'Journals are divided into four groups of comparable size based on their founding year (quantiles). Chronological boundaries are calculated automatically from the data.')
+    out.append(block("acces-date-creation", svg, lang, legend_html=stacked_legend(series, lang) + f'<p class="statistics-method-note">{note}</p>'))
 
     # Presentation order follows publication frequency, not population size.
     categories = [
