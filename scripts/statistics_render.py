@@ -410,8 +410,9 @@ def rights_horizontal_svg(labels, values, lang):
     for i, (label, value) in enumerate(zip(labels, values)):
         w = bar_width * value / total if total else 0
         color = BLUES[i % len(BLUES)]
-        detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
-        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{value}" data-tooltip-percent="{rounded[i]}"><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
+        display_label = ("Licence variable (CC ou DR)" if lang == "fr" else "Variable licence (CC or all rights reserved)") if i == 2 else label
+        detail = f"{display_label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{display_label}: {value} journals ({rounded[i]}%)"
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(display_label)}" data-tooltip-count="{value}" data-tooltip-percent="{rounded[i]}"><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
         if w >= 34:
             text_color = "#fff" if i in (0, 2) else "#08264a"
             parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{text_color}">{rounded[i]} %</text>')
