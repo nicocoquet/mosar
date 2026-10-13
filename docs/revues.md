@@ -29,9 +29,9 @@ hide:
 </ul>
 </div>
 
-<link rel="stylesheet" href="../assets/stylesheets/revues-exploration.css">
+<link rel="stylesheet" href="../stylesheets/journals-exploration.css">
 
-<div id="revues-explorer" class="revues-explorer" lang="fr" data-source="../assets/data/revues-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>
+<div id="revues-explorer" class="revues-explorer" lang="fr" data-source="../data/journals-exploration.json"><p class="explorer-loading">Chargement des revues…</p></div>
 
-<script src="../assets/javascripts/revues-config.js" defer></script>
-<script src="../assets/javascripts/revues-exploration.js" defer></script>
+<script src="../javascripts/journals-config.js" defer></script>
+<script src="../javascripts/journals-exploration.js" defer></script>

@@ -109,6 +109,7 @@ def write_page(
     cluster_link_label = labels["cluster_link"].format(name=cluster_name)
 
     assets_prefix = "../assets/" if lang == "fr" else "../../assets/"
+    static_prefix = "../" if lang == "fr" else "../../"
     # Les pages anglaises sont publiées un niveau plus bas par mkdocs-static-i18n.
     intro = intro.replace("../assets/", assets_prefix)
     # Séparer les paragraphes de présentation des définitions des niveaux.
@@ -172,12 +173,12 @@ hide:
 {levels_html}
 </div>
 
-<link rel="stylesheet" href="{assets_prefix}stylesheets/revues-exploration.css">
+<link rel="stylesheet" href="{static_prefix}stylesheets/journals-exploration.css">
 
-<div id="revues-explorer" class="revues-explorer" lang="{lang}" data-source="{assets_prefix}data/revues-exploration.json"><p class="explorer-loading">{labels["loading"]}</p></div>
+<div id="revues-explorer" class="revues-explorer" lang="{lang}" data-source="{static_prefix}data/journals-exploration.json"><p class="explorer-loading">{labels["loading"]}</p></div>
 
-<script src="{assets_prefix}javascripts/revues-config.js" defer></script>
-<script src="{assets_prefix}javascripts/revues-exploration.js" defer></script>
+<script src="{static_prefix}javascripts/journals-config.js" defer></script>
+<script src="{static_prefix}javascripts/journals-exploration.js" defer></script>
 """,
         encoding="utf-8",
     )

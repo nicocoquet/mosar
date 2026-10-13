@@ -9,12 +9,12 @@ const ROOT = path.resolve(__dirname, '..');
 
 const configPath = path.join(
   ROOT,
-  'docs/assets/javascripts/revues-config.js'
+  'docs/javascripts/journals-config.js'
 );
 
 const dataPath = path.join(
   ROOT,
-  'docs/assets/data/revues-exploration.json'
+  'docs/data/journals-exploration.json'
 );
 
 // Charger la configuration anglaise dans un contexte isolé.

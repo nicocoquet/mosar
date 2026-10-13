@@ -49,8 +49,8 @@ publication:
       en:
         intro: "content/revues-intro.en.md"
         output: "docs/revues.en.md"
-    data_file: "docs/assets/data/revues-exploration.json"
-    report_file: "data/revues/join-report.json"
+    data_file: "docs/data/journals-exploration.json"
+    report_file: "data/journals/join-report.json"
     fallback:
       enabled: false
       file: "data/mirabel/mosar-test-enrichment.csv"

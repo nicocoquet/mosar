@@ -202,8 +202,8 @@ generate_journals_exploration.py
 Le générateur produit actuellement :
 
 ```text
-docs/assets/data/revues-exploration.json
-data/revues/join-report.json
+docs/data/journals-exploration.json
+data/journals/join-report.json
 docs/revues.md
 docs/revues.en.md
 ```
@@ -213,9 +213,9 @@ Le rapport de jointure permet de contrôler les identifiants communs aux deux so
 L’interface de consultation est exécutée dans le navigateur. Elle repose principalement sur :
 
 ```text
-docs/assets/javascripts/revues-exploration.js
-docs/assets/javascripts/revues-config.js
-docs/assets/stylesheets/revues-exploration.css
+docs/javascripts/journals-exploration.js
+docs/javascripts/journals-config.js
+docs/stylesheets/journals-exploration.css
 ```
 
 Elle fournit notamment recherche, facettes, filtres actifs, tri et cartes de revues. Les composants propres à cet explorateur utilisent le préfixe `.rx-` afin de limiter les collisions avec le thème du site.
