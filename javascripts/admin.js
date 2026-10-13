@@ -13,6 +13,7 @@
   // Noms d'affichage uniquement ; les autorisations restent fondées sur le login GitHub.
   const displayNames = Object.freeze({
     nicocoquet: 'Nicolas Coquet (MSH Mondes)',
+    ibtiqad: 'Ibtissam Qaddi (MSH Mondes)',
     'gaelle-david': 'Gaëlle David (MSH Mondes)',
   });
   function displayName(login) { return displayNames[String(login || '').toLowerCase()] || login; }
