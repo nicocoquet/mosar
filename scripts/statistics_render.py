@@ -191,13 +191,13 @@ def rights_horizontal_svg(labels, values, lang):
         w = bar_width * value / total if total else 0
         color = BLUES[i % len(BLUES)]
         detail = f"{label} : {value} revues ({rounded[i]} %)" if lang == "fr" else f"{label}: {value} journals ({rounded[i]}%)"
-        parts.append(f'<g tabindex="0" role="group" aria-label="{esc(detail)}"><title>{esc(detail)}</title><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
+        parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(detail)}" data-tooltip-label="{esc(label)}" data-tooltip-count="{value}" data-tooltip-percent="{rounded[i]}"><rect x="{x:.2f}" y="{top}" width="{w:.2f}" height="{bar_height}" fill="{color}"/>')
         if w >= 52:
             text_color = "#fff" if i in (0, 2) else "#08264a"
             parts.append(f'<text x="{x+w/2:.2f}" y="{top+bar_height/2+5}" text-anchor="middle" pointer-events="none" style="font:700 16px Arial;fill:{text_color}">{rounded[i]} %</text>')
         parts.append('</g>')
         x += w
-    return f'<svg role="img" aria-label="{esc("Répartition des droits de réutilisation" if lang == "fr" else "Reuse rights distribution")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
+    return f'<svg aria-label="{esc("Répartition des droits de réutilisation" if lang == "fr" else "Reuse rights distribution")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
 def export_jpg_rights_horizontal(chart_id, labels, values, lang="fr"):
@@ -257,12 +257,13 @@ def structure_access_horizontal_svg(categories, series, values, lang):
         for label, key, color in series:
             count = values[category].get(key, 0)
             segment_width = plot_width * count / total if total else 0
-            parts.append(f'<rect x="{x:.2f}" y="{y+5}" width="{segment_width:.2f}" height="40" fill="{color}"/>')
+            parts.append(f'<g class="chart-tooltip-target" tabindex="0" role="button" aria-label="{esc(category)} — {esc(label)} : {count} ({percentages[key]} %)" data-tooltip-label="{esc(category)} — {esc(label)}" data-tooltip-count="{count}" data-tooltip-percent="{percentages[key]}"><rect x="{x:.2f}" y="{y+5}" width="{segment_width:.2f}" height="40" fill="{color}"/>')
             if segment_width >= 38:
                 color_text = "#fff" if key == "open" else "#08264a"
-                parts.append(f'<text x="{x+segment_width/2:.2f}" y="{y+30}" text-anchor="middle" style="font:700 14px Arial;fill:{color_text}">{percentages[key]} %</text>')
+                parts.append(f'<text x="{x+segment_width/2:.2f}" y="{y+30}" text-anchor="middle" pointer-events="none" style="font:700 14px Arial;fill:{color_text}">{percentages[key]} %</text>')
+            parts.append('</g>')
             x += segment_width
-    return f'<svg role="img" aria-label="{esc("Accès ouvert et restreint par structure éditoriale" if lang == "fr" else "Open and restricted access by editorial structure")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
+    return f'<svg aria-label="{esc("Accès ouvert et restreint par structure éditoriale" if lang == "fr" else "Open and restricted access by editorial structure")}" style="display:block;width:100%;max-width:960px;height:auto" viewBox="0 0 {width} {height}">' + "".join(parts) + "</svg>"
 
 
 def export_jpg_structure_horizontal(chart_id, categories, series, values, lang="fr"):
