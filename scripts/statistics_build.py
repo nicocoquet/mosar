@@ -12,7 +12,7 @@ from mosar_model import PROX_DEFS, PROXIMITY_LEVELS
 from statistics_data import rpct
 from statistics_publication import INTRO_FILES
 from statistics_translations import translate_categories, translate_headers
-from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal
+from statistics_render import OPEN, actions, bar_svg, export_csv, export_jpg_bar, export_jpg_pie, export_jpg_stacked, export_svg, pie_svg, pie_legend, stacked_svg, stacked_legend, structure_access_horizontal_svg, export_jpg_structure_horizontal, rights_horizontal_svg, export_jpg_rights_horizontal, rights_legend
 
 
 # Rubriques de navigation : ordre identique à celui des graphiques.
@@ -213,11 +213,11 @@ def build(data, lang):
     categories = list(RIGHTS_CATEGORIES)
     values = [data["rights"][c] for c in categories]
     labels = translate_categories(categories, lang)
-    svg = pie_svg(labels, values, lang)
+    svg = rights_horizontal_svg(labels, values, lang)
     export_table("droits-reutilisation", ["Droits", "Nombre", "Pourcentage"], [(c, x, rpct(x, total)) for c, x in zip(labels, values)], lang=lang)
     export_svg("droits-reutilisation", svg, lang=lang)
-    export_jpg_pie("droits-reutilisation", labels, values, lang=lang)
-    out.append(block("droits-reutilisation", svg, lang, legend_html=pie_legend(labels, values, lang)))
+    export_jpg_rights_horizontal("droits-reutilisation", labels, values, lang=lang)
+    out.append(block("droits-reutilisation", svg, lang, legend_html=rights_legend(labels, lang)))
 
     title = PAGE_TITLES[lang]
     intro = load_intro(lang)
