@@ -212,6 +212,7 @@ def build_record(title, themes, mosar_data):
         "mirabel_title": mirabel_title,
         "sigle": title.get("sigle") or "",
         "issn": list(dict.fromkeys(issns)),
+        "issn_details": list({(str(item["issn"]), str(item.get("support") or "").strip().casefold()): {"issn": str(item["issn"]), "support": str(item.get("support") or "").strip().casefold()} for item in issn_objects if isinstance(item, dict) and item.get("issn")}.values()),
         "languages": title.get("langues") or [],
         "publishers": title.get("editeurs") or [],
         "country": country_value(title),
