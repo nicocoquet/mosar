@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-10-13T18:10:49+00:00",
+    "generated_at": "2026-10-15T16:53:54+00:00",
     "cluster_id": 146,
-    "mirabel_active_titles": 172,
-    "mirabel_unique_reviews": 172,
+    "mirabel_active_titles": 179,
+    "mirabel_unique_reviews": 179,
     "mosar_source": "XLSX Mosar",
     "mosar_ids": 172,
     "matched_ids": [
@@ -181,7 +181,7 @@
       26870
     ],
     "matched_count": 172,
-    "mirabel_without_mosar_count": 0,
+    "mirabel_without_mosar_count": 7,
     "mosar_outside_cluster_ids": [],
     "duplicate_active_title_review_ids": []
   },
@@ -202,6 +202,12 @@
       "sigle": "AdlFI",
       "issn": [
         "2114-0502"
+      ],
+      "issn_details": [
+        {
+          "issn": "2114-0502",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -257,6 +263,12 @@
       "issn": [
         "2497-1510"
       ],
+      "issn_details": [
+        {
+          "issn": "2497-1510",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng",
         "spa",
@@ -306,6 +318,12 @@
       "sigle": "",
       "issn": [
         "2490-9424"
+      ],
+      "issn_details": [
+        {
+          "issn": "2490-9424",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -371,6 +389,16 @@
         "0249-7638",
         "1760-7361"
       ],
+      "issn_details": [
+        {
+          "issn": "0249-7638",
+          "support": "papier"
+        },
+        {
+          "issn": "1760-7361",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -418,6 +446,16 @@
       "issn": [
         "1637-5823",
         "2431-1472"
+      ],
+      "issn_details": [
+        {
+          "issn": "1637-5823",
+          "support": "papier"
+        },
+        {
+          "issn": "2431-1472",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -484,6 +522,16 @@
         "0014-0481",
         "1961-8700"
       ],
+      "issn_details": [
+        {
+          "issn": "0014-0481",
+          "support": "papier"
+        },
+        {
+          "issn": "1961-8700",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -504,7 +552,7 @@
       },
       "ddh": null,
       "themes": [
-        "Sociologie ",
+        "Sociologie",
         "Études urbaines et rurales",
         "Architecture",
         "Problèmes et questions de société"
@@ -537,6 +585,16 @@
       "issn": [
         "0046-2616",
         "2101-0064"
+      ],
+      "issn_details": [
+        {
+          "issn": "0046-2616",
+          "support": "papier"
+        },
+        {
+          "issn": "2101-0064",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -592,6 +650,16 @@
         "0003-9756",
         "1474-0583"
       ],
+      "issn_details": [
+        {
+          "issn": "0003-9756",
+          "support": "papier"
+        },
+        {
+          "issn": "1474-0583",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng",
@@ -614,7 +682,7 @@
       },
       "ddh": null,
       "themes": [
-        "Sociologie "
+        "Sociologie"
       ],
       "journal_url": "http://journals.cambridge.org/action/displayJournal?jid=EUR",
       "mirabel_url": "https://reseau-mirabel.info/revue/1456",
@@ -644,6 +712,16 @@
       "issn": [
         "0016-4119",
         "2109-9588"
+      ],
+      "issn_details": [
+        {
+          "issn": "0016-4119",
+          "support": "papier"
+        },
+        {
+          "issn": "2109-9588",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -710,6 +788,16 @@
       "issn": [
         "0016-4127",
         "2109-9642"
+      ],
+      "issn_details": [
+        {
+          "issn": "0016-4127",
+          "support": "papier"
+        },
+        {
+          "issn": "2109-9642",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -778,6 +866,16 @@
         "0037-9174",
         "1957-7842"
       ],
+      "issn_details": [
+        {
+          "issn": "0037-9174",
+          "support": "papier"
+        },
+        {
+          "issn": "1957-7842",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "spa",
@@ -815,10 +913,10 @@
       },
       "themes": [
         "Anthropologie, ethnologie",
-        "Sociologie ",
+        "Sociologie",
         "Archéologie",
         "Histoire",
-        "Langues,  linguistique",
+        "Langues, linguistique",
         "Préhistoire et Protohistoire",
         "Amériques"
       ],
@@ -849,6 +947,12 @@
       "sigle": "jssj",
       "issn": [
         "2105-0392"
+      ],
+      "issn_details": [
+        {
+          "issn": "2105-0392",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -900,6 +1004,12 @@
       "issn": [
         "2109-9103"
       ],
+      "issn_details": [
+        {
+          "issn": "2109-9103",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -944,6 +1054,16 @@
       "issn": [
         "0246-8743",
         "2118-9692"
+      ],
+      "issn_details": [
+        {
+          "issn": "0246-8743",
+          "support": "papier"
+        },
+        {
+          "issn": "2118-9692",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -1005,6 +1125,16 @@
       "issn": [
         "2802-3293",
         "3039-3922"
+      ],
+      "issn_details": [
+        {
+          "issn": "2802-3293",
+          "support": "papier"
+        },
+        {
+          "issn": "3039-3922",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -1071,6 +1201,16 @@
         "0769-3206",
         "1952-4226"
       ],
+      "issn_details": [
+        {
+          "issn": "0769-3206",
+          "support": "papier"
+        },
+        {
+          "issn": "1952-4226",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1123,6 +1263,16 @@
       "issn": [
         "1166-3243",
         "2804-1224"
+      ],
+      "issn_details": [
+        {
+          "issn": "1166-3243",
+          "support": "papier"
+        },
+        {
+          "issn": "2804-1224",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -1186,6 +1336,16 @@
       "issn": [
         "0153-9345",
         "1957-701X"
+      ],
+      "issn_details": [
+        {
+          "issn": "0153-9345",
+          "support": "papier"
+        },
+        {
+          "issn": "1957-701X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -1252,6 +1412,16 @@
         "2740-5826",
         "2780-8572"
       ],
+      "issn_details": [
+        {
+          "issn": "2740-5826",
+          "support": "electronique"
+        },
+        {
+          "issn": "2780-8572",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1315,6 +1485,16 @@
       "issn": [
         "1622-468X",
         "1963-1022"
+      ],
+      "issn_details": [
+        {
+          "issn": "1622-468X",
+          "support": "papier"
+        },
+        {
+          "issn": "1963-1022",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -1382,6 +1562,16 @@
         "2554-3415",
         "2554-3555"
       ],
+      "issn_details": [
+        {
+          "issn": "2554-3415",
+          "support": "papier"
+        },
+        {
+          "issn": "2554-3555",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1448,6 +1638,16 @@
         "1276-8707",
         "1773-018X"
       ],
+      "issn_details": [
+        {
+          "issn": "1276-8707",
+          "support": "papier"
+        },
+        {
+          "issn": "1773-018X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1482,7 +1682,7 @@
       },
       "themes": [
         "Anthropologie, ethnologie",
-        "Sociologie "
+        "Sociologie"
       ],
       "journal_url": "https://journals.openedition.org/socio-anthropologie/",
       "mirabel_url": "https://reseau-mirabel.info/revue/705",
@@ -1510,6 +1710,16 @@
       "issn": [
         "1262-2966",
         "2104-404X"
+      ],
+      "issn_details": [
+        {
+          "issn": "1262-2966",
+          "support": "papier"
+        },
+        {
+          "issn": "2104-404X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -1542,7 +1752,7 @@
       "themes": [
         "Littérature, linguistique et arts",
         "Information-communication",
-        "Sociologie ",
+        "Sociologie",
         "Histoire"
       ],
       "journal_url": "https://www.editionsdelasorbonne.fr/collection/37/societes-representations",
@@ -1571,6 +1781,16 @@
       "issn": [
         "0760-5668",
         "1777-5450"
+      ],
+      "issn_details": [
+        {
+          "issn": "0760-5668",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5450",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -1636,6 +1856,12 @@
       "issn": [
         "2427-9188"
       ],
+      "issn_details": [
+        {
+          "issn": "2427-9188",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1670,7 +1896,7 @@
       },
       "themes": [
         "Anthropologie, ethnologie",
-        "Sociologie "
+        "Sociologie"
       ],
       "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2024/02/06/terrains-theories/",
       "mirabel_url": "https://reseau-mirabel.info/revue/2509",
@@ -1699,6 +1925,16 @@
       "issn": [
         "1763-0061",
         "1963-1812"
+      ],
+      "issn_details": [
+        {
+          "issn": "1763-0061",
+          "support": "papier"
+        },
+        {
+          "issn": "1963-1812",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -1733,7 +1969,7 @@
         "label": "DDH"
       },
       "themes": [
-        "Sociologie ",
+        "Sociologie",
         "Philosophie",
         "Histoire"
       ],
@@ -1764,6 +2000,12 @@
       "sigle": "",
       "issn": [
         "1953-244X"
+      ],
+      "issn_details": [
+        {
+          "issn": "1953-244X",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre",
@@ -1813,6 +2055,16 @@
       "issn": [
         "0994-5490",
         "2272-4001"
+      ],
+      "issn_details": [
+        {
+          "issn": "0994-5490",
+          "support": "papier"
+        },
+        {
+          "issn": "2272-4001",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -1877,6 +2129,16 @@
         "0994-4524",
         "1969-6728"
       ],
+      "issn_details": [
+        {
+          "issn": "0994-4524",
+          "support": "papier"
+        },
+        {
+          "issn": "1969-6728",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -1929,6 +2191,16 @@
       "issn": [
         "1634-3123",
         "2431-2045"
+      ],
+      "issn_details": [
+        {
+          "issn": "1634-3123",
+          "support": "papier"
+        },
+        {
+          "issn": "2431-2045",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -1997,6 +2269,12 @@
       "issn": [
         "2108-6796"
       ],
+      "issn_details": [
+        {
+          "issn": "2108-6796",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -2062,6 +2340,12 @@
       "issn": [
         "2779-1106"
       ],
+      "issn_details": [
+        {
+          "issn": "2779-1106",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -2103,10 +2387,20 @@
       "title": "Archives de politique criminelle",
       "subtitle": "",
       "mirabel_title": "Archives de politique criminelle",
-      "sigle": "",
+      "sigle": "APC",
       "issn": [
         "0242-5637",
         "2105-2670"
+      ],
+      "issn_details": [
+        {
+          "issn": "0242-5637",
+          "support": "papier"
+        },
+        {
+          "issn": "2105-2670",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -2160,6 +2454,12 @@
       "issn": [
         "2110-6118"
       ],
+      "issn_details": [
+        {
+          "issn": "2110-6118",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -2203,6 +2503,12 @@
       "sigle": "",
       "issn": [
         "2117-3869"
+      ],
+      "issn_details": [
+        {
+          "issn": "2117-3869",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -2264,6 +2570,16 @@
         "0154-8344",
         "1969-6779"
       ],
+      "issn_details": [
+        {
+          "issn": "0154-8344",
+          "support": "papier"
+        },
+        {
+          "issn": "1969-6779",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -2315,6 +2631,16 @@
       "issn": [
         "1016-9008",
         "2117-5624"
+      ],
+      "issn_details": [
+        {
+          "issn": "1016-9008",
+          "support": "papier"
+        },
+        {
+          "issn": "2117-5624",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -2370,6 +2696,12 @@
       "sigle": "",
       "issn": [
         "2107-0199"
+      ],
+      "issn_details": [
+        {
+          "issn": "2107-0199",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -2440,6 +2772,16 @@
         "0764-7611",
         "2678-1190"
       ],
+      "issn_details": [
+        {
+          "issn": "0764-7611",
+          "support": "papier"
+        },
+        {
+          "issn": "2678-1190",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "spa"
@@ -2456,7 +2798,7 @@
       "references": {},
       "ddh": null,
       "themes": [
-        "Langues,  linguistique",
+        "Langues, linguistique",
         "Littérature"
       ],
       "journal_url": "https://crisol.parisnanterre.fr/index.php/crisol/revuecrisol/",
@@ -2486,6 +2828,12 @@
       "sigle": "",
       "issn": [
         "1278-3366"
+      ],
+      "issn_details": [
+        {
+          "issn": "1278-3366",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -2557,6 +2905,12 @@
       "issn": [
         "2743-0332"
       ],
+      "issn_details": [
+        {
+          "issn": "2743-0332",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -2606,6 +2960,16 @@
         "1955-611X",
         "2968-6687"
       ],
+      "issn_details": [
+        {
+          "issn": "1955-611X",
+          "support": "papier"
+        },
+        {
+          "issn": "2968-6687",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng",
@@ -2654,6 +3018,12 @@
       "sigle": "",
       "issn": [
         "1963-1197"
+      ],
+      "issn_details": [
+        {
+          "issn": "1963-1197",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -2718,6 +3088,12 @@
       "issn": [
         "2968-3556"
       ],
+      "issn_details": [
+        {
+          "issn": "2968-3556",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -2764,6 +3140,12 @@
       "sigle": "",
       "issn": [
         "3038-9712"
+      ],
+      "issn_details": [
+        {
+          "issn": "3038-9712",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -2815,6 +3197,16 @@
         "0046-2497",
         "1776-2936"
       ],
+      "issn_details": [
+        {
+          "issn": "0046-2497",
+          "support": "papier"
+        },
+        {
+          "issn": "1776-2936",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -2864,6 +3256,12 @@
       "sigle": "RevDH",
       "issn": [
         "2264-119X"
+      ],
+      "issn_details": [
+        {
+          "issn": "2264-119X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -2925,6 +3323,16 @@
         "0027-2671",
         "1961-8646"
       ],
+      "issn_details": [
+        {
+          "issn": "0027-2671",
+          "support": "papier"
+        },
+        {
+          "issn": "1961-8646",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -2977,6 +3385,16 @@
       "issn": [
         "1105-2201",
         "1791-7077"
+      ],
+      "issn_details": [
+        {
+          "issn": "1105-2201",
+          "support": "papier"
+        },
+        {
+          "issn": "1791-7077",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -3039,6 +3457,12 @@
       "issn": [
         "3095-3820"
       ],
+      "issn_details": [
+        {
+          "issn": "3095-3820",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3094,6 +3518,12 @@
       "issn": [
         "2272-7396"
       ],
+      "issn_details": [
+        {
+          "issn": "2272-7396",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3139,6 +3569,16 @@
       "issn": [
         "1961-4829",
         "2270-7336"
+      ],
+      "issn_details": [
+        {
+          "issn": "1961-4829",
+          "support": "papier"
+        },
+        {
+          "issn": "2270-7336",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -3196,6 +3636,16 @@
         "2101-0323",
         "1631-1140"
       ],
+      "issn_details": [
+        {
+          "issn": "2101-0323",
+          "support": "electronique"
+        },
+        {
+          "issn": "1631-1140",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3242,6 +3692,16 @@
         "0295-2319",
         "1953-8286"
       ],
+      "issn_details": [
+        {
+          "issn": "0295-2319",
+          "support": "papier"
+        },
+        {
+          "issn": "1953-8286",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3263,7 +3723,7 @@
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
-        "Sociologie ",
+        "Sociologie",
         "Sciences politiques"
       ],
       "journal_url": "http://politix.cairn.info/",
@@ -3292,6 +3752,16 @@
       "issn": [
         "1265-1354",
         "1777-5329"
+      ],
+      "issn_details": [
+        {
+          "issn": "1265-1354",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5329",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -3343,6 +3813,16 @@
       "issn": [
         "1279-7766",
         "1968-388X"
+      ],
+      "issn_details": [
+        {
+          "issn": "1279-7766",
+          "support": "papier"
+        },
+        {
+          "issn": "1968-388X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -3396,6 +3876,12 @@
       "issn": [
         "2739-6649"
       ],
+      "issn_details": [
+        {
+          "issn": "2739-6649",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3439,6 +3925,16 @@
       "issn": [
         "0035-2764",
         "1950-6694"
+      ],
+      "issn_details": [
+        {
+          "issn": "0035-2764",
+          "support": "papier"
+        },
+        {
+          "issn": "1950-6694",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -3490,6 +3986,16 @@
         "2967-3666",
         "2967-6266"
       ],
+      "issn_details": [
+        {
+          "issn": "2967-3666",
+          "support": "electronique"
+        },
+        {
+          "issn": "2967-6266",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3536,6 +4042,16 @@
       "issn": [
         "1763-4229",
         "2111-4390"
+      ],
+      "issn_details": [
+        {
+          "issn": "1763-4229",
+          "support": "papier"
+        },
+        {
+          "issn": "2111-4390",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -3588,6 +4104,12 @@
       "issn": [
         "2647-4867"
       ],
+      "issn_details": [
+        {
+          "issn": "2647-4867",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng",
         "fre"
@@ -3633,6 +4155,16 @@
         "2256-7186",
         "2426-6272"
       ],
+      "issn_details": [
+        {
+          "issn": "2256-7186",
+          "support": "papier"
+        },
+        {
+          "issn": "2426-6272",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3654,7 +4186,7 @@
       "ddh": null,
       "themes": [
         "Éducation",
-        "Sociologie ",
+        "Sociologie",
         "Sciences de l’éducation"
       ],
       "journal_url": "http://champsocial.com/catalogue-specificites_terrains_sensibles,34.html",
@@ -3684,6 +4216,12 @@
       "sigle": "",
       "issn": [
         "2259-924X"
+      ],
+      "issn_details": [
+        {
+          "issn": "2259-924X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -3757,6 +4295,16 @@
         "0335-5322",
         "1955-2564"
       ],
+      "issn_details": [
+        {
+          "issn": "0335-5322",
+          "support": "papier"
+        },
+        {
+          "issn": "1955-2564",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3778,7 +4326,7 @@
       "ddh": null,
       "themes": [
         "Sciences et techniques",
-        "Sociologie ",
+        "Sociologie",
         "Europe de l'Ouest"
       ],
       "journal_url": "http://www.arss.fr/presentation/",
@@ -3807,6 +4355,16 @@
       "issn": [
         "1126-5779",
         "2785-7220"
+      ],
+      "issn_details": [
+        {
+          "issn": "1126-5779",
+          "support": "papier"
+        },
+        {
+          "issn": "2785-7220",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "ita"
@@ -3852,6 +4410,16 @@
       "issn": [
         "1953-8146",
         "0395-2649"
+      ],
+      "issn_details": [
+        {
+          "issn": "1953-8146",
+          "support": "electronique"
+        },
+        {
+          "issn": "0395-2649",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre"
@@ -3899,6 +4467,16 @@
         "0003-4010",
         "1777-5884"
       ],
+      "issn_details": [
+        {
+          "issn": "0003-4010",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5884",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -3920,7 +4498,7 @@
       "ddh": null,
       "themes": [
         "Espaces, environnement",
-        "Sociologie ",
+        "Sociologie",
         "Géographie, cartographie"
       ],
       "journal_url": "http://www.revues.armand-colin.com/geographie-economie/annales-geographie",
@@ -3949,6 +4527,16 @@
       "issn": [
         "1250-7334",
         "2295-9718"
+      ],
+      "issn_details": [
+        {
+          "issn": "1250-7334",
+          "support": "papier"
+        },
+        {
+          "issn": "2295-9718",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -4007,6 +4595,12 @@
       "issn": [
         "2728-834X"
       ],
+      "issn_details": [
+        {
+          "issn": "2728-834X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -4059,6 +4653,16 @@
         "0066-8435",
         "1535-8283"
       ],
+      "issn_details": [
+        {
+          "issn": "0066-8435",
+          "support": "papier"
+        },
+        {
+          "issn": "1535-8283",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -4107,6 +4711,12 @@
       "sigle": "",
       "issn": [
         "1499-7185"
+      ],
+      "issn_details": [
+        {
+          "issn": "1499-7185",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -4177,6 +4787,16 @@
         "2257-0543",
         "2425-231X"
       ],
+      "issn_details": [
+        {
+          "issn": "2257-0543",
+          "support": "papier"
+        },
+        {
+          "issn": "2425-231X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -4245,6 +4865,16 @@
         "0008-0055",
         "1777-5353"
       ],
+      "issn_details": [
+        {
+          "issn": "0008-0055",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5353",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -4269,7 +4899,7 @@
       "themes": [
         "Économie, gestion",
         "Anthropologie, ethnologie",
-        "Sociologie ",
+        "Sociologie",
         "Histoire",
         "Problèmes et questions de société",
         "Afrique"
@@ -4299,6 +4929,12 @@
       "sigle": "",
       "issn": [
         "2100-0670"
+      ],
+      "issn_details": [
+        {
+          "issn": "2100-0670",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -4350,6 +4986,16 @@
       "issn": [
         "1766-2923",
         "2111-4528"
+      ],
+      "issn_details": [
+        {
+          "issn": "1766-2923",
+          "support": "papier"
+        },
+        {
+          "issn": "2111-4528",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -4416,6 +5062,16 @@
         "1157-996X",
         "1777-5345"
       ],
+      "issn_details": [
+        {
+          "issn": "1157-996X",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5345",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -4438,7 +5094,7 @@
       "ddh": null,
       "themes": [
         "Science politique, droit et vie publique",
-        "Sociologie ",
+        "Sociologie",
         "Droit, justice, criminologie"
       ],
       "journal_url": "https://journals.openedition.org/conflits/3893",
@@ -4467,6 +5123,16 @@
       "issn": [
         "0247-9788",
         "2109-9421"
+      ],
+      "issn_details": [
+        {
+          "issn": "0247-9788",
+          "support": "papier"
+        },
+        {
+          "issn": "2109-9421",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -4531,6 +5197,16 @@
         "0769-3362",
         "1969-6973"
       ],
+      "issn_details": [
+        {
+          "issn": "0769-3362",
+          "support": "papier"
+        },
+        {
+          "issn": "1969-6973",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -4581,6 +5257,16 @@
       "issn": [
         "2262-7340",
         "2552-0741"
+      ],
+      "issn_details": [
+        {
+          "issn": "2262-7340",
+          "support": "papier"
+        },
+        {
+          "issn": "2552-0741",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -4640,6 +5326,16 @@
         "0752-6180",
         "2101-0145"
       ],
+      "issn_details": [
+        {
+          "issn": "0752-6180",
+          "support": "papier"
+        },
+        {
+          "issn": "2101-0145",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -4690,6 +5386,16 @@
       "issn": [
         "1154-2721",
         "1958-9557"
+      ],
+      "issn_details": [
+        {
+          "issn": "1154-2721",
+          "support": "papier"
+        },
+        {
+          "issn": "1958-9557",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -4744,6 +5450,16 @@
         "1476-3419",
         "1476-3427"
       ],
+      "issn_details": [
+        {
+          "issn": "1476-3419",
+          "support": "papier"
+        },
+        {
+          "issn": "1476-3427",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -4793,6 +5509,16 @@
       "issn": [
         "1165-0354",
         "2267-6759"
+      ],
+      "issn_details": [
+        {
+          "issn": "1165-0354",
+          "support": "papier"
+        },
+        {
+          "issn": "2267-6759",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -4857,6 +5583,12 @@
       "issn": [
         "2270-0765"
       ],
+      "issn_details": [
+        {
+          "issn": "2270-0765",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "spa",
         "fre",
@@ -4913,6 +5645,12 @@
       "sigle": "",
       "issn": [
         "2259-4728"
+      ],
+      "issn_details": [
+        {
+          "issn": "2259-4728",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -4972,6 +5710,16 @@
         "2110-7017",
         "2542-6869"
       ],
+      "issn_details": [
+        {
+          "issn": "2110-7017",
+          "support": "papier"
+        },
+        {
+          "issn": "2542-6869",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -5023,6 +5771,12 @@
       "sigle": "IRPS",
       "issn": [
         "2397-8570"
+      ],
+      "issn_details": [
+        {
+          "issn": "2397-8570",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng",
@@ -5079,6 +5833,16 @@
         "0399-0346",
         "1957-7850"
       ],
+      "issn_details": [
+        {
+          "issn": "0399-0346",
+          "support": "papier"
+        },
+        {
+          "issn": "1957-7850",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5126,6 +5890,16 @@
       "issn": [
         "1072-5369",
         "1573-7764"
+      ],
+      "issn_details": [
+        {
+          "issn": "1072-5369",
+          "support": "papier"
+        },
+        {
+          "issn": "1573-7764",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -5176,6 +5950,16 @@
         "1753-1055",
         "1753-1063"
       ],
+      "issn_details": [
+        {
+          "issn": "1753-1055",
+          "support": "papier"
+        },
+        {
+          "issn": "1753-1063",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -5225,6 +6009,12 @@
       "sigle": "",
       "issn": [
         "2105-2557"
+      ],
+      "issn_details": [
+        {
+          "issn": "2105-2557",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -5285,6 +6075,12 @@
       "issn": [
         "2781-8306"
       ],
+      "issn_details": [
+        {
+          "issn": "2781-8306",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -5306,7 +6102,7 @@
         "Anthropologie, ethnologie",
         "Études de genre",
         "Études des aires culturelles",
-        "Sociologie ",
+        "Sociologie",
         "Histoire",
         "Problèmes et questions de société",
         "Sciences politiques"
@@ -5337,6 +6133,16 @@
       "issn": [
         "2261-6268",
         "2260-7927"
+      ],
+      "issn_details": [
+        {
+          "issn": "2261-6268",
+          "support": "papier"
+        },
+        {
+          "issn": "2260-7927",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -5388,6 +6194,16 @@
       "issn": [
         "1620-3224",
         "2262-8363"
+      ],
+      "issn_details": [
+        {
+          "issn": "1620-3224",
+          "support": "papier"
+        },
+        {
+          "issn": "2262-8363",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -5454,6 +6270,16 @@
         "0292-0107",
         "1777-5841"
       ],
+      "issn_details": [
+        {
+          "issn": "0292-0107",
+          "support": "papier"
+        },
+        {
+          "issn": "1777-5841",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5504,6 +6330,16 @@
         "1240-1307",
         "1765-2979"
       ],
+      "issn_details": [
+        {
+          "issn": "1240-1307",
+          "support": "papier"
+        },
+        {
+          "issn": "1765-2979",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5539,7 +6375,7 @@
       },
       "themes": [
         "Espaces, environnement",
-        "Sociologie ",
+        "Sociologie",
         "Géographie, cartographie",
         "Problèmes et questions de société"
       ],
@@ -5569,6 +6405,16 @@
       "issn": [
         "2429-2702",
         "2427-9080"
+      ],
+      "issn_details": [
+        {
+          "issn": "2429-2702",
+          "support": "papier"
+        },
+        {
+          "issn": "2427-9080",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -5616,6 +6462,12 @@
       "sigle": "",
       "issn": [
         "1626-0252"
+      ],
+      "issn_details": [
+        {
+          "issn": "1626-0252",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -5683,6 +6535,12 @@
       "issn": [
         "2558-7935"
       ],
+      "issn_details": [
+        {
+          "issn": "2558-7935",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5728,6 +6586,16 @@
       "issn": [
         "0980-0891",
         "2259-4574"
+      ],
+      "issn_details": [
+        {
+          "issn": "0980-0891",
+          "support": "papier"
+        },
+        {
+          "issn": "2259-4574",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -5788,6 +6656,16 @@
         "0244-7827",
         "2264-5047"
       ],
+      "issn_details": [
+        {
+          "issn": "0244-7827",
+          "support": "papier"
+        },
+        {
+          "issn": "2264-5047",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5840,6 +6718,16 @@
       "issn": [
         "1771-8848",
         "2264-5306"
+      ],
+      "issn_details": [
+        {
+          "issn": "1771-8848",
+          "support": "papier"
+        },
+        {
+          "issn": "2264-5306",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -5896,6 +6784,16 @@
       "issn": [
         "0999-4203",
         "2496-4212"
+      ],
+      "issn_details": [
+        {
+          "issn": "0999-4203",
+          "support": "papier"
+        },
+        {
+          "issn": "2496-4212",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -5956,6 +6854,16 @@
         "1763-718X",
         "2118-3252"
       ],
+      "issn_details": [
+        {
+          "issn": "1763-718X",
+          "support": "papier"
+        },
+        {
+          "issn": "2118-3252",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -5976,7 +6884,7 @@
       },
       "ddh": null,
       "themes": [
-        "Sociologie "
+        "Sociologie"
       ],
       "journal_url": "https://www.unaf.fr/expert-des-familles/revue-recherches-familiales/",
       "mirabel_url": "https://reseau-mirabel.info/revue/1155",
@@ -6004,6 +6912,16 @@
       "issn": [
         "2509-4750",
         "2941-3524"
+      ],
+      "issn_details": [
+        {
+          "issn": "2509-4750",
+          "support": "electronique"
+        },
+        {
+          "issn": "2941-3524",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre",
@@ -6059,6 +6977,12 @@
       "sigle": "",
       "issn": [
         "2264-6949"
+      ],
+      "issn_details": [
+        {
+          "issn": "2264-6949",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6120,6 +7044,12 @@
       "sigle": "RHC",
       "issn": [
         "2780-4143"
+      ],
+      "issn_details": [
+        {
+          "issn": "2780-4143",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -6186,6 +7116,16 @@
         "1969-9123",
         "2491-3049"
       ],
+      "issn_details": [
+        {
+          "issn": "1969-9123",
+          "support": "papier"
+        },
+        {
+          "issn": "2491-3049",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -6237,6 +7177,12 @@
       "issn": [
         "0556-7440"
       ],
+      "issn_details": [
+        {
+          "issn": "0556-7440",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -6280,6 +7226,16 @@
       "issn": [
         "0035-1733",
         "1760-7620"
+      ],
+      "issn_details": [
+        {
+          "issn": "0035-1733",
+          "support": "papier"
+        },
+        {
+          "issn": "1760-7620",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6330,6 +7286,16 @@
       "issn": [
         "0035-2039",
         "2260-8079"
+      ],
+      "issn_details": [
+        {
+          "issn": "0035-2039",
+          "support": "papier"
+        },
+        {
+          "issn": "2260-8079",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6384,6 +7350,16 @@
         "2031-5937",
         "2295-9041"
       ],
+      "issn_details": [
+        {
+          "issn": "2031-5937",
+          "support": "papier"
+        },
+        {
+          "issn": "2295-9041",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng"
@@ -6437,6 +7413,16 @@
         "0176-1714",
         "1432-217X"
       ],
+      "issn_details": [
+        {
+          "issn": "0176-1714",
+          "support": "papier"
+        },
+        {
+          "issn": "1432-217X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -6485,6 +7471,16 @@
       "issn": [
         "0248-6016",
         "1952-420X"
+      ],
+      "issn_details": [
+        {
+          "issn": "0248-6016",
+          "support": "papier"
+        },
+        {
+          "issn": "1952-420X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6536,6 +7532,16 @@
         "2557-3659",
         "2649-177X"
       ],
+      "issn_details": [
+        {
+          "issn": "2557-3659",
+          "support": "papier"
+        },
+        {
+          "issn": "2649-177X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -6580,6 +7586,12 @@
       "sigle": "",
       "issn": [
         "1765-2723"
+      ],
+      "issn_details": [
+        {
+          "issn": "1765-2723",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6643,6 +7655,16 @@
         "2164-5175",
         "2164-5167"
       ],
+      "issn_details": [
+        {
+          "issn": "2164-5175",
+          "support": "electronique"
+        },
+        {
+          "issn": "2164-5167",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -6692,6 +7714,16 @@
         "0003-9632",
         "1769-681X"
       ],
+      "issn_details": [
+        {
+          "issn": "0003-9632",
+          "support": "papier"
+        },
+        {
+          "issn": "1769-681X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -6740,6 +7772,16 @@
       "issn": [
         "0278-2626",
         "1090-2147"
+      ],
+      "issn_details": [
+        {
+          "issn": "0278-2626",
+          "support": "papier"
+        },
+        {
+          "issn": "1090-2147",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -6791,6 +7833,16 @@
         "0093-934X",
         "1090-2155"
       ],
+      "issn_details": [
+        {
+          "issn": "0093-934X",
+          "support": "papier"
+        },
+        {
+          "issn": "1090-2155",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -6812,7 +7864,7 @@
       "ddh": null,
       "themes": [
         "Sciences cognitives",
-        "Langues,  linguistique"
+        "Langues, linguistique"
       ],
       "journal_url": "https://journalissues.elsevier.com/catalog/journal/brain-language",
       "mirabel_url": "https://reseau-mirabel.info/revue/21155",
@@ -6840,6 +7892,16 @@
       "issn": [
         "0960-8788",
         "1469-3526"
+      ],
+      "issn_details": [
+        {
+          "issn": "0960-8788",
+          "support": "papier"
+        },
+        {
+          "issn": "1469-3526",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -6890,6 +7952,16 @@
       "issn": [
         "0259-7373",
         "2731-2046"
+      ],
+      "issn_details": [
+        {
+          "issn": "0259-7373",
+          "support": "papier"
+        },
+        {
+          "issn": "2731-2046",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -6951,6 +8023,16 @@
       "issn": [
         "0004-5322",
         "2275-5195"
+      ],
+      "issn_details": [
+        {
+          "issn": "0004-5322",
+          "support": "papier"
+        },
+        {
+          "issn": "2275-5195",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -7015,6 +8097,16 @@
         "1141-7161",
         "2268-4247"
       ],
+      "issn_details": [
+        {
+          "issn": "1141-7161",
+          "support": "papier"
+        },
+        {
+          "issn": "2268-4247",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7077,6 +8169,16 @@
       "issn": [
         "2431-8663",
         "1967-0311"
+      ],
+      "issn_details": [
+        {
+          "issn": "2431-8663",
+          "support": "electronique"
+        },
+        {
+          "issn": "1967-0311",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre",
@@ -7143,6 +8245,16 @@
         "1623-1333",
         "2494-1670"
       ],
+      "issn_details": [
+        {
+          "issn": "1623-1333",
+          "support": "papier"
+        },
+        {
+          "issn": "2494-1670",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7187,6 +8299,16 @@
       "issn": [
         "1147-6753",
         "2272-9828"
+      ],
+      "issn_details": [
+        {
+          "issn": "1147-6753",
+          "support": "papier"
+        },
+        {
+          "issn": "2272-9828",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -7253,6 +8375,12 @@
       "sigle": "",
       "issn": [
         "2105-0929"
+      ],
+      "issn_details": [
+        {
+          "issn": "2105-0929",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -7321,6 +8449,16 @@
         "0263-8223",
         "1879-1085"
       ],
+      "issn_details": [
+        {
+          "issn": "0263-8223",
+          "support": "papier"
+        },
+        {
+          "issn": "1879-1085",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -7370,6 +8508,16 @@
         "1624-8716",
         "1963-0107"
       ],
+      "issn_details": [
+        {
+          "issn": "1624-8716",
+          "support": "papier"
+        },
+        {
+          "issn": "1963-0107",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7415,6 +8563,16 @@
       "issn": [
         "0938-2259",
         "1432-0479"
+      ],
+      "issn_details": [
+        {
+          "issn": "0938-2259",
+          "support": "papier"
+        },
+        {
+          "issn": "1432-0479",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -7465,6 +8623,16 @@
         "1015-7344",
         "2262-7197"
       ],
+      "issn_details": [
+        {
+          "issn": "1015-7344",
+          "support": "papier"
+        },
+        {
+          "issn": "2262-7197",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7510,6 +8678,12 @@
       "issn": [
         "2540-6647"
       ],
+      "issn_details": [
+        {
+          "issn": "2540-6647",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng",
@@ -7544,7 +8718,7 @@
       "themes": [
         "Anthropologie, ethnologie",
         "Migrations, relations interculturelles",
-        "Sociologie ",
+        "Sociologie",
         "Histoire",
         "Démocratie, citoyenneté"
       ],
@@ -7574,6 +8748,16 @@
       "issn": [
         "0176-2680",
         "1873-5703"
+      ],
+      "issn_details": [
+        {
+          "issn": "0176-2680",
+          "support": "papier"
+        },
+        {
+          "issn": "1873-5703",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "ger",
@@ -7624,6 +8808,12 @@
       "sigle": "EJPAP",
       "issn": [
         "2036-4091"
+      ],
+      "issn_details": [
+        {
+          "issn": "2036-4091",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -7688,6 +8878,16 @@
         "1162-9088",
         "1878-3457"
       ],
+      "issn_details": [
+        {
+          "issn": "1162-9088",
+          "support": "papier"
+        },
+        {
+          "issn": "1878-3457",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng",
         "fre"
@@ -7742,6 +8942,16 @@
         "1287-1141",
         "2261-5512"
       ],
+      "issn_details": [
+        {
+          "issn": "1287-1141",
+          "support": "papier"
+        },
+        {
+          "issn": "2261-5512",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7791,6 +9001,16 @@
         "1155-3219",
         "1776-2944"
       ],
+      "issn_details": [
+        {
+          "issn": "1155-3219",
+          "support": "papier"
+        },
+        {
+          "issn": "1776-2944",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7811,7 +9031,7 @@
       },
       "ddh": null,
       "themes": [
-        "Sociologie ",
+        "Sociologie",
         "Histoire",
         "Sciences politiques"
       ],
@@ -7841,6 +9061,16 @@
       "issn": [
         "0016-7363",
         "1538-4632"
+      ],
+      "issn_details": [
+        {
+          "issn": "0016-7363",
+          "support": "papier"
+        },
+        {
+          "issn": "1538-4632",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -7891,6 +9121,16 @@
         "0992-2059",
         "2802-3285"
       ],
+      "issn_details": [
+        {
+          "issn": "0992-2059",
+          "support": "papier"
+        },
+        {
+          "issn": "2802-3285",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -7939,6 +9179,12 @@
       "sigle": "",
       "issn": [
         "1778-3801"
+      ],
+      "issn_details": [
+        {
+          "issn": "1778-3801",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -8006,6 +9252,16 @@
         "1687-5869",
         "1687-5877"
       ],
+      "issn_details": [
+        {
+          "issn": "1687-5869",
+          "support": "papier"
+        },
+        {
+          "issn": "1687-5877",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -8059,6 +9315,16 @@
         "1122-7893",
         "2612-2170"
       ],
+      "issn_details": [
+        {
+          "issn": "1122-7893",
+          "support": "papier"
+        },
+        {
+          "issn": "2612-2170",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "ita"
       ],
@@ -8110,6 +9376,16 @@
         "0925-4560",
         "1572-8587"
       ],
+      "issn_details": [
+        {
+          "issn": "0925-4560",
+          "support": "papier"
+        },
+        {
+          "issn": "1572-8587",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -8154,6 +9430,16 @@
       "issn": [
         "1470-8272",
         "1479-179X"
+      ],
+      "issn_details": [
+        {
+          "issn": "1470-8272",
+          "support": "papier"
+        },
+        {
+          "issn": "1479-179X",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -8204,6 +9490,16 @@
         "1246-0125",
         "2116-7052"
       ],
+      "issn_details": [
+        {
+          "issn": "1246-0125",
+          "support": "papier"
+        },
+        {
+          "issn": "2116-7052",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng",
         "fre"
@@ -8248,6 +9544,16 @@
       "issn": [
         "1741-0398",
         "1758-7409"
+      ],
+      "issn_details": [
+        {
+          "issn": "1741-0398",
+          "support": "papier"
+        },
+        {
+          "issn": "1758-7409",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -8297,6 +9603,16 @@
       "issn": [
         "1740-0228",
         "1740-0236"
+      ],
+      "issn_details": [
+        {
+          "issn": "1740-0228",
+          "support": "papier"
+        },
+        {
+          "issn": "1740-0236",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -8349,6 +9665,16 @@
         "0911-6044",
         "1873-8052"
       ],
+      "issn_details": [
+        {
+          "issn": "0911-6044",
+          "support": "papier"
+        },
+        {
+          "issn": "1873-8052",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -8369,7 +9695,7 @@
       },
       "ddh": null,
       "themes": [
-        "Langues,  linguistique",
+        "Langues, linguistique",
         "Sciences de la vie"
       ],
       "journal_url": "https://shop.elsevier.com/journals/journal-of-neurolinguistics/0911-6044",
@@ -8398,6 +9724,16 @@
       "issn": [
         "0453-3429",
         "1783-1563"
+      ],
+      "issn_details": [
+        {
+          "issn": "0453-3429",
+          "support": "papier"
+        },
+        {
+          "issn": "1783-1563",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre"
@@ -8453,6 +9789,16 @@
         "0014-3855",
         "1769-6674"
       ],
+      "issn_details": [
+        {
+          "issn": "0014-3855",
+          "support": "papier"
+        },
+        {
+          "issn": "1769-6674",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -8502,6 +9848,16 @@
       "issn": [
         "1045-6635",
         "2325-5080"
+      ],
+      "issn_details": [
+        {
+          "issn": "1045-6635",
+          "support": "papier"
+        },
+        {
+          "issn": "2325-5080",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -8557,6 +9913,16 @@
         "1250-7970",
         "2377-9640"
       ],
+      "issn_details": [
+        {
+          "issn": "1250-7970",
+          "support": "papier"
+        },
+        {
+          "issn": "2377-9640",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -8604,6 +9970,12 @@
       "sigle": "MMD",
       "issn": [
         "3034-9699"
+      ],
+      "issn_details": [
+        {
+          "issn": "3034-9699",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -8656,6 +10028,16 @@
         "0222-9617",
         "1769-6615"
       ],
+      "issn_details": [
+        {
+          "issn": "0222-9617",
+          "support": "papier"
+        },
+        {
+          "issn": "1769-6615",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -8707,6 +10089,12 @@
       "sigle": "",
       "issn": [
         "2409-9287"
+      ],
+      "issn_details": [
+        {
+          "issn": "2409-9287",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -8763,6 +10151,16 @@
         "0947-3602",
         "1432-010X"
       ],
+      "issn_details": [
+        {
+          "issn": "0947-3602",
+          "support": "papier"
+        },
+        {
+          "issn": "1432-010X",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -8814,6 +10212,16 @@
         "2550-8148",
         "1291-2530"
       ],
+      "issn_details": [
+        {
+          "issn": "2550-8148",
+          "support": "electronique"
+        },
+        {
+          "issn": "1291-2530",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -8862,6 +10270,16 @@
       "issn": [
         "0154-3229",
         "1773-0198"
+      ],
+      "issn_details": [
+        {
+          "issn": "0154-3229",
+          "support": "papier"
+        },
+        {
+          "issn": "1773-0198",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -8912,6 +10330,16 @@
       "issn": [
         "0997-1327",
         "2105-2271"
+      ],
+      "issn_details": [
+        {
+          "issn": "0997-1327",
+          "support": "papier"
+        },
+        {
+          "issn": "2105-2271",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -8976,6 +10404,16 @@
         "0766-5598",
         "0771-3444"
       ],
+      "issn_details": [
+        {
+          "issn": "0766-5598",
+          "support": "papier"
+        },
+        {
+          "issn": "0771-3444",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre",
         "eng",
@@ -9032,6 +10470,16 @@
         "0770-2310",
         "2406-4742"
       ],
+      "issn_details": [
+        {
+          "issn": "0770-2310",
+          "support": "papier"
+        },
+        {
+          "issn": "2406-4742",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -9080,6 +10528,16 @@
       "issn": [
         "2491-6943",
         "2981-2984"
+      ],
+      "issn_details": [
+        {
+          "issn": "2491-6943",
+          "support": "papier"
+        },
+        {
+          "issn": "2981-2984",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "fre",
@@ -9144,6 +10602,12 @@
       "issn": [
         "2801-4472"
       ],
+      "issn_details": [
+        {
+          "issn": "2801-4472",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -9190,6 +10654,16 @@
       "issn": [
         "0967-2567",
         "1469-5936"
+      ],
+      "issn_details": [
+        {
+          "issn": "0967-2567",
+          "support": "papier"
+        },
+        {
+          "issn": "1469-5936",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "eng"
@@ -9240,6 +10714,16 @@
         "0038-4283",
         "2041-6962"
       ],
+      "issn_details": [
+        {
+          "issn": "0038-4283",
+          "support": "papier"
+        },
+        {
+          "issn": "2041-6962",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -9288,6 +10772,16 @@
       "issn": [
         "1138-7416",
         "1988-2904"
+      ],
+      "issn_details": [
+        {
+          "issn": "1138-7416",
+          "support": "papier"
+        },
+        {
+          "issn": "1988-2904",
+          "support": "electronique"
+        }
       ],
       "languages": [
         "spa",
@@ -9341,6 +10835,16 @@
         "0040-5833",
         "1573-7187"
       ],
+      "issn_details": [
+        {
+          "issn": "0040-5833",
+          "support": "papier"
+        },
+        {
+          "issn": "1573-7187",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "eng"
       ],
@@ -9389,6 +10893,12 @@
       "sigle": "",
       "issn": [
         "0335-2927"
+      ],
+      "issn_details": [
+        {
+          "issn": "0335-2927",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre"
@@ -9442,6 +10952,16 @@
         "1294-6303",
         "2105-2174"
       ],
+      "issn_details": [
+        {
+          "issn": "1294-6303",
+          "support": "papier"
+        },
+        {
+          "issn": "2105-2174",
+          "support": "electronique"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -9491,6 +11011,12 @@
       "sigle": "",
       "issn": [
         "0577-1471"
+      ],
+      "issn_details": [
+        {
+          "issn": "0577-1471",
+          "support": "papier"
+        }
       ],
       "languages": [
         "fre"
@@ -9542,6 +11068,16 @@
         "2553-6133",
         "2551-8313"
       ],
+      "issn_details": [
+        {
+          "issn": "2553-6133",
+          "support": "electronique"
+        },
+        {
+          "issn": "2551-8313",
+          "support": "papier"
+        }
+      ],
       "languages": [
         "fre"
       ],
@@ -9563,7 +11099,7 @@
       "ddh": null,
       "themes": [
         "Sciences et techniques",
-        "Sociologie ",
+        "Sociologie",
         "Histoire des sciences"
       ],
       "journal_url": "https://www.cairn.info/revue-zilsel.htm",
@@ -9582,6 +11118,344 @@
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
       }
+    },
+    {
+      "mirabel_id": 27678,
+      "title": "Archéologie, société et environnement",
+      "subtitle": "",
+      "mirabel_title": "Archéologie, société et environnement",
+      "sigle": "ASE",
+      "issn": [
+        "2752-4507"
+      ],
+      "issn_details": [
+        {
+          "issn": "2752-4507",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre",
+        "eng"
+      ],
+      "publishers": [
+        "ISTE Group"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Espaces, environnement",
+        "Archéologie"
+      ],
+      "journal_url": "https://www.openscience.fr/Archaeology-Society-and-Environment",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27678",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 14830,
+      "title": "Bulletin de l'APERA",
+      "subtitle": "",
+      "mirabel_title": "Bulletin de l'APERA",
+      "sigle": "APERA",
+      "issn": [
+        "2804-6919",
+        "2804-9276"
+      ],
+      "issn_details": [
+        {
+          "issn": "2804-6919",
+          "support": "papier"
+        },
+        {
+          "issn": "2804-9276",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Association pour l'expérimentation et la recherche archéologique"
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Archéologie",
+        "Antiquité",
+        "Préhistoire et Protohistoire",
+        "Europe"
+      ],
+      "journal_url": "https://apera.hypotheses.org/bulletin-de-l-apera",
+      "mirabel_url": "https://reseau-mirabel.info/revue/14830",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 642,
+      "title": "Cahiers de civilisation espagnole contemporaine : de 1808 au temps présent : histoire politique, économique, sociale et culturelle",
+      "subtitle": "",
+      "mirabel_title": "Cahiers de civilisation espagnole contemporaine : de 1808 au temps présent : histoire politique, économique, sociale et culturelle",
+      "sigle": "",
+      "issn": [
+        "1957-7761"
+      ],
+      "issn_details": [
+        {
+          "issn": "1957-7761",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre",
+        "spa"
+      ],
+      "publishers": [
+        "Centre de recherches ibériques et ibéro-américaines"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [
+        "Catálogo 2.0 Latindex",
+        "DDH diamond journal"
+      ],
+      "is_diamond": true,
+      "references": {
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/1957-7761"
+        },
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/10887"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2933121"
+        }
+      },
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/10887",
+        "label": "DDH"
+      },
+      "themes": [
+        "Cultures et sociétés",
+        "Histoire et archéologie",
+        "Europe du Sud"
+      ],
+      "journal_url": "https://journals.openedition.org/ccec/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/642",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 1826,
+      "title": "Cahiers de littérature orale",
+      "subtitle": "",
+      "mirabel_title": "Cahiers de littérature orale",
+      "sigle": "",
+      "issn": [
+        "0396-891X",
+        "2266-1816"
+      ],
+      "issn_details": [
+        {
+          "issn": "0396-891X",
+          "support": "papier"
+        },
+        {
+          "issn": "2266-1816",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre",
+        "eng"
+      ],
+      "publishers": [
+        "Langage, langues et cultures d'Afrique - UMR 8135",
+        "Presses de l'Inalco"
+      ],
+      "country": null,
+      "periodicity": "bisannuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [
+        "DDH diamond journal"
+      ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22017"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96699037"
+        }
+      },
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/22017",
+        "label": "DDH"
+      },
+      "themes": [
+        "Littérature, linguistique et arts",
+        "Anthropologie, ethnologie"
+      ],
+      "journal_url": "https://journals.openedition.org/clo/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/1826",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 815,
+      "title": "Journal de la Société des Océanistes",
+      "subtitle": "",
+      "mirabel_title": "Journal de la Société des Océanistes",
+      "sigle": "",
+      "issn": [
+        "0300-953X",
+        "1760-7256"
+      ],
+      "issn_details": [
+        {
+          "issn": "0300-953X",
+          "support": "papier"
+        },
+        {
+          "issn": "1760-7256",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Société des océanistes"
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [
+        "DDH diamond journal"
+      ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22343"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3186854"
+        }
+      },
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/22343",
+        "label": "DDH"
+      },
+      "themes": [
+        "Anthropologie, ethnologie",
+        "Sociologie",
+        "Géographie, cartographie"
+      ],
+      "journal_url": "https://journals.openedition.org/jso/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/815",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 27680,
+      "title": "Journal of Islamic Manuscripts",
+      "subtitle": "",
+      "mirabel_title": "Journal of Islamic Manuscripts",
+      "sigle": "",
+      "issn": [
+        "1878-4631",
+        "1878-464X"
+      ],
+      "issn_details": [
+        {
+          "issn": "1878-4631",
+          "support": "papier"
+        },
+        {
+          "issn": "1878-464X",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Brill"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Histoire"
+      ],
+      "journal_url": "https://brill.com/view/journals/jim/jim-overview.xml?srsltid=AU7gw4UnZXv6AuWzaHYf4uFlf0XwjfZBXaOU0BVlHQtwp8m524iquk7v",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27680",
+      "mosar": null
+    },
+    {
+      "mirabel_id": 2127,
+      "title": "Études littéraires africaines",
+      "subtitle": "",
+      "mirabel_title": "Études littéraires africaines",
+      "sigle": "",
+      "issn": [
+        "1288-7145",
+        "2270-0374"
+      ],
+      "issn_details": [
+        {
+          "issn": "1288-7145",
+          "support": "papier"
+        },
+        {
+          "issn": "2270-0374",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Association pour l'étude des littératures africaines"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Histoire",
+        "Langues, linguistique"
+      ],
+      "journal_url": "http://www.apela.fr/la-revue/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/2127",
+      "mosar": null
     }
   ]
 }
