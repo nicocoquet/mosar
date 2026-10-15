@@ -176,6 +176,12 @@ def main():
     )
 
     assert_equal(
+        alpha["issn_details"],
+        [{"issn": "1111-1111", "support": "papier"}, {"issn": "2222-2222", "support": "électronique"}],
+        "ISSN et supports Mir@bel conservés",
+    )
+
+    assert_equal(
         alpha["publication_format"],
         "Papier et numérique",
         "Format papier et numérique",
@@ -226,6 +232,8 @@ def main():
         "Revue Bêta",
         "Conservation de la première occurrence d'un revueid dupliqué",
     )
+
+    assert_equal(beta["issn_details"], [{"issn": "3333-3333", "support": "electronique"}], "ISSN électronique seul")
 
     assert_equal(
         beta["publication_format"],
