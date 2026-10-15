@@ -14,6 +14,7 @@ REQUIRED_RECORD_KEYS = {
     "title",
     "sigle",
     "issn",
+    "issn_details",
     "languages",
     "publishers",
     "country",
@@ -58,6 +59,8 @@ def main():
         )
         assert record["title"], f"Revue {index}: titre vide"
         ids.append(record["mirabel_id"])
+        assert isinstance(record["issn_details"], list), "Détails ISSN invalides"
+        assert all(isinstance(item, dict) and "issn" in item and "support" in item for item in record["issn_details"]), "Structure des supports ISSN invalide"
 
         mosar = record["mosar"]
         if mosar is not None:

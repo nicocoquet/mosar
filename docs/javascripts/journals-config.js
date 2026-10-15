@@ -179,7 +179,7 @@ const REVUES_TRANSLATIONS = {
       'Industrie': 'Industry',
       'Information-communication': 'Information and Communication',
       'Informatique': 'Computer Science',
-      'Langues,  linguistique': 'Languages and Linguistics',
+      'Langues, linguistique': 'Languages and Linguistics',
       'Littérature': 'Literature',
       'Littérature, linguistique et arts': 'Literature, Linguistics and Arts',
       'Mers et océans': 'Seas and Oceans',
