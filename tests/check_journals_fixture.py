@@ -243,6 +243,31 @@ def main():
     assert_equal(alpha["journal_url"], "https://example.org/mosar-alpha", "Site web XLSX")
     assert_equal(alpha["references"]["Wikipédia"]["url"], "https://fr.wikipedia.org/wiki/Alpha", "Référencement Wikipédia")
 
+    # Les données absentes du nouveau XLSX ne doivent pas bloquer la publication.
+    from journals_model import normalize_mosar_category, normalize_editorial_structure
+    from mosar_model import DISCIPLINE_MAP, LICENCE_MAP
+    assert_equal(
+        normalize_mosar_category("?", LICENCE_MAP, "licence", 2127),
+        None,
+        "Licence non renseignée (?)",
+    )
+    assert_equal(
+        normalize_mosar_category("?", DISCIPLINE_MAP, "discipline", 2127),
+        None,
+        "Discipline non renseignée (?)",
+    )
+    assert_equal(
+        normalize_editorial_structure("", 2127),
+        None,
+        "Structure éditoriale absente",
+    )
+    try:
+        normalize_mosar_category("licence inconnue", LICENCE_MAP, "licence", 2127)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Une licence réellement inconnue doit être rejetée")
+
     beta = by_id[102]
 
     assert_equal(
