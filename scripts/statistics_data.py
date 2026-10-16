@@ -186,9 +186,10 @@ def derive(rows, source):
             periodicities[periodicity(periodicity_value, rn)] += 1
 
         discipline = norm(row[columns["discipline"]])
-        if discipline not in DISCIPLINE_MAP:
-            raise SystemExit(f"Discipline non référencée ligne {rn}: {discipline!r}")
-        disciplines[DISCIPLINE_MAP[discipline]] += 1
+        if discipline and discipline != "?":
+            if discipline not in DISCIPLINE_MAP:
+                raise SystemExit(f"Discipline non référencée ligne {rn}: {discipline!r}")
+            disciplines[DISCIPLINE_MAP[discipline]] += 1
 
         raw_sector = norm(row[columns["sector"]]) if "sector" in columns else ""
         sector_values = {part.strip().upper() for part in raw_sector.split("|") if part.strip()}
