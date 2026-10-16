@@ -26,7 +26,7 @@ def normalize_mosar_category(value, mapping, field, journal_id):
     """Normaliser une catégorie Mosar avec validation stricte."""
     text = str(value).strip() if value is not None else ""
 
-    if not text:
+    if not text or text == "?":
         return None
 
     if text not in mapping:
