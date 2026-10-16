@@ -105,6 +105,13 @@ MOSAR = {
         "discipline": "Archéologie",
         "type_editeur": "Éditeur public",
         "licence": "CC BY",
+        "periodicite": "semestriel",
+        "editeur": "Éditeur Mosar A | Éditeur Mosar B",
+        "association": "Association A | Association B",
+        "diffuseur_numerique": "OpenEdition Journals | Cairn.info",
+        "site_web": "https://example.org/mosar-alpha",
+        "wikipedia": 1,
+        "wikipedia_url": "https://fr.wikipedia.org/wiki/Alpha",
     },
     102: {
         "niveau_rattachement": "3",
@@ -112,6 +119,10 @@ MOSAR = {
         "discipline": "Linguistique",
         "type_editeur": "Association",
         "licence": "Tous droits réservés",
+        "periodicite": "annuel",
+        "editeur": "Éditeur Mosar Bêta",
+        "site_web": "",
+        "wikipedia": 0,
     },
     103: {
         "niveau_rattachement": "2",
@@ -221,9 +232,16 @@ def main():
             "licence_normalized": "Licence Creative Commons",
             "perimetre": ["Non renseigné"],
             "laboratoires": [],
+            "associations": ["Association A", "Association B"],
+            "diffuseurs_numeriques": ["OpenEdition Journals", "Cairn.info"],
         },
         "Enrichissement Mosar",
     )
+
+    assert_equal(alpha["publishers"], ["Éditeur Mosar A", "Éditeur Mosar B"], "Éditeurs XLSX multiples")
+    assert_equal(alpha["periodicity"], "semestriel", "Périodicité XLSX")
+    assert_equal(alpha["journal_url"], "https://example.org/mosar-alpha", "Site web XLSX")
+    assert_equal(alpha["references"]["Wikipédia"]["url"], "https://fr.wikipedia.org/wiki/Alpha", "Référencement Wikipédia")
 
     beta = by_id[102]
 
@@ -253,6 +271,10 @@ def main():
         "Normalisation de l'accès restreint",
     )
 
+    assert_equal(beta["journal_url"], "", "Absence de repli vers Mir@bel pour le site web")
+    assert_equal(beta["publishers"], ["Éditeur Mosar Bêta"], "Éditeur XLSX prioritaire")
+    assert_equal("Wikipédia" in beta["references"], False, "Pas de référencement Wikipédia absent")
+
     gamma = by_id[103]
 
     assert_equal(
@@ -264,7 +286,7 @@ def main():
     assert_equal(
         gamma["periodicity"],
         None,
-        "Périodicité vide",
+        "Périodicité vide sans donnée XLSX",
     )
 
     assert_equal(
