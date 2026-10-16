@@ -140,6 +140,12 @@ def load_mosar_journals(
                 "upn": source.columns["upn"],
                 "up1": source.columns["up1"],
                 "laboratoire": source.columns["laboratory"],
+                "association": source.columns["association"],
+                "editeur": source.columns["publisher"],
+                "diffuseur_numerique": source.columns["digital_distributor"],
+                "wikipedia": source.columns["wikipedia"],
+                "wikipedia_url": source.columns["wikipedia_url"],
+                "site_web": source.columns["website"],
             }
 
             output: dict[int, dict] = {}
