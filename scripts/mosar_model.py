@@ -51,6 +51,7 @@ DISCIPLINE_MAP = {
 
 LICENCE_MAP = {
     'CC BY-NC': 'Licence Creative Commons',
+    'CC BY-NC 4.0': 'Licence Creative Commons',
     'CC BY-NC-ND 4.0 ou Tous droits réservés': 'Licence CC ou DR variable pour une même publication',
     'Tous droits réservés (18 mois), puis CC BY-NC-ND 4.0': 'Licence CC ou DR variable pour une même publication',
     'Tous droits réservés (sur Cairn) et CC BY-NC-ND sur OpenEdition': 'Licence CC ou DR variable pour une même publication',
