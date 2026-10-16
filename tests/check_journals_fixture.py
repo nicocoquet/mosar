@@ -39,6 +39,7 @@ TITLES = [
         "liensext": [
             ["https://example.org/alpha", "Site de la revue"],
             ["https://example.org/alpha-ddh", "DDH"],
+            ["https://road.issn.org/issn/1111-1111", "ROAD"],
         ],
         "url": "https://example.org/alpha",
         "url_revue_mirabel": "https://reseau-mirabel.info/revue/101",
@@ -241,6 +242,11 @@ def main():
     assert_equal(alpha["publishers"], ["Éditeur Mosar A", "Éditeur Mosar B"], "Éditeurs XLSX multiples")
     assert_equal(alpha["periodicity"], "semestriel", "Périodicité XLSX")
     assert_equal(alpha["journal_url"], "https://example.org/mosar-alpha", "Site web XLSX")
+    assert_equal(
+        alpha["references"]["ROAD"]["url"],
+        "https://road.issn.org/issn/1111-1111",
+        "Référencement ROAD issu de Mir@bel",
+    )
     assert_equal(alpha["references"]["Wikipédia"]["url"], "https://fr.wikipedia.org/wiki/Alpha", "Référencement Wikipédia")
 
     # Les données absentes du nouveau XLSX ne doivent pas bloquer la publication.
