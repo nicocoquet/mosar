@@ -211,7 +211,7 @@ def derive(rows, source):
             structure_access[grouped_structure][a] += 1
 
         licence = norm(row[columns["licence"]])
-        if licence:
+        if licence and licence != "?":
             if licence not in LICENCE_MAP:
                 raise SystemExit(f"Licence non référencée ligne {rn}: {licence!r}")
             rights[LICENCE_MAP[licence]] += 1
