@@ -83,8 +83,8 @@ def external_links(title):
     return links
 
 def journal_references(links):
-    """Extraire les référencements DDH, DOAJ et Wikidata."""
-    supported = {"ddh": "DDH", "doaj": "DOAJ", "wikidata": "Wikidata"}
+    """Extraire les référencements DDH, DOAJ, ROAD et Wikidata."""
+    supported = {"ddh": "DDH", "doaj": "DOAJ", "road": "ROAD", "wikidata": "Wikidata"}
     references = {}
 
     for item in links:
