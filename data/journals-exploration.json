@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-15T16:53:54+00:00",
+    "generated_at": "2026-10-16T11:32:25+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -213,11 +213,10 @@
         "fre"
       ],
       "publishers": [
-        "France. Sous-direction de l'archéologie",
-        "Institut des Sciences Humaines et Sociales"
+        "CNRS-SHS et Sous-direction de l'archéologie du ministère de la Culture"
       ],
       "country": null,
-      "periodicity": "parution continue",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -235,7 +234,7 @@
         "Préhistoire et Protohistoire",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://journals.openedition.org/adlfi",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2359",
       "mosar": {
         "proximity_level": "1",
@@ -248,6 +247,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -276,11 +279,10 @@
         "fre"
       ],
       "publishers": [
-        "Americae",
-        "Maison des Sciences Humaines et Sociales Mondes"
+        "MSH Mondes (UAR 3225)"
       ],
       "country": null,
-      "periodicity": "parution continue",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -304,6 +306,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -330,10 +336,10 @@
         "eng"
       ],
       "publishers": [
-        "Presses universitaires de Paris Nanterre"
+        "Presses universitaires de Paris Nanterre et MSH Paris-Saclay"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -362,7 +368,7 @@
         "Cultures et sociétés",
         "Littérature, linguistique et arts"
       ],
-      "journal_url": "https://journals.openedition.org/bssg/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/5797",
       "mosar": {
         "proximity_level": "1",
@@ -374,6 +380,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -406,7 +416,7 @@
         "Société préhistorique française"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -418,7 +428,7 @@
         "Préhistoire et Protohistoire",
         "Europe de l'Ouest"
       ],
-      "journal_url": "http://www.prehistoire.org/shop_515-0-0-800/bulletins-de-la-spf.html",
+      "journal_url": "https://www.prehistoire.org/515_p_46628/le-bulletin-de-la-spf.html",
       "mirabel_url": "https://reseau-mirabel.info/revue/731",
       "mosar": {
         "proximity_level": "1",
@@ -431,6 +441,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de l'éditeur (pour Actualités scientifiques - Comptes rendus - Vie de la société qui sont en libre accès) ; Persée et JSTOR (après la barrière mobile)"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -464,7 +478,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -493,7 +507,7 @@
         "Migrations, relations interculturelles",
         "Histoire"
       ],
-      "journal_url": "https://journals.openedition.org/diasporas/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3231",
       "mosar": {
         "proximity_level": "1",
@@ -506,6 +520,10 @@
         ],
         "laboratoires": [
           "Institut d'histoire moderne et contemporaine (IHMC, UMR 8066)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur public",
@@ -536,10 +554,10 @@
         "fre"
       ],
       "publishers": [
-        "Editions érès"
+        "Éditions érès"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -557,7 +575,7 @@
         "Architecture",
         "Problèmes et questions de société"
       ],
-      "journal_url": "https://www.editions-eres.com/collection/145/espaces-et-societes",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/189",
       "mosar": {
         "proximity_level": "1",
@@ -570,6 +588,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
@@ -600,11 +622,10 @@
         "fre"
       ],
       "publishers": [
-        "Presses universitaires de France",
-        "Société d'ethnologie française"
+        "Presses universitaires de France"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -621,7 +642,7 @@
         "Anthropologie, ethnologie",
         "Acquisitions des savoirs"
       ],
-      "journal_url": "https://shs.cairn.info/journal-ethnologie-francaise",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/542",
       "mosar": {
         "proximity_level": "1",
@@ -634,6 +655,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Éditeur privé",
@@ -669,7 +694,7 @@
         "Cambridge University Press"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -684,7 +709,7 @@
       "themes": [
         "Sociologie"
       ],
-      "journal_url": "http://journals.cambridge.org/action/displayJournal?jid=EUR",
+      "journal_url": "https://www.cambridge.org/core/journals/european-journal-of-sociology-archives-europeennes-de-sociologie",
       "mirabel_url": "https://reseau-mirabel.info/revue/1456",
       "mosar": {
         "proximity_level": "1",
@@ -697,6 +722,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cambridge ; JSTOR"
         ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Éditeur privé",
@@ -730,7 +759,7 @@
         "CNRS Éditions"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -774,6 +803,10 @@
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
         ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -806,7 +839,7 @@
         "CNRS Éditions"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -837,7 +870,7 @@
         "Préhistoire et Protohistoire",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://journals.openedition.org/galliap/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/854",
       "mosar": {
         "proximity_level": "1",
@@ -850,6 +883,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur public",
@@ -886,7 +923,7 @@
         "Société des américanistes"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -920,7 +957,7 @@
         "Préhistoire et Protohistoire",
         "Amériques"
       ],
-      "journal_url": "https://journals.openedition.org/jsa/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/679",
       "mosar": {
         "proximity_level": "1",
@@ -933,6 +970,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Association",
@@ -959,10 +1000,10 @@
         "eng"
       ],
       "publishers": [
-        "Université Paris Nanterre"
+        "MSH Mondes (UAR 3225)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -974,7 +1015,7 @@
         "Géographie, cartographie",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "http://www.jssj.org",
+      "journal_url": "https://www.jssj.org/",
       "mirabel_url": "https://reseau-mirabel.info/revue/3836",
       "mosar": {
         "proximity_level": "1",
@@ -989,6 +1030,10 @@
         "laboratoires": [
           "MSH Mondes (UAR 3225)",
           "LAVUE (UMR 7218)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -1015,10 +1060,10 @@
         "eng"
       ],
       "publishers": [
-        "Université Paris Nanterre"
+        "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -1028,7 +1073,7 @@
       "themes": [
         "Arts visuels"
       ],
-      "journal_url": "https://ojs.parisnanterre.fr/index.php/latelier",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3407",
       "mosar": {
         "proximity_level": "1",
@@ -1040,6 +1085,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1069,8 +1118,7 @@
         "fre"
       ],
       "publishers": [
-        "Presses universitaires de Paris Nanterre",
-        "Université Paris Nanterre"
+        "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
       "periodicity": null,
@@ -1097,7 +1145,7 @@
       "themes": [
         "Littérature, linguistique et arts"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2024/05/09/linx/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1849",
       "mosar": {
         "proximity_level": "1",
@@ -1110,6 +1158,10 @@
         ],
         "laboratoires": [
           "Modèles, Dynamiques, Corpus (MoDyCo, UMR 7114)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Linguistique",
         "editorial_structure_normalized": "Éditeur public",
@@ -1140,11 +1192,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre des Sciences des Littératures en langue Française (Nanterre)",
         "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1172,7 +1223,7 @@
         "Europe de l'Ouest",
         "Europe du Sud"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2024/05/09/litterales-revue/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/21657",
       "mosar": {
         "proximity_level": "1",
@@ -1185,6 +1236,10 @@
         ],
         "laboratoires": [
           "Centre des sciences des littératures en langue française (CSLF, EA 1586)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Éditeur public",
@@ -1215,10 +1270,10 @@
         "fre"
       ],
       "publishers": [
-        "contemporaine"
+        "Association des Amis de La Contemporaine"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -1235,7 +1290,7 @@
         "Sciences politiques",
         "Époque contemporaine"
       ],
-      "journal_url": "https://lcbam.hypotheses.org/revue-materiaux",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/740",
       "mosar": {
         "proximity_level": "1",
@@ -1248,6 +1303,10 @@
         ],
         "laboratoires": [
           "La Contemporaine"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Association",
@@ -1279,11 +1338,10 @@
         "ita"
       ],
       "publishers": [
-        "Centre de recherches italiennes (Nanterre)",
         "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1308,7 +1366,7 @@
         "Littérature",
         "Europe du Sud"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2024/01/14/narrativa-revue/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/9646",
       "mosar": {
         "proximity_level": "1",
@@ -1321,6 +1379,10 @@
         ],
         "laboratoires": [
           "Études romanes (EA 369)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Éditeur public",
@@ -1356,7 +1418,7 @@
         "CNRS Éditions"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1383,7 +1445,7 @@
         "Asie centrale",
         "Proche et Moyen-Orient"
       ],
-      "journal_url": "https://www.mshmondes.cnrs.fr/paleorient",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/743",
       "mosar": {
         "proximity_level": "1",
@@ -1396,6 +1458,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur public",
@@ -1429,7 +1495,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1457,7 +1523,7 @@
       "themes": [
         "Arts visuels"
       ],
-      "journal_url": "https://journals.openedition.org/photographica/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/8757",
       "mosar": {
         "proximity_level": "1",
@@ -1470,6 +1536,10 @@
         ],
         "laboratoires": [
           "Histoire culturelle et sociale de l'art (HiCSA)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Éditeur public",
@@ -1504,7 +1574,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1535,7 +1605,7 @@
         "Histoire",
         "Histoire des sciences"
       ],
-      "journal_url": "https://journals.openedition.org/rhsh/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/597",
       "mosar": {
         "proximity_level": "1",
@@ -1547,6 +1617,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1579,7 +1653,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1611,7 +1685,7 @@
         "Problèmes et questions de société",
         "Sciences politiques"
       ],
-      "journal_url": "https://journals.openedition.org/ried/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/95",
       "mosar": {
         "proximity_level": "1",
@@ -1623,6 +1697,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1655,7 +1733,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1684,7 +1762,7 @@
         "Anthropologie, ethnologie",
         "Sociologie"
       ],
-      "journal_url": "https://journals.openedition.org/socio-anthropologie/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/705",
       "mosar": {
         "proximity_level": "1",
@@ -1696,6 +1774,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1728,7 +1810,7 @@
         "Éditions de la Sorbonne"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1755,7 +1837,7 @@
         "Sociologie",
         "Histoire"
       ],
-      "journal_url": "https://www.editionsdelasorbonne.fr/collection/37/societes-representations",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/796",
       "mosar": {
         "proximity_level": "1",
@@ -1767,6 +1849,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1797,12 +1883,10 @@
         "eng"
       ],
       "publishers": [
-        "Association Terrain",
-        "éditions de la Maison des sciences de l'homme",
-        "Mission à l'ethnologie"
+        "Association Terrain"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1828,7 +1912,7 @@
         "Anthropologie, ethnologie",
         "Europe"
       ],
-      "journal_url": "http://www.revueterrain.fr/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/711",
       "mosar": {
         "proximity_level": "1",
@@ -1841,6 +1925,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Association",
@@ -1869,7 +1957,7 @@
         "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -1898,7 +1986,7 @@
         "Anthropologie, ethnologie",
         "Sociologie"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2024/02/06/terrains-theories/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2509",
       "mosar": {
         "proximity_level": "1",
@@ -1911,6 +1999,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -1943,7 +2035,7 @@
         "ENS Éditions"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -1973,7 +2065,7 @@
         "Philosophie",
         "Histoire"
       ],
-      "journal_url": "https://journals.openedition.org/traces/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/712",
       "mosar": {
         "proximity_level": "1",
@@ -1986,6 +2078,10 @@
         ],
         "laboratoires": [
           "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
@@ -2012,11 +2108,10 @@
         "ita"
       ],
       "publishers": [
-        "Centre de recherches italiennes (Nanterre)",
         "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
@@ -2027,7 +2122,7 @@
         "Littérature",
         "Europe du Sud"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2021/07/12/critures/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/9648",
       "mosar": {
         "proximity_level": "1",
@@ -2040,6 +2135,10 @@
         ],
         "laboratoires": [
           "Études romanes (EA 369)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "aucun"
         ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Éditeur public",
@@ -2073,7 +2172,7 @@
         "Presses universitaires de Paris Nanterre"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -2102,7 +2201,7 @@
         "Littérature",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://presses-universitaires.parisnanterre.fr/index.php/2021/07/12/tudes-lawrenciennes-revue/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2237",
       "mosar": {
         "proximity_level": "1",
@@ -2114,6 +2213,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -2146,7 +2249,7 @@
         "Presses universitaires de France"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2177,6 +2280,10 @@
         "laboratoires": [
           "Laboratoire de sociologie, philosophie et anthropologie politiques (Sophiapol, EA 3932)"
         ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -2206,10 +2313,10 @@
         "fre"
       ],
       "publishers": [
-        "UMR TEMPS (Technologie et Ethnologie des Mondes PréhistoriqueS) - UMR 8068"
+        "Technologie et ethnologie des mondes préhistoriques (Temps, UMR 8068)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -2240,7 +2347,7 @@
         "Arts vivants",
         "Afrique"
       ],
-      "journal_url": "https://journals.openedition.org/aaa/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3196",
       "mosar": {
         "proximity_level": "2",
@@ -2254,6 +2361,10 @@
         ],
         "laboratoires": [
           "Technologie et ethnologie des mondes préhistoriques (Temps, UMR 8068)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2280,10 +2391,10 @@
         "eng"
       ],
       "publishers": [
-        "Institut des mondes africains"
+        "Institut des mondes africains (IMAF, UMR 8171)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -2312,7 +2423,7 @@
         "Histoire",
         "Afrique"
       ],
-      "journal_url": "https://journals.openedition.org/afriques/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1041",
       "mosar": {
         "proximity_level": "2",
@@ -2325,6 +2436,10 @@
         ],
         "laboratoires": [
           "Institut des mondes africains (IMAF, UMR 8171)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2350,10 +2465,10 @@
         "fre"
       ],
       "publishers": [
-        "DICEN IdF"
+        "Dispositifs d'Information et de Communication à l'Ère Numérique (Dicen)"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -2363,7 +2478,7 @@
       "themes": [
         "Information-communication"
       ],
-      "journal_url": "https://atic.hypotheses.org/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/9197",
       "mosar": {
         "proximity_level": "2",
@@ -2376,6 +2491,10 @@
         ],
         "laboratoires": [
           "Dispositifs d'information et de communication à l'ère numérique (Dicen-IdF, EA 7339)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Information-communication",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2406,10 +2525,10 @@
         "fre"
       ],
       "publishers": [
-        "Éditions Auguste Durand et Pedone Lauriel"
+        "Éditions Pédone"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2424,7 +2543,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://www.cairn.info/revue-archives-de-politique-criminelle.htm?contenu=apropos",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/764",
       "mosar": {
         "proximity_level": "2",
@@ -2439,6 +2558,10 @@
         "laboratoires": [
           "Centre de droit pénal et de criminologie (CDPC, EA 3982)",
           "Institut de recherche juridique de la Sorbonne (IRJS)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
@@ -2467,7 +2590,7 @@
         "Achemenet"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -2477,7 +2600,7 @@
       "themes": [
         "Archéologie"
       ],
-      "journal_url": "http://www.achemenet.com/fr/tree/?/publications-en-ligne/arta",
+      "journal_url": "http://www.achemenet.com/en/tree/?/on-line-publications/arta",
       "mirabel_url": "https://reseau-mirabel.info/revue/10190",
       "mosar": {
         "proximity_level": "2",
@@ -2490,6 +2613,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Achemenet"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
@@ -2514,10 +2641,10 @@
         "fre"
       ],
       "publishers": [
-        "Laboratoire d'ethnologie et de sociologie comparative"
+        "Laboratoire d'ethnologie et de sociologie comparative (Lesc, UMR 7186)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -2541,7 +2668,7 @@
       "themes": [
         "Anthropologie, ethnologie"
       ],
-      "journal_url": "https://journals.openedition.org/ateliers/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/637",
       "mosar": {
         "proximity_level": "2",
@@ -2554,6 +2681,10 @@
         ],
         "laboratoires": [
           "Laboratoire d'ethnologie et de sociologie comparative (Lesc, UMR 7186)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2585,10 +2716,10 @@
         "eng"
       ],
       "publishers": [
-        "Harmattan"
+        "Éditions Hermann"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2605,7 +2736,7 @@
         "Sciences économiques",
         "Histoire"
       ],
-      "journal_url": "http://www.cahiersdecopo.fr/fr/",
+      "journal_url": "http://www.cahiersdecopo.fr",
       "mirabel_url": "https://reseau-mirabel.info/revue/774",
       "mosar": {
         "proximity_level": "2",
@@ -2617,6 +2748,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -2650,7 +2785,7 @@
         "Edizioni Ca' Foscari"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2669,7 +2804,7 @@
         "Histoire",
         "Antiquité"
       ],
-      "journal_url": "https://edizionicafoscari.unive.it/it/edizioni4/riviste/cahiers-du-centre-gustave-glotz/",
+      "journal_url": "https://www.anhima.fr/publications/revue/cahier-glotz/40-cahiers-du-centre-gustave-glotz",
       "mirabel_url": "https://reseau-mirabel.info/revue/1476",
       "mosar": {
         "proximity_level": "2",
@@ -2682,6 +2817,10 @@
         ],
         "laboratoires": [
           "Anthropologie et histoire des mondes antiques (Anhima, UMR 8210)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Edizioni Ca' Foscari"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur privé",
@@ -2708,10 +2847,10 @@
         "eng"
       ],
       "publishers": [
-        "Anthropologie et histoire des mondes antiques - UMR 8210"
+        "Anthropologie et histoire des mondes antiques (ANHIMA, UMR 8210)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -2743,7 +2882,7 @@
         "Antiquité",
         "Europe du Sud"
       ],
-      "journal_url": "https://journals.openedition.org/mondesanciens/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1064",
       "mosar": {
         "proximity_level": "2",
@@ -2756,6 +2895,10 @@
         ],
         "laboratoires": [
           "Anthropologie et histoire des mondes antiques (Anhima, UMR 8210)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2787,10 +2930,10 @@
         "spa"
       ],
       "publishers": [
-        "Centre de recherches ibériques et ibéro-américaines"
+        "Centre de recherches ibériques et ibéro-américaines (CRIIA)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2801,7 +2944,7 @@
         "Langues, linguistique",
         "Littérature"
       ],
-      "journal_url": "https://crisol.parisnanterre.fr/index.php/crisol/revuecrisol/",
+      "journal_url": "https://crisol.parisnanterre.fr/index.php/crisol/fr",
       "mirabel_url": "https://reseau-mirabel.info/revue/1137",
       "mosar": {
         "proximity_level": "2",
@@ -2814,6 +2957,10 @@
         ],
         "laboratoires": [
           "Études romanes (EA 369)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OJS/PKP"
         ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2845,10 +2992,10 @@
         "gre"
       ],
       "publishers": [
-        "Géographie-cités"
+        "Géographie-cités (UMR 8504)"
       ],
       "country": null,
-      "periodicity": "parution continue",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -2877,7 +3024,7 @@
         "Cultures et sociétés",
         "Géographie, cartographie"
       ],
-      "journal_url": "https://journals.openedition.org/cybergeo/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/659",
       "mosar": {
         "proximity_level": "2",
@@ -2890,6 +3037,10 @@
         ],
         "laboratoires": [
           "Géographie-cités (UMR 8504)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2916,10 +3067,10 @@
         "eng"
       ],
       "publishers": [
-        "École des arts de la Sorbonne (Paris ; 2018-....)"
+        "Institut Acte"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -2944,6 +3095,10 @@
         ],
         "laboratoires": [
           "Arts, Créations, Théories, Esthétique (Acte, UR 7539)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
         ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -2978,10 +3133,10 @@
         "ita"
       ],
       "publishers": [
-        "Centre d'économie de la Sorbonne"
+        "Centre d'économie de la Sorbonne (CES)"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -2991,7 +3146,7 @@
       "themes": [
         "Sciences économiques"
       ],
-      "journal_url": "",
+      "journal_url": "https://paris1.hal.science/CES-DOCS",
       "mirabel_url": "https://reseau-mirabel.info/revue/12954",
       "mosar": {
         "proximity_level": "2",
@@ -3004,6 +3159,10 @@
         ],
         "laboratoires": [
           "Centre d'économie de la Sorbonne (CES, UMR 8174)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "HAL"
         ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3029,10 +3188,10 @@
         "fre"
       ],
       "publishers": [
-        "Pôle de Recherche pour l'Organisation et la Diffusion de l'Information Géographique"
+        "Pôle de recherche pour l'organisation et la diffusion de l'information géographique (PRODIG)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -3060,7 +3219,7 @@
       "themes": [
         "Géographie, cartographie"
       ],
-      "journal_url": "https://journals.openedition.org/echogeo/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/648",
       "mosar": {
         "proximity_level": "2",
@@ -3073,6 +3232,10 @@
         ],
         "laboratoires": [
           "Pôle de recherche pour l'organisation et la diffusion de l'information géographique (PRODIG, UMR 8586)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3098,10 +3261,10 @@
         "fre"
       ],
       "publishers": [
-        "Sorbonne - Identités, relations internationales et civilisations de l'Europe - UMR 8138"
+        "Sorbonne – Identités, relations internationales et civilisations de l'Europe (SIRICE, UMR 8138)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -3113,7 +3276,7 @@
         "Relations internationales",
         "Europe"
       ],
-      "journal_url": "https://ipr.pantheonsorbonne.fr/revues/histoire-europe-et-relations-internationales",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/13751",
       "mosar": {
         "proximity_level": "2",
@@ -3126,6 +3289,10 @@
         ],
         "laboratoires": [
           "Sorbonne – Identités, relations internationales et civilisations de l'Europe (SIRICE, UMR 8138)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3150,9 +3317,11 @@
       "languages": [
         "fre"
       ],
-      "publishers": [],
+      "publishers": [
+        "Centre de théorie et d'analyse du droit (CTAD, UMR 7074) - Université Paris Nanterre"
+      ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -3168,7 +3337,7 @@
         "Études de genre",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://revue-intersections.parisnanterre.fr/",
+      "journal_url": "https://revue-intersections.parisnanterre.fr/index.php/accueil",
       "mirabel_url": "https://reseau-mirabel.info/revue/21831",
       "mosar": {
         "proximity_level": "2",
@@ -3181,6 +3350,10 @@
         ],
         "laboratoires": [
           "Centre de théorie et d'analyse du droit (CTAD, UMR 7074)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OJS/PKP"
         ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3214,7 +3387,7 @@
         "Belin éditeur"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3229,7 +3402,7 @@
       "themes": [
         "Géographie, cartographie"
       ],
-      "journal_url": "https://espacegeographique.cnrs.fr/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/532",
       "mosar": {
         "proximity_level": "2",
@@ -3242,6 +3415,10 @@
         ],
         "laboratoires": [
           "Géographie-cités (UMR 8504)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; JSTOR"
         ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Éditeur privé",
@@ -3267,10 +3444,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre de recherches et d'études sur les droits fondamentaux"
+        "Centre de recherches et d'études sur les droits fondamentaux (CREDOF)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -3294,7 +3471,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://journals.openedition.org/revdh/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2169",
       "mosar": {
         "proximity_level": "2",
@@ -3307,6 +3484,10 @@
         ],
         "laboratoires": [
           "Centre de théorie et d'analyse du droit (CTAD, UMR 7074)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3338,11 +3519,10 @@
         "eng"
       ],
       "publishers": [
-        "Association Le Mouvement Social",
-        "Presses de Sciences Po"
+        "Presses de Sciences Po, Association Le Mouvement Social"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3371,6 +3551,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Coédition privé/association",
         "licence_normalized": "Tous droits réservés"
@@ -3404,11 +3588,10 @@
         "gre"
       ],
       "publishers": [
-        "Daedalus",
         "Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3429,7 +3612,7 @@
         "Antiquité",
         "Europe du Sud"
       ],
-      "journal_url": "https://www.anhima.fr/publications/revues/metis",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/768",
       "mosar": {
         "proximity_level": "2",
@@ -3442,6 +3625,10 @@
         ],
         "laboratoires": [
           "Anthropologie et histoire des mondes antiques (Anhima, UMR 8210)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Books"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur public",
@@ -3467,10 +3654,10 @@
         "fre"
       ],
       "publishers": [
-        "Association Revue Mélété Cahiers d'Histoire et d'Anthropologie du droit"
+        "Association Revue Mélété"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -3492,7 +3679,7 @@
         "Histoire",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://publications-prairial.fr/melete/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/25832",
       "mosar": {
         "proximity_level": "2",
@@ -3504,6 +3691,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Prairial"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -3531,7 +3722,7 @@
         "Centre d'histoire du XIXe siècle"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -3554,6 +3745,10 @@
         ],
         "laboratoires": [
           "Centre d'histoire du XIXe siècle (CRHXIX, UR 3550)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web du laboratoire"
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3583,9 +3778,11 @@
       "languages": [
         "fre"
       ],
-      "publishers": [],
+      "publishers": [
+        "École doctorale de philosophie de l'Université Paris 1"
+      ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -3609,7 +3806,7 @@
       "themes": [
         "Philosophie"
       ],
-      "journal_url": "http://philonsorbonne.revues.org/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2151",
       "mosar": {
         "proximity_level": "2",
@@ -3621,6 +3818,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
@@ -3650,10 +3851,10 @@
         "fre"
       ],
       "publishers": [
-        "Éditions de la Sorbonne"
+        "Institut Acte"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3676,6 +3877,10 @@
         ],
         "laboratoires": [
           "Arts, Créations, Théories, Esthétique (Acte, UR 7539)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
         ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3709,7 +3914,7 @@
         "De Boeck Supérieur"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3726,7 +3931,7 @@
         "Sociologie",
         "Sciences politiques"
       ],
-      "journal_url": "http://politix.cairn.info/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/78",
       "mosar": {
         "proximity_level": "2",
@@ -3738,6 +3943,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -3770,7 +3979,7 @@
         "Société d'histoire de la Révolution de 1848 et des révolutions du XIXe siècle"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3787,7 +3996,7 @@
         "Époque contemporaine",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://journals.openedition.org/rh19/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/696",
       "mosar": {
         "proximity_level": "2",
@@ -3799,6 +4008,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -3828,10 +4041,10 @@
         "fre"
       ],
       "publishers": [
-        "Harmattan"
+        "Centre de Recherches Éducation et Formation (CREF)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3848,7 +4061,7 @@
         "Sciences de l’éducation",
         "Époque contemporaine"
       ],
-      "journal_url": "https://efis.parisnanterre.fr/revue-internationale-de-leducation-familiale-rief/",
+      "journal_url": "https://cref.parisnanterre.fr/education-familiale-et-interventions-sociales-en-direction-des-familles/revue-internationale-de-leducation-familiale",
       "mirabel_url": "https://reseau-mirabel.info/revue/1553",
       "mosar": {
         "proximity_level": "2",
@@ -3861,6 +4074,10 @@
         ],
         "laboratoires": [
           "Centre de recherches Éducation et Formation (Cref, UR 1589)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -3886,10 +4103,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut de recherche juridique de la Sorbonne"
+        "IRJS éditions"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -3899,7 +4116,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://irjs.pantheonsorbonne.fr/revue-juridique-sorbonne",
+      "journal_url": "https://irjs.pantheonsorbonne.fr/la-revue-juridique-de-la-sorbonne",
       "mirabel_url": "https://reseau-mirabel.info/revue/17811",
       "mosar": {
         "proximity_level": "2",
@@ -3911,6 +4128,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
@@ -3944,7 +4165,7 @@
         "Presses de Sciences Po"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -3959,7 +4180,7 @@
       "themes": [
         "Économie, gestion"
       ],
-      "journal_url": "http://www.revue-economique.fr/",
+      "journal_url": "https://reveco.hypotheses.org",
       "mirabel_url": "https://reseau-mirabel.info/revue/85",
       "mosar": {
         "proximity_level": "2",
@@ -3971,6 +4192,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -4000,10 +4225,10 @@
         "fre"
       ],
       "publishers": [
-        "Editions du Croquant"
+        "Éditions du Croquant"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4013,7 +4238,7 @@
       "themes": [
         "Travail"
       ],
-      "journal_url": "http://www.revue-salariat.fr/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/14234",
       "mosar": {
         "proximity_level": "2",
@@ -4027,6 +4252,10 @@
         ],
         "laboratoires": [
           "Institutions et dynamiques historiques de l'économie et de la société (IDHE.S, 8533)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Éditeur privé",
@@ -4057,10 +4286,10 @@
         "fre"
       ],
       "publishers": [
-        "Harmattan"
+        "L'Harmattan"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4078,7 +4307,7 @@
         "Sciences de l’éducation",
         "Époque contemporaine"
       ],
-      "journal_url": "https://www.editions-harmattan.fr/catalogue/revue/savoirs/28",
+      "journal_url": "http://savoirs.parisnanterre.fr",
       "mirabel_url": "https://reseau-mirabel.info/revue/852",
       "mosar": {
         "proximity_level": "2",
@@ -4090,6 +4319,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -4115,10 +4348,10 @@
         "fre"
       ],
       "publishers": [
-        "Sorbonne Student Law Review Association"
+        "IRJS éditions"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -4128,7 +4361,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "http://www.sorbonnestudentlawreview.org/",
+      "journal_url": "https://sorbonnestudentlawreview.org/",
       "mirabel_url": "https://reseau-mirabel.info/revue/5392",
       "mosar": {
         "proximity_level": "2",
@@ -4140,6 +4373,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -4172,7 +4409,7 @@
         "Champ social éditions"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4189,7 +4426,7 @@
         "Sociologie",
         "Sciences de l’éducation"
       ],
-      "journal_url": "http://champsocial.com/catalogue-specificites_terrains_sensibles,34.html",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2600",
       "mosar": {
         "proximity_level": "2",
@@ -4202,6 +4439,10 @@
         ],
         "laboratoires": [
           "Centre de recherches Éducation et Formation (Cref, UR 1589)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
@@ -4233,11 +4474,10 @@
         "cat"
       ],
       "publishers": [
-        "Équipe interdisciplinaire de recherches sur le tourisme",
-        "Université Paris 1 Panthéon-Sorbonne"
+        "Équipe interdisciplinaire de recherches sur le tourisme (EIREST) - Université Paris 1"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -4266,7 +4506,7 @@
         "Cultures et sociétés",
         "Services"
       ],
-      "journal_url": "https://journals.openedition.org/viatourism/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1949",
       "mosar": {
         "proximity_level": "2",
@@ -4279,6 +4519,10 @@
         ],
         "laboratoires": [
           "Équipe interdisciplinaire de recherches sur le tourisme (EIREST, EA 7337)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
         ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -4309,10 +4553,10 @@
         "fre"
       ],
       "publishers": [
-        "Seuil"
+        "Le Seuil/Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4329,7 +4573,7 @@
         "Sociologie",
         "Europe de l'Ouest"
       ],
-      "journal_url": "http://www.arss.fr/presentation/",
+      "journal_url": "https://www.arss.fr",
       "mirabel_url": "https://reseau-mirabel.info/revue/28",
       "mosar": {
         "proximity_level": "3",
@@ -4341,6 +4585,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Coédition public/privé",
         "licence_normalized": "Tous droits réservés"
@@ -4373,7 +4621,7 @@
         "Edizioni ETS"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4384,7 +4632,7 @@
         "Philosophie",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://www.edizioniets.com/index.asp",
+      "journal_url": "https://www.journal.edizioniets.eu/index.php/aed/index",
       "mirabel_url": "https://reseau-mirabel.info/revue/18436",
       "mosar": {
         "proximity_level": "3",
@@ -4396,6 +4644,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Edizioni ETS"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -4425,11 +4677,10 @@
         "fre"
       ],
       "publishers": [
-        "Cambridge University Press",
-        "Éditions de l'EHESS"
+        "Cambridge University Press ; Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4440,7 +4691,7 @@
         "Anthropologie, ethnologie",
         "Histoire"
       ],
-      "journal_url": "http://annales.ehess.fr/",
+      "journal_url": "http://annales.ehess.fr",
       "mirabel_url": "https://reseau-mirabel.info/revue/718",
       "mosar": {
         "proximity_level": "3",
@@ -4452,6 +4703,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; JSTOR, Cambridge Core"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Coédition public/privé",
         "licence_normalized": "Tous droits réservés"
@@ -4484,7 +4739,7 @@
         "Armand Colin"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4513,6 +4768,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -4546,11 +4805,10 @@
         "spa"
       ],
       "publishers": [
-        "Association pour l'antiquité tardive",
-        "Brepols Publishers"
+        "Brepols Publishers, sous le patronage de l' Association pour l'Antiquité Tardive"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4569,7 +4827,7 @@
         "Antiquité tardive",
         "Moyen Âge"
       ],
-      "journal_url": "https://antiquitetardive.com/revue/",
+      "journal_url": "http://www.brepols.net/Pages/BrowseBySeries.aspx?TreeSeries=AT",
       "mirabel_url": "https://reseau-mirabel.info/revue/4090",
       "mosar": {
         "proximity_level": "3",
@@ -4581,6 +4839,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Brepols"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -4608,7 +4870,7 @@
         "Articulation(s)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -4626,7 +4888,7 @@
         "Problèmes et questions de société",
         "Protection sociale, solidarité"
       ],
-      "journal_url": "https://articulations.numerev.com",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/10547",
       "mosar": {
         "proximity_level": "3",
@@ -4638,6 +4900,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "NumeRev"
+        ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -4667,10 +4933,10 @@
         "eng"
       ],
       "publishers": [
-        "University of Hawai'i Press"
+        "University of Hawaii Press"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4686,7 +4952,7 @@
         "Histoire et archéologie",
         "Asie de l'Est"
       ],
-      "journal_url": "https://www.asianperspective.org/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/7206",
       "mosar": {
         "proximity_level": "3",
@@ -4698,6 +4964,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Project Muse & JStor"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Tous droits réservés"
@@ -4727,10 +4997,10 @@
         "ger"
       ],
       "publishers": [
-        "Association internationale pour la recherche en littératures populaires et cultures médiatiques"
+        "Association internationale pour la recherche en littératures populaires et cultures médiatiques — LPCM (hébergée à l'université de Limoges)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -4760,7 +5030,7 @@
         "Arts visuels",
         "Littérature"
       ],
-      "journal_url": "https://journals.openedition.org/belphegor/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2143",
       "mosar": {
         "proximity_level": "3",
@@ -4772,6 +5042,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -4801,12 +5075,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre de recherches sur le Brésil contemporain",
-        "éditions de la Maison des sciences de l'homme",
-        "Mondes Américains (UMR 8168)"
+        "Éditions de la MSH"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -4838,7 +5110,7 @@
         "Problèmes et questions de société",
         "Amérique du Sud"
       ],
-      "journal_url": "https://journals.openedition.org/bresils/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2010",
       "mosar": {
         "proximity_level": "3",
@@ -4850,6 +5122,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -4880,11 +5156,10 @@
         "eng"
       ],
       "publishers": [
-        "Éditions de l'EHESS",
-        "Institut des mondes africains"
+        "Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -4904,7 +5179,7 @@
         "Problèmes et questions de société",
         "Afrique"
       ],
-      "journal_url": "http://www.editions.ehess.fr/revues/cahiers-detudes-africaines/",
+      "journal_url": "http://www.editions.ehess.fr/revues/cahiers-detudes-africaines",
       "mirabel_url": "https://reseau-mirabel.info/revue/646",
       "mosar": {
         "proximity_level": "3",
@@ -4916,6 +5191,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; OpenEdition Journals"
+        ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Tous droits réservés"
@@ -4940,10 +5219,10 @@
         "fre"
       ],
       "publishers": [
-        "Cliopsy"
+        "Association Cliopsy"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -4960,7 +5239,7 @@
         "Apprentissage, formation",
         "Psychiatrie, santé mentale"
       ],
-      "journal_url": "https://www.revuecliopsy.fr/la-revue/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2097",
       "mosar": {
         "proximity_level": "3",
@@ -4972,6 +5251,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -5001,11 +5284,10 @@
         "fre"
       ],
       "publishers": [
-        "Avignon Université",
         "Éditions universitaires d'Avignon"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -5035,7 +5317,7 @@
         "Arts vivants",
         "Époque contemporaine"
       ],
-      "journal_url": "https://journals.openedition.org/culturemusees/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1031",
       "mosar": {
         "proximity_level": "3",
@@ -5047,6 +5329,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -5076,11 +5362,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre d'études sur les conflits",
-        "Harmattan"
+        "Centre d'études sur les conflits, liberté et sécurité (CECLS) & L'Harmattan"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5097,7 +5382,7 @@
         "Sociologie",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://journals.openedition.org/conflits/3893",
+      "journal_url": "http://www.conflits.org",
       "mirabel_url": "https://reseau-mirabel.info/revue/46",
       "mosar": {
         "proximity_level": "3",
@@ -5109,6 +5394,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; OpenEdition Journals ; JSTOR"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Coédition privé/association",
         "licence_normalized": "Licence Creative Commons"
@@ -5138,10 +5427,10 @@
         "fre"
       ],
       "publishers": [
-        "Les amis de la revue Droit et Cultures"
+        "Association Les amis de la revue Droit et Cultures"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -5170,7 +5459,7 @@
         "Histoire",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://journals.openedition.org/droitcultures/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1588",
       "mosar": {
         "proximity_level": "3",
@@ -5182,6 +5471,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -5211,11 +5504,10 @@
         "fre"
       ],
       "publishers": [
-        "Association Droit et société",
-        "Lextenso"
+        "Librairie Générale de Droit et de Jurisprudence - Lextenso éditions"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5231,7 +5523,7 @@
         "Droit, justice, criminologie",
         "Problèmes et questions de société"
       ],
-      "journal_url": "https://ds.hypotheses.org/33",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/526",
       "mosar": {
         "proximity_level": "3",
@@ -5243,6 +5535,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -5272,10 +5568,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut d'histoire moderne et contemporaine - UMR 8066"
+        "Institut d'histoire moderne et contemporaine (IHMC, UMR 8066)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -5299,7 +5595,7 @@
       "themes": [
         "Sciences et techniques"
       ],
-      "journal_url": "https://ihmc.ens.psl.eu/e-phaistos-revue-histoire-des-techniques",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3895",
       "mosar": {
         "proximity_level": "3",
@@ -5311,6 +5607,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -5341,10 +5641,10 @@
         "eng"
       ],
       "publishers": [
-        "Association Française de Finance"
+        "Association Française de Finance (AFFI)"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5360,7 +5660,7 @@
         "Économie, gestion",
         "Finance"
       ],
-      "journal_url": "https://www.affi.asso.fr/journals/finance-journal/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/778",
       "mosar": {
         "proximity_level": "3",
@@ -5372,6 +5672,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -5402,10 +5706,10 @@
         "eng"
       ],
       "publishers": [
-        "Université Gustave Eiffel"
+        "Éditions Université Gustave-Eiffel"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5423,7 +5727,7 @@
         "Géographie, cartographie",
         "Logement, transports"
       ],
-      "journal_url": "http://revue-flux.cairn.info/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/737",
       "mosar": {
         "proximity_level": "3",
@@ -5435,6 +5739,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -5467,7 +5775,7 @@
         "Palgrave Macmillan"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5483,7 +5791,7 @@
         "Science politique, droit et vie publique",
         "Époque contemporaine"
       ],
-      "journal_url": "http://www.palgrave.com/gp/journal/41253",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/481",
       "mosar": {
         "proximity_level": "3",
@@ -5495,6 +5803,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer Nature Link"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -5524,10 +5836,10 @@
         "fre"
       ],
       "publishers": [
-        "Harmattan"
+        "L'Harmattan"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -5556,7 +5868,7 @@
         "Cultures et sociétés",
         "Géographie, cartographie"
       ],
-      "journal_url": "https://www.editions-harmattan.fr/catalogue/revue/geographie-et-cultures/16",
+      "journal_url": "https://www.editions-harmattan.fr/index.asp?navig=catalogue&obj=revue&no=17",
       "mirabel_url": "https://reseau-mirabel.info/revue/2046",
       "mosar": {
         "proximity_level": "3",
@@ -5569,6 +5881,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -5596,10 +5912,10 @@
         "cat"
       ],
       "publishers": [
-        "Société Française des Hispanistes et Ibéro-Américanistes"
+        "Société française des hispanistes et des ibéro-américanistes (SOFHIA)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -5620,7 +5936,7 @@
         "Littérature, linguistique et arts",
         "Histoire"
       ],
-      "journal_url": "https://www.hispanistes.fr/index.php/publications/revue-hispanismes",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/11184",
       "mosar": {
         "proximity_level": "3",
@@ -5632,6 +5948,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -5695,6 +6015,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Information-communication",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -5725,11 +6049,10 @@
         "eng"
       ],
       "publishers": [
-        "Centre d'études prospectives et d'informations internationales",
-        "Elsevier"
+        "Centre d'études prospectives et d'informations internationales (CEPII) & Elsevier"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5746,7 +6069,7 @@
         "Sciences économiques",
         "Mathématiques"
       ],
-      "journal_url": "https://www.sciencedirect.com/journal/international-economics",
+      "journal_url": "http://www.sciencedirect.com/science/journal/21107017",
       "mirabel_url": "https://reseau-mirabel.info/revue/53",
       "mosar": {
         "proximity_level": "3",
@@ -5758,6 +6081,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Coédition public/privé",
         "licence_normalized": "Tous droits réservés"
@@ -5783,11 +6110,10 @@
         "fre"
       ],
       "publishers": [
-        "Association pour la diffusion de la recherche internationale en psychologie sociale",
         "Ubiquity Press"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -5806,7 +6132,7 @@
       "themes": [
         "Psychologie"
       ],
-      "journal_url": "http://www.rips-irsp.com/",
+      "journal_url": "https://rips-irsp.com/",
       "mirabel_url": "https://reseau-mirabel.info/revue/1536",
       "mosar": {
         "proximity_level": "3",
@@ -5818,6 +6144,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
+        ],
         "discipline_normalized": "Psychologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -5850,7 +6180,7 @@
         "Société des africanistes"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5864,7 +6194,7 @@
         "Littérature, linguistique et arts",
         "Afrique"
       ],
-      "journal_url": "http://www.africanistes.org/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/680",
       "mosar": {
         "proximity_level": "3",
@@ -5876,6 +6206,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -5905,10 +6239,10 @@
         "eng"
       ],
       "publishers": [
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5935,6 +6269,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -5967,7 +6305,7 @@
         "Routledge"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -5996,6 +6334,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -6020,11 +6362,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut d'histoire de la Révolution française",
-        "Institut d'histoire moderne et contemporaine - UMR 8066"
+        "Institut d'histoire moderne et contemporaine (IHMC, UMR 8066)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -6049,7 +6390,7 @@
         "Époque contemporaine",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://journals.openedition.org/lrf/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1090",
       "mosar": {
         "proximity_level": "3",
@@ -6061,6 +6402,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -6089,7 +6434,7 @@
         "Marronnages"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -6107,7 +6452,7 @@
         "Problèmes et questions de société",
         "Sciences politiques"
       ],
-      "journal_url": "https://www.marronnages.org/index.php/revue/index",
+      "journal_url": "https://marronnages.org/index.php/revue",
       "mirabel_url": "https://reseau-mirabel.info/revue/24735",
       "mosar": {
         "proximity_level": "3",
@@ -6119,6 +6464,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OJS/PKP"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -6148,11 +6497,10 @@
         "fre"
       ],
       "publishers": [
-        "Armand Colin",
         "Presses universitaires de Rennes"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6168,7 +6516,7 @@
         "Histoire",
         "Sciences politiques"
       ],
-      "journal_url": "https://www.pur-editions.fr/review/97",
+      "journal_url": "http://www.monde-s.com",
       "mirabel_url": "https://reseau-mirabel.info/revue/1571",
       "mosar": {
         "proximity_level": "3",
@@ -6180,6 +6528,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Tous droits réservés"
@@ -6210,11 +6562,10 @@
         "eng"
       ],
       "publishers": [
-        "Institut de recherches asiatiques - UMR 7306",
-        "Presses universitaires de Provence"
+        "Presses universitaires d'Aix Marseille Université"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -6243,7 +6594,7 @@
         "Cultures et sociétés",
         "Asie du Sud-Est"
       ],
-      "journal_url": "https://journals.openedition.org/moussons/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/951",
       "mosar": {
         "proximity_level": "3",
@@ -6255,6 +6606,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -6287,7 +6642,7 @@
         "Association Multitudes"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6303,7 +6658,7 @@
         "Cultures et sociétés",
         "Philosophie"
       ],
-      "journal_url": "http://www.multitudes.net/",
+      "journal_url": "http://www.multitudes.net",
       "mirabel_url": "https://reseau-mirabel.info/revue/565",
       "mosar": {
         "proximity_level": "3",
@@ -6315,6 +6670,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -6344,11 +6703,10 @@
         "fre"
       ],
       "publishers": [
-        "Association NSS-Dialogues",
-        "EDP Sciences"
+        "Association NSS-Dialogues & EDP Sciences"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -6379,7 +6737,7 @@
         "Géographie, cartographie",
         "Problèmes et questions de société"
       ],
-      "journal_url": "http://www.nss-journal.org/",
+      "journal_url": "https://www.nss-journal.org/",
       "mirabel_url": "https://reseau-mirabel.info/revue/1559",
       "mosar": {
         "proximity_level": "3",
@@ -6391,6 +6749,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "EDP Sciences ; Cairn.info"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Coédition privé/association",
         "licence_normalized": "Licence Creative Commons"
@@ -6420,11 +6782,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre de recherches en archéologie et patrimoine (Belgique)",
-        "Orient & Méditerranée"
+        "Orient & Méditerranée & Centre de recherches en archéologie et patrimoine (Belgique)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6449,6 +6810,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web du laboratoire"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
@@ -6476,10 +6841,10 @@
         "eng"
       ],
       "publishers": [
-        "Mondes Américains (UMR 8168)"
+        "Mondes américains (UMR 8168)"
       ],
       "country": null,
-      "periodicity": "parution continue",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -6509,7 +6874,7 @@
         "Études des aires culturelles",
         "Amérique du Sud"
       ],
-      "journal_url": "https://journals.openedition.org/nuevomundo/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/688",
       "mosar": {
         "proximity_level": "3",
@@ -6521,6 +6886,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -6545,11 +6914,10 @@
         "fre"
       ],
       "publishers": [
-        "LabEx Tepsis",
-        "Politika"
+        "Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -6560,7 +6928,7 @@
         "Cultures et sociétés",
         "Science politique, droit et vie publique"
       ],
-      "journal_url": "https://www.politika.io/fr",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/6823",
       "mosar": {
         "proximity_level": "3",
@@ -6572,6 +6940,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -6601,11 +6973,10 @@
         "fre"
       ],
       "publishers": [
-        "Logiques de l'Agir (Besançon)",
-        "Presses Universitaires de Franche-Comté"
+        "Presses universitaires de Franche-Comté"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -6629,7 +7000,7 @@
       "themes": [
         "Philosophie"
       ],
-      "journal_url": "https://journals.openedition.org/philosophique/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1604",
       "mosar": {
         "proximity_level": "3",
@@ -6641,6 +7012,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -6670,11 +7045,10 @@
         "fre"
       ],
       "publishers": [
-        "Association des chercheurs de Politique africaine",
-        "Editions Karthala"
+        "Karthala"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6692,7 +7066,7 @@
         "Époque contemporaine",
         "Afrique"
       ],
-      "journal_url": "https://polaf.hypotheses.org/",
+      "journal_url": "http://www.politique-africaine.com",
       "mirabel_url": "https://reseau-mirabel.info/revue/324",
       "mosar": {
         "proximity_level": "3",
@@ -6704,6 +7078,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -6734,12 +7112,10 @@
         "eng"
       ],
       "publishers": [
-        "Harmattan",
-        "Institut Choiseul",
-        "Politique américaine"
+        "L'Harmattan"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6770,6 +7146,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -6800,10 +7180,10 @@
         "eng"
       ],
       "publishers": [
-        "Société Angliciste : Arts, Images, Textes"
+        "Société Angliciste : Arts, Images, Textes (SAIT) - société savante de l'université de Poitiers"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -6827,7 +7207,7 @@
       "themes": [
         "Littérature, linguistique et arts"
       ],
-      "journal_url": "https://journals.openedition.org/polysemes/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3806",
       "mosar": {
         "proximity_level": "3",
@@ -6839,6 +7219,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -6868,10 +7252,10 @@
         "fre"
       ],
       "publishers": [
-        "Union Nationale des Associations Familiales"
+        "Union nationale des associations familiales (Unaf)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -6886,7 +7270,7 @@
       "themes": [
         "Sociologie"
       ],
-      "journal_url": "https://www.unaf.fr/expert-des-familles/revue-recherches-familiales/",
+      "journal_url": "http://intradoc.unaf.fr/exl-php/vue-recherche/unaf_recherches_familiales",
       "mirabel_url": "https://reseau-mirabel.info/revue/1155",
       "mosar": {
         "proximity_level": "3",
@@ -6898,6 +7282,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -6928,7 +7316,7 @@
         "ger"
       ],
       "publishers": [
-        "Histoire culturelle et sociale de l'art"
+        "Regards croisés. Association franco-allemande d'histoire de l'art et d'esthétique"
       ],
       "country": null,
       "periodicity": null,
@@ -6952,7 +7340,7 @@
         "Histoire",
         "Arts visuels"
       ],
-      "journal_url": "https://hicsa.pantheonsorbonne.fr/production/regards-croises",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/17917",
       "mosar": {
         "proximity_level": "3",
@@ -6964,6 +7352,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -6988,10 +7380,10 @@
         "fre"
       ],
       "publishers": [
-        "Laboratoire Littératures, savoirs et arts"
+        "Littératures, Savoirs et Arts (LISAA, EA 3347) - Université Gustave-Eiffel"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -7019,7 +7411,7 @@
       "themes": [
         "Littérature, linguistique et arts"
       ],
-      "journal_url": "https://journals.openedition.org/resf/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1859",
       "mosar": {
         "proximity_level": "3",
@@ -7031,6 +7423,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Littérature",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -7059,7 +7455,7 @@
         "Association pour le développement de l'histoire culturelle"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -7089,7 +7485,7 @@
         "Histoire",
         "Époque contemporaine"
       ],
-      "journal_url": "https://journals.openedition.org/rhc/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/11456",
       "mosar": {
         "proximity_level": "3",
@@ -7101,6 +7497,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -7130,10 +7530,10 @@
         "fre"
       ],
       "publishers": [
-        "Comité d'histoire de la sécurité sociale"
+        "Comité d'histoire de la Sécurité sociale (CHSS)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7163,6 +7563,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
@@ -7187,10 +7591,10 @@
         "fre"
       ],
       "publishers": [
-        "Comité français de l'arbitrage"
+        "LGDJ"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
@@ -7200,7 +7604,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://www.kluwerarbitration.com/document/Revue%20de%20l'Arbitrage",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/19260",
       "mosar": {
         "proximity_level": "3",
@@ -7212,6 +7616,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "aucun"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7244,7 +7652,7 @@
         "Dalloz"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7259,7 +7667,7 @@
       "themes": [
         "Droit, justice, criminologie"
       ],
-      "journal_url": "http://www.dalloz-revues.fr/revues/RSC-37.htm",
+      "journal_url": "https://www.dalloz-revues.fr/revues/RSC-37.htm",
       "mirabel_url": "https://reseau-mirabel.info/revue/3863",
       "mosar": {
         "proximity_level": "3",
@@ -7272,6 +7680,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7301,11 +7713,10 @@
         "fre"
       ],
       "publishers": [
-        "Association pour l'encouragement des études grecques en France",
-        "Belles Lettres"
+        "Les Belles Lettres"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7323,7 +7734,7 @@
         "Philologie",
         "Antiquité"
       ],
-      "journal_url": "https://aeg-reg.org/la-revue-des-etudes-grecques/",
+      "journal_url": "http://www.revue-des-etudes-grecques.com",
       "mirabel_url": "https://reseau-mirabel.info/revue/1607",
       "mosar": {
         "proximity_level": "3",
@@ -7335,6 +7746,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "JSTOR"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7368,7 +7783,7 @@
         "Brepols Publishers"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7386,7 +7801,7 @@
         "Philologie",
         "Antiquité"
       ],
-      "journal_url": "https://www.orient-mediterranee.com/review/semitica-et-classica-semclass/",
+      "journal_url": "https://www.brepolsonline.net/content/journals/sec",
       "mirabel_url": "https://reseau-mirabel.info/revue/4840",
       "mosar": {
         "proximity_level": "3",
@@ -7398,6 +7813,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Brepols"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7427,7 +7846,7 @@
         "eng"
       ],
       "publishers": [
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
       "periodicity": null,
@@ -7445,7 +7864,7 @@
       "themes": [
         "Mathématiques"
       ],
-      "journal_url": "https://www.springer.com/journal/355",
+      "journal_url": "https://link.springer.com/journal/355",
       "mirabel_url": "https://reseau-mirabel.info/revue/3063",
       "mosar": {
         "proximity_level": "3",
@@ -7457,6 +7876,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7489,7 +7912,7 @@
         "Éditions de l'EHESS"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7505,7 +7928,7 @@
         "Cultures et sociétés",
         "Anthropologie, ethnologie"
       ],
-      "journal_url": "https://journals.openedition.org/tc/",
+      "journal_url": "https://tc.hypotheses.org",
       "mirabel_url": "https://reseau-mirabel.info/revue/710",
       "mosar": {
         "proximity_level": "3",
@@ -7517,6 +7940,10 @@
           "Université Paris Nanterre"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; OpenEdition Journals"
+        ],
         "discipline_normalized": "Anthropologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -7546,10 +7973,10 @@
         "fre"
       ],
       "publishers": [
-        "Classiques Garnier"
+        "Éditions Classiques Garnier"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7573,6 +8000,10 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Classiques Garnier"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7597,10 +8028,10 @@
         "fre"
       ],
       "publishers": [
-        "Société d'ergonomie de langue française"
+        "Société d'Ergonomie de Langue Française (SELF)"
       ],
       "country": null,
-      "periodicity": "bisannuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -7628,7 +8059,7 @@
       "themes": [
         "Travail"
       ],
-      "journal_url": "https://journals.openedition.org/activites/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3656",
       "mosar": {
         "proximity_level": "4",
@@ -7640,6 +8071,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -7669,10 +8104,10 @@
         "eng"
       ],
       "publishers": [
-        "Scientific research publishing"
+        "Scientific Research Publishing (SCIRP)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7687,7 +8122,7 @@
       "themes": [
         "Économie, gestion"
       ],
-      "journal_url": "https://www.scirp.org/journal/AJIBM/",
+      "journal_url": "http://www.scirp.org/journal/ajibm",
       "mirabel_url": "https://reseau-mirabel.info/revue/8184",
       "mosar": {
         "proximity_level": "4",
@@ -7699,6 +8134,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Scientific Research Publishing — SCIRP"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -7728,10 +8167,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre Sèvres - Facultés jésuites de Paris"
+        "Facultés Loyola Paris"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7746,7 +8185,7 @@
       "themes": [
         "Philosophie"
       ],
-      "journal_url": "http://www.archivesdephilo.com/arc/",
+      "journal_url": "http://www.archivesdephilo.com",
       "mirabel_url": "https://reseau-mirabel.info/revue/506",
       "mosar": {
         "proximity_level": "4",
@@ -7758,6 +8197,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; JSTOR"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7787,10 +8230,10 @@
         "eng"
       ],
       "publishers": [
-        "Elsevier"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "9 numéros par an",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7806,7 +8249,7 @@
         "Psychologie",
         "Sciences de la vie"
       ],
-      "journal_url": "https://www.sciencedirect.com/journal/brain-and-cognition",
+      "journal_url": "https://www.journals.elsevier.com/brain-and-cognition",
       "mirabel_url": "https://reseau-mirabel.info/revue/13662",
       "mosar": {
         "proximity_level": "4",
@@ -7818,6 +8261,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7847,10 +8294,10 @@
         "eng"
       ],
       "publishers": [
-        "Elsevier"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "mensuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7866,7 +8313,7 @@
         "Sciences cognitives",
         "Langues, linguistique"
       ],
-      "journal_url": "https://journalissues.elsevier.com/catalog/journal/brain-language",
+      "journal_url": "https://www.journals.elsevier.com/brain-and-language",
       "mirabel_url": "https://reseau-mirabel.info/revue/21155",
       "mosar": {
         "proximity_level": "4",
@@ -7878,6 +8325,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7907,10 +8358,10 @@
         "eng"
       ],
       "publishers": [
-        "Taylor & Francis Group"
+        "Taylor & Francis"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -7926,7 +8377,7 @@
         "Philosophie",
         "Histoire"
       ],
-      "journal_url": "https://www.tandfonline.com/journals/rbjh20",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/12914",
       "mosar": {
         "proximity_level": "4",
@@ -7938,6 +8389,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -7967,10 +8422,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut français d'archéologie orientale"
+        "Institut français d'archéologie orientale (IFAO)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -7997,7 +8452,7 @@
         "Religion, théologie",
         "Littérature"
       ],
-      "journal_url": "https://www.ifao.egnet.net/publications/revues/revue-bcai/",
+      "journal_url": "https://www.ifao.egnet.net/bcai",
       "mirabel_url": "https://reseau-mirabel.info/revue/7618",
       "mosar": {
         "proximity_level": "4",
@@ -8009,6 +8464,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -8038,10 +8497,10 @@
         "fre"
       ],
       "publishers": [
-        "Association de Géographes Français"
+        "Association de géographes français (AGF)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -8070,7 +8529,7 @@
         "Géographie, cartographie",
         "Europe de l'Ouest"
       ],
-      "journal_url": "https://journals.openedition.org/bagf/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2295",
       "mosar": {
         "proximity_level": "4",
@@ -8082,6 +8541,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -8111,10 +8574,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut des hautes études de l'Amérique Latine"
+        "Institut des hautes études de l'Amérique latine (IHEAL)"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -8143,7 +8606,7 @@
         "Amérique centrale",
         "Amérique du Sud"
       ],
-      "journal_url": "http://www.iheal.univ-paris3.fr/spip.php?rubrique11",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/487",
       "mosar": {
         "proximity_level": "4",
@@ -8155,6 +8618,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -8185,10 +8652,10 @@
         "eng"
       ],
       "publishers": [
-        "Presses Universitaires d'Aix-Marseille"
+        "Presses universitaires d'Aix Marseille Université"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -8218,7 +8685,7 @@
         "Éthique",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://journals.openedition.org/cdst/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3307",
       "mosar": {
         "proximity_level": "4",
@@ -8230,6 +8697,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -8273,7 +8744,7 @@
         "Études urbaines et rurales",
         "Architecture"
       ],
-      "journal_url": "https://www.ramau.archi.fr/spip.php?rubrique12",
+      "journal_url": "https://cahiers-ramau.edinum.org/",
       "mirabel_url": "https://reseau-mirabel.info/revue/6726",
       "mosar": {
         "proximity_level": "4",
@@ -8285,6 +8756,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Edinum"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Tous droits réservés"
@@ -8321,7 +8796,7 @@
         "Presses universitaires du Midi"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -8350,7 +8825,7 @@
       "themes": [
         "Amérique du Sud"
       ],
-      "journal_url": "https://journals.openedition.org/caravelle/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/836",
       "mosar": {
         "proximity_level": "4",
@@ -8362,6 +8837,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -8393,7 +8872,7 @@
         "Association Clio et Themis"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -8422,7 +8901,7 @@
         "Histoire",
         "Droit, justice, criminologie"
       ],
-      "journal_url": "https://journals.openedition.org/cliothemis/index.html",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/10324",
       "mosar": {
         "proximity_level": "4",
@@ -8434,6 +8913,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -8463,10 +8946,10 @@
         "eng"
       ],
       "publishers": [
-        "Elsevier"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "bimensuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8481,7 +8964,7 @@
       "themes": [
         "Ingénierie, technologies"
       ],
-      "journal_url": "https://www.sciencedirect.com/science/journal/02638223",
+      "journal_url": "https://www.sciencedirect.com/journal/composite-structures",
       "mirabel_url": "https://reseau-mirabel.info/revue/5117",
       "mosar": {
         "proximity_level": "4",
@@ -8493,6 +8976,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -8522,10 +9009,10 @@
         "fre"
       ],
       "publishers": [
-        "LexisNexis SA"
+        "LexisNexis"
       ],
       "country": null,
-      "periodicity": "mensuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8537,7 +9024,7 @@
         "Sciences économiques",
         "Administration, gouvernement"
       ],
-      "journal_url": "https://boutique.lexisnexis.fr/4543-contrats-et-marches-publics",
+      "journal_url": "https://www.lexiskiosque.fr/catalog/contrats-et-marches-publics",
       "mirabel_url": "https://reseau-mirabel.info/revue/156",
       "mosar": {
         "proximity_level": "4",
@@ -8549,6 +9036,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "LexisNexis"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -8578,10 +9069,10 @@
         "eng"
       ],
       "publishers": [
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8608,6 +9099,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer Nature Link"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -8652,7 +9147,7 @@
         "Littérature, linguistique et arts",
         "Afrique du Nord"
       ],
-      "journal_url": "https://journals.openedition.org/encyclopedieberbere/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/6572",
       "mosar": {
         "proximity_level": "4",
@@ -8664,6 +9159,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -8691,10 +9190,10 @@
         "spa"
       ],
       "publishers": [
-        "Centre international de recherches sur les esclavages et post-esclavages"
+        "Centre international de recherches sur les esclavages et post-esclavages (CIRESC)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -8722,7 +9221,7 @@
         "Histoire",
         "Démocratie, citoyenneté"
       ],
-      "journal_url": "https://journals.openedition.org/slaveries/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/7064",
       "mosar": {
         "proximity_level": "4",
@@ -8734,6 +9233,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -8764,10 +9267,10 @@
         "eng"
       ],
       "publishers": [
-        "Elsevier"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "5 numéros par an",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8783,7 +9286,7 @@
         "Administration, gouvernement",
         "Relations internationales"
       ],
-      "journal_url": "https://www.sciencedirect.com/journal/european-journal-of-political-economy",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/10693",
       "mosar": {
         "proximity_level": "4",
@@ -8795,6 +9298,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -8822,7 +9329,7 @@
         "Associazione Pragma"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -8851,7 +9358,7 @@
         "Philosophie",
         "Amérique du Nord"
       ],
-      "journal_url": "https://journals.openedition.org/ejpap/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3977",
       "mosar": {
         "proximity_level": "4",
@@ -8863,6 +9370,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -8893,12 +9404,10 @@
         "fre"
       ],
       "publishers": [
-        "Éditions du centre de psychologie appliquée",
-        "Elsevier",
-        "Elsevier Masson"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8927,6 +9436,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "Psychologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -8959,7 +9472,7 @@
         "Economica"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -8974,7 +9487,7 @@
       "themes": [
         "Finance"
       ],
-      "journal_url": "https://journals.openedition.org/fcs/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1249",
       "mosar": {
         "proximity_level": "4",
@@ -8986,6 +9499,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -9018,7 +9535,7 @@
         "Belin éditeur"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9035,7 +9552,7 @@
         "Histoire",
         "Sciences politiques"
       ],
-      "journal_url": "https://geneses.hypotheses.org/la-revue",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/58",
       "mosar": {
         "proximity_level": "4",
@@ -9047,6 +9564,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9076,10 +9597,10 @@
         "eng"
       ],
       "publishers": [
-        "John Wiley & Sons, Inc."
+        "John Wiley & Sons"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9106,6 +9627,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Wiley Online Library"
+        ],
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9135,10 +9660,10 @@
         "fre"
       ],
       "publishers": [
-        "Association des professeurs d'archéologie et d'histoire de l'art des universités"
+        "Association des professeurs d'archéologie et d'histoire de l'art des universités (Apahau)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9166,6 +9691,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "DeVisu"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Licence Creative Commons"
@@ -9190,10 +9719,10 @@
         "fre"
       ],
       "publishers": [
-        "Centre d'histoire et théorie des arts"
+        "Centre d'histoire et théorie des arts (CEHTA)"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -9225,7 +9754,7 @@
         "Histoire",
         "Arts visuels"
       ],
-      "journal_url": "https://journals.openedition.org/imagesrevues/58",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1600",
       "mosar": {
         "proximity_level": "4",
@@ -9237,6 +9766,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -9266,10 +9799,10 @@
         "eng"
       ],
       "publishers": [
-        "John Wiley & Sons, Inc."
+        "John Wiley & Sons"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9300,6 +9833,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Wiley Online Library"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9329,10 +9866,10 @@
         "ita"
       ],
       "publishers": [
-        "Mulino"
+        "Il Mulino"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9349,7 +9886,7 @@
         "Éthique",
         "Philosophie"
       ],
-      "journal_url": "https://www.mulino.it/riviste/issn/1122-7893",
+      "journal_url": "https://www.rivisteweb.it",
       "mirabel_url": "https://reseau-mirabel.info/revue/12977",
       "mosar": {
         "proximity_level": "4",
@@ -9361,6 +9898,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Rivisteweb"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9390,10 +9931,10 @@
         "eng"
       ],
       "publishers": [
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9404,7 +9945,7 @@
         "Sciences et techniques",
         "Philosophie"
       ],
-      "journal_url": "https://www.springer.com/journal/10838",
+      "journal_url": "https://link.springer.com/journal/10838",
       "mirabel_url": "https://reseau-mirabel.info/revue/12500",
       "mosar": {
         "proximity_level": "4",
@@ -9416,6 +9957,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9445,10 +9990,10 @@
         "eng"
       ],
       "publishers": [
-        "Palgrave Macmillan"
+        "Palgrave Macmillan/Springer"
       ],
       "country": null,
-      "periodicity": "7 numéros par an",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9463,7 +10008,7 @@
       "themes": [
         "Gestion, comptabilité"
       ],
-      "journal_url": "https://www.palgrave.com/fr/journal/41260",
+      "journal_url": "http://www.palgrave-journals.com/jam/index.html",
       "mirabel_url": "https://reseau-mirabel.info/revue/11085",
       "mosar": {
         "proximity_level": "4",
@@ -9475,6 +10020,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9505,10 +10054,10 @@
         "fre"
       ],
       "publishers": [
-        "Taylor & Francis Group"
+        "Taylor & Francis"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9518,7 +10067,7 @@
       "themes": [
         "Europe de l'Ouest"
       ],
-      "journal_url": "http://www.tandfonline.com/toc/tjds20/current#.U71GoE1WG70",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2379",
       "mosar": {
         "proximity_level": "4",
@@ -9530,6 +10079,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9562,7 +10115,7 @@
         "Emerald Group Publishing"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9577,7 +10130,7 @@
       "themes": [
         "Gestion, comptabilité"
       ],
-      "journal_url": "https://www.emerald.com/insight/publication/issn/1741-0398",
+      "journal_url": "http://info.emeraldinsight.com/products/journals/journals.htm?id=jeim",
       "mirabel_url": "https://reseau-mirabel.info/revue/11293",
       "mosar": {
         "proximity_level": "4",
@@ -9589,6 +10142,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Emerald Group Publishing"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -9621,7 +10178,7 @@
         "Cambridge University Press"
       ],
       "country": null,
-      "periodicity": "quadrimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9650,6 +10207,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cambridge Core"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9679,10 +10240,10 @@
         "eng"
       ],
       "publishers": [
-        "Elsevier"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9698,7 +10259,7 @@
         "Langues, linguistique",
         "Sciences de la vie"
       ],
-      "journal_url": "https://shop.elsevier.com/journals/journal-of-neurolinguistics/0911-6044",
+      "journal_url": "https://www.sciencedirect.com/journal/journal-of-neurolinguistics",
       "mirabel_url": "https://reseau-mirabel.info/revue/23731",
       "mosar": {
         "proximity_level": "4",
@@ -9710,6 +10271,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9739,12 +10304,10 @@
         "fre"
       ],
       "publishers": [
-        "Institut d'art et d'archéologie (Paris)",
-        "Klincksieck",
         "Peeters Publishers"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9762,7 +10325,7 @@
         "Antiquité",
         "Afrique du Nord"
       ],
-      "journal_url": "https://www.orient-mediterranee.com/review/karthago/",
+      "journal_url": "https://poj.peeters-leuven.be/content.php?url=journal&journal_code=KAR",
       "mirabel_url": "https://reseau-mirabel.info/revue/11043",
       "mosar": {
         "proximity_level": "4",
@@ -9774,6 +10337,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Peeters Publishers"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9803,10 +10370,10 @@
         "fre"
       ],
       "publishers": [
-        "Elsevier Masson"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9834,6 +10401,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9863,11 +10434,10 @@
         "eng"
       ],
       "publishers": [
-        "Cambridge University Press",
-        "Society for American Archaeology"
+        "Cambridge University Press"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -9886,7 +10456,7 @@
         "Amériques",
         "Antilles"
       ],
-      "journal_url": "https://www.saa.org/publications/latin-american-antiquity",
+      "journal_url": "https://www.cambridge.org/core/journals/latin-american-antiquity",
       "mirabel_url": "https://reseau-mirabel.info/revue/6218",
       "mosar": {
         "proximity_level": "4",
@@ -9898,6 +10468,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cambridge Core ; JSTOR"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -9927,10 +10501,10 @@
         "fre"
       ],
       "publishers": [
-        "KEDGE Business School"
+        "Taylor & Francis"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -9945,7 +10519,7 @@
       "themes": [
         "Distribution, logistique"
       ],
-      "journal_url": "https://www.tandfonline.com/toc/tlam20/current",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2567",
       "mosar": {
         "proximity_level": "4",
@@ -9957,6 +10531,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -9983,10 +10561,10 @@
         "ita"
       ],
       "publishers": [
-        "ABIS-AlmaDL"
+        "Dipartimento delle Arti – Alma Mater Studiorum – Università di Bologna"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -10013,6 +10591,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OJS/PKP"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
@@ -10042,11 +10624,10 @@
         "fre"
       ],
       "publishers": [
-        "Elsevier",
-        "Expansion scientifique française"
+        "Elsevier (ScienceDirect)"
       ],
       "country": null,
-      "periodicity": "mensuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10076,6 +10657,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -10100,10 +10685,10 @@
         "eng"
       ],
       "publishers": [
-        "Multidisciplinary digital publishing institute"
+        "Publisher of Open Access Journals (MDPI)"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -10136,6 +10721,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "MDPI"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -10165,10 +10754,10 @@
         "eng"
       ],
       "publishers": [
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10185,7 +10774,7 @@
         "Informatique",
         "Ingénierie, technologies"
       ],
-      "journal_url": "https://link.springer.com/journal/766",
+      "journal_url": "https://link.springer.com/journal/00766",
       "mirabel_url": "https://reseau-mirabel.info/revue/24746",
       "mosar": {
         "proximity_level": "4",
@@ -10197,6 +10786,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer Nature Link"
+        ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10229,7 +10822,7 @@
         "Société d'histoire du théâtre"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10244,7 +10837,7 @@
       "themes": [
         "Arts vivants"
       ],
-      "journal_url": "https://sht.asso.fr/revue/revue-histoire-du-theatre/",
+      "journal_url": "https://sht.asso.fr/revue-dhistoire-du-theatre/",
       "mirabel_url": "https://reseau-mirabel.info/revue/13575",
       "mosar": {
         "proximity_level": "4",
@@ -10256,6 +10849,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site de la société d'histoire du théâtre"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -10289,7 +10886,7 @@
         "De Boeck Supérieur"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10304,7 +10901,7 @@
       "themes": [
         "Économie, gestion"
       ],
-      "journal_url": "https://www.cairn.info/revue-d-economie-industrielle.htm",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/349",
       "mosar": {
         "proximity_level": "4",
@@ -10316,6 +10913,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info ; OpenEdition Journals"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
@@ -10346,10 +10947,10 @@
         "eng"
       ],
       "publishers": [
-        "Association pour les études en sciences humaines et sociales sur l'Afrique du Nord et les mondes musulmans"
+        "Presses universitaires d'Aix Marseille Université"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -10377,7 +10978,7 @@
       "themes": [
         "Religion, théologie"
       ],
-      "journal_url": "https://journals.openedition.org/remmm/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/698",
       "mosar": {
         "proximity_level": "4",
@@ -10389,6 +10990,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -10422,11 +11027,10 @@
         "spa"
       ],
       "publishers": [
-        "Institut Français d'Études Byzantines",
         "Peeters Publishers"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10443,7 +11047,7 @@
         "Moyen Âge",
         "Proche et Moyen-Orient"
       ],
-      "journal_url": "https://www.icp.fr/recherche/instituts-de-recherche/institut-francais-detudes-byzantines-ifeb/revue-des-etudes-byzantines",
+      "journal_url": "https://poj.peeters-leuven.be/content.php?url=journal&journal_code=REB",
       "mirabel_url": "https://reseau-mirabel.info/revue/1162",
       "mosar": {
         "proximity_level": "4",
@@ -10455,6 +11059,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Peeters Publishers"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10514,6 +11122,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Droit",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Tous droits réservés"
@@ -10547,11 +11159,10 @@
         "spa"
       ],
       "publishers": [
-        "Orient & Méditerranée",
-        "Presses Universitaires de Franche-Comté"
+        "Presses universitaires de Franche-Comté"
       ],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10576,7 +11187,7 @@
         "Antiquité",
         "Antiquité tardive"
       ],
-      "journal_url": "https://preo.ube.fr/hima/",
+      "journal_url": "https://preo.ube.fr/hima",
       "mirabel_url": "https://reseau-mirabel.info/revue/5491",
       "mosar": {
         "proximity_level": "4",
@@ -10588,6 +11199,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Preo"
+        ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Éditeur public",
         "licence_normalized": "Licence Creative Commons"
@@ -10612,7 +11227,7 @@
         "fre"
       ],
       "publishers": [
-        "Rahla : Amicale des Sahariens"
+        "La Rahla : Amicale des Sahariens (Association)"
       ],
       "country": null,
       "periodicity": null,
@@ -10628,7 +11243,7 @@
         "Histoire",
         "Afrique du Nord"
       ],
-      "journal_url": "https://www.les-sahariens.com/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/361",
       "mosar": {
         "proximity_level": "4",
@@ -10640,6 +11255,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "aucun"
+        ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -10669,10 +11288,10 @@
         "eng"
       ],
       "publishers": [
-        "Routledge"
+        "Taylor & Francis"
       ],
       "country": null,
-      "periodicity": "bimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10687,7 +11306,7 @@
       "themes": [
         "Sciences économiques"
       ],
-      "journal_url": "https://www.tandfonline.com/toc/rejh20/current",
+      "journal_url": "http://www.tandfonline.com/toc/REJH20/current",
       "mirabel_url": "https://reseau-mirabel.info/revue/10695",
       "mosar": {
         "proximity_level": "4",
@@ -10699,6 +11318,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis"
+        ],
         "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10728,10 +11351,10 @@
         "eng"
       ],
       "publishers": [
-        "Wiley-Blackwell"
+        "John Wiley & Sons"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10746,7 +11369,7 @@
       "themes": [
         "Philosophie"
       ],
-      "journal_url": "https://onlinelibrary.wiley.com/journal/20416962",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/13098",
       "mosar": {
         "proximity_level": "4",
@@ -10758,6 +11381,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Wiley Online Library"
+        ],
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10791,7 +11418,7 @@
         "Cambridge University Press"
       ],
       "country": null,
-      "periodicity": "parution continue",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -10808,7 +11435,7 @@
       "themes": [
         "Psychologie"
       ],
-      "journal_url": "https://www.cambridge.org/core/journals/spanish-journal-of-psychology",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/25149",
       "mosar": {
         "proximity_level": "4",
@@ -10820,6 +11447,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cambridge Core"
+        ],
         "discipline_normalized": "Psychologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence Creative Commons"
@@ -10849,11 +11480,10 @@
         "eng"
       ],
       "publishers": [
-        "D. Reidel",
-        "Springer Verlag GmbH"
+        "Springer"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10868,7 +11498,7 @@
       "themes": [
         "Économie, gestion"
       ],
-      "journal_url": "https://www.springer.com/journal/11238",
+      "journal_url": "https://link.springer.com/journal/11238",
       "mirabel_url": "https://reseau-mirabel.info/revue/9879",
       "mosar": {
         "proximity_level": "4",
@@ -10880,6 +11510,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer Nature Link"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10904,11 +11538,10 @@
         "fre"
       ],
       "publishers": [
-        "Association Théâtre/Public",
-        "Éditions théâtrales"
+        "Les Éditions théâtrales"
       ],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
@@ -10925,7 +11558,7 @@
         "Littérature",
         "Époque contemporaine"
       ],
-      "journal_url": "http://theatrepublic.fr/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/13155",
       "mosar": {
         "proximity_level": "4",
@@ -10937,6 +11570,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Arts",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -10966,11 +11603,10 @@
         "fre"
       ],
       "publishers": [
-        "Découverte",
-        "Marché du travail et genre en Europe"
+        "La Découverte"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -10986,7 +11622,7 @@
         "Études de genre",
         "Travail"
       ],
-      "journal_url": "https://www.travail-genre-societes.com/presentation/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/725",
       "mosar": {
         "proximity_level": "4",
@@ -10998,6 +11634,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Sociologie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -11022,10 +11662,10 @@
         "fre"
       ],
       "publishers": [
-        "Association des Amis du Centre d'histoire et civilisation de Byzance"
+        "Association des Amis du Centre d'Histoire et Civilisation de Byzance"
       ],
       "country": null,
-      "periodicity": "irrégulier",
+      "periodicity": null,
       "publication_format": "Papier",
       "publication_fees": null,
       "labels": [],
@@ -11041,7 +11681,7 @@
         "Études classiques",
         "Histoire"
       ],
-      "journal_url": "https://achcbyz.com/fr/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/12395",
       "mosar": {
         "proximity_level": "4",
@@ -11053,6 +11693,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "aucun"
+        ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Association",
         "licence_normalized": "Tous droits réservés"
@@ -11082,10 +11726,10 @@
         "fre"
       ],
       "publishers": [
-        "Editions du Croquant"
+        "Éditions du Croquant"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -11102,7 +11746,7 @@
         "Sociologie",
         "Histoire des sciences"
       ],
-      "journal_url": "https://www.cairn.info/revue-zilsel.htm",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/3960",
       "mosar": {
         "proximity_level": "4",
@@ -11114,6 +11758,10 @@
           "Non renseigné"
         ],
         "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Cairn.info"
+        ],
         "discipline_normalized": "Pluridisciplinaire",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
@@ -11138,11 +11786,9 @@
         "fre",
         "eng"
       ],
-      "publishers": [
-        "ISTE Group"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
@@ -11153,7 +11799,7 @@
         "Espaces, environnement",
         "Archéologie"
       ],
-      "journal_url": "https://www.openscience.fr/Archaeology-Society-and-Environment",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/27678",
       "mosar": null
     },
@@ -11180,11 +11826,9 @@
       "languages": [
         "fre"
       ],
-      "publishers": [
-        "Association pour l'expérimentation et la recherche archéologique"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -11197,7 +11841,7 @@
         "Préhistoire et Protohistoire",
         "Europe"
       ],
-      "journal_url": "https://apera.hypotheses.org/bulletin-de-l-apera",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/14830",
       "mosar": null
     },
@@ -11220,11 +11864,9 @@
         "fre",
         "spa"
       ],
-      "publishers": [
-        "Centre de recherches ibériques et ibéro-américaines"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -11255,7 +11897,7 @@
         "Histoire et archéologie",
         "Europe du Sud"
       ],
-      "journal_url": "https://journals.openedition.org/ccec/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/642",
       "mosar": null
     },
@@ -11283,12 +11925,9 @@
         "fre",
         "eng"
       ],
-      "publishers": [
-        "Langage, langues et cultures d'Afrique - UMR 8135",
-        "Presses de l'Inalco"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "bisannuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -11313,7 +11952,7 @@
         "Littérature, linguistique et arts",
         "Anthropologie, ethnologie"
       ],
-      "journal_url": "https://journals.openedition.org/clo/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/1826",
       "mosar": null
     },
@@ -11340,11 +11979,9 @@
       "languages": [
         "fre"
       ],
-      "publishers": [
-        "Société des océanistes"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "annuel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
@@ -11370,7 +12007,7 @@
         "Sociologie",
         "Géographie, cartographie"
       ],
-      "journal_url": "https://journals.openedition.org/jso/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/815",
       "mosar": null
     },
@@ -11397,11 +12034,9 @@
       "languages": [
         "eng"
       ],
-      "publishers": [
-        "Brill"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "trimestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -11411,7 +12046,7 @@
       "themes": [
         "Histoire"
       ],
-      "journal_url": "https://brill.com/view/journals/jim/jim-overview.xml?srsltid=AU7gw4UnZXv6AuWzaHYf4uFlf0XwjfZBXaOU0BVlHQtwp8m524iquk7v",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/27680",
       "mosar": null
     },
@@ -11438,11 +12073,9 @@
       "languages": [
         "fre"
       ],
-      "publishers": [
-        "Association pour l'étude des littératures africaines"
-      ],
+      "publishers": [],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": null,
       "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
@@ -11453,7 +12086,7 @@
         "Histoire",
         "Langues, linguistique"
       ],
-      "journal_url": "http://www.apela.fr/la-revue/",
+      "journal_url": "",
       "mirabel_url": "https://reseau-mirabel.info/revue/2127",
       "mosar": null
     }
