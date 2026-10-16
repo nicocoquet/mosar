@@ -203,11 +203,12 @@ def derive(rows, source):
             raise SystemExit(f"Secteur inattendu ligne {rn}: {raw_sector!r}")
 
         structure = norm(row[columns["publisher_type"]])
-        if structure not in ALLOWED_STRUCTURES:
-            raise SystemExit(f"Type d'éditeur inattendu ligne {rn}: {structure!r}")
-        structures[normalize_structure(structure)] += 1
-        grouped_structure = group_structure_for_access(structure)
-        structure_access[grouped_structure][a] += 1
+        if structure and structure != "?":
+            if structure not in ALLOWED_STRUCTURES:
+                raise SystemExit(f"Type d'éditeur inattendu ligne {rn}: {structure!r}")
+            structures[normalize_structure(structure)] += 1
+            grouped_structure = group_structure_for_access(structure)
+            structure_access[grouped_structure][a] += 1
 
         licence = norm(row[columns["licence"]])
         if licence:
@@ -218,8 +219,6 @@ def derive(rows, source):
     complete_counters = [
         ("niveaux", levels),
         ("formats", formats),
-        ("disciplines", disciplines),
-        ("structures", structures),
     ]
 
     for name, counter in complete_counters:
@@ -230,6 +229,8 @@ def derive(rows, source):
             )
 
     partial_counters = [
+        ("disciplines", disciplines),
+        ("structures", structures),
         ("années", years),
         ("périodicités", periodicities),
         ("droits", rights),
