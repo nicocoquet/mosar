@@ -67,7 +67,7 @@
       }
 
       if (key === 'indexing') {
-        const order = ['DDH', 'DOAJ', 'Wikidata', 'Wikipédia'];
+        const order = ['DDH', 'DOAJ', 'ROAD', 'Wikidata', 'Wikipédia'];
         vals.sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
       }
 
@@ -79,7 +79,19 @@
         ? ' rx-facet-options--scroll'
         : '';
 
-      const options = vals.map(([value, count]) => {
+      const options = vals.map(([value, count], index) => {
+        const isIndexing = key === 'indexing';
+        const group = ['DDH', 'DOAJ', 'ROAD'].includes(value) ? 'open' : 'wiki';
+        const previous = index ? vals[index - 1][0] : null;
+        const previousGroup = ['DDH', 'DOAJ', 'ROAD'].includes(previous) ? 'open' : 'wiki';
+        const groupHeading = isIndexing && (index === 0 || group !== previousGroup)
+          ? `<div class="rx-indexing-heading${index ? ' rx-indexing-heading--separated' : ''}">${esc(config.indexingGroups[group])}</div>`
+          : '';
+        const infoText = isIndexing ? config.indexingInfo?.[value] : null;
+        const info = infoText
+          ? `<button type="button" class="rx-indexing-info" title="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
+          : '';
+
         const isDiamondOption = key === 'labelling' && value === 'diamond';
 
         const labelText = isDiamondOption
@@ -91,6 +103,16 @@
                    src="${ICON_BASE}picto_diamond-access.png"
                    alt="">`
           : '';
+
+        if (isIndexing) return `${groupHeading}
+          <div class="rx-indexing-option">
+            <label class="rx-option">
+              <input type="checkbox" data-facet="${esc(key)}" value="${esc(value)}">
+              <span>${esc(labelText)}</span>
+            </label>
+            ${info}
+            <span class="rx-count">${count}</span>
+          </div>`;
 
         return `
           <label class="rx-option">
@@ -162,7 +184,7 @@
         : [],
       associations: Array.isArray(r.mosar?.associations) ? r.mosar.associations.filter(Boolean) : [],
       diffuseurs_numeriques: Array.isArray(r.mosar?.diffuseurs_numeriques) ? r.mosar.diffuseurs_numeriques.filter(Boolean) : [],
-      indexing: ['DDH', 'DOAJ', 'Wikidata', 'Wikipédia'].filter(
+      indexing: ['DDH', 'DOAJ', 'ROAD', 'Wikidata', 'Wikipédia'].filter(
         name => name === 'Wikipédia' ? Boolean(r.references?.[name]) : Boolean(r.references?.[name]?.url)
       )
     };
