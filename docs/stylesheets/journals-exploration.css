@@ -433,14 +433,14 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: .85rem;
-  height: .85rem;
+  width: .72rem;
+  height: .72rem;
   padding: 0;
-  border: 1px solid var(--md-default-fg-color--lighter);
+  border: 1px solid color-mix(in srgb, var(--rx-accent) 30%, transparent);
   border-radius: 50%;
-  background: transparent;
+  background: color-mix(in srgb, var(--rx-accent) 9%, transparent);
   color: var(--md-default-fg-color--light);
-  font-size: .55rem;
+  font-size: .48rem;
   font-weight: 700;
   cursor: help;
 }
