@@ -89,7 +89,7 @@
           : '';
         const infoText = isIndexing ? config.indexingInfo?.[value] : null;
         const info = infoText
-          ? `<button type="button" class="rx-indexing-info" title="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
+          ? `<button type="button" class="rx-indexing-info" data-tooltip="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
           : '';
 
         const isDiamondOption = key === 'labelling' && value === 'diamond';
