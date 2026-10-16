@@ -49,12 +49,13 @@ def read_rows(source):
         source.columns["open_access"],
         source.columns["format"],
         source.columns["creation_year"],
-        source.columns["periodicity"],
         source.columns["discipline"],
         *([source.columns["sector"]] if "sector" in source.columns else []),
         source.columns["publisher_type"],
         source.columns["licence"],
     ]
+    if source.columns["periodicity"] not in headers and "Nombre de n°s par an" not in headers:
+        required.append(source.columns["periodicity"])
     missing = [x for x in required if x not in headers]
     if missing:
         raise SystemExit("Colonnes manquantes : " + ", ".join(missing))
@@ -179,7 +180,8 @@ def derive(rows, source):
             date_group = date_access_group(y)
             date_access[date_group][a] += 1
 
-        periodicity_value = row[columns["periodicity"]]
+        periodicity_column = columns["periodicity"] if columns["periodicity"] in row else "Nombre de n°s par an"
+        periodicity_value = row[periodicity_column]
         if periodicity_value is not None and norm(periodicity_value) not in ("", "?"):
             periodicities[periodicity(periodicity_value, rn)] += 1
 

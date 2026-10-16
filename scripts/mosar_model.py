@@ -158,9 +158,20 @@ def group_structure_for_access(structure):
 
 def periodicity_label(value):
     """Retourne la catégorie Mosar d'une périodicité déjà normalisée."""
+    value = str(value).strip().casefold()
     if value in PERIODICITY_SPECIAL_LABELS:
         return PERIODICITY_SPECIAL_LABELS[value]
-    number = float(value.replace(",", "."))
+    named = {
+        'annuel': 1, 'bisannuel': 0.5, 'semestriel': 2,
+        'quadrimestriel': 3, 'trimestriel': 4,
+        'bimestriel': 6, 'mensuel': 12, 'bimensuel': 24,
+    }
+    if value in named:
+        number = named[value]
+    elif value.endswith(' nos/an'):
+        number = float(value.removesuffix(' nos/an'))
+    else:
+        number = float(value.replace(",", "."))
     if number in PERIODICITY_LABELS:
         return PERIODICITY_LABELS[number]
     if number > 4:

@@ -34,6 +34,9 @@ REQUIRED_MOSAR_KEYS = {
     "discipline",
     "editorial_structure",
     "licence",
+    "laboratoires",
+    "associations",
+    "diffuseurs_numeriques",
 }
 
 
@@ -70,6 +73,11 @@ def main():
                 f"{sorted(missing_mosar)}"
             )
 
+        assert isinstance(record["publishers"], list), "Liste des éditeurs invalide"
+        assert isinstance(record["journal_url"], str), "URL du site web invalide"
+        if mosar is not None:
+            for field in ("laboratoires", "associations", "diffuseurs_numeriques"):
+                assert isinstance(mosar[field], list), f"Champ {field} invalide"
         raw_level = ((mosar or {}).get("proximity_level") or "").strip()
         try:
             level = int(raw_level)
