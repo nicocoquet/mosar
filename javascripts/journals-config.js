@@ -27,6 +27,12 @@ const REVUES_TRANSLATIONS = {
     websiteLabel: 'Site web',
     loadError: 'Impossible de charger les données',
     configError: 'Configuration de l’explorateur introuvable.',
+    indexingGroups: {open: 'Science ouverte', wiki: 'Écosystème Wikimedia'},
+    indexingInfo: {
+      DDH: 'Diamond Discovery Hub',
+      DOAJ: 'Directory of Open Access Journals',
+      ROAD: 'Directory of Open Access Scholarly Resources'
+    },
     facets: [
       {key: 'proximity', label: 'Niveau de proximité'},
       {key: 'perimetre', label: 'Périmètre'},
@@ -245,6 +251,12 @@ const REVUES_TRANSLATIONS = {
     websiteLabel: 'Website',
     loadError: 'Unable to load data',
     configError: 'Explorer configuration not found.',
+    indexingGroups: {open: 'Open science', wiki: 'Wikimedia ecosystem'},
+    indexingInfo: {
+      DDH: 'Diamond Discovery Hub',
+      DOAJ: 'Directory of Open Access Journals',
+      ROAD: 'Directory of Open Access Scholarly Resources'
+    },
     facets: [
       {key: 'proximity', label: 'Level of proximity'},
       {key: 'perimetre', label: 'Project scope'},

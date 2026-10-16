@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-16T13:03:24+00:00",
+    "generated_at": "2026-10-16T13:43:18+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -249,6 +249,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2497-1510"
+        },
         "Wikipédia": {
           "label": "Wikipédia",
           "url": "https://fr.wikipedia.org/wiki/Americae"
@@ -313,6 +317,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2114-0502"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q96696866"
@@ -379,6 +387,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2490-9424"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22009"
@@ -528,6 +540,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2431-1472"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2431-1472"
         },
         "DDH": {
           "label": "DDH",
@@ -819,6 +835,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2109-9588"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2109-9588"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/9690"
@@ -899,6 +919,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2109-9642"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2109-9642"
@@ -987,6 +1011,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1957-7842"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1957-7842"
@@ -1070,7 +1098,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2105-0392"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -1129,7 +1162,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2109-9103"
+        }
+      },
       "ddh": null,
       "themes": [
         "Arts visuels"
@@ -1190,6 +1228,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2118-9692"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22358"
@@ -1264,6 +1306,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/3039-3922"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22359"
@@ -1570,6 +1616,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2740-5826"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2740-5826"
@@ -1649,6 +1699,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1963-1022"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1963-1022"
@@ -1732,6 +1786,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2554-3555"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2554-3555"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/18837"
@@ -1812,6 +1870,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1773-018X"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1773-018X"
@@ -1973,6 +2035,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1777-5450"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23154"
@@ -2054,6 +2120,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2427-9188"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2427-9188"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/9741"
@@ -2131,6 +2201,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1963-1812"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1963-1812"
         },
         "DDH": {
           "label": "DDH",
@@ -2272,6 +2346,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2272-4001"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2272-4001"
         },
         "DDH": {
           "label": "DDH",
@@ -2421,6 +2499,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2431-2045"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2431-2045"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/10928"
@@ -2495,6 +2577,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2108-6796"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2108-6796"
@@ -2627,6 +2713,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2105-2670"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q47009253"
@@ -2688,7 +2778,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2110-6118"
+        }
+      },
       "ddh": null,
       "themes": [
         "Archéologie"
@@ -2748,6 +2843,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2117-3869"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2117-3869"
         },
         "DDH": {
           "label": "DDH",
@@ -2955,6 +3054,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2107-0199"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2107-0199"
@@ -3035,7 +3138,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2678-1190"
+        }
+      },
       "ddh": null,
       "themes": [
         "Langues, linguistique",
@@ -3100,6 +3208,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1278-3366"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1278-3366"
@@ -3176,7 +3288,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2743-0332"
+        }
+      },
       "ddh": null,
       "themes": [
         "Information-communication",
@@ -3243,7 +3360,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2968-6687"
+        }
+      },
       "ddh": null,
       "themes": [
         "Sciences économiques"
@@ -3301,6 +3423,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1963-1197"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1963-1197"
@@ -3375,7 +3501,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2968-3556"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire",
@@ -3433,6 +3564,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/3038-9712"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q134088912"
@@ -3567,6 +3702,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2264-119X"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22349"
@@ -3782,7 +3921,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2272-7396"
+        }
+      },
       "ddh": null,
       "themes": [
         "Histoire"
@@ -3846,6 +3990,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2270-7336"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23101"
@@ -3915,7 +4063,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2101-0323"
+        }
+      },
       "ddh": null,
       "themes": [
         "Arts visuels"
@@ -4185,7 +4338,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2739-6649"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -4442,7 +4600,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2647-4867"
+        }
+      },
       "ddh": null,
       "themes": [
         "Droit, justice, criminologie"
@@ -4571,6 +4734,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2259-924X"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2259-924X"
@@ -4968,7 +5135,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2752-4507"
+        }
+      },
       "ddh": null,
       "themes": [
         "Espaces, environnement",
@@ -5023,6 +5195,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2728-834X"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2728-834X"
@@ -5156,6 +5332,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1499-7185"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1499-7185"
@@ -5240,6 +5420,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2425-231X"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2425-231X"
         },
         "DDH": {
           "label": "DDH",
@@ -5379,6 +5563,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2100-0670"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3428596"
@@ -5448,6 +5636,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2111-4528"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23114"
@@ -5658,6 +5850,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2552-0741"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22301"
@@ -5934,6 +6130,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2267-6759"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2267-6759"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22483"
@@ -6006,6 +6206,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2270-0765"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22332"
@@ -6072,6 +6276,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2259-4728"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22340"
@@ -6209,6 +6417,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2397-8570"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2397-8570"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q50505909"
@@ -6334,7 +6546,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1957-7850"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -6582,6 +6799,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2105-2557"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22348"
@@ -6648,7 +6869,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2781-8306"
+        }
+      },
       "ddh": null,
       "themes": [
         "Économie, gestion",
@@ -6784,6 +7010,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2262-8363"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2262-8363"
@@ -6922,6 +7152,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/3095-3820"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23652"
@@ -6999,6 +7233,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1765-2979"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1765-2979"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/1283"
@@ -7075,7 +7313,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2427-9080"
+        }
+      },
       "ddh": null,
       "themes": [
         "Égyptologie",
@@ -7138,6 +7381,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1626-0252"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1626-0252"
@@ -7207,7 +7454,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2558-7935"
+        }
+      },
       "ddh": null,
       "themes": [
         "Cultures et sociétés",
@@ -7269,6 +7521,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2259-4574"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q16669804"
@@ -7476,6 +7732,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2496-4212"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22370"
@@ -7548,6 +7808,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2118-3252"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q96716812"
@@ -7682,6 +7946,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2264-6949"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2264-6949"
@@ -7756,6 +8024,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2780-4143"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2780-4143"
@@ -8335,6 +8607,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1765-2723"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1765-2723"
@@ -8811,6 +9087,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2275-5195"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2275-5195"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/18783"
@@ -8884,6 +9164,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1957-7761"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1957-7761"
@@ -8969,6 +9253,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2266-1816"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22017"
@@ -9051,6 +9339,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2268-4247"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2268-4247"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/10843"
@@ -9124,6 +9416,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2431-8663"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23110"
@@ -9199,7 +9495,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2494-1670"
+        }
+      },
       "ddh": null,
       "themes": [
         "Études urbaines et rurales",
@@ -9269,6 +9570,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2272-9828"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2272-9828"
         },
         "DDH": {
           "label": "DDH",
@@ -9341,6 +9646,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2105-0929"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2105-0929"
@@ -9543,6 +9852,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2109-9421"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2109-9421"
@@ -9745,6 +10058,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2540-6647"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/22310"
@@ -9887,6 +10204,10 @@
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2036-4091"
         },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2036-4091"
+        },
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/12871"
@@ -10026,6 +10347,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2261-5512"
+        },
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15708777"
@@ -10280,6 +10605,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1778-3801"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1778-3801"
@@ -10363,6 +10692,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/1687-5877"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/1687-5877"
         },
         "Wikidata": {
           "label": "Wikidata",
@@ -11127,6 +11460,10 @@
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/3034-9699"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/3034-9699"
         }
       },
       "ddh": null,
@@ -11250,6 +11587,10 @@
       "labels": [],
       "is_diamond": false,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2409-9287"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2409-9287"
@@ -11517,6 +11858,10 @@
       ],
       "is_diamond": true,
       "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2105-2271"
+        },
         "DOAJ": {
           "label": "DOAJ",
           "url": "https://doaj.org/toc/2105-2271"
@@ -11730,6 +12075,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q124672530"
+        },
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2981-2984"
         },
         "DOAJ": {
           "label": "DOAJ",
