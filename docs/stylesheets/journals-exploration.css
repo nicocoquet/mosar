@@ -428,6 +428,8 @@
 .rx-indexing-option .rx-option { margin: 0; align-items: center; }
 .rx-indexing-option .rx-option input { margin-top: 0; }
 .rx-indexing-info {
+  position: relative;
+  flex: 0 0 auto;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -445,6 +447,36 @@
 .rx-indexing-info:hover, .rx-indexing-info:focus-visible {
   color: var(--rx-accent);
   border-color: var(--rx-accent);
+}
+
+.rx-indexing-info::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  z-index: 20;
+  bottom: calc(100% + .5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(17rem, 70vw);
+  padding: .42rem .6rem;
+  border-radius: .3rem;
+  background: var(--mosar-brand);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.rx-indexing-info:hover::after,
+.rx-indexing-info:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* --------------------------------------------------------------------------
