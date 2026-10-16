@@ -143,6 +143,20 @@ def normalize_perimetre(mosar_data):
     return perimetres if perimetres else ["Non renseigné"]
 
 
+def normalize_pipe_list(value):
+    """Découper les valeurs multiples du recensement, en préservant les libellés."""
+    if value is None:
+        return []
+    values = []
+    seen = set()
+    for part in str(value).split("|"):
+        label = part.strip()
+        if label and label != "/" and label not in seen:
+            values.append(label)
+            seen.add(label)
+    return values
+
+
 def normalize_laboratoires(mosar_data):
     """Extraire les laboratoires séparés par |, sans modifier leurs intitulés."""
     valeur = mosar_data.get("laboratoire")
@@ -171,6 +185,13 @@ def build_record(title, themes, mosar_data):
     ]
     links = external_links(title)
     references = journal_references(links)
+    if mosar_data:
+        wiki_url = str(mosar_data.get("wikipedia_url") or "").strip()
+        wiki_flag = str(mosar_data.get("wikipedia") or "").strip().casefold()
+        if wiki_url.startswith(("https://", "http://")) and wiki_flag not in ("non", "0"):
+            references["Wikipédia"] = {"label": "Wikipédia", "url": wiki_url}
+        elif wiki_flag in ("oui", "1"):
+            references["Wikipédia"] = {"label": "Wikipédia", "url": None}
     ddh = next(
         (
             item
@@ -214,9 +235,9 @@ def build_record(title, themes, mosar_data):
         "issn": list(dict.fromkeys(issns)),
         "issn_details": list({(str(item["issn"]), str(item.get("support") or "").strip().casefold()): {"issn": str(item["issn"]), "support": str(item.get("support") or "").strip().casefold()} for item in issn_objects if isinstance(item, dict) and item.get("issn")}.values()),
         "languages": title.get("langues") or [],
-        "publishers": title.get("editeurs") or [],
+        "publishers": normalize_pipe_list(mosar_data.get("editeur")) if mosar_data else [],
         "country": country_value(title),
-        "periodicity": (title.get("periodicite") or "").strip() or None,
+        "periodicity": str(mosar_data.get("periodicite") or "").strip() or None if mosar_data else None,
         "publication_format": publication_format(issn_objects),
         "publication_fees": title.get("fraispublication")
         or title.get("frais_publication")
@@ -226,7 +247,7 @@ def build_record(title, themes, mosar_data):
         "references": references,
         "ddh": ddh,
         "themes": themes,
-        "journal_url": title.get("url") or "",
+        "journal_url": str(mosar_data.get("site_web") or "").strip() if mosar_data else "",
         "mirabel_url": title.get("url_revue_mirabel")
         or f"https://reseau-mirabel.info/revue/{rid}",
         "mosar": None
@@ -243,6 +264,8 @@ def build_record(title, themes, mosar_data):
             "licence": str(mosar_data.get("licence") or "").strip(),
             "perimetre": normalize_perimetre(mosar_data),
             "laboratoires": normalize_laboratoires(mosar_data),
+            "associations": normalize_pipe_list(mosar_data.get("association")),
+            "diffuseurs_numeriques": normalize_pipe_list(mosar_data.get("diffuseur_numerique")),
             "discipline_normalized": normalize_mosar_category(
                 mosar_data.get("discipline"),
                 DISCIPLINE_MAP,
