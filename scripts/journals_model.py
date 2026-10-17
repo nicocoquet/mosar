@@ -271,6 +271,8 @@ def build_record(title, themes, mosar_data):
             ).strip(),
             "licence": str(mosar_data.get("licence") or "").strip(),
             "licence_mentioned": normalize_licence_mentioned(mosar_data.get("licence_mentioned")),
+            "issn_print_present": bool(str(mosar_data.get("issn_print") or "").strip()),
+            "issn_electronic_present": bool(str(mosar_data.get("issn_electronic") or "").strip()),
             "perimetre": normalize_perimetre(mosar_data),
             "laboratoires": normalize_laboratoires(mosar_data),
             "associations": normalize_pipe_list(mosar_data.get("association")),
