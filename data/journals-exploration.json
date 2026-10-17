@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T10:50:36+00:00",
+    "generated_at": "2026-10-17T11:40:06+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -9281,8 +9281,8 @@
       "mirabel_id": 12914,
       "title": "British journal for the history of philosophy",
       "subtitle": "",
-      "mirabel_title": "British journal for the history of philosophy",
-      "sigle": "",
+      "mirabel_title": "British Journal for the History of Philosophy",
+      "sigle": "BJHP",
       "issn": [
         "0960-8788",
         "1469-3526"
