@@ -7,6 +7,7 @@ from __future__ import annotations
 from mosar_model import (
     ALLOWED_STRUCTURES,
     DISCIPLINE_MAP,
+    FORMAT_MAP,
     LICENCE_MAP,
     normalize_structure,
 )
@@ -80,6 +81,16 @@ def publication_format(issns):
     if paper:
         return "Papier"
     return None
+
+
+def mosar_publication_format(value):
+    """Normaliser le format déclaré dans le XLSX Mosar."""
+    text = str(value).strip().casefold() if value is not None else ""
+    if not text or text == "?":
+        return None
+    if text not in FORMAT_MAP:
+        raise ValueError(f"Format de publication Mosar inconnu : {value!r}")
+    return FORMAT_MAP[text]
 
 
 def external_links(title):
@@ -246,7 +257,7 @@ def build_record(title, themes, mosar_data):
         "publishers": normalize_pipe_list(mosar_data.get("editeur")) if mosar_data else [],
         "country": country_value(title),
         "periodicity": str(mosar_data.get("periodicite") or "").strip() or None if mosar_data else None,
-        "publication_format": publication_format(issn_objects),
+        "publication_format": mosar_publication_format(mosar_data.get("format")) if mosar_data else None,
         "publication_fees": title.get("fraispublication")
         or title.get("frais_publication")
         or None,
