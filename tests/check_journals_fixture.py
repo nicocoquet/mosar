@@ -105,6 +105,7 @@ MOSAR = {
         "acces_ouvert": "Oui",
         "discipline": "Archéologie",
         "type_editeur": "Éditeur public",
+        "format": "papier+numérique",
         "licence": "CC BY",
         "licence_mentioned": "oui",
         "issn_print": "1111-1111",
@@ -122,6 +123,7 @@ MOSAR = {
         "acces_ouvert": "Non",
         "discipline": "Linguistique",
         "type_editeur": "Association",
+        "format": "papier",
         "licence": "Tous droits réservés",
         "licence_mentioned": "non",
         "issn_print": "",
@@ -136,6 +138,7 @@ MOSAR = {
         "acces_ouvert": "Oui",
         "discipline": "Anthropologie",
         "type_editeur": "Organisme de recherche public",
+        "format": "numérique",
         "licence": "CC BY-NC",
     },
     # Identifiant Mosar volontairement absent de la grappe Mir@bel.
@@ -286,6 +289,16 @@ def main():
     else:
         raise AssertionError("Une licence réellement inconnue doit être rejetée")
 
+    from journals_model import mosar_publication_format
+    assert_equal(mosar_publication_format(" papier+numérique "), "Papier et numérique", "Normalisation du format XLSX")
+    assert_equal(mosar_publication_format(""), None, "Format XLSX absent")
+    try:
+        mosar_publication_format("format inattendu")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Un format XLSX inconnu doit être signalé")
+
     beta = by_id[102]
 
     assert_equal(
@@ -298,8 +311,8 @@ def main():
 
     assert_equal(
         beta["publication_format"],
-        "Numérique",
-        "Format numérique",
+        "Papier",
+        "Format XLSX papier prioritaire sur ISSN électronique Mir@bel",
     )
 
     assert_equal(
@@ -325,8 +338,8 @@ def main():
 
     assert_equal(
         gamma["publication_format"],
-        "Papier",
-        "Format papier",
+        "Numérique",
+        "Format XLSX numérique prioritaire sur ISSN papier Mir@bel",
     )
 
     assert_equal(
