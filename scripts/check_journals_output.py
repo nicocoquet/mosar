@@ -34,6 +34,7 @@ REQUIRED_MOSAR_KEYS = {
     "discipline",
     "editorial_structure",
     "licence",
+    "licence_mentioned",
     "laboratoires",
     "associations",
     "diffuseurs_numeriques",
