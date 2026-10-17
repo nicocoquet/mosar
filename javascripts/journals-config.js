@@ -45,6 +45,7 @@ const REVUES_TRANSLATIONS = {
       irrégulier: 'Sans périodicité fixe'
     },
     issnHeading: 'ISSN',
+    binaryLabels: {all: '—', yes: 'Oui', no: 'Non'},
     licenceMentionedHeading: 'Licence mentionnée',
     licenceMentionedLabels: {oui: 'Oui', non: 'Non'},
     licenceHybridInfo: 'Licence CC ou DR variable pour une même publication',
@@ -293,6 +294,7 @@ const REVUES_TRANSLATIONS = {
       irrégulier: 'No fixed publication frequency'
     },
     issnHeading: 'ISSN',
+    binaryLabels: {all: '—', yes: 'Yes', no: 'No'},
     licenceMentionedHeading: 'Licence specified',
     licenceMentionedLabels: {oui: 'Yes', non: 'No'},
     licenceHybridInfo: 'CC licence or all rights reserved, varying within the same journal',
