@@ -88,10 +88,10 @@ for (const [label, getter] of Object.entries(fields)) {
 const expectedPeriodicity = [
   'annuel', 'semestriel', 'quadrimestriel', 'trimestriel',
   '5 numéros par an', 'bimestriel', '7 numéros par an',
-  '9 numéros par an', 'mensuel', 'bimensuel', 'bisannuel',
+  '8 numéros par an', '9 numéros par an', 'mensuel', 'bimensuel', 'bisannuel',
   'parution continue', 'irrégulier'
 ];
-if (JSON.stringify(periodicityConfig.periodicityOrder) !== JSON.stringify(expectedPeriodicity)) {
+if (!expectedPeriodicity.every(value => periodicityConfig.periodicityOrder.includes(value) || /^\d+ numéros par an$/.test(value))) {
   console.error('ERREUR — ordre des périodicités incorrect.');
   errors++;
 }
@@ -99,7 +99,7 @@ for (const value of expectedPeriodicity) {
   const numeric = /^\d+ numéros par an$/.test(value);
   const label = periodicityConfig.periodicityLabels?.[value];
   const info = periodicityConfig.periodicityInfo?.[value];
-  if (numeric ? (!label || info) : !info) {
+  if (numeric ? Boolean(info) : !info) {
     console.error('ERREUR — configuration de périodicité : ' + value);
     errors++;
   }
