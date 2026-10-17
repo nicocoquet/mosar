@@ -66,6 +66,16 @@
         });
       }
 
+      if (key === 'periodicity') {
+        const order = config.periodicityOrder;
+        vals.sort((a, b) => {
+          const ia = order.indexOf(a[0]);
+          const ib = order.indexOf(b[0]);
+          return (ia < 0 ? order.length : ia) - (ib < 0 ? order.length : ib)
+            || a[0].localeCompare(b[0], config.locale);
+        });
+      }
+
       if (key === 'indexing') {
         const order = ['DDH', 'DOAJ', 'ROAD', 'Wikidata', 'Wikipédia'];
         vals.sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
@@ -75,7 +85,7 @@
       section.className = 'rx-facet';
       section.dataset.facet = key;
 
-      const scroll = vals.length > config.facetScrollThreshold
+      const scroll = key !== 'periodicity' && vals.length > config.facetScrollThreshold
         ? ' rx-facet-options--scroll'
         : '';
 
@@ -87,7 +97,8 @@
         const groupHeading = isIndexing && (index === 0 || group !== previousGroup)
           ? `<div class="rx-indexing-heading${index ? ' rx-indexing-heading--separated' : ''}">${esc(config.indexingGroups[group])}</div>`
           : '';
-        const infoText = isIndexing ? config.indexingInfo?.[value] : null;
+        const infoText = isIndexing ? config.indexingInfo?.[value]
+          : key === 'periodicity' ? config.periodicityInfo?.[value] : null;
         const info = infoText
           ? `<button type="button" class="rx-indexing-info" data-tooltip="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
           : '';
@@ -96,7 +107,9 @@
 
         const labelText = isDiamondOption
           ? config.diamondFacetLabel
-          : displayValue(value);
+          : key === 'periodicity'
+            ? (config.periodicityLabels?.[value] ?? displayValue(value))
+            : displayValue(value);
 
         const pictogram = isDiamondOption
           ? `<img class="rx-facet-diamond-icon"
@@ -104,7 +117,7 @@
                    alt="">`
           : '';
 
-        if (isIndexing) return `${groupHeading}
+        if (isIndexing || key === 'periodicity') return `${groupHeading}
           <div class="rx-indexing-option">
             <label class="rx-option">
               <input type="checkbox" data-facet="${esc(key)}" value="${esc(value)}">
