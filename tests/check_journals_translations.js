@@ -96,7 +96,7 @@ if (JSON.stringify(periodicityConfig.periodicityOrder) !== JSON.stringify(expect
   errors++;
 }
 for (const value of expectedPeriodicity) {
-  const numeric = /^\\d+ numéros par an$/.test(value);
+  const numeric = /^\d+ numéros par an$/.test(value);
   const label = periodicityConfig.periodicityLabels?.[value];
   const info = periodicityConfig.periodicityInfo?.[value];
   if (numeric ? (!label || info) : !info) {
