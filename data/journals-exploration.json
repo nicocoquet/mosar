@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T09:47:30+00:00",
+    "generated_at": "2026-10-17T09:52:51+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -1341,7 +1341,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -3090,7 +3090,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -3248,7 +3248,7 @@
       ],
       "country": null,
       "periodicity": "irrégulier",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -4133,7 +4133,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -4212,7 +4212,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -6737,7 +6737,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -8037,7 +8037,7 @@
       ],
       "country": null,
       "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -8191,7 +8191,7 @@
       ],
       "country": null,
       "periodicity": "annuel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -8952,7 +8952,7 @@
       ],
       "country": null,
       "periodicity": "semestriel",
-      "publication_format": "Numérique",
+      "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -9879,7 +9879,7 @@
       ],
       "country": null,
       "periodicity": "irrégulier",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -10248,7 +10248,7 @@
       ],
       "country": null,
       "periodicity": "semestriel",
-      "publication_format": "Papier et numérique",
+      "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
@@ -12972,7 +12972,7 @@
       ],
       "country": null,
       "periodicity": "trimestriel",
-      "publication_format": "Papier",
+      "publication_format": "Papier et numérique",
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
@@ -13301,7 +13301,7 @@
       "publishers": [],
       "country": null,
       "periodicity": null,
-      "publication_format": "Papier et numérique",
+      "publication_format": null,
       "publication_fees": null,
       "labels": [
         "DDH diamond journal"
