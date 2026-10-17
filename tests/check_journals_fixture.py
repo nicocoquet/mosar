@@ -106,6 +106,7 @@ MOSAR = {
         "discipline": "Archéologie",
         "type_editeur": "Éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": "oui",
         "periodicite": "semestriel",
         "editeur": "Éditeur Mosar A | Éditeur Mosar B",
         "association": "Association A | Association B",
@@ -120,6 +121,7 @@ MOSAR = {
         "discipline": "Linguistique",
         "type_editeur": "Association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": "non",
         "periodicite": "annuel",
         "editeur": "Éditeur Mosar Bêta",
         "site_web": "",
@@ -228,6 +230,7 @@ def main():
             "discipline": "Archéologie",
             "editorial_structure": "Éditeur public",
             "licence": "CC BY",
+            "licence_mentioned": "oui",
             "discipline_normalized": "Archéologie",
             "editorial_structure_normalized": "Éditeur public",
             "licence_normalized": "Licence Creative Commons",
@@ -302,6 +305,7 @@ def main():
         "Normalisation de l'accès restreint",
     )
 
+    assert_equal(beta["mosar"]["licence_mentioned"], "non", "Licence mentionnée négative")
     assert_equal(beta["journal_url"], "", "Absence de repli vers Mir@bel pour le site web")
     assert_equal(beta["publishers"], ["Éditeur Mosar Bêta"], "Éditeur XLSX prioritaire")
     assert_equal("Wikipédia" in beta["references"], False, "Pas de référencement Wikipédia absent")
