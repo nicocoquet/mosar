@@ -3,10 +3,9 @@ const REVUES_TRANSLATIONS = {
     locale: 'fr',
     values: {
       // Licences de diffusion
-      'Licence Creative Commons': 'Licence Creative Commons (CC)',
+      'Licence Creative Commons': 'Creative Commons (CC)',
       'Tous droits réservés': 'Tous droits réservés (DR)',
-      'Licence CC ou DR variable pour une même publication':
-        'Licence CC ou DR variable pour une même publication'
+      'Licence CC ou DR variable pour une même publication': 'Hybride'
     },
     unknownLabel: 'Non renseigné',
     facetsTitle: 'Filtrer la recherche',
@@ -45,6 +44,10 @@ const REVUES_TRANSLATIONS = {
       'parution continue': 'Publication au fil de l’eau',
       irrégulier: 'Sans périodicité fixe'
     },
+    licenceMentionedHeading: 'Licence mentionnée',
+    licenceMentionedLabels: {oui: 'Oui', non: 'Non'},
+    licenceHybridInfo: 'Licence CC ou DR variable pour une même publication',
+    perimetreOrder: ['MSH Mondes', 'Université Paris Nanterre', 'Université Paris 1 Panthéon-Sorbonne'],
     indexingGroups: {open: 'Science ouverte', wiki: 'Écosystème Wikimedia'},
     indexingInfo: {
       DDH: 'Diamond Discovery Hub',
@@ -65,6 +68,7 @@ const REVUES_TRANSLATIONS = {
       {key: 'languages', label: 'Langues'},
       {key: 'periodicity', label: 'Périodicité'},
       {key: 'licence', label: 'Licence de diffusion'},
+      {key: 'licence_mentioned', label: 'Licence mentionnée'},
       {key: 'editorial_structure', label: 'Structure éditoriale'},
       {key: 'publishers', label: 'Éditeur'},
       {key: 'indexing', label: 'Référencement'}
@@ -89,10 +93,9 @@ const REVUES_TRANSLATIONS = {
     locale: 'en',
     values: {
       // Licences de diffusion
-      'Licence Creative Commons': 'Creative Commons licence (CC)',
+      'Licence Creative Commons': 'Creative Commons (CC)',
       'Tous droits réservés': 'All rights reserved (DR)',
-      'Licence CC ou DR variable pour une même publication':
-      'Variable CC licence or all rights reserved within the same journal',
+      'Licence CC ou DR variable pour une même publication': 'Hybrid',
 
       // Périmètre du projet
       'Non renseigné': 'Not specified',
@@ -287,6 +290,10 @@ const REVUES_TRANSLATIONS = {
       'parution continue': 'Continuous publication',
       irrégulier: 'No fixed publication frequency'
     },
+    licenceMentionedHeading: 'Licence specified',
+    licenceMentionedLabels: {oui: 'Yes', non: 'No'},
+    licenceHybridInfo: 'CC licence or all rights reserved, varying within the same journal',
+    perimetreOrder: ['MSH Mondes', 'Université Paris Nanterre', 'Université Paris 1 Panthéon-Sorbonne'],
     indexingGroups: {open: 'Open science', wiki: 'Wikimedia ecosystem'},
     indexingInfo: {
       DDH: 'Diamond Discovery Hub',
@@ -307,6 +314,7 @@ const REVUES_TRANSLATIONS = {
       {key: 'languages', label: 'Languages'},
       {key: 'periodicity', label: 'Publication frequency'},
       {key: 'licence', label: 'Publication licence'},
+      {key: 'licence_mentioned', label: 'Licence specified'},
       {key: 'editorial_structure', label: 'Editorial structure'},
       {key: 'publishers', label: 'Publisher'},
       {key: 'indexing', label: 'Indexing'}
