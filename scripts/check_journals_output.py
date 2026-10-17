@@ -35,6 +35,8 @@ REQUIRED_MOSAR_KEYS = {
     "editorial_structure",
     "licence",
     "licence_mentioned",
+    "issn_print_present",
+    "issn_electronic_present",
     "laboratoires",
     "associations",
     "diffuseurs_numeriques",
