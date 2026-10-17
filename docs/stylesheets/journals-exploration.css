@@ -449,7 +449,8 @@
   border-color: var(--rx-accent);
 }
 
-.rx-indexing-info::after {
+.rx-indexing-info::after,
+.rx-indexing-tooltip {
   content: attr(data-tooltip);
   position: absolute;
   z-index: 20;
@@ -474,10 +475,16 @@
   pointer-events: none;
 }
 .rx-indexing-info:hover::after,
-.rx-indexing-info:focus-visible::after {
+.rx-indexing-info:focus-visible::after,
+.rx-indexing-info:hover .rx-indexing-tooltip,
+.rx-indexing-info:focus-visible .rx-indexing-tooltip {
   opacity: 1;
   visibility: visible;
 }
+
+.rx-indexing-info--html::after { content: none; }
+.rx-indexing-tooltip { display: block; }
+.rx-indexing-tooltip sup, .rx-indexing-option sup { font-size: .7em; line-height: 0; vertical-align: super; }
 
 /* --------------------------------------------------------------------------
    7. Grille et cartes de revues

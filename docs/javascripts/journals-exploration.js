@@ -14,6 +14,30 @@
       ? config.diamondFacetLabel
       : (config.values?.[String(value)] ?? String(value));
   const esc = (s='') => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  const periodicityCount = value => {
+    const known = {annuel:1, semestriel:2, quadrimestriel:3, trimestriel:4,
+      bimestriel:6, mensuel:12, bimensuel:24};
+    const v = String(value).trim().toLocaleLowerCase('fr');
+    if (Object.hasOwn(known, v)) return known[v];
+    const match = v.match(/^(\d+)\s+(?:numéros? par an|n(?:os|ᵒˢ)\/an)$/);
+    return match ? Number(match[1]) : null;
+  };
+  const periodicityRank = value => {
+    const count = periodicityCount(value);
+    if (count !== null) return count;
+    return ({bisannuel:25, 'parution continue':26, irrégulier:27})[String(value).toLocaleLowerCase('fr')] ?? 100;
+  };
+  const periodicityLabel = value => {
+    const count = periodicityCount(value);
+    if (/^\d+\s+(?:numéros? par an|n(?:os|ᵒˢ)\/an)$/.test(String(value).trim().toLocaleLowerCase('fr'))) {
+      return config.locale === 'en' ? count + ' issues/year' : count + ' nos/an';
+    }
+    return config.periodicityLabels?.[value] ?? displayValue(value);
+  };
+  const periodicityHtml = value => esc(value)
+    .replace(/n(?:os|ᵒˢ)\/an/g, 'n<sup>os</sup>/an')
+    .replace(/n°/g, 'n<sup>o</sup>');
   const issnLine = record => {
     const details = record.issn_details || [];
     if (!details.length) return (record.issn || []).length ? 'ISSN ' + esc(record.issn.join(', ')) : '';
@@ -67,13 +91,8 @@
       }
 
       if (key === 'periodicity') {
-        const order = config.periodicityOrder;
-        vals.sort((a, b) => {
-          const ia = order.indexOf(a[0]);
-          const ib = order.indexOf(b[0]);
-          return (ia < 0 ? order.length : ia) - (ib < 0 ? order.length : ib)
-            || a[0].localeCompare(b[0], config.locale);
-        });
+        vals.sort((a, b) => periodicityRank(a[0]) - periodicityRank(b[0])
+          || a[0].localeCompare(b[0], config.locale));
       }
 
       if (key === 'indexing') {
@@ -100,7 +119,9 @@
         const infoText = isIndexing ? config.indexingInfo?.[value]
           : key === 'periodicity' ? config.periodicityInfo?.[value] : null;
         const info = infoText
-          ? `<button type="button" class="rx-indexing-info" data-tooltip="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
+          ? key === 'periodicity'
+            ? `<button type="button" class="rx-indexing-info rx-indexing-info--html" aria-label="${esc(value)} : ${esc(infoText)}">i<span class="rx-indexing-tooltip">${periodicityHtml(infoText)}</span></button>`
+            : `<button type="button" class="rx-indexing-info" data-tooltip="${esc(infoText)}" aria-label="${esc(value)} : ${esc(infoText)}">i</button>`
           : '';
 
         const isDiamondOption = key === 'labelling' && value === 'diamond';
@@ -108,7 +129,7 @@
         const labelText = isDiamondOption
           ? config.diamondFacetLabel
           : key === 'periodicity'
-            ? (config.periodicityLabels?.[value] ?? displayValue(value))
+            ? periodicityLabel(value)
             : displayValue(value);
 
         const pictogram = isDiamondOption
@@ -121,7 +142,7 @@
           <div class="rx-indexing-option">
             <label class="rx-option">
               <input type="checkbox" data-facet="${esc(key)}" value="${esc(value)}">
-              <span>${esc(labelText)}</span>
+              <span>${key === 'periodicity' ? periodicityHtml(labelText) : esc(labelText)}</span>
             </label>
             ${info}
             <span class="rx-count">${count}</span>
