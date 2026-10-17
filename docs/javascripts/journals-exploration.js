@@ -56,6 +56,14 @@
   const langLabel = code => config.languages[String(code).toLowerCase()] || String(code).toUpperCase();
   const valueOrUnknown = value => value === null || value === undefined || String(value).trim()==='' ? config.unknownLabel : String(value).trim();
   const listOrUnknown = values => Array.isArray(values) && values.length ? values.filter(Boolean).map(String) : [config.unknownLabel];
+  const binaryItems = ['DDH', 'DOAJ', 'ROAD', 'Wikidata', 'Wikipédia', 'ISSN', 'ISSN-E'];
+  const binaryFilters = Object.fromEntries(binaryItems.map(item => [item, 'all']));
+  const binaryControl = (facet, item) => `<div class="rx-binary" role="group" aria-label="${esc(item)}">
+    <span class="rx-binary-label">${esc(item)}</span>
+    <div class="rx-binary-choices">${[['all', config.binaryLabels.all], ['yes', config.binaryLabels.yes], ['no', config.binaryLabels.no]].map(([value, label]) =>
+      `<button type="button" class="rx-binary-choice" data-binary="${esc(item)}" data-binary-facet="${facet}" data-value="${value}" aria-pressed="${value === binaryFilters[item]}">${esc(label)}</button>`
+    ).join('')}</div>
+  </div>`;
   const state = {q:''};
   config.facets.forEach(({key}) => { state[key] = new Set(); });
   const FACET_LABELS = Object.fromEntries(config.facets.map(({key,label}) => [key,label]));
@@ -71,7 +79,7 @@
     const proximityLevels=data.model?.proximity_levels||[];
     root.innerHTML=`<div class="rx-layout"><aside class="rx-facets"><div class="rx-facets-head"><h2>${esc(config.facetsTitle)}</h2><div class="rx-active-filters" aria-live="polite"></div><button class="rx-reset" type="button" disabled>${esc(config.resetLabel)}</button></div><div class="rx-facet-list"></div></aside><div class="rx-results"><div class="rx-toolbar"><input class="rx-search" type="search" placeholder="${esc(config.searchPlaceholder)}" aria-label="${esc(config.searchAriaLabel)}"><div class="rx-summary"></div></div><section class="rx-cards" aria-live="polite"></section></div></div>`;
     root.querySelector('.rx-search').addEventListener('input',e=>{state.q=e.target.value.trim().toLocaleLowerCase(config.locale);render(records, proximityLevels);});
-    root.querySelector('.rx-reset').addEventListener('click',()=>{Object.keys(state).forEach(k=>k==='q'?state.q='':state[k].clear());root.querySelector('.rx-search').value='';root.querySelectorAll('input[type=checkbox]').forEach(i=>i.checked=false);render(records, proximityLevels);});
+    root.querySelector('.rx-reset').addEventListener('click',()=>{Object.keys(state).forEach(k=>k==='q'?state.q='':state[k].clear());root.querySelector('.rx-search').value='';root.querySelectorAll('input[type=checkbox]').forEach(i=>i.checked=false);binaryItems.forEach(item=>binaryFilters[item]='all');root.querySelectorAll('[data-binary]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.value==='all')));render(records, proximityLevels);});
     buildFacets(records, proximityLevels); render(records, proximityLevels);
   }
 
@@ -151,7 +159,9 @@
                    alt="">`
           : '';
 
-        if (isIndexing || key === 'periodicity' || key === 'licence') return `${groupHeading}
+        if (isIndexing) return `${groupHeading}<div class="rx-binary-row">${binaryControl(key, value)}${info}</div>`;
+
+        if (key === 'periodicity' || key === 'licence') return `${groupHeading}
           <div class="rx-indexing-option">
             <label class="rx-option">
               <input type="checkbox" data-facet="${esc(key)}" value="${esc(value)}">
@@ -189,8 +199,7 @@
       const issnGroup = key === 'format'
         ? `<div class="rx-indexing-heading rx-indexing-heading--separated">${esc(config.issnHeading)}</div>
           ${['ISSN', 'ISSN-E'].map(value => {
-            const count = records.filter(r => value === 'ISSN' ? r.mosar?.issn_print_present : r.mosar?.issn_electronic_present).length;
-            return `<label class="rx-option"><input type="checkbox" data-facet="issn_presence" value="${value}"><span>${value}</span><span class="rx-count">${count}</span></label>`;
+            return binaryControl('issn_presence', value);
           }).join('')}`
         : '';
 
@@ -206,6 +215,16 @@
         </div>`;
 
       box.appendChild(section);
+    });
+
+    box.addEventListener('click', e => {
+      const button = e.target.closest('button[data-binary]');
+      if (!button) return;
+      binaryFilters[button.dataset.binary] = button.dataset.value;
+      button.closest('.rx-binary-choices').querySelectorAll('button').forEach(choice => {
+        choice.setAttribute('aria-pressed', String(choice === button));
+      });
+      render(records, proximityLevels);
     });
 
     box.addEventListener('change', e => {
@@ -264,10 +283,10 @@
       )
     };
   }
-  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>k==='issn_presence' ? [...state[k]].every(value=>v[k].includes(value)) : matchesSet(state[k],v[k]));});}
+  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);if(!Object.keys(v).every(k=>k==='issn_presence'||k==='indexing'||matchesSet(state[k],v[k])))return false;return binaryItems.every(item=>{const choice=binaryFilters[item];if(choice==='all')return true;const present=(item==='ISSN'||item==='ISSN-E'?v.issn_presence:v.indexing).includes(item);return choice==='yes'?present:!present;});});}
   function sortRecords(rows, proximityLevels){return [...rows].sort((a,b)=>{const parse=r=>{const n=parseInt(r.mosar?.proximity_level,10);return [Number.isInteger(n)&&proximityLevels.includes(n)?n:99,(r.title||'').toLocaleLowerCase('fr')];};const ka=parse(a),kb=parse(b);return ka[0]-kb[0]||ka[1].localeCompare(kb[1],'fr');});}
-  function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size);}
-  function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(key === 'licence_mentioned' ? config.licenceMentionedLabels[value] : displayValue(value))}</span>`));});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
+  function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size)||binaryItems.some(item=>binaryFilters[item]!=='all');}
+  function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(key === 'licence_mentioned' ? config.licenceMentionedLabels[value] : displayValue(value))}</span>`));});binaryItems.forEach(item=>{const choice=binaryFilters[item];if(choice==='all')return;const facet=item.startsWith('ISSN')?'issn_presence':'indexing';tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[facet])} :</span> ${esc(item)} — ${esc(config.binaryLabels[choice])}</span>`);});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
   function formatMark(format){if(!format)return'';const marks=format==='Papier et numérique'?`${icons.paper}${icons.digital}`:format==='Papier'?icons.paper:icons.digital;return `<span class="rx-signal" title="${esc(config.formatTitle)} : ${esc(displayValue(format))}"><span class="rx-format-icons">${marks}</span><span>${esc(displayValue(format))}</span></span>`;}
   function accessMark(access){if(!access)return'';const restricted=/restreint|fermé|ferme/i.test(access);return `<span class="rx-signal ${restricted?'rx-signal--restricted':'rx-signal--open'}" title="${esc(displayValue(access))}">${restricted?icons.closed:icons.open}<span>${esc(displayValue(access))}</span></span>`;}
   function isDiamond(r) {
