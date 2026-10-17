@@ -262,7 +262,7 @@
       )
     };
   }
-  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>matchesSet(state[k],v[k]));});}
+  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>k==='issn_presence' ? [...state[k]].every(value=>v[k].includes(value)) : matchesSet(state[k],v[k]));});}
   function sortRecords(rows, proximityLevels){return [...rows].sort((a,b)=>{const parse=r=>{const n=parseInt(r.mosar?.proximity_level,10);return [Number.isInteger(n)&&proximityLevels.includes(n)?n:99,(r.title||'').toLocaleLowerCase('fr')];};const ka=parse(a),kb=parse(b);return ka[0]-kb[0]||ka[1].localeCompare(kb[1],'fr');});}
   function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size);}
   function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(key === 'licence_mentioned' ? config.licenceMentionedLabels[value] : displayValue(value))}</span>`));});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
