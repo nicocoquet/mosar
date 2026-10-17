@@ -24,6 +24,7 @@ _REQUIRED = {
         "discipline",
         "publisher_type",
         "licence",
+        "licence_mentioned",
     ),
     "mirabel": ("api", "cluster_id", "cluster_name", "cluster_url"),
     "privacy": ("forbidden_columns",),
