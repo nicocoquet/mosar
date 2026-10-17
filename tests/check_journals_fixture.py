@@ -107,6 +107,8 @@ MOSAR = {
         "type_editeur": "Éditeur public",
         "licence": "CC BY",
         "licence_mentioned": "oui",
+        "issn_print": "1111-1111",
+        "issn_electronic": "",
         "periodicite": "semestriel",
         "editeur": "Éditeur Mosar A | Éditeur Mosar B",
         "association": "Association A | Association B",
@@ -122,6 +124,8 @@ MOSAR = {
         "type_editeur": "Association",
         "licence": "Tous droits réservés",
         "licence_mentioned": "non",
+        "issn_print": "",
+        "issn_electronic": "3333-3333",
         "periodicite": "annuel",
         "editeur": "Éditeur Mosar Bêta",
         "site_web": "",
@@ -231,6 +235,8 @@ def main():
             "editorial_structure": "Éditeur public",
             "licence": "CC BY",
             "licence_mentioned": "oui",
+            "issn_print_present": True,
+            "issn_electronic_present": False,
             "discipline_normalized": "Archéologie",
             "editorial_structure_normalized": "Éditeur public",
             "licence_normalized": "Licence Creative Commons",
@@ -308,6 +314,8 @@ def main():
         "Normalisation de l'accès restreint",
     )
 
+    assert_equal(beta["mosar"]["issn_print_present"], False, "ISSN absent du XLSX")
+    assert_equal(beta["mosar"]["issn_electronic_present"], True, "ISSN-E présent dans le XLSX")
     assert_equal(beta["mosar"]["licence_mentioned"], "non", "Licence mentionnée négative")
     assert_equal(beta["journal_url"], "", "Absence de repli vers Mir@bel pour le site web")
     assert_equal(beta["publishers"], ["Éditeur Mosar Bêta"], "Éditeur XLSX prioritaire")
