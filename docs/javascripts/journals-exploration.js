@@ -256,7 +256,9 @@
         ? r.mosar.laboratoires.filter(Boolean)
         : [],
       associations: Array.isArray(r.mosar?.associations) ? r.mosar.associations.filter(Boolean) : [],
-      diffuseurs_numeriques: Array.isArray(r.mosar?.diffuseurs_numeriques) ? r.mosar.diffuseurs_numeriques.filter(Boolean) : [],
+      diffuseurs_numeriques: Array.isArray(r.mosar?.diffuseurs_numeriques)
+        ? r.mosar.diffuseurs_numeriques.filter(value => String(value).trim().toLocaleLowerCase('fr') !== 'aucun' && String(value).trim())
+        : [],
       indexing: ['DDH', 'DOAJ', 'ROAD', 'Wikidata', 'Wikipédia'].filter(
         name => name === 'Wikipédia' ? Boolean(r.references?.[name]) : Boolean(r.references?.[name]?.url)
       )
