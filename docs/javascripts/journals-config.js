@@ -44,6 +44,7 @@ const REVUES_TRANSLATIONS = {
       'parution continue': 'Publication au fil de l’eau',
       irrégulier: 'Sans périodicité fixe'
     },
+    issnHeading: 'ISSN',
     licenceMentionedHeading: 'Licence mentionnée',
     licenceMentionedLabels: {oui: 'Oui', non: 'Non'},
     licenceHybridInfo: 'Licence CC ou DR variable pour une même publication',
@@ -62,6 +63,7 @@ const REVUES_TRANSLATIONS = {
       {key: 'diffuseurs_numeriques', label: 'Diffuseur numérique'},
       {key: 'access', label: 'Accès'},
       {key: 'format', label: 'Format de publication'},
+      {key: 'issn_presence', label: 'ISSN'},
       {key: 'labelling', label: 'Labellisation'},
       {key: 'discipline', label: 'Disciplines'},
       {key: 'themes', label: 'Thématiques'},
@@ -290,6 +292,7 @@ const REVUES_TRANSLATIONS = {
       'parution continue': 'Continuous publication',
       irrégulier: 'No fixed publication frequency'
     },
+    issnHeading: 'ISSN',
     licenceMentionedHeading: 'Licence specified',
     licenceMentionedLabels: {oui: 'Yes', non: 'No'},
     licenceHybridInfo: 'CC licence or all rights reserved, varying within the same journal',
@@ -308,6 +311,7 @@ const REVUES_TRANSLATIONS = {
       {key: 'diffuseurs_numeriques', label: 'Digital distributor'},
       {key: 'access', label: 'Access'},
       {key: 'format', label: 'Publication format'},
+      {key: 'issn_presence', label: 'ISSN'},
       {key: 'labelling', label: 'Labelling'},
       {key: 'discipline', label: 'Disciplines'},
       {key: 'themes', label: 'Topics'},
