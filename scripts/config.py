@@ -25,6 +25,8 @@ _REQUIRED = {
         "publisher_type",
         "licence",
         "licence_mentioned",
+        "issn_print",
+        "issn_electronic",
     ),
     "mirabel": ("api", "cluster_id", "cluster_name", "cluster_url"),
     "privacy": ("forbidden_columns",),
