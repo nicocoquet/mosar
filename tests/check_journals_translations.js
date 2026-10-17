@@ -109,6 +109,10 @@ if (!periodicityConfig.licenceMentionedLabels?.oui || !periodicityConfig.licence
   console.error('ERREUR — traductions des filtres de licence incomplètes.');
   errors++;
 }
+if (!periodicityConfig.binaryLabels || periodicityConfig.binaryLabels.yes !== 'Yes' || periodicityConfig.binaryLabels.no !== 'No' || periodicityConfig.binaryLabels.all !== '—') {
+  console.error('ERREUR — traductions des sélecteurs oui/non manquantes.');
+  errors++;
+}
 if (errors) {
   console.error(
     `\nÉCHEC — ${errors} traduction(s) à compléter.`
