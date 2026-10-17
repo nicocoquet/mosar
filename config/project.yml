@@ -21,6 +21,8 @@ columns:
   publisher_type: "Type d'éditeur"
   licence: "Licence"
   licence_mentioned: "Licence mentionnée"
+  issn_print: "ISSN"
+  issn_electronic: "ISSN-E"
   msh: "MSH"
   upn: "UPN"
   up1: "UP1"
