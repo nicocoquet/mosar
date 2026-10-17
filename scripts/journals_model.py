@@ -64,25 +64,6 @@ def normalize_editorial_structure(value, journal_id):
 
     return normalize_structure(canonical)
 
-def publication_format(issns):
-    """Déduire les supports de publication des ISSN fournis par Mir@bel."""
-    supports = {
-        str(item.get("support") or "").strip().casefold()
-        for item in (issns or [])
-        if isinstance(item, dict)
-    }
-    supports.discard("")
-    paper = "papier" in supports
-    digital = "electronique" in supports or "électronique" in supports
-    if paper and digital:
-        return "Papier et numérique"
-    if digital:
-        return "Numérique"
-    if paper:
-        return "Papier"
-    return None
-
-
 def mosar_publication_format(value):
     """Normaliser le format déclaré dans le XLSX Mosar."""
     text = str(value).strip().casefold() if value is not None else ""
