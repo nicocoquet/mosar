@@ -136,6 +136,7 @@ def load_mosar_journals(
                 "format": source.columns["format"],
                 "type_editeur": source.columns["publisher_type"],
                 "licence": source.columns["licence"],
+                "licence_mentioned": source.columns["licence_mentioned"],
                 "msh": source.columns["msh"],
                 "upn": source.columns["upn"],
                 "up1": source.columns["up1"],
