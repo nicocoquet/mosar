@@ -80,7 +80,7 @@
     const box = root.querySelector('.rx-facet-list');
 
     config.facets.forEach(({key, label}) => {
-      if (key === 'licence_mentioned') return; // Groupe intégré à la facette licence.
+      if (key === 'licence_mentioned' || key === 'issn_presence') return; // Sous-groupes intégrés.
       let vals = values(records, r => recordValues(r)[key]);
 
       if (key === 'proximity') {
@@ -186,6 +186,14 @@
         ? `<div class="rx-indexing-heading rx-indexing-heading--separated">${esc(config.licenceMentionedHeading)}</div>${licenceMentionedOptions}`
         : '';
 
+      const issnGroup = key === 'format'
+        ? `<div class="rx-indexing-heading rx-indexing-heading--separated">${esc(config.issnHeading)}</div>
+          ${['ISSN', 'ISSN-E'].map(value => {
+            const count = records.filter(r => value === 'ISSN' ? r.mosar?.issn_print_present : r.mosar?.issn_electronic_present).length;
+            return `<label class="rx-option"><input type="checkbox" data-facet="issn_presence" value="${value}"><span>${value}</span><span class="rx-count">${count}</span></label>`;
+          }).join('')}`
+        : '';
+
       section.innerHTML = `
         <summary>
           <span>${esc(label)}</span>
@@ -194,6 +202,7 @@
         <div class="rx-facet-options${scroll}">
           ${options}
           ${licenceMentionedGroup}
+          ${issnGroup}
         </div>`;
 
       box.appendChild(section);
@@ -226,6 +235,7 @@
       ],
       access: [valueOrUnknown(r.mosar?.open_access)],
       format: [valueOrUnknown(r.publication_format)],
+      issn_presence: ['ISSN', 'ISSN-E'].filter(value => value === 'ISSN' ? r.mosar?.issn_print_present : r.mosar?.issn_electronic_present),
       labelling: r.is_diamond ? ['diamond'] : [],
       discipline: [valueOrUnknown(r.mosar?.discipline_normalized)],
       themes: listOrUnknown(r.themes),
