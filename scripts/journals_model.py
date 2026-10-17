@@ -22,6 +22,14 @@ def normalize_open(value):
         return "Accès restreint"
     return str(value).strip()
 
+def normalize_licence_mentioned(value):
+    """Conserver uniquement une réponse explicite oui/non du XLSX."""
+    text = str(value).strip().casefold() if value is not None else ""
+    if text in {"oui", "non"}:
+        return text
+    return None
+
+
 def normalize_mosar_category(value, mapping, field, journal_id):
     """Normaliser une catégorie Mosar avec validation stricte."""
     text = str(value).strip() if value is not None else ""
@@ -262,6 +270,7 @@ def build_record(title, themes, mosar_data):
                 mosar_data.get("type_editeur") or ""
             ).strip(),
             "licence": str(mosar_data.get("licence") or "").strip(),
+            "licence_mentioned": normalize_licence_mentioned(mosar_data.get("licence_mentioned")),
             "perimetre": normalize_perimetre(mosar_data),
             "laboratoires": normalize_laboratoires(mosar_data),
             "associations": normalize_pipe_list(mosar_data.get("association")),
