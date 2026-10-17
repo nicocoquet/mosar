@@ -80,6 +80,7 @@
     const box = root.querySelector('.rx-facet-list');
 
     config.facets.forEach(({key, label}) => {
+      if (key === 'licence_mentioned' || key === 'issn_presence') return; // Sous-groupes intégrés.
       let vals = values(records, r => recordValues(r)[key]);
 
       if (key === 'proximity') {
@@ -87,6 +88,16 @@
           const na = parseInt(a[0].match(/\d+/)?.[0] || 99);
           const nb = parseInt(b[0].match(/\d+/)?.[0] || 99);
           return na - nb;
+        });
+      }
+
+      if (key === 'perimetre') {
+        const order = config.perimetreOrder;
+        vals.sort((a, b) => {
+          const ia = order.indexOf(a[0]);
+          const ib = order.indexOf(b[0]);
+          return (ia < 0 ? order.length : ia) - (ib < 0 ? order.length : ib)
+            || a[0].localeCompare(b[0], config.locale);
         });
       }
 
@@ -117,7 +128,9 @@
           ? `<div class="rx-indexing-heading${index ? ' rx-indexing-heading--separated' : ''}">${esc(config.indexingGroups[group])}</div>`
           : '';
         const infoText = isIndexing ? config.indexingInfo?.[value]
-          : key === 'periodicity' ? config.periodicityInfo?.[value] : null;
+          : key === 'periodicity' ? config.periodicityInfo?.[value]
+          : key === 'licence' && value === 'Licence CC ou DR variable pour une même publication'
+            ? config.licenceHybridInfo : null;
         const info = infoText
           ? key === 'periodicity'
             ? `<button type="button" class="rx-indexing-info rx-indexing-info--html" aria-label="${esc(value)} : ${esc(infoText)}">i<span class="rx-indexing-tooltip">${periodicityHtml(infoText)}</span></button>`
@@ -138,7 +151,7 @@
                    alt="">`
           : '';
 
-        if (isIndexing || key === 'periodicity') return `${groupHeading}
+        if (isIndexing || key === 'periodicity' || key === 'licence') return `${groupHeading}
           <div class="rx-indexing-option">
             <label class="rx-option">
               <input type="checkbox" data-facet="${esc(key)}" value="${esc(value)}">
@@ -159,6 +172,28 @@
           </label>`;
       }).join('');
 
+      const licenceMentionedOptions = key === 'licence'
+        ? ['oui', 'non'].map(value => {
+          const count = records.filter(r => r.mosar?.licence_mentioned === value).length;
+          return `<label class="rx-option">
+            <input type="checkbox" data-facet="licence_mentioned" value="${value}">
+            <span>${esc(config.licenceMentionedLabels[value])}</span>
+            <span class="rx-count">${count}</span>
+          </label>`;
+        }).join('')
+        : '';
+      const licenceMentionedGroup = key === 'licence'
+        ? `<div class="rx-indexing-heading rx-indexing-heading--separated">${esc(config.licenceMentionedHeading)}</div>${licenceMentionedOptions}`
+        : '';
+
+      const issnGroup = key === 'format'
+        ? `<div class="rx-indexing-heading rx-indexing-heading--separated">${esc(config.issnHeading)}</div>
+          ${['ISSN', 'ISSN-E'].map(value => {
+            const count = records.filter(r => value === 'ISSN' ? r.mosar?.issn_print_present : r.mosar?.issn_electronic_present).length;
+            return `<label class="rx-option"><input type="checkbox" data-facet="issn_presence" value="${value}"><span>${value}</span><span class="rx-count">${count}</span></label>`;
+          }).join('')}`
+        : '';
+
       section.innerHTML = `
         <summary>
           <span>${esc(label)}</span>
@@ -166,6 +201,8 @@
         </summary>
         <div class="rx-facet-options${scroll}">
           ${options}
+          ${licenceMentionedGroup}
+          ${issnGroup}
         </div>`;
 
       box.appendChild(section);
@@ -198,6 +235,7 @@
       ],
       access: [valueOrUnknown(r.mosar?.open_access)],
       format: [valueOrUnknown(r.publication_format)],
+      issn_presence: ['ISSN', 'ISSN-E'].filter(value => value === 'ISSN' ? r.mosar?.issn_print_present : r.mosar?.issn_electronic_present),
       labelling: r.is_diamond ? ['diamond'] : [],
       discipline: [valueOrUnknown(r.mosar?.discipline_normalized)],
       themes: listOrUnknown(r.themes),
@@ -206,6 +244,7 @@
         : [config.unknownLabel],
       periodicity: [valueOrUnknown(r.periodicity)],
       licence: [valueOrUnknown(r.mosar?.licence_normalized)],
+      licence_mentioned: r.mosar?.licence_mentioned ? [r.mosar.licence_mentioned] : [],
       editorial_structure: [
         valueOrUnknown(r.mosar?.editorial_structure_normalized)
       ],
@@ -223,10 +262,10 @@
       )
     };
   }
-  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>matchesSet(state[k],v[k]));});}
+  function filtered(records){return records.filter(r=>{const hay=[r.title,r.sigle,...(r.issn||[]),...(r.publishers||[])].join(' ').toLocaleLowerCase('fr');if(state.q&&!hay.includes(state.q))return false;const v=recordValues(r);return Object.keys(v).every(k=>k==='issn_presence' ? [...state[k]].every(value=>v[k].includes(value)) : matchesSet(state[k],v[k]));});}
   function sortRecords(rows, proximityLevels){return [...rows].sort((a,b)=>{const parse=r=>{const n=parseInt(r.mosar?.proximity_level,10);return [Number.isInteger(n)&&proximityLevels.includes(n)?n:99,(r.title||'').toLocaleLowerCase('fr')];};const ka=parse(a),kb=parse(b);return ka[0]-kb[0]||ka[1].localeCompare(kb[1],'fr');});}
   function activeFilters(){return state.q||Object.entries(state).some(([k,v])=>k!=='q'&&v.size);}
-  function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(displayValue(value))}</span>`));});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
+  function renderActiveFilters(){const box=root.querySelector('.rx-active-filters');if(!box)return;const tags=[];Object.entries(state).forEach(([key,selected])=>{if(key==='q'||!selected.size)return;selected.forEach(value=>tags.push(`<span class="rx-active-filter"><span class="rx-active-filter-label">${esc(FACET_LABELS[key])} :</span> ${esc(key === 'licence_mentioned' ? config.licenceMentionedLabels[value] : displayValue(value))}</span>`));});box.innerHTML=tags.length?`<div class="rx-active-filters-title">${esc(config.selectedFiltersLabel)}</div><div class="rx-active-filters-list">${tags.join('')}</div>`:'';}
   function formatMark(format){if(!format)return'';const marks=format==='Papier et numérique'?`${icons.paper}${icons.digital}`:format==='Papier'?icons.paper:icons.digital;return `<span class="rx-signal" title="${esc(config.formatTitle)} : ${esc(displayValue(format))}"><span class="rx-format-icons">${marks}</span><span>${esc(displayValue(format))}</span></span>`;}
   function accessMark(access){if(!access)return'';const restricted=/restreint|fermé|ferme/i.test(access);return `<span class="rx-signal ${restricted?'rx-signal--restricted':'rx-signal--open'}" title="${esc(displayValue(access))}">${restricted?icons.closed:icons.open}<span>${esc(displayValue(access))}</span></span>`;}
   function isDiamond(r) {

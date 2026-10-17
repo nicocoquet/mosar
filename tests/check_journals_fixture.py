@@ -106,6 +106,9 @@ MOSAR = {
         "discipline": "Archéologie",
         "type_editeur": "Éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": "oui",
+        "issn_print": "1111-1111",
+        "issn_electronic": "",
         "periodicite": "semestriel",
         "editeur": "Éditeur Mosar A | Éditeur Mosar B",
         "association": "Association A | Association B",
@@ -120,6 +123,9 @@ MOSAR = {
         "discipline": "Linguistique",
         "type_editeur": "Association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": "non",
+        "issn_print": "",
+        "issn_electronic": "3333-3333",
         "periodicite": "annuel",
         "editeur": "Éditeur Mosar Bêta",
         "site_web": "",
@@ -228,6 +234,9 @@ def main():
             "discipline": "Archéologie",
             "editorial_structure": "Éditeur public",
             "licence": "CC BY",
+            "licence_mentioned": "oui",
+            "issn_print_present": True,
+            "issn_electronic_present": False,
             "discipline_normalized": "Archéologie",
             "editorial_structure_normalized": "Éditeur public",
             "licence_normalized": "Licence Creative Commons",
@@ -250,7 +259,10 @@ def main():
     assert_equal(alpha["references"]["Wikipédia"]["url"], "https://fr.wikipedia.org/wiki/Alpha", "Référencement Wikipédia")
 
     # Les données absentes du nouveau XLSX ne doivent pas bloquer la publication.
-    from journals_model import normalize_mosar_category, normalize_editorial_structure
+    from journals_model import normalize_mosar_category, normalize_editorial_structure, normalize_licence_mentioned
+    assert_equal(normalize_licence_mentioned(' Oui '), 'oui', 'Licence mentionnée oui')
+    assert_equal(normalize_licence_mentioned('NON'), 'non', 'Licence mentionnée non')
+    assert_equal(normalize_licence_mentioned(''), None, 'Licence mentionnée absente')
     from mosar_model import DISCIPLINE_MAP, LICENCE_MAP
     assert_equal(
         normalize_mosar_category("?", LICENCE_MAP, "licence", 2127),
@@ -302,6 +314,9 @@ def main():
         "Normalisation de l'accès restreint",
     )
 
+    assert_equal(beta["mosar"]["issn_print_present"], False, "ISSN absent du XLSX")
+    assert_equal(beta["mosar"]["issn_electronic_present"], True, "ISSN-E présent dans le XLSX")
+    assert_equal(beta["mosar"]["licence_mentioned"], "non", "Licence mentionnée négative")
     assert_equal(beta["journal_url"], "", "Absence de repli vers Mir@bel pour le site web")
     assert_equal(beta["publishers"], ["Éditeur Mosar Bêta"], "Éditeur XLSX prioritaire")
     assert_equal("Wikipédia" in beta["references"], False, "Pas de référencement Wikipédia absent")

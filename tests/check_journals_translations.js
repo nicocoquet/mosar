@@ -105,6 +105,10 @@ for (const value of expectedPeriodicity) {
   }
 }
 
+if (!periodicityConfig.licenceMentionedLabels?.oui || !periodicityConfig.licenceMentionedLabels?.non || !periodicityConfig.licenceHybridInfo) {
+  console.error('ERREUR — traductions des filtres de licence incomplètes.');
+  errors++;
+}
 if (errors) {
   console.error(
     `\nÉCHEC — ${errors} traduction(s) à compléter.`
