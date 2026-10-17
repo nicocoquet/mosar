@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T20:45:05+00:00",
+    "generated_at": "2026-10-17T21:37:47+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -5004,6 +5004,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2823586"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Actes_de_la_recherche_en_sciences_sociales"
         }
       },
       "ddh": null,
@@ -5131,7 +5135,12 @@
       "publication_fees": null,
       "labels": [],
       "is_diamond": false,
-      "references": {},
+      "references": {
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Annales._Histoire,_Sciences_sociales"
+        }
+      },
       "ddh": null,
       "themes": [
         "Anthropologie, ethnologie",
@@ -5199,6 +5208,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2850670"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Annales_de_g%C3%A9ographie"
         }
       },
       "ddh": null,
@@ -5474,6 +5487,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q4806718"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Asian_Perspectives"
         }
       },
       "ddh": null,
@@ -5718,6 +5735,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2933118"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Cahiers_d%27%C3%A9tudes_africaines"
         }
       },
       "ddh": null,
@@ -5789,6 +5810,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3428596"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Cliopsy"
         }
       },
       "ddh": null,
@@ -5944,6 +5969,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3007476"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Cultures_et_Conflits"
         }
       },
       "ddh": null,
@@ -6015,6 +6044,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15753106"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Droit_et_Soci%C3%A9t%C3%A9"
         }
       },
       "ddh": null,
@@ -6384,6 +6417,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3123451"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/G%C3%A9ographie_et_Cultures"
         }
       },
       "ddh": {
@@ -6811,6 +6848,10 @@
         "ROAD": {
           "label": "ROAD",
           "url": "http://road.issn.org/issn/1957-7850"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Journal_des_africanistes"
         }
       },
       "ddh": null,
@@ -6883,6 +6924,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15765046"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Journal_of_Archaeological_Method_and_Theory"
         }
       },
       "ddh": null,
@@ -6949,6 +6994,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15816621"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Journal_of_Eastern_African_Studies"
         }
       },
       "ddh": null,
@@ -7377,6 +7426,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q779301"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Multitudes"
         }
       },
       "ddh": null,
@@ -7693,6 +7746,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3346085"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Nuevo_Mundo,_Mundos_Nuevos"
         }
       },
       "ddh": {
@@ -7835,6 +7892,10 @@
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/23134"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Philosophique_(revue)"
         }
       },
       "ddh": {
@@ -7904,6 +7965,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2101486"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Politique_africaine"
         }
       },
       "ddh": null,
@@ -8630,6 +8695,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3428697"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Revue_des_%C3%A9tudes_grecques"
         }
       },
       "ddh": null,
@@ -8700,6 +8769,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q91776627"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9_%D9%84%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA_%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9_%D9%88%D8%A7%D9%84%D9%85%D8%AA%D9%88%D8%B3%D8%B7%D9%8A%D8%A9"
         }
       },
       "ddh": null,
@@ -8769,6 +8842,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15767104"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Social_Choice_and_Welfare"
         }
       },
       "ddh": null,
@@ -8835,6 +8912,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15753772"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Techniques_%26_Culture"
         }
       },
       "ddh": null,
@@ -9112,6 +9193,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2860449"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Archives_de_philosophie"
         }
       },
       "ddh": null,
@@ -9179,6 +9264,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q4955810"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Brain_and_Cognition"
         }
       },
       "ddh": null,
@@ -9246,6 +9335,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2474530"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://nl.wikipedia.org/wiki/Brain_and_Language"
         }
       },
       "ddh": null,
@@ -9313,6 +9406,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q4970182"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/British_Journal_for_the_History_of_Philosophy"
         }
       },
       "ddh": null,
@@ -9732,6 +9829,10 @@
         "DDH": {
           "label": "DDH",
           "url": "https://ddh.diamas.org/en/journals/10843"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Cahiers_des_Am%C3%A9riques_latines"
         }
       },
       "ddh": {
@@ -9977,6 +10078,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15757315"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Caravelle_(revue)"
         }
       },
       "ddh": {
@@ -10348,6 +10453,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q4037916"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Economic_Theory"
         }
       },
       "ddh": null,
@@ -10561,6 +10670,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15750930"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/European_Journal_of_Political_Economy"
         }
       },
       "ddh": null,
@@ -10782,6 +10895,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15708777"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Finance-contr%C3%B4le-strat%C3%A9gie"
         }
       },
       "ddh": null,
@@ -10848,6 +10965,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3100984"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Gen%C3%A8ses_(revue)"
         }
       },
       "ddh": null,
@@ -10916,6 +11037,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15716430"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Geographical_Analysis_(journal)"
         }
       },
       "ddh": null,
@@ -10982,6 +11107,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q91912628"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Histoire_de_l%27art_(revue)"
         }
       },
       "ddh": null,
@@ -11619,6 +11748,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15767415"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Journal_of_Global_History"
         }
       },
       "ddh": null,
@@ -11823,6 +11956,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3592885"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/L%27%C3%89volution_psychiatrique"
         }
       },
       "ddh": null,
@@ -11892,6 +12029,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q6496198"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Latin_American_Antiquity"
         }
       },
       "ddh": null,
@@ -12373,6 +12514,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3428657"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Revue_d%27%C3%A9conomie_industrielle"
         }
       },
       "ddh": null,
@@ -12455,6 +12600,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q3428686"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Revue_des_mondes_musulmans_et_de_la_M%C3%A9diterran%C3%A9e"
         }
       },
       "ddh": {
@@ -12528,6 +12677,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15766077"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Revue_des_%C3%A9tudes_byzantines"
         }
       },
       "ddh": null,
@@ -12807,6 +12960,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15746646"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://de.wikipedia.org/wiki/The_European_Journal_of_the_History_of_Economic_Thought"
         }
       },
       "ddh": null,
@@ -12873,6 +13030,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q7570060"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Southern_Journal_of_Philosophy"
         }
       },
       "ddh": null,
@@ -13008,6 +13169,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q2419336"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Theory_and_Decision"
         }
       },
       "ddh": null,
@@ -13137,6 +13302,10 @@
         "Wikidata": {
           "label": "Wikidata",
           "url": "https://www.wikidata.org/wiki/Q15758093"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://en.wikipedia.org/wiki/Travail,_Genre_et_Soci%C3%A9t%C3%A9s"
         }
       },
       "ddh": null,
