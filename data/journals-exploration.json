@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T08:48:50+00:00",
+    "generated_at": "2026-10-17T09:47:30+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -271,6 +271,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -341,6 +344,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -420,6 +426,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -485,6 +494,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -570,6 +582,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -642,6 +657,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -713,6 +731,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -780,6 +801,9 @@
         "discipline": "Sociologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés et CC variable selon les articles",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -869,6 +893,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -958,6 +985,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -1053,6 +1083,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "association",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -1118,6 +1151,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes",
           "Université Paris Nanterre"
@@ -1180,6 +1216,9 @@
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -1256,6 +1295,9 @@
         "discipline": "Linguistique",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -1338,6 +1380,9 @@
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
         "licence": "CC BY 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -1405,6 +1450,9 @@
         "discipline": "Histoire",
         "editorial_structure": "association",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -1483,6 +1531,9 @@
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -1566,6 +1617,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
         "licence": "CC-BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -1648,6 +1702,9 @@
         "discipline": "Arts visuels",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -1734,6 +1791,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -1822,6 +1882,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -1907,6 +1970,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -1986,6 +2052,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -2069,6 +2138,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "association",
         "licence": "CC-BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -2149,6 +2221,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -2236,6 +2311,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "MSH Mondes"
         ],
@@ -2293,6 +2371,9 @@
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": false,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -2376,6 +2457,9 @@
         "discipline": "Littérature",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -2445,6 +2529,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -2530,6 +2617,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -2610,6 +2700,9 @@
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -2665,6 +2758,9 @@
         "discipline": "Information-communication",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -2734,6 +2830,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -2796,6 +2895,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -2872,6 +2974,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -2940,6 +3045,9 @@
         "discipline": "Sciences économiques",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -3008,6 +3116,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3090,6 +3201,9 @@
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3157,6 +3271,9 @@
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3245,6 +3362,9 @@
         "discipline": "Géographie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3308,6 +3428,9 @@
         "discipline": "Arts",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3378,6 +3501,9 @@
         "discipline": "Sciences économiques",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3459,6 +3585,9 @@
         "discipline": "Géographie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3521,6 +3650,9 @@
         "discipline": "Relations internationales",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3586,6 +3718,9 @@
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -3655,6 +3790,9 @@
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3730,6 +3868,9 @@
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -3803,6 +3944,9 @@
         "discipline": "Histoire",
         "editorial_structure": "coédition privé/association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -3878,6 +4022,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
         "licence": "Licence OpenEdition Books",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -3939,6 +4086,9 @@
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4018,6 +4168,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4081,6 +4234,9 @@
         "discipline": "Arts",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4152,6 +4308,9 @@
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4223,6 +4382,9 @@
         "discipline": "Histoire",
         "editorial_structure": "association",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4296,6 +4458,9 @@
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -4356,6 +4521,9 @@
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4424,6 +4592,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4484,6 +4655,9 @@
         "discipline": "Sociologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -4557,6 +4731,9 @@
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -4618,6 +4795,9 @@
         "discipline": "Droit",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4683,6 +4863,9 @@
         "discipline": "Sciences de l'éducation",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -4767,6 +4950,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -4835,6 +5021,9 @@
         "discipline": "Sociologie",
         "editorial_structure": "coédition public/privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -4894,6 +5083,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés (18 mois), puis CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -4954,6 +5146,9 @@
         "discipline": "Histoire",
         "editorial_structure": "coédition public/privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5021,6 +5216,9 @@
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5092,6 +5290,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5154,6 +5355,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -5219,6 +5423,9 @@
         "discipline": "Travail social",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -5283,6 +5490,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5366,6 +5576,9 @@
         "discipline": "Littérature, Arts visuels",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5452,6 +5665,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5521,6 +5737,9 @@
         "discipline": "Anthropologie",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5586,6 +5805,9 @@
         "discipline": "Psychiatrie, éducation",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5670,6 +5892,9 @@
         "discipline": "Muséologie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5735,6 +5960,9 @@
         "discipline": "Science politique",
         "editorial_structure": "coédition privé/association",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5802,6 +6030,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -5878,6 +6109,9 @@
         "discipline": "Histoire des sciences",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -5945,6 +6179,9 @@
         "discipline": "Économie, gestion",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6014,6 +6251,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6078,6 +6318,9 @@
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6159,6 +6402,9 @@
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-SA",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -6231,6 +6477,9 @@
         "discipline": "Langues et cultures étrangères",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6304,6 +6553,9 @@
         "discipline": "Information-communication",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6371,6 +6623,9 @@
         "discipline": "Économie",
         "editorial_structure": "coédition public/privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6438,6 +6693,9 @@
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6499,6 +6757,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "association",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -6568,6 +6829,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "association",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6633,6 +6897,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6698,6 +6965,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6756,6 +7026,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés, CC-BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -6828,6 +7101,9 @@
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6895,6 +7171,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "association",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -6961,6 +7240,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7043,6 +7325,9 @@
         "discipline": "Etude des aires culturelles",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7107,6 +7392,9 @@
         "discipline": "Philosophie, pluridisciplinaire",
         "editorial_structure": "association",
         "licence": "CC BY-NC",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7178,6 +7466,9 @@
         "discipline": "Droit (histoire et anthropologie)",
         "editorial_structure": "association",
         "licence": "CC BY-NC-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -7264,6 +7555,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "coédition privé/association",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7334,6 +7628,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7414,6 +7711,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7473,6 +7773,9 @@
         "discipline": "Science politique",
         "editorial_structure": "éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7549,6 +7852,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7615,6 +7921,9 @@
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7683,6 +7992,9 @@
         "discipline": "Science politique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7760,6 +8072,9 @@
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7829,6 +8144,9 @@
         "discipline": "Sociologie",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7901,6 +8219,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "association",
         "licence": "CC BY-NC-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -7978,6 +8299,9 @@
         "discipline": "Littérature",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8058,6 +8382,9 @@
         "discipline": "Histoire de l'art",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8126,6 +8453,9 @@
         "discipline": "Histoire",
         "editorial_structure": "organisme de recherche public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8155,7 +8485,8 @@
         }
       ],
       "languages": [
-        "fre"
+        "fre",
+        "eng"
       ],
       "publishers": [
         "Librairie Générale de Droit et de Jurisprudence (LGDJ)"
@@ -8179,6 +8510,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": false,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8242,6 +8576,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
@@ -8309,6 +8646,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8376,6 +8716,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8439,6 +8782,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8503,6 +8849,9 @@
         "discipline": "Ethnologie",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés (sur Cairn) et CC BY-NC-ND sur OpenEdition",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -8564,6 +8913,9 @@
         "discipline": "Histoire, Architecture",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -8639,6 +8991,9 @@
         "discipline": "Ergonomie",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8704,6 +9059,9 @@
         "discipline": "Économie, gestion",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8767,6 +9125,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8832,6 +9193,9 @@
         "discipline": "Neurosciences",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8896,6 +9260,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -8960,6 +9327,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9035,6 +9405,9 @@
         "discipline": "Histoire et archéologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9116,6 +9489,9 @@
         "discipline": "Géographie",
         "editorial_structure": "association",
         "licence": "CC BY 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9202,6 +9578,9 @@
         "discipline": "",
         "editorial_structure": "",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -9286,6 +9665,9 @@
         "discipline": "",
         "editorial_structure": "",
         "licence": "CC BY-NC 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
@@ -9367,6 +9749,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9450,6 +9835,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur public",
         "licence": "CC BY 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9514,6 +9902,9 @@
         "discipline": "Architecture",
         "editorial_structure": "éditeur public",
         "licence": "pas de mention",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9599,6 +9990,9 @@
         "discipline": "Etude des aires culturelles",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9679,6 +10073,9 @@
         "discipline": "Histoire",
         "editorial_structure": "association",
         "licence": "CC BY-NC-SA",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9744,6 +10141,9 @@
         "discipline": "Ingénierie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9804,6 +10204,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9885,6 +10288,9 @@
         "discipline": "Anthropologie et histoire du droit",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -9952,6 +10358,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10012,6 +10421,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10090,6 +10502,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10157,6 +10572,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10233,6 +10651,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10301,6 +10722,9 @@
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10368,6 +10792,9 @@
         "discipline": "Finance",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10433,6 +10860,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10496,6 +10926,9 @@
         "discipline": "Géographie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10560,6 +10993,9 @@
         "discipline": "Arts visuels",
         "editorial_structure": "association",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10641,6 +11077,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY-NC",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10714,6 +11153,9 @@
         "discipline": "Ingénierie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10779,6 +11221,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10838,6 +11283,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10902,6 +11350,9 @@
         "discipline": "Gestion",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -10961,6 +11412,9 @@
         "discipline": "Économie, gestion",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11024,6 +11478,9 @@
         "discipline": "Gestion",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés, avec possibilité de CC",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11089,6 +11546,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11153,6 +11613,9 @@
         "discipline": "Linguistique, Neurosciences",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11219,6 +11682,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11283,6 +11749,9 @@
         "discipline": "Psychiatrie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11350,6 +11819,9 @@
         "discipline": "Archéologie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés, avec possibilité de CC",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11414,6 +11886,9 @@
         "discipline": "Logistique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11478,6 +11953,9 @@
         "discipline": "Muséologie",
         "editorial_structure": "organisme de recherche public",
         "licence": "CC BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11546,6 +12024,9 @@
         "discipline": "Psychiatrie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés, avec possibilité de CC",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11614,6 +12095,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés, CC-BY",
+        "licence_mentioned": null,
+        "issn_print_present": false,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11679,6 +12163,9 @@
         "discipline": "Informatique",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11742,6 +12229,9 @@
         "discipline": "Arts vivants",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11808,6 +12298,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND 4.0 ou Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11890,6 +12383,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "éditeur public",
         "licence": "CC BY-SA 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -11959,6 +12455,9 @@
         "discipline": "Histoire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12022,6 +12521,9 @@
         "discipline": "Droit",
         "editorial_structure": "éditeur public",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12103,6 +12605,9 @@
         "discipline": "Histoire et archéologie",
         "editorial_structure": "éditeur public",
         "licence": "CC BY 4.0",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12159,6 +12664,9 @@
         "discipline": "Études des aires culturelles",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": false,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12224,6 +12732,9 @@
         "discipline": "Économie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12287,6 +12798,9 @@
         "discipline": "Philosophie",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12353,6 +12867,9 @@
         "discipline": "Psychologie",
         "editorial_structure": "éditeur privé",
         "licence": "CC BY-NC-ND",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12416,6 +12933,9 @@
         "discipline": "Pluridisciplinaire",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12476,6 +12996,9 @@
         "discipline": "Arts vivants",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": false,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12540,6 +13063,9 @@
         "discipline": "Étude de genre",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12599,6 +13125,9 @@
         "discipline": "Histoire",
         "editorial_structure": "association",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": false,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12666,6 +13195,9 @@
         "discipline": "Histoire et sociologie des sciences",
         "editorial_structure": "éditeur privé",
         "licence": "Tous droits réservés",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Non renseigné"
         ],
@@ -12725,6 +13257,9 @@
         "discipline": "",
         "editorial_structure": "association",
         "licence": "?",
+        "licence_mentioned": null,
+        "issn_print_present": true,
+        "issn_electronic_present": true,
         "perimetre": [
           "Université Paris Nanterre"
         ],
