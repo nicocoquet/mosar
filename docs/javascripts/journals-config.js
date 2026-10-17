@@ -27,6 +27,24 @@ const REVUES_TRANSLATIONS = {
     websiteLabel: 'Site web',
     loadError: 'Impossible de charger les données',
     configError: 'Configuration de l’explorateur introuvable.',
+    periodicityOrder: ['annuel', 'semestriel', 'quadrimestriel', 'trimestriel', '5 numéros par an', 'bimestriel', '7 numéros par an', '9 numéros par an', 'mensuel', 'bimensuel', 'bisannuel', 'parution continue', 'irrégulier'],
+    periodicityLabels: {
+      '5 numéros par an': '5 nᵒˢ/an',
+      '7 numéros par an': '7 nᵒˢ/an',
+      '9 numéros par an': '9 nᵒˢ/an'
+    },
+    periodicityInfo: {
+      annuel: '1 n°/an',
+      semestriel: '2 nᵒˢ/an',
+      quadrimestriel: '3 nᵒˢ/an',
+      trimestriel: '4 nᵒˢ/an',
+      bimestriel: '6 nᵒˢ/an',
+      mensuel: '12 nᵒˢ/an',
+      bimensuel: '24 nᵒˢ/an',
+      bisannuel: '1 n° tous les 2 ans',
+      'parution continue': 'Publication au fil de l’eau',
+      irrégulier: 'Sans périodicité fixe'
+    },
     indexingGroups: {open: 'Science ouverte', wiki: 'Écosystème Wikimedia'},
     indexingInfo: {
       DDH: 'Diamond Discovery Hub',
@@ -251,6 +269,24 @@ const REVUES_TRANSLATIONS = {
     websiteLabel: 'Website',
     loadError: 'Unable to load data',
     configError: 'Explorer configuration not found.',
+    periodicityOrder: ['annuel', 'semestriel', 'quadrimestriel', 'trimestriel', '5 numéros par an', 'bimestriel', '7 numéros par an', '9 numéros par an', 'mensuel', 'bimensuel', 'bisannuel', 'parution continue', 'irrégulier'],
+    periodicityLabels: {
+      '5 numéros par an': '5 issues/year',
+      '7 numéros par an': '7 issues/year',
+      '9 numéros par an': '9 issues/year'
+    },
+    periodicityInfo: {
+      annuel: '1 issue/year',
+      semestriel: '2 issues/year',
+      quadrimestriel: '3 issues/year',
+      trimestriel: '4 issues/year',
+      bimestriel: '6 issues/year',
+      mensuel: '12 issues/year',
+      bimensuel: '24 issues/year',
+      bisannuel: '1 issue every 2 years',
+      'parution continue': 'Continuous publication',
+      irrégulier: 'No fixed publication frequency'
+    },
     indexingGroups: {open: 'Open science', wiki: 'Wikimedia ecosystem'},
     indexingInfo: {
       DDH: 'Diamond Discovery Hub',

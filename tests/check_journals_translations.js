@@ -34,6 +34,7 @@ vm.runInNewContext(
 );
 
 const translations = sandbox.window.MOSAR_REVUES_CONFIG?.values;
+const periodicityConfig = sandbox.window.MOSAR_REVUES_CONFIG;
 
 if (!translations || typeof translations !== 'object') {
   console.error('ERREUR — dictionnaire anglais introuvable.');
@@ -82,6 +83,26 @@ for (const [label, getter] of Object.entries(fields)) {
   }
 
   errors += missing.length;
+}
+
+const expectedPeriodicity = [
+  'annuel', 'semestriel', 'quadrimestriel', 'trimestriel',
+  '5 numéros par an', 'bimestriel', '7 numéros par an',
+  '9 numéros par an', 'mensuel', 'bimensuel', 'bisannuel',
+  'parution continue', 'irrégulier'
+];
+if (JSON.stringify(periodicityConfig.periodicityOrder) !== JSON.stringify(expectedPeriodicity)) {
+  console.error('ERREUR — ordre des périodicités incorrect.');
+  errors++;
+}
+for (const value of expectedPeriodicity) {
+  const numeric = /^\d+ numéros par an$/.test(value);
+  const label = periodicityConfig.periodicityLabels?.[value];
+  const info = periodicityConfig.periodicityInfo?.[value];
+  if (numeric ? (!label || info) : !info) {
+    console.error('ERREUR — configuration de périodicité : ' + value);
+    errors++;
+  }
 }
 
 if (errors) {
