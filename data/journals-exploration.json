@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T20:23:50+00:00",
+    "generated_at": "2026-10-17T20:45:05+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -56,6 +56,7 @@
       774,
       778,
       796,
+      815,
       836,
       852,
       853,
@@ -186,10 +187,9 @@
       27678,
       27680
     ],
-    "matched_count": 178,
-    "mirabel_without_mosar_count": 1,
+    "matched_count": 179,
+    "mirabel_without_mosar_count": 0,
     "mosar_outside_cluster_ids": [
-      851,
       27679,
       27681,
       27682,
@@ -218,6 +218,77 @@
     ]
   },
   "records": [
+    {
+      "mirabel_id": 2359,
+      "title": "AdlFI",
+      "subtitle": "Archéologie de la France – Informations",
+      "mirabel_title": "Archéologie de la France – Informations",
+      "sigle": "AdlFI",
+      "issn": [
+        "2114-0502"
+      ],
+      "issn_details": [
+        {
+          "issn": "2114-0502",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Ministère de la Culture (SDA)",
+        "CNRS Sciences humaines et sociales"
+      ],
+      "country": null,
+      "periodicity": "parution continue",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2114-0502"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q96696866"
+        }
+      },
+      "ddh": null,
+      "themes": [
+        "Archéologie",
+        "Antiquité",
+        "Préhistoire et Protohistoire",
+        "Europe de l'Ouest"
+      ],
+      "journal_url": "https://journals.openedition.org/adlfi",
+      "mirabel_url": "https://reseau-mirabel.info/revue/2359",
+      "mosar": {
+        "proximity_level": "1",
+        "open_access": "Accès ouvert",
+        "discipline": "Archéologie",
+        "editorial_structure": "organisme de recherche public",
+        "licence": "CC BY-SA 4.0",
+        "licence_mentioned": "oui",
+        "issn_print_present": false,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "MSH Mondes"
+        ],
+        "laboratoires": [
+          "MSH Mondes (UAR 3225)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
+        "discipline_normalized": "Archéologie",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
+      }
+    },
     {
       "mirabel_id": 6197,
       "title": "Americae",
@@ -285,77 +356,6 @@
         ],
         "diffuseurs_numeriques": [
           "site web de la revue"
-        ],
-        "discipline_normalized": "Archéologie",
-        "editorial_structure_normalized": "Organisme de recherche public",
-        "licence_normalized": "Licence Creative Commons"
-      }
-    },
-    {
-      "mirabel_id": 2359,
-      "title": "Archéologie de la France – Informations",
-      "subtitle": "",
-      "mirabel_title": "Archéologie de la France – Informations",
-      "sigle": "AdlFI",
-      "issn": [
-        "2114-0502"
-      ],
-      "issn_details": [
-        {
-          "issn": "2114-0502",
-          "support": "electronique"
-        }
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [
-        "Ministère de la Culture (sous-direction de l'Archéologie)",
-        "CNRS Sciences humaines et sociales"
-      ],
-      "country": null,
-      "periodicity": "parution continue",
-      "publication_format": "Numérique",
-      "publication_fees": null,
-      "labels": [],
-      "is_diamond": false,
-      "references": {
-        "ROAD": {
-          "label": "ROAD",
-          "url": "http://road.issn.org/issn/2114-0502"
-        },
-        "Wikidata": {
-          "label": "Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q96696866"
-        }
-      },
-      "ddh": null,
-      "themes": [
-        "Archéologie",
-        "Antiquité",
-        "Préhistoire et Protohistoire",
-        "Europe de l'Ouest"
-      ],
-      "journal_url": "https://journals.openedition.org/adlfi",
-      "mirabel_url": "https://reseau-mirabel.info/revue/2359",
-      "mosar": {
-        "proximity_level": "1",
-        "open_access": "Accès ouvert",
-        "discipline": "Archéologie",
-        "editorial_structure": "organisme de recherche public",
-        "licence": "CC BY-SA 4.0",
-        "licence_mentioned": "oui",
-        "issn_print_present": false,
-        "issn_electronic_present": true,
-        "perimetre": [
-          "MSH Mondes"
-        ],
-        "laboratoires": [
-          "MSH Mondes (UAR 3225)"
-        ],
-        "associations": [],
-        "diffuseurs_numeriques": [
-          "OpenEdition Journals"
         ],
         "discipline_normalized": "Archéologie",
         "editorial_structure_normalized": "Organisme de recherche public",
@@ -1422,6 +1422,7 @@
         "fre"
       ],
       "publishers": [
+        "La Contemporaine",
         "Association des Amis de La Contemporaine"
       ],
       "country": null,
@@ -2225,8 +2226,7 @@
         "issn_print_present": false,
         "issn_electronic_present": true,
         "perimetre": [
-          "Université Paris Nanterre",
-          "Université Paris 1 Panthéon-Sorbonne"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [],
         "associations": [],
@@ -4128,8 +4128,7 @@
         "fre"
       ],
       "publishers": [
-        "École doctorale de philosophie",
-        "l'Université Paris 1 Panthéon-Sorbonne"
+        "École doctorale de philosophie de l'Université Paris 1 Panthéon-Sorbonne"
       ],
       "country": null,
       "periodicity": "annuel",
@@ -5294,7 +5293,7 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [],
         "associations": [
@@ -5494,7 +5493,8 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre",
+          "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
         "associations": [],
@@ -5580,7 +5580,7 @@
         "issn_print_present": false,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [],
         "associations": [
@@ -5669,7 +5669,7 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [],
         "associations": [],
@@ -7632,7 +7632,7 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [],
         "associations": [],
@@ -9146,7 +9146,7 @@
     {
       "mirabel_id": 13662,
       "title": "Brain and Cognition",
-      "subtitle": "",
+      "subtitle": "A Journal of Experimental and Clinical Research",
       "mirabel_title": "Brain and Cognition",
       "sigle": "",
       "issn": [
@@ -9213,7 +9213,7 @@
     {
       "mirabel_id": 21155,
       "title": "Brain and Language",
-      "subtitle": "",
+      "subtitle": "A Journal of the Neurobiology of Language",
       "mirabel_title": "Brain and Language",
       "sigle": "",
       "issn": [
@@ -9279,7 +9279,7 @@
     },
     {
       "mirabel_id": 12914,
-      "title": "British journal for the history of philosophy",
+      "title": "British Journal for the History of Philosophy",
       "subtitle": "",
       "mirabel_title": "British Journal for the History of Philosophy",
       "sigle": "BJHP",
@@ -11239,6 +11239,91 @@
         "discipline_normalized": "Philosophie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 815,
+      "title": "Journal de la Société des Océanistes",
+      "subtitle": "",
+      "mirabel_title": "Journal de la Société des Océanistes",
+      "sigle": "",
+      "issn": [
+        "0300-953X",
+        "1760-7256"
+      ],
+      "issn_details": [
+        {
+          "issn": "0300-953X",
+          "support": "papier"
+        },
+        {
+          "issn": "1760-7256",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Société des océanistes"
+      ],
+      "country": null,
+      "periodicity": "annuel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [
+        "DDH diamond journal"
+      ],
+      "is_diamond": true,
+      "references": {
+        "DDH": {
+          "label": "DDH",
+          "url": "https://ddh.diamas.org/en/journals/22343"
+        },
+        "Wikidata": {
+          "label": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3186854"
+        },
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Journal_de_la_Soci%C3%A9t%C3%A9_des_oc%C3%A9anistes"
+        }
+      },
+      "ddh": {
+        "url": "https://ddh.diamas.org/en/journals/22343",
+        "label": "DDH"
+      },
+      "themes": [
+        "Anthropologie, ethnologie",
+        "Sociologie",
+        "Géographie, cartographie"
+      ],
+      "journal_url": "https://journals.openedition.org/jso/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/815",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "",
+        "editorial_structure": "association",
+        "licence": "CC BY-NC-ND 4.0",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [
+          "Laboratoire d'ethnologie et de sociologie comparative (Lesc, UMR 7186)"
+        ],
+        "associations": [
+          "Société des océanistes"
+        ],
+        "diffuseurs_numeriques": [
+          "OpenEdition Journals"
+        ],
+        "discipline_normalized": null,
+        "editorial_structure_normalized": "Association",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -13278,61 +13363,6 @@
         "editorial_structure_normalized": "Association",
         "licence_normalized": null
       }
-    },
-    {
-      "mirabel_id": 815,
-      "title": "Journal de la Société des Océanistes",
-      "subtitle": "",
-      "mirabel_title": "Journal de la Société des Océanistes",
-      "sigle": "",
-      "issn": [
-        "0300-953X",
-        "1760-7256"
-      ],
-      "issn_details": [
-        {
-          "issn": "0300-953X",
-          "support": "papier"
-        },
-        {
-          "issn": "1760-7256",
-          "support": "electronique"
-        }
-      ],
-      "languages": [
-        "fre"
-      ],
-      "publishers": [],
-      "country": null,
-      "periodicity": null,
-      "publication_format": null,
-      "publication_fees": null,
-      "labels": [
-        "DDH diamond journal"
-      ],
-      "is_diamond": true,
-      "references": {
-        "DDH": {
-          "label": "DDH",
-          "url": "https://ddh.diamas.org/en/journals/22343"
-        },
-        "Wikidata": {
-          "label": "Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q3186854"
-        }
-      },
-      "ddh": {
-        "url": "https://ddh.diamas.org/en/journals/22343",
-        "label": "DDH"
-      },
-      "themes": [
-        "Anthropologie, ethnologie",
-        "Sociologie",
-        "Géographie, cartographie"
-      ],
-      "journal_url": "",
-      "mirabel_url": "https://reseau-mirabel.info/revue/815",
-      "mosar": null
     }
   ]
 }
