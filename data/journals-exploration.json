@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T22:03:28+00:00",
+    "generated_at": "2026-10-19T14:52:48+00:00",
     "cluster_id": 146,
     "mirabel_active_titles": 179,
     "mirabel_unique_reviews": 179,
@@ -2934,7 +2934,7 @@
         "Laboratoire d'ethnologie et de sociologie comparative (Lesc)"
       ],
       "country": null,
-      "periodicity": "semestriel",
+      "periodicity": "annuel",
       "publication_format": "Numérique",
       "publication_fees": null,
       "labels": [
@@ -9787,7 +9787,7 @@
       "title": "Cahiers des Amériques latines",
       "subtitle": "",
       "mirabel_title": "Cahiers des amériques latines",
-      "sigle": "",
+      "sigle": "CAL",
       "issn": [
         "1141-7161",
         "2268-4247"
