@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-10-19T14:52:48+00:00",
+    "generated_at": "2026-10-28T11:59:11+00:00",
     "cluster_id": 146,
-    "mirabel_active_titles": 179,
-    "mirabel_unique_reviews": 179,
+    "mirabel_active_titles": 195,
+    "mirabel_unique_reviews": 195,
     "mosar_source": "XLSX Mosar",
     "mosar_ids": 195,
     "matched_ids": [
@@ -185,12 +185,8 @@
       25832,
       26870,
       27678,
-      27680
-    ],
-    "matched_count": 179,
-    "mirabel_without_mosar_count": 0,
-    "mosar_outside_cluster_ids": [
       27679,
+      27680,
       27681,
       27682,
       27683,
@@ -207,6 +203,9 @@
       27697,
       27698
     ],
+    "matched_count": 195,
+    "mirabel_without_mosar_count": 0,
+    "mosar_outside_cluster_ids": [],
     "duplicate_active_title_review_ids": []
   },
   "model": {
@@ -2625,7 +2624,7 @@
           "Université Paris 1 Panthéon-Sorbonne"
         ],
         "laboratoires": [
-          "Technologie et ethnologie des mondes préhistoriques (Temps, UMR 8068)"
+          "Technologie et ethnologie des mondes préhistoriques (Temps, UMR 8068) · UPN/UP1"
         ],
         "associations": [],
         "diffuseurs_numeriques": [
@@ -2931,7 +2930,7 @@
         "fre"
       ],
       "publishers": [
-        "Laboratoire d'ethnologie et de sociologie comparative (Lesc)"
+        "Laboratoire d'ethnologie et de sociologie comparative (Lesc) · UPN"
       ],
       "country": null,
       "periodicity": "annuel",
@@ -5510,6 +5509,7 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
+          "MSH Mondes",
           "Université Paris Nanterre",
           "Université Paris 1 Panthéon-Sorbonne"
         ],
@@ -5845,6 +5845,67 @@
         ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27679,
+      "title": "Critical Horizons",
+      "subtitle": "A Journal of Philosophy and Social Theory",
+      "mirabel_title": "Critical Horizons: A Journal of Philosophy and Social Theory",
+      "sigle": "",
+      "issn": [
+        "1440-9917",
+        "1568-5160"
+      ],
+      "issn_details": [
+        {
+          "issn": "1440-9917",
+          "support": "papier"
+        },
+        {
+          "issn": "1568-5160",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Routledge"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Philosophie"
+      ],
+      "journal_url": "https://www.tandfonline.com/journals/ycrh20",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27679",
+      "mosar": {
+        "proximity_level": "3",
+        "open_access": "Accès restreint",
+        "discipline": "Philosophie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Non renseigné"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis Online"
+        ],
+        "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
       }
     },
@@ -7378,9 +7439,11 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre"
         ],
-        "laboratoires": [],
+        "laboratoires": [
+          "Laboratoire d'ethnologie et de sociologie comparative (Lesc, UMR 7186)"
+        ],
         "associations": [],
         "diffuseurs_numeriques": [
           "OpenEdition Journals"
@@ -8151,6 +8214,67 @@
           "OpenEdition Journals"
         ],
         "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Organisme de recherche public",
+        "licence_normalized": "Licence Creative Commons"
+      }
+    },
+    {
+      "mirabel_id": 27681,
+      "title": "Radical",
+      "subtitle": "A Journal of Phonology",
+      "mirabel_title": "Radical: A Journal of Phonology",
+      "sigle": "",
+      "issn": [
+        "2592-656X"
+      ],
+      "issn_details": [
+        {
+          "issn": "2592-656X",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "CNRS"
+      ],
+      "country": null,
+      "periodicity": "parution continue",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2592-656X"
+        }
+      },
+      "ddh": null,
+      "themes": [
+        "Langues, linguistique"
+      ],
+      "journal_url": "https://radical.cnrs.fr",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27681",
+      "mosar": {
+        "proximity_level": "3",
+        "open_access": "Accès ouvert",
+        "discipline": "Linguistique",
+        "editorial_structure": "organisme de recherche public",
+        "licence": "CC BY 3.0",
+        "licence_mentioned": "oui",
+        "issn_print_present": false,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site de la revue hébergé par le CNRS"
+        ],
+        "discipline_normalized": "Linguistique",
         "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Licence Creative Commons"
       }
@@ -8937,7 +9061,9 @@
         "perimetre": [
           "Université Paris Nanterre"
         ],
-        "laboratoires": [],
+        "laboratoires": [
+          "Laboratoire d'ethnologie et de sociologie comparative (Lesc, UMR 7186)"
+        ],
         "associations": [],
         "diffuseurs_numeriques": [
           "Cairn.info",
@@ -10330,6 +10456,69 @@
       }
     },
     {
+      "mirabel_id": 27682,
+      "title": "Diplomatica",
+      "subtitle": "A Journal of Diplomacy and Society",
+      "mirabel_title": "Diplomatica: A Journal of Diplomacy and Society",
+      "sigle": "",
+      "issn": [
+        "2589-1766",
+        "2589-1774"
+      ],
+      "issn_details": [
+        {
+          "issn": "2589-1766",
+          "support": "papier"
+        },
+        {
+          "issn": "2589-1774",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Brill"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Sciences politiques"
+      ],
+      "journal_url": "https://brill.com/view/journals/dipl/dipl-overview.xml",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27682",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Science politique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, CC-BY",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [
+          "New Diplomatic History Network"
+        ],
+        "diffuseurs_numeriques": [
+          "Brill"
+        ],
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
+      }
+    },
+    {
       "mirabel_id": 1588,
       "title": "Droit et Cultures",
       "subtitle": "Revue internationale interdisciplinaire",
@@ -10634,6 +10823,67 @@
       }
     },
     {
+      "mirabel_id": 27683,
+      "title": "European Journal of English Studies",
+      "subtitle": "",
+      "mirabel_title": "European Journal of English Studies",
+      "sigle": "EJES",
+      "issn": [
+        "1382-5577",
+        "1744-4233"
+      ],
+      "issn_details": [
+        {
+          "issn": "1382-5577",
+          "support": "papier"
+        },
+        {
+          "issn": "1744-4233",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Taylor & Francis"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Littérature"
+      ],
+      "journal_url": "https://www.tandfonline.com/journals/neje20",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27683",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Littérature",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis Online"
+        ],
+        "discipline_normalized": "Littérature",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 10693,
       "title": "European Journal of Political Economy",
       "subtitle": "",
@@ -10930,6 +11180,69 @@
       }
     },
     {
+      "mirabel_id": 27684,
+      "title": "First World War Studies",
+      "subtitle": "",
+      "mirabel_title": "First World War Studies",
+      "sigle": "",
+      "issn": [
+        "1947-5020",
+        "1947-5039"
+      ],
+      "issn_details": [
+        {
+          "issn": "1947-5020",
+          "support": "papier"
+        },
+        {
+          "issn": "1947-5039",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Routledge"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Histoire",
+        "Époque contemporaine",
+        "Europe de l'Ouest"
+      ],
+      "journal_url": "https://www.tandfonline.com/journals/rfww20",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27684",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Histoire",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis Online"
+        ],
+        "discipline_normalized": "Histoire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 58,
       "title": "Genèses",
       "subtitle": "Sciences sociales et histoire",
@@ -11069,6 +11382,76 @@
         "discipline_normalized": "Géographie",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27687,
+      "title": "Global Media and China",
+      "subtitle": "",
+      "mirabel_title": "Global Media and China",
+      "sigle": "GMAC",
+      "issn": [
+        "2059-4372",
+        "2059-4364"
+      ],
+      "issn_details": [
+        {
+          "issn": "2059-4372",
+          "support": "electronique"
+        },
+        {
+          "issn": "2059-4364",
+          "support": "papier"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "SAGE Publishing"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2059-4372"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2059-4372"
+        }
+      },
+      "ddh": null,
+      "themes": [
+        "Information-communication"
+      ],
+      "journal_url": "https://journals.sagepub.com/home/gch",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27687",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Communication",
+        "editorial_structure": "éditeur privé",
+        "licence": "CC BY-NC",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Sage Journals"
+        ],
+        "discipline_normalized": "Information-communication",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence Creative Commons"
       }
     },
     {
@@ -11298,6 +11681,187 @@
           "Wiley Online Library"
         ],
         "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27697,
+      "title": "International Journal of Economic Policy in Emerging Economies",
+      "subtitle": "",
+      "mirabel_title": "International Journal of Economic Policy in Emerging Economies",
+      "sigle": "IJEPEE",
+      "issn": [
+        "1752-0452",
+        "1752-0460"
+      ],
+      "issn_details": [
+        {
+          "issn": "1752-0452",
+          "support": "papier"
+        },
+        {
+          "issn": "1752-0460",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Inderscience Publishers"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Économie, gestion"
+      ],
+      "journal_url": "https://www.inderscience.com/jhome.php?jcode=ijepee",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27697",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Inderscience"
+        ],
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27698,
+      "title": "International Journal of Electronic Trade",
+      "subtitle": "",
+      "mirabel_title": "International Journal of Electronic Trade",
+      "sigle": "IJETrade",
+      "issn": [
+        "1742-7525",
+        "1742-7533"
+      ],
+      "issn_details": [
+        {
+          "issn": "1742-7525",
+          "support": "papier"
+        },
+        {
+          "issn": "1742-7533",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Inderscience Publishers"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Économie, gestion"
+      ],
+      "journal_url": "https://www.inderscience.com/jhome.php?jcode=ijetrade",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27698",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie, gestion",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Inderscience"
+        ],
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27696,
+      "title": "International Journal of Sport Management and Marketing",
+      "subtitle": "",
+      "mirabel_title": "International Journal of Sport Management and Marketing",
+      "sigle": "IJSMM",
+      "issn": [
+        "1475-8962",
+        "1740-2808"
+      ],
+      "issn_details": [
+        {
+          "issn": "1475-8962",
+          "support": "papier"
+        },
+        {
+          "issn": "1740-2808",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Inderscience Publishers"
+      ],
+      "country": null,
+      "periodicity": "bimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [],
+      "journal_url": "https://www.inderscience.com/jhome.php?jcode=ijsmm",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27696",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Marketing",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Palgrave Macmillan/Springer"
+        ],
+        "discipline_normalized": "Économie, gestion, finance, marketing",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
       }
@@ -11852,6 +12416,71 @@
       }
     },
     {
+      "mirabel_id": 27688,
+      "title": "Journal of Urban Mobility",
+      "subtitle": "",
+      "mirabel_title": "Journal of Urban Mobility",
+      "sigle": "",
+      "issn": [
+        "2667-0917"
+      ],
+      "issn_details": [
+        {
+          "issn": "2667-0917",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Elsevier"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {
+        "ROAD": {
+          "label": "ROAD",
+          "url": "http://road.issn.org/issn/2667-0917"
+        },
+        "DOAJ": {
+          "label": "DOAJ",
+          "url": "https://doaj.org/toc/2667-0917"
+        }
+      },
+      "ddh": null,
+      "themes": [
+        "Géographie, cartographie"
+      ],
+      "journal_url": "https://www.sciencedirect.com/journal/journal-of-urban-mobility",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27688",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès ouvert",
+        "discipline": "Pluridisciplinaire",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": false,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Elsevier (ScienceDirect)"
+        ],
+        "discipline_normalized": "Pluridisciplinaire",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 11043,
       "title": "Karthago",
       "subtitle": "Revue d'archéologie méditerranéenne",
@@ -12133,6 +12762,67 @@
       }
     },
     {
+      "mirabel_id": 27689,
+      "title": "Mechanics of Advanced Materials and Structures",
+      "subtitle": "",
+      "mirabel_title": "Mechanics of Advanced Materials and Structures",
+      "sigle": "MAMS",
+      "issn": [
+        "1537-6494",
+        "1537-6532"
+      ],
+      "issn_details": [
+        {
+          "issn": "1537-6494",
+          "support": "papier"
+        },
+        {
+          "issn": "1537-6532",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Taylor & Francis"
+      ],
+      "country": null,
+      "periodicity": "28 nos/an",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Ingénierie, technologies"
+      ],
+      "journal_url": "https://www.tandfonline.com/journals/umcm20",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27689",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Mécanique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Taylor & Francis Online"
+        ],
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 26870,
       "title": "Museum, Materials and Discussions",
       "subtitle": "Journal of Museum Studies",
@@ -12258,7 +12948,7 @@
         "issn_print_present": true,
         "issn_electronic_present": true,
         "perimetre": [
-          "Non renseigné"
+          "Université Paris Nanterre"
         ],
         "laboratoires": [],
         "associations": [],
@@ -12268,6 +12958,72 @@
         "discipline_normalized": "STM (sciences, technologie, médecine)",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
+      }
+    },
+    {
+      "mirabel_id": 27695,
+      "title": "Order",
+      "subtitle": "A Journal on the Theory of Ordered Sets and its Applications",
+      "mirabel_title": "Order: A Journal on the Theory of Ordered Sets and its Applications",
+      "sigle": "",
+      "issn": [
+        "0167-8094",
+        "1572-9273"
+      ],
+      "issn_details": [
+        {
+          "issn": "0167-8094",
+          "support": "papier"
+        },
+        {
+          "issn": "1572-9273",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Springer"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {
+        "Wikipédia": {
+          "label": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Order"
+        }
+      },
+      "ddh": null,
+      "themes": [
+        "Mathématiques"
+      ],
+      "journal_url": "https://link.springer.com/journal/11083",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27695",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Mathématiques",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Springer Nature Link"
+        ],
+        "discipline_normalized": "STM (sciences, technologie, médecine)",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
       }
     },
     {
@@ -12337,6 +13093,67 @@
           "MDPI"
         ],
         "discipline_normalized": "Philosophie",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Licence CC ou DR variable pour une même publication"
+      }
+    },
+    {
+      "mirabel_id": 27694,
+      "title": "Political Anthropological Research on International Social Sciences",
+      "subtitle": "",
+      "mirabel_title": "Political Anthropological Research on International Social Sciences",
+      "sigle": "PARISS",
+      "issn": [
+        "2590-3284",
+        "2590-3276"
+      ],
+      "issn_details": [
+        {
+          "issn": "2590-3284",
+          "support": "papier"
+        },
+        {
+          "issn": "2590-3276",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Brill"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Science politique, droit et vie publique"
+      ],
+      "journal_url": "https://brill.com/view/journals/pari/pari-overview.xml",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27694",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Science politique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés, avec possibilité de CC",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Brill"
+        ],
+        "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Licence CC ou DR variable pour une même publication"
       }
@@ -12864,6 +13681,66 @@
       }
     },
     {
+      "mirabel_id": 27693,
+      "title": "Risk and Decision Analysis",
+      "subtitle": "",
+      "mirabel_title": "Risk and Decision Analysis",
+      "sigle": "",
+      "issn": [
+        "1569-7371",
+        "1875-9173"
+      ],
+      "issn_details": [
+        {
+          "issn": "1569-7371",
+          "support": "papier"
+        },
+        {
+          "issn": "1875-9173",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "IOS Press",
+        "SAGE Publishing"
+      ],
+      "country": null,
+      "periodicity": "trimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [],
+      "journal_url": "https://journals.sagepub.com/home/rda",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27693",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Science politique",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Sage Journals"
+        ],
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
       "mirabel_id": 361,
       "title": "Sahara et Sahel",
       "subtitle": "",
@@ -12921,6 +13798,67 @@
         ],
         "discipline_normalized": "Études des aires culturelles",
         "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27691,
+      "title": "Studies in Microeconomics",
+      "subtitle": "",
+      "mirabel_title": "Studies in Microeconomics",
+      "sigle": "",
+      "issn": [
+        "2321-0222",
+        "2321-8398"
+      ],
+      "issn_details": [
+        {
+          "issn": "2321-0222",
+          "support": "papier"
+        },
+        {
+          "issn": "2321-8398",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "SAGE Publishing"
+      ],
+      "country": null,
+      "periodicity": "quadrimestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Croissance, développement"
+      ],
+      "journal_url": "https://journals.sagepub.com/home/mic",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27691",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Économie",
+        "editorial_structure": "éditeur privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Sage Journals"
+        ],
+        "discipline_normalized": "Économie, gestion, finance, marketing",
+        "editorial_structure_normalized": "Éditeur privé",
         "licence_normalized": "Tous droits réservés"
       }
     },
@@ -13398,6 +14336,68 @@
         ],
         "discipline_normalized": "Histoire",
         "editorial_structure_normalized": "Association",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27690,
+      "title": "Violence",
+      "subtitle": "An International Journal",
+      "mirabel_title": "Violence: An International Journal",
+      "sigle": "",
+      "issn": [
+        "2633-0024",
+        "2633-0032"
+      ],
+      "issn_details": [
+        {
+          "issn": "2633-0024",
+          "support": "papier"
+        },
+        {
+          "issn": "2633-0032",
+          "support": "electronique"
+        }
+      ],
+      "languages": [
+        "eng"
+      ],
+      "publishers": [
+        "Fondation Maison des sciences de l'homme (FMSH)",
+        "SAGE Publishing"
+      ],
+      "country": null,
+      "periodicity": "semestriel",
+      "publication_format": "Papier et numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Science politique, droit et vie publique"
+      ],
+      "journal_url": "https://journals.sagepub.com/home/vio",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27690",
+      "mosar": {
+        "proximity_level": "4",
+        "open_access": "Accès restreint",
+        "discipline": "Science politique",
+        "editorial_structure": "coédition public/privé",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": true,
+        "issn_electronic_present": true,
+        "perimetre": [
+          "Université Paris Nanterre"
+        ],
+        "laboratoires": [],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "Sage Journals"
+        ],
+        "discipline_normalized": "Sciences politiques",
+        "editorial_structure_normalized": "Coédition public/privé",
         "licence_normalized": "Tous droits réservés"
       }
     },
