@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-10-28T14:17:51+00:00",
+    "generated_at": "2026-10-29T10:53:52+00:00",
     "cluster_id": 146,
-    "mirabel_active_titles": 195,
-    "mirabel_unique_reviews": 195,
+    "mirabel_active_titles": 196,
+    "mirabel_unique_reviews": 196,
     "mosar_source": "XLSX Mosar",
-    "mosar_ids": 195,
+    "mosar_ids": 196,
     "matched_ids": [
       22,
       28,
@@ -201,9 +201,10 @@
       27695,
       27696,
       27697,
-      27698
+      27698,
+      27765
     ],
-    "matched_count": 195,
+    "matched_count": 196,
     "mirabel_without_mosar_count": 0,
     "mosar_outside_cluster_ids": [],
     "duplicate_active_title_review_ids": []
@@ -4321,6 +4322,64 @@
         ],
         "discipline_normalized": "Sciences politiques",
         "editorial_structure_normalized": "Éditeur privé",
+        "licence_normalized": "Tous droits réservés"
+      }
+    },
+    {
+      "mirabel_id": 27765,
+      "title": "Pratiques picturales",
+      "subtitle": "peindre, regarder, énoncer",
+      "mirabel_title": "Pratiques picturales",
+      "sigle": "",
+      "issn": [
+        "2677-2752"
+      ],
+      "issn_details": [
+        {
+          "issn": "2677-2752",
+          "support": "papier"
+        }
+      ],
+      "languages": [
+        "fre"
+      ],
+      "publishers": [
+        "Institut Acte"
+      ],
+      "country": null,
+      "periodicity": "irrégulier",
+      "publication_format": "Numérique",
+      "publication_fees": null,
+      "labels": [],
+      "is_diamond": false,
+      "references": {},
+      "ddh": null,
+      "themes": [
+        "Arts visuels"
+      ],
+      "journal_url": "https://pratiques-picturales.net/",
+      "mirabel_url": "https://reseau-mirabel.info/revue/27765",
+      "mosar": {
+        "proximity_level": "2",
+        "open_access": "Accès ouvert",
+        "discipline": "Arts",
+        "editorial_structure": "organisme de recherche public",
+        "licence": "Tous droits réservés",
+        "licence_mentioned": "oui",
+        "issn_print_present": false,
+        "issn_electronic_present": false,
+        "perimetre": [
+          "Université Paris 1 Panthéon-Sorbonne"
+        ],
+        "laboratoires": [
+          "Arts, Créations, Théories, Esthétique (Acte, UR 7539)"
+        ],
+        "associations": [],
+        "diffuseurs_numeriques": [
+          "site web de la revue"
+        ],
+        "discipline_normalized": "Arts",
+        "editorial_structure_normalized": "Organisme de recherche public",
         "licence_normalized": "Tous droits réservés"
       }
     },
